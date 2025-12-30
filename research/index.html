@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    :root {
+      --research-blue: #0B2545;
+      --research-bg: #F7F9FC;
+    }
+
+    body {
+      max-width: 760px;
+      margin: 80px auto;
+      padding: 0 20px;
+      font-family: Georgia, serif;
+      color: #111;
+      line-height: 1.7;
+      background: var(--research-bg);
+    }
+
+    h1 {
+      font-size: 2.3em;
+      margin-bottom: 1.1em;
+      color: var(--research-blue);
+    }
+
+    /* Top navigation */
+    .nav {
+      margin-bottom: 70px;
+    }
+
+    .nav a {
+      margin-right: 12px;
+      padding: 6px 12px;
+      border: 1px solid #222;
+      text-decoration: none;
+      color: #111;
+      font-size: 0.9em;
+    }
+
+    .nav a:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    /* === Research intro layout === */
+    .research-intro {
+      display: flex;
+      gap: 36px;
+      align-items: flex-start;
+      margin-bottom: 80px;
+    }
+
+    .research-photo img {
+      max-width: 220px;
+      height: auto;
+      display: block;
+      border: 1px solid #ddd;
+      background: #fff;
+    }
+
+    /* Research overview */
+    .overview ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .overview li {
+      margin-bottom: 14px;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .overview li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--research-blue);
+    }
+
+    /* Section links */
+    .sections {
+      margin-top: 40px;
+    }
+
+    .section-link {
+      display: block;
+      padding: 26px 0;
+      text-decoration: none;
+      color: #111;
+      border-bottom: 1px solid #ddd;
+      transition: padding-left 0.15s ease;
+    }
+
+    .section-link h3 {
+      margin: 0 0 6px 0;
+      font-size: 1.15em;
+      font-weight: normal;
+    }
+
+    .section-link p {
+      margin: 0;
+      font-size: 0.9em;
+      color: #444;
+    }
+
+    .section-link:hover {
+      padding-left: 8px;
+    }
+
+    .section-link:hover h3 {
+      color: var(--research-blue);
+    }
+
+    /* Mobile fallback */
+    @media (max-width: 600px) {
+      .research-intro {
+        flex-direction: column;
+      }
+
+      .research-photo img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="nav">
+  <a href="/">Home</a>
+  <a href="/Profile/">Profile</a>
+  <a href="/research/">Research</a>
+  <a href="/publications/">Publications</a>
+  <a href="/practice/">Practice</a>
+  <a href="/archive/">Archive</a>
+</div>
+
+<h1>Research</h1>
+
+<div class="research-intro">
+  <div class="research-photo">
+    <img src="/assets/research.jpg" alt="Computational research environment">
+  </div>
+
+  <div class="overview">
+    <ul>
+      <li>High-fidelity CFD modeling of turbulent flows in marine and offshore systems</li>
+      <li>Multiphysics coupling for FOWT, WEC, and ship hydrodynamics</li>
+      <li>Uncertainty-aware analysis of scale effects, roughness, and experimental bias</li>
+    </ul>
+  </div>
+</div>
+
+<div class="sections">
+  <a class="section-link" href="/research/interests/">
+    <h3>Research Interests</h3>
+    <p>Core research themes and methodological focus.</p>
+  </a>
+
+  <a class="section-link" href="/research/ongoing/">
+    <h3>Ongoing Research</h3>
+    <p>Active projects and current publication status.</p>
+  </a>
+
+  <a class="section-link" href="/research/future/">
+    <h3>Future Research Directions</h3>
+    <p>Planned research agenda and prospective studies.</p>
+  </a>
+</div>
+
+</body>
+</html>
