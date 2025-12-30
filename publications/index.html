@@ -10,6 +10,9 @@
       --accent-dark: #0B1F3A;
       --bg-light: #F7F9FC;
       --text-muted: #4A4A4A;
+      --status-published: #2F6F4E;
+      --status-review: #9A6A1D;
+      --status-prep: #666666;
     }
 
     body {
@@ -42,11 +45,34 @@
       background: #111;
       color: #fff;
     }
+    
+    /* Cover article badge */
+.cover-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 6px;
+  font-size: 0.65em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2C3E50;
+  border: 1px solid #BFC7D1;
+  background: #F4F6F9;
+  vertical-align: middle;
+}
+
+
 
     .nav a.active {
       background: #111;
       color: #fff;
       cursor: default;
+    }
+    /* Header */
+    .header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 22px;
     }
 
     h1 {
@@ -54,6 +80,18 @@
       margin-bottom: 20px;
       color: var(--accent-dark);
       letter-spacing: 0.02em;
+    }
+
+    .scholar-link {
+      font-size: 0.8em;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.15s ease;
+    }
+
+    .scholar-link:hover {
+      color: var(--accent-dark);
     }
 
     .section {
@@ -71,64 +109,71 @@
 
     .subsection {
       margin-bottom: 30px;
+      padding-left: 8px;
+      border-left: 2px solid #eee;
     }
 
     .subsection h3 {
-      font-size: 0.99em;
+      font-size: 0.95em;
       font-weight: normal;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
       color: #222;
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
 
     .pub-item {
-      margin-bottom: 18px;
+      position: relative;
+      padding-left: 16px; /* dot 공간 확보 */
     }
-
     .pub-title {
       font-size: 0.97em;
       font-weight: 500;
       color: #111;
+      line-height: 1.35;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    @media (min-width: 768px) {
-      .pub-title {
-        white-space: nowrap;
-      }
-    }
     .pub-title a {
       color: inherit;
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: border-color 0.15s ease;
     }
-
+    
     .pub-title a:hover {
       border-bottom-color: #bbb;
     }
 
-
-
     .pub-authors,
-    .pub-meta {
-      font-size: 0.88em;
-      color: var(--text-muted);
-    }
+        .pub-meta {
+          margin-top: 2px;
+          font-size: 0.88em;
+          color: var(--text-muted);
+        }
 
-    .pub-links a {
-      font-size: 0.85em;
+    .pub-meta a {
       color: inherit;
       text-decoration: none;
-      margin-right: 10px;
-      border-bottom: 1px solid #bbb;
-      padding-bottom: 1px;
+      transition: color 0.15s ease;
     }
 
-    .pub-links a:hover {
+    .pub-meta a:hover {
       color: var(--accent-dark);
-      border-bottom-color: var(--accent-dark);
     }
+
+    /* Status indicator */
+    .status {
+      font-size: 0.75em;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .published { color: var(--status-published); }
+    .review { color: var(--status-review); }
+    .prep { color: var(--status-prep); }
 
     .divider {
       height: 0.5px;
@@ -159,8 +204,12 @@
   <a href="/practice/">Practice</a>
   <a href="/archive/">Archive</a>
 </div>
-
-<h1>Publications</h1>
+<div class="header">
+  <h1>Publications</h1>
+  <a class="scholar-link" href="https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en" target="_blank" rel="noopener">
+    Google Scholar
+  </a>
+</div>
 
 <div class="section">
   <h2><strong>Journal Articles</strong></h2>
@@ -168,33 +217,39 @@
   <div class="subsection">
     <h3>Published</h3>
 
+      <div class="pub-item">
       <div class="pub-title">
+        <span class="status published" aria-hidden="true">●</span>
+        <span class="title-text">
         <a href="/publications/temperature-ittc/">
           Temperature-induced errors in ITTC model-ship extrapolation
         </a>
+        <span class="cover-badge">Cover Article</span>
       </div>
-
 
       <div class="pub-authors">
         <strong>S. Han</strong>, S. Dai, M. Terziev, et al.
       </div>
       <div class="pub-meta">
-        Journal of Marine Science and Engineering <span style="font-size:0.85em; color:#666;">(IF 2.8)</span>, 2025
+        <a href="https://www.mdpi.com/journal/jmse" target="_blank">Journal of Marine Science and Engineering</a>
+        (IF 2.8), 2025
       </div>
     </div>
 
+
     <div class="pub-item">
       <div class="pub-title">
-        <a href="https://doi.org/10.1016/j.oceaneng.2024.119058" target="_blank" rel="noopener">
+        <span class="status published">●</span>
+        <a href="https://doi.org/10.1016/j.oceaneng.2024.119058" target="_blank">
           Resistance and speed penalty on a naval ship due to hull roughness: CFD investigation
         </a>
       </div>
-
       <div class="pub-authors">
         W. Choi, G. Min, <strong>S. Han</strong>, et al.
       </div>
       <div class="pub-meta">
-        Ocean Engineering <span style="font-size:0.85em; color:#666;">(IF 4.6)</span>, 2024 
+        <a href="https://www.sciencedirect.com/journal/ocean-engineering" target="_blank">Ocean Engineering</a>
+        (IF 4.5), 2024
       </div>
     </div>
   </div>
@@ -204,18 +259,20 @@
 
     <div class="pub-item">
       <div class="pub-title">
+        <span class="status review">●</span>
         Beyond uniform roughness: CFD study on ship resistance with spatially non-uniform surface conditions
       </div>
       <div class="pub-authors">
         <strong>S. Han*</strong>, H. Lee, S. Dai, et al.
       </div>
       <div class="pub-meta">
-        Ocean Engineering — under review (1st revision submitted), 2025
+        Ocean Engineering — under review, 2025
       </div>
     </div>
 
     <div class="pub-item">
       <div class="pub-title">
+        <span class="status review">●</span>
         How well do deterministic multi-component waves reproduce FOWT responses in JONSWAP seas?
       </div>
       <div class="pub-authors">
@@ -238,6 +295,7 @@
 
     <div class="pub-item">
       <div class="pub-title">
+        <span class="status published">●</span>
         Numerical Analysis of Fluid-Structure Interaction for a Semi-Submersible Floating Offshore Wind Turbine
       </div>
       <div class="pub-authors">
@@ -254,6 +312,7 @@
 
     <div class="pub-item">
       <div class="pub-title">
+        <span class="status review">●</span>
         Simulation-Based Analysis of a Gyroscopic Wave Energy Converter Using a Modular CFD–MBD Framework
       </div>
       <div class="pub-authors">
@@ -266,6 +325,7 @@
 
     <div class="pub-item">
       <div class="pub-title">
+        <span class="status review">●</span>
         A Computational Fluid Dynamics Analysis of Spatial Roughness Distributions on Ship Resistance
       </div>
       <div class="pub-authors">

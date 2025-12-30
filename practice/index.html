@@ -2,34 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Practice</title>
+  <title>Practice | Sangseok Han</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
+    :root {
+      --accent-dark: #0B1F3A;
+      --bg-light: #F7F9FC;
+      --text-muted: #4A4A4A;
+    }
+
     body {
-      max-width: 760px;
-      margin: 80px auto;
+      max-width: 740px;
+      margin: 70px auto;
       padding: 0 20px;
       font-family: Georgia, serif;
       color: #111;
-      line-height: 1.6;
+      line-height: 1.75;
+      background: var(--bg-light);
     }
 
+    /* Navigation */
     .nav {
-      margin-bottom: 40px;
+      margin-bottom: 65px;
     }
 
     .nav a {
       margin-right: 12px;
-      padding: 6px 12px;
+      padding: 6px 14px;
       border: 1px solid #222;
       text-decoration: none;
       color: #111;
-      font-size: 0.9em;
+      font-size: 0.88em;
+      letter-spacing: 0.02em;
     }
 
     .nav a:hover {
       background: #111;
       color: #fff;
+    }
+
+    .nav a.active {
+      background: #111;
+      color: #fff;
+      cursor: default;
+    }
+
+    h1 {
+      font-size: 2.1em;
+      margin-bottom: 14px;
+      color: var(--accent-dark);
+    }
+
+    /* Evidence image */
+    .practice-hero {
+      margin: 18px 0 34px;
+      overflow: hidden; /* 중요 */
+    }
+
+    .practice-hero img {
+      max-width: 340px;
+      width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      filter: grayscale(20%);
+    }
+
+    .practice-hero .caption {
+      margin-top: 6px;
+      font-size: 0.78em;
+      color: #777;
+    }
+
+    .intro {
+      font-size: 0.95em;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      max-width: 600px;
+    }
+
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 26px;
+    }
+
+    .practice-card {
+      padding: 18px 16px;
+      border-left: 2px solid #ddd;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .practice-card:hover {
+      border-left-color: var(--accent-dark);
+      background: #f0f3f8;
+    }
+
+    .practice-card h2 {
+      font-size: 0.95em;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: var(--accent-dark);
+    }
+
+    .practice-card p {
+      font-size: 0.88em;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.55;
     }
   </style>
 </head>
@@ -38,16 +120,55 @@
 
 <div class="nav">
   <a href="/">Home</a>
-  <a href="/Profile/">Profile</a>
+  <a href="/profile/">Profile</a>
   <a href="/research/">Research</a>
   <a href="/publications/">Publications</a>
-  <a href="/practice/">Practice</a>
+  <a href="/practice/" class="active">Practice</a>
   <a href="/archive/">Archive</a>
 </div>
 
 <h1>Practice</h1>
 
-<p>Work in progress.</p>
+<div class="practice-hero">
+  <img src="/assets/practice_hero.jpg" alt="Autonomous surface vessel field test">
+  <div class="caption">
+    Autonomous surface vessel — field validation
+  </div>
+</div>
+
+<p class="intro">
+Hands-on work documenting how ideas are tested through the body,
+computation, and physical systems.
+This section records process rather than outcome.
+</p>
+
+<div class="practice-grid">
+
+  <a href="/practice/physical/" class="practice-card">
+    <h2>Physical Transformation</h2>
+    <p>
+      Long-term physical optimization under biological constraints.
+      Strength, endurance, and discipline treated as a system.
+    </p>
+  </a>
+
+  <a href="/practice/computational-visual/" class="practice-card">
+    <h2>Computational & Visual Practice</h2>
+    <p>
+      CFD-derived visual studies and exploratory simulations.
+      Flow behaviour translated into abstract representations.
+    </p>
+  </a>
+
+  <a href="/practice/systems-built/" class="practice-card">
+    <h2>Systems Built & Tested</h2>
+    <p>
+      End-to-end systems designed, implemented, and validated
+      through real-world constraints and failure modes.
+    </p>
+  </a>
+
+</div>
 
 </body>
 </html>
