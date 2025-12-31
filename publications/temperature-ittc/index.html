@@ -66,12 +66,21 @@ h1 {
 }
 
 .affils {
-  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 80px auto;
+  text-align: left;
   font-size: 0.85em;
   color: #666;
-  margin-bottom: 80px;
   line-height: 1.6;
 }
+
+@media (min-width: 900px) {
+  .affils div {
+    white-space: nowrap;
+  }
+}
+
+
 
 /* Abstract (subtle, no box) */
 .abstract {

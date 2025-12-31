@@ -16,7 +16,7 @@
     }
 
     body {
-      max-width: 940px;
+      max-width: 800px;
       margin: 40px auto;
       padding: 0 20px;
       font-family: Georgia, serif;
@@ -31,13 +31,10 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-
-      margin-bottom: 65px;
+      margin-bottom: 40px;
       padding: 18px 0;
-
       background: rgba(247, 249, 252, 0.95); /* bg-light with slight opacity */
       backdrop-filter: blur(4px);
-
       border-bottom: 0.5px solid #e0e0e0;
     }
 
@@ -111,11 +108,12 @@
     }
 
     .section h2 {
-      font-size: 1.05em;
+      font-size: 0.95em;
       font-weight: normal;
       margin-bottom: 18px;
       color: var(--accent-dark);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
+      opacity: 0.85;
       text-transform: uppercase;
     }
 
@@ -137,6 +135,7 @@
     .pub-item {
       position: relative;
       padding-left: 16px; /* dot 공간 확보 */
+      margin-top: 8px;
     }
     .pub-title {
       font-size: 0.97em;
@@ -155,16 +154,27 @@
       transition: border-color 0.15s ease;
     }
     
+    .pub-meta-block {
+      margin-left: 1.25em;   /* DOT + 여백만큼 */
+      margin-top: 4px;
+    }
+
+
     .pub-title a:hover {
       border-bottom-color: #bbb;
     }
 
-    .pub-authors,
-        .pub-meta {
-          margin-top: 2px;
-          font-size: 0.88em;
-          color: var(--text-muted);
-        }
+    .pub-authors {
+      font-size: 0.88em;
+      color: var(--text-muted);
+    }
+
+    .pub-meta {
+      font-size: 0.85em;
+      color: #666;
+      margin-top: -3px;
+    }
+
 
     .pub-meta a {
       color: inherit;
@@ -174,6 +184,14 @@
 
     .pub-meta a:hover {
       color: var(--accent-dark);
+    }
+
+    .pub-note {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 0.84em;
+      color: #6b7280;
+      letter-spacing: 0.02em;
     }
 
     /* Status indicator */
@@ -192,7 +210,7 @@
     .divider {
       height: 0.5px;
       background: #dcdcdc;
-      margin: 50px 0;
+      margin: 40px 0;
     }
 
     .page {
@@ -210,9 +228,9 @@
       }
     }
     .author-note {
-      margin-top: -6px;
-      margin-bottom: 28px;
-      font-size: 0.78em;
+      margin-top: -10px;
+      margin-bottom: 20px;
+      font-size: 0.84em;
       color: var(--text-muted);
       letter-spacing: 0.04em;
     }
@@ -249,7 +267,10 @@
 </div>
 
 <p class="author-note">
-  * <em>Corresponding author</em>
+  * <em>Corresponding author</em><br>
+  <span class="pub-note">
+    Click paper titles for abstracts and publication details.
+  </span>
 </p>
 
 
@@ -266,15 +287,17 @@
         <a href="/publications/temperature-ittc/">
           Temperature-induced errors in ITTC model-ship extrapolation
         </a>
-        <span class="cover-badge">Cover Article</span>
+        
+        
       </div>
-      
+      <div class="pub-meta-block">
       <div class="pub-authors">
         <strong>S. Han</strong>, S. Dai, M. Terziev, et al.
       </div>
       <div class="pub-meta">
         <a href="https://www.mdpi.com/journal/jmse" target="_blank"><em>Journal of Marine Science and Engineering</em></a>
-        (IF 2.8), 2025
+        (IF 2.8), 2025 <span class="cover-badge">Cover Article</span>
+      </div>
       </div>
     </div>
 
@@ -286,6 +309,8 @@
           Resistance and speed penalty on a naval ship due to hull roughness: CFD investigation
         </a>
       </div>
+
+      <div class="pub-meta-block">
       <div class="pub-authors">
         W. Choi, G. Min, <strong>S. Han</strong>, et al.
       </div>
@@ -293,6 +318,7 @@
         <a href="https://www.sciencedirect.com/journal/ocean-engineering" target="_blank"><em>Ocean Engineering</em></a>
         (IF 4.5), 2024
       </div>
+    </div>
     </div>
   </div>
 
@@ -304,11 +330,13 @@
         <span class="status review">●</span>
         Beyond uniform roughness: CFD study on ship resistance with spatially non-uniform surface conditions
       </div>
+      <div class="pub-meta-block">
       <div class="pub-authors">
         <strong>S. Han*</strong>, H. Lee, S. Dai, et al.
       </div>
       <div class="pub-meta">
         <em>Ocean Engineering</em> — under review, 2025
+      </div>
       </div>
     </div>
 
@@ -317,12 +345,14 @@
         <span class="status review">●</span>
         How well do deterministic multi-component waves reproduce FOWT responses in JONSWAP seas?
       </div>
+      <div class="pub-meta-block">
       <div class="pub-authors">
         <strong>S. Han*</strong>
       </div>
       <div class="pub-meta">
         <em>Applied Ocean Research</em> — under review, 2025
       </div>
+    </div>
     </div>
   </div>
 </div>
@@ -340,12 +370,14 @@
         <span class="status published">●</span>
         Numerical Analysis of Fluid-Structure Interaction for a Semi-Submersible Floating Offshore Wind Turbine
       </div>
+      <div class="pub-meta-block">
       <div class="pub-authors">
         <strong>S. Han*</strong>, S. Dai, M. Terziev, et al.
       </div>
       <div class="pub-meta">
         International Conference on Computational Methods in Marine Engineering (MARINE), 2025
       </div>
+    </div>
     </div>
   </div>
 
@@ -357,11 +389,13 @@
         <span class="status prep">●</span>
         Simulation-Based Analysis of a Gyroscopic Wave Energy Converter Using a Modular CFD–MBD Framework
       </div>
+      <div class="pub-meta-block">
       <div class="pub-authors">
         <strong>S. Han*</strong>, T. Iida, R. Yoshimura, et al.
       </div>
       <div class="pub-meta">
         International Ocean Offshore and Arctic Engineering Conference (OMAE), 2026
+      </div>
       </div>
     </div>
 
@@ -370,12 +404,14 @@
         <span class="status prep">●</span>
         A Computational Fluid Dynamics Analysis of Spatial Roughness Distributions on Ship Resistance
       </div>
+      <div class="pub-meta-block">
       <div class="pub-authors">
         <strong>S. Han*</strong>, M. Terziev, T. Tezdogan
       </div>
       <div class="pub-meta">
         36th Symposium on Naval Hydrodynamics (SNH36), 2026
       </div>
+    </div>
     </div>
   </div>
 </div>

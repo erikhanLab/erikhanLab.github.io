@@ -2,52 +2,462 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Archive</title>
+  <title>Archive | Sangseok Han</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
+    :root {
+      --accent-dark: #0B1F3A;
+      --bg-light: #F7F9FC;
+      --text-muted: #4A4A4A;
+    }
+
     body {
-      max-width: 760px;
-      margin: 80px auto;
+      max-width: 800px;
+      margin: 40px auto;
       padding: 0 20px;
       font-family: Georgia, serif;
       color: #111;
-      line-height: 1.6;
+      line-height: 1.75;
+      background: var(--bg-light);
     }
 
+    /* Top Navigation */
     .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       margin-bottom: 40px;
+      padding: 18px 0;
+      background: rgba(247, 249, 252, 0.95);
+      backdrop-filter: blur(4px);
+      border-bottom: 0.5px solid #e0e0e0;
     }
 
     .nav a {
       margin-right: 12px;
-      padding: 6px 12px;
+      padding: 6px 14px;
       border: 1px solid #222;
       text-decoration: none;
       color: #111;
-      font-size: 0.9em;
+      font-size: 0.88em;
+      letter-spacing: 0.02em;
     }
 
-    .nav a:hover {
+    .nav a.active {
       background: #111;
       color: #fff;
+    }
+
+    .header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    
+    h1 {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .intro {
+      font-size: 0.95em;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+    }
+
+    /* Archive Sections */
+    .year-section {
+      margin-bottom: 50px;
+    }
+
+    .year-row {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 6px;
+    }
+
+    .year-num {
+      font-size: 0.95em;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: #0B1F3A;
+    }
+
+    .year-age {
+      font-size: 0.7em;
+      letter-spacing: 0.18em;
+      color: #9aa3af;
+    }
+
+    .entry {
+      font-size: 1.02em;
+      color: #111;
+      line-height: 1.65;
+      margin-left: 2px;
+    }
+
+
+    .entry span {
+      color: var(--text-muted);
+    }
+
+    /* Right Navigation */   
+    .entry a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease;
+    }
+
+    .entry a:hover {
+      border-bottom-color: #aaa;
+    }
+
+    .side-nav {
+      position: fixed;
+      right: clamp(
+        0px,
+        calc((100vw - 800px) / 2 + 20px),
+        400px
+      );       
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      z-index: 100;
+    }
+
+    .side-nav a {
+      position: relative;
+      width: 10px;
+      height: 10px;
+    }
+
+    .side-nav a span {
+      display: block;
+      width: 6px;
+      height: 6px;
+      margin: auto;
+      border-radius: 50%;
+      background: #bbb;
+      transition: all 0.2s ease;
+    }
+    .page-content {
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+    }
+
+    .page-content.loaded {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    .side-nav a.active span {
+      background: var(--accent-dark);
+      transform: scale(1.6);
+    }
+
+    .side-nav a:hover span {
+      background: var(--accent-dark);
+    }
+
+    .side-nav a::after {
+      content: attr(data-label);
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.85);
+      color: #fff;
+      font-size: 0.7em;
+      padding: 4px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s ease;
+    }
+
+    .side-nav a:hover::after {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .side-nav {
+        display: none;
+      }
+    }
+    #academic-activity {
+      min-height: 20vh;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 60px;
+    }
+
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: #e5e7eb;
+    }
+
+    .divider {
+      height: 0.5px;
+      background: #dcdcdc;
+      margin: 50px 0;
+    }
+
+    .timeline-wrapper {
+      display: flex;
+      position: relative;
+    }
+
+    .timeline-content {
+      width: 90%;
+    }
+
+    .timeline-content section {
+      margin-bottom: 20px;
+    }
+
+    .year-section {
+      position: relative;
+      margin-bottom: 0px;
+    }
+
+    .year-section::before {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 11px;
+      width: 3px;
+      height: 3px;
+      border-radius: 25%;
+      background: #0B1F3A;
+    }
+
+    .year-label {
+      font-size: 0.85em;
+      letter-spacing: 0.28em;
+      color: #777;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .year-desc {
+      font-size: 1.05em;
+      color: #111;
+    }
+
+    @media (max-width: 768px) {
+      .side-nav {
+        display: none;
+      }
+    }
+
+    .scroll-spacer {
+      height: 1vh;
+    }
+
+    .bottom {
+      height: 5vh;
     }
   </style>
 </head>
 
 <body>
+  <nav class="side-nav">
+  <a href="#y2013" data-year="2013–15"><span></span></a>
+  <a href="#y2016" data-year="2016"><span></span></a>
+  <a href="#y2019" data-year="2019"><span></span></a>
+  <a href="#y2021" data-year="2021"><span></span></a>
+  <a href="#y2023" data-year="2023"><span></span></a>
+</nav>
 
+<div class="page-content">
 <div class="nav">
   <a href="/">Home</a>
   <a href="/Profile/">Profile</a>
   <a href="/research/">Research</a>
   <a href="/publications/">Publications</a>
   <a href="/practice/">Practice</a>
-  <a href="/archive/">Archive</a>
+  <a href="/archive/" class="active">Archive</a>
 </div>
-
+<div class="header">
 <h1>Archive</h1>
+</div>
+<p class="intro">
+  A compressed record of trajectory.<br>
+  No narrative. No interpretation. Only position in time.
+</p>
 
-<p>Work in progress.</p>
+<!-- Right Nav -->
 
+<div class="scroll-spacer"></div>
+<div class="timeline-wrapper">
+  <div class="timeline">
+    <div class="timeline-content">
+
+      <!-- Timeline -->
+      <section class="year-section" id="y2013">
+        <div class="year-row">
+          <span class="year-num">2013–2015</span>
+          <span class="year-age">Age 15–17</span>
+        </div>
+        <div class="entry">
+          High school · Bottom 5–10% · Physics interest
+        </div>
+      </section>
+
+      <section class="year-section" id="y2016">
+        <div class="year-row">
+          <span class="year-num">2016</span>
+          <span class="year-age">Age 18</span>
+        </div>
+        <div class="entry">
+          ROK Navy · Petty Officer · Structural reset
+        </div>
+      </section>
+
+      <section class="year-section" id="y2019">
+        <div class="year-row">
+          <span class="year-num">2019</span>
+          <span class="year-age">Age 21</span>
+        </div>
+        <div class="entry">
+          Mathematics restart · Long-hour self-study
+        </div>
+      </section>
+
+      <section class="year-section" id="y2021">
+        <div class="year-row">
+          <span class="year-num">2021</span>
+          <span class="year-age">Age 23</span>
+        </div>
+        <div class="entry">
+          Inha University · Engineering foundations
+        </div>
+      </section>
+
+      <section class="year-section" id="y2023">
+        <div class="year-row">
+          <span class="year-num">2023</span>
+          <span class="year-age">Age 25</span>
+        </div>
+        <div class="entry">
+          Undergraduate researcher · First conference
+        </div>
+      </section>
+
+      <section class="year-section" id="y2024">
+        <div class="year-row">
+          <span class="year-num">2024</span>
+          <span class="year-age">Age 26</span>
+        </div>
+        <div class="entry">
+          Graduate early · MSc abroad · Independent research
+        </div>
+      </section>
+
+      <section class="year-section" id="y2025">
+        <div class="year-row">
+          <span class="year-num">2025</span>
+          <span class="year-age">Age 27</span>
+        </div>
+        <div class="entry">
+          MSc Distinction · Q1 journals · Conferences
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+<div class="scroll-spacer"></div>
+
+</section>
+
+<script>
+  const sections = Array.from(document.querySelectorAll('.year-section'));
+  const navLinks = Array.from(document.querySelectorAll('.side-nav a'));
+
+  let sectionTops = [];
+
+  function calculateOffsets() {
+    sectionTops = sections.map(sec => {
+      const rect = sec.getBoundingClientRect();
+      return rect.top + window.scrollY;
+    });
+  }
+
+  function updateActiveDot() {
+    const scrollPos = window.scrollY + window.innerHeight * 0.5;
+
+    let activeIndex = 0;
+
+    for (let i = 0; i < sectionTops.length; i++) {
+      if (scrollPos >= sectionTops[i]) {
+        activeIndex = i;
+      }
+    }
+
+    navLinks.forEach(l => l.classList.remove('active'));
+    navLinks[activeIndex]?.classList.add('active');
+  }
+
+  window.addEventListener('load', () => {
+    calculateOffsets();
+    updateActiveDot();
+    document.querySelector('.page-content')?.classList.add('loaded');
+  });
+
+  window.addEventListener('resize', calculateOffsets);
+  window.addEventListener('scroll', updateActiveDot);
+</script>
+
+
+<div class="divider"></div>
+
+<section class="external-archives">
+  <div class="year">External Archives</div>
+
+  <div class="entry">
+    <strong>
+      <a href="https://www.instagram.com/stillline/" target="_blank" rel="noopener">
+        stillline
+      </a>
+    </strong>
+    <span>
+      — graphite drawings · visual studies · still observation
+    </span>
+  </div>
+
+  <div class="entry" style="margin-top:12px;">
+    <strong>
+      <a href="https://www.instagram.com/by.eigen/" target="_blank" rel="noopener">
+        by.eigen
+      </a>
+    </strong>
+    <span>
+      — research · travel · art · long-form personal record
+    </span>
+  </div>
+  <!-- IntersectionObserver용 여백 -->
+<div class="scroll-spacer"></div>
+</section>
+</div>
 </body>
 </html>
