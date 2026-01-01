@@ -276,12 +276,12 @@
 
 <body>
   <nav class="side-nav">
-    <a href="#current" data-label="Current"><span></span></a>
-    <a href="#research-interests" data-label="Research Interests"><span></span></a>
-    <a href="#affiliations" data-label="Affiliations"><span></span></a>
-    <a href="#academic-activity" data-label="Academic Activity"><span></span></a>
-    <a href="#background" data-label="Background"><span></span></a>
-  </nav>
+  <a data-index="0"><span></span></a>
+  <a data-index="1"><span></span></a>
+  <a data-index="2"><span></span></a>
+  <a data-index="3"><span></span></a>
+  <a data-index="4"><span></span></a>
+</nav>
 <div class="page-content">
 <div class="nav">
   <a href="/">Home</a>
@@ -450,29 +450,30 @@
 
 
 <script>
-  const sections = document.querySelectorAll('.section');
-  const navLinks = document.querySelectorAll('.side-nav a');
+  const navLinks = Array.from(document.querySelectorAll('.side-nav a'));
+  const totalDots = navLinks.length;
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => link.classList.remove('active'));
-          const activeLink = document.querySelector(
-            `.side-nav a[href="#${entry.target.id}"]`
-          );
-          if (activeLink) activeLink.classList.add('active');
-        }
-      });
-    },
-    {
-      rootMargin: "-40% 0px -40% 0px",
-      threshold: 0
-    }
-  );
+  function updateScrollIndicator() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = scrollTop / docHeight;
 
-  sections.forEach(section => observer.observe(section));
+    const activeIndex = Math.min(
+      totalDots - 1,
+      Math.floor(progress * totalDots)
+    );
+
+    navLinks.forEach(l => l.classList.remove('active'));
+    navLinks[activeIndex]?.classList.add('active');
+  }
+
+  window.addEventListener('scroll', updateScrollIndicator);
+  window.addEventListener('load', () => {
+    document.querySelector('.page-content')?.classList.add('loaded');
+    updateScrollIndicator();
+  });
 </script>
+
 </div>
 </body>
 </html>

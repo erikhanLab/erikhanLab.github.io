@@ -72,6 +72,14 @@
       color: #6b7280;
     }
 
+    .meta {
+      margin-top: 4px;
+      font-size: 0.72em;
+      letter-spacing: 0.08em;
+      color: #9aa3af;
+      font-style: italic;
+    }
+
     /* Archive Sections */
     .year-section {
       margin-bottom: 50px;
@@ -227,6 +235,7 @@
       height: 0.5px;
       background: #dcdcdc;
       margin: 50px 0;
+      max-width: 700px;
     }
 
     .timeline-wrapper {
@@ -271,6 +280,14 @@
       color: #111;
     }
 
+    .year-num.selected::after {
+      content: " †";
+      font-size: 0.8em;
+      color: #9aa3af;
+      letter-spacing: 0;
+    }
+
+
     @media (max-width: 768px) {
       .side-nav {
         display: none;
@@ -278,22 +295,106 @@
     }
 
     .scroll-spacer {
-      height: 1vh;
+      height: 2vh;
     }
 
     .bottom {
       height: 5vh;
     }
+
+    .visual-record {
+      margin: 30px 0;
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      max-width: 720px;
+      gap: 12px;
+      margin-left: -30px;
+    }
+
+    .visual-item.anchor {
+      grid-column: 1 / 3;
+      grid-row: 1 / 3;
+    }
+
+    .visual-item.anchor img {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .visual-item.spain img {
+      max-width: 150%;
+    }
+
+    .visual-item.korea-2024 img {
+      transform: scale(1);
+    }
+
+    .visual-item.korea-2016 img {
+      max-width: 82%;
+      opacity: 0.85;
+    }
+
+
+
+    .visual-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: grayscale(40%);
+    }
+
+    .visual-item.anchor figcaption {
+      font-weight: 500;
+      letter-spacing: 0.14em;
+    }
+
+    .visual-item figcaption {
+      opacity: 0.7;
+    }
+
+    .visual-work {
+      margin: 60px 0;
+    }
+
+    .visual-work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 720px;
+      margin: 0 auto;
+      margin-left: -30px;
+    }
+
+    .visual-work-item img {
+      width: 100%;
+      aspect-ratio: 3 / 4; /* 연필 드로잉에 가장 안정적 */
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+
+    .visual-work-item figcaption {
+      margin-top: 6px;
+      font-size: 0.65em;
+      letter-spacing: 0.14em;
+      opacity: 0.55;
+      text-align: center;
+    }
+
+
   </style>
 </head>
 
 <body>
   <nav class="side-nav">
-  <a href="#y2013" data-year="2013–15"><span></span></a>
-  <a href="#y2016" data-year="2016"><span></span></a>
-  <a href="#y2019" data-year="2019"><span></span></a>
-  <a href="#y2021" data-year="2021"><span></span></a>
-  <a href="#y2023" data-year="2023"><span></span></a>
+  <a data-index="0"><span></span></a>
+  <a data-index="1"><span></span></a>
+  <a data-index="2"><span></span></a>
+  <a data-index="3"><span></span></a>
+  <a data-index="4"><span></span></a>
 </nav>
 
 <div class="page-content">
@@ -308,9 +409,58 @@
 <div class="header">
 <h1>Archive</h1>
 </div>
-<p class="intro">
-  A chronological record of positions in time.
-</p>
+<section class="visual-record" id="visual">
+  <div class="year-label">Visual Record</div>
+
+  <div class="visual-grid">
+
+  <figure class="visual-item anchor">
+    <img src="/assets/japan_2025.jpg" alt="Visual record, 2025">
+    <figcaption><em>2025</em></figcaption>
+  </figure>
+
+  <figure class="visual-item spain">
+    <img src="/assets/spain_2025.jpg" alt="Visual record, 2025">
+    <figcaption><em>2025</em></figcaption>
+  </figure>
+
+  <figure class="visual-item korea-2024">
+    <img src="/assets/korea_2024.jpg" alt="Visual record, 2024">
+    <figcaption><em>2024</em></figcaption>
+  </figure>
+
+  <figure class="visual-item korea-2016">
+    <img src="/assets/korea_2016.jpg" alt="Visual record, 2016">
+    <figcaption><em>2016</em></figcaption>
+  </figure>
+  </div>
+</section>
+
+<section class="visual-work">
+  <div class="year-label">Visual Work</div>
+
+  <div class="visual-work-grid">
+    <figure class="visual-work-item">
+      <img src="/assets/drawing_2025.jpg" alt="Graphite drawing">
+      <figcaption>Silent duet (<em>Chopin</em>)</figcaption>
+    </figure>
+
+    <figure class="visual-work-item">
+      <img src="/assets/drawing_2016.jpg" alt="Graphite drawing">
+      <figcaption>Urban memory</figcaption>
+    </figure>
+
+    <figure class="visual-work-item">
+      <img src="/assets/drawing_2017.jpg" alt="Graphite drawing">
+      <figcaption>Relational form</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="visual-record" id="visual">
+  <div class="year-label">A chronological record</div>
 
 <!-- Right Nav -->
 
@@ -318,7 +468,7 @@
 <div class="timeline-wrapper">
   <div class="timeline">
     <div class="timeline-content">
-
+     
       <!-- Timeline -->
       <section class="year-section" id="y2013">
         <div class="year-row">
@@ -361,14 +511,17 @@
       </section>
 
       <section class="year-section" id="y2020">
-        <div class="year-row">
-          <span class="year-num">2020</span>
-          <span class="year-age">Age 22</span>
+      <div class="year-row">
+        <span class="year-num selected">2020</span>
+        <span class="year-age">Age 22</span>
+      </div>
+      <div class="entry">
+        Military discharge · University admission preparation
+        <div class="meta">
+          – 2nd Fleet Commander Commendation
         </div>
-        <div class="entry">
-          Military discharge · University admission preparation
-        </div>
-      </section>
+      </div>
+    </section>
 
       <section class="year-section" id="y2021">
         <div class="year-row">
@@ -382,14 +535,16 @@
 
       <section class="year-section" id="y2022">
         <div class="year-row">
-          <span class="year-num">2022</span>
+          <span class="year-num selected">2022</span>
           <span class="year-age">Age 24</span>
         </div>
         <div class="entry">
           Design-oriented projects · Decision toward <em>MSc</em>  
+          <div class="meta">
+            – Exploratory residency (Norway)
+          </div>
         </div>
       </section>
-
 
       <section class="year-section" id="y2023">
         <div class="year-row">
@@ -403,21 +558,27 @@
 
       <section class="year-section" id="y2024">
         <div class="year-row">
-          <span class="year-num">2024</span>
+          <span class="year-num selected">2024</span>
           <span class="year-age">Age 26</span>
         </div>
         <div class="entry">
-          Early graduation · Overseas <em>MSc</em> · Independent research
+          Early graduation · UK <em>MSc</em> · Independent research
+          <div class="meta">
+            – Best Paper Award
+          </div>
         </div>
       </section>
 
       <section class="year-section" id="y2025">
         <div class="year-row">
-          <span class="year-num">2025</span>
+          <span class="year-num selected">2025</span>
           <span class="year-age">Age 27</span>
         </div>
         <div class="entry">
           <em>MSc</em> Distinction · Q1 journals · International conferences
+        <div class="meta">
+          – Cover article · Invited researcher (Japan) · Chopin piano recital
+        </div>
         </div>
       </section>
 
@@ -429,49 +590,36 @@
 </section>
 
 <script>
-  const sections = Array.from(document.querySelectorAll('.year-section'));
   const navLinks = Array.from(document.querySelectorAll('.side-nav a'));
+  const totalDots = navLinks.length;
 
-  let sectionTops = [];
+  function updateScrollIndicator() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = scrollTop / docHeight;
 
-  function calculateOffsets() {
-    sectionTops = sections.map(sec => {
-      const rect = sec.getBoundingClientRect();
-      return rect.top + window.scrollY;
-    });
-  }
-
-  function updateActiveDot() {
-    const scrollPos = window.scrollY + window.innerHeight * 0.5;
-
-    let activeIndex = 0;
-
-    for (let i = 0; i < sectionTops.length; i++) {
-      if (scrollPos >= sectionTops[i]) {
-        activeIndex = i;
-      }
-    }
+    const activeIndex = Math.min(
+      totalDots - 1,
+      Math.floor(progress * totalDots)
+    );
 
     navLinks.forEach(l => l.classList.remove('active'));
     navLinks[activeIndex]?.classList.add('active');
   }
 
+  window.addEventListener('scroll', updateScrollIndicator);
   window.addEventListener('load', () => {
-    calculateOffsets();
-    updateActiveDot();
     document.querySelector('.page-content')?.classList.add('loaded');
+    updateScrollIndicator();
   });
-
-  window.addEventListener('resize', calculateOffsets);
-  window.addEventListener('scroll', updateActiveDot);
 </script>
-
 
 <div class="divider"></div>
 
-<section class="external-archives">
-  <div class="year">External Archives</div>
 
+<section class="visual-record" id="visual">
+  <div class="year-label">External Archives</div>
+  <div class="entry" style="margin-top:20px;">
   <div class="entry">
     <strong>
       <a href="https://www.instagram.com/stillline/" target="_blank" rel="noopener">
