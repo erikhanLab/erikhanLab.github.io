@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <header class="site-header">
-  <div class="site-name">SANGSEOK HAN</div>
-</header>
-
   <meta charset="UTF-8">
   <title>Archive | Sangseok Han</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
@@ -206,16 +202,20 @@
       right: 18px;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0,0,0,0.85);
-      color: #fff;
-      font-size: 0.7em;
-      padding: 4px 8px;
-      border-radius: 4px;
-      white-space: nowrap;
+      background: none;
+      color: #6b7280;
+      font-size: 0.5em;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
       opacity: 0;
+      transition: opacity 0.2s ease;
       pointer-events: none;
-      transition: opacity 0.15s ease;
     }
+
+    .side-nav a.active::after {
+      opacity: 1;
+    }
+
 
     .side-nav a:hover::after {
       opacity: 1;
@@ -249,8 +249,8 @@
     .divider {
       height: 0.5px;
       background: #dcdcdc;
-      margin: 50px 0;
-      max-width: 700px;
+      margin: 30px 0;
+      max-width: 600px;
     }
 
     .timeline-wrapper {
@@ -318,29 +318,24 @@
     }
 
     .archive-curated {
-      margin: 80px 0;
+      margin: 30px 0;
     }
 
     .archive-head {
-      max-width: 520px;
-      margin-bottom: 60px;
+      max-width: 700px;
+      margin-bottom: 30px;
     }
 
     .archive-title {
-      font-size: 0.9em;
-      letter-spacing: 0.32em;
+      font-size: 0.85em;
+      letter-spacing: 0.28em;
+      color: #777;
       text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .archive-desc {
-      font-size: 1.05em;
-      line-height: 1.6;
-      margin-bottom: 14px;
+      margin-bottom: 6px;
     }
 
     .archive-note {
-      font-size: 0.85em;
+      font-size: 0.75em;
       color: #9aa3af;
       line-height: 1.6;
     }
@@ -349,48 +344,80 @@
       display: flex;
       gap: 40px;
       align-items: flex-start;
+      margin-bottom: 32px;
     }
 
     .curated-year {
-      font-size: 0.75em;
-      letter-spacing: 0.3em;
+      font-size: 0.72em;
+      letter-spacing: 0.32em;
       color: #9aa3af;
       padding-top: 6px;
+      white-space: nowrap;
     }
 
+    /* ===== TITLE ===== */
     .curated-title {
-      font-size: 1.15em;
+      font-size: 1.05em;
       font-weight: 500;
-      text-decoration: none;
+      letter-spacing: 0.04em;
       color: #111;
     }
 
-    .curated-locale {
-      margin-top: 2px;
-      font-size: 0.68em;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #9aa3af;
+    /* 링크 있는 경우만 인터랙션 */
+    .curated-title.linked {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
     }
 
-    .curated-title:hover {
-      text-decoration: underline;
+    .curated-title.linked:hover {
+      border-bottom-color: #999;
     }
 
-    .curated-sub {
-      margin-top: 6px;
-      font-size: 0.9em;
+    /* 링크 없는 경우 */
+    .curated-title.static {
+      color: #111;
+      cursor: default;
+    }
+
+    /* ===== AFFILIATION + COUNTRY ===== */
+    .curated-affiliation {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .curated-org {
+      font-size: 0.88em;
       font-weight: 500;
       color: #555;
     }
 
+    .curated-locale {
+      font-size: 0.56em;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #9aa3af;
+    }
+
+    /* ===== DESCRIPTION ===== */
+    .curated-desc {
+      margin-top: 8px;
+      font-size: 0.9em;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    /* ===== META / ROLES ===== */
     .curated-meta {
       margin-top: 10px;
-      font-size: 0.75em;
-      letter-spacing: 0.12em;
+      font-size: 0.72em;
+      letter-spacing: 0.14em;
       color: #9aa3af;
       font-style: italic;
     }
+
 
 
     .visual-record {
@@ -498,13 +525,17 @@
 </head>
 
 <body>
+  <header class="site-header">
+  <div class="site-name">SANGSEOK HAN</div>
+</header>
   <nav class="side-nav">
-  <a data-index="0"><span></span></a>
-  <a data-index="1"><span></span></a>
-  <a data-index="2"><span></span></a>
-  <a data-index="3"><span></span></a>
-  <a data-index="4"><span></span></a>
-</nav>
+    <a data-target="section-visual-record" data-label="Visual Record"><span></span></a>
+    <a data-target="section-visual-work" data-label="Visual Work"><span></span></a>
+    <a data-target="section-curated" data-label="Curated Record"><span></span></a>
+    <a data-target="section-timeline" data-label="A Chronological Record"><span></span></a>
+    <a data-target="section-external" data-label="External Archives"><span></span></a>
+  </nav>
+
 
 <div class="page-content">
 <div class="nav">
@@ -518,7 +549,7 @@
 <div class="header">
 <h1>Archive</h1>
 </div>
-<section class="visual-record" id="visual">
+<section class="visual-record" id="section-visual-record">
   <div class="year-label">Visual Record</div>
 
   <div class="visual-grid">
@@ -550,8 +581,10 @@
 
   </div>
 </section>
+<div class="scroll-spacer"></div>
+<div class="divider"></div>
 
-<section class="visual-work">
+<section class="visual-work" id="section-visual-work">
   <div class="year-label">Visual Work</div>
 
   <div class="visual-work-grid">
@@ -571,47 +604,69 @@
     </figure>
   </div>
 </section>
+<div class="scroll-spacer"></div>
 
 <div class="divider"></div> 
 
-<section class="archive-curated">
+<section class="archive-curated" id="section-curated">
   <div class="archive-head">
     <div class="archive-title">Curated Record</div>
-    <div class="archive-desc">
-      A curated record of externally validated milestones.<br>
-      This archive remains intentionally selective.
-    </div>
     <div class="archive-note">
-      Entries appear only when work is formally recognized,
-      featured, or recorded by external systems.
+      <em>Curated by recognition, not self-reporting</em>
     </div>
   </div>
 
+  <!-- ENTRY 1: PEER REVIEWER -->
   <div class="curated-entry">
-  <div class="curated-year">2025</div>
-  <div class="curated-body">
-    <a href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/"
-       target="_blank" rel="noopener" class="curated-title">
-      University of Strathclyde
-    </a>
+    <div class="curated-year">2025</div>
+    <div class="curated-body">
+      <div class="curated-title static">
+        Peer reviewer
+      </div>
 
-    <div class="curated-locale">the United Kingdom</div>
+      <div class="curated-affiliation">
+        <div class="curated-org"><em>Physics of Fluids · Ocean Engineering</em></div>
+      </div>
 
-    <div class="curated-sub">
-      Official research news feature
-    </div>
+      <div class="curated-desc">
+        Peer review of manuscripts in fluid mechanics and ocean engineering.
+      </div>
 
-    <div class="curated-meta">
-      First author · Journal cover article
+      <div class="curated-meta">
+        Invited peer reviewer
+      </div>
     </div>
   </div>
-</div>
+
+  <!-- ENTRY 2: STRATHCLYDE FEATURE -->
+  <div class="curated-entry">
+    <div class="curated-year">2025</div>
+    <div class="curated-body">
+      <a href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/"
+         target="_blank" rel="noopener"
+         class="curated-title linked">
+        Official University Research News
+      </a>
+
+      <div class="curated-affiliation">
+        <div class="curated-org">University of Strathclyde</div>
+        <div class="curated-locale">UNITED KINGDOM</div>
+      </div>
+      <div class="curated-desc">
+        Official feature on ship resistance and towing tank temperature effects.
+      </div>
+      <div class="curated-meta">
+        First author · Journal cover article
+      </div>
+    </div>
+  </div>
 </section>
 
 
 
+<div class="divider"></div> 
 
-<section class="visual-record" id="visual">
+<section class="visual-record" id="section-timeline">
   <div class="year-label">A chronological record</div>
 
 <!-- Right Nav -->
@@ -737,40 +792,87 @@
     </div>
   </div>
 </div>
-<div class="scroll-spacer"></div>
 
 </section>
 
 
 <script>
-  const navLinks = Array.from(document.querySelectorAll('.side-nav a'));
-  const totalDots = navLinks.length;
+  window.addEventListener('load', () => {
 
-  function updateScrollIndicator() {
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const progress = scrollTop / docHeight;
+    const sections = [
+      'section-visual-record',
+      'section-visual-work',
+      'section-curated',
+      'section-timeline',
+      'section-external'
+    ];
 
-    const activeIndex = Math.min(
-      totalDots - 1,
-      Math.floor(progress * totalDots)
+    const navLinks = document.querySelectorAll('.side-nav a');
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+
+          const index = sections.indexOf(entry.target.id);
+          if (index === -1) return;
+
+          navLinks.forEach(l => l.classList.remove('active'));
+          navLinks[index].classList.add('active');
+        });
+      },
+      {
+        root: null,
+        threshold: 0.4,
+        rootMargin: '0px 0px -30% 0px'
+      }
     );
 
-    navLinks.forEach(l => l.classList.remove('active'));
-    navLinks[activeIndex]?.classList.add('active');
-  }
+    // 🔹 DOM 완성 이후에 observe
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
 
-  window.addEventListener('scroll', updateScrollIndicator);
-  window.addEventListener('load', () => {
+    // 🔹 페이지 맨 아래 도달 시 마지막 dot 강제 활성화
+    window.addEventListener('scroll', () => {
+      const scrollBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 4;
+
+      if (scrollBottom) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        navLinks[navLinks.length - 1].classList.add('active');
+      }
+    });
+
+    // fade-in
     document.querySelector('.page-content')?.classList.add('loaded');
-    updateScrollIndicator();
+
+    // side nav click
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const targetId = link.getAttribute('data-target');
+        const targetEl = document.getElementById(targetId);
+        if (!targetEl) return;
+
+        const yOffset = -80;
+        const y =
+          targetEl.getBoundingClientRect().top +
+          window.pageYOffset +
+          yOffset;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+    });
   });
 </script>
+
 
 <div class="divider"></div>
 
 
-<section class="visual-record" id="visual">
+<section class="visual-record" id="section-external">
   <div class="year-label">External Archives</div>
   <div class="entry" style="margin-top:20px;">
   <div class="entry">
@@ -796,6 +898,7 @@
   </div>
   <!-- IntersectionObserver용 여백 -->
 <div class="scroll-spacer"></div>
+
 </section>
 </div>
 </body>
