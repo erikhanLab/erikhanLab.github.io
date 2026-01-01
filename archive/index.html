@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <header class="site-header">
+  <div class="site-name">SANGSEOK HAN</div>
+</header>
+
   <meta charset="UTF-8">
   <title>Archive | Sangseok Han</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
@@ -11,6 +15,17 @@
       --accent-dark: #0B1F3A;
       --bg-light: #F7F9FC;
       --text-muted: #4A4A4A;
+    }
+    .site-header {
+      margin: 60px 0 20px;
+    }
+
+    .site-name {
+      font-family: Georgia, serif;
+      font-size: 1.9em;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: #111;
     }
 
     body {
@@ -316,25 +331,26 @@
     }
 
     .visual-item.anchor {
-      grid-column: 1 / 17;
+      grid-column: 1 / 18;
       grid-row: 1 / 4;
     }
 
     .visual-item.spain {
-      grid-column: 18 / 32;
+      grid-column: 19 / 32;
       grid-row: 1 / 4;
-      margin-left: 20px;
+      margin-left: -20px;
     }
 
     .visual-item.korea-2024 {
       grid-column: 1 / 14;
       grid-row: 4 / 6;
+      opacity: 0.9;
     }
 
     .visual-item.korea-2018 {
-      grid-column: 15 / 25;
+      grid-column: 14 / 25;
       grid-row: 4 / 6;
-      opacity: 0.8;
+      opacity: 0.85;
       margin-left: 40px;
           }
 
@@ -342,7 +358,7 @@
       grid-column: 25 / 32;
       grid-row: 4 / 6;
       margin-left: -10px;
-      opacity: 0.7;
+      opacity: 0.8;
           }
 
     .visual-item img {
@@ -358,8 +374,17 @@
     }
 
     .visual-item figcaption {
-      opacity: 0.7;
+      margin-top: 6px;
+      font-size: 11px;          /* ← 고정 */
+      letter-spacing: 0.22em;
+      opacity: 0.55;
+      font-style: italic;
+      line-height: 1;   
+      display: block;
+      text-align: left;
+      white-space: nowrap;        /* ← 중요 */
     }
+
 
     .visual-work {
       margin: 40px 0;
@@ -383,12 +408,15 @@
 
     .visual-work-item figcaption {
       margin-top: 6px;
-      font-size: 0.65em;
-      letter-spacing: 0.14em;
+      font-size: 11px;          /* ← 고정 */
+      letter-spacing: 0.22em;
       opacity: 0.55;
-      text-align: center;
+      font-style: italic;
+      line-height: 1;   
+      display: block;
+      text-align: left;
+      white-space: nowrap;  
     }
-
 
   </style>
 </head>
