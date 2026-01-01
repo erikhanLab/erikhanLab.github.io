@@ -317,6 +317,82 @@
       height: 5vh;
     }
 
+    .archive-curated {
+      margin: 80px 0;
+    }
+
+    .archive-head {
+      max-width: 520px;
+      margin-bottom: 60px;
+    }
+
+    .archive-title {
+      font-size: 0.9em;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .archive-desc {
+      font-size: 1.05em;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .archive-note {
+      font-size: 0.85em;
+      color: #9aa3af;
+      line-height: 1.6;
+    }
+
+    .curated-entry {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .curated-year {
+      font-size: 0.75em;
+      letter-spacing: 0.3em;
+      color: #9aa3af;
+      padding-top: 6px;
+    }
+
+    .curated-title {
+      font-size: 1.15em;
+      font-weight: 500;
+      text-decoration: none;
+      color: #111;
+    }
+
+    .curated-locale {
+      margin-top: 2px;
+      font-size: 0.68em;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #9aa3af;
+    }
+
+    .curated-title:hover {
+      text-decoration: underline;
+    }
+
+    .curated-sub {
+      margin-top: 6px;
+      font-size: 0.9em;
+      font-weight: 500;
+      color: #555;
+    }
+
+    .curated-meta {
+      margin-top: 10px;
+      font-size: 0.75em;
+      letter-spacing: 0.12em;
+      color: #9aa3af;
+      font-style: italic;
+    }
+
+
     .visual-record {
       margin: 30px 0;
     }
@@ -448,17 +524,17 @@
   <div class="visual-grid">
 
   <figure class="visual-item anchor">
-    <img src="/assets/japan_2025.jpg" alt="Visual record, 2025">
+    <img src="/assets/Japan_2025.jpg" alt="Visual record, 2025">
     <figcaption><em>2025</em></figcaption>
   </figure>
 
   <figure class="visual-item spain">
-    <img src="/assets/spain_2025.jpg" alt="Visual record, 2025">
+    <img src="/assets/Spain_2025.jpg" alt="Visual record, 2025">
     <figcaption><em>2025</em></figcaption>
   </figure>
 
   <figure class="visual-item korea-2024">
-    <img src="/assets/korea_2024.jpg" alt="Visual record, 2024">
+    <img src="/assets/Korea_2024.jpg" alt="Visual record, 2024">
     <figcaption><em>2024</em></figcaption>
   </figure>
 
@@ -480,12 +556,12 @@
 
   <div class="visual-work-grid">
     <figure class="visual-work-item">
-      <img src="/assets/drawing_2025.jpg" alt="Graphite drawing">
+      <img src="/assets/Drawing_2025.jpg" alt="Graphite drawing">
       <figcaption>Silent duet (<em>Chopin</em>)</figcaption>
     </figure>
 
     <figure class="visual-work-item">
-      <img src="/assets/drawing_2016.jpg" alt="Graphite drawing">
+      <img src="/assets/Drawing_2016.jpg" alt="Graphite drawing">
       <figcaption>Urban memory</figcaption>
     </figure>
 
@@ -496,7 +572,44 @@
   </div>
 </section>
 
-<div class="divider"></div>
+<div class="divider"></div> 
+
+<section class="archive-curated">
+  <div class="archive-head">
+    <div class="archive-title">Curated Record</div>
+    <div class="archive-desc">
+      A curated record of externally validated milestones.<br>
+      This archive remains intentionally selective.
+    </div>
+    <div class="archive-note">
+      Entries appear only when work is formally recognized,
+      featured, or recorded by external systems.
+    </div>
+  </div>
+
+  <div class="curated-entry">
+  <div class="curated-year">2025</div>
+  <div class="curated-body">
+    <a href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/"
+       target="_blank" rel="noopener" class="curated-title">
+      University of Strathclyde
+    </a>
+
+    <div class="curated-locale">the United Kingdom</div>
+
+    <div class="curated-sub">
+      Official research news feature
+    </div>
+
+    <div class="curated-meta">
+      First author · Journal cover article
+    </div>
+  </div>
+</div>
+</section>
+
+
+
 
 <section class="visual-record" id="visual">
   <div class="year-label">A chronological record</div>
@@ -627,6 +740,7 @@
 <div class="scroll-spacer"></div>
 
 </section>
+
 
 <script>
   const navLinks = Array.from(document.querySelectorAll('.side-nav a'));
