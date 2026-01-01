@@ -65,9 +65,11 @@
     }
 
     .intro {
-      font-size: 0.95em;
-      color: var(--text-muted);
-      margin-bottom: 36px;
+      margin-top: 28px;
+      margin-bottom: 72px;
+      font-size: 0.78em;
+      letter-spacing: 0.22em;
+      color: #6b7280;
     }
 
     /* Archive Sections */
@@ -78,14 +80,14 @@
     .year-row {
       display: flex;
       align-items: baseline;
-      gap: 14px;
-      margin-bottom: 6px;
+      gap: 16px;
+      margin-bottom: 8px;
     }
 
     .year-num {
-      font-size: 0.95em;
+      font-size: 0.85em;
       font-weight: 500;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.32em;
       color: #0B1F3A;
     }
 
@@ -99,10 +101,15 @@
       font-size: 1.02em;
       color: #111;
       line-height: 1.65;
-      margin-left: 2px;
+      white-space: nowrap;        /* 줄바꿈 금지 */
+      text-overflow: ellipsis;
     }
-
-
+    @media (max-width: 640px) {
+      .entry {
+        white-space: normal;
+      }
+    }
+    
     .entry span {
       color: var(--text-muted);
     }
@@ -213,7 +220,7 @@
       top: 0;
       bottom: 0;
       width: 1px;
-      background: #e5e7eb;
+      background: #eceff4;
     }
 
     .divider {
@@ -302,8 +309,7 @@
 <h1>Archive</h1>
 </div>
 <p class="intro">
-  A compressed record of trajectory.<br>
-  No narrative. No interpretation. Only position in time.
+  A chronological record of positions in time.
 </p>
 
 <!-- Right Nav -->
@@ -320,7 +326,7 @@
           <span class="year-age">Age 15–17</span>
         </div>
         <div class="entry">
-          High school · Bottom 5–10% · Physics interest
+          Secondary education · Academically underperformance
         </div>
       </section>
 
@@ -344,6 +350,16 @@
         </div>
       </section>
 
+      <section class="year-section" id="y2020">
+        <div class="year-row">
+          <span class="year-num">2020</span>
+          <span class="year-age">Age 22</span>
+        </div>
+        <div class="entry">
+          Military discharge · University admission preparation
+        </div>
+      </section>
+
       <section class="year-section" id="y2021">
         <div class="year-row">
           <span class="year-num">2021</span>
@@ -353,6 +369,17 @@
           Inha University · Engineering foundations
         </div>
       </section>
+
+      <section class="year-section" id="y2022">
+        <div class="year-row">
+          <span class="year-num">2022</span>
+          <span class="year-age">Age 24</span>
+        </div>
+        <div class="entry">
+          Overseas <em>MSc</em> preparation · Project-based design 
+        </div>
+      </section>
+
 
       <section class="year-section" id="y2023">
         <div class="year-row">
@@ -370,7 +397,7 @@
           <span class="year-age">Age 26</span>
         </div>
         <div class="entry">
-          Graduate early · MSc abroad · Independent research
+          Early graduation · Overseas <em>MSc</em> · Independent research
         </div>
       </section>
 
@@ -380,7 +407,7 @@
           <span class="year-age">Age 27</span>
         </div>
         <div class="entry">
-          MSc Distinction · Q1 journals · Conferences
+          <em>MSc</em> Distinction · Q1 journals · Conferences
         </div>
       </section>
 

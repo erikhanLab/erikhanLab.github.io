@@ -31,7 +31,7 @@
     /* ===== Header ===== */
     .header {
       max-width: 960px;
-      margin-bottom: 96px;
+      margin-bottom: 40px;
     }
 
     /* ===== Header layout with photo ===== */
@@ -87,9 +87,8 @@
       line-height: 1.5;
     }
 
-
       .keywords {
-      margin-top: 28px;
+      margin-top: 20px;
       font-size: 0.7em;
       letter-spacing: 0.28em;
       color: #94a3b8;
@@ -99,7 +98,7 @@
     .nav {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 36px 48px;
+      gap: 24px 40px;
     }
 
     .nav a:last-child {
@@ -133,13 +132,18 @@
     /* ===== Footer ===== */
     footer {
       margin-top: 120px;
+      padding-top: 24px;
+      border-top: 1px solid #e5e7eb;
       font-size: 0.8em;
-      color: #64748b;
-      border-top: 1px solid var(--line);
-      padding-top: 28px;
+      color: #94a3b8;
+      letter-spacing: 0.04em;
     }
 
+
     @media (max-width: 768px) {
+      footer {
+        text-align: center;
+      }
       body {
         padding: 100px 20px 80px;
       }
@@ -148,6 +152,36 @@
         font-size: 2.4em;
       }
     }
+
+    .email-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .email-link:hover {
+      color: var(--ink);
+      border-bottom-color: #cbd5e1;
+    }
+
+    .footer-contact {
+      margin-bottom: 18px;
+    }
+
+    .footer-label {
+      letter-spacing: 0.18em;
+      font-size: 0.75em;
+      color: #cbd5e1;
+    }
+
+    .footer-meta {
+      font-size: 0.7em;
+      color: #cbd5e1;
+      letter-spacing: 0.06em;
+    }
+
+
   </style>
 </head>
 
@@ -177,7 +211,7 @@
 </header>
 
   <nav class="nav">
-    <a href="/profile/">
+    <a href="/Profile/">
       <span>01</span>
       Profile
     </a>
@@ -200,8 +234,18 @@
   </nav>
 
   <footer>
-    erikhan.nor@gmail.com
-  </footer>
+  <div class="footer-contact">
+    <span class="footer-label">CONTACT</span><br>
+    <a href="mailto:erikhan.nor@gmail.com" class="email-link">
+      erikhan.nor@gmail.com
+    </a>
+  </div>
+
+  <div class="footer-meta">
+    © Sangseok Han · Last updated: Dec 2025
+  </div>
+</footer>
+
 
 </body>
 </html>
