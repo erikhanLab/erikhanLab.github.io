@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Archive | Sangseok Han</title>
@@ -33,6 +34,67 @@
       line-height: 1.75;
       background: var(--bg-light);
     }
+
+    .zoom-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(247, 249, 252, 0.96);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .zoom-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .zoom-overlay-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .zoom-meta {
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .zoom-meta-line {
+      margin-top: 4px;
+      font-size: 0.6em;
+      letter-spacing: 0.12em;
+      opacity: 0.45;
+    }
+
+
+    .zoom-title {
+      font-size: 0.75em;
+      letter-spacing: 0.18em;
+      opacity: 0.7;
+    }
+
+    .zoom-desc {
+      margin-top: 6px;
+      font-size: 0.68em;
+      line-height: 1.4;
+      opacity: 0.5;
+    }
+
+
+
+    .zoomable-drawing {
+      transition: filter 0.18s ease;
+    }
+
+    .zoomable-drawing:hover {
+      filter: grayscale(100%) brightness(0.9);
+    }
+
 
     /* Top Navigation */
     .nav {
@@ -249,7 +311,7 @@
     .divider {
       height: 0.5px;
       background: #dcdcdc;
-      margin: 30px 0;
+      margin: 40px 0;
       max-width: 600px;
     }
 
@@ -589,23 +651,41 @@
 
   <div class="visual-work-grid">
     <figure class="visual-work-item">
-      <img src="/assets/Drawing_2025.jpg" alt="Graphite drawing">
+      <img
+      src="/assets/Drawing_2025.jpg"
+      class="zoomable-drawing"
+      data-title="Silent duet (Chopin)"
+      data-meta="Graphite on paper · 2025"
+      data-desc="A graphite drawing inspired by the quiet intimacy and restarained emotion of a Chopin waltz."
+      alt="Graphite drawing"
+    >
       <figcaption>Silent duet (<em>Chopin</em>)</figcaption>
     </figure>
 
     <figure class="visual-work-item">
-      <img src="/assets/Drawing_2016.jpg" alt="Graphite drawing">
+      <img
+      src="/assets/Drawing_2016.jpg"
+      class="zoomable-drawing"
+      data-title="Urban memory"
+      data-meta="Graphite on paper · 2016"
+      data-desc="A graphite sketch of London's landmarks, where the city's memory lingers as everyday life passes by."
+      alt="Graphite drawing">
       <figcaption>Urban memory</figcaption>
     </figure>
 
     <figure class="visual-work-item">
-      <img src="/assets/CFD_2025.jpg" alt="Graphite drawing">
+      <img
+      src="/assets/CFD_2025.jpg"
+      class="zoomable-drawing"
+      data-title="Relational flow"
+      data-meta="CFD visualisation · 2025"
+      data-desc="A CFD visualisation of layered flow along a ship's hull, where thickness reflects the interplay between form and motion."
+      alt="Graphite drawing">
       <figcaption>Relational flow</figcaption>
     </figure>
   </div>
 </section>
 <div class="scroll-spacer"></div>
-
 <div class="divider"></div> 
 
 <section class="archive-curated" id="section-curated">
@@ -633,7 +713,7 @@
       </div>
 
       <div class="curated-meta">
-        Invited peer reviewer
+        Invited peer reviewer · Certificate of excellence in reviewing
       </div>
     </div>
   </div>
@@ -663,7 +743,7 @@
 </section>
 
 
-
+<div class="scroll-spacer"></div>
 <div class="divider"></div> 
 
 <section class="visual-record" id="section-timeline">
@@ -823,7 +903,7 @@
       },
       {
         root: null,
-        threshold: 0.4,
+        threshold: 0.35,
         rootMargin: '0px 0px -30% 0px'
       }
     );
@@ -868,9 +948,56 @@
   });
 </script>
 
+<script>
+  document.querySelectorAll('.zoomable-drawing').forEach(img => {
+    img.addEventListener('click', () => {
+      const overlay = document.createElement('div');
+      overlay.className = 'zoom-overlay';
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'zoom-overlay-content';
+
+      const clone = img.cloneNode();
+      clone.style.maxWidth = '60%';
+      clone.style.maxHeight = '60%';
+
+      const meta = document.createElement('div');
+      meta.className = 'zoom-meta';
+
+      const title = document.createElement('div');
+      title.className = 'zoom-title';
+      title.textContent = img.dataset.title || '';
+
+      const metaLine = document.createElement('div');
+      metaLine.className = 'zoom-meta-line';
+      metaLine.textContent = img.dataset.meta || '';
+
+      const desc = document.createElement('div');
+      desc.className = 'zoom-desc';
+      desc.textContent = img.dataset.desc || '';
+
+      meta.appendChild(title);
+      meta.appendChild(metaLine);   // ← 여기
+      meta.appendChild(desc);
+
+
+      wrapper.appendChild(clone);
+      wrapper.appendChild(meta);
+      overlay.appendChild(wrapper);
+
+      document.body.appendChild(overlay);
+      requestAnimationFrame(() => overlay.classList.add('active'));
+
+      overlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
+        setTimeout(() => overlay.remove(), 200);
+      });
+    });
+  });
+</script>
+
 
 <div class="divider"></div>
-
 
 <section class="visual-record" id="section-external">
   <div class="year-label">External Archives</div>
@@ -896,10 +1023,8 @@
       — research · travel · art · long-form personal record
     </span>
   </div>
-  <!-- IntersectionObserver용 여백 -->
-<div class="scroll-spacer"></div>
-
 </section>
+<div class="scroll-spacer"></div>
 </div>
 </body>
 </html>
