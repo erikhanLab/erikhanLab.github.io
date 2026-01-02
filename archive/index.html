@@ -584,6 +584,59 @@
       white-space: nowrap;  
     }
 
+
+    .records {
+      margin: 40px 0 40px;
+      max-width: 420px;
+    }
+
+    .records-label {
+      font-size: 0.75em;
+      letter-spacing: 0.34em;
+      opacity: 0.45;
+      margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+
+    .record-text {
+      text-align: left;
+      margin-top: 6px;
+      color: #666;
+    }
+
+    .record-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 34px;
+    }
+
+
+    .record-item img {
+      width: 70px;
+      max-width: 100px;
+      opacity: 0.5;
+      filter: grayscale(80%);
+    }
+
+    .record-year {
+      font-size: 0.6em;
+      letter-spacing: 0.36em;
+      opacity: 0.6;
+    }
+
+    .record-meta {
+      margin-top: 6px;
+      font-size: 0.9em;
+      letter-spacing: 0.1em;
+      font-style: italic;
+      opacity: 0.85;
+    }
+
+
+
+
+
   </style>
 </head>
 
@@ -863,7 +916,7 @@
           <span class="year-age">Age 27</span>
         </div>
         <div class="entry">
-          <em>MSc</em> Distinction · Q1 journals · International conferences
+          <em>MSc</em> Distinction · International conferences
         <div class="meta">
           – Cover article · Invited researcher (Japan) · Chopin piano recital
         </div>
@@ -1000,9 +1053,37 @@
   });
 </script>
 
-
 <div class="divider"></div>
 
+<section class="records">
+  <div class="records-label">Records</div>
+
+  <div class="record-item">
+    <img src="/assets/navy_2017.jpg" alt="">
+    <div class="record-text">
+      <div class="record-year">Navy, 2017</div>
+      <div class="record-meta">Reframing</div>
+    </div>
+  </div>
+
+  <div class="record-item">
+    <img src="/assets/inha_2023.jpg" alt="">
+    <div class="record-text">
+      <div class="record-year">Inha, 2023</div>
+      <div class="record-meta">Expansion</div>
+    </div>
+  </div>
+
+  <div class="record-item">
+    <img src="/assets/glasgow_2025.jpg" alt="">
+    <div class="record-text">
+      <div class="record-year">Strathclyde, 2025</div>
+      <div class="record-meta">Conversation</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div> 
 <section class="visual-record" id="section-external">
   <div class="year-label">External Archives</div>
   <div class="entry" style="margin-top:20px;">
