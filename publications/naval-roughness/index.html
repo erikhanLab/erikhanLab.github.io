@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Temperature-induced errors in ITTC model-ship extrapolation</title>
+<title>Resistance and speed penalty of a naval ship with hull roughness</title>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -232,19 +232,20 @@ h1 {
   ← <a href="/publications/">Back to Publications</a>
 </div>
 
-<h1>Temperature-induced errors in ITTC model-ship extrapolation</h1>
+<h1>Resistance and speed penalty of a naval ship with hull roughness</h1>
 
 <div class="meta">
-  <em>Journal of Marine Science and Engineering</em> (2025)
+  <em>Ocean Engineering</em> (2024)
 </div>
 
 <div class="authors">
-  <strong>Sang-seok Han</strong><sup>1, 2</sup>,
-  Saishuai Dai<sup>2</sup>,
+  Woo-seok Choi<sup>1</sup>,
+  Gyeong-seo Min<sup>1</sup>,
+  <strong>Sang-seok Han</strong><sup>1</sup>,
+  Hae-chan Yun<sup>1</sup>,<br>
   Momchil Terziev<sup>2</sup>,
-  Daejeong Kim<sup>3</sup>,<br>
-  Tahsin Tezdogan<sup>4</sup>,
-  Doojin Jung<sup>5</sup>,
+  Saishuai Dai<sup>2</sup>,
+  Daejeong Kim<sup>3</sup>,
   Soonseok Song<sup>1 *</sup>
 </div>
 
@@ -255,47 +256,34 @@ Department of Naval Architecture & Ocean Engineering, Inha University, Republic 
 Department of Naval Architecture, Ocean and Marine Engineering, University of Strathclyde, the United Kingdom</div>
   <div><sup>3</sup> 
 Division of Navigation Convergence Studies, Korea Maritime & Ocean University, Republic of Korea</div>
-  <div><sup>4</sup> 
-Department of Civil, Maritime and Environmental Engineering, University of Southampton, the United Kingdom</div>
-  <div><sup>5</sup> 
-Ship and Ocean Research, Hanwha Ocean, Republic of Korea</div> 
 </div>
 
 <div class="abstract">
   <h2>Abstract</h2>
   <p>
-    This study addresses the question: “Does the towing tank water temperature affect the result of model-ship extrapolation?” 
-    While it is well-established that temperature variations affect Reynolds numbers and consequently frictional and viscous resistance, 
-    this study examines whether the ITTC 1978 extrapolation method properly compensates for these effects. 
+    Hull roughness, attributed to factors such as corrosion, the degradation of marine coatings, and, notably,
+  biofouling colonisation, leads to increased fuel consumption, thus entailing significant environmental and
+  economic penalties. While this issue on commercial ships is well documented in recent studies, the specific
+  impact on the speed of warships has received limited attention. 
   </p>
   <p>
-    Although current procedures 
-    consider temperature indirectly through the Reynolds number, they assume that the form factor depends solely on the Froude number 
-    and is insensitive to viscosity changes. Our analysis reveals that the form factor is also temperature-sensitive, indicating a fundamental 
-    limitation in the conventional approach. This sensitivity arises from the limitations of the ITTC 1957 friction curve and the method’s neglect of 
-    temperature-induced variations in the form factor. 
+    To fill this gap, this research quantifies the
+  resistance and power penalties, as well as the speed reduction under various fouling scenarios, and explores
+  the resultant changes in flow characteristics around the hull. For this purpose, full-scale simulations of a
+  naval ship, specifically the DTMB 5415, utilise the unsteady Reynolds Averaged Navier-Stokes (URANS)
+  method. A modified wall function model was incorporated into the numerical model to accurately simulate
+  the effects of surface roughness. 
   </p>
-  <p>
-    To quantify the effect of temperature, model-scale CFD simulations were conducted for two ship models 
-    (KCS and KVLCC2) at different water temperatures using the ITTC 1978 procedure with Prohaska’s method. The results show that the ship-scale 
-    total resistance coefficient (<em>C<span class="sub">T</span></em>) can vary by up to 2.8% depending on the water temperature and friction line selection. 
-    This demonstrates that the ITTC 1978 performance prediction method fails to adequately compensate for the temperature-induced changes in resistance, which leads to systematic errors in the extrapolated results.
-  </p>
-</div>
+  </div>
 
 <div class="pub-meta">
-  Published in <em>Journal of Marine Science and Engineering</em> (2025, Q2, IF 2.8)<br>
+  Published in <em>Ocean Engineering</em> (2024, Q1, IF 4.5)<br>
   DOI: <strong>
-    <a href="https://doi.org/10.3390/jmse13071203" target="_blank">
-      10.3390/jmse13071203
+    <a href="https://doi.org/10.1016/j.oceaneng.2024.119058" target="_blank">
+      10.1016/j.oceaneng.2024.119058
     </a>
   </strong><br>
-  Open Access (MDPI)<br>
-  <span style="font-style: italic;">
-    Research highlight featured by
-    <a href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/" target="_blank">
-      University of Strathclyde
-    </a>
+  Open Access (Elsevier)<br>
   </span>
 </div>
 
@@ -307,41 +295,37 @@ Ship and Ocean Research, Hanwha Ocean, Republic of Korea</div>
 
 
 <div class="figure">
-  <img src="/assets/Temperature_Abstract.svg" alt="Figure 1">
+  <img src="/assets/Naval_Abstract.svg" alt="Figure 1">
   <div class="caption">
-    <em><strong>Figure 1</strong>. Schematic illustration of the research methodology.</em>
+    <em><strong>Figure 1</strong>. Diagram illustrating the flow of research.</em>
   </div>
     <div class="figure-note">
-  This graphical abstract summarises the methodological framework used to assess how
-  towing tank water temperature influences ship-scale resistance predictions through
-  the ITTC 1978 extrapolation procedure.
+      This graphical abstract summarises the numerical framework used to quantify resistance, 
+      power, and speed penalties induced by hull roughness under various fouling conditions.
 </div>
 
 </div>
 
 <div class="figure">
-  <img src="/assets/Temperature_Wave.svg" alt="Figure 2">
+  <img src="/assets/Naval_Friction.svg" alt="Figure 2">
   <div class="caption">
-    <em><strong>Figure 2</strong>. Wave patterns around KCS hulls at low (5 °C, top) and high (30 °C, bottom) temperature.</em>
+    <em><strong>Figure 2</strong>. Distribution of local skin friction coefficient for smooth and small calcareous fouling conditions.</em>
   </div>
     <div class="figure-note">
-  Wave patterns at 5 °C and 30 °C exhibit nearly identical Kelvin wakes, indicating that 
-  the temperature-induced variation in extrapolated full-scale resistance originates from 
-  limitations of the ITTC friction curve rather than physical changes in wave-making resistance.
+  The presence of small calcareous fouling leads to a pronounced increase in the local skin friction coefficient 
+  over the hull surface. This behaviour highlights the critical role of roughness-induced turbulence in driving resistance penalties.
 </div>
 
 </div>
 
 <div class="figure">
-  <img src="/assets/Temperature_Result.svg" alt="Figure 3">
+  <img src="/assets/Naval_Result.svg" alt="Figure 3">
   <div class="caption">
-    <em><strong>Figure 3</strong>. Temperature sensitivity of extrapolation methods under varying towing tank temperature conditions (KVLCC2).</em>
+    <em><strong>Figure 3</strong>. Total resistance coefficient of DTMB 5415 with different hull conditions at full-scale.</em>
   </div>
     <div class="figure-note">
-  Extrapolated full-scale <em>C<span class="sub">T</span></em> vary by up to ~3% with towing tank temperature when using the ITTC friction curve, 
-  whereas CFD-derived (“new”) friction formulations show negligible temperature sensitivity, 
-  indicating that the observed variation originates from limitations in the ITTC-based friction resistance modelling.
-</div>
+  Hull fouling leads to a systematic increase in resistance, with heavier fouling exhibiting progressively larger penalties compared to the smooth hull.
+  </div>
 
 <div class="footer">
   ← Back to <a href="/publications/">Publications</a>

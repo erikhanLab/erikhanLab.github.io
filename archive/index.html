@@ -186,12 +186,84 @@
       white-space: nowrap;        /* 줄바꿈 금지 */
       text-overflow: ellipsis;
     }
-    @media (max-width: 640px) {
+
+    @media (max-width: 768px) {
+
+      /* ===== GLOBAL ===== */
+      body {
+        margin: 24px auto;
+        padding: 0 16px;
+        line-height: 1.65;
+      }
+
+      /* ===== SIDE NAV ===== */
+      .side-nav {
+        display: none;
+      }
+
+      /* ===== ENTRY / TIMELINE ===== */
       .entry {
         white-space: normal;
       }
+
+      .timeline {
+        padding-left: 36px;
+      }
+
+      .timeline::before {
+        left: 12px;
+      }
+
+      .year-section::before {
+        left: -12px;
+      }
+
+      /* ===== VISUAL GRIDS ===== */
+      .visual-grid,
+      .visual-work-grid {
+        margin-left: 0;
+        max-width: 100%;
+      }
+
+      .visual-work-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .visual-work-item figcaption {
+        white-space: normal;
+      }
+
+      /* ===== RECORDS ===== */
+      .records {
+        margin: 32px 0;
+        max-width: 100%;
+      }
+
+      .record-item {
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .record-item img {
+        width: 56px;
+      }
+
+      /* ===== ZOOM OVERLAY ===== */
+      .zoom-overlay-content {
+        width: 90%;
+        max-width: 360px;
+      }
+
+      .zoom-title {
+        font-size: 0.7em;
+      }
+
+      .zoom-desc {
+        font-size: 0.65em;
+      }
     }
-    
+       
     .entry span {
       color: var(--text-muted);
     }
@@ -283,12 +355,7 @@
     .side-nav a:hover::after {
       opacity: 1;
     }
-
-    @media (max-width: 768px) {
-      .side-nav {
-        display: none;
-      }
-    }
+    
     #academic-activity {
       min-height: 20vh;
     }
@@ -364,14 +431,7 @@
       color: #9aa3af;
       letter-spacing: 0;
     }
-
-
-    @media (max-width: 768px) {
-      .side-nav {
-        display: none;
-      }
-    }
-
+ 
     .scroll-spacer {
       height: 2vh;
     }
@@ -531,7 +591,7 @@
       width: 100%;
       height: auto;
       display: block;
-      filter: grayscale(30%);
+      filter: grayscale(50%);
     }
 
     .visual-item.anchor figcaption {
@@ -616,7 +676,7 @@
       width: 70px;
       max-width: 100px;
       opacity: 0.5;
-      filter: grayscale(80%);
+      filter: grayscale(60%);
     }
 
     .record-year {
@@ -1067,6 +1127,14 @@
   </div>
 
   <div class="record-item">
+    <img src="/assets/navy_2019.jpg" alt="">
+    <div class="record-text">
+      <div class="record-year">Navy, 2019</div>
+      <div class="record-meta">Anchor</div>
+    </div>
+  </div>
+
+  <div class="record-item">
     <img src="/assets/inha_2023.jpg" alt="">
     <div class="record-text">
       <div class="record-year">Inha, 2023</div>
@@ -1078,7 +1146,7 @@
     <img src="/assets/glasgow_2025.jpg" alt="">
     <div class="record-text">
       <div class="record-year">Strathclyde, 2025</div>
-      <div class="record-meta">Conversation</div>
+      <div class="record-meta">Visit</div>
     </div>
   </div>
 </section>
