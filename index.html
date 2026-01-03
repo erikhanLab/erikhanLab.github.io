@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
   
 <head>
   <meta charset="UTF-8">
@@ -17,7 +19,7 @@
       --line: #e5e7eb;
       --bg: #F7F9FC;
     }
-
+    
     body {
       max-width: 900px;
       margin: 0 auto;
@@ -55,43 +57,98 @@
     /* Mobile: stack vertically */
     @media (max-width: 768px) {
 
-    body {
-      padding: 80px 18px 70px;
-      font-size: 16px;
-      line-height: 1.55;
-    }
-
-    .header-row {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 20px;
-    }
-
-    h1 {
-      font-size: 2.3em;
-      letter-spacing: 0.035em;
-    }
-
-    .id-photo {
-      width: 72px;
-      height: 72px;
-    }
-
-    .nav {
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-
-    .nav a {
-      font-size: 1.05em;
-      padding: 18px 0;
-    }
-
-    footer {
-      margin-top: 80px;
-      font-size: 0.75em;
-    }
+  /* ===== GLOBAL ===== */
+  body {
+    padding: 72px 18px 64px;
+    font-size: 15.5px;
+    line-height: 1.55;
   }
+
+  /* ===== HEADER ===== */
+  .header {
+    margin-bottom: 36px;
+  }
+
+  .header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .header-row h1 {
+    font-size: 2.1em;
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+  }
+
+  .id-photo {
+    width: 64px;
+    height: 64px;
+    margin-top: 6px;
+  }
+
+  .tagline {
+    font-size: 0.95em;
+    line-height: 1.55;
+    max-width: 100%;
+  }
+
+  .affiliation {
+    font-size: 0.8em;
+    margin-top: 14px;
+  }
+
+  .keywords {
+    font-size: 0.65em;
+    letter-spacing: 0.22em;
+    margin-top: 16px;
+  }
+
+  /* ===== NAV ===== */
+  .nav {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 32px;
+  }
+
+  .nav a {
+    padding: 16px 0;
+    font-size: 1em;
+  }
+
+  .nav a span {
+    font-size: 0.65em;
+    letter-spacing: 0.14em;
+    margin-bottom: 4px;
+    opacity: 0.6;
+  }
+
+  .nav a:last-child {
+    grid-column: auto;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    margin-top: 72px;
+    padding-top: 20px;
+    font-size: 0.7em;
+  }
+
+  .footer-contact {
+    margin-bottom: 14px;
+  }
+
+  .footer-label {
+    font-size: 0.7em;
+    letter-spacing: 0.16em;
+  }
+
+  .footer-meta {
+    font-size: 0.65em;
+    letter-spacing: 0.05em;
+  }
+}
+
 
     h1 {
       font-size: 3.4em;
