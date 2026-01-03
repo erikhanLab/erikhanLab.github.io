@@ -28,7 +28,7 @@
     }
 
     .site-name:hover {
-      opacity: 0.85; /* 아주 미세한 피드백만 */
+      opacity: 0.85;
     }
 
     body {
@@ -41,44 +41,32 @@
       background: var(--bg-light);
     }
 
-    /* Navigation */
     .nav {
       position: sticky;
       top: env(safe-area-inset-top);
       z-index: 1000;
-
       display: flex;
-      /* ← grid 버림 */
       justify-content: center;
-      /* 전체 중앙 */
       gap: 60px;
-
       padding: 14px 0;
       margin-bottom: 36px;
-
       background: rgba(247, 249, 252, 0.85);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-
       border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
     }
 
     .nav a {
       position: relative;
-
       margin: 0;
       padding: 6px 0;
-
       text-align: center;
       text-decoration: none;
-
       font-size: 1em;
       letter-spacing: 0.12em;
       font-weight: 400;
-
       color: #444;
       opacity: 0.65;
-
       transition:
         opacity 0.2s ease,
         color 0.2s ease;
@@ -101,7 +89,6 @@
       left: 50%;
       bottom: -10px;
       transform: translateX(-50%);
-
       width: 22px;
       height: 1px;
       background: #111;
@@ -109,26 +96,24 @@
     }
 
     .header {
-    font-family: Georgia, serif;
-    font-size: 0.9em;
-    display: flex;
-    align-items: baseline;
-    font-weight: 300;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #555;
-  }
+      font-family: Georgia, serif;
+      font-size: 0.9em;
+      display: flex;
+      align-items: baseline;
+      font-weight: 300;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #555;
+    }
 
-  h1 {
-    gap: 14px;
-    margin-bottom: 40px;
-  }
+    h1 {
+      gap: 14px;
+      margin-bottom: 40px;
+    }
 
-    /* Evidence image */
     .practice-hero {
       margin: 18px 0 34px;
       overflow: hidden;
-      /* 중요 */
     }
 
     .practice-hero img {
@@ -194,14 +179,12 @@
 
       .header {
         font-size: 0.8em;
-        /* ← 전체 리듬 유지 */
         letter-spacing: 0.14em;
         margin-bottom: 30px;
       }
 
       .header h1 {
         font-size: 1.6em;
-        /* 데스크톱 2.1em → 모바일용 */
         margin-bottom: 0;
       }
 
@@ -209,43 +192,29 @@
         position: sticky;
         top: env(safe-area-inset-top);
         z-index: 1000;
-
         display: flex;
-        /* ← grid 버림 */
         justify-content: center;
-        /* 전체 중앙 */
         gap: 15px;
-        /* ← 단어 간 간격의 “단 하나의 규칙” */
-
         padding: 16px 0;
         margin-bottom: 40px;
-
         background: rgba(247, 249, 252, 0.85);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
-
         border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
       }
 
       .nav a {
         position: relative;
-
         margin: 0;
         padding: 6px 0;
-
         text-align: center;
-
         text-decoration: none;
-
         font-size: clamp(0.62em, 2.6vw, 0.7em);
         letter-spacing: 0.12em;
         font-weight: 400;
-
         color: #444;
         opacity: 0.6;
-
         white-space: nowrap;
-
         transition:
           opacity 0.2s ease,
           color 0.2s ease;
@@ -275,67 +244,85 @@
         opacity: 0.8;
       }
     }
+
+    .page-content {
+      transform: translateY(6px);
+      transition: transform 0.12s ease-out;
+    }
+
+    .page-content.loaded {
+      transform: translateY(0);
+    }
   </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <a href="/" class="site-name">SANGSEOK HAN</a>
-  </header>
-  
-  <div class="nav">
-    <a href="/">Home</a>
-    <a href="/Profile/">Profile</a>
-    <a href="/research/">Research</a>
-    <a href="/publications/">Publications</a>
-    <a href="/practice/" class="active">Practice</a>
-    <a href="/archive/">Archive</a>
-  </div>
+  <div class="page-content">
+    <header class="site-header">
+      <a href="/" class="site-name">SANGSEOK HAN</a>
+    </header>
 
-  <div class="header">
-    <h1>Practice</h1>
-  </div>
+    <div class="nav">
+      <a href="/">Home</a>
+      <a href="/Profile/">Profile</a>
+      <a href="/research/">Research</a>
+      <a href="/publications/">Publications</a>
+      <a href="/practice/" class="active">Practice</a>
+      <a href="/archive/">Archive</a>
+    </div>
 
-  <div class="practice-hero">
-    <img src="/assets/practice_hero.jpg" alt="Autonomous surface vessel field test">
-    <div class="caption">
-      Autonomous surface vessel — field validation
+    <div class="header">
+      <h1>Practice</h1>
+    </div>
+
+    <div class="practice-hero">
+      <img src="/assets/practice_hero.jpg" alt="Autonomous surface vessel field test">
+      <div class="caption">
+        Autonomous surface vessel — field validation
+      </div>
+    </div>
+
+    <p class="intro">
+      Hands-on work documenting how ideas are tested through the body,
+      computation, and physical systems.
+      This section records process rather than outcome.
+    </p>
+
+    <div class="practice-grid">
+
+      <a href="/practice/physical/" class="practice-card">
+        <h2>Physical Transformation</h2>
+        <p>
+          Long-term physical optimization under biological constraints.
+          Strength, endurance, and discipline treated as a system.
+        </p>
+      </a>
+
+      <a href="/practice/computational-visual/" class="practice-card">
+        <h2>Computational & Visual Practice</h2>
+        <p>
+          CFD-derived visual studies and exploratory simulations.
+          Flow behaviour translated into abstract representations.
+        </p>
+      </a>
+
+      <a href="/practice/systems-built/" class="practice-card">
+        <h2>Systems Built & Tested</h2>
+        <p>
+          End-to-end systems designed, implemented, and validated
+          through real-world constraints and failure modes.
+        </p>
+      </a>
     </div>
   </div>
 
-  <p class="intro">
-    Hands-on work documenting how ideas are tested through the body,
-    computation, and physical systems.
-    This section records process rather than outcome.
-  </p>
-
-  <div class="practice-grid">
-
-    <a href="/practice/physical/" class="practice-card">
-      <h2>Physical Transformation</h2>
-      <p>
-        Long-term physical optimization under biological constraints.
-        Strength, endurance, and discipline treated as a system.
-      </p>
-    </a>
-
-    <a href="/practice/computational-visual/" class="practice-card">
-      <h2>Computational & Visual Practice</h2>
-      <p>
-        CFD-derived visual studies and exploratory simulations.
-        Flow behaviour translated into abstract representations.
-      </p>
-    </a>
-
-    <a href="/practice/systems-built/" class="practice-card">
-      <h2>Systems Built & Tested</h2>
-      <p>
-        End-to-end systems designed, implemented, and validated
-        through real-world constraints and failure modes.
-      </p>
-    </a>
-
-  </div>
+  <script>
+    window.addEventListener('load', () => {
+      document
+        .querySelector('.page-content')
+        ?.classList.add('loaded');
+    });
+  </script>
 
 </body>
 

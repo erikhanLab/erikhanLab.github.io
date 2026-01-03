@@ -10,15 +10,12 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://erikhanlab.github.io/">
 
-  <!-- Twitter (겸용) -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://erikhanlab.github.io/assets/og-home.png">
 
   <title>Sangseok Han</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Google Search Console verification -->
   <meta name="google-site-verification" content="nL6QQDjmwHfoed1SFO0BXdBElFNEMt-fPTveElHeu0U" />
 
   <style>
@@ -40,17 +37,14 @@
       line-height: 1.6;
     }
 
-    /* ===== Header ===== */
     .header {
       max-width: 960px;
       margin-bottom: 40px;
     }
 
-    /* ===== Header layout with photo ===== */
     .header-row {
       display: flex;
       align-items: flex-start;
-      /* ← 이게 핵심 */
       gap: 44px;
     }
 
@@ -64,17 +58,13 @@
       border: 1px solid var(--line);
     }
 
-    /* Mobile: stack vertically */
     @media (max-width: 768px) {
-
-      /* ===== GLOBAL ===== */
       body {
         padding: 72px 18px 64px;
         font-size: 15.5px;
         line-height: 1.55;
       }
 
-      /* ===== HEADER ===== */
       .header {
         margin-bottom: 36px;
       }
@@ -97,68 +87,78 @@
         margin-top: 6px;
       }
 
+      .tagline-block {
+        padding: 18px 20px;
+        margin-top: 28px;
+      }
+
       .tagline {
         font-size: 0.85em;
         line-height: 1.55;
-        max-width: 100%;
-      }
-
-      .affiliation {
-        font-size: 0.70em;
-        margin-top: 14px;
-      }
-
-      .keywords {
-        font-size: 0.65em;
-        letter-spacing: 0.22em;
-        margin-top: 16px;
-      }
-
-      /* ===== NAV ===== */
-      .nav {
-        grid-template-columns: 1fr;
-        gap: 14px;
-        margin-top: 32px;
-      }
-
-      .nav a {
-        padding: 16px 0;
-        font-size: 1em;
-      }
-
-      .nav a span {
-        font-size: 0.65em;
-        letter-spacing: 0.14em;
-        margin-bottom: 4px;
-        opacity: 0.6;
-      }
-
-      .nav a:last-child {
-        grid-column: auto;
-      }
-
-      /* ===== FOOTER ===== */
-      footer {
-        margin-top: 72px;
-        padding-top: 20px;
-        font-size: 0.7em;
-      }
-
-      .footer-contact {
-        margin-bottom: 14px;
-      }
-
-      .footer-label {
-        font-size: 0.7em;
-        letter-spacing: 0.16em;
-      }
-
-      .footer-meta {
-        font-size: 0.65em;
-        letter-spacing: 0.05em;
       }
     }
 
+    .page-content {
+      transform: translateY(6px);
+      transition: transform 0.12s ease-out;
+    }
+
+    .page-content.loaded {
+      transform: translateY(0);
+    }
+
+    .affiliation {
+      font-size: 0.70em;
+      margin-top: 14px;
+    }
+
+    .keywords {
+      font-size: 0.65em;
+      letter-spacing: 0.22em;
+      margin-top: 16px;
+    }
+
+    .nav {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .nav a {
+      padding: 16px 0;
+      font-size: 1em;
+    }
+
+    .nav a span {
+      font-size: 0.65em;
+      letter-spacing: 0.14em;
+      margin-bottom: 4px;
+      opacity: 0.6;
+    }
+
+    .nav a:last-child {
+      grid-column: auto;
+    }
+
+    footer {
+      margin-top: 72px;
+      padding-top: 20px;
+      font-size: 0.7em;
+    }
+
+    .footer-contact {
+      margin-bottom: 14px;
+    }
+
+    .footer-label {
+      font-size: 0.7em;
+      letter-spacing: 0.16em;
+    }
+
+    .footer-meta {
+      font-size: 0.65em;
+      letter-spacing: 0.05em;
+    }
 
     h1 {
       font-size: 3.4em;
@@ -167,11 +167,32 @@
       margin: 0 0 18px 0;
     }
 
+    .tagline-block {
+      margin-top: 40px;
+      padding-left: 2px;
+      max-width: 740px;
+      border-left: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
     .tagline {
-      font-size: 1.1em;
-      line-height: 1.7;
+      margin: 0 0 0 18px;
+      font-size: 1.05em;
+      line-height: 1.65;
       color: var(--muted);
-      max-width: 900px;
+    }
+
+    .tagline .line-strong {
+      display: block;
+      font-weight: normal;
+      color: var(--ink);
+    }
+
+    .tagline .line-muted {
+      display: block;
+      margin-top: 6px;
+
+      font-size: 0.95em;
+      color: #64748b;
     }
 
     .affiliation {
@@ -182,13 +203,12 @@
     }
 
     .keywords {
-      margin-top: 20px;
+      margin-top: 30px;
       font-size: 0.7em;
       letter-spacing: 0.28em;
       color: #94a3b8;
     }
 
-    /* ===== Navigation ===== */
     .nav {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -198,7 +218,6 @@
     .nav a:last-child {
       grid-column: 1 / -1;
     }
-
 
     .nav a {
       display: block;
@@ -223,7 +242,6 @@
       padding-left: 10px;
     }
 
-    /* ===== Footer ===== */
     footer {
       margin-top: 120px;
       padding-top: 24px;
@@ -264,64 +282,75 @@
 </head>
 
 <body>
+  <div class="page-content">
+    <header class="header">
+      <div class="header-row">
+        <h1>Sangseok Han</h1>
+        <img src="/assets/profile.jpg" alt="Sangseok Han" class="id-photo">
+      </div>
 
-  <header class="header">
-    <div class="header-row">
-      <h1>Sangseok Han</h1>
-      <img src="/assets/profile.jpg" alt="Sangseok Han" class="id-photo">
-    </div>
+      <div class="tagline-block">
+        <p class="tagline">
+          I study complex flow simulations,
+          with a focus on when and why modelling assumptions break down.
+        </p>
+      </div>
 
-    <p class="tagline">
-      Fluid mechanics and computational modelling of complex flow systems.
-    </p>
+      <p class="affiliation">
+        <em>Visiting Researcher</em> · The University of Osaka<br>
+        <em>MSc · Advanced Naval Architecture</em> · University of Strathclyde
+      </p>
 
-    <p class="affiliation">
-      <em>Visiting Researcher</em> · The University of Osaka<br>
-      <em>MSc · Advanced Naval Architecture</em> · University of Strathclyde
-    </p>
+      <p class="keywords">
+        HYDRODYNAMICS · MULTIPHYSICS · MODELLING
+      </p>
+    </header>
 
-
-    <p class="keywords">
-      HYDRODYNAMICS · MULTIPHYSICS · MODELLING
-    </p>
-  </header>
-
-  <nav class="nav">
-    <a href="/Profile/">
-      <span>01</span>
-      Profile
-    </a>
-    <a href="/research/">
-      <span>02</span>
-      Research
-    </a>
-    <a href="/publications/">
-      <span>03</span>
-      Publications
-    </a>
-    <a href="/practice/">
-      <span>04</span>
-      Practice
-    </a>
-    <a href="/archive/">
-      <span>05</span>
-      Archive
-    </a>
-  </nav>
-
-  <footer>
-    <div class="footer-contact">
-      <span class="footer-label">Contact</span><br>
-      <a href="mailto:erikhan.nor@gmail.com" class="email-link">
-        erikhan.nor@gmail.com
+    <nav class="nav">
+      <a href="/Profile/">
+        <span>01</span>
+        Profile
       </a>
-    </div>
+      <a href="/research/">
+        <span>02</span>
+        Research
+      </a>
+      <a href="/publications/">
+        <span>03</span>
+        Publications
+      </a>
+      <a href="/practice/">
+        <span>04</span>
+        Practice
+      </a>
+      <a href="/archive/">
+        <span>05</span>
+        Archive
+      </a>
+    </nav>
 
-    <div class="footer-meta">
-      © Sangseok Han · Last updated: Dec 2025
-    </div>
-  </footer>
+    <footer>
+      <div class="footer-contact">
+        <span class="footer-label">Contact</span><br>
+        <a href="mailto:erikhan.nor@gmail.com" class="email-link">
+          erikhan.nor@gmail.com
+        </a>
+      </div>
 
+      <div class="footer-meta">
+        © Sangseok Han · Last updated: Dec 2025
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      document
+        .querySelector('.page-content')
+        ?.classList.add('loaded');
+    });
+  </script>
 
 </body>
 

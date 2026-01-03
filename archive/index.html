@@ -29,7 +29,6 @@
 
     .site-name:hover {
       opacity: 0.85;
-      /* 아주 미세한 피드백만 */
     }
 
     body {
@@ -101,25 +100,18 @@
       filter: grayscale(100%) brightness(0.9);
     }
 
-    /* Top Navigation */
     .nav {
       position: sticky;
       top: env(safe-area-inset-top);
       z-index: 1000;
-
       display: flex;
-      /* ← grid 버림 */
       justify-content: center;
-      /* 전체 중앙 */
       gap: 60px;
-
       padding: 14px 0;
       margin-bottom: 36px;
-
       background: rgba(247, 249, 252, 0.85);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-
       border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
     }
 
@@ -199,7 +191,6 @@
       font-style: italic;
     }
 
-    /* Archive Sections */
     .year-section {
       margin-bottom: 50px;
     }
@@ -229,13 +220,10 @@
       color: #111;
       line-height: 1.65;
       white-space: nowrap;
-      /* 줄바꿈 금지 */
       text-overflow: ellipsis;
     }
 
     @media (max-width: 768px) {
-
-      /* ===== GLOBAL ===== */
       body {
         margin: 24px auto;
         padding: 0 16px;
@@ -244,37 +232,27 @@
 
       .header {
         font-size: 0.8em;
-        /* ← 전체 리듬 유지 */
         letter-spacing: 0.14em;
         margin-bottom: 30px;
       }
 
       .header h1 {
         font-size: 1.6em;
-        /* 데스크톱 2.1em → 모바일용 */
         margin-bottom: 0;
       }
 
-      /* ===== SIDE NAV (MOBILE POSITION FIX) ===== */
       .side-nav {
         right: 14px;
-        
-        /* ← 화면 끝에서 떼어냄 */
         top: 55%;
-        /* ← 살짝 아래로 */
         transform: translateY(-50%);
         gap: 22px;
-        /* 밀도 완화 */
       }
 
-      /* ===== SIDE NAV ===== */
       .side-nav a::after {
         display: none;
         margin-right: 10px;
-
       }
 
-      /* ===== ENTRY / TIMELINE ===== */
       .entry {
         white-space: normal;
       }
@@ -291,7 +269,6 @@
         left: -12px;
       }
 
-      /* ===== VISUAL GRIDS ===== */
       .visual-grid {
         margin-left: 0;
         max-width: 100%;
@@ -304,7 +281,6 @@
 
       .visual-work-grid {
         display: grid;
-        /* ← 이 줄이 핵심 */
         grid-template-columns: repeat(4, 1fr);
         gap: 0;
         margin-left: 0;
@@ -313,16 +289,13 @@
 
       .visual-work-item figcaption {
         margin-top: -4px;
-        /* 여백 최소화 */
         font-size: 0.6em;
         line-height: 1.1;
         white-space: nowrap;
-        /* ← 줄바꿈 금지 */
         overflow: hidden;
         text-overflow: ellipsis;
       }
 
-      /* ===== RECORDS ===== */
       .records {
         margin: 32px 0;
         max-width: 100%;
@@ -337,7 +310,6 @@
         width: 56px;
       }
 
-      /* ===== ZOOM OVERLAY ===== */
       .zoom-overlay-content {
         width: 90%;
         max-width: 360px;
@@ -355,44 +327,29 @@
         position: sticky;
         top: env(safe-area-inset-top);
         z-index: 1000;
-
         display: flex;
-        /* ← grid 버림 */
         justify-content: center;
-        /* 전체 중앙 */
         gap: 15px;
-        /* ← 단어 간 간격의 “단 하나의 규칙” */
-
         padding: 16px 0;
         margin-bottom: 40px;
-
         background: rgba(247, 249, 252, 0.85);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
-
         border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
       }
 
-
       .nav a {
         position: relative;
-
         margin: 0;
         padding: 6px 0;
-
         text-align: center;
-
         text-decoration: none;
-
         font-size: clamp(0.62em, 2.6vw, 0.7em);
         letter-spacing: 0.12em;
         font-weight: 400;
-
         color: #444;
         opacity: 0.6;
-
         white-space: nowrap;
-
         transition:
           opacity 0.2s ease,
           color 0.2s ease;
@@ -415,20 +372,17 @@
         left: 50%;
         bottom: -8px;
         transform: translateX(-50%);
-
         width: 16px;
         height: 1px;
         background: #111;
         opacity: 0.8;
       }
-
     }
 
     .entry span {
       color: var(--text-muted);
     }
 
-    /* Right Navigation */
     .entry a {
       color: inherit;
       text-decoration: none;
@@ -470,16 +424,13 @@
     }
 
     .page-content {
-      opacity: 0;
       transform: translateY(6px);
-      transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+      transition: transform 0.12s ease-out;
     }
 
     .page-content.loaded {
-      opacity: 1;
       transform: translateY(0);
     }
-
 
     .side-nav a.active span {
       background: var(--accent-dark);
@@ -510,7 +461,6 @@
       opacity: 1;
     }
 
-
     .side-nav a:hover::after {
       opacity: 1;
     }
@@ -523,7 +473,6 @@
       position: relative;
       padding-left: 60px;
     }
-
 
     .timeline::before {
       content: "";
@@ -591,7 +540,6 @@
       letter-spacing: 0;
     }
 
-
     .scroll-spacer {
       height: 2vh;
     }
@@ -639,7 +587,6 @@
       white-space: nowrap;
     }
 
-    /* ===== TITLE ===== */
     .curated-title {
       font-size: 1.05em;
       font-weight: 500;
@@ -647,7 +594,6 @@
       color: #111;
     }
 
-    /* 링크 있는 경우만 인터랙션 */
     .curated-title.linked {
       text-decoration: none;
       border-bottom: 1px solid transparent;
@@ -658,13 +604,11 @@
       border-bottom-color: #999;
     }
 
-    /* 링크 없는 경우 */
     .curated-title.static {
       color: #111;
       cursor: default;
     }
 
-    /* ===== AFFILIATION + COUNTRY ===== */
     .curated-affiliation {
       display: flex;
       align-items: baseline;
@@ -685,7 +629,6 @@
       color: #9aa3af;
     }
 
-    /* ===== DESCRIPTION ===== */
     .curated-desc {
       margin-top: 8px;
       font-size: 0.9em;
@@ -693,7 +636,6 @@
       line-height: 1.4;
     }
 
-    /* ===== META / ROLES ===== */
     .curated-meta {
       margin-top: 10px;
       font-size: 0.72em;
@@ -701,8 +643,6 @@
       color: #9aa3af;
       font-style: italic;
     }
-
-
 
     .visual-record {
       margin: 30px 0;
@@ -763,7 +703,6 @@
     .visual-item figcaption {
       margin-top: 6px;
       font-size: 11px;
-      /* ← 고정 */
       letter-spacing: 0.22em;
       opacity: 0.55;
       font-style: italic;
@@ -771,9 +710,7 @@
       display: block;
       text-align: left;
       white-space: nowrap;
-      /* ← 중요 */
     }
-
 
     .visual-work {
       margin: 40px 0;
@@ -791,7 +728,6 @@
     .visual-work-item img {
       width: 100%;
       aspect-ratio: 3 / 4;
-      /* 연필 드로잉에 가장 안정적 */
       object-fit: cover;
       filter: grayscale(100%);
     }
@@ -799,7 +735,6 @@
     .visual-work-item figcaption {
       margin-top: 6px;
       font-size: 11px;
-      /* ← 고정 */
       letter-spacing: 0.22em;
       opacity: 0.55;
       font-style: italic;
@@ -834,7 +769,6 @@
       gap: 18px;
       margin-bottom: 34px;
     }
-
 
     .record-item img {
       width: 70px;
@@ -960,7 +894,6 @@
         </div>
       </div>
 
-      <!-- ENTRY 1: PEER REVIEWER -->
       <div class="curated-entry">
         <div class="curated-year">2025</div>
         <div class="curated-body">
@@ -982,7 +915,6 @@
         </div>
       </div>
 
-      <!-- ENTRY 2: STRATHCLYDE FEATURE -->
       <div class="curated-entry">
         <div class="curated-year">2025</div>
         <div class="curated-body">
@@ -1011,15 +943,10 @@
 
     <section class="visual-record" id="section-timeline">
       <div class="year-label">A chronological record</div>
-
-      <!-- Right Nav -->
-
       <div class="scroll-spacer"></div>
       <div class="timeline-wrapper">
         <div class="timeline">
           <div class="timeline-content">
-
-            <!-- Timeline -->
             <section class="year-section" id="y2013">
               <div class="year-row">
                 <span class="year-num">2013–2015</span>
@@ -1131,13 +1058,10 @@
                 </div>
               </div>
             </section>
-
           </div>
         </div>
       </div>
-
     </section>
-
 
     <script>
       window.addEventListener('load', () => {
@@ -1171,13 +1095,11 @@
           }
         );
 
-        // 🔹 DOM 완성 이후에 observe
         sections.forEach(id => {
           const el = document.getElementById(id);
           if (el) observer.observe(el);
         });
 
-        // 🔹 페이지 맨 아래 도달 시 마지막 dot 강제 활성화
         window.addEventListener('scroll', () => {
           const scrollBottom =
             window.innerHeight + window.scrollY >=
@@ -1189,10 +1111,7 @@
           }
         });
 
-        // fade-in
         document.querySelector('.page-content')?.classList.add('loaded');
-
-        // side nav click
         navLinks.forEach(link => {
           link.addEventListener('click', () => {
             const targetId = link.getAttribute('data-target');
@@ -1243,7 +1162,7 @@
           desc.textContent = img.dataset.desc || '';
 
           meta.appendChild(title);
-          meta.appendChild(metaLine);   // ← 여기
+          meta.appendChild(metaLine);   
           meta.appendChild(desc);
 
 
@@ -1256,7 +1175,10 @@
 
           overlay.addEventListener('click', () => {
             overlay.classList.remove('active');
-            setTimeout(() => overlay.remove(), 200);
+            setTimeout(() => {
+              document.querySelector('.page-content')?.classList.add('loaded');
+            }, 120);
+
           });
         });
       });

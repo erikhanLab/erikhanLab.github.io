@@ -21,17 +21,17 @@
   }
 
   .site-name {
-      font-family: Georgia, serif;
-      font-size: 1.9em;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      color: #111;
-      text-decoration: none;
-    }
+    font-family: Georgia, serif;
+    font-size: 1.9em;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: #111;
+    text-decoration: none;
+  }
 
-    .site-name:hover {
-      opacity: 0.85; /* 아주 미세한 피드백만 */
-    }
+  .site-name:hover {
+    opacity: 0.85;
+  }
 
   body {
     max-width: 800px;
@@ -43,45 +43,41 @@
     background: var(--bg-light);
   }
 
-  /* Navigation */
-  /* Navigation (Sticky, high-end) */
+  .page-content {
+    transform: translateY(6px);
+    transition: transform 0.12s ease-out;
+  }
+
+  .page-content.loaded {
+    transform: translateY(0);
+  }
+
   .nav {
     position: sticky;
     top: env(safe-area-inset-top);
     z-index: 1000;
-
     display: flex;
-    /* ← grid 버림 */
     justify-content: center;
-    /* 전체 중앙 */
     gap: 60px;
-
     padding: 14px 0;
     margin-bottom: 36px;
-
     background: rgba(247, 249, 252, 0.85);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
   }
 
   .nav a {
     position: relative;
-
     margin: 0;
     padding: 6px 0;
-
     text-align: center;
     text-decoration: none;
-
     font-size: 1em;
     letter-spacing: 0.12em;
     font-weight: 400;
-
     color: #444;
     opacity: 0.65;
-
     transition:
       opacity 0.2s ease,
       color 0.2s ease;
@@ -111,7 +107,6 @@
     opacity: 0.85;
   }
 
-  /* Cover article badge */
   .cover-badge {
     display: inline-block;
     margin-left: 8px;
@@ -125,7 +120,6 @@
     vertical-align: middle;
   }
 
-  /* Header */
   .header {
     font-family: Georgia, serif;
     font-size: 0.9em;
@@ -191,7 +185,6 @@
   .pub-item {
     position: relative;
     padding-left: 16px;
-    /* dot 공간 확보 */
     margin-top: 8px;
   }
 
@@ -214,7 +207,6 @@
 
   .pub-meta-block {
     margin-left: 1.25em;
-    /* DOT + 여백만큼 */
     margin-top: 4px;
   }
 
@@ -253,7 +245,6 @@
     letter-spacing: 0.02em;
   }
 
-  /* Status indicator */
   .status {
     display: inline-block;
     width: 0.75em;
@@ -280,10 +271,6 @@
     margin: 40px 0;
   }
 
-  .page {
-    animation: fadeIn 0.15s ease-out;
-  }
-
   @media (max-width: 768px) {
     body {
       margin: 24px auto;
@@ -293,14 +280,12 @@
 
     .header {
       font-size: 0.8em;
-      /* ← 전체 리듬 유지 */
       letter-spacing: 0.14em;
       margin-bottom: 30px;
     }
 
     .header h1 {
       font-size: 1.6em;
-      /* 데스크톱 2.1em → 모바일용 */
       margin-bottom: 0;
     }
 
@@ -308,43 +293,29 @@
       position: sticky;
       top: env(safe-area-inset-top);
       z-index: 1000;
-
       display: flex;
-      /* ← grid 버림 */
       justify-content: center;
-      /* 전체 중앙 */
       gap: 15px;
-      /* ← 단어 간 간격의 “단 하나의 규칙” */
-
       padding: 16px 0;
       margin-bottom: 40px;
-
       background: rgba(247, 249, 252, 0.85);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-
       border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
     }
 
     .nav a {
       position: relative;
-
       margin: 0;
       padding: 6px 0;
-
       text-align: center;
-
       text-decoration: none;
-
       font-size: clamp(0.62em, 2.6vw, 0.7em);
       letter-spacing: 0.12em;
       font-weight: 400;
-
       color: #444;
       opacity: 0.6;
-
       white-space: nowrap;
-
       transition:
         opacity 0.2s ease,
         color 0.2s ease;
@@ -367,23 +338,10 @@
       left: 50%;
       bottom: -8px;
       transform: translateX(-50%);
-
       width: 16px;
       height: 1px;
       background: #111;
       opacity: 0.8;
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(6px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
     }
   }
 
@@ -402,181 +360,187 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <a href="/" class="site-name">SANGSEOK HAN</a>
-  </header>
+  <div class="page-content">
+    <header class="site-header">
+      <a href="/" class="site-name">SANGSEOK HAN</a>
+    </header>
 
-  <div class="nav">
-    <a href="/">Home</a>
-    <a href="/Profile/">Profile</a>
-    <a href="/research/">Research</a>
-    <a href="/publications/" class="active">Publications</a>
-    <a href="/practice/">Practice</a>
-    <a href="/archive/">Archive</a>
-  </div>
-  <div class="header">
-    <h1>Publications</h1>
-    <div class="header-meta">
-      <a class="scholar-link" href="https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en" target="_blank"
-        rel="noopener">
-        Google Scholar
-      </a>
+    <div class="nav">
+      <a href="/">Home</a>
+      <a href="/Profile/">Profile</a>
+      <a href="/research/">Research</a>
+      <a href="/publications/" class="active">Publications</a>
+      <a href="/practice/">Practice</a>
+      <a href="/archive/">Archive</a>
     </div>
-  </div>
+    <div class="header">
+      <h1>Publications</h1>
+      <div class="header-meta">
+        <a class="scholar-link" href="https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en" target="_blank"
+          rel="noopener">
+          Google Scholar
+        </a>
+      </div>
+    </div>
 
+    <p class="author-note">
+      * <em>Corresponding author</em><br>
+      <span class="pub-note">
+        Paper titles link to abstracts and publication details.
+      </span>
+    </p>
 
-  <p class="author-note">
-    * <em>Corresponding author</em><br>
-    <span class="pub-note">
-      Paper titles link to abstracts and publication details.
-    </span>
-  </p>
+    <div class="section">
+      <h2><strong>Journal Articles</strong></h2>
 
+      <div class="subsection">
+        <h3>Published</h3>
 
-  <div class="section">
-    <h2><strong>Journal Articles</strong></h2>
+        <div class="pub-item">
+          <div class="pub-title">
+            <span class="status published" aria-hidden="true">●</span>
+            <span class="title-text">
+              <a href="/publications/temperature-ittc/">
+                Temperature-induced errors in ITTC model-ship extrapolation
+              </a>
 
-    <div class="subsection">
-      <h3>Published</h3>
+          </div>
+          <div class="pub-meta-block">
+            <div class="pub-authors">
+              <strong>S. Han</strong>, S. Dai, M. Terziev, <em>et al.</em>
+            </div>
+            <div class="pub-meta">
+              <a href="https://www.mdpi.com/journal/jmse" target="_blank"><em>Journal of Marine Science and
+                  Engineering</em></a>
+              (IF 2.8), 2025 <span class="cover-badge">Cover Article</span>
+            </div>
+          </div>
+        </div>
 
-      <div class="pub-item">
-        <div class="pub-title">
-          <span class="status published" aria-hidden="true">●</span>
-          <span class="title-text">
-            <a href="/publications/temperature-ittc/">
-              Temperature-induced errors in ITTC model-ship extrapolation
+        <div class="pub-item">
+          <div class="pub-title">
+            <span class="status published">●</span>
+            <span class="title-text"></span>
+            <a href="/publications/naval-roughness/">
+              Resistance and speed penalty of a naval ship with hull roughness
             </a>
-
-
-        </div>
-        <div class="pub-meta-block">
-          <div class="pub-authors">
-            <strong>S. Han</strong>, S. Dai, M. Terziev, <em>et al.</em>
           </div>
-          <div class="pub-meta">
-            <a href="https://www.mdpi.com/journal/jmse" target="_blank"><em>Journal of Marine Science and
-                Engineering</em></a>
-            (IF 2.8), 2025 <span class="cover-badge">Cover Article</span>
-          </div>
-        </div>
-      </div>
 
-
-      <div class="pub-item">
-        <div class="pub-title">
-          <span class="status published">●</span>
-          <span class="title-text"></span>
-          <a href="/publications/naval-roughness/">
-            Resistance and speed penalty of a naval ship with hull roughness
-          </a>
-        </div>
-
-        <div class="pub-meta-block">
-          <div class="pub-authors">
-            W. Choi, G. Min, <strong>S. Han</strong>, <em>et al.</em>
-          </div>
-          <div class="pub-meta">
-            <a href="https://www.sciencedirect.com/journal/ocean-engineering" target="_blank"><em>Ocean
-                Engineering</em></a>
-            (IF 4.5), 2024
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="subsection">
-      <h3>Under Review</h3>
-
-      <div class="pub-item">
-        <div class="pub-title">
-          <span class="status review">●</span>
-          Beyond uniform roughness: CFD study on ship resistance with spatially non-uniform surface conditions
-        </div>
-        <div class="pub-meta-block">
-          <div class="pub-authors">
-            <strong>S. Han*</strong>, H. Lee, S. Dai, <em>et al.</em>
-          </div>
-          <div class="pub-meta">
-            <em>Ocean Engineering</em> — under review, 2025
+          <div class="pub-meta-block">
+            <div class="pub-authors">
+              W. Choi, G. Min, <strong>S. Han</strong>, <em>et al.</em>
+            </div>
+            <div class="pub-meta">
+              <a href="https://www.sciencedirect.com/journal/ocean-engineering" target="_blank"><em>Ocean
+                  Engineering</em></a>
+              (IF 4.5), 2024
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="pub-item">
-        <div class="pub-title">
-          <span class="status review">●</span>
-          How well do deterministic multi-component waves reproduce FOWT responses in JONSWAP seas?
-        </div>
-        <div class="pub-meta-block">
-          <div class="pub-authors">
-            <strong>S. Han*</strong>
+      <div class="subsection">
+        <h3>Under Review</h3>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            <span class="status review">●</span>
+            Beyond uniform roughness: CFD study on ship resistance with spatially non-uniform surface conditions
           </div>
-          <div class="pub-meta">
-            <em>Applied Ocean Research</em> — under review, 2025
+          <div class="pub-meta-block">
+            <div class="pub-authors">
+              <strong>S. Han*</strong>, H. Lee, S. Dai, <em>et al.</em>
+            </div>
+            <div class="pub-meta">
+              <em>Ocean Engineering</em> — under review, 2025
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="divider"></div>
-
-  <div class="section">
-    <h2><strong>Conference Papers</strong></h2>
-
-    <div class="subsection">
-      <h3>Accepted and Published</h3>
-
-      <div class="pub-item">
-        <div class="pub-title">
-          <span class="status published">●</span>
-          Numerical Analysis of Fluid-Structure Interaction for a Semi-Submersible Floating Offshore Wind Turbine
-        </div>
-        <div class="pub-meta-block">
-          <div class="pub-authors">
-            <strong>S. Han*</strong>, S. Dai, M. Terziev, <em>et al.</em>
+        <div class="pub-item">
+          <div class="pub-title">
+            <span class="status review">●</span>
+            How well do deterministic multi-component waves reproduce FOWT responses in JONSWAP seas?
           </div>
-          <div class="pub-meta">
-            International Conference on Computational Methods in Marine Engineering (MARINE), 2025
+          <div class="pub-meta-block">
+            <div class="pub-authors">
+              <strong>S. Han*</strong>
+            </div>
+            <div class="pub-meta">
+              <em>Applied Ocean Research</em> — under review, 2025
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="subsection">
-      <h3>Invited Full Papers</h3>
+    <div class="divider"></div>
 
-      <div class="pub-item">
-        <div class="pub-title">
-          <span class="status prep">●</span>
-          Simulation-Based Analysis of a Gyroscopic Wave Energy Converter Using a Modular CFD–MBD Framework
-        </div>
-        <div class="pub-meta-block">
-          <div class="pub-authors">
-            <strong>S. Han*</strong>, T. Iida, R. Yoshimura, <em>et al.</em>
+    <div class="section">
+      <h2><strong>Conference Papers</strong></h2>
+
+      <div class="subsection">
+        <h3>Accepted and Published</h3>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            <span class="status published">●</span>
+            Numerical Analysis of Fluid-Structure Interaction for a Semi-Submersible Floating Offshore Wind Turbine
           </div>
-          <div class="pub-meta">
-            International Ocean Offshore and Arctic Engineering Conference (OMAE), 2026
+          <div class="pub-meta-block">
+            <div class="pub-authors">
+              <strong>S. Han*</strong>, S. Dai, M. Terziev, <em>et al.</em>
+            </div>
+            <div class="pub-meta">
+              International Conference on Computational Methods in Marine Engineering (MARINE), 2025
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="pub-item">
-        <div class="pub-title">
-          <span class="status prep">●</span>
-          A Computational Fluid Dynamics Analysis of Spatial Roughness Distributions on Ship Resistance
-        </div>
-        <div class="pub-meta-block">
-          <div class="pub-authors">
-            <strong>S. Han*</strong>, M. Terziev, T. Tezdogan
+      <div class="subsection">
+        <h3>Invited Full Papers</h3>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            <span class="status prep">●</span>
+            Simulation-Based Analysis of a Gyroscopic Wave Energy Converter Using a Modular CFD–MBD Framework
           </div>
-          <div class="pub-meta">
-            36th Symposium on Naval Hydrodynamics (SNH36), 2026
+          <div class="pub-meta-block">
+            <div class="pub-authors">
+              <strong>S. Han*</strong>, T. Iida, R. Yoshimura, <em>et al.</em>
+            </div>
+            <div class="pub-meta">
+              International Ocean Offshore and Arctic Engineering Conference (OMAE), 2026
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            <span class="status prep">●</span>
+            A Computational Fluid Dynamics Analysis of Spatial Roughness Distributions on Ship Resistance
+          </div>
+          <div class="pub-meta-block">
+            <div class="pub-authors">
+              <strong>S. Han*</strong>, M. Terziev, T. Tezdogan
+            </div>
+            <div class="pub-meta">
+              36th Symposium on Naval Hydrodynamics (SNH36), 2026
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      document
+        .querySelector('.page-content')
+        ?.classList.add('loaded');
+    });
+  </script>
 
 </body>
 

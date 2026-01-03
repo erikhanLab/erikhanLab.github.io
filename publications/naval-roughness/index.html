@@ -1,335 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Resistance and speed penalty of a naval ship with hull roughness</title>
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Resistance and speed penalty of a naval ship with hull roughness</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-:root {
-  --accent-dark: #0B1F3A;
-  --bg-light: #F7F9FC;
-  --text-muted: #4A4A4A;
-}
+  <style>
+    :root {
+      --accent-dark: #0B1F3A;
+      --bg-light: #F7F9FC;
+      --text-muted: #4A4A4A;
+    }
 
-body {
-  max-width: 780px;
-  margin: 80px auto;
-  padding: 0 20px;
-  font-family: Georgia, serif;
-  background: var(--bg-light);
-  color: #111;
-  line-height: 1.75;
-}
+    body {
+      max-width: 780px;
+      margin: 80px auto;
+      padding: 0 20px;
+      font-family: Georgia, serif;
+      background: var(--bg-light);
+      color: #111;
+      line-height: 1.75;
+    }
 
-h1 {
-  font-size: 2.4em;
-  color: var(--accent-dark);
-  text-align: center;
-  margin-bottom: 14px;
-}
+    h1 {
+      font-size: 2.4em;
+      color: var(--accent-dark);
+      text-align: center;
+      margin-bottom: 14px;
+    }
 
-.top-back {
-  font-size: 0.8em;
-  color: #666;
-  margin-bottom: 24px;
-}
+    .top-back {
+      font-size: 0.8em;
+      color: #666;
+      margin-bottom: 24px;
+    }
 
-.top-back a {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-}
+    .top-back a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
 
-.top-back a:hover {
-  color: var(--accent-dark);
-  border-bottom-color: var(--accent-dark);
-}
-
-
-.meta {
-  text-align: center;
-  font-size: 0.95em;
-  color: #555;
-  margin-bottom: 22px;
-}
-
-.authors {
-  text-align: center;
-  font-size: 0.95em;
-  margin-bottom: 6px;
-}
-
-.authors sup {
-  font-size: 0.7em;
-  vertical-align: super;
-}
-
-.affils {
-  max-width: 680px;
-  margin: 0 auto 80px auto;
-  text-align: left;
-  font-size: 0.85em;
-  color: #666;
-  line-height: 1.6;
-}
-
-@media (min-width: 900px) {
-  .affils div {
-    white-space: nowrap;
-  }
-}
+    .top-back a:hover {
+      color: var(--accent-dark);
+      border-bottom-color: var(--accent-dark);
+    }
 
 
+    .meta {
+      text-align: center;
+      font-size: 0.95em;
+      color: #555;
+      margin-bottom: 22px;
+    }
 
-/* Abstract (subtle, no box) */
-.abstract {
-  max-width: 780px;
-  margin: 0 auto 80px auto;
-  padding-left: 18px;
-  border-left: 2px solid #e1e4ea;
-}
+    .authors {
+      text-align: center;
+      font-size: 0.95em;
+      margin-bottom: 6px;
+    }
 
+    .authors sup {
+      font-size: 0.7em;
+      vertical-align: super;
+    }
 
-.abstract h2 {
-  font-size: 1.05em;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent-dark);
-  margin-bottom: 12px;
-}
+    .affils {
+      max-width: 680px;
+      margin: 0 auto 80px auto;
+      text-align: left;
+      font-size: 0.85em;
+      color: #666;
+      line-height: 1.6;
+    }
 
-.abstract p {
-  text-align: justify;
-  hyphens: auto;
-  margin-bottom: 1.2em;
-  font-size: 0.98em;
-}
+    @media (min-width: 900px) {
+      .affils div {
+        white-space: nowrap;
+      }
+    }
 
-.abstract p:first-of-type {
-  font-size: 1.02em;
-  color: #222;
-}
+    .abstract {
+      max-width: 780px;
+      margin: 0 auto 80px auto;
+      padding-left: 18px;
+      border-left: 2px solid #e1e4ea;
+    }
 
+    .abstract h2 {
+      font-size: 1.05em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      margin-bottom: 12px;
+    }
 
-/* Links */
-.links {
-  text-align: center;
-  margin-bottom: 60px;
-}
+    .abstract p {
+      text-align: justify;
+      hyphens: auto;
+      margin-bottom: 1.2em;
+      font-size: 0.98em;
+    }
 
-.links a {
-  display: inline-block;
-  margin: 0 8px;
-  padding: 6px 16px;
-  font-size: 0.88em;
-  text-decoration: none;
-  border: 1px solid #222;
-  color: #111;
-}
+    .abstract p:first-of-type {
+      font-size: 1.02em;
+      color: #222;
+    }
 
-.links a:hover {
-  background: #111;
-  color: #fff;
-}
+    .links {
+      text-align: center;
+      margin-bottom: 60px;
+    }
 
-/* Figures */
-.section-title {
-  font-size: 1.05em;
-  font-weight: normal;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent-dark);
-  margin-bottom: 30px;
-  text-align: center;
-}
+    .links a {
+      display: inline-block;
+      margin: 0 8px;
+      padding: 6px 16px;
+      font-size: 0.88em;
+      text-decoration: none;
+      border: 1px solid #222;
+      color: #111;
+    }
 
-.sub {
-  font-size: 0.75em;
-  vertical-align: -0.3em;
-}
+    .links a:hover {
+      background: #111;
+      color: #fff;
+    }
 
-.figure {
-  margin-bottom: 65px;
-}
+    .section-title {
+      font-size: 1.05em;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      margin-bottom: 30px;
+      text-align: center;
+    }
 
-.figure img {
-  width: 100%;
-  margin-bottom: 12px;
-}
+    .sub {
+      font-size: 0.75em;
+      vertical-align: -0.3em;
+    }
 
-.caption {
-  font-size: 0.9em;
-  color: var(--text-muted);
-}
+    .figure {
+      margin-bottom: 65px;
+    }
 
-.footer {
-  text-align: center;
-  font-size: 0.85em;
-  color: #666;
-  margin-top: 70px;
-}
+    .figure img {
+      width: 100%;
+      margin-bottom: 12px;
+    }
 
-.footer a {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid #bbb;
-}
+    .caption {
+      font-size: 0.9em;
+      color: var(--text-muted);
+    }
 
-.footer a:hover {
-  color: var(--accent-dark);
-  border-bottom-color: var(--accent-dark);
-}
+    .footer {
+      text-align: center;
+      font-size: 0.85em;
+      color: #666;
+      margin-top: 70px;
+    }
 
-/* Publication metadata */
-.pub-meta {
-  text-align: center;
-  font-size: 0.82em;
-  color: #666;
-  margin: 80px auto 30px auto;
-  padding-top: 22px;
-  border-top: 1px solid #dde3ec;
-  max-width: 520px;
-  letter-spacing: 0.02em;
-}
+    .footer a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid #bbb;
+    }
 
-.pub-meta strong {
-  color: #222;
-  font-weight: normal;
-}
-.pub-meta a {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px dotted #999;
-}
+    .footer a:hover {
+      color: var(--accent-dark);
+      border-bottom-color: var(--accent-dark);
+    }
 
-.pub-meta a:hover {
-  color: var(--accent-dark);
-  border-bottom-color: var(--accent-dark);
-}
+    .pub-meta {
+      text-align: center;
+      font-size: 0.82em;
+      color: #666;
+      margin: 80px auto 30px auto;
+      padding-top: 22px;
+      border-top: 1px solid #dde3ec;
+      max-width: 520px;
+      letter-spacing: 0.02em;
+    }
 
-.figure-note {
-  font-size: 0.88em;
-  color: #555;
-  max-width: 720px;
-  margin: 18px auto 0 auto;
-  padding: 14px 18px;
-  background: #f1f4f8;
-  border-left: 3px solid #c9d3e3;
-  line-height: 1.6;
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
-}
+    .pub-meta strong {
+      color: #222;
+      font-weight: normal;
+    }
 
+    .pub-meta a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted #999;
+    }
 
-</style>
+    .pub-meta a:hover {
+      color: var(--accent-dark);
+      border-bottom-color: var(--accent-dark);
+    }
+
+    .figure-note {
+      font-size: 0.88em;
+      color: #555;
+      max-width: 720px;
+      margin: 18px auto 0 auto;
+      padding: 14px 18px;
+      background: #f1f4f8;
+      border-left: 3px solid #c9d3e3;
+      line-height: 1.6;
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
+  </style>
 </head>
 
 <body>
-<div class="top-back">
-  ← <a href="/publications/">Back to Publications</a>
-</div>
-
-<h1>Resistance and speed penalty of a naval ship with hull roughness</h1>
-
-<div class="meta">
-  <em>Ocean Engineering</em> (2024)
-</div>
-
-<div class="authors">
-  Woo-seok Choi<sup>1</sup>,
-  Gyeong-seo Min<sup>1</sup>,
-  <strong>Sang-seok Han</strong><sup>1</sup>,
-  Hae-chan Yun<sup>1</sup>,<br>
-  Momchil Terziev<sup>2</sup>,
-  Saishuai Dai<sup>2</sup>,
-  Daejeong Kim<sup>3</sup>,
-  Soonseok Song<sup>1 *</sup>
-</div>
-
-<div class="affils">
-  <div><sup>1</sup> 
-Department of Naval Architecture & Ocean Engineering, Inha University, Republic of Korea</div>
-  <div><sup>2</sup> 
-Department of Naval Architecture, Ocean and Marine Engineering, University of Strathclyde, the United Kingdom</div>
-  <div><sup>3</sup> 
-Division of Navigation Convergence Studies, Korea Maritime & Ocean University, Republic of Korea</div>
-</div>
-
-<div class="abstract">
-  <h2>Abstract</h2>
-  <p>
-    Hull roughness, attributed to factors such as corrosion, the degradation of marine coatings, and, notably,
-  biofouling colonisation, leads to increased fuel consumption, thus entailing significant environmental and
-  economic penalties. While this issue on commercial ships is well documented in recent studies, the specific
-  impact on the speed of warships has received limited attention. 
-  </p>
-  <p>
-    To fill this gap, this research quantifies the
-  resistance and power penalties, as well as the speed reduction under various fouling scenarios, and explores
-  the resultant changes in flow characteristics around the hull. For this purpose, full-scale simulations of a
-  naval ship, specifically the DTMB 5415, utilise the unsteady Reynolds Averaged Navier-Stokes (URANS)
-  method. A modified wall function model was incorporated into the numerical model to accurately simulate
-  the effects of surface roughness. 
-  </p>
+  <div class="top-back">
+    ← <a href="/publications/">Back to Publications</a>
   </div>
 
-<div class="pub-meta">
-  Published in <em>Ocean Engineering</em> (2024, Q1, IF 4.5)<br>
-  DOI: <strong>
-    <a href="https://doi.org/10.1016/j.oceaneng.2024.119058" target="_blank">
-      10.1016/j.oceaneng.2024.119058
-    </a>
-  </strong><br>
-  Open Access (Elsevier)<br>
-  </span>
-</div>
+  <h1>Resistance and speed penalty of a naval ship with hull roughness</h1>
 
-
-
-<div class="section-title" style= "margin-top:60px"> 
-  <strong>Selected Figures</strong>
-</div>
-
-
-<div class="figure">
-  <img src="/assets/Naval_Abstract.svg" alt="Figure 1">
-  <div class="caption">
-    <em><strong>Figure 1</strong>. Diagram illustrating the flow of research.</em>
+  <div class="meta">
+    <em>Ocean Engineering</em> (2024)
   </div>
+
+  <div class="authors">
+    Woo-seok Choi<sup>1</sup>,
+    Gyeong-seo Min<sup>1</sup>,
+    <strong>Sang-seok Han</strong><sup>1</sup>,
+    Hae-chan Yun<sup>1</sup>,<br>
+    Momchil Terziev<sup>2</sup>,
+    Saishuai Dai<sup>2</sup>,
+    Daejeong Kim<sup>3</sup>,
+    Soonseok Song<sup>1 *</sup>
+  </div>
+
+  <div class="affils">
+    <div><sup>1</sup>
+      Department of Naval Architecture & Ocean Engineering, Inha University, Republic of Korea</div>
+    <div><sup>2</sup>
+      Department of Naval Architecture, Ocean and Marine Engineering, University of Strathclyde, the United Kingdom
+    </div>
+    <div><sup>3</sup>
+      Division of Navigation Convergence Studies, Korea Maritime & Ocean University, Republic of Korea</div>
+  </div>
+
+  <div class="abstract">
+    <h2>Abstract</h2>
+    <p>
+      Hull roughness, attributed to factors such as corrosion, the degradation of marine coatings, and, notably,
+      biofouling colonisation, leads to increased fuel consumption, thus entailing significant environmental and
+      economic penalties. While this issue on commercial ships is well documented in recent studies, the specific
+      impact on the speed of warships has received limited attention.
+    </p>
+    <p>
+      To fill this gap, this research quantifies the
+      resistance and power penalties, as well as the speed reduction under various fouling scenarios, and explores
+      the resultant changes in flow characteristics around the hull. For this purpose, full-scale simulations of a
+      naval ship, specifically the DTMB 5415, utilise the unsteady Reynolds Averaged Navier-Stokes (URANS)
+      method. A modified wall function model was incorporated into the numerical model to accurately simulate
+      the effects of surface roughness.
+    </p>
+  </div>
+
+  <div class="pub-meta">
+    Published in <em>Ocean Engineering</em> (2024, Q1, IF 4.5)<br>
+    DOI: <strong>
+      <a href="https://doi.org/10.1016/j.oceaneng.2024.119058" target="_blank">
+        10.1016/j.oceaneng.2024.119058
+      </a>
+    </strong><br>
+    Open Access (Elsevier)<br>
+    </span>
+  </div>
+
+  <div class="section-title" style="margin-top:60px">
+    <strong>Selected Figures</strong>
+  </div>
+
+  <div class="figure">
+    <img src="/assets/Naval_Abstract.svg" alt="Figure 1">
+    <div class="caption">
+      <em><strong>Figure 1</strong>. Diagram illustrating the flow of research.</em>
+    </div>
     <div class="figure-note">
-      This graphical abstract summarises the numerical framework used to quantify resistance, 
+      This graphical abstract summarises the numerical framework used to quantify resistance,
       power, and speed penalties induced by hull roughness under various fouling conditions.
-</div>
-
-</div>
-
-<div class="figure">
-  <img src="/assets/Naval_Friction.svg" alt="Figure 2">
-  <div class="caption">
-    <em><strong>Figure 2</strong>. Distribution of local skin friction coefficient for smooth and small calcareous fouling conditions.</em>
+    </div>
   </div>
+
+  <div class="figure">
+    <img src="/assets/Naval_Friction.svg" alt="Figure 2">
+    <div class="caption">
+      <em><strong>Figure 2</strong>. Distribution of local skin friction coefficient for smooth and small calcareous
+        fouling conditions.</em>
+    </div>
     <div class="figure-note">
-  The presence of small calcareous fouling leads to a pronounced increase in the local skin friction coefficient 
-  over the hull surface. This behaviour highlights the critical role of roughness-induced turbulence in driving resistance penalties.
-</div>
-
-</div>
-
-<div class="figure">
-  <img src="/assets/Naval_Result.svg" alt="Figure 3">
-  <div class="caption">
-    <em><strong>Figure 3</strong>. Total resistance coefficient of DTMB 5415 with different hull conditions at full-scale.</em>
+      The presence of small calcareous fouling leads to a pronounced increase in the local skin friction coefficient
+      over the hull surface. This behaviour highlights the critical role of roughness-induced turbulence in driving
+      resistance penalties.
+    </div>
   </div>
+
+  <div class="figure">
+    <img src="/assets/Naval_Result.svg" alt="Figure 3">
+    <div class="caption">
+      <em><strong>Figure 3</strong>. Total resistance coefficient of DTMB 5415 with different hull conditions at
+        full-scale.</em>
+    </div>
     <div class="figure-note">
-  Hull fouling leads to a systematic increase in resistance, with heavier fouling exhibiting progressively larger penalties compared to the smooth hull.
-  </div>
-
-<div class="footer">
-  ← Back to <a href="/publications/">Publications</a>
-</div>
+      Hull fouling leads to a systematic increase in resistance, with heavier fouling exhibiting progressively larger
+      penalties compared to the smooth hull.
+    </div>
+    <div class="footer">
+      ← Back to <a href="/publications/">Publications</a>
+    </div>
 
 </body>
+
 </html>
