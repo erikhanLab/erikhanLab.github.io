@@ -117,20 +117,15 @@
 
     .nav a {
       position: relative;
-
       margin: 0;
       padding: 6px 0;
-
       text-align: center;
       text-decoration: none;
-
       font-size: 1em;
       letter-spacing: 0.12em;
       font-weight: 400;
-
       color: #444;
       opacity: 0.65;
-
       transition:
         opacity 0.2s ease,
         color 0.2s ease;
@@ -216,12 +211,15 @@
     }
 
     .entry {
-      font-size: 1.02em;
-      color: #111;
-      line-height: 1.65;
+      font-size: 0.92em;
+      /* ↓ */
+      color: #444;
+      /* #111 → muted */
+      line-height: 1.55;
+      letter-spacing: 0.02em;
       white-space: nowrap;
-      text-overflow: ellipsis;
     }
+
 
     @media (max-width: 768px) {
       body {
@@ -323,6 +321,14 @@
         font-size: 0.65em;
       }
 
+      .side-nav {
+        display: none !important;
+      }
+
+      .side-nav a::after {
+        display: none;
+      }
+
       .nav {
         position: sticky;
         top: env(safe-area-inset-top);
@@ -408,19 +414,62 @@
     }
 
     .side-nav a {
+      width: auto;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
-      width: 10px;
-      height: 10px;
+      cursor: pointer;
     }
+
+    .side-nav a::before {
+      content: "";
+      position: absolute;
+      inset: -6px -10px;
+      border-radius: 6px;
+      background: rgba(11, 31, 58, 0.04);
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+
+    .side-nav a:hover::before {
+      opacity: 1;
+    }
+
+    .side-nav a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      transform: translate(-100%, -50%);
+      font-size: 0.48em;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: #9aa3af;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+
 
     .side-nav a span {
       display: block;
-      width: 6px;
-      height: 6px;
-      margin: auto;
-      border-radius: 50%;
-      background: #bbb;
-      transition: all 0.2s ease;
+      font-size: 0.55em;
+      letter-spacing: 0.22em;
+      color: #9aa3af;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .side-nav a:hover::after,
+    .side-nav a.active::after {
+      opacity: 1;
+    }
+
+    .side-nav a.active span {
+      color: var(--accent-dark);
+      transform: translateX(-4px);
     }
 
     .page-content {
@@ -430,39 +479,6 @@
 
     .page-content.loaded {
       transform: translateY(0);
-    }
-
-    .side-nav a.active span {
-      background: var(--accent-dark);
-      transform: scale(1.6);
-    }
-
-    .side-nav a:hover span {
-      background: var(--accent-dark);
-    }
-
-    .side-nav a::after {
-      content: attr(data-label);
-      position: absolute;
-      right: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      color: #6b7280;
-      font-size: 0.5em;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-      pointer-events: none;
-    }
-
-    .side-nav a.active::after {
-      opacity: 1;
-    }
-
-    .side-nav a:hover::after {
-      opacity: 1;
     }
 
     #academic-activity {
@@ -605,7 +621,7 @@
     }
 
     .curated-title.static {
-      color: #111;
+      color: #222;
       cursor: default;
     }
 
@@ -790,6 +806,57 @@
       font-style: italic;
       opacity: 0.85;
     }
+
+    .visual-essay {
+      margin: 40px 0 14px;
+      max-width: 520px;
+    }
+
+    .visual-essay-label {
+      font-size: 0.7em;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #777;
+      /* year-label과 동일 */
+      opacity: 0.9;
+    }
+
+    .visual-essay-title {
+      margin-top: 6px;
+      font-size: 0.85em;
+      /* year-label 계열 */
+      letter-spacing: 0.14em;
+      font-style: normal;
+      /* 🔥 이탤릭 제거 */
+      color: #555;
+    }
+
+    .visual-essay-scale {
+      margin-top: 4px;
+      font-size: 0.7em;
+      letter-spacing: 0.18em;
+      color: #9aa3af;
+    }
+
+    .visual-essay-meta {
+      margin-top: 8px;
+      font-size: 0.68em;
+      letter-spacing: 0.12em;
+      color: #9aa3af;
+
+    }
+
+    .visual-essay-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease, opacity 0.15s ease;
+    }
+
+    .visual-essay-link:hover {
+      border-bottom-color: #999;
+      opacity: 0.85;
+    }
   </style>
 </head>
 
@@ -799,13 +866,12 @@
   </header>
 
   <nav class="side-nav">
-    <a data-target="section-visual-record" data-label="Visual Record"><span></span></a>
-    <a data-target="section-visual-work" data-label="Visual Work"><span></span></a>
-    <a data-target="section-curated" data-label="Curated Record"><span></span></a>
-    <a data-target="section-timeline" data-label="A Chronological Record"><span></span></a>
-    <a data-target="section-external" data-label="External Archives"><span></span></a>
+    <a data-target="section-visual-record" data-label="Visual Record"><span>I</span></a>
+    <a data-target="section-visual-work" data-label="Visual Work"><span>II</span></a>
+    <a data-target="section-curated" data-label="Curated Record"><span>III</span></a>
+    <a data-target="section-timeline" data-label="A Chronological Record"><span>IV</span></a>
+    <a data-target="section-external" data-label="External Archives"><span>V</span></a>
   </nav>
-
 
   <div class="page-content">
     <div class="nav">
@@ -882,373 +948,397 @@
           <figcaption>Relational flow</figcaption>
         </figure>
       </div>
-    </section>
-    <div class="scroll-spacer"></div>
-    <div class="divider"></div>
 
-    <section class="archive-curated" id="section-curated">
-      <div class="archive-head">
-        <div class="archive-title">Curated Record</div>
-        <div class="archive-note">
-          <em>Curated by recognition, not self-reporting</em>
+      <div class="visual-essay">
+        <div class="visual-essay-label">Visual essay</div>
+
+        <div class="visual-essay-title">
+          Designing Existence · 2015–2025
         </div>
-      </div>
 
-      <div class="curated-entry">
-        <div class="curated-year">2025</div>
-        <div class="curated-body">
-          <div class="curated-title static">
-            Peer reviewer
-          </div>
-
-          <div class="curated-affiliation">
-            <div class="curated-org"><em>Physics of Fluids · Ocean Engineering</em></div>
-          </div>
-
-          <div class="curated-desc">
-            Peer review of manuscripts in fluid mechanics and ocean engineering.
-          </div>
-
-          <div class="curated-meta">
-            Invited peer reviewer · Certificate of excellence in reviewing
-          </div>
+        <div class="visual-essay-scale">
+          11 chapters · one year per chapter
         </div>
-      </div>
 
-      <div class="curated-entry">
-        <div class="curated-year">2025</div>
-        <div class="curated-body">
-          <a href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/" target="_blank"
-            rel="noopener" class="curated-title linked">
-            Official University Research News
+        <div class="visual-essay-meta">
+          <a href="/assets/Designing_Existence_Selected_Pages.pdf" target="_blank" rel="noopener"
+            class="visual-essay-link">
+            Selected pages (PDF)
           </a>
-
-          <div class="curated-affiliation">
-            <div class="curated-org">University of Strathclyde</div>
-            <div class="curated-locale">UNITED KINGDOM</div>
-          </div>
-          <div class="curated-desc">
-            Official feature on ship resistance and towing tank temperature effects.
-          </div>
-          <div class="curated-meta">
-            First author · Journal cover article
-          </div>
+          <span style="opacity:0.4;">
+            · Full archive available upon request
+          </span>
         </div>
       </div>
-    </section>
 
+  </div>
 
+  <div class="scroll-spacer"></div>
+  <div class="divider"></div>
+
+  <section class="archive-curated" id="section-curated">
+    <div class="archive-head">
+      <div class="archive-title">Curated Record</div>
+      <div class="archive-note">
+        <em>Curated by recognition, not self-reporting</em>
+      </div>
+    </div>
+
+    <div class="curated-entry">
+      <div class="curated-year">2025</div>
+      <div class="curated-body">
+        <div class="curated-title static">
+          Certificate of Excellence in Reviewing
+        </div>
+
+        <div class="curated-affiliation">
+          <div class="curated-org"><em>Ocean Engineering</em></div>
+          <div class="curated-locale">ELESVIER</div>
+        </div>
+
+        <div class="curated-desc">
+          Recognition for outstanding peer review.
+        </div>
+
+        <div class="curated-meta">
+          Award recipient
+        </div>
+      </div>
+    </div>
+
+    <div class="curated-entry">
+      <div class="curated-year">2025</div>
+      <div class="curated-body">
+        <a href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/" target="_blank"
+          rel="noopener" class="curated-title linked">
+          Official University Research News
+        </a>
+
+        <div class="curated-affiliation">
+          <div class="curated-org">University of Strathclyde</div>
+          <div class="curated-locale">UNITED KINGDOM</div>
+        </div>
+        <div class="curated-desc">
+          Official feature on ship resistance and towing tank temperature effects.
+        </div>
+        <div class="curated-meta">
+          First author · Journal cover article
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="scroll-spacer"></div>
+  <div class="divider"></div>
+
+  <section class="visual-record" id="section-timeline">
+    <div class="year-label">A chronological record</div>
     <div class="scroll-spacer"></div>
-    <div class="divider"></div>
+    <div class="timeline-wrapper">
+      <div class="timeline">
+        <div class="timeline-content">
+          <section class="year-section" id="y2013">
+            <div class="year-row">
+              <span class="year-num">2013–2015</span>
+              <span class="year-age">Age 15–17</span>
+            </div>
+            <div class="entry">
+              Secondary education · Academic underperformance
+            </div>
+          </section>
 
-    <section class="visual-record" id="section-timeline">
-      <div class="year-label">A chronological record</div>
-      <div class="scroll-spacer"></div>
-      <div class="timeline-wrapper">
-        <div class="timeline">
-          <div class="timeline-content">
-            <section class="year-section" id="y2013">
-              <div class="year-row">
-                <span class="year-num">2013–2015</span>
-                <span class="year-age">Age 15–17</span>
-              </div>
-              <div class="entry">
-                Secondary education · Academic underperformance
-              </div>
-            </section>
+          <section class="year-section" id="y2016">
+            <div class="year-row">
+              <span class="year-num">2016</span>
+              <span class="year-age">Age 18</span>
+            </div>
+            <div class="entry">
+              ROK Navy Petty Officer · Structural reset
+            </div>
+          </section>
 
-            <section class="year-section" id="y2016">
-              <div class="year-row">
-                <span class="year-num">2016</span>
-                <span class="year-age">Age 18</span>
-              </div>
-              <div class="entry">
-                ROK Navy · Petty Officer · Structural reset
-              </div>
-            </section>
+          <section class="year-section" id="y2018">
+            <div class="year-row">
+              <span class="year-num">2018</span>
+              <span class="year-age">Age 20</span>
+            </div>
+            <div class="entry">
+              English proficiency · Foundational self-study
+            </div>
+          </section>
 
-            <section class="year-section" id="y2018">
-              <div class="year-row">
-                <span class="year-num">2018</span>
-                <span class="year-age">Age 20</span>
-              </div>
-              <div class="entry">
-                English proficiency · Foundational self-study
-              </div>
-            </section>
+          <section class="year-section" id="y2019">
+            <div class="year-row">
+              <span class="year-num">2019</span>
+              <span class="year-age">Age 21</span>
+            </div>
+            <div class="entry">
+              Mathematical foundations · Sustained self-study
+            </div>
+          </section>
 
-            <section class="year-section" id="y2019">
-              <div class="year-row">
-                <span class="year-num">2019</span>
-                <span class="year-age">Age 21</span>
+          <section class="year-section" id="y2020">
+            <div class="year-row">
+              <span class="year-num selected">2020</span>
+              <span class="year-age">Age 22</span>
+            </div>
+            <div class="entry">
+              Military discharge · University admission preparation
+              <div class="meta">
+                – 2nd Fleet Commander Commendation
               </div>
-              <div class="entry">
-                Mathematical foundations · Sustained self-study
-              </div>
-            </section>
+            </div>
+          </section>
 
-            <section class="year-section" id="y2020">
-              <div class="year-row">
-                <span class="year-num selected">2020</span>
-                <span class="year-age">Age 22</span>
-              </div>
-              <div class="entry">
-                Military discharge · University admission preparation
-                <div class="meta">
-                  – 2nd Fleet Commander Commendation
-                </div>
-              </div>
-            </section>
+          <section class="year-section" id="y2021">
+            <div class="year-row">
+              <span class="year-num">2021</span>
+              <span class="year-age">Age 23</span>
+            </div>
+            <div class="entry">
+              Inha University · Engineering foundations
+            </div>
+          </section>
 
-            <section class="year-section" id="y2021">
-              <div class="year-row">
-                <span class="year-num">2021</span>
-                <span class="year-age">Age 23</span>
+          <section class="year-section" id="y2022">
+            <div class="year-row">
+              <span class="year-num selected">2022</span>
+              <span class="year-age">Age 24</span>
+            </div>
+            <div class="entry">
+              Design-oriented projects · Decision toward <em>MSc</em>
+              <div class="meta">
+                – Exploratory residency (Norway)
               </div>
-              <div class="entry">
-                Inha University · Engineering foundations
-              </div>
-            </section>
+            </div>
+          </section>
 
-            <section class="year-section" id="y2022">
-              <div class="year-row">
-                <span class="year-num selected">2022</span>
-                <span class="year-age">Age 24</span>
-              </div>
-              <div class="entry">
-                Design-oriented projects · Decision toward <em>MSc</em>
-                <div class="meta">
-                  – Exploratory residency (Norway)
-                </div>
-              </div>
-            </section>
+          <section class="year-section" id="y2023">
+            <div class="year-row">
+              <span class="year-num">2023</span>
+              <span class="year-age">Age 25</span>
+            </div>
+            <div class="entry">
+              Undergraduate researcher · First academic conference
+            </div>
+          </section>
 
-            <section class="year-section" id="y2023">
-              <div class="year-row">
-                <span class="year-num">2023</span>
-                <span class="year-age">Age 25</span>
+          <section class="year-section" id="y2024">
+            <div class="year-row">
+              <span class="year-num selected">2024</span>
+              <span class="year-age">Age 26</span>
+            </div>
+            <div class="entry">
+              Early graduation · UK <em>MSc</em> · Independent research
+              <div class="meta">
+                – Best Paper Award
               </div>
-              <div class="entry">
-                Undergraduate researcher · First academic conference
-              </div>
-            </section>
+            </div>
+          </section>
 
-            <section class="year-section" id="y2024">
-              <div class="year-row">
-                <span class="year-num selected">2024</span>
-                <span class="year-age">Age 26</span>
+          <section class="year-section" id="y2025">
+            <div class="year-row">
+              <span class="year-num selected">2025</span>
+              <span class="year-age">Age 27</span>
+            </div>
+            <div class="entry">
+              <em>MSc</em> Distinction · International conferences
+              <div class="meta">
+                – Cover article · Invited researcher (Japan) · Chopin piano recital
               </div>
-              <div class="entry">
-                Early graduation · UK <em>MSc</em> · Independent research
-                <div class="meta">
-                  – Best Paper Award
-                </div>
-              </div>
-            </section>
-
-            <section class="year-section" id="y2025">
-              <div class="year-row">
-                <span class="year-num selected">2025</span>
-                <span class="year-age">Age 27</span>
-              </div>
-              <div class="entry">
-                <em>MSc</em> Distinction · International conferences
-                <div class="meta">
-                  – Cover article · Invited researcher (Japan) · Chopin piano recital
-                </div>
-              </div>
-            </section>
-          </div>
+            </div>
+          </section>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <script>
-      window.addEventListener('load', () => {
+  <script>
+    window.addEventListener('load', () => {
 
-        const sections = [
-          'section-visual-record',
-          'section-visual-work',
-          'section-curated',
-          'section-timeline',
-          'section-external'
-        ];
+      const sections = [
+        'section-visual-record',
+        'section-visual-work',
+        'section-curated',
+        'section-timeline',
+        'section-external'
+      ];
 
-        const navLinks = document.querySelectorAll('.side-nav a');
+      const navLinks = document.querySelectorAll('.side-nav a');
 
-        const observer = new IntersectionObserver(
-          entries => {
-            entries.forEach(entry => {
-              if (!entry.isIntersecting) return;
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
 
-              const index = sections.indexOf(entry.target.id);
-              if (index === -1) return;
+            const index = sections.indexOf(entry.target.id);
+            if (index === -1) return;
 
-              navLinks.forEach(l => l.classList.remove('active'));
-              navLinks[index].classList.add('active');
-            });
-          },
-          {
-            root: null,
-            threshold: 0.35,
-            rootMargin: '0px 0px -30% 0px'
-          }
-        );
-
-        sections.forEach(id => {
-          const el = document.getElementById(id);
-          if (el) observer.observe(el);
-        });
-
-        window.addEventListener('scroll', () => {
-          const scrollBottom =
-            window.innerHeight + window.scrollY >=
-            document.documentElement.scrollHeight - 4;
-
-          if (scrollBottom) {
             navLinks.forEach(l => l.classList.remove('active'));
-            navLinks[navLinks.length - 1].classList.add('active');
-          }
-        });
-
-        document.querySelector('.page-content')?.classList.add('loaded');
-        navLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            const targetId = link.getAttribute('data-target');
-            const targetEl = document.getElementById(targetId);
-            if (!targetEl) return;
-
-            const yOffset = -80;
-            const y =
-              targetEl.getBoundingClientRect().top +
-              window.pageYOffset +
-              yOffset;
-
-            window.scrollTo({ top: y, behavior: 'smooth' });
+            navLinks[index].classList.add('active');
           });
+        },
+        {
+          root: null,
+          threshold: 0.35,
+          rootMargin: '0px 0px -30% 0px'
+        }
+      );
+
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+
+      window.addEventListener('scroll', () => {
+        const scrollBottom =
+          window.innerHeight + window.scrollY >=
+          document.documentElement.scrollHeight - 4;
+
+        if (scrollBottom) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          navLinks[navLinks.length - 1].classList.add('active');
+        }
+      });
+
+      document.querySelector('.page-content')?.classList.add('loaded');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          const targetId = link.getAttribute('data-target');
+          const targetEl = document.getElementById(targetId);
+          if (!targetEl) return;
+
+          const yOffset = -80;
+          const y =
+            targetEl.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
+
+          window.scrollTo({ top: y, behavior: 'smooth' });
         });
       });
-    </script>
+    });
+  </script>
 
-    <script>
-      document.querySelectorAll('.zoomable-drawing').forEach(img => {
-        img.addEventListener('click', () => {
-          const overlay = document.createElement('div');
-          overlay.className = 'zoom-overlay';
+  <script>
+    document.querySelectorAll('.zoomable-drawing').forEach(img => {
+      img.addEventListener('click', () => {
+        const overlay = document.createElement('div');
+        overlay.className = 'zoom-overlay';
 
-          const wrapper = document.createElement('div');
-          wrapper.className = 'zoom-overlay-content';
+        const wrapper = document.createElement('div');
+        wrapper.className = 'zoom-overlay-content';
 
-          const clone = img.cloneNode();
-          clone.style.width = '100%';
-          clone.style.maxWidth = '90vw';
-          clone.style.height = 'auto';
-          clone.style.maxHeight = '80vh';
-
-
-          const meta = document.createElement('div');
-          meta.className = 'zoom-meta';
-
-          const title = document.createElement('div');
-          title.className = 'zoom-title';
-          title.textContent = img.dataset.title || '';
-
-          const metaLine = document.createElement('div');
-          metaLine.className = 'zoom-meta-line';
-          metaLine.textContent = img.dataset.meta || '';
-
-          const desc = document.createElement('div');
-          desc.className = 'zoom-desc';
-          desc.textContent = img.dataset.desc || '';
-
-          meta.appendChild(title);
-          meta.appendChild(metaLine);   
-          meta.appendChild(desc);
+        const clone = img.cloneNode();
+        clone.style.width = '100%';
+        clone.style.maxWidth = '90vw';
+        clone.style.height = 'auto';
+        clone.style.maxHeight = '80vh';
 
 
-          wrapper.appendChild(clone);
-          wrapper.appendChild(meta);
-          overlay.appendChild(wrapper);
+        const meta = document.createElement('div');
+        meta.className = 'zoom-meta';
 
-          document.body.appendChild(overlay);
-          requestAnimationFrame(() => overlay.classList.add('active'));
+        const title = document.createElement('div');
+        title.className = 'zoom-title';
+        title.textContent = img.dataset.title || '';
 
-          overlay.addEventListener('click', () => {
-            overlay.classList.remove('active');
-            setTimeout(() => {
-              document.querySelector('.page-content')?.classList.add('loaded');
-            }, 120);
+        const metaLine = document.createElement('div');
+        metaLine.className = 'zoom-meta-line';
+        metaLine.textContent = img.dataset.meta || '';
 
-          });
+        const desc = document.createElement('div');
+        desc.className = 'zoom-desc';
+        desc.textContent = img.dataset.desc || '';
+
+        meta.appendChild(title);
+        meta.appendChild(metaLine);
+        meta.appendChild(desc);
+
+
+        wrapper.appendChild(clone);
+        wrapper.appendChild(meta);
+        overlay.appendChild(wrapper);
+
+        document.body.appendChild(overlay);
+        requestAnimationFrame(() => overlay.classList.add('active'));
+
+        overlay.addEventListener('click', () => {
+          overlay.classList.remove('active');
+          setTimeout(() => {
+            document.querySelector('.page-content')?.classList.add('loaded');
+          }, 120);
+
         });
       });
-    </script>
+    });
+  </script>
 
-    <div class="divider"></div>
+  <div class="divider"></div>
 
-    <section class="records">
-      <div class="records-label">Records</div>
+  <section class="records">
+    <div class="records-label">Records</div>
 
-      <div class="record-item">
-        <img src="/assets/navy_2017.jpg" alt="">
-        <div class="record-text">
-          <div class="record-year">Navy, 2017</div>
-          <div class="record-meta">Reframing</div>
-        </div>
+    <div class="record-item">
+      <img src="/assets/navy_2017.jpg" alt="">
+      <div class="record-text">
+        <div class="record-year">Navy, 2017</div>
+        <div class="record-meta">Reframing</div>
+      </div>
+    </div>
+
+    <div class="record-item">
+      <img src="/assets/navy_2019.jpg" alt="">
+      <div class="record-text">
+        <div class="record-year">Navy, 2019</div>
+        <div class="record-meta">Anchor</div>
+      </div>
+    </div>
+
+    <div class="record-item">
+      <img src="/assets/inha_2023.jpg" alt="">
+      <div class="record-text">
+        <div class="record-year">Inha, 2023</div>
+        <div class="record-meta">Expansion</div>
+      </div>
+    </div>
+
+    <div class="record-item">
+      <img src="/assets/glasgow_2025.jpg" alt="">
+      <div class="record-text">
+        <div class="record-year">Strathclyde, 2025</div>
+        <div class="record-meta">Visit</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+  <section class="visual-record" id="section-external">
+    <div class="year-label">External Archives</div>
+    <div class="entry" style="margin-top:20px;">
+      <div class="entry">
+        <strong>
+          <a href="https://www.instagram.com/stillline/" target="_blank" rel="noopener">
+            stillline
+          </a>
+        </strong>
+        <span>
+          — graphite drawings · classical music · reflective texts
+        </span>
       </div>
 
-      <div class="record-item">
-        <img src="/assets/navy_2019.jpg" alt="">
-        <div class="record-text">
-          <div class="record-year">Navy, 2019</div>
-          <div class="record-meta">Anchor</div>
-        </div>
+      <div class="entry" style="margin-top:12px;">
+        <strong>
+          <a href="https://www.instagram.com/by.eigen/" target="_blank" rel="noopener">
+            by.eigen
+          </a>
+        </strong>
+        <span>
+          — research · travel · piano · long-form personal record
+        </span>
       </div>
-
-      <div class="record-item">
-        <img src="/assets/inha_2023.jpg" alt="">
-        <div class="record-text">
-          <div class="record-year">Inha, 2023</div>
-          <div class="record-meta">Expansion</div>
-        </div>
-      </div>
-
-      <div class="record-item">
-        <img src="/assets/glasgow_2025.jpg" alt="">
-        <div class="record-text">
-          <div class="record-year">Strathclyde, 2025</div>
-          <div class="record-meta">Visit</div>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-    <section class="visual-record" id="section-external">
-      <div class="year-label">External Archives</div>
-      <div class="entry" style="margin-top:20px;">
-        <div class="entry">
-          <strong>
-            <a href="https://www.instagram.com/stillline/" target="_blank" rel="noopener">
-              stillline
-            </a>
-          </strong>
-          <span>
-            — graphite drawings · visual studies · still observation
-          </span>
-        </div>
-
-        <div class="entry" style="margin-top:12px;">
-          <strong>
-            <a href="https://www.instagram.com/by.eigen/" target="_blank" rel="noopener">
-              by.eigen
-            </a>
-          </strong>
-          <span>
-            — research · travel · art · long-form personal record
-          </span>
-        </div>
-    </section>
-    <div class="scroll-spacer"></div>
+  </section>
+  <div class="scroll-spacer"></div>
   </div>
 </body>
 
