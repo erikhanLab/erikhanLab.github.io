@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Research</title>
@@ -12,6 +13,7 @@
       --research-bg: #F7F9FC;
       --bg-light: #F7F9FC;
     }
+
     .site-header {
       margin: 60px 0 20px;
     }
@@ -24,7 +26,7 @@
       color: #111;
     }
 
-   body {
+    body {
       max-width: 800px;
       margin: 40px auto;
       padding: 0 20px;
@@ -36,46 +38,91 @@
     }
 
     h1 {
-      font-size: 2.3em;
-      margin-bottom: 1.1em;
-      color: var(--research-blue);
+      gap: 14px;
+      margin-bottom: 40px;
     }
 
     /* Top navigation */
     .nav {
       position: sticky;
-      top: 0;
+      top: env(safe-area-inset-top);
       z-index: 1000;
 
-      margin-bottom: 65px;
-      padding: 18px 0;
+      display: flex;
+      /* ← grid 버림 */
+      justify-content: center;
+      /* 전체 중앙 */
+      gap: 60px;
 
-      background: rgba(247, 249, 252, 0.95); /* bg-light with slight opacity */
-      backdrop-filter: blur(4px);
+      padding: 14px 0;
+      margin-bottom: 36px;
 
-      border-bottom: 0.5px solid #e0e0e0;
+      background: rgba(247, 249, 252, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+
+      border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
     }
 
     .nav a {
-      margin-right: 12px;
-      padding: 6px 14px;
-      border: 1px solid #222;
+      position: relative;
+
+      margin: 0;
+      padding: 6px 0;
+
+      text-align: center;
       text-decoration: none;
-      color: #111;
-      font-size: 0.88em;
-      letter-spacing: 0.02em;
+
+      font-size: 1em;
+      letter-spacing: 0.12em;
+      font-weight: 400;
+
+      color: #444;
+      opacity: 0.65;
+
+      transition:
+        opacity 0.2s ease,
+        color 0.2s ease;
     }
 
     .nav a:hover {
-      background: #111;
-      color: #fff;
+      opacity: 1;
+      color: #111;
     }
 
     .nav a.active {
+      opacity: 1;
+      color: #111;
+      font-weight: 500;
+    }
+
+    .nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+
+      width: 22px;
+      height: 1px;
       background: #111;
-      color: #fff;
-      cursor: default;
-      box-shadow: inset 0 -1.5px 0 #111;
+      opacity: 0.85;
+    }
+
+    .header {
+      font-family: Georgia, serif;
+      font-size: 0.9em;
+      display: flex;
+      align-items: baseline;
+      font-weight: 300;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    h1 {
+      gap: 14px;
+      margin-bottom: 40px;
     }
 
     /* === Research intro layout === */
@@ -154,6 +201,95 @@
         flex-direction: column;
       }
 
+      body {
+        margin: 24px auto;
+        padding: 0 16px;
+        line-height: 1.65;
+      }
+
+      .header {
+        font-size: 0.8em;
+        /* ← 전체 리듬 유지 */
+        letter-spacing: 0.14em;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        font-size: 1.6em;
+        /* 데스크톱 2.1em → 모바일용 */
+        margin-bottom: 0;
+      }
+
+      .nav {
+        position: sticky;
+        top: env(safe-area-inset-top);
+        z-index: 1000;
+
+        display: flex;
+        /* ← grid 버림 */
+        justify-content: center;
+        /* 전체 중앙 */
+        gap: 15px;
+        /* ← 단어 간 간격의 “단 하나의 규칙” */
+
+        padding: 16px 0;
+        margin-bottom: 40px;
+
+        background: rgba(247, 249, 252, 0.85);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+      }
+
+      .nav a {
+        position: relative;
+
+        margin: 0;
+        padding: 6px 0;
+
+        text-align: center;
+
+        text-decoration: none;
+
+        font-size: clamp(0.62em, 2.6vw, 0.7em);
+        letter-spacing: 0.12em;
+        font-weight: 400;
+
+        color: #444;
+        opacity: 0.6;
+
+        white-space: nowrap;
+
+        transition:
+          opacity 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .nav a:hover {
+        opacity: 1;
+        color: #111;
+      }
+
+      .nav a.active {
+        opacity: 1;
+        color: #111;
+        font-weight: 500;
+      }
+
+      .nav a.active::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -8px;
+        transform: translateX(-50%);
+
+        width: 16px;
+        height: 1px;
+        background: #111;
+        opacity: 0.8;
+      }
+
       .research-photo img {
         max-width: 100%;
       }
@@ -163,50 +299,53 @@
 
 <body>
   <header class="site-header">
-  <div class="site-name">SANGSEOK HAN</div>
-</header>
+    <div class="site-name">SANGSEOK HAN</div>
+  </header>
 
-<div class="nav">
-  <a href="/">Home</a>
-  <a href="/Profile/">Profile</a>
-  <a href="/research/"class="active">Research</a>
-  <a href="/publications/">Publications</a>
-  <a href="/practice/" >Practice</a>
-  <a href="/archive/">Archive</a>
-</div>
-
-<h1>Research</h1>
-
-<div class="research-intro">
-  <div class="research-photo">
-    <img src="/assets/research.jpg" alt="Computational research environment">
+  <div class="nav">
+    <a href="/">Home</a>
+    <a href="/Profile/">Profile</a>
+    <a href="/research/" class="active">Research</a>
+    <a href="/publications/">Publications</a>
+    <a href="/practice/">Practice</a>
+    <a href="/archive/">Archive</a>
   </div>
 
-  <div class="overview">
-    <ul>
-      <li>High-fidelity CFD modeling of turbulent flows in marine and offshore systems</li>
-      <li>Multiphysics coupling for FOWT, WEC, and ship hydrodynamics</li>
-      <li>Uncertainty-aware analysis of scale effects, roughness, and experimental bias</li>
-    </ul>
+  <div class="header">
+    <h1>Research</h1>
   </div>
-</div>
 
-<div class="sections">
-  <a class="section-link" href="/research/interests/">
-    <h3>Research Interests</h3>
-    <p>Core research themes and methodological focus.</p>
-  </a>
+  <div class="research-intro">
+    <div class="research-photo">
+      <img src="/assets/research.jpg" alt="Computational research environment">
+    </div>
 
-  <a class="section-link" href="/research/ongoing/">
-    <h3>Ongoing Research</h3>
-    <p>Active projects and current publication status.</p>
-  </a>
+    <div class="overview">
+      <ul>
+        <li>High-fidelity CFD modeling of turbulent flows in marine and offshore systems</li>
+        <li>Multiphysics coupling for FOWT, WEC, and ship hydrodynamics</li>
+        <li>Uncertainty-aware analysis of scale effects, roughness, and experimental bias</li>
+      </ul>
+    </div>
+  </div>
 
-  <a class="section-link" href="/research/future/">
-    <h3>Future Research Directions</h3>
-    <p>Planned research agenda and prospective studies.</p>
-  </a>
-</div>
+  <div class="sections">
+    <a class="section-link" href="/research/interests/">
+      <h3>Research Interests</h3>
+      <p>Core research themes and methodological focus.</p>
+    </a>
+
+    <a class="section-link" href="/research/ongoing/">
+      <h3>Ongoing Research</h3>
+      <p>Active projects and current publication status.</p>
+    </a>
+
+    <a class="section-link" href="/research/future/">
+      <h3>Future Research Directions</h3>
+      <p>Planned research agenda and prospective studies.</p>
+    </a>
+  </div>
 
 </body>
+
 </html>
