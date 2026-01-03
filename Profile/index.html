@@ -104,20 +104,20 @@
     }
 
     .header {
-    font-family: Georgia, serif;
-    font-size: 0.9em;
-    display: flex;
-    align-items: baseline;
-    font-weight: 300;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #555;
-  }
+      font-family: Georgia, serif;
+      font-size: 0.9em;
+      display: flex;
+      align-items: baseline;
+      font-weight: 300;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #555;
+    }
 
-  h1 {
-    gap: 14px;
-    margin-bottom: 40px;
-  }
+    h1 {
+      gap: 14px;
+      margin-bottom: 40px;
+    }
 
     .subtitle {
       margin-bottom: 18px;
@@ -139,6 +139,19 @@
         margin: 24px auto;
         padding: 0 16px;
         line-height: 1.65;
+      }
+
+      .header {
+        font-size: 0.8em;
+        /* ← 전체 리듬 유지 */
+        letter-spacing: 0.14em;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        font-size: 1.6em;
+        /* 데스크톱 2.1em → 모바일용 */
+        margin-bottom: 0;
       }
 
       .nav {
@@ -409,217 +422,216 @@
     <a data-index="4"><span></span></a>
   </nav>
 
-    <div class="nav">
-      <a href="/">Home</a>
-      <a href="/Profile/" class="active">Profile</a>
-      <a href="/research/">Research</a>
-      <a href="/publications/">Publications</a>
-      <a href="/practice/">Practice</a>
-      <a href="/archive/">Archive</a>
-    </div>
+  <div class="nav">
+    <a href="/">Home</a>
+    <a href="/Profile/" class="active">Profile</a>
+    <a href="/research/">Research</a>
+    <a href="/publications/">Publications</a>
+    <a href="/practice/">Practice</a>
+    <a href="/archive/">Archive</a>
+  </div>
 
-    <div class="header">
-      <h1>Profile</h1>
-    </div>
-    <p class="subtitle">Fluid Mechanics · CFD</p>
+  <div class="header">
+    <h1>Profile</h1>
+  </div>
+  <p class="subtitle">Fluid Mechanics · CFD</p>
 
-    <p class="tagline">
-      I study fluid mechanics using CFD, with a focus on near-wall flows and surface roughness effects.
+  <p class="tagline">
+    I study fluid mechanics using CFD, with a focus on near-wall flows and surface roughness effects.
 
-    <div class="icons">
-      <a href="https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en" target="_blank"
-        aria-label="Google Scholar">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2z" />
-        </svg>
-      </a>
+  <div class="icons">
+    <a href="https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en" target="_blank" aria-label="Google Scholar">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2z" />
+      </svg>
+    </a>
 
-      <a href="https://orcid.org/0009-0007-8276-2728" target="_blank" aria-label="ORCID">
-        <svg viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10" />
-          <path fill="#fff" d="M10.4 7.4h-1.6v9.2h1.6V7.4zm3.2 0h-2.2v1.6h2.2
+    <a href="https://orcid.org/0009-0007-8276-2728" target="_blank" aria-label="ORCID">
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+        <path fill="#fff" d="M10.4 7.4h-1.6v9.2h1.6V7.4zm3.2 0h-2.2v1.6h2.2
         c1.8 0 2.8 1.1 2.8 3s-1 3-2.8 3h-2.2v1.6h2.2c2.7 0 4.4-1.8 4.4-4.6
         0-2.8-1.7-4.6-4.4-4.6z" />
-        </svg>
-      </a>
+      </svg>
+    </a>
 
-      <a href="https://www.linkedin.com/in/erik-han97/" target="_blank" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1s2.5 1.12 2.5 2.5zM0 24h5V7H0v17zM7.5 7h4.7v2.3h.1c.7-1.3 2.4-2.7 5-2.7 5.3 0 6.3 3.5 6.3 8.1V24h-5v-7.7c0-1.8 0-4.1-2.5-4.1s-2.9 2-2.9 4v7.8h-5V7z" />
-        </svg>
-      </a>
+    <a href="https://www.linkedin.com/in/erik-han97/" target="_blank" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1s2.5 1.12 2.5 2.5zM0 24h5V7H0v17zM7.5 7h4.7v2.3h.1c.7-1.3 2.4-2.7 5-2.7 5.3 0 6.3 3.5 6.3 8.1V24h-5v-7.7c0-1.8 0-4.1-2.5-4.1s-2.9 2-2.9 4v7.8h-5V7z" />
+      </svg>
+    </a>
 
-      <a href="mailto:erikhan.nor@gmail.com" aria-label="Email">
-        <svg viewBox="0 0 24 24">
-          <path d="M2 4h20v16H2V4zm10 7L2 6v2l10 5 10-5V6l-10 5z" />
-        </svg>
-      </a>
+    <a href="mailto:erikhan.nor@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24">
+        <path d="M2 4h20v16H2V4zm10 7L2 6v2l10 5 10-5V6l-10 5z" />
+      </svg>
+    </a>
 
-      <a href="https://www.instagram.com/by.eigen/" target="_blank" aria-label="Instagram">
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.4A2.9 2.9 0 1 1 14.9 12 2.9 2.9 0 0 1 12 14.9zm4.8-8.4a1.1 1.1 0 1 0 1.1 1.1 1.1 1.1 0 0 0-1.1-1.1z" />
-        </svg>
-      </a>
+    <a href="https://www.instagram.com/by.eigen/" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.4A2.9 2.9 0 1 1 14.9 12 2.9 2.9 0 0 1 12 14.9zm4.8-8.4a1.1 1.1 0 1 0 1.1 1.1 1.1 1.1 0 0 0-1.1-1.1z" />
+      </svg>
+    </a>
 
-      <a href="/assets/Sangseok_Han_CV.pdf" target="_blank" class="cv-link">CV</a>
-    </div>
+    <a href="/assets/Sangseok_Han_CV.pdf" target="_blank" class="cv-link">CV</a>
+  </div>
 
-    <p class="pub-link" style="font-size:0.85em; color:#555; margin-top:-50px;">
-      Selected journal and conference papers can be found in the <a href="/publications/">Publications</a> section.
+  <p class="pub-link" style="font-size:0.85em; color:#555; margin-top:-50px;">
+    Selected journal and conference papers can be found in the <a href="/publications/">Publications</a> section.
+  </p>
+
+  <div class="section" id="current" style="margin-top:60px">
+    <h2><strong>Current</strong></h2>
+    <p>
+      MSc graduate in Advanced Naval Architecture.<br>
+      Prospective PhD applicant <span style="font-size:0.9em;">(2026)</span>, currently engaged in ongoing research
+      projects.<br>
     </p>
+  </div>
 
-    <div class="section" id="current" style="margin-top:60px">
-      <h2><strong>Current</strong></h2>
-      <p>
-        MSc graduate in Advanced Naval Architecture.<br>
-        Prospective PhD applicant <span style="font-size:0.9em;">(2026)</span>, currently engaged in ongoing research
-        projects.<br>
-      </p>
-    </div>
+  <div class="section" id="research-interests">
+    <h2><strong>Research Interests</strong></h2>
+    <ul>
+      <li>
+        <span style="margin-right:6px;">·</span>
+        Turbulence and near-wall flow physics
+      </li>
+      <li>
+        <span style="margin-right:6px;">·</span>
+        Computational hydrodynamics of rough-wall effects
+      </li>
+      <li>
+        <span style="margin-right:6px;">·</span>
+        Fluid–structure interaction in offshore and marine energy systems
+      </li>
 
-    <div class="section" id="research-interests">
-      <h2><strong>Research Interests</strong></h2>
-      <ul>
-        <li>
-          <span style="margin-right:6px;">·</span>
-          Turbulence and near-wall flow physics
-        </li>
-        <li>
-          <span style="margin-right:6px;">·</span>
-          Computational hydrodynamics of rough-wall effects
-        </li>
-        <li>
-          <span style="margin-right:6px;">·</span>
-          Fluid–structure interaction in offshore and marine energy systems
-        </li>
-
-      </ul>
-    </div>
+    </ul>
+  </div>
 
 
 
 
-    <div class="divider"></div>
+  <div class="divider"></div>
 
-    <div class="section" id="affiliations">
-      <h2><strong>Affiliations</strong></h2>
-      <ul>
-        <li>
-          <span style="font-weight:400; color:#333;">
-            The University of Osaka
-          </span>
+  <div class="section" id="affiliations">
+    <h2><strong>Affiliations</strong></h2>
+    <ul>
+      <li>
+        <span style="font-weight:400; color:#333;">
+          The University of Osaka
+        </span>
 
-          <em style="font-size:0.85em; color:#777;">(Japan)</em><br>
-          <span style="font-size:0.95em; color:#444;">
-            <em>Visiting Researcher</em> <span style="font-size:0.9em;">(2025)</span>
-          </span>
+        <em style="font-size:0.85em; color:#777;">(Japan)</em><br>
+        <span style="font-size:0.95em; color:#444;">
+          <em>Visiting Researcher</em> <span style="font-size:0.9em;">(2025)</span>
+        </span>
 
-        </li>
+      </li>
 
-        <li style="margin-top:14px;">
-          <span style="font-weight:400; color:#333;">
-            University of Strathclyde
-          </span>
-          <em style="font-size:0.85em; color:#777;">(the United Kingdom)</em><br>
+      <li style="margin-top:14px;">
+        <span style="font-weight:400; color:#333;">
+          University of Strathclyde
+        </span>
+        <em style="font-size:0.85em; color:#777;">(the United Kingdom)</em><br>
 
-          <span style="font-size:0.95em; color:#555;">
-            MSc · Advanced Naval Architecture <span style="font-size:0.9em;">(2024–2025)</span>
-          </span>
-        </li>
+        <span style="font-size:0.95em; color:#555;">
+          MSc · Advanced Naval Architecture <span style="font-size:0.9em;">(2024–2025)</span>
+        </span>
+      </li>
 
-        <li style="margin-top:14px;">
-          <span style="font-weight:400; color:#333;">
-            Inha University
-          </span>
-          <em style="font-size:0.85em; color:#777;">(Republic of Korea)</em><br>
-          <span style="font-size:0.95em; color:#555;">
-            BSc · Naval Architecture &amp; Ocean Engineering <span style="font-size:0.9em;">(2021–2024)</span>
-          </span>
-        </li>
-      </ul>
-    </div>
-
-
-
-    <div class="section" id="academic-activity">
-      <h2><strong>Academic Activity</strong></h2>
-      <ul>
-        <li>
-          Peer reviewer for international journals
-          <span style="font-size:0.9em; color:#555;"><span style="font-size:0.9em;">(2025–)</span></span>
-        </li>
-
-        <li style="margin-left:6px; margin-top:6px; font-size:0.9em; color:#555;">
-          <span style="margin-right:6px;">·</span>
-          <em>Ocean Engineering</em>
-          <span style="font-size:0.8em; color:#777;">(Elsevier)</span>
-        </li>
-
-        <li style="margin-left:6px; font-size:0.9em; color:#555;">
-          <span style="margin-right:6px;">·</span>
-          <em>Physics of Fluids</em>
-          <span style="font-size:0.8em; color:#777;">(AIP Publishing)</span>
-        </li>
+      <li style="margin-top:14px;">
+        <span style="font-weight:400; color:#333;">
+          Inha University
+        </span>
+        <em style="font-size:0.85em; color:#777;">(Republic of Korea)</em><br>
+        <span style="font-size:0.95em; color:#555;">
+          BSc · Naval Architecture &amp; Ocean Engineering <span style="font-size:0.9em;">(2021–2024)</span>
+        </span>
+      </li>
+    </ul>
+  </div>
 
 
-        <li style="margin-left:6px; margin-top:6px; font-size:0.85em; color:#666;">
-          <span style="margin-right:6px;">–</span>
-          Certificate of Excellence in Reviewing,
-          <em>Ocean Engineering</em> <span style="font-size:0.9em;">(Feb 2025)</span>
-        </li>
-      </ul>
-    </div>
 
-    <div class="section" id="background">
-      <h2><strong>Background</strong></h2>
-      <ul>
-        <li>
-          <span style="font-weight:400; color:#333;">
-            Rebublic of Korea Navy
-          </span>
-          <span style="font-size:0.95em; color:#555;">
-            Sonar Petty Officer <span style="font-size:0.9em;">(2016–2020)</span>
-          </span>
-        </li>
+  <div class="section" id="academic-activity">
+    <h2><strong>Academic Activity</strong></h2>
+    <ul>
+      <li>
+        Peer reviewer for international journals
+        <span style="font-size:0.9em; color:#555;"><span style="font-size:0.9em;">(2025–)</span></span>
+      </li>
 
-        <li style="margin-top:6px; margin-left:12px; font-size:0.85em; color:#666;">
-          <span style="margin-right:6px;">–</span>
-          Operational experience in underwater acoustics and flow-related uncertainty
-        </li>
-      </ul>
-    </div>
+      <li style="margin-left:6px; margin-top:6px; font-size:0.9em; color:#555;">
+        <span style="margin-right:6px;">·</span>
+        <em>Ocean Engineering</em>
+        <span style="font-size:0.8em; color:#777;">(Elsevier)</span>
+      </li>
+
+      <li style="margin-left:6px; font-size:0.9em; color:#555;">
+        <span style="margin-right:6px;">·</span>
+        <em>Physics of Fluids</em>
+        <span style="font-size:0.8em; color:#777;">(AIP Publishing)</span>
+      </li>
 
 
-    <!-- IntersectionObserver용 여백 -->
-    <div class="scroll-spacer"></div>
+      <li style="margin-left:6px; margin-top:6px; font-size:0.85em; color:#666;">
+        <span style="margin-right:6px;">–</span>
+        Certificate of Excellence in Reviewing,
+        <em>Ocean Engineering</em> <span style="font-size:0.9em;">(Feb 2025)</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section" id="background">
+    <h2><strong>Background</strong></h2>
+    <ul>
+      <li>
+        <span style="font-weight:400; color:#333;">
+          Rebublic of Korea Navy
+        </span>
+        <span style="font-size:0.95em; color:#555;">
+          Sonar Petty Officer <span style="font-size:0.9em;">(2016–2020)</span>
+        </span>
+      </li>
+
+      <li style="margin-top:6px; margin-left:12px; font-size:0.85em; color:#666;">
+        <span style="margin-right:6px;">–</span>
+        Operational experience in underwater acoustics and flow-related uncertainty
+      </li>
+    </ul>
+  </div>
 
 
-    <script>
-      const navLinks = Array.from(document.querySelectorAll('.side-nav a'));
-      const totalDots = navLinks.length;
+  <!-- IntersectionObserver용 여백 -->
+  <div class="scroll-spacer"></div>
 
-      function updateScrollIndicator() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.body.scrollHeight - window.innerHeight;
-        const progress = scrollTop / docHeight;
 
-        const activeIndex = Math.min(
-          totalDots - 1,
-          Math.floor(progress * totalDots)
-        );
+  <script>
+    const navLinks = Array.from(document.querySelectorAll('.side-nav a'));
+    const totalDots = navLinks.length;
 
-        navLinks.forEach(l => l.classList.remove('active'));
-        navLinks[activeIndex]?.classList.add('active');
-      }
+    function updateScrollIndicator() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = scrollTop / docHeight;
 
-      window.addEventListener('scroll', updateScrollIndicator);
-      window.addEventListener('load', () => {
-        document.querySelector('.page-content')?.classList.add('loaded');
-        updateScrollIndicator();
-      });
-    </script>
+      const activeIndex = Math.min(
+        totalDots - 1,
+        Math.floor(progress * totalDots)
+      );
+
+      navLinks.forEach(l => l.classList.remove('active'));
+      navLinks[activeIndex]?.classList.add('active');
+    }
+
+    window.addEventListener('scroll', updateScrollIndicator);
+    window.addEventListener('load', () => {
+      document.querySelector('.page-content')?.classList.add('loaded');
+      updateScrollIndicator();
+    });
+  </script>
 
   </div>
 </body>

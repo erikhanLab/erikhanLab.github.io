@@ -236,7 +236,15 @@
         padding: 0 16px;
         line-height: 1.65;
       }
-
+      .header {
+    font-size: 0.8em;      /* ← 전체 리듬 유지 */
+    letter-spacing: 0.14em;
+    margin-bottom: 30px;
+  }
+  .header h1 {
+    font-size: 1.6em;      /* 데스크톱 2.1em → 모바일용 */
+    margin-bottom: 0;
+  }
       /* ===== SIDE NAV ===== */
       .side-nav a::after {
         display: none;
@@ -328,7 +336,7 @@
         /* ← grid 버림 */
         justify-content: center;
         /* 전체 중앙 */
-        gap: 28px;
+        gap: 10px;
         /* ← 단어 간 간격의 “단 하나의 규칙” */
 
         padding: 16px 0;
