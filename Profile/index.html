@@ -24,6 +24,12 @@
       font-weight: 500;
       letter-spacing: 0.18em;
       color: #111;
+      text-decoration: none;
+    }
+
+    .site-name:hover {
+      opacity: 0.85;
+      /* 아주 미세한 피드백만 */
     }
 
     body {
@@ -407,13 +413,38 @@
     .scroll-spacer {
       height: 15vh;
     }
+
+    /* ===== Research Interests – Typographic Elevation ===== */
+    #research-interests ul {
+      margin-top: 18px;
+    }
+
+    #research-interests li {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 0.98em;
+      line-height: 1.55;
+      letter-spacing: 0.02em;
+      color: #3f3f3f;
+
+      margin-bottom: 14px;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    #research-interests li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #9aa3af;
+    }
   </style>
 </head>
 
 <body>
   <header class="site-header">
-    <div class="site-name">SANGSEOK HAN</div>
+    <a href="/" class="site-name">SANGSEOK HAN</a>
   </header>
+
   <nav class="side-nav">
     <a data-index="0"><span></span></a>
     <a data-index="1"><span></span></a>
@@ -494,19 +525,9 @@
   <div class="section" id="research-interests">
     <h2><strong>Research Interests</strong></h2>
     <ul>
-      <li>
-        <span style="margin-right:6px;">·</span>
-        Turbulence and near-wall flow physics
-      </li>
-      <li>
-        <span style="margin-right:6px;">·</span>
-        Computational hydrodynamics of rough-wall effects
-      </li>
-      <li>
-        <span style="margin-right:6px;">·</span>
-        Fluid–structure interaction in offshore and marine energy systems
-      </li>
-
+      <li>Turbulence and near-wall flow physics</li>
+      <li>Computational hydrodynamics of rough-wall effects</li>
+      <li>Fluid–structure interaction in offshore and marine energy systems</li>
     </ul>
   </div>
 

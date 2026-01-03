@@ -24,6 +24,12 @@
       font-weight: 500;
       letter-spacing: 0.18em;
       color: #111;
+      text-decoration: none;
+    }
+
+    .site-name:hover {
+      opacity: 0.85;
+      /* 아주 미세한 피드백만 */
     }
 
     body {
@@ -173,7 +179,6 @@
     }
 
     h1 {
-      
       gap: 14px;
       margin-bottom: 10px;
     }
@@ -236,15 +241,32 @@
         padding: 0 16px;
         line-height: 1.65;
       }
+
       .header {
-    font-size: 0.8em;      /* ← 전체 리듬 유지 */
-    letter-spacing: 0.14em;
-    margin-bottom: 30px;
-  }
-  .header h1 {
-    font-size: 1.6em;      /* 데스크톱 2.1em → 모바일용 */
-    margin-bottom: 0;
-  }
+        font-size: 0.8em;
+        /* ← 전체 리듬 유지 */
+        letter-spacing: 0.14em;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        font-size: 1.6em;
+        /* 데스크톱 2.1em → 모바일용 */
+        margin-bottom: 0;
+      }
+
+      /* ===== SIDE NAV (MOBILE POSITION FIX) ===== */
+      .side-nav {
+        right: 14px;
+        
+        /* ← 화면 끝에서 떼어냄 */
+        top: 55%;
+        /* ← 살짝 아래로 */
+        transform: translateY(-50%);
+        gap: 22px;
+        /* 밀도 완화 */
+      }
+
       /* ===== SIDE NAV ===== */
       .side-nav a::after {
         display: none;
@@ -599,6 +621,7 @@
       font-size: 0.75em;
       color: #9aa3af;
       line-height: 1.6;
+      letter-spacing: 0.06em;
     }
 
     .curated-entry {
@@ -786,15 +809,14 @@
       white-space: nowrap;
     }
 
-
     .records {
       margin: 40px 0 40px;
       max-width: 420px;
     }
 
     .records-label {
-      font-size: 0.75em;
-      letter-spacing: 0.34em;
+      font-size: 0.85em;
+      letter-spacing: 0.28em;
       opacity: 0.45;
       margin-bottom: 28px;
       text-transform: uppercase;
@@ -839,8 +861,9 @@
 
 <body>
   <header class="site-header">
-    <div class="site-name">SANGSEOK HAN</div>
+    <a href="/" class="site-name">SANGSEOK HAN</a>
   </header>
+
   <nav class="side-nav">
     <a data-target="section-visual-record" data-label="Visual Record"><span></span></a>
     <a data-target="section-visual-work" data-label="Visual Work"><span></span></a>
