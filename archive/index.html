@@ -20,10 +20,10 @@
 
   <style>
     :root {
-      --accent-dark: #0B1F3A;
-      --bg-light: #F7F9FC;
-      --text-muted: #4A4A4A;
+      --bg-light: #F3F5F8;
+      --bg-shadow: rgba(11, 31, 58, 0.018);
     }
+
 
     .site-header {
       margin: 60px 0 20px;
@@ -120,7 +120,7 @@
       gap: 60px;
       padding: 14px 0;
       margin-bottom: 36px;
-      background: rgba(247, 249, 252, 0.85);
+      background: rgba(243, 245, 248, 0.85);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
@@ -246,7 +246,7 @@
       }
 
       .header h1 {
-        font-size: 1.6em;
+        font-size: 1.55em;
         margin-bottom: 0;
       }
 
@@ -706,6 +706,7 @@
       grid-row: 4 / 6;
       opacity: 0.85;
       margin-left: 40px;
+      filter: blur(0.2px);
     }
 
     .visual-item.korea-2016 {
@@ -719,7 +720,7 @@
       width: 100%;
       height: auto;
       display: block;
-      filter: grayscale(50%);
+      filter: grayscale(50%) blur(0.5px);
     }
 
     .visual-item.anchor figcaption {
@@ -800,9 +801,10 @@
     .record-item img {
       width: 70px;
       max-width: 100px;
-      opacity: 0.5;
-      filter: grayscale(60%);
+      opacity: 0.45;
+      filter: grayscale(70%) blur(0.4px);
     }
+
 
     .record-year {
       font-size: 0.6em;
@@ -867,6 +869,22 @@
     .visual-essay-link:hover {
       border-bottom-color: #999;
       opacity: 0.85;
+    }
+
+    .archive-blank {
+      margin: 40px 0 60px;
+      padding: 36px 0;
+      background: var(--bg-shadow);
+    }
+
+
+    .blank-title {
+      text-align: center;
+      font-size: 0.65em;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #9aa3af;
+      opacity: 0.6;
     }
   </style>
 </head>
@@ -1366,6 +1384,13 @@
   </section>
   <div class="scroll-spacer"></div>
   </div>
+
+  <div class="divider"></div>
+
+  <section class="archive-blank" aria-hidden="true">
+    <div class="blank-title">Blank</div>
+  </section>
+
 </body>
 
 </html>
