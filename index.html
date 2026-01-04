@@ -154,6 +154,7 @@
 
     .nav a:last-child {
       grid-column: auto;
+      opacity: 0.75;
     }
 
     footer {
@@ -247,16 +248,22 @@
 
     .nav a span {
       display: block;
-      font-size: 0.75em;
-      letter-spacing: 0.18em;
+      font-size: 0.65em;
+      letter-spacing: 0.32em;
       color: #64748b;
       margin-bottom: 6px;
+      opacity: 0.35;
     }
 
     .nav a:hover {
       color: #000;
       padding-left: 10px;
     }
+
+    .nav a:hover span {
+      opacity: 0.75;
+    }
+
 
     footer {
       margin-top: 120px;

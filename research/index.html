@@ -142,6 +142,208 @@
       background: #fff;
     }
 
+    /* ==== TIMELINE: GLOBAL ==== */
+
+    .research-timeline {
+      margin-top: 60px;
+      padding-left: 4px;
+    }
+
+    /* Header */
+    .rt-header {
+      font-size: 1.32em;
+      letter-spacing: 0.11em;
+      color: #0B2545;
+      font-weight: 500;
+      margin-bottom: 46px;
+      text-transform: uppercase;
+      opacity: 0.92;
+    }
+
+    /* ==== TIMELINE ITEM ==== */
+
+    .rt-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      column-gap: 34px;
+
+      padding: 22px 0 26px;
+      padding-left: 26px;
+
+      border-left: 1px solid rgba(0, 0, 0, 0.10);
+      position: relative;
+    }
+
+    /* timeline node (dot) */
+    .rt-item::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 40px;
+
+      width: 7px;
+      height: 7px;
+
+      background: #0B2545;
+      border-radius: 50%;
+      opacity: 0.38;
+
+      box-shadow: 0 0 0 4px rgba(11, 37, 69, 0.10);
+      /* subtle halo */
+    }
+
+    /* ==== YEAR ==== */
+    .rt-year {
+      font-size: 1.06em;
+      font-weight: 600;
+      color: #0B2545;
+      opacity: 0.92;
+      padding-top: 6px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ==== STAGE ==== */
+    .rt-stage {
+      font-size: 0.83em;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+
+      color: #0B2545;
+      opacity: 0.55;
+      margin-top: 11px;
+      margin-bottom: 18px;
+    }
+
+    /* ==== INSTITUTION ==== */
+
+    .rt-title {
+      font-size: 1.13em;
+      font-weight: 500;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rt-block-group {
+      margin-left: 14px;
+      /* 핵심: 소속보다 한 단계 더 들여쓰기 */
+      padding-top: 6px;
+      /* institution과의 시각적 separation */
+      border-left: 1px solid rgba(0, 0, 0, 0.04);
+      /* optional, 매우 얇은 vertical cue */
+      padding-left: 12px;
+      /* 얇은 border와 텍스트 간 간격 */
+    }
+
+    .rt-loc-dot {
+      font-size: 0.75em;
+      opacity: 0.55;
+      margin: 0 6px;
+      font-weight: 400;
+      margin-bottom: -4px;
+    }
+
+    .rt-location-inline {
+      font-size: 0.78em;
+      font-style: italic;
+      opacity: 0.65;
+      margin-bottom: -4px;
+    }
+
+
+    /* ==== BLOCK (OUTPUT SET) ==== */
+
+    .rt-block {
+      margin-bottom: 20px;
+      padding-left: 2px;
+      /* subtle alignment refinement */
+    }
+
+    /* Title of achievement */
+    .rt-output {
+      font-size: 1.0em;
+      font-weight: 500;
+      margin-bottom: 3px;
+      color: #0B2545;
+      opacity: 0.95;
+      letter-spacing: 0.01em;
+    }
+
+    /* Subtitle (description) */
+    .rt-subtitle {
+      font-size: 0.90em;
+      font-style: italic;
+      color: #444;
+      margin-bottom: 2px;
+      line-height: 1.55;
+      margin-left: 10px;
+    }
+
+    .rt-method {
+      opacity: 0.65;
+    }
+
+    /* Metadata (conference / journal) */
+    .rt-meta {
+      font-size: 0.82em;
+      color: #555;
+      opacity: 0.78;
+      padding-left: 14px;
+      margin-top: 2px;
+      position: relative;
+      margin-left: 10px;
+      margin-bottom: 6px;
+    }
+
+    .rt-meta::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+
+      width: 3px;
+      height: 3px;
+
+      border-radius: 50%;
+      background: #0B2545;
+      opacity: 0.55;
+      margin-top: 1.5px;
+    }
+
+    .rt-inst-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right,
+          rgba(0, 0, 0, 0.10),
+          rgba(0, 0, 0, 0.02));
+      margin: 18px 0 22px;
+      opacity: 0.65;
+    }
+
+
+    /* ==== MOBILE OPTIMIZATION ==== */
+
+    @media (max-width: 768px) {
+      .rt-item {
+        grid-template-columns: 70px 1fr;
+        column-gap: 22px;
+        padding: 28px 0 38px;
+      }
+
+      .rt-item::before {
+        left: -6px;
+        top: 40px;
+        width: 6px;
+        height: 6px;
+      }
+
+      .rt-title {
+        margin-bottom: 10px;
+      }
+    }
+
     .overview ul {
       list-style: none;
       padding-left: 0;
@@ -272,19 +474,18 @@
       }
 
       .research-photo img {
-      max-width: 220px;
-    }
+        max-width: 220px;
       }
+
+      .rt-item {
+        grid-template-columns: 70px 1fr;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="page-content">
-    <header class="site-header">
-      <a href="/" class="site-name">SANGSEOK HAN</a>
-    </header>
-
-    <div class="nav">
+  <div class="nav">
       <a href="/">Home</a>
       <a href="/Profile/">Profile</a>
       <a href="/research/" class="active">Research</a>
@@ -292,6 +493,13 @@
       <a href="/practice/">Practice</a>
       <a href="/archive/">Archive</a>
     </div>
+    
+  <div class="page-content">
+    <header class="site-header">
+      <a href="/" class="site-name">SANGSEOK HAN</a>
+    </header>
+
+    
 
     <div class="header">
       <h1>Research</h1>
@@ -311,31 +519,186 @@
       </div>
     </div>
 
-    <div class="sections">
-      <a class="section-link" href="/research/interests/">
-        <h3>Research Interests</h3>
-        <p>Core research themes and methodological focus.</p>
-      </a>
+    <div class="research-timeline">
+      <h2 class="rt-header">Research Timeline (2023–2026)</h2>
 
-      <a class="section-link" href="/research/ongoing/">
-        <h3>Ongoing Research</h3>
-        <p>Active projects and current publication status.</p>
-      </a>
+      <div class="rt-item">
+        <div class="rt-year">2026</div>
+        <div class="rt-body">
+          <div class="rt-stage">Transition to Doctoral-Level Research</div>
 
-      <a class="section-link" href="/research/future/">
-        <h3>Future Research Directions</h3>
-        <p>Planned research agenda and prospective studies.</p>
-      </a>
+          <div class="rt-title">
+            Research Continuation
+            <span class="rt-loc-dot">·</span>
+            <span class="rt-location-inline">South Korea</span>
+          </div>
+          <div class="rt-block-group">
+
+            <div class="rt-block">
+              <div class="rt-output">OMAE 2026 — Accepted Full Paper Presentation</div>
+              <div class="rt-subtitle">Simulation-Based Analysis of a Gyroscopic WEC Using a Modular CFD–MBD Approach
+              </div>
+              <div class="rt-meta">International Ocean Offshore and Arctic Engineering Conference (OMAE 2026) — Tokyo, Japan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rt-item">
+        <div class="rt-year">2025</div>
+        <div class="rt-body">
+
+          <div class="rt-stage">International Research Acceleration</div>
+          <div class="rt-title">
+            High-Impact Achievements
+          </div>
+          <div class="rt-block-group">
+
+            <div class="rt-block">
+              <div class="rt-output">SNH36 — Invited Full Paper</div>
+              <div class="rt-subtitle">A CFD Analysis of Spatial Roughness Distributions on Ship Resistance</div>
+              <div class="rt-meta">36th Symposium on Naval Hydrodynamics (ONR)</div>
+            </div>
+
+            <div class="rt-block">
+              <div class="rt-output">Cover Article Selection (1 out of 185 papers)</div>
+              <div class="rt-subtitle">Temperature-induced errors in ITTC model–ship extrapolation</div>
+              <div class="rt-meta"><em>Journal of Marine Science and Engineering</em> — 2025</div>
+            </div>
+
+            <div class="rt-block">
+              <div class="rt-output">Reviewer Excellence Award</div>
+              <div class="rt-subtitle"><em>Ocean Engineering</em> (Q1)</div>
+            </div>
+          </div>
+
+          <div class="rt-inst-divider"></div>
+
+          <div class="rt-title">
+            Core Research Outputs — University of Strathclyde
+            <span class="rt-loc-dot">·</span>
+            <span class="rt-location-inline">United Kingdom</span>
+          </div>
+          <div class="rt-block-group">
+
+            <div class="rt-block">
+              <div class="rt-output">Conference Presentation</div>
+              <div class="rt-subtitle">Impact of Towing Tank Temperature on Model-Ship Extrapolation</div>
+              <div class="rt-meta">International Congress of Naval Architecture and Maritime Industry — Gijón, Spain
+              </div>
+              <div class="rt-subtitle">Numerical Analysis of Fluid-Structure Interaction (FSI) for Semi-Submersible FOWT
+              </div>
+              <div class="rt-meta">International Conference on Computational Methods in Marine Engineering — Edinburgh,
+                UK</div>
+            </div>
+          </div>
+
+          <div class="rt-inst-divider"></div>
+
+          <div class="rt-title">
+            Visiting Research — The University of Osaka
+            <span class="rt-loc-dot">·</span>
+            <span class="rt-location-inline">Japan</span>
+          </div>
+          <div class="rt-block-group">
+
+            <div class="rt-block">
+              <div class="rt-output">Conference Presentation</div>
+              <div class="rt-subtitle">CFD-Based Model Predictive Control for Point Absorber Wave Energy Converters
+              </div>
+              <div class="rt-meta">The Japan Society of Naval Architects and Ocean Engineers — Hyogo, Japan</div>
+            </div>
+
+            <div class="rt-block">
+              <div class="rt-output">Peer Reviewer (Invited)</div>
+              <div class="rt-subtitle"><em>Physics of Fluids</em> (Q1)</div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="rt-item">
+        <div class="rt-year">2024</div>
+        <div class="rt-body">
+
+          <div class="rt-stage">Early Outputs & Domestic Recognition</div>
+
+          <div class="rt-title">
+            Inha University <span class="rt-loc-dot">·</span>
+            <span class="rt-location-inline">South Korea</span>
+          </div>
+          <div class="rt-block-group">
+            <div class="rt-block">
+              <div class="rt-output">Journal Publication (Co-author)</div>
+              <div class="rt-subtitle">Resistance and speed penalty of a naval ship with hull roughness</div>
+              <div class="rt-meta"><em>Ocean Engineering</em> (Q1)</div>
+            </div>
+
+            <div class="rt-block">
+              <div class="rt-output">Best Paper Award</div>
+              <div class="rt-subtitle">
+                Uncertainty of the ITTC 1957 Correlation Line with Temperature Variations
+              </div>
+              <div class="rt-meta">
+                The National Congress on Fluids Engineering — Daejeon, South Korea
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rt-item">
+        <div class="rt-year">2023</div>
+        <div class="rt-body">
+
+          <div class="rt-stage">Research Entry & Foundation</div>
+
+          <div class="rt-title">
+            Inha University <span class="rt-loc-dot">·</span>
+            <span class="rt-location-inline">South Korea</span>
+          </div>
+          <div class="rt-block-group">
+
+            <div class="rt-block">
+              <div class="rt-output">KABOAT 2023 Competition Report</div>
+              <div class="rt-subtitle">
+                Virtual simulation of an autonomous vessel <span class="rt-method">(MATLAB)</span>
+              </div>
+              <div class="rt-meta">
+                Fall Conference of The Society of Naval Architecture of Korea — Daejeon, South Korea
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sections">
+        <a class="section-link" href="/research/interests/">
+          <h3>Research Interests</h3>
+          <p>Core research themes and methodological focus.</p>
+        </a>
+
+        <a class="section-link" href="/research/ongoing/">
+          <h3>Ongoing Research</h3>
+          <p>Active projects and current publication status.</p>
+        </a>
+
+        <a class="section-link" href="/research/future/">
+          <h3>Future Research Directions</h3>
+          <p>Planned research agenda and prospective studies.</p>
+        </a>
+      </div>
     </div>
-  </div>
 
-  <script>
-    window.addEventListener('load', () => {
-      document
-        .querySelector('.page-content')
-        ?.classList.add('loaded');
-    });
-  </script>
+    <script>
+      window.addEventListener('load', () => {
+        document
+          .querySelector('.page-content')
+          ?.classList.add('loaded');
+      });
+    </script>
 
 </body>
 
