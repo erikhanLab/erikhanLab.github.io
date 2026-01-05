@@ -141,11 +141,24 @@
       body {
         margin: 24px auto;
         padding: 0 16px;
-        line-height: 1.65;
+        line-height: 1.6;
+      }
+
+      .tagline {
+        font-size: 0.88em;
+        line-height: 1.45;
+        margin-bottom: 18px;
+        max-width: 40ch;
       }
 
       .subtitle {
-        font-size: 0.9em;
+        font-size: 0.85em;
+        line-height: 1.45;
+        letter-spacing: 0.04em;
+        color: #555;
+        margin-top: 12px;
+        margin-bottom: 18px;
+        max-width: 36ch;
       }
 
       .header {
@@ -191,18 +204,6 @@
           color 0.2s ease;
       }
 
-      .section li {
-        font-size: 0.9em;
-      }
-
-      .side-nav {
-        display: none !important;
-      }
-
-      .side-nav a::after {
-        display: none;
-      }
-
       .nav a:hover {
         opacity: 1;
         color: #111;
@@ -220,15 +221,118 @@
         left: 50%;
         bottom: -8px;
         transform: translateX(-50%);
-
         width: 16px;
         height: 1px;
         background: #111;
         opacity: 0.8;
       }
 
+      .section {
+        margin-bottom: 0px;
+      }
+
+      .section h2 {
+        font-size: 0.9em;
+        margin-bottom: 14px;
+        letter-spacing: 0.12em;
+      }
+
+      .section ul {
+        padding-left: 0;
+        margin-top: 16px;
+      }
+
+      .section li {
+        list-style: none;
+        font-size: 0.88em;
+        line-height: 1.55;
+        margin-bottom: 12px;
+        color: #444;
+      }
+
+      .section p {
+        font-size: 0.9em;
+        line-height: 1.6;
+        margin-bottom: 18px;
+        color: #444;
+      }
+
+      .research-interest-grid {
+        gap: 14px;
+      }
+
+      .interest-item {
+        padding-left: 14px;
+        font-size: 0.9em;
+      }
+
+      .interest-title {
+        font-size: 0.92em;
+      }
+
+      .interest-desc {
+        font-size: 0.85em;
+      }
+
+      .side-nav {
+        display: none !important;
+      }
+
+      .side-nav a::after {
+        display: none;
+      }
+
       .side-nav {
         display: none;
+      }
+
+      .divider {
+        margin: 14px 0;
+        opacity: 0.6;
+      }
+
+      .current-block {
+        padding-left: 14px;
+      }
+
+      .current-label {
+        font-size: 0.65em;
+        margin-bottom: 8px;
+      }
+
+      .current-line.primary {
+        font-size: 0.92em;
+      }
+
+      .current-line.secondary {
+        font-size: 0.82em;
+      }
+
+      .current-line.detail {
+        font-size: 0.8em;
+        line-height: 1.45;
+        margin-top: 8px;
+      }
+
+      .affiliation-item {
+        padding-left: 14px;
+      }
+
+      .affiliation-primary {
+        font-size: 0.88em;
+      }
+
+      .affiliation-secondary {
+        font-size: 0.8em;
+      }
+
+      .affiliation-detail {
+        font-size: 0.4em;
+        line-height: 1.45;
+      }
+
+      .affiliation-block {
+        gap: 16px;
       }
     }
 
@@ -282,7 +386,7 @@
     }
 
     .section {
-      margin-bottom: 70px;
+      margin-bottom: 60px;
     }
 
     .page-wrapper {
@@ -294,7 +398,7 @@
     .section h2 {
       font-size: 1.05em;
       font-weight: normal;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
       color: var(--accent-dark);
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -313,6 +417,117 @@
 
     .section li {
       margin-bottom: 10px;
+    }
+
+    .research-interest-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 26px;
+      margin-top: 24px;
+    }
+
+    .interest-item {
+      padding-left: 18px;
+      border-left: 2px solid rgba(11, 31, 58, 0.12);
+    }
+
+    .interest-title {
+      font-size: 1.02em;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: #0B1F3A;
+      margin-bottom: 6px;
+    }
+
+    .interest-desc {
+      font-size: 0.92em;
+      line-height: 1.55;
+      color: #555;
+      max-width: 64ch;
+    }
+
+    .current-block {
+      margin-top: 6px;
+      margin-bottom: 6px;
+      padding-left: 18px;
+      border-left: 2px solid rgba(11, 31, 58, 0.14);
+    }
+
+    .current-label {
+      font-size: 0.7em;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #9aa3af;
+      margin-bottom: 10px;
+    }
+
+    .current-line {
+      line-height: 1.6;
+      margin-bottom: 4px;
+    }
+
+    .current-line.primary {
+      font-size: 1.02em;
+      font-weight: 500;
+      color: #0B1F3A;
+      letter-spacing: 0.02em;
+    }
+
+    .current-line.secondary {
+      font-size: 0.9em;
+      color: #555;
+      letter-spacing: 0.02em;
+    }
+
+    .current-dot {
+      margin: 0 6px;
+      opacity: 0.5;
+    }
+
+    .current-line.detail {
+      font-size: 0.88em;
+      color: #666;
+      max-width: 62ch;
+    }
+
+    /* ===== Affiliations ===== */
+    .affiliation-block {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      margin-top: 10px;
+    }
+
+    .affiliation-item {
+      padding-left: 18px;
+      border-left: 2px solid rgba(11, 31, 58, 0.12);
+    }
+
+    .affiliation-primary {
+      font-size: 1.02em;
+      font-weight: 500;
+      color: #0B1F3A;
+      letter-spacing: 0.02em;
+      margin-bottom: 4px;
+    }
+
+    .affiliation-secondary {
+      font-size: 0.9em;
+      color: #555;
+      letter-spacing: 0.02em;
+      margin-bottom: 4px;
+    }
+
+    .affiliation-dot {
+      margin: 0 6px;
+      opacity: 0.5;
+    }
+
+    .affiliation-detail {
+      font-size: 0.88em;
+      color: #666;
+      max-width: 64ch;
+      line-height: 1.5;
     }
 
     .divider {
@@ -352,7 +567,6 @@
           rgba(11, 31, 58, 0.08));
       border-radius: 3px;
     }
-
 
     .side-nav .thumb {
       position: absolute;
@@ -496,65 +710,104 @@
     </p>
 
     <div class="divider"></div>
-
     <div class="section" id="current">
       <h2><strong>Current</strong></h2>
-      <p>
-        MSc graduate in Advanced Naval Architecture.<br>
-        Prospective PhD applicant <span style="font-size:0.9em;">(2026)</span>, currently engaged in ongoing research
-        projects.<br>
-      </p>
+
+      <div class="current-block">
+        <div class="current-line primary">
+          Conducting research in computational fluid dynamics
+        </div>
+
+        <div class="current-line secondary">
+          <span class="current-dot">·</span>
+          Intended PhD start · 2026
+        </div>
+
+        <div class="current-line secondary">
+          <span class="current-dot">·</span>
+          MSc (<em>Distinction</em>) · <em>Advanced Naval Architecture</em>
+        </div>
+
+        <div class="current-line detail">
+          <em>Actively conducting research on rough-wall hydrodynamics and wave–structure interaction
+            through international collaborations.</em>
+        </div>
+      </div>
     </div>
+
 
     <div class="divider"></div>
 
     <div class="section" id="research-interests">
-      <h2><strong>Research Interests</strong></h2>
-      <ul>
-        <li>Turbulence and near-wall flow physics</li>
-        <li>Computational hydrodynamics of rough-wall effects</li>
-        <li>Fluid–structure interaction in offshore and marine energy systems</li>
-      </ul>
+      <h2><strong>Research Direction</strong></h2>
+      <div class="research-interest-grid">
+        <div class="interest-item">
+          <div class="interest-title">Turbulence & Near-Wall Flow</div>
+          <div class="interest-desc">
+            Physics of boundary layers, roughness-induced drag, and scale-dependent behavior.
+          </div>
+        </div>
+
+        <div class="interest-item">
+          <div class="interest-title">Rough-Wall Hydrodynamics</div>
+          <div class="interest-desc">
+            Computational analysis of surface roughness effects on ship resistance.
+          </div>
+        </div>
+
+        <div class="interest-item">
+          <div class="interest-title">Fluid–Structure Interaction</div>
+          <div class="interest-desc">
+            Multiphysics coupling in offshore and marine energy systems.
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div class="divider"></div>
 
     <div class="section" id="affiliations">
       <h2><strong>Affiliations</strong></h2>
-      <ul>
-        <li>
-          <span style="font-weight:400; color:#333;">
-            The University of Osaka
-          </span>
+      <div class="affiliation-block">
 
-          <em style="font-size:0.85em; color:#777;">(Japan)</em><br>
-          <span style="font-size:0.95em; color:#444;">
-            <em>Visiting Researcher</em> <span style="font-size:0.9em;">(2025)</span>
-          </span>
+        <div class="affiliation-item">
+          <div class="affiliation-primary">
+            Visiting Researcher
+          </div>
+          <div class="affiliation-secondary">
+            The University of Osaka <span class="affiliation-dot">·</span> Japan
+          </div>
+          <div class="affiliation-detail">
+            Visiting research appointment focused on CFD-based hydrodynamics (2025)
+          </div>
+        </div>
 
-        </li>
+        <div class="affiliation-item">
+          <div class="affiliation-primary">
+            MSc · Advanced Naval Architecture
+          </div>
+          <div class="affiliation-secondary">
+            University of Strathclyde <span class="affiliation-dot">·</span> United Kingdom
+          </div>
+          <div class="affiliation-detail">
+            Graduate research and coursework in ship hydrodynamics and offshore systems (2024–2025)
+          </div>
+        </div>
 
-        <li style="margin-top:14px;">
-          <span style="font-weight:400; color:#333;">
-            University of Strathclyde
-          </span>
-          <em style="font-size:0.85em; color:#777;">(United Kingdom)</em><br>
+        <div class="affiliation-item">
+          <div class="affiliation-primary">
+            BSc · Naval Architecture & Ocean Engineering
+          </div>
+          <div class="affiliation-secondary">
+            Inha University <span class="affiliation-dot">·</span> South Korea
+          </div>
+          <div class="affiliation-detail">
+            Undergraduate training with emphasis on marine hydrodynamics (2021–2024)
+          </div>
+        </div>
 
-          <span style="font-size:0.95em; color:#555;">
-            MSc · Advanced Naval Architecture <span style="font-size:0.9em;">(2024–2025)</span>
-          </span>
-        </li>
-
-        <li style="margin-top:14px;">
-          <span style="font-weight:400; color:#333;">
-            Inha University
-          </span>
-          <em style="font-size:0.85em; color:#777;">(Republic of Korea)</em><br>
-          <span style="font-size:0.95em; color:#555;">
-            BSc · Naval Architecture &amp; Ocean Engineering <span style="font-size:0.9em;">(2021–2024)</span>
-          </span>
-        </li>
-      </ul>
+      </div>
     </div>
 
     <div class="divider"></div>
@@ -592,19 +845,16 @@
     <div class="section" id="background">
       <h2><strong>Background</strong></h2>
       <ul>
-        <li>
-          <span style="font-weight:400; color:#333;">
-            Rebublic of Korea Navy
-          </span>
-          <span style="font-size:0.95em; color:#555;">
-            Sonar Petty Officer <span style="font-size:0.9em;">(2016–2020)</span>
-          </span>
-        </li>
-
-        <li style="margin-top:6px; margin-left:12px; font-size:0.85em; color:#666;">
-          <span style="margin-right:6px;">–</span>
-          Operational experience in underwater acoustics and flow-related uncertainty
-        </li>
+        <div class="affiliation-item">
+          <div class="affiliation-primary">
+            Sonar Petty Officer
+          </div>
+          <div class="affiliation-secondary">
+            Navy <span class="affiliation-dot">·</span> South Korea
+          </div>
+          <div class="affiliation-detail">
+            Military service involving structured training and field-based experience (2016–2020)</div>
+        </div>
       </ul>
     </div>
 

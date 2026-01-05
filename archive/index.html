@@ -231,12 +231,19 @@
       white-space: nowrap;
     }
 
-
     @media (max-width: 768px) {
       body {
         margin: 24px auto;
         padding: 0 16px;
-        line-height: 1.65;
+        line-height: 1.6;
+      }
+
+      .year-age {
+        display: none;
+      }
+
+      .year-row {
+        gap: 12px;
       }
 
       .header {
@@ -263,15 +270,23 @@
       }
 
       .entry {
-        white-space: normal;
+        white-space: nowrap;
+        font-size: 0.9em;
+        line-height: 1.55;
+        text-overflow: ellipsis;
+      }
+
+      .entry .meta {
+        display: none;
       }
 
       .timeline {
         padding-left: 36px;
+        font-size: 0.9em;
       }
 
       .timeline::before {
-        left: 12px;
+        display: none;
       }
 
       .year-section::before {
@@ -279,8 +294,14 @@
       }
 
       .visual-grid {
-        margin-left: 0;
+        gap: 4px;
         max-width: 100%;
+      }
+
+      .visual-item figcaption {
+        font-size: 0.55em;
+        letter-spacing: 0.18em;
+        margin-top: 4px;
       }
 
       .visual-work-item {
@@ -317,6 +338,20 @@
 
       .record-item img {
         width: 56px;
+      }
+
+      .curated-entry {
+        gap: 18px;
+        font-size: 0.88em;
+      }
+
+      .curated-year {
+        font-size: 0.6em;
+      }
+
+      .curated-desc {
+        font-size: 0.82em;
+        line-height: 1.4;
       }
 
       .zoom-overlay-content {
@@ -498,13 +533,13 @@
 
     .timeline {
       position: relative;
-      padding-left: 60px;
+      padding-left: 24px;
     }
 
     .timeline::before {
       content: "";
       position: absolute;
-      left: 18px;
+      left: 0px;
       top: 0;
       bottom: 0;
       width: 1px;
@@ -706,7 +741,6 @@
       grid-row: 4 / 6;
       opacity: 0.85;
       margin-left: 40px;
-      filter: blur(0.2px);
     }
 
     .visual-item.korea-2016 {
@@ -876,7 +910,6 @@
       padding: 36px 0;
       background: var(--bg-shadow);
     }
-
 
     .blank-title {
       text-align: center;
@@ -1358,7 +1391,7 @@
 
   <div class="divider"></div>
   <section class="visual-record" id="section-external">
-    <div class="year-label">External Archives</div>
+    <div class="year-label">External Records</div>
     <div class="entry" style="margin-top:20px;">
       <div class="entry">
         <strong>
@@ -1381,6 +1414,19 @@
           — research · travel · piano · long-form personal record
         </span>
       </div>
+
+      <div class="entry" style="margin-top:24px;">
+        <strong>
+          <a href="https://www.youtube.com/watch?v=PBR92KdBqiY" target="_blank" rel="noopener">
+            Chopin · Nocturne
+          </a>
+        </strong>
+        <span>
+          — piano fragment, Osaka
+        </span>
+      </div>
+
+
   </section>
   <div class="scroll-spacer"></div>
   </div>
