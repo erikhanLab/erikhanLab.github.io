@@ -2,6 +2,23 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sangseok Han | Home</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
+  <meta name="description"
+    content="Personal website of Sangseok Han, documenting research and process across fluid mechanics, computation, and physical systems.">
+
+  <meta property="og:title" content="Sangseok Han">
+  <meta property="og:description"
+    content="Personal website of Sangseok Han, documenting research and process across fluid mechanics, computation, and physical systems.">
+  <meta property="og:image" content="https://erikhanlab.github.io/assets/thumbnail.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://erikhanlab.github.io/">
+  <meta property="og:site_name" content="Sangseok Han">
+  <meta name="twitter:image" content="https://erikhanlab.github.io/assets/thumbnail.png">
+  <meta name="google-site-verification" content="nL6QQDjmwHfoed1SFO0BXdBElFNEMt-fPTveElHeu0U" />
+
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -14,35 +31,17 @@
   <!-- End Google Tag Manager -->
 
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "name": "Sangseok Han",
+    "url": "https://erikhanlab.github.io/",
+    "mainEntity": {
       "@type": "Person",
-      "name": "Sangseok Han",
-      "url": "https://erikhanlab.github.io/",
-      "sameAs": [
-        "https://scholar.google.com/...",
-        "https://orcid.org/..."
-      ]
+      "name": "Sangseok Han"
     }
-</script>
-
-  <meta charset="UTF-8">
-
-  <meta property="og:title" content="Sangseok Han">
-  <meta property="og:description" content="Fluid mechanics and computational modelling of complex flow systems.">
-  <meta property="og:image" content="https://erikhanlab.github.io/assets/og-home.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://erikhanlab.github.io/">
-  <meta property="og:site_name" content="Sangseok Han">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://erikhanlab.github.io/assets/og-home.png">
-
-  <title>Sangseok Han</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="nL6QQDjmwHfoed1SFO0BXdBElFNEMt-fPTveElHeu0U" />
-
+  }
+  </script>
 
   <style>
     :root {
@@ -109,14 +108,15 @@
 
       .header {
         margin-bottom: 0px;
+        font-size: 0.8em;
       }
 
       .header-row {
-        gap: 10px;
+        gap: 14px;
       }
 
       .header-row h1 {
-        font-size: 2em;
+        font-size: 2.8em;
         margin: 0;
       }
 
@@ -126,22 +126,24 @@
       }
 
       .tagline-block {
-        padding: 18px 20px;
+        padding: 0px 20px;
         margin-top: 28px;
       }
 
       .nav {
         margin-bottom: -40px;
-      }
-
-      .tagline {
-        font-size: 0.85em;
-        line-height: 1.55;
+        font-size: 0.88em;
       }
 
       footer {
         margin-top: auto;
         padding-top: 0px;
+      }
+
+      .keywords {
+        font-size: 0.65em;
+        letter-spacing: 0.22em;
+        margin-top: 16px;
       }
     }
 
@@ -152,17 +154,6 @@
 
     .page-content.loaded {
       transform: translateY(0);
-    }
-
-    .affiliation {
-      font-size: 0.70em;
-      margin-top: 14px;
-    }
-
-    .keywords {
-      font-size: 0.65em;
-      letter-spacing: 0.22em;
-      margin-top: 16px;
     }
 
     .nav {
@@ -185,7 +176,7 @@
 
     .nav a:last-child {
       grid-column: auto;
-      opacity: 0.75;
+
     }
 
     .footer-contact {

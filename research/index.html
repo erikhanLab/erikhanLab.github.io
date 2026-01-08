@@ -2,6 +2,21 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research | Sangseok Han</title>
+  <meta name="description"
+    content="Research by Sangseok Han on hydrodynamics and multiphysics coupling and focusing on CFD.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
+
+  <meta property="og:title" content="Research | Sangseok Han">
+  <meta property="og:description"
+    content="Research on hydrodynamics and multiphysics modelling, with emphasis on numerical methods and failure of modelling assumptions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://erikhanlab.github.io/research/">
+  <meta property="og:site_name" content="Sangseok Han">
+  <meta property="og:image" content="https://erikhanlab.github.io/assets/thumbnail.png">
+
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -12,11 +27,6 @@
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-5MMRV373');</script>
   <!-- End Google Tag Manager -->
-
-  <meta charset="UTF-8">
-  <title>Research</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
     :root {
@@ -136,6 +146,35 @@
       margin-bottom: 0px;
     }
 
+    .research-keywords {
+      margin-top: 6px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      font-size: 0.72em;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #555;
+      opacity: 0.75;
+    }
+
+    .research-keywords span {
+      position: relative;
+    }
+
+    .research-keywords span::after {
+      content: "·";
+      position: absolute;
+      right: -12px;
+      opacity: 0.35;
+    }
+
+    .research-keywords span:last-child::after {
+      content: "";
+    }
+
+
     .research-intro {
       display: flex;
       gap: 14px;
@@ -229,6 +268,8 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      color: #555;
+      opacity: 0.9;
     }
 
     .rt-block-group {
@@ -298,6 +339,12 @@
       margin-left: 10px;
       margin-bottom: 6px;
     }
+
+    .rt-small {
+      font-size: 0.78em;
+      opacity: 0.85;
+    }
+
 
     .rt-meta::before {
       content: "";
@@ -386,6 +433,55 @@
       color: var(--research-blue);
     }
 
+    .research-footnote {
+      margin-top: 110px;
+      padding-bottom: 20px;
+    }
+
+    .research-footnote p {
+      font-size: 0.78em;
+      line-height: 1.6;
+      color: #666;
+      opacity: 0.85;
+      margin: 0 0 10px 0;
+      letter-spacing: 0.01em;
+    }
+
+    .footnote-mark {
+      margin-right: 6px;
+      opacity: 0.5;
+    }
+
+    .footnote-collab a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: none;
+    }
+
+    .footnote-collab a:hover {
+      border-bottom: none;
+    }
+
+    .research-closure {
+      margin-top: 0px;
+      padding-top: 1px;
+      position: relative;
+    }
+
+    .research-closure::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.10),
+          rgba(0, 0, 0, 0));
+      opacity: 0.9;
+    }
+
     @media (max-width: 768px) {
       .site-name {
         font-size: 1.9em;
@@ -466,7 +562,10 @@
         opacity: 0.8;
       }
 
-      /* ===== Intro ===== */
+      .research-keywords {
+        display: none;
+      }
+
       .research-intro {
         flex-direction: column;
         gap: 18px;
@@ -519,10 +618,12 @@
       }
 
       .rt-title {
-        font-size: 0.9em;
+        font-size: 0.85em;
         margin-bottom: 8px;
-        color: #777;
+        color: #999;
         margin-left: 10px;
+        opacity: 0.7;
+        text-transform: uppercase;
       }
 
       .rt-block-group {
@@ -542,7 +643,7 @@
       }
 
       .rt-output {
-        font-size: 0.9em;
+        font-size: 0.88em;
         font-weight: 500;
       }
 
@@ -577,7 +678,18 @@
         display: none;
       }
 
+      .footnote-read {
+        display: none;
+      }
 
+      .research-footnote {
+        margin-top: 70px;
+      }
+
+      .research-footnote p {
+        font-size: 0.72em;
+        opacity: 0.8;
+      }
     }
   </style>
 </head>
@@ -601,13 +713,13 @@
   </div>
 
   <div class="page-content">
-    <div class="header">
-      <h1>Research</h1>
+
+    <div class="research-keywords">
+      <span>Hydrodynamics</span>
+      <span>Multiphysics Coupling</span>
+      <span>CFD</span>
     </div>
 
-    <p class="research-tagline">
-      CFD-based hydrodynamics & multiphysics coupling
-    </p>
     <div class="research-timeline">
       <h2 class="rt-header">Research Timeline (2023–2026)</h2>
 
@@ -657,7 +769,11 @@
             </div>
 
             <div class="rt-block">
-              <div class="rt-output">Cover Article Selection (1 out of 185 papers)</div>
+              <div class="rt-output">
+                Cover Article Selection
+                <span class="rt-small">(1 out of 185 papers)</span>
+              </div>
+
               <div class="rt-subtitle">Temperature-induced errors in ITTC model–ship extrapolation</div>
               <div class="role-tag">First Author</div>
               <div class="rt-meta"><em>Journal of Marine Science and Engineering</em> (Q2) — 2025</div>
@@ -680,11 +796,12 @@
 
             <div class="rt-block">
               <div class="rt-output">Conference Presentation</div>
-              <div class="rt-subtitle">Impact of Towing Tank Temperature on Model-Ship Extrapolation</div>
+              <div class="rt-subtitle">· Impact of Towing Tank Temperature on Model-Ship Extrapolation</div>
               <div class="role-tag">Presenting Author</div>
               <div class="rt-meta">International Congress of Naval Architecture and Maritime Industry — Gijón, Spain
               </div>
-              <div class="rt-subtitle">Numerical Analysis of Fluid-Structure Interaction (FSI) for Semi-Submersible FOWT
+              <div class="rt-subtitle">· Numerical Analysis of Fluid-Structure Interaction (FSI) for Semi-Submersible
+                FOWT
               </div>
               <div class="role-tag">Lead Author</div>
               <div class="rt-meta">International Conference on Computational Methods in Marine Engineering — Edinburgh,
@@ -775,31 +892,28 @@
         </div>
       </div>
 
-      <div class="sections">
-        <a class="section-link" href="/research/interests/">
-          <h3>Research Interests</h3>
-          <p>Core research themes and methodological focus.</p>
-        </a>
+      <section class="research-closure">
+        <div class="research-footnote">
+          <p class="footnote-read">
+            <span class="footnote-mark">·</span>
+            Research directions shift continuously and are reflected through outcomes.
+          </p>
 
-        <a class="section-link" href="/research/ongoing/">
-          <h3>Ongoing Research</h3>
-          <p>Active projects and current publication status.</p>
-        </a>
+          <p class="footnote-collab">
+            <span class="footnote-mark">·</span>
+            Collaboration — <a href="mailto:erikhan.nor@gmail.com">erikhan.nor@gmail.com</a>
+          </p>
+        </div>
 
-        <a class="section-link" href="/research/future/">
-          <h3>Future Research Directions</h3>
-          <p>Planned research agenda and prospective studies.</p>
-        </a>
-      </div>
-    </div>
+      </section>
 
-    <script>
-      window.addEventListener('load', () => {
-        document
-          .querySelector('.page-content')
-          ?.classList.add('loaded');
-      });
-    </script>
+      <script>
+        window.addEventListener('load', () => {
+          document
+            .querySelector('.page-content')
+            ?.classList.add('loaded');
+        });
+      </script>
 
 </body>
 
