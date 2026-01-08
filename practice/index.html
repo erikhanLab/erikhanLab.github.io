@@ -29,6 +29,10 @@
   <!-- End Google Tag Manager -->
 
   <style>
+    html {
+      overflow-y: scroll;
+    }
+
     :root {
       --accent-dark: #0B1F3A;
       --bg-light: #F3F5F8;
@@ -60,6 +64,15 @@
       color: #111;
       line-height: 1.75;
       background: var(--bg-light);
+    }
+
+    .page-content {
+      transform: translateY(6px);
+      transition: transform 0.12s ease-out;
+    }
+
+    .page-content.loaded {
+      transform: translateY(0);
     }
 
     .nav {
@@ -109,71 +122,78 @@
       left: 50%;
       bottom: -10px;
       transform: translateX(-50%);
+
       width: 22px;
       height: 1px;
       background: #111;
       opacity: 0.85;
     }
 
-    .header {
-      font-family: Georgia, serif;
-      font-size: 0.9em;
-      display: flex;
-      align-items: baseline;
-      font-weight: 300;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #555;
+    .intro-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 48px;
+      max-width: 800px;
     }
 
-    h1 {
-      gap: 14px;
-      margin-bottom: 40px;
-    }
-
-    .practice-hero {
-      margin: 18px 0 34px;
-      overflow: hidden;
-    }
-
-    .practice-hero img {
-      max-width: 340px;
-      width: 100%;
-      height: auto;
-      border: 1px solid #ddd;
-      filter: grayscale(20%);
-    }
-
-    .practice-hero .caption {
-      margin-top: 6px;
-      font-size: 0.78em;
-      color: #777;
-    }
-
-    .intro {
+    .intro-list li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 6px;
       font-size: 0.95em;
       color: var(--text-muted);
-      margin-bottom: 48px;
-      max-width: 600px;
+    }
+
+    .intro-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      top: 0.15em;
+      color: #666;
+    }
+
+    .card-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 10px;
+      max-width: 800px;
+    }
+
+    .card-list li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 6px;
+      font-size: 0.85em;
+      color: var(--text-muted);
+    }
+
+    .card-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      top: 0.15em;
+      color: #666;
     }
 
     .practice-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 26px;
+      gap: 16px;
     }
 
     .practice-card {
-      padding: 18px 16px;
+      padding: 15px 16px;
       border-left: 2px solid #ddd;
       text-decoration: none;
       color: inherit;
       transition: border-color 0.15s ease, background 0.15s ease;
+      opacity: 0.7;
     }
 
     .practice-card:hover {
       border-left-color: var(--accent-dark);
       background: #f0f3f8;
+      opacity: 1;
     }
 
     .practice-card h2 {
@@ -191,7 +211,6 @@
     }
 
     @media (max-width: 768px) {
-
       .site-name {
         font-size: 1.9em;
       }
@@ -202,13 +221,8 @@
         line-height: 1.6;
       }
 
-      .header {
+      .intro-list {
         display: none;
-      }
-
-      .header h1 {
-        font-size: 1.55em;
-        margin-bottom: 0;
       }
 
       .nav {
@@ -265,22 +279,39 @@
         opacity: 0.8;
       }
 
-      .page-content {
-        transform: translateY(6px);
-        transition: transform 0.12s ease-out;
+      .practice-grid {
+        grid-template-columns: 1fr;
+        padding: 16px 14px;
+        gap: 20px;
       }
 
-      .page-content.loaded {
-        transform: translateY(0);
+      .practice-card ul.intro-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
       }
+
+      .practice-card ul.intro-list li {
+        padding-left: 0;
+        margin-bottom: 6px;
+        font-size: 0.75em;
+        color: #666;
+      }
+
+      .practice-card ul.intro-list li::before {
+        content: none;
+      }
+
     }
   </style>
 </head>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <header class="site-header">
@@ -295,39 +326,41 @@
     <a href="/practice/" class="active">Practice</a>
     <a href="/archive/">Archive</a>
   </div>
+
   <div class="page-content">
 
-    <p class="intro">
-      · Hands-on work documenting how ideas are tested through the body,
-      computation, and physical systems.
-      · This section records process rather than outcome.
-    </p>
+    <ul class="intro-list">
+      <li>Hands-on work documenting how ideas are tested under real constraints,
+        through physical systems and computation.</li>
+      <li>This section records process rather than outcome.</li>
+    </ul>
 
     <div class="practice-grid">
 
       <a href="/practice/experimental/" class="practice-card">
         <h2>Work in Physical Systems</h2>
-        <p>
-          · Work documenting how ideas are tested across systems.
-          · Process-focused, outcome-independent.
-        </p>
 
+        <ul class="card-list">
+          <li><em>How ideas are tested through physical systems.</em></li>
+          <li><em>Emphasis on constraint, iteration, and failure.</em></li>
+        </ul>
       </a>
 
       <a href="/practice/computational/" class="practice-card">
         <h2>Computation as Instrument</h2>
-        <p>
-          · Computational studies derived from fluid motion.
-          · Flow behavior translated into visual form.
-        </p>
+
+        <ul class="card-list">
+          <li><em>Computational studies derived from fluid motion.</em></li>
+          <li><em>Flow behaviour translated into visual form.</em></li>
+        </ul>
       </a>
 
       <a href="/practice/system/" class="practice-card">
-        <h2>The Body as a Constrained System</h2>
-        <p>
-          · Physical capacity optimised under biological constraints.
-          · Strength, endurance, and discipline treated systemically.
-        </p>
+        <h2>Designing Existence</h2>
+        <ul class="card-list">
+          <li><em>Human capacity treated as an integrated system.</em></li>
+          <li><em>Physical, cognitive, and behavioural limites systematically restructured.</em></li>
+        </ul>
       </a>
     </div>
   </div>
