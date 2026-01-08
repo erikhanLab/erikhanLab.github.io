@@ -259,10 +259,6 @@
         letter-spacing: 0.12em;
       }
 
-      .section ul {
-        padding-left: 0;
-      }
-
       .section li {
         list-style: none;
         font-size: 0.88em;
@@ -451,6 +447,7 @@
       list-style: none;
       padding-left: 0;
       margin: 0;
+      margin-bottom: -20px;
     }
 
     .section li {
@@ -642,7 +639,7 @@
     }
 
     .scroll-spacer {
-      height: 5vh;
+      height: 2.5vh;
     }
 
     #research-interests ul {
@@ -780,7 +777,7 @@
         <div class="interest-item">
           <div class="interest-title">Turbulence & Near-Wall Flow</div>
           <div class="interest-desc">
-            Physics of boundary layers, roughness-induced drag, and scale-dependent behavior.
+            Physics of boundary layers and roughness-induced drag.
           </div>
         </div>
 
@@ -792,7 +789,7 @@
         </div>
 
         <div class="interest-item">
-          <div class="interest-title">Fluid–Structure Interaction</div>
+          <div class="interest-title">Wave–Structure Interaction</div>
           <div class="interest-desc">
             Multiphysics coupling in offshore and marine energy systems.
           </div>
@@ -850,74 +847,73 @@
 
     <div class="section" id="academic-activity">
       <h2><strong>Academic Activity</strong></h2>
-      <ul>
-        <div class="affiliation-item">
-          Peer reviewer for international journals
-          <span class="affiliation-year">(2025–)</span></span>
-
-          <li style="margin-left:6px; margin-top:6px; font-size:0.9em; color:#555;">
-            <span style="margin-right:6px;">·</span>
-            <em>Ocean Engineering</em>
-            <span style="font-size:0.8em; color:#777;">(Elsevier)</span>
-          </li>
-
-          <li style="margin-left:6px; font-size:0.9em; color:#555;">
-            <span style="margin-right:6px;">·</span>
-            <em>Physics of Fluids</em>
-            <span style="font-size:0.8em; color:#777;">(AIP Publishing)</span>
-          </li>
-
-          <li style="margin-left:6px; margin-top:6px; font-size:0.85em; color:#666;">
-            <span style="margin-right:6px;">–</span>
-            Certificate of Excellence in Reviewing,
-            <em>Ocean Engineering</em> <span style="font-size:0.9em;">(Feb 2025)</span>
-          </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section" id="background">
-    <h2><strong>Background</strong></h2>
-    <ul>
       <div class="affiliation-item">
-        <div class="affiliation-primary">
-          Sonar Petty Officer <span class="affiliation-year">(2016–2020)</span>
-        </div>
-        <div class="affiliation-secondary">
-          Navy <span class="affiliation-dot">·</span> South Korea
-        </div>
-        <div class="affiliation-detail">
-          <em>Military service involving structured training and field-based experience</em>
-        </div>
+        Peer reviewer for international journals
+        <span class="affiliation-year">(2025–)</span></span>
+
+        <li style="margin-left:6px; margin-top:6px; font-size:0.9em; color:#555;">
+          <span style="margin-right:6px;">·</span>
+          <em>Ocean Engineering</em>
+          <span style="font-size:0.8em; color:#777;">(Elsevier)</span>
+        </li>
+
+        <li style="margin-left:6px; font-size:0.9em; color:#555;">
+          <span style="margin-right:6px;">·</span>
+          <em>Physics of Fluids</em>
+          <span style="font-size:0.8em; color:#777;">(AIP Publishing)</span>
+        </li>
+
+        <li style="margin-left:6px; margin-top:6px; font-size:0.85em; color:#666;">
+          <span style="margin-right:6px;">–</span>
+          Certificate of Excellence in Reviewing,
+          <em>Ocean Engineering</em> <span style="font-size:0.9em;">(Feb 2025)</span>
+        </li>
       </div>
-    </ul>
-  </div>
 
-  <div class="scroll-spacer"></div>
-  <script>
-    window.addEventListener('scroll', () => {
-      const rail = document.querySelector('.side-nav .rail');
-      const thumb = document.querySelector('.side-nav .thumb');
-      if (!rail || !thumb) return;
+      <div class="divider"></div>
 
-      const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
+      <div class="section" id="background">
+        <h2><strong>Background</strong></h2>
+        <ul>
+          <div class="affiliation-item">
+            <div class="affiliation-primary">
+              Sonar Petty Officer <span class="affiliation-year">(2016–2020)</span>
+            </div>
+            <div class="affiliation-secondary">
+              Navy <span class="affiliation-dot">·</span> South Korea
+            </div>
+            <div class="affiliation-detail">
+              <em>Military service involving structured training and field-based experience</em>
+            </div>
+          </div>
+        </ul>
+      </div>
 
-      const progress = Math.min(Math.max(scrollTop / docHeight, 0), 1);
+      <div class="scroll-spacer"></div>
+    </div>
 
-      const railHeight = rail.clientHeight - thumb.clientHeight;
-      thumb.style.top = `${progress * railHeight}px`;
-    });
-  </script>
+    <script>
+      window.addEventListener('scroll', () => {
+        const rail = document.querySelector('.side-nav .rail');
+        const thumb = document.querySelector('.side-nav .thumb');
+        if (!rail || !thumb) return;
 
-  <script>
-    window.addEventListener('load', () => {
-      document.querySelector('.page-content')?.classList.add('loaded');
-    });
-  </script>
+        const scrollTop = window.scrollY;
+        const docHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+
+        const progress = Math.min(Math.max(scrollTop / docHeight, 0), 1);
+
+        const railHeight = rail.clientHeight - thumb.clientHeight;
+        thumb.style.top = `${progress * railHeight}px`;
+      });
+    </script>
+
+    <script>
+      window.addEventListener('load', () => {
+        document.querySelector('.page-content')?.classList.add('loaded');
+      });
+    </script>
 
   </div>
   </div>
