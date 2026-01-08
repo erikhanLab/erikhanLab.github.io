@@ -267,9 +267,10 @@
 
       .entry {
         white-space: nowrap;
-        font-size: 0.9em;
+        font-size: 0.85em;
         line-height: 1.55;
         text-overflow: ellipsis;
+        opacity: 0.8;
       }
 
       .entry .meta {
@@ -932,12 +933,13 @@
   </header>
 
   <nav class="side-nav">
-    <a data-target="section-visual-record" data-label="Visual Record"><span>I</span></a>
-    <a data-target="section-visual-work" data-label="Visual Work"><span>II</span></a>
-    <a data-target="section-curated" data-label="Curated Record"><span>III</span></a>
+    <a data-target="section-curated" data-label="Curated Record"><span>I</span></a>
+    <a data-target="section-visual-record" data-label="Visual Record"><span>II</span></a>
+    <a data-target="section-visual-work" data-label="Visual Work"><span>III</span></a>
     <a data-target="section-timeline" data-label="A Chronological Record"><span>IV</span></a>
     <a data-target="section-external" data-label="External Archives"><span>V</span></a>
   </nav>
+
   <div class="nav">
     <a href="/">Home</a>
     <a href="/Profile/">Profile</a>
@@ -947,6 +949,61 @@
     <a href="/archive/" class="active">Archive</a>
   </div>
   <div class="page-content">
+
+    <section class="archive-curated" id="section-curated">
+      <div class="archive-head">
+        <div class="archive-title">Curated Record</div>
+        <div class="archive-note">
+          <em>Curated by recognition, not self-reporting</em>
+        </div>
+      </div>
+
+      <div class="curated-entry">
+        <div class="curated-year">2025</div>
+        <div class="curated-body">
+          <div class="curated-title static">
+            Certificate of Excellence in Reviewing
+          </div>
+
+          <div class="curated-affiliation">
+            <div class="curated-org"><em>Ocean Engineering</em></div>
+            <div class="curated-locale">ELESVIER</div>
+          </div>
+
+          <div class="curated-desc">
+            Recognition for outstanding peer review.
+          </div>
+
+          <div class="curated-meta">
+            Award recipient
+          </div>
+        </div>
+      </div>
+
+      <div class="curated-entry">
+        <div class="curated-year">2025</div>
+        <div class="curated-body">
+          <a href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/" target="_blank"
+            rel="noopener" class="curated-title linked">
+            Official University Research News
+          </a>
+
+          <div class="curated-affiliation">
+            <div class="curated-org">University of Strathclyde</div>
+            <div class="curated-locale">UNITED KINGDOM</div>
+          </div>
+          <div class="curated-desc">
+            Official feature on ship resistance and towing tank temperature effects.
+          </div>
+          <div class="curated-meta">
+            First author · Journal cover article
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="scroll-spacer"></div>
+    <div class="divider"></div>
 
     <section class="visual-record" id="section-visual-record">
       <div class="year-label">Visual Record</div>
@@ -1035,61 +1092,6 @@
       </div>
     -->
   </div>
-
-  <div class="scroll-spacer"></div>
-  <div class="divider"></div>
-
-  <section class="archive-curated" id="section-curated">
-    <div class="archive-head">
-      <div class="archive-title">Curated Record</div>
-      <div class="archive-note">
-        <em>Curated by recognition, not self-reporting</em>
-      </div>
-    </div>
-
-    <div class="curated-entry">
-      <div class="curated-year">2025</div>
-      <div class="curated-body">
-        <div class="curated-title static">
-          Certificate of Excellence in Reviewing
-        </div>
-
-        <div class="curated-affiliation">
-          <div class="curated-org"><em>Ocean Engineering</em></div>
-          <div class="curated-locale">ELESVIER</div>
-        </div>
-
-        <div class="curated-desc">
-          Recognition for outstanding peer review.
-        </div>
-
-        <div class="curated-meta">
-          Award recipient
-        </div>
-      </div>
-    </div>
-
-    <div class="curated-entry">
-      <div class="curated-year">2025</div>
-      <div class="curated-body">
-        <a href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/" target="_blank"
-          rel="noopener" class="curated-title linked">
-          Official University Research News
-        </a>
-
-        <div class="curated-affiliation">
-          <div class="curated-org">University of Strathclyde</div>
-          <div class="curated-locale">UNITED KINGDOM</div>
-        </div>
-        <div class="curated-desc">
-          Official feature on ship resistance and towing tank temperature effects.
-        </div>
-        <div class="curated-meta">
-          First author · Journal cover article
-        </div>
-      </div>
-    </div>
-  </section>
 
   <div class="scroll-spacer"></div>
   <div class="divider"></div>
@@ -1230,9 +1232,9 @@
     window.addEventListener('load', () => {
 
       const sections = [
+        'section-curated',
         'section-visual-record',
         'section-visual-work',
-        'section-curated',
         'section-timeline',
         'section-external'
       ];
@@ -1426,8 +1428,6 @@
   </section>
   <div class="scroll-spacer"></div>
   </div>
-
-  <div class="divider"></div>
 
   <section class="archive-blank" aria-hidden="true">
     <div class="blank-title">Blank</div>
