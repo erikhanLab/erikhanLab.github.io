@@ -158,6 +158,13 @@
       margin-left: 4px;
     }
 
+    .affiliation-country {
+      font-size: 0.78em;
+      letter-spacing: 0.06em;
+      color: #888;
+    }
+
+
 
     @media (max-width: 768px) {
 
@@ -364,7 +371,7 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      margin-bottom: 65px;
+      margin-bottom: 50px;
     }
 
     .icons a svg {
@@ -444,11 +451,6 @@
       list-style: none;
       padding-left: 0;
       margin: 0;
-      margin-bottom: -20px;
-    }
-
-    .section li {
-      margin-bottom: 10px;
     }
 
     .research-interest-grid {
@@ -476,6 +478,7 @@
       line-height: 1.55;
       color: #555;
       max-width: 64ch;
+      opacity: 0.8;
     }
 
     .current-block {
@@ -518,8 +521,10 @@
 
     .current-line.detail {
       font-size: 0.88em;
-      color: #666;
+      color: #444;
       max-width: 62ch;
+      opacity: 0.75;
+      margin-top: 12px;
     }
 
     /* ===== Affiliations ===== */
@@ -562,7 +567,7 @@
       max-width: 100ch;
       line-height: 1.5;
       margin-left: 10px;
-      opacity: 0.6;
+      opacity: 0.75;
     }
 
     .divider {
@@ -616,11 +621,13 @@
       box-shadow:
         0 2px 6px rgba(0, 0, 0, 0.15);
       transition: top 0.14s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0.85;
     }
 
     .side-nav:hover .thumb {
       box-shadow:
         0 3px 10px rgba(0, 0, 0, 0.22);
+      opacity: 1;
     }
 
     .page-content {
@@ -635,7 +642,7 @@
     }
 
     #academic-activity {
-      min-height: 20vh;
+      min-height: 10vh;
     }
 
     .scroll-spacer {
@@ -695,9 +702,9 @@
     <p class="subtitle">Fluid Mechanics · CFD</p>
 
     <p class="tagline">
-      I study fluid mechanics, with a focus on near-wall turbulence and surface roughness effects, using computational
-      methods.
-
+      I work on computational fluid mechanics, focusing on near-wall turbulence and surface roughness effects in marine
+      and offshore flows.
+    </p>
     <div class="icons">
       <a href="https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en" target="_blank"
         aria-label="Google Scholar">
@@ -769,81 +776,6 @@
 
     <div class="divider"></div>
 
-    <div class="section" id="research-interests">
-      <h2><strong>Research Direction</strong></h2>
-      <div class="research-interest-grid">
-
-        <div class="interest-item">
-          <div class="interest-title">Rough-Wall Hydrodynamics</div>
-          <div class="interest-desc">
-            Computational modelling of rough-wall behaviour in marine hydrodynamics.
-          </div>
-        </div>
-
-        <div class="interest-item">
-          <div class="interest-title">Turbulence & Near-Wall Flow</div>
-          <div class="interest-desc">
-            Physics of boundary layers and near-wall turbulence.
-          </div>
-        </div>
-
-        <div class="interest-item">
-          <div class="interest-title">Wave–Structure Interaction</div>
-          <div class="interest-desc">
-            Multiphysics coupling in offshore and marine energy systems.
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="section" id="affiliations">
-      <h2><strong>Affiliations</strong></h2>
-      <div class="affiliation-block">
-
-        <div class="affiliation-item">
-          <div class="affiliation-primary">
-            Visiting Researcher <span class="affiliation-year">(2025)</span>
-          </div>
-          <div class="affiliation-secondary">
-            The University of Osaka <span class="affiliation-dot">·</span> Japan
-          </div>
-          <div class="affiliation-detail">
-            <em>CFD-based research in offshore hydrodynamics</em>
-          </div>
-        </div>
-
-        <div class="affiliation-item">
-          <div class="affiliation-primary">
-            MSc · Advanced Naval Architecture <span class="affiliation-year">(2024–2025)</span>
-          </div>
-          <div class="affiliation-secondary">
-            University of Strathclyde <span class="affiliation-dot">·</span> United Kingdom
-          </div>
-          <div class="affiliation-detail">
-            <em>Graduate research in hydrodynamics and offshore systems</em>
-          </div>
-        </div>
-
-        <div class="affiliation-item">
-          <div class="affiliation-primary">
-            BSc · Naval Architecture & Ocean Engineering <span class="affiliation-year">(2021–2024)</span>
-          </div>
-          <div class="affiliation-secondary">
-            Inha University <span class="affiliation-dot">·</span> South Korea
-          </div>
-          <div class="affiliation-detail">
-            <em>Undergraduate studies in marine hydrodynamics</em>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
     <div class="section" id="academic-activity">
       <h2><strong>Scholarly Contribution</strong></h2>
 
@@ -876,6 +808,88 @@
       </div>
     </div>
 
+
+    <div class="divider"></div>
+
+    <div class="section" id="research-interests">
+      <h2><strong>Research Direction</strong></h2>
+      <div class="research-interest-grid">
+
+        <div class="interest-item">
+          <div class="interest-title">Rough-Wall Hydrodynamics</div>
+          <div class="interest-desc">
+            <em>Computational modelling of rough-wall behaviour in marine hydrodynamics.</em>
+          </div>
+        </div>
+
+        <div class="interest-item">
+          <div class="interest-title">Turbulence & Near-Wall Flow</div>
+          <div class="interest-desc">
+            <em>Physics of boundary layers and near-wall turbulence.</em>
+          </div>
+        </div>
+
+        <div class="interest-item">
+          <div class="interest-title">Wave–Structure Interaction</div>
+          <div class="interest-desc">
+            <em>Multiphysics coupling in offshore and marine energy systems.</em>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section" id="affiliations">
+      <h2><strong>Affiliations</strong></h2>
+      <div class="affiliation-block">
+
+        <div class="affiliation-item">
+          <div class="affiliation-primary">
+            Visiting Researcher <span class="affiliation-year">(2025)</span>
+          </div>
+          <div class="affiliation-secondary">
+            The University of Osaka
+            <span class="affiliation-dot">·</span>
+            <span class="affiliation-country">Japan</span>
+          </div>
+          <div class="affiliation-detail">
+            <em>CFD-based research in offshore systems</em>
+          </div>
+        </div>
+
+        <div class="affiliation-item">
+          <div class="affiliation-primary">
+            MSc · Advanced Naval Architecture <span class="affiliation-year">(2024–2025)</span>
+          </div>
+          <div class="affiliation-secondary">
+            University of Strathclyde
+            <span class="affiliation-dot">·</span>
+            <span class="affiliation-country">United Kingdom</span>
+          </div>
+          <div class="affiliation-detail">
+            <em>Graduate research in marine hydrodynamics</em>
+          </div>
+        </div>
+
+        <div class="affiliation-item">
+          <div class="affiliation-primary">
+            BSc · Naval Architecture & Ocean Engineering <span class="affiliation-year">(2021–2024)</span>
+          </div>
+          <div class="affiliation-secondary">
+            Inha University
+            <span class="affiliation-dot">·</span>
+            <span class="affiliation-country">South Korea</span>
+          </div>
+          <div class="affiliation-detail">
+            <em>Undergraduate studies in naval hydrodynamics</em>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <div class="divider"></div>
 
     <div class="section" id="background">
@@ -886,7 +900,9 @@
             Sonar Petty Officer <span class="affiliation-year">(2016–2020)</span>
           </div>
           <div class="affiliation-secondary">
-            Navy <span class="affiliation-dot">·</span> South Korea
+            Navy
+            <span class="affiliation-dot">·</span>
+            <span class="affiliation-country">South Korea</span>
           </div>
           <div class="affiliation-detail">
             <em>Military service involving acoustic operations, structured training and field-based experience</em>
