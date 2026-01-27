@@ -269,7 +269,10 @@
     .pub-meta {
       font-size: 0.85em;
       color: #666;
-      margin-top: -3px;
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      flex-wrap: wrap;
     }
 
     .pub-meta a {
@@ -280,6 +283,21 @@
 
     .pub-meta a:hover {
       color: var(--accent-dark);
+    }
+
+    .journal-name {
+      color: #222;
+    }
+
+    .journal-if {
+      font-size: 0.68em;
+      letter-spacing: 0.06em;
+      color: #888;
+    }
+
+    .pub-year {
+      font-size: 0.82em;
+      color: #666;
     }
 
     .pub-note {
@@ -303,6 +321,12 @@
       color: var(--status-published);
       opacity: 0.9;
     }
+
+    .status.accepted {
+      color: #222;
+      opacity: 0.55;
+    }
+
 
     .review,
     .prep {
@@ -524,7 +548,9 @@
             <div class="pub-meta">
               <a href="https://www.mdpi.com/journal/jmse" target="_blank"><em>Journal of Marine Science and
                   Engineering</em></a>
-              (IF 2.8), 2025 <span class="cover-badge">Cover Article</span>
+              <span class="journal-if">(IF 2.8), </span>
+              <span class="pub-year">2025</span>
+              <span class="cover-badge">Cover Article</span>
             </div>
           </div>
         </div>
@@ -545,7 +571,34 @@
             <div class="pub-meta">
               <a href="https://www.sciencedirect.com/journal/ocean-engineering" target="_blank"><em>Ocean
                   Engineering</em></a>
-              (IF 4.5), 2024
+              <span class="journal-if">(IF 4.5), </span>
+              <span class="pub-year">2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Accepted</h3>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            <span class="status accepted" aria-hidden="true">●</span>
+            <span class="title-text">
+              <a href="/publications/temperature-ittc/">
+                Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface conditions
+              </a>
+
+          </div>
+          <div class="pub-meta-block">
+            <div class="pub-authors">
+              <strong>S. Han*</strong>, H. Lee, S. Dai, <em>et al.</em>
+            </div>
+            <div class="pub-meta">
+              <a href="https://www.sciencedirect.com/journal/ocean-engineering" target="_blank"><em>Ocean
+                  Engineering</em></a>
+              <span class="journal-if">(IF 5.5), </span>
+              <span class="pub-year">2026</span>
             </div>
           </div>
         </div>
@@ -557,21 +610,6 @@
         <div class="pub-item">
           <div class="pub-title">
             <span class="status review" aria-hidden="true">○</span>
-            Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface conditions
-          </div>
-          <div class="pub-meta-block">
-            <div class="pub-authors">
-              <strong>S. Han*</strong>, <em>et al.</em>
-            </div>
-            <div class="pub-meta">
-              <em>Ocean Engineering</em> — under review (2nd revision), 2026
-            </div>
-          </div>
-        </div>
-
-        <div class="pub-item">
-          <div class="pub-title">
-            <span class="status review" aria-hidden="true">○</span>
             How well do deterministic multi-component waves reproduce FOWT responses in JONSWAP seas?
           </div>
           <div class="pub-meta-block">
@@ -579,7 +617,8 @@
               <strong>S. Han*</strong>
             </div>
             <div class="pub-meta">
-              <em>Applied Ocean Research</em> — under review, 2026
+              <em>Applied Ocean Research</em> — under review,
+              <span class="pub-year">2026</span>
             </div>
           </div>
         </div>
@@ -604,7 +643,8 @@
               <strong>S. Han*</strong>, S. Dai, M. Terziev, <em>et al.</em>
             </div>
             <div class="pub-meta">
-              International Conference on Computational Methods in Marine Engineering (MARINE 2025), 2025
+              International Conference on Computational Methods in Marine Engineering (MARINE 2025),
+              <span class="pub-year">2025</span>
             </div>
           </div>
         </div>
@@ -623,7 +663,8 @@
               <strong>S. Han*</strong>, <em>et al.</em>
             </div>
             <div class="pub-meta">
-              36th Symposium on Naval Hydrodynamics (SNH36), 2026
+              36th Symposium on Naval Hydrodynamics (SNH36),
+              <span class="pub-year">2026</span>
             </div>
           </div>
         </div>
@@ -638,7 +679,8 @@
               <strong>S. Han*</strong>, <em>et al.</em>
             </div>
             <div class="pub-meta">
-              International Ocean Offshore and Arctic Engineering Conference (OMAE), 2026
+              International Ocean Offshore and Arctic Engineering Conference (OMAE),
+              <span class="pub-year">2026</span>
             </div>
           </div>
         </div>
