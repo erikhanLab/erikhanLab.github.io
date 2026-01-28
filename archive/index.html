@@ -171,14 +171,11 @@
       left: 50%;
       bottom: -10px;
       transform: translateX(-50%);
-
       width: 22px;
       height: 1px;
       background: #111;
       opacity: 0.85;
     }
-
-    /* === Visual Timeline === */
 
     .visual-timeline {
       position: relative;
@@ -199,16 +196,12 @@
       position: relative;
       display: flex;
       align-items: center;
-      /* 🔥 핵심 */
       min-height: 24px;
-      /* circle 기준 */
       margin-bottom: 46px;
     }
 
-
     .node-circle {
       position: relative;
-      /* 흐름 복귀 */
       flex-shrink: 0;
       width: 24px;
       height: 24px;
@@ -220,7 +213,6 @@
       box-shadow: 0 0 0 6px rgba(11, 31, 58, 0.04);
       will-change: width, height, transform;
       transform-origin: left top;
-
       transition:
         width 0.55s cubic-bezier(.18, .7, .25, 1),
         height 0.55s cubic-bezier(.18, .7, .25, 1),
@@ -328,12 +320,6 @@
 
     @media (max-width: 768px) {
 
-      /* =========================
-   Mobile: Visual Timeline
-========================= */
-
-
-
       .visual-timeline {
         padding-left: 32px;
       }
@@ -347,7 +333,6 @@
         min-height: 22px;
       }
 
-      /* dot은 더 작고 또렷하게 */
       .node-circle {
         width: 18px;
         height: 18px;
@@ -356,14 +341,12 @@
         box-shadow: 0 0 0 4px rgba(11, 31, 58, 0.05);
       }
 
-      /* hover-zone 제거 개념 */
       .hover-zone {
         position: static;
         width: auto;
         height: auto;
       }
 
-      /* 모바일에선 hover 무시 */
       .hover-zone:hover .node-circle {
         width: 18px;
         height: 18px;
@@ -371,13 +354,10 @@
         box-shadow: 0 0 0 4px rgba(11, 31, 58, 0.05);
       }
 
-      /* === 활성 상태 (JS로 토글) === */
       .timeline-node.active .node-circle {
         width: 84px;
         height: 126px;
-        /* 2:3 */
         border-radius: 6px;
-
         opacity: 1;
         filter: grayscale(0%);
         box-shadow: 0 12px 32px rgba(11, 31, 58, 0.2);
@@ -393,6 +373,7 @@
         letter-spacing: 0.24em;
       }
     }
+    /* end mobile */
 
     .site-name {
       font-size: 1.9em;
@@ -598,7 +579,6 @@
 
     .year-num.selected::after {
       display: none;
-    }
     }
 
     .entry span {
