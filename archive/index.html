@@ -178,6 +178,104 @@
       opacity: 0.85;
     }
 
+    /* === Visual Timeline === */
+
+    .visual-timeline {
+      position: relative;
+      margin-top: 40px;
+      padding-left: 40px;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 12px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(11, 31, 58, 0.12);
+    }
+
+    .timeline-node {
+      position: relative;
+      display: flex;
+      align-items: center;
+      /* 🔥 핵심 */
+      min-height: 24px;
+      /* circle 기준 */
+      margin-bottom: 46px;
+    }
+
+
+    .node-circle {
+      position: relative;
+      /* 흐름 복귀 */
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      overflow: hidden;
+      pointer-events: auto;
+      opacity: 0.5;
+      filter: grayscale(100%);
+      box-shadow: 0 0 0 6px rgba(11, 31, 58, 0.04);
+      will-change: width, height, transform;
+      transform-origin: left top;
+
+      transition:
+        width 0.55s cubic-bezier(.18, .7, .25, 1),
+        height 0.55s cubic-bezier(.18, .7, .25, 1),
+        transform 0.6s cubic-bezier(.18, .7, .25, 1),
+        opacity 0.45s ease,
+        filter 0.45s ease,
+        box-shadow 0.45s ease;
+    }
+
+    .hover-zone:hover .node-circle {
+      width: 96px;
+      height: 144px;
+      transform: translateX(20px);
+      border-radius: 6px;
+
+      opacity: 1;
+      filter: grayscale(0%) blur(0);
+      box-shadow: 0 12px 36px rgba(11, 31, 58, 0.18);
+      z-index: 10;
+    }
+
+    .hover-zone {
+      position: absolute;
+      left: -14px;
+      top: -14px;
+      width: 50px;
+      height: 50px;
+    }
+
+    .node-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .node-label {
+      margin-left: 42px;
+      margin-top: -16px;
+      font-size: 0.62em;
+      letter-spacing: 0.26em;
+      color: #9aa3af;
+      text-transform: uppercase;
+      transition: opacity 0.25s ease;
+    }
+
+    .node-label .country {
+      opacity: 0.55;
+      letter-spacing: 0.32em;
+      font-size: 0.95em;
+    }
+
+    .hover-zone:hover+.node-label {
+      opacity: 0.35;
+    }
+
     .intro {
       margin-top: 28px;
       margin-bottom: 36px;
@@ -230,211 +328,277 @@
 
     @media (max-width: 768px) {
 
-      .site-name {
-        font-size: 1.9em;
+      /* =========================
+   Mobile: Visual Timeline
+========================= */
+
+
+
+      .visual-timeline {
+        padding-left: 32px;
       }
 
-      body {
-        margin: 24px auto;
-        padding: 0 16px;
-        line-height: 1.6;
+      .timeline-line {
+        left: 8px;
       }
 
-      .year-age {
-        display: none;
+      .timeline-node {
+        margin-bottom: 38px;
+        min-height: 22px;
       }
 
-      .header {
-        display: none;
-      }
-
-      .header h1 {
-        font-size: 1.55em;
-        margin-bottom: 0;
-      }
-
-      .side-nav {
-        right: 14px;
-        top: 55%;
-        transform: translateY(-50%);
-        gap: 22px;
-      }
-
-      .side-nav a::after {
-        display: none;
-        margin-right: 10px;
-      }
-
-      .entry {
-        white-space: nowrap;
-        font-size: 0.85em;
-        line-height: 1.55;
-        text-overflow: ellipsis;
-        opacity: 0.92;
-      }
-
-      .entry .meta {
-        display: none;
-      }
-
-      .timeline {
-        padding-left: 36px;
-        font-size: 0.9em;
-      }
-
-      .timeline::before {
-        display: none;
-      }
-
-      .year-section::before {
-        left: -12px;
-      }
-
-      .visual-grid {
-        gap: 4px;
-        max-width: 100%;
-      }
-
-      .visual-item figcaption {
-        font-size: 0.55em;
-        letter-spacing: 0.18em;
-        margin-top: 4px;
-      }
-
-      .visual-work-item {
-        overflow: hidden;
-        margin: 15pt;
-      }
-
-      .visual-work-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0;
-        margin-left: 0;
-        max-width: 100%;
-      }
-
-      .visual-work-item figcaption {
-        margin-top: -4px;
-        font-size: 0.6em;
-        line-height: 1.1;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .records {
-        margin: 32px 0;
-        max-width: 100%;
-      }
-
-      .record-item {
-        align-items: flex-start;
-        gap: 14px;
-      }
-
-      .record-item img {
-        width: 56px;
-      }
-
-      .curated-entry {
-        gap: 18px;
-        font-size: 0.88em;
-      }
-
-      .curated-year {
-        font-size: 0.6em;
-      }
-
-      .curated-desc {
-        font-size: 0.82em;
-        line-height: 1.4;
+      /* dot은 더 작고 또렷하게 */
+      .node-circle {
+        width: 18px;
+        height: 18px;
         opacity: 0.6;
-        display: none;
+        filter: grayscale(100%);
+        box-shadow: 0 0 0 4px rgba(11, 31, 58, 0.05);
       }
 
-      .archive-note {
-        opacity: 0.7;
+      /* hover-zone 제거 개념 */
+      .hover-zone {
+        position: static;
+        width: auto;
+        height: auto;
       }
 
-      .zoom-overlay-content {
-        width: 90%;
-        max-width: 360px;
+      /* 모바일에선 hover 무시 */
+      .hover-zone:hover .node-circle {
+        width: 18px;
+        height: 18px;
+        transform: none;
+        box-shadow: 0 0 0 4px rgba(11, 31, 58, 0.05);
       }
 
-      .zoom-title {
-        font-size: 0.7em;
-      }
+      /* === 활성 상태 (JS로 토글) === */
+      .timeline-node.active .node-circle {
+        width: 84px;
+        height: 126px;
+        /* 2:3 */
+        border-radius: 6px;
 
-      .zoom-desc {
-        font-size: 0.65em;
-      }
-
-      .side-nav {
-        display: none !important;
-      }
-
-      .side-nav a::after {
-        display: none;
-      }
-
-      .nav {
-        position: sticky;
-        top: env(safe-area-inset-top);
-        z-index: 1000;
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        padding: 16px 0;
-        margin-bottom: 40px;
-        background: rgba(247, 249, 252, 0.85);
-        backdrop-filter: blur(4px);
-        border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
-      }
-
-      .nav a {
-        position: relative;
-        margin: 0;
-        padding: 6px 0;
-        text-align: center;
-        text-decoration: none;
-        font-size: clamp(0.62em, 2.6vw, 0.7em);
-        letter-spacing: 0.12em;
-        font-weight: 400;
-        color: #444;
-        opacity: 0.6;
-        white-space: nowrap;
-        transition:
-          opacity 0.2s ease,
-          color 0.2s ease;
-      }
-
-      .nav a:hover {
         opacity: 1;
-        color: #111;
+        filter: grayscale(0%);
+        box-shadow: 0 12px 32px rgba(11, 31, 58, 0.2);
       }
 
-      .nav a.active {
-        opacity: 1;
-        color: #111;
-        font-weight: 500;
+      .timeline-node.active .node-label {
+        opacity: 0.35;
       }
 
-      .nav a.active::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: -8px;
-        transform: translateX(-50%);
-        width: 16px;
-        height: 1px;
-        background: #111;
-        opacity: 0.8;
+      .node-label {
+        margin-left: 36px;
+        font-size: 0.6em;
+        letter-spacing: 0.24em;
       }
+    }
 
-      .year-num.selected::after {
-        display: none;
-      }
+    .site-name {
+      font-size: 1.9em;
+    }
+
+    body {
+      margin: 24px auto;
+      padding: 0 16px;
+      line-height: 1.6;
+    }
+
+    .year-age {
+      display: none;
+    }
+
+    .header {
+      display: none;
+    }
+
+    .header h1 {
+      font-size: 1.55em;
+      margin-bottom: 0;
+    }
+
+    .side-nav {
+      right: 14px;
+      top: 55%;
+      transform: translateY(-50%);
+      gap: 22px;
+    }
+
+    .side-nav a::after {
+      display: none;
+      margin-right: 10px;
+    }
+
+    .entry {
+      white-space: nowrap;
+      font-size: 0.85em;
+      line-height: 1.55;
+      text-overflow: ellipsis;
+      opacity: 0.92;
+    }
+
+    .entry .meta {
+      display: none;
+    }
+
+    .timeline {
+      padding-left: 36px;
+      font-size: 0.9em;
+    }
+
+    .timeline::before {
+      display: none;
+    }
+
+    .year-section::before {
+      left: -12px;
+    }
+
+    .visual-grid {
+      gap: 4px;
+      max-width: 100%;
+    }
+
+    .visual-item figcaption {
+      font-size: 0.55em;
+      letter-spacing: 0.18em;
+      margin-top: 4px;
+    }
+
+    .visual-work-item {
+      overflow: hidden;
+      margin: 15pt;
+    }
+
+    .visual-work-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-left: 0;
+      max-width: 100%;
+    }
+
+    .visual-work-item figcaption {
+      margin-top: -4px;
+      font-size: 0.6em;
+      line-height: 1.1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .records {
+      margin: 32px 0;
+      max-width: 100%;
+    }
+
+    .record-item {
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .record-item img {
+      width: 56px;
+    }
+
+    .curated-entry {
+      gap: 18px;
+      font-size: 0.88em;
+    }
+
+    .curated-year {
+      font-size: 0.6em;
+    }
+
+    .curated-desc {
+      font-size: 0.82em;
+      line-height: 1.4;
+      opacity: 0.6;
+      display: none;
+    }
+
+    .archive-note {
+      opacity: 0.7;
+    }
+
+    .zoom-overlay-content {
+      width: 90%;
+      max-width: 360px;
+    }
+
+    .zoom-title {
+      font-size: 0.7em;
+    }
+
+    .zoom-desc {
+      font-size: 0.65em;
+    }
+
+    .side-nav {
+      display: none !important;
+    }
+
+    .side-nav a::after {
+      display: none;
+    }
+
+    .nav {
+      position: sticky;
+      top: env(safe-area-inset-top);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 16px 0;
+      margin-bottom: 40px;
+      background: rgba(247, 249, 252, 0.85);
+      backdrop-filter: blur(4px);
+      border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .nav a {
+      position: relative;
+      margin: 0;
+      padding: 6px 0;
+      text-align: center;
+      text-decoration: none;
+      font-size: clamp(0.62em, 2.6vw, 0.7em);
+      letter-spacing: 0.12em;
+      font-weight: 400;
+      color: #444;
+      opacity: 0.6;
+      white-space: nowrap;
+      transition:
+        opacity 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 1;
+      color: #111;
+    }
+
+    .nav a.active {
+      opacity: 1;
+      color: #111;
+      font-weight: 500;
+    }
+
+    .nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -8px;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 1px;
+      background: #111;
+      opacity: 0.8;
+    }
+
+    .year-num.selected::after {
+      display: none;
+    }
     }
 
     .entry span {
@@ -1014,35 +1178,82 @@
     <section class="visual-record" id="section-visual-record">
       <div class="year-label">Visual Record</div>
 
-      <div class="visual-grid">
+      <div class="visual-timeline">
 
-        <figure class="visual-item anchor">
-          <img src="/assets/Japan_2025.jpg" alt="Visual record, 2025">
-          <figcaption><em>2025</em></figcaption>
-        </figure>
+        <div class="timeline-line"></div>
 
-        <figure class="visual-item spain">
-          <img src="/assets/Spain_2025.jpg" alt="Visual record, 2025">
-          <figcaption><em>2025</em></figcaption>
-        </figure>
+        <div class="timeline-node">
+          <div class="hover-zone">
+            <div class="node-circle">
+              <img src="/assets/Korea_2016.jpg" alt="2016 Korea">
+            </div>
+          </div>
+          <div class="node-label">
+            <span class="year">2016</span>
+            <span class="dot">·</span>
+            <span class="country">Korea</span>
+          </div>
 
-        <figure class="visual-item korea-2024">
-          <img src="/assets/Korea_2024.jpg" alt="Visual record, 2024">
-          <figcaption><em>2024</em></figcaption>
-        </figure>
+        </div>
 
-        <figure class="visual-item korea-2018">
-          <img src="/assets/Korea_2017.jpg" alt="Visual record, 2018">
-          <figcaption><em>2018</em></figcaption>
-        </figure>
 
-        <figure class="visual-item korea-2016">
-          <img src="/assets/Korea_2016.jpg" alt="Visual record, 2016">
-          <figcaption><em>2016</em></figcaption>
-        </figure>
+        <div class="timeline-node">
+          <div class="hover-zone">
+            <div class="node-circle">
+              <img src="/assets/Korea_2017.jpg" alt="2018 Korea">
+            </div>
+          </div>
+          <div class="node-label">
+            <span class="year">2018</span>
+            <span class="dot">·</span>
+            <span class="country">Korea</span>
+          </div>
 
+        </div>
+
+        <div class="timeline-node">
+          <div class="hover-zone">
+            <div class="node-circle">
+              <img src="/assets/Korea_2024.jpg" alt="2024 Korea">
+            </div>
+          </div>
+          <div class="node-label">
+            <span class="year">2024</span>
+            <span class="dot">·</span>
+            <span class="country">Korea</span>
+          </div>
+
+        </div>
+
+        <div class="timeline-node">
+          <div class="hover-zone">
+            <div class="node-circle">
+              <img src="/assets/Spain_2025.jpg" alt="2025 Spain">
+            </div>
+          </div>
+          <div class="node-label">
+            <span class="year">2025</span>
+            <span class="dot">·</span>
+            <span class="country">Spain</span>
+          </div>
+        </div>
+
+        <div class="timeline-node">
+          <div class="hover-zone">
+            <div class="node-circle">
+              <img src="/assets/Japan_2025.jpg" alt="2025 Japan">
+            </div>
+          </div>
+          <div class="node-label">
+            <span class="year">2025</span>
+            <span class="dot">·</span>
+            <span class="country">Japan</span>
+          </div>
+
+        </div>
       </div>
     </section>
+
     <div class="scroll-spacer"></div>
     <div class="divider"></div>
 
@@ -1354,6 +1565,25 @@
       });
     });
   </script>
+
+  <script>
+    // Mobile tap interaction for Visual Timeline
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      document.querySelectorAll(".timeline-node").forEach(node => {
+        node.addEventListener("click", () => {
+          // 다른 노드 닫기
+          document.querySelectorAll(".timeline-node.active")
+            .forEach(n => {
+              if (n !== node) n.classList.remove("active");
+            });
+
+          // 현재 토글
+          node.classList.toggle("active");
+        });
+      });
+    }
+  </script>
+
 
   <div class="divider"></div>
 
