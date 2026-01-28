@@ -171,11 +171,14 @@
       left: 50%;
       bottom: -10px;
       transform: translateX(-50%);
+
       width: 22px;
       height: 1px;
       background: #111;
       opacity: 0.85;
     }
+
+    /* === Visual Timeline === */
 
     .visual-timeline {
       position: relative;
@@ -196,12 +199,16 @@
       position: relative;
       display: flex;
       align-items: center;
+      /* 🔥 핵심 */
       min-height: 24px;
+      /* circle 기준 */
       margin-bottom: 46px;
     }
 
+
     .node-circle {
       position: relative;
+      /* 흐름 복귀 */
       flex-shrink: 0;
       width: 24px;
       height: 24px;
@@ -213,6 +220,7 @@
       box-shadow: 0 0 0 6px rgba(11, 31, 58, 0.04);
       will-change: width, height, transform;
       transform-origin: left top;
+
       transition:
         width 0.55s cubic-bezier(.18, .7, .25, 1),
         height 0.55s cubic-bezier(.18, .7, .25, 1),
@@ -320,6 +328,212 @@
 
     @media (max-width: 768px) {
 
+      .site-name {
+        font-size: 1.9em;
+      }
+
+      body {
+        margin: 24px auto;
+        padding: 0 16px;
+        line-height: 1.6;
+      }
+
+      .year-age {
+        display: none;
+      }
+
+      .header {
+        display: none;
+      }
+
+      .header h1 {
+        font-size: 1.55em;
+        margin-bottom: 0;
+      }
+
+      .side-nav {
+        right: 14px;
+        top: 55%;
+        transform: translateY(-50%);
+        gap: 22px;
+      }
+
+      .side-nav a::after {
+        display: none;
+        margin-right: 10px;
+      }
+
+      .entry {
+        white-space: nowrap;
+        font-size: 0.85em;
+        line-height: 1.55;
+        text-overflow: ellipsis;
+        opacity: 0.92;
+      }
+
+      .entry .meta {
+        display: none;
+      }
+
+      .timeline {
+        padding-left: 36px;
+        font-size: 0.9em;
+      }
+
+      .timeline::before {
+        display: none;
+      }
+
+      .year-section::before {
+        left: -12px;
+      }
+
+      .visual-grid {
+        gap: 4px;
+        max-width: 100%;
+      }
+
+      .visual-item figcaption {
+        font-size: 0.55em;
+        letter-spacing: 0.18em;
+        margin-top: 4px;
+      }
+
+      .visual-work-item {
+        overflow: hidden;
+        margin: 15pt;
+      }
+
+      .visual-work-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        margin-left: 0;
+        max-width: 100%;
+      }
+
+      .visual-work-item figcaption {
+        margin-top: -4px;
+        font-size: 0.6em;
+        line-height: 1.1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .records {
+        margin: 32px 0;
+        max-width: 100%;
+      }
+
+      .record-item {
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .record-item img {
+        width: 56px;
+      }
+
+      .curated-entry {
+        gap: 18px;
+        font-size: 0.88em;
+      }
+
+      .curated-year {
+        font-size: 0.6em;
+      }
+
+      .curated-desc {
+        font-size: 0.82em;
+        line-height: 1.4;
+        opacity: 0.6;
+        display: none;
+      }
+
+      .archive-note {
+        opacity: 0.7;
+      }
+
+      .zoom-overlay-content {
+        width: 90%;
+        max-width: 360px;
+      }
+
+      .zoom-title {
+        font-size: 0.7em;
+      }
+
+      .zoom-desc {
+        font-size: 0.65em;
+      }
+
+      .side-nav {
+        display: none !important;
+      }
+
+      .side-nav a::after {
+        display: none;
+      }
+
+      .nav {
+        position: sticky;
+        top: env(safe-area-inset-top);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        padding: 16px 0;
+        margin-bottom: 40px;
+        background: rgba(247, 249, 252, 0.85);
+        backdrop-filter: blur(4px);
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+      }
+
+      .nav a {
+        position: relative;
+        margin: 0;
+        padding: 6px 0;
+        text-align: center;
+        text-decoration: none;
+        font-size: clamp(0.62em, 2.6vw, 0.7em);
+        letter-spacing: 0.12em;
+        font-weight: 400;
+        color: #444;
+        opacity: 0.6;
+        white-space: nowrap;
+        transition:
+          opacity 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .nav a:hover {
+        opacity: 1;
+        color: #111;
+      }
+
+      .nav a.active {
+        opacity: 1;
+        color: #111;
+        font-weight: 500;
+      }
+
+      .nav a.active::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -8px;
+        transform: translateX(-50%);
+        width: 16px;
+        height: 1px;
+        background: #111;
+        opacity: 0.8;
+      }
+
+      .year-num.selected::after {
+        display: none;
+      }
+
       .visual-timeline {
         padding-left: 32px;
       }
@@ -329,16 +543,9 @@
       }
 
       .timeline-node {
-        margin-bottom: 38px;
-        min-height: 22px;
-      }
-
-      .node-circle {
-        width: 18px;
-        height: 18px;
-        opacity: 0.6;
-        filter: grayscale(100%);
-        box-shadow: 0 0 0 4px rgba(11, 31, 58, 0.05);
+        align-items: flex-start;
+        min-height: auto;
+        margin-bottom: 32px;
       }
 
       .hover-zone {
@@ -347,238 +554,62 @@
         height: auto;
       }
 
-      .hover-zone:hover .node-circle {
-        width: 18px;
-        height: 18px;
-        transform: none;
-        box-shadow: 0 0 0 4px rgba(11, 31, 58, 0.05);
-      }
-
-      .timeline-node.active .node-circle {
-        width: 84px;
-        height: 126px;
+      .node-circle {
+        width: 72px;
+        height: 108px;
+        /* 2:3 */
         border-radius: 6px;
-        opacity: 1;
-        filter: grayscale(0%);
-        box-shadow: 0 12px 32px rgba(11, 31, 58, 0.2);
+
+        opacity: 0.85;
+        filter: grayscale(80%) blur(0.6px);
+        box-shadow: 0 8px 24px rgba(11, 31, 58, 0.16);
+
+        transform: none;
       }
 
-      .timeline-node.active .node-label {
-        opacity: 0.35;
+      .hover-zone:hover .node-circle {
+        width: 72px;
+        height: 108px;
+        transform: none;
+        box-shadow: 0 8px 24px rgba(11, 31, 58, 0.16);
+      }
+
+      .hover-zone:hover+.node-label {
+        opacity: 0.7;
+      }
+
+      .timeline-node:hover .node-label {
+        opacity: 0.7;
       }
 
       .node-label {
-        margin-left: 36px;
+        margin-left: 16px;
+        margin-top: 6px;
         font-size: 0.6em;
-        letter-spacing: 0.24em;
+        letter-spacing: 0.22em;
+        opacity: 0.7;
       }
-    }
-    /* end mobile */
 
-    .site-name {
-      font-size: 1.9em;
-    }
+      .hover-zone,
+      .hover-zone:hover,
+      .timeline-node:hover {
+        pointer-events: none !important;
+      }
 
-    body {
-      margin: 24px auto;
-      padding: 0 16px;
-      line-height: 1.6;
-    }
+      .hover-zone:hover .node-circle,
+      .timeline-node:hover .node-circle {
+        width: 72px !important;
+        height: 108px !important;
+        transform: none !important;
+        filter: grayscale(80%) blur(0.6px) !important;
+        box-shadow: 0 8px 24px rgba(11, 31, 58, 0.16) !important;
+        border-radius: 6px !important;
+      }
 
-    .year-age {
-      display: none;
-    }
-
-    .header {
-      display: none;
-    }
-
-    .header h1 {
-      font-size: 1.55em;
-      margin-bottom: 0;
-    }
-
-    .side-nav {
-      right: 14px;
-      top: 55%;
-      transform: translateY(-50%);
-      gap: 22px;
-    }
-
-    .side-nav a::after {
-      display: none;
-      margin-right: 10px;
-    }
-
-    .entry {
-      white-space: nowrap;
-      font-size: 0.85em;
-      line-height: 1.55;
-      text-overflow: ellipsis;
-      opacity: 0.92;
-    }
-
-    .entry .meta {
-      display: none;
-    }
-
-    .timeline {
-      padding-left: 36px;
-      font-size: 0.9em;
-    }
-
-    .timeline::before {
-      display: none;
-    }
-
-    .year-section::before {
-      left: -12px;
-    }
-
-    .visual-grid {
-      gap: 4px;
-      max-width: 100%;
-    }
-
-    .visual-item figcaption {
-      font-size: 0.55em;
-      letter-spacing: 0.18em;
-      margin-top: 4px;
-    }
-
-    .visual-work-item {
-      overflow: hidden;
-      margin: 15pt;
-    }
-
-    .visual-work-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      margin-left: 0;
-      max-width: 100%;
-    }
-
-    .visual-work-item figcaption {
-      margin-top: -4px;
-      font-size: 0.6em;
-      line-height: 1.1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .records {
-      margin: 32px 0;
-      max-width: 100%;
-    }
-
-    .record-item {
-      align-items: flex-start;
-      gap: 14px;
-    }
-
-    .record-item img {
-      width: 56px;
-    }
-
-    .curated-entry {
-      gap: 18px;
-      font-size: 0.88em;
-    }
-
-    .curated-year {
-      font-size: 0.6em;
-    }
-
-    .curated-desc {
-      font-size: 0.82em;
-      line-height: 1.4;
-      opacity: 0.6;
-      display: none;
-    }
-
-    .archive-note {
-      opacity: 0.7;
-    }
-
-    .zoom-overlay-content {
-      width: 90%;
-      max-width: 360px;
-    }
-
-    .zoom-title {
-      font-size: 0.7em;
-    }
-
-    .zoom-desc {
-      font-size: 0.65em;
-    }
-
-    .side-nav {
-      display: none !important;
-    }
-
-    .side-nav a::after {
-      display: none;
-    }
-
-    .nav {
-      position: sticky;
-      top: env(safe-area-inset-top);
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      padding: 16px 0;
-      margin-bottom: 40px;
-      background: rgba(247, 249, 252, 0.85);
-      backdrop-filter: blur(4px);
-      border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
-    }
-
-    .nav a {
-      position: relative;
-      margin: 0;
-      padding: 6px 0;
-      text-align: center;
-      text-decoration: none;
-      font-size: clamp(0.62em, 2.6vw, 0.7em);
-      letter-spacing: 0.12em;
-      font-weight: 400;
-      color: #444;
-      opacity: 0.6;
-      white-space: nowrap;
-      transition:
-        opacity 0.2s ease,
-        color 0.2s ease;
-    }
-
-    .nav a:hover {
-      opacity: 1;
-      color: #111;
-    }
-
-    .nav a.active {
-      opacity: 1;
-      color: #111;
-      font-weight: 500;
-    }
-
-    .nav a.active::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -8px;
-      transform: translateX(-50%);
-      width: 16px;
-      height: 1px;
-      background: #111;
-      opacity: 0.8;
-    }
-
-    .year-num.selected::after {
-      display: none;
+      .hover-zone:hover+.node-label,
+      .timeline-node:hover .node-label {
+        opacity: 0.7 !important;
+      }
     }
 
     .entry span {
@@ -1526,8 +1557,6 @@
         meta.appendChild(title);
         meta.appendChild(metaLine);
         meta.appendChild(desc);
-
-
         wrapper.appendChild(clone);
         wrapper.appendChild(meta);
         overlay.appendChild(wrapper);
@@ -1545,25 +1574,6 @@
       });
     });
   </script>
-
-  <script>
-    // Mobile tap interaction for Visual Timeline
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      document.querySelectorAll(".timeline-node").forEach(node => {
-        node.addEventListener("click", () => {
-          // 다른 노드 닫기
-          document.querySelectorAll(".timeline-node.active")
-            .forEach(n => {
-              if (n !== node) n.classList.remove("active");
-            });
-
-          // 현재 토글
-          node.classList.toggle("active");
-        });
-      });
-    }
-  </script>
-
 
   <div class="divider"></div>
 
