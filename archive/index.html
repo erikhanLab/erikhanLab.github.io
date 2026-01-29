@@ -228,14 +228,14 @@
     .hover-zone:hover .node-circle {
       width: 128px;
       height: 192px;
-      transform: translateX(50px);
+      transform: translate(50px, calc(-1 * var(--lift)));
       border-radius: 6px;
       opacity: 1;
       filter: grayscale(50%) blur(0.1px);
       box-shadow: 0 12px 36px rgba(11, 31, 58, 0.18);
       z-index: 10;
     }
-
+    
     .hover-zone {
       position: absolute;
       left: -14px;
@@ -615,7 +615,8 @@
     }
 
     .entry a:hover {
-      border-bottom-color: #aaa;
+      border-bottom-color: #bbb;
+      opacity: 0.75;
     }
 
     .side-nav {
@@ -1184,7 +1185,7 @@
 
         <div class="timeline-line"></div>
 
-        <div class="timeline-node">
+        <div class="timeline-node" style="--lift: 20px">
           <div class="hover-zone">
             <div class="node-circle">
               <img src="/assets/Korea_2016.jpg" alt="2016 Korea">
@@ -1199,7 +1200,7 @@
         </div>
 
 
-        <div class="timeline-node">
+        <div class="timeline-node" style="--lift: 30px">
           <div class="hover-zone">
             <div class="node-circle">
               <img src="/assets/Korea_2017.jpg" alt="2018 Korea">
@@ -1213,7 +1214,7 @@
 
         </div>
 
-        <div class="timeline-node">
+        <div class="timeline-node" style="--lift: 40px">
           <div class="hover-zone">
             <div class="node-circle">
               <img src="/assets/Korea_2024.jpg" alt="2024 Korea">
@@ -1227,7 +1228,7 @@
 
         </div>
 
-        <div class="timeline-node">
+        <div class="timeline-node" style="--lift: 50px">
           <div class="hover-zone">
             <div class="node-circle">
               <img src="/assets/Spain_2025.jpg" alt="2025 Spain">
@@ -1240,7 +1241,7 @@
           </div>
         </div>
 
-        <div class="timeline-node">
+        <div class="timeline-node" style="--lift: 60px">
           <div class="hover-zone">
             <div class="node-circle">
               <img src="/assets/Japan_2025.jpg" alt="2025 Japan">
