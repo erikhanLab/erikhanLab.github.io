@@ -476,21 +476,27 @@
       }
 
       .pub-meta {
-        display: flex;
-        align-items: baseline;
-        flex-wrap: nowrap;
-        gap: 6px;
+        font-size: 0.62em;
+        line-height: 1.4;
+        margin-top: 2px;
+        opacity: 0.7;
+        white-space: normal;
+        overflow: visible;
       }
 
       .pub-meta-text {
-        min-width: 0;
+        display: inline-block;
+        max-width: 100%;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+        vertical-align: middle;
       }
 
       .cover-badge {
-        margin-left: 6px;
+        font-size: 0.5em;
+        padding: 1px 4px;
+        margin-left: 5px;
       }
     }
   </style>
@@ -553,13 +559,12 @@
               <strong>S. Han</strong>, S. Dai, M. Terziev, <em>et al.</em>
             </div>
             <div class="pub-meta">
-              <div class="pub-meta-text">
-                <a href="https://www.mdpi.com/journal/jmse" target="_blank">
-                  <em>Journal of Marine Science and Engineering</em>
-                </a>
+              <span class="pub-meta-text">
+                <a href="https://www.mdpi.com/journal/jmse" target="_blank"><em>Journal of Marine Science and
+                    Engineering</em></a>
                 <span class="journal-if">(IF 2.8), </span>
                 <span class="pub-year">2025</span>
-              </div>
+              </span>
               <span class="cover-badge">Cover Article</span>
             </div>
           </div>

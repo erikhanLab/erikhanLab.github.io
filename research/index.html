@@ -652,7 +652,7 @@
       }
 
       .rt-subtitle {
-        font-size: 0.68em;
+        font-size: 0.75em;
         margin-left: 0;
         line-height: 1.45;
         opacity: 0.81;
@@ -670,13 +670,29 @@
       }
 
       .rt-meta {
-        font-size: 0.52em;
+        font-size: 0.63rem;
         margin-left: 0;
         padding-left: 0;
         opacity: 0.55;
         overflow: hidden;
+        align-items: baseline;
+        text-overflow: ellipsis;
+        display: flex;
+        line-height: 1.2; 
+        gap: 4px;
+        white-space: nowrap;
+      }
+
+      .rt-venue {
+        min-width: 0;
+        max-width: 80%;
+        overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+      }
+
+      .rt-location {
+        flex-shrink: 0;
       }
 
       .rt-meta::before {
@@ -684,7 +700,7 @@
       }
 
       .rt-meta .q-rank {
-        font-size: 0.52em;
+        font-size: 0.43rem;
         opacity: 0.85;
         letter-spacing: 0.04em;
       }
@@ -775,10 +791,17 @@
 
             <div class="rt-block">
               <div class="rt-output">SNH36 — Full Paper Invited</div>
-              <div class="rt-subtitle">A Computational Fluid Dynamics Analysis of Spatial Roughness Distributions on
-                Ship Resistance</div>
+              <div class="rt-subtitle">A computational fluid dynamics analysis of spatial roughness distributions on
+                ship resistance</div>
               <div class="role-tag">First & corresponding author</div>
-              <div class="rt-meta">36th Symposium on Naval Hydrodynamics (SNH36) — Busan, South Korea
+
+              <div class="rt-meta">
+                <span class="rt-venue">
+                  36th Symposium on Naval Hydrodynamics (SNH36)
+                </span>
+                <span class="rt-location">
+                  — Busan, South Korea
+                </span>
               </div>
             </div>
 
@@ -788,11 +811,16 @@
                 <span class="rt-note">· Oral presentation scheduled</span>
               </div>
               <div class="rt-subtitle">
-                Simulation-Based Analysis of a Gyroscopic WEC Using a Modular CFD–MBD Approach
+                Simulation-based analysis of a gyroscopic WEC using a modular CFD–MBD approach
               </div>
               <div class="role-tag">First & corresponding author</div>
               <div class="rt-meta">
-                International Ocean Offshore and Arctic Engineering Conference (OMAE 2026) — Tokyo, Japan
+                <span class="rt-venue">
+                  International Ocean Offshore and Arctic Engineering Conference (OMAE 2026)
+                </span>
+                <span class="rt-location">
+                  — Tokyo, Japan
+                </span>
               </div>
             </div>
           </div>
@@ -805,7 +833,7 @@
 
           <div class="rt-stage">International Research</div>
           <div class="rt-title">
-            High-Impact Achievements
+            Selected Research Achievements
           </div>
           <div class="rt-block-group">
             <div class="rt-block">
@@ -840,7 +868,7 @@
 
             <div class="rt-block">
               <div class="rt-output">Conference Presentation</div>
-              <div class="rt-subtitle">Impact of Towing Tank Temperature on Model-Ship Extrapolation</div>
+              <div class="rt-subtitle">Impact of towing tank temperature on model-ship extrapolation</div>
               <div class="role-tag">Presenting author</div>
               <div class="rt-meta">International Congress of Naval Architecture and Maritime Industry — Gijón, Spain
               </div>
@@ -850,12 +878,19 @@
 
             <div class="rt-block">
               <div class="rt-output">Conference Paper</div>
-              <div class="rt-subtitle">Numerical Analysis of Fluid-Structure Interaction (FSI) for Semi-Submersible
+              <div class="rt-subtitle">Numerical analysis of fluid-structure interaction (FSI) for semi-submersible
                 FOWT
               </div>
               <div class="role-tag">First & corresponding author</div>
-              <div class="rt-meta">Int. Conf. on Computational Methods in Marine Engineering (MARINE 2025)
-                — Edinburgh, UK</div>
+
+              <div class="rt-meta">
+                <span class="rt-venue">
+                  International Conference on Computational Methods in Marine Engineering (MARINE 2025)
+                </span>
+                <span class="rt-location">
+                  — Edinburgh, UK
+                </span>
+              </div>
             </div>
           </div>
 
@@ -870,11 +905,18 @@
 
             <div class="rt-block">
               <div class="rt-output">Conference Presentation</div>
-              <div class="rt-subtitle">CFD-Based Model Predictive Control for Point Absorber Wave Energy Converters
+              <div class="rt-subtitle">CFD-based model predictive control (MPC) for point absorber wave energy converters (WECs)
               </div>
               <div class="role-tag">Presenting author</div>
-              <div class="rt-meta">The Japan Society of Naval Architects and Ocean Engineers (JASNAOE 2025) — Hyogo,
-                Japan</div>
+
+              <div class="rt-meta">
+                <span class="rt-venue">
+                  The Japan Society of Naval Architects and Ocean Engineers (JASNAOE 2025)
+                </span>
+                <span class="rt-location">
+                  — Hyogo, Japan
+                </span>
+              </div>
             </div>
 
             <div class="rt-block">
@@ -903,10 +945,16 @@
             <div class="rt-block">
               <div class="rt-output">Best Paper Award</div>
               <div class="rt-subtitle">
-                Uncertainty of the ITTC 1957 Correlation Line with Temperature Variations</div>
+                Uncertainty of the ITTC 1957 correlation line with temperature variations</div>
               <div class="role-tag">Presenting author</div>
+
               <div class="rt-meta">
-                The 13th National Congress on Fluids Engineering — Daejeon, South Korea
+                <span class="rt-venue">
+                  The 13th National Congress on Fluids Engineering
+                </span>
+                <span class="rt-location">
+                  — Daejeon, South Korea
+                </span>
               </div>
             </div>
 
@@ -939,7 +987,12 @@
               <div class="rt-subtitle">
                 President of The Society of Naval Architecture of Korea</div>
               <div class="rt-meta">
-                KABOAT 2023 Competition — Masan, South Korea
+                <span class="rt-venue">
+                  Korea Autonomous Boat (KABOAT 2023) Competition
+                </span>
+                <span class="rt-location">
+                  — Masan, South Korea
+                </span>
               </div>
             </div>
 
@@ -949,7 +1002,12 @@
                 Virtual Simulation of an Autonomous Boat Using MATLAB</div>
               <div class="role-tag">Presenting author</div>
               <div class="rt-meta">
-                Fall Conference of The Society of Naval Architecture of Korea — Daejeon, South Korea
+                <span class="rt-venue">
+                  Fall Conference of The Society of Naval Architecture of Korea
+                </span>
+                <span class="rt-location">
+                  — Daejeon, South Korea
+                </span>
               </div>
             </div>
           </div>
