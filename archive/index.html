@@ -121,7 +121,7 @@
     }
 
     .zoomable-drawing:hover {
-      filter: grayscale(100%) brightness(0.9);
+      filter: grayscale(0%) brightness(0.9);
     }
 
     .nav {
@@ -967,6 +967,7 @@
       width: 100%;
       aspect-ratio: 3 / 4;
       object-fit: cover;
+      filter: grayscale(60%);
     }
 
     .visual-work-item figcaption {
@@ -1038,17 +1039,14 @@
       letter-spacing: 0.28em;
       text-transform: uppercase;
       color: #777;
-      /* year-label과 동일 */
       opacity: 0.9;
     }
 
     .visual-essay-title {
       margin-top: 6px;
       font-size: 0.85em;
-      /* year-label 계열 */
       letter-spacing: 0.14em;
       font-style: normal;
-      /* 🔥 이탤릭 제거 */
       color: #555;
     }
 
