@@ -489,6 +489,27 @@
       opacity: 0.9;
     }
 
+    .rt-log-link {
+      text-transform: none;
+      color: #0B2545;
+      font-size: 0.72em;
+      letter-spacing: 0.06em;
+      margin-left: 2px;
+      opacity: 0.48;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .rt-log-link:hover {
+      opacity: 0.85;
+    }
+
+    .rt-dot {
+      margin: 0 4px;
+      font-size: 0.72em;
+      opacity: 0.35;
+    }
+
     @media (max-width: 768px) {
       .site-name {
         font-size: 1.9em;
@@ -754,8 +775,9 @@
     </div>
 
     <div class="research-timeline">
-      <h2 class="rt-header">Research Timeline (2023–2026)</h2>
-
+      <h2 class="rt-header">Research Timeline (2023–2026) <span class="rt-dot">·</span>
+        <a href="/research/log/" class="rt-log-link">Research Log →</a>
+      </h2>
       <div class="rt-item">
         <div class="rt-year">2026</div>
         <div class="rt-body">
@@ -770,7 +792,8 @@
                 Journal Publication
               </div>
 
-              <div class="rt-subtitle">Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface
+              <div class="rt-subtitle">Beyond uniform roughness: Ship resistance with spatially non-uniform hull
+                surface
                 conditions</div>
               <div class="role-tag">First & corresponding author</div>
               <div class="rt-meta">
@@ -991,7 +1014,7 @@
 
             <div class="rt-block">
               <div class="rt-output">Industrial Technology Award</div>
-              
+
               <div class="rt-meta">
                 <span class="rt-venue">
                   President of The Society of Naval Architecture of Korea

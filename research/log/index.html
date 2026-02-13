@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research log | Sangseok Han</title>
+  <meta name="description"
+    content="Selected research records and field documentation by Sangseok Han.">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
+
+  <style>
+    html { overflow-y: scroll; }
+
+    :root {
+      --research-blue: #0B1F3A;
+      --bg-light: #F3F5F8;
+    }
+
+    body {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-family: Georgia, serif;
+      color: #111;
+      line-height: 1.75;
+      background: var(--bg-light);
+    }
+
+    .site-header {
+      margin: 60px 0 20px;
+    }
+
+    .site-name {
+      font-size: 2.5em;
+      letter-spacing: 0.18em;
+      color: #111;
+      text-decoration: none;
+    }
+
+    .nav {
+      position: sticky;
+      top: env(safe-area-inset-top);
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      padding: 14px 0;
+      margin-bottom: 60px;
+      background: rgba(243,245,248,0.85);
+      border-bottom: 0.5px solid rgba(0,0,0,0.08);
+    }
+
+    .nav a {
+      text-decoration: none;
+      font-size: 1em;
+      letter-spacing: 0.12em;
+      color: #444;
+      opacity: 0.65;
+    }
+
+    .nav a.active {
+      opacity: 1;
+      color: #111;
+      font-weight: 500;
+    }
+
+    /* ===== Log Header ===== */
+
+    .log-header {
+      font-size: 1.3em;
+      letter-spacing: 0.08em;
+      color: var(--research-blue);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .log-sub {
+      font-size: 0.85em;
+      opacity: 0.55;
+      margin-bottom: 60px;
+    }
+
+    /* ===== Log Entry ===== */
+
+    .log-entry {
+      margin-bottom: 80px;
+    }
+
+    .log-date {
+      font-size: 0.85em;
+      letter-spacing: 0.08em;
+      opacity: 0.55;
+      margin-bottom: 10px;
+    }
+
+    .log-title {
+      font-size: 1.05em;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: var(--research-blue);
+    }
+
+    .log-desc {
+      font-size: 0.85em;
+      opacity: 0.7;
+      margin-bottom: 18px;
+      max-width: 600px;
+    }
+
+    .log-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .log-divider {
+      margin-top: 50px;
+      height: 1px;
+      background: linear-gradient(to right,
+          rgba(0,0,0,0),
+          rgba(0,0,0,0.10),
+          rgba(0,0,0,0));
+      opacity: 0.7;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a href="/" class="site-name">SANGSEOK HAN</a>
+  </header>
+
+  <div class="nav">
+    <a href="/">Home</a>
+    <a href="/Profile/">Profile</a>
+    <a href="/research/" class="active">Research</a>
+    <a href="/publications/">Publications</a>
+    <a href="/works/">Works</a>
+    <a href="/archive/">Archive</a>
+  </div>
+
+  <div class="page-content">
+
+    <h1 class="log-header">Research log</h1>
+    <div class="log-sub">
+      selected field documentation and academic records not listed in primary outputs
+    </div>
+
+
+    <!-- ===== Entry 1 ===== -->
+
+    <div class="log-entry">
+      <div class="log-date">September 2025 · Hyogo, Japan</div>
+      <div class="log-title">
+        JASNAOE 2025 presentation
+      </div>
+      <div class="log-desc">
+        Domestic symposium presentation during visiting research at Osaka.
+        Session focused on CFD-based control modelling.
+      </div>
+      <div class="log-image">
+        <img src="/assets/log/jasnaoe-2025.jpg" alt="JASNAOE 2025 presentation">
+      </div>
+      <div class="log-divider"></div>
+    </div>
+
+
+    <!-- ===== Entry 2 ===== -->
+
+    <div class="log-entry">
+      <div class="log-date">March 2025 · Gijón, Spain</div>
+      <div class="log-title">
+        ICNAMI conference session
+      </div>
+      <div class="log-desc">
+        Oral presentation during MSc research period.
+        Discussion on temperature correction in model–ship extrapolation.
+      </div>
+      <div class="log-image">
+        <img src="/assets/log/icnami-2025.jpg" alt="ICNAMI presentation">
+      </div>
+      <div class="log-divider"></div>
+    </div>
+
+  </div>
+
+</body>
+</html>
