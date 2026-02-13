@@ -220,12 +220,28 @@
     }
 
 
-    .log-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border: 1px solid rgba(0, 0, 0, 0.08);
+    .log-image {
+      margin: 28px auto 0 auto;
+      text-align: center;
     }
+
+    .log-image img {
+      width: 60%;
+      max-width: 640px;
+      height: auto;
+      display: inline-block;
+      filter: grayscale(40%) contrast(102%) blur(0.2px);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .log-image img:hover {
+      transform: scale(1.015);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+    }
+
 
     .log-divider {
       margin-top: 60px;
