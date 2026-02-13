@@ -221,27 +221,21 @@
 
 
     .log-image {
-      margin: 28px auto 0 auto;
-      text-align: center;
+      margin: 18px 0 0 0;
+      text-align: left;
     }
 
     .log-image img {
-      width: 60%;
-      max-width: 640px;
+      width: 38%;
+      max-width: 320px;
       height: auto;
-      display: inline-block;
-      filter: grayscale(40%) contrast(102%) blur(0.2px);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+      display: block;
 
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      filter: grayscale(60%) contrast(100%);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+
+      box-shadow: none;
     }
-
-    .log-image img:hover {
-      transform: scale(1.015);
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
-    }
-
 
     .log-divider {
       margin-top: 60px;
