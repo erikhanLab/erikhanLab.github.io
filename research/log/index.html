@@ -4,18 +4,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Research log | Sangseok Han</title>
+  <title>Research Log | Sangseok Han</title>
   <meta name="description"
-    content="Selected research records and field documentation by Sangseok Han.">
-
+    content="Research by Sangseok Han on hydrodynamics and multiphysics coupling and focusing on CFD.">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
 
+  <meta property="og:title" content="Research Log | Sangseok Han">
+  <meta property="og:description"
+    content="Research on hydrodynamics and multiphysics modelling, with emphasis on numerical methods and failure of modelling assumptions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sangseokhan.com/">
+  <meta property="og:site_name" content="Sangseok Han — Research">
+  <meta property="og:image" content="https://sangseokhan.com/assets/thumbnail.png">
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5MMRV373');</script>
+  <!-- End Google Tag Manager -->
+
   <style>
-    html { overflow-y: scroll; }
+    html {
+      overflow-y: scroll;
+    }
 
     :root {
       --research-blue: #0B1F3A;
       --bg-light: #F3F5F8;
+    }
+
+    .site-header {
+      margin: 60px 0 20px;
+    }
+
+    .site-name {
+      font-family: Georgia, serif;
+      font-size: 2.5em;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: #111;
+      text-decoration: none;
+    }
+
+    .site-name:hover {
+      opacity: 0.85;
+    }
+
+    .page-content {
+      transform: translateY(6px);
+      transition: transform 0.12s ease-out;
+      position: relative;
+    }
+
+    .page-content.loaded {
+      transform: translateY(0);
     }
 
     body {
@@ -28,35 +75,39 @@
       background: var(--bg-light);
     }
 
-    .site-header {
-      margin: 60px 0 20px;
-    }
-
-    .site-name {
-      font-size: 2.5em;
-      letter-spacing: 0.18em;
-      color: #111;
-      text-decoration: none;
-    }
-
     .nav {
       position: sticky;
       top: env(safe-area-inset-top);
+      z-index: 1000;
       display: flex;
       justify-content: center;
       gap: 60px;
       padding: 14px 0;
-      margin-bottom: 60px;
-      background: rgba(243,245,248,0.85);
-      border-bottom: 0.5px solid rgba(0,0,0,0.08);
+      margin-bottom: 36px;
+      background: rgba(243, 245, 248, 0.85);
+      backdrop-filter: blur(4px);
+      border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
     }
 
     .nav a {
+      position: relative;
+      margin: 0;
+      padding: 6px 0;
+      text-align: center;
       text-decoration: none;
       font-size: 1em;
       letter-spacing: 0.12em;
+      font-weight: 400;
       color: #444;
       opacity: 0.65;
+      transition:
+        opacity 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 1;
+      color: #111;
     }
 
     .nav a.active {
@@ -65,66 +116,266 @@
       font-weight: 500;
     }
 
-    /* ===== Log Header ===== */
+    .nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      width: 22px;
+      height: 1px;
+      background: #111;
+      opacity: 0.85;
+    }
+
+    .log-entry {
+      margin-bottom: 90px;
+    }
+
+    .log-header-block {
+      margin-bottom: 80px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
 
     .log-header {
-      font-size: 1.3em;
+      font-size: 1.25em;
       letter-spacing: 0.08em;
       color: var(--research-blue);
-      margin-bottom: 12px;
       font-weight: 500;
+      margin-bottom: 6px;
     }
 
     .log-sub {
-      font-size: 0.85em;
-      opacity: 0.55;
-      margin-bottom: 60px;
+      font-size: 0.75em;
+      opacity: 0.5;
+      letter-spacing: 0.05em;
     }
 
-    /* ===== Log Entry ===== */
-
-    .log-entry {
-      margin-bottom: 80px;
-    }
 
     .log-date {
-      font-size: 0.85em;
+      font-size: 0.75em;
+      letter-spacing: 0.12em;
+      opacity: 0.45;
+      text-transform: uppercase;
+    }
+
+    .log-back span {
+      font-size: 0.75em;
       letter-spacing: 0.08em;
-      opacity: 0.55;
-      margin-bottom: 10px;
+      opacity: 0.4;
     }
 
-    .log-title {
-      font-size: 1.05em;
-      font-weight: 500;
-      margin-bottom: 12px;
+    .log-meta {
+      font-size: 0.9em;
+      letter-spacing: 0.06em;
       color: var(--research-blue);
+      margin-bottom: 8px;
     }
 
-    .log-desc {
-      font-size: 0.85em;
-      opacity: 0.7;
-      margin-bottom: 18px;
-      max-width: 600px;
+    .log-meta span {
+      opacity: 0.8;
     }
+
+    .log-meta .dot {
+      margin: 0 6px;
+      opacity: 0.4;
+    }
+
+    .log-paper {
+      font-size: 0.82em;
+      font-style: italic;
+      opacity: 0.7;
+      margin-bottom: 12px;
+      max-width: 620px;
+    }
+
+    .log-note {
+      list-style: none;
+      margin: 14px 0 20px 0;
+      padding: 10px 0 10px 18px;
+      border-left: 1px solid rgba(0, 0, 0, 0.08);
+      max-width: 600px;
+      position: relative;
+    }
+
+    .log-note li {
+      font-size: 0.72em;
+      opacity: 0.6;
+      line-height: 1.6;
+      position: relative;
+      padding-left: 6px;
+    }
+
+    .log-note li::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 3px;
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 50%;
+    }
+
 
     .log-image img {
       width: 100%;
       height: auto;
       display: block;
-      border: 1px solid rgba(0,0,0,0.08);
+      border: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .log-divider {
-      margin-top: 50px;
+      margin-top: 60px;
       height: 1px;
       background: linear-gradient(to right,
-          rgba(0,0,0,0),
-          rgba(0,0,0,0.10),
-          rgba(0,0,0,0));
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.10),
+          rgba(0, 0, 0, 0));
       opacity: 0.7;
     }
 
+    .log-back {
+      margin-bottom: 12px;
+    }
+
+    .log-back a {
+      font-size: 0.72em;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      color: var(--research-blue);
+      opacity: 0.55;
+      transition: opacity 0.2s ease;
+    }
+
+    .log-back a:hover {
+      opacity: 0.85;
+    }
+
+    .log-sep {
+      margin: 0 6px;
+      font-size: 0.72em;
+      opacity: 0.35;
+    }
+
+    .log-current {
+      font-size: 0.72em;
+      letter-spacing: 0.08em;
+      opacity: 0.45;
+    }
+
+    .year-tabs {
+      margin-bottom: 50px;
+      font-size: 0.9em;
+      letter-spacing: 0.08em;
+    }
+
+    .year-tabs span {
+      cursor: pointer;
+      opacity: 0.45;
+      margin-right: 14px;
+      transition: opacity 0.2s ease;
+    }
+
+    .year-tabs span.active {
+      opacity: 0.9;
+      color: var(--research-blue);
+    }
+
+    .year-tabs span:hover {
+      opacity: 0.75;
+    }
+
+    .year-section {
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      position: absolute;
+      width: 100%;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .year-section.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      position: relative;
+    }
+
+
+    @media (max-width: 768px) {
+      .site-name {
+        font-size: 1.9em;
+      }
+
+
+      body {
+        margin: 24px auto;
+        padding: 0 16px;
+        line-height: 1.6;
+      }
+
+      .research-tagline {
+        display: none;
+      }
+
+      /* ===== Navigation ===== */
+      .nav {
+        position: sticky;
+        top: env(safe-area-inset-top);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        padding: 16px 0;
+        margin-bottom: 40px;
+        background: rgba(247, 249, 252, 0.85);
+        backdrop-filter: blur(4px);
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+      }
+
+      .nav a {
+        position: relative;
+        margin: 0;
+        padding: 6px 0;
+        text-align: center;
+        text-decoration: none;
+        font-size: clamp(0.62em, 2.6vw, 0.7em);
+        letter-spacing: 0.12em;
+        font-weight: 400;
+        color: #444;
+        opacity: 0.6;
+        white-space: nowrap;
+        transition:
+          opacity 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .nav a:hover {
+        opacity: 1;
+        color: #111;
+      }
+
+      .nav a.active {
+        opacity: 1;
+        color: #111;
+        font-weight: 500;
+      }
+
+      .nav a.active::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -8px;
+        transform: translateX(-50%);
+        width: 16px;
+        height: 1px;
+        background: #111;
+        opacity: 0.8;
+      }
+    }
   </style>
 </head>
 
@@ -145,48 +396,124 @@
 
   <div class="page-content">
 
-    <h1 class="log-header">Research log</h1>
-    <div class="log-sub">
-      selected field documentation and academic records not listed in primary outputs
+    <div class="log-header-block">
+
+      <div class="log-back">
+        <a href="/research/">Research</a>
+        <span class="log-sep">·</span>
+        <span class="log-current">log</span>
+      </div>
+
+      <h1 class="log-header">Research log</h1>
+      <div class="log-sub">field records beyond primary outputs</div>
+
     </div>
 
+    <div class="year-tabs">
+      <span class="active" onclick="showYear('y2025', this)">2025</span>
+      <span onclick="showYear('y2024', this)">2024</span>
+    </div>
 
+    <div class="year-section active" id="y2025">
+      <div class="log-entry">
+
+        <div class="log-date">17 Nov 2025 · Hyogo, Japan</div>
+
+        <div class="log-meta">
+          <span>Presentation</span>
+          <span class="dot">·</span>
+          <span>JASNAOE 2025</span>
+        </div>
+
+        <div class="log-paper">
+          "CFD-based model predictive control for point absorber wave energy converters"
+        </div>
+
+        <ul class="log-note">
+          <li>Discussion centred on MPC robustness and numerical stability assumptions during Q&A.</li>
+        </ul>
+
+        <div class="log-image">
+          <img src="/assets/log/jasnaoe-2025.jpg" alt="JASNAOE 2025 presentation">
+        </div>
+
+        <div class="log-divider"></div>
+      </div>
+
+      <div class="log-entry">
+
+        <div class="log-date">27 Mar 2025 · Gijón, Spain</div>
+
+        <div class="log-meta">
+          <span>Presentation</span>
+          <span class="dot">·</span>
+          <span>64ICNAMI</span>
+        </div>
+
+        <div class="log-paper">
+          "Impact of towing tank temperature on model–ship extrapolation"
+        </div>
+
+        <ul class="log-note">
+          <li>Technical discussion on temperature correction methodology and uncertainty propagation.</li>
+        </ul>
+
+        <div class="log-image">
+          <img src="/assets/log/icnami-2025.jpg" alt="ICNAMI presentation">
+        </div>
+
+        <div class="log-divider"></div>
+      </div>
+    </div>
     <!-- ===== Entry 1 ===== -->
+    <div class="year-section" id="y2024">
+      <div class="log-entry">
 
-    <div class="log-entry">
-      <div class="log-date">September 2025 · Hyogo, Japan</div>
-      <div class="log-title">
-        JASNAOE 2025 presentation
+        <div class="log-date">25 July 2024 · Daejeon, South Korea</div>
+
+        <div class="log-meta">
+          <span>Presentation</span>
+          <span class="dot">·</span>
+          <span>13NCFE</span>
+        </div>
+
+        <div class="log-paper">
+          "Uncertainty of the ITTC 1957 correlation line with temperature variations"
+        </div>
+
+        <ul class="log-note">
+          <li>Technical discussion on temperature correction methodology and uncertainty propagation.</li>
+        </ul>
+
+        <div class="log-image">
+          <img src="/assets/log/ncfe-2024.jpg" alt="ICNAMI presentation">
+        </div>
+
+        <div class="log-divider"></div>
       </div>
-      <div class="log-desc">
-        Domestic symposium presentation during visiting research at Osaka.
-        Session focused on CFD-based control modelling.
-      </div>
-      <div class="log-image">
-        <img src="/assets/log/jasnaoe-2025.jpg" alt="JASNAOE 2025 presentation">
-      </div>
-      <div class="log-divider"></div>
+
+
     </div>
-
-
-    <!-- ===== Entry 2 ===== -->
-
-    <div class="log-entry">
-      <div class="log-date">March 2025 · Gijón, Spain</div>
-      <div class="log-title">
-        ICNAMI conference session
-      </div>
-      <div class="log-desc">
-        Oral presentation during MSc research period.
-        Discussion on temperature correction in model–ship extrapolation.
-      </div>
-      <div class="log-image">
-        <img src="/assets/log/icnami-2025.jpg" alt="ICNAMI presentation">
-      </div>
-      <div class="log-divider"></div>
-    </div>
-
   </div>
 
+  <script>
+    function showYear(id, el) {
+      const current = document.querySelector('.year-section.active');
+      const next = document.getElementById(id);
+
+      if (current === next) return;
+
+      current.classList.remove('active');
+      next.classList.add('active');
+
+      document.querySelectorAll('.year-tabs span')
+        .forEach(tab => tab.classList.remove('active'));
+
+      el.classList.add('active');
+    }
+
+  </script>
+
 </body>
+
 </html>
