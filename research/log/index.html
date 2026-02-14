@@ -133,7 +133,6 @@
       grid-template-columns: 1fr 220px;
       gap: 40px;
       margin-top: 12px;
-      text-align: right;
       margin-bottom: 70px;
     }
 
@@ -239,7 +238,7 @@
     }
 
     .log-image {
-      margin-top: 0;
+      margin-top: 12px;
       text-align: right;
     }
 
@@ -254,8 +253,10 @@
       transition: filter 0.3s ease;
     }
 
-    .log-entry:hover img {
-      filter: grayscale(40%);
+    log-entry:hover .log-image img {
+      filter: grayscale(20%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     }
 
     .log-caption {
