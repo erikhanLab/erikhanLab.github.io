@@ -245,18 +245,19 @@
     .log-image img {
       width: 100%;
       max-width: 220px;
-      opacity: 0.85;
-      filter: grayscale(75%);
       height: auto;
       display: block;
       border: 1px solid rgba(0, 0, 0, 0.08);
-      transition: filter 0.3s ease;
+
+      filter: grayscale(80%);
+      opacity: 0.9;
+
+      transition: filter 0.4s ease, opacity 0.4s ease;
     }
 
-    .log-entry:hover .log-image img {
-      filter: grayscale(20%);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    .log-image img:hover {
+      filter: grayscale(30%);
+      opacity: 1;
     }
 
     .log-divider {
@@ -567,7 +568,7 @@
       <span class="active" onclick="showYear('y2025', this)">2025</span>
       <span onclick="showYear('y2024', this)">2024</span>
     </div>
-    <div class="year-section active" id="y2026">
+    <div class="year-section" id="y2026">
       <!-- 
       <div class="log-entry">
         <div class="log-text">
@@ -819,19 +820,18 @@
 
   <script>
     function showYear(id, el) {
-      const current = document.querySelector('.year-section.active');
-      const next = document.getElementById(id);
 
-      if (current === next) return;
+      document.querySelectorAll('.year-section')
+        .forEach(sec => sec.classList.remove('active'));
 
-      current.classList.remove('active');
-      next.classList.add('active');
+      document.getElementById(id).classList.add('active');
 
       document.querySelectorAll('.year-tabs span')
         .forEach(tab => tab.classList.remove('active'));
 
       el.classList.add('active');
     }
+
 
   </script>
 
