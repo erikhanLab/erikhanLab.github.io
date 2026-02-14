@@ -522,8 +522,14 @@
       }
 
       .log-image img {
-        max-width: 100%;
-        filter: grayscale(60%);
+        filter: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+      }
+
+      .log-image img:hover {
+        filter: none !important;
+        opacity: 1 !important;
       }
 
       .log-caption {

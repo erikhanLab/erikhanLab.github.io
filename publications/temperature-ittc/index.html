@@ -94,50 +94,6 @@
       line-height: 1.6;
     }
 
-    @media (max-width: 768px) {
-      .affils div {
-        white-space: nowrap;
-      }
-
-      h1 {
-        font-size: 1.4em;
-        color: var(--accent-dark);
-        text-align: center;
-        margin-bottom: 14px;
-      }
-
-      .meta {
-        font-size: 0.8em;
-      }
-
-      .authors {
-        font-size: 0.85em;
-      }
-
-      .affils {
-        font-size: 0.65em;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: block;
-      }
-
-      .abstract {
-        font-size: 0.76em;
-      }
-
-      .section-title {
-        font-size: 0.9em;
-      }
-
-      .figure {
-        font-size: 0.8em;
-      }
-
-      .pub-meta {
-        display: none;
-      }
-    }
-
     /* Abstract (subtle, no box) */
     .abstract {
       max-width: 780px;
@@ -277,6 +233,56 @@
       text-align: justify;
       text-justify: inter-word;
       hyphens: auto;
+    }
+
+    @media (max-width: 768px) {
+      .affils div {
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 1.2em;
+        color: var(--accent-dark);
+        text-align: center;
+        margin-bottom: 14px;
+      }
+
+      .meta {
+        font-size: 0.75em;
+      }
+
+      .authors {
+        font-size: 0.7em;
+      }
+
+      .affils {
+        font-size: 0.55em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+      }
+
+      .abstract {
+        margin-top: -40px;
+        font-size: 0.72em;
+        margin-bottom: 0px;
+      }
+
+      .section-title {
+        font-size: 0.9em;
+      }
+
+      .figure {
+        font-size: 0.85em;
+      }
+
+      .pub-meta {
+        font-size: 0.6em;
+        line-height: 1.6;
+        margin: 50px auto 20px auto;
+        margin-bottom: -35px;
+      }
     }
   </style>
 </head>
