@@ -137,7 +137,7 @@
     }
 
     .log-header-block {
-      margin-bottom: 80px;
+      margin-bottom: 50px;
       padding-bottom: 18px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
@@ -161,11 +161,11 @@
       font-size: 0.65em;
       letter-spacing: 0.18em;
       padding: 4px 8px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.06);
       background: rgba(0, 0, 0, 0.03);
       color: var(--research-blue);
       margin-bottom: 10px;
-      opacity: 0.6;
+      opacity: 0.7;
     }
 
     .log-back span {
@@ -253,17 +253,10 @@
       transition: filter 0.3s ease;
     }
 
-    log-entry:hover .log-image img {
+    .log-entry:hover .log-image img {
       filter: grayscale(20%);
       transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    }
-
-    .log-caption {
-      font-size: 0.6em;
-      opacity: 0.4;
-      margin-top: 6px;
-      text-align: right;
     }
 
     .log-divider {
@@ -294,7 +287,7 @@
     }
 
     .log-caption {
-      font-size: 0.6em;
+      font-size: 0.65em;
       opacity: 0.4;
       margin-top: 4px;
       text-align: left;
@@ -310,7 +303,6 @@
       min-width: 0;
     }
 
-
     .log-current {
       font-size: 0.72em;
       letter-spacing: 0.08em;
@@ -318,7 +310,7 @@
     }
 
     .year-tabs {
-      margin-bottom: 50px;
+      margin-bottom: 30px;
       font-size: 0.9em;
       letter-spacing: 0.08em;
     }
@@ -352,6 +344,9 @@
       transform: translateY(0);
     }
 
+    .log-content span:not(:last-child)::after {
+      content: " · ";
+    }
 
     @media (max-width: 768px) {
       .site-name {
@@ -422,18 +417,39 @@
         opacity: 0.8;
       }
 
+      .log-header-block {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
       .log-header {
         font-size: 1.1em;
+        text-transform: uppercase;
+        opacity: 0.6;
+      }
+
+      .log-back {
+        margin-bottom: 12px;
+        margin-top: -30px;
+        opacity: 0.7;
       }
 
       .log-meta {
-        font-size: 0.85em;
+        font-size: 0.75em;
         line-height: 1.4;
       }
 
+      .log-sub {
+        display: none;
+      }
+
       .log-paper {
-        font-size: 0.78em;
+        font-size: 0.7em;
         line-height: 1.5;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
       }
 
       .log-label {
@@ -442,12 +458,12 @@
       }
 
       .log-content {
-        font-size: 0.78em;
+        font-size: 0.6em;
         line-height: 1.55;
       }
 
       .log-date {
-        font-size: 0.6em;
+        font-size: 0.55em;
         letter-spacing: 0.15em;
         padding: 3px 6px;
       }
@@ -456,6 +472,18 @@
         padding-left: 10px;
         margin: 16px 0 20px 0;
         border-left: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      .log-content span:not(:first-child) {
+        display: none;
+      }
+
+      .log-content span:not(:last-child)::after {
+        content: none !important;
+      }
+
+      .log-content span::after {
+        content: "";
       }
 
       .log-item {
@@ -473,6 +501,8 @@
       .year-tabs {
         display: flex;
         gap: 20px;
+        margin-top: -40px;
+        margin-bottom: 10px;
         font-size: 0.85em;
       }
 
@@ -482,7 +512,7 @@
 
       .log-entry {
         display: block;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
       }
 
       .log-image {
@@ -528,14 +558,68 @@
       </div>
 
       <h1 class="log-header">Research log</h1>
-      <div class="log-sub">field records beyond primary outputs</div>
+      <div class="log-sub"><em>Field records beyond primary outputs</em></div>
 
     </div>
 
     <div class="year-tabs">
+      <span onclick="showYear('y2026', this)">2026</span>
       <span class="active" onclick="showYear('y2025', this)">2025</span>
       <span onclick="showYear('y2024', this)">2024</span>
     </div>
+    <div class="year-section active" id="y2026">
+      <!-- 
+      <div class="log-entry">
+        <div class="log-text">
+          <div class="log-date">19 Nov 2025 · Osaka, Japan</div>
+
+          <div class="log-meta">
+            <span>Technical Discussion</span>
+            <span class="dot">·</span>
+            <span>The University of Osaka</span>
+          </div>
+
+          <div class="log-paper">
+            "Extension of Spatial Hull Roughness framework toward URN modelling"
+          </div>
+
+          <div class="log-structure">
+
+            <div class="log-item">
+              <span class="log-label">Focus</span>
+              <div class="log-content">
+                <span>URN concept</span>
+                <span>Hull roughness modelling</span>
+                <span>Hydrodynamic assumptions</span>
+              </div>
+            </div>
+
+            <div class="log-item">
+              <span class="log-label">Interaction</span>
+              <div class="log-content">
+                <span>Discussion on modelling assumptions</span>
+                <span>Possible extension toward URN</span>
+              </div>
+            </div>
+
+            <div class="log-item">
+              <span class="log-label">Development</span>
+              <div class="log-content">
+                <span>First in-depth discussion with a Japanese professor</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="log-image">
+          <img src="/assets/log/osaka-2025.png" alt="Osaka University">
+          <div class="log-caption"><em>Technical exchange · The University of Osaka</em></div>
+        </div>
+      </div>
+      -->
+      <div class="log-divider"></div>
+    </div>
+
 
     <div class="year-section active" id="y2025">
       <div class="log-entry">
@@ -557,29 +641,31 @@
             <div class="log-item">
               <span class="log-label">Focus</span>
               <div class="log-content">
-                URN concept · Hull roughness modelling · Hydrodynamic assumptions
+                <span>URN concept</span>
+                <span>Hull roughness modelling</span>
+                <span>Hydrodynamic assumptions</span>
               </div>
             </div>
 
             <div class="log-item">
               <span class="log-label">Interaction</span>
               <div class="log-content">
-                Discussion on modelling assumptions and possible extension toward URN
+                <span>Possible extension toward URN</span>
+                <span>Discussion on modelling assumptions</span>
               </div>
             </div>
 
             <div class="log-item">
               <span class="log-label">Development</span>
               <div class="log-content">
-                First in-depth discussion with a Japanese professor
+                <span>First in-depth discussion with a Japanese professor</span>
               </div>
             </div>
-
           </div>
         </div>
         <div class="log-image">
           <img src="/assets/log/osaka-2025.png" alt="Osaka University">
-          <div class="log-caption">Technical exchange · The University of Osaka</div>
+          <div class="log-caption"><em>Technical exchange · The University of Osaka</em></div>
         </div>
       </div>
 
@@ -602,28 +688,32 @@
             <div class="log-item">
               <span class="log-label">Focus</span>
               <div class="log-content">
-                WEC control · MPC implementation · CFD-based analysis
+                <span>WEC control</span>
+                <span>MPC implementation</span>
+                <span>CFD-based analysis</span>
               </div>
             </div>
 
             <div class="log-item">
               <span class="log-label">Interaction</span>
               <div class="log-content">
-                Questions on MPC robustness and numerical stability
+                <span>Questions on MPC robustness</span>
+                <span>Numerical stability</span>
               </div>
             </div>
 
             <div class="log-item">
               <span class="log-label">Development</span>
               <div class="log-content">
-                External feedback on modelling limits · Academic networking in Japan
+                <span>Academic networking in Japan</span>
+                <span>External feedback on modelling limits</span>
               </div>
             </div>
           </div>
         </div>
         <div class="log-image">
           <img src="/assets/log/jasnaoe-2025.png" alt="JASNAOE 2025 presentation">
-          <div class="log-caption">JASNAOE 2025 · Hyogo</div>
+          <div class="log-caption"><em>JASNAOE 2025 · Hyogo</em></div>
         </div>
 
         <div class="log-divider"></div>
@@ -646,28 +736,32 @@
             <div class="log-item">
               <span class="log-label">Focus</span>
               <div class="log-content">
-                Temperature sensitivity · CFD · Towing tank assumptions
+                <span>Towing tank temperature sensitivity</span>
+                <span>Expriment assumptions</span>
+                <span>CFD analysis</span>
               </div>
             </div>
 
             <div class="log-item">
               <span class="log-label">Interaction</span>
               <div class="log-content">
-                Discussion on GCI-based uncertainty and methodological limits
+                <span>methodological limits</span>
+                <span>GCI-based uncertainty</span>
               </div>
             </div>
 
             <div class="log-item">
               <span class="log-label">Development</span>
               <div class="log-content">
-                First international conference presentation · Recognition of modelling uncertainty limits
+                <span>First international conference presentation</span>
+                <span>Recognition of modelling uncertainty limits</span>
               </div>
             </div>
           </div>
         </div>
         <div class="log-image">
           <img src="/assets/log/icnami-2025.png" alt="ICNAMI presentation">
-          <div class="log-caption">64ICNAMI · Gijón</div>
+          <div class="log-caption"><em>64ICNAMI · Gijón</em></div>
         </div>
       </div>
       <div class="log-divider"></div>
@@ -691,28 +785,31 @@
             <div class="log-item">
               <span class="log-label">Focus</span>
               <div class="log-content">
-                Temperature effects · Correlation line assumptions · CFD validation
+                <span>Correlation line assumptions</span>
+                <span>Towing tank temperature effects</span>
+                <span>CFD validation</span>
               </div>
             </div>
 
             <div class="log-item">
               <span class="log-label">Interaction</span>
               <div class="log-content">
-                Recognition of limitations in fixing the form factor
+                <span>Recognition of limitations in fixing the form factor</span>
               </div>
             </div>
 
             <div class="log-item">
               <span class="log-label">Development</span>
               <div class="log-content">
-                Best Paper Award · First independent research presentation
+                <span>Best Paper Award</span>
+                <span>First independent research presentation</span>
               </div>
             </div>
           </div>
         </div>
         <div class="log-image">
           <img src="/assets/log/ncfe-2024.png" alt="ICNAMI presentation">
-          <div class="log-caption">13NCFE · Daejeon</div>
+          <div class="log-caption"><em>13NCFE · Daejeon</em></div>
         </div>
       </div>
       <div class="log-divider"></div>
