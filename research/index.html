@@ -129,7 +129,7 @@
 
     .research-keywords {
       margin-top: 6px;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px 18px;
@@ -509,6 +509,10 @@
       opacity: 0.35;
     }
 
+    .mobile {
+      display: none;
+    }
+
     @media (max-width: 768px) {
       .site-name {
         font-size: 1.9em;
@@ -581,17 +585,24 @@
       }
 
       .research-keywords {
-        display: none;
+        font-size: 0.5em;
+        margin-top: -20px;
       }
 
       .research-overview {
         margin: 10px 0 32px;
+        margin-bottom: -30px;
       }
 
       .research-overview li {
-        font-size: 0.78em;
+        font-size: 0.65em;
         line-height: 1.55;
         opacity: 0.72;
+      }
+
+      .rt-log-link {
+        font-size: 0.65em;
+        opacity: 0.45;
       }
 
       .research-intro {
@@ -612,11 +623,10 @@
       }
 
       .rt-header {
-        font-size: 0.9em;
+        font-size: 0.82em;
         margin-top: -20px;
       }
 
-      /* ===== Timeline ===== */
       .rt-item {
         display: block;
         padding: 18px 0 22px;
@@ -737,6 +747,14 @@
         font-size: 0.72em;
         opacity: 0.8;
       }
+
+      .desktop {
+        display: none;
+      }
+
+      .mobile {
+        display: inline;
+      }
     }
   </style>
 </head>
@@ -768,14 +786,29 @@
 
     <div class="research-overview">
       <ul>
-        <li><em>Hydrodynamics-driven analysis of flow behaviour using high-fidelity CFD.</em></li>
-        <li><em>Multiphysics modelling of wave-structure-control interactions in marine energy systems.</em></li>
+        <li>
+          <em class="desktop">
+            Hydrodynamics-driven analysis of flow behaviour using high-fidelity CFD.
+          </em>
+          <em class="mobile">
+            Hydrodynamics-driven analysis of flow behaviour.
+          </em>
+        </li>
+
+        <li>
+          <em class="desktop">
+            Multiphysics modelling of wave-structure-control interactions in marine energy systems.
+          </em>
+          <em class="mobile">
+            Multiphysics modelling of wave-structure-control interactions.
+          </em>
+        </li>
       </ul>
     </div>
 
     <div class="research-timeline">
       <h2 class="rt-header">Research Timeline (2023–2026) <span class="rt-dot">·</span>
-        <a href="/research/log/" class="rt-log-link">Research Log →</a>
+        <a href="/research/log/" class="rt-log-link">Research Log</a>
       </h2>
       <div class="rt-item">
         <div class="rt-year">2026</div>

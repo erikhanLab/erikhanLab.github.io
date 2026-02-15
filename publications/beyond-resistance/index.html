@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Beyond uniform roughness: ship resistance with spatially non-uniform hull surface conditions</title>
+  <title>Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface conditions</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
 
   <meta property="og:title" content="Abstract | Sangseok Han">
@@ -83,6 +83,12 @@
     .authors sup {
       font-size: 0.7em;
       vertical-align: super;
+      line-height: 1;
+    }
+
+    .authors sup.cor {
+      position: relative;
+      top: 0.2em;
     }
 
     .affils {
@@ -94,7 +100,6 @@
       line-height: 1.6;
     }
 
-    /* Abstract (subtle, no box) */
     .abstract {
       max-width: 780px;
       margin: 0 auto 80px auto;
@@ -252,11 +257,11 @@
       }
 
       .authors {
-        font-size: 0.7em;
+        font-size: 0.65em;
       }
 
       .affils {
-        font-size: 0.55em;
+        font-size: 0.5em;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -304,10 +309,11 @@
   </div>
 
   <div class="authors">
-    <strong>Sang-seok Han</strong><sup>1 *</sup>,
-    Ho-won Lee<sup>2</sup>,
-    Saishuai Dai<sup>1</sup>,
-    Momchil Terziev<sup>1</sup>
+    <strong>Sang-seok Han</strong>
+    <sup class="affil">1</sup><sup class="cor">*</sup>,
+    Ho-won Lee <sup class="affil">2</sup>,
+    Saishuai Dai <sup class="affil">1</sup>,
+    Momchil Terziev <sup class="affil">1</sup>
   </div>
 
   <div class="affils">

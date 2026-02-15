@@ -83,6 +83,12 @@
     .authors sup {
       font-size: 0.7em;
       vertical-align: super;
+      line-height: 1;
+    }
+
+    .authors sup.cor {
+      position: relative;
+      top: 0.2em;
     }
 
     .affils {
@@ -94,7 +100,6 @@
       line-height: 1.6;
     }
 
-    /* Abstract (subtle, no box) */
     .abstract {
       max-width: 780px;
       margin: 0 auto 80px auto;
@@ -143,7 +148,6 @@
       color: #fff;
     }
 
-    /* Figures */
     .section-title {
       font-size: 1.05em;
       font-weight: normal;
@@ -252,11 +256,11 @@
       }
 
       .authors {
-        font-size: 0.7em;
+        font-size: 0.65em;
       }
 
       .affils {
-        font-size: 0.55em;
+        font-size: 0.5em;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -304,14 +308,14 @@
   </div>
 
   <div class="authors">
-    Woo-seok Choi<sup>1</sup>,
-    Gyeong-seo Min<sup>1</sup>,
-    <strong>Sang-seok Han</strong><sup>1</sup>,
-    Hae-chan Yun<sup>1</sup>,<br>
-    Momchil Terziev<sup>2</sup>,
-    Saishuai Dai<sup>2</sup>,
-    Daejeong Kim<sup>3</sup>,
-    Soonseok Song<sup>1 *</sup>
+    Woo-seok Choi <sup class="affil">1</sup>,
+    Gyeong-seo Min <sup class="affil">1</sup>,
+    <strong>Sang-seok Han</strong> <sup class="affil">1</sup>,
+    Hae-chan Yun <sup class="affil">1</sup>,<br>
+    Momchil Terziev <sup class="affil">2</sup>,
+    Saishuai Dai <sup class="affil">2</sup>,
+    Daejeong Kim <sup class="affil">3</sup>,
+    Soonseok Song <sup class="affil">1</sup><sup class="cor">*</sup>,
   </div>
 
   <div class="affils">
