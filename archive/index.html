@@ -629,8 +629,6 @@
       right: clamp(0px,
           calc((100vw - 800px) / 2 + 20px),
           400px);
-      top: 50%;
-      transform: translateY(-50%);
       display: flex;
       flex-direction: column;
       gap: 30px;
@@ -1450,6 +1448,23 @@
 
   <script>
     window.addEventListener('load', () => {
+      const sideNav = document.querySelector('.side-nav');
+      const curatedSection = document.getElementById('section-curated');
+
+      function positionSideNav() {
+        if (!sideNav || !curatedSection) return;
+
+        const rect = curatedSection.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        const absoluteTop = rect.top + scrollTop;
+
+        sideNav.style.top = absoluteTop + 40 + 'px';
+        sideNav.style.transform = 'none';
+      }
+
+      positionSideNav();
+      window.addEventListener('resize', positionSideNav);
 
       const sections = [
         'section-curated',
