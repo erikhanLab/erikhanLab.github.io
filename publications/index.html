@@ -238,7 +238,7 @@
     }
 
     .pub-title {
-      font-size: 0.97em;
+      font-size: 1em;
       font-weight: 500;
       color: #111;
       line-height: 1.35;
@@ -265,6 +265,7 @@
 
     .pub-authors {
       font-size: 0.88em;
+      line-height: 1.7;
       color: var(--text-muted);
     }
 
@@ -282,6 +283,10 @@
       flex-wrap: wrap;
       line-height: 1.2;
     }
+
+    .pub-meta-text {
+        line-height: 1.2;
+      }
 
     .pub-meta a {
       color: inherit;
@@ -345,7 +350,6 @@
       opacity: 0.45;
     }
 
-
     .review,
     .prep {
       color: var(--status-published);
@@ -360,6 +364,14 @@
 
     .scroll-spacer {
       height: 5vh;
+    }
+
+    .author-full {
+      display: inline;
+    }
+
+    .author-short {
+      display: none;
     }
 
     @media (max-width: 768px) {
@@ -527,6 +539,14 @@
         margin-left: 3px;
         flex-shrink: 0;
       }
+
+      .author-full {
+        display: none;
+      }
+
+      .author-short {
+        display: inline;
+      }
     }
   </style>
 </head>
@@ -584,7 +604,12 @@
           </div>
           <div class="pub-meta-block">
             <div class="pub-authors">
-              <strong>S. Han*</strong>, H. Lee, S. Dai, and M. Terziev
+              <span class="author-full">
+                <strong>S. Han*</strong>, H. Lee, S. Dai, and M. Terziev
+              </span>
+              <span class="author-short">
+                <strong>S. Han*</strong>, H. Lee, S. Dai, and M. Terziev
+              </span>
             </div>
             <div class="pub-meta">
               <span class="pub-meta-text">
@@ -608,7 +633,12 @@
           </div>
           <div class="pub-meta-block">
             <div class="pub-authors">
-              <strong>S. Han</strong>, S. Dai, M. Terziev, <em>et al.</em>
+              <span class="author-full">
+                <strong>S. Han</strong>, S. Dai, M. Terziev, D. Kim, T. Tezdogan, D. Jung, and S. Song*
+              </span>
+              <span class="author-short">
+                <strong>S. Han</strong>, S. Dai, M. Terziev, <em>et al.</em>
+              </span>
             </div>
             <div class="pub-meta">
               <span class="pub-meta-text">
@@ -633,7 +663,12 @@
 
           <div class="pub-meta-block">
             <div class="pub-authors">
-              W. Choi, G. Min, <strong>S. Han</strong>, <em>et al.</em>
+              <span class="author-full">
+                W. Choi, G. Min, <strong>S. Han</strong>, H. Yun, M. Terziev, S. Dai, D. Kim, and S. Song*
+              </span>
+              <span class="author-short">
+                W. Choi, G. Min, <strong>S. Han</strong>, <em>et al.</em>
+              </span>
             </div>
             <div class="pub-meta">
               <span class="pub-meta-text">
@@ -691,7 +726,12 @@
             </div>
             <div class="pub-meta-block">
               <div class="pub-authors">
-                <strong>S. Han*</strong>, S. Dai, M. Terziev, <em>et al.</em>
+                <span class="author-full">
+                  <strong>S. Han*</strong>, S. Dai, M. Terziev, H. Yun, and S. Song
+                </span>
+                <span class="author-short">
+                  <strong>S. Han*</strong>, S. Dai, M. Terziev, <em>et al.</em>
+                </span>
               </div>
               <div class="pub-meta">
                 <span class="pub-meta-text">
@@ -713,7 +753,12 @@
             </div>
             <div class="pub-meta-block">
               <div class="pub-authors">
-                <strong>S. Han*</strong>, M. Terziev, and T. Tezdogan
+                <span class="author-full">
+                  <strong>S. Han*</strong>, M. Terziev, and T. Tezdogan
+                </span>
+                <span class="author-short">
+                  <strong>S. Han*</strong>, M. Terziev, and T. Tezdogan
+                </span>
               </div>
               <div class="pub-meta">
                 <span class="pub-meta-text">
