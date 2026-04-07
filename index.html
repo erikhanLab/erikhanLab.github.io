@@ -102,6 +102,14 @@
       border: 1px solid var(--line);
     }
 
+    .mobile-only {
+      display: none;
+    }
+
+    .desktop-only {
+      display: inline;
+    }
+
     @media (max-width: 768px) {
       body {
         padding: 72px 18px 64px;
@@ -157,6 +165,14 @@
         font-size: 0.65em;
         letter-spacing: 0.22em;
         margin-top: 16px;
+      }
+
+      .desktop-only {
+        display: none;
+      }
+
+      .mobile-only {
+        display: inline;
       }
     }
 
@@ -342,14 +358,22 @@
 
       <div class="tagline-block">
         <p class="tagline">
-        <p class="tagline">
           <span class="line-strong">
-            I study how surface roughness alters turbulent flows and near-wall dynamics.
+            <span class="desktop-only">
+              I study how surface roughness alters turbulent flows and near-wall dynamics.
+            </span>
+            <span class="mobile-only">
+              Roughness-driven turbulence and near-wall dynamics.
+            </span>
           </span>
           <span class="line-muted">
-            <em>CFD-based investigation of roughness-driven turbulence and its modelling limits.</em>
+            <span class="desktop-only">
+              <em>CFD-based investigation of roughness-driven turbulence and modelling limits.</em>
+            </span>
+            <span class="mobile-only">
+              <em>Modelling limits and physical interpretation using CFD.</em>
+            </span>
           </span>
-        </p>
         </p>
       </div>
 
@@ -395,7 +419,7 @@
       </div>
 
       <div class="footer-meta">
-        © Sangseok Han · Last updated: Mar 2026
+        © Sangseok Han · Last updated: Apr 2026
       </div>
     </footer>
 
