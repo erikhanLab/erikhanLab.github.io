@@ -69,7 +69,7 @@
 
 
     body {
-      max-width: 900px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 140px 24px 60px;
       font-family: Georgia, "Times New Roman", serif;
@@ -81,7 +81,7 @@
 
     .header {
       max-width: 960px;
-      margin-bottom: 40px;
+      margin-bottom: 0px;
     }
 
     .header-row {
@@ -154,6 +154,11 @@
       .nav {
         margin-bottom: -40px;
         font-size: 0.88em;
+      }
+
+      .recent-work {
+        margin-top: 0px;
+        margin-bottom: 0px;
       }
 
       footer {
@@ -271,7 +276,6 @@
       gap: 24px 40px;
     }
 
-
     .nav a {
       display: block;
       padding: 22px 0;
@@ -300,6 +304,36 @@
       opacity: 0.75;
     }
 
+    .recent-label {
+      opacity: 0.6;
+      letter-spacing: 0.08em;
+    }
+
+    .recent-work {
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size: 0.7em;
+      letter-spacing: 0.05em;
+      color: #64748b;
+      opacity: 0.85;
+    }
+
+    .recent-work a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .recent-work a:hover {
+      border-bottom-color: var(--line);
+      opacity: 0.9;
+    }
+
+    .meta {
+      font-size: 0.82em;
+      opacity: 0.7;
+    }
 
     footer {
       margin-top: 90px;
@@ -334,7 +368,7 @@
 
     .footer-meta {
       font-size: 0.7em;
-      color: #cbd5e1;
+      color: #94a3b8;
       letter-spacing: 0.06em;
     }
   </style>
@@ -360,7 +394,7 @@
               I study how surface roughness alters turbulent flows and near-wall dynamics.
             </span>
             <span class="mobile-only">
-              Roughness-driven turbulence and near-wall flow dynamics.
+              Roughness-driven turbulence and near-wall flows.
             </span>
           </span>
           <span class="line-muted">
@@ -381,6 +415,13 @@
 
       <p class="keywords">
         TURBULENCE · CFD · ROUGHNESS
+      </p>
+
+      <p class="recent-work">
+        <span class="recent-label">✦ Recent · </span>
+        <a href="/publications/beyond-resistance/">
+          Apr 2026 · Han et al. · <em>Ocean Engineering</em> <span class="meta">(Q1)</span>
+        </a>
       </p>
     </header>
 
