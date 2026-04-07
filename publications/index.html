@@ -265,13 +265,26 @@
 
     .pub-authors {
       font-size: 0.88em;
-      line-height: 1.7;
+      line-height: 1.5;
       color: var(--text-muted);
     }
 
-    .pub-authors strong {
-      color: #111;
+    .pub-authors .main-author {
       font-weight: 600;
+      color: #111;
+    }
+
+    .pub-authors .author-role {
+      font-style: italic;
+      font-weight: normal;
+      font-size: 0.78em;
+      color: #555;
+      margin-left: -0.1em;
+    }
+
+    .pub-authors .co-authors {
+      font-weight: normal;
+      margin-left: 0.1em;
     }
 
     .pub-meta {
@@ -605,17 +618,21 @@
           <div class="pub-meta-block">
             <div class="pub-authors">
               <span class="author-full">
-                <strong>S. Han*</strong>, H. Lee, S. Dai, and M. Terziev
+                <span class="main-author">S. Han*</span>
+                <span class="author-role">(First & corresponding-author)</span>,
+                <span class="co-authors">H. Lee, S. Dai, and M. Terziev</span>
               </span>
               <span class="author-short">
-                <strong>S. Han*</strong>, H. Lee, S. Dai, and M. Terziev
+                <span class="main-author">S. Han*</span>
+                <span class="author-role">(First & corresponding-author)</span>,
+                <span class="co-authors">H. Lee, S. Dai, and M. Terziev</span>
               </span>
             </div>
             <div class="pub-meta">
               <span class="pub-meta-text">
                 <a href="https://www.sciencedirect.com/journal/ocean-engineering" target="_blank"><em>Ocean
                     Engineering</em></a>
-                <span class="journal-if">(IF 5.5), </span>
+                <span class="journal-if">(Q1), </span>
               </span>
               <span class="pub-year">2026</span>
             </div>
@@ -634,17 +651,21 @@
           <div class="pub-meta-block">
             <div class="pub-authors">
               <span class="author-full">
-                <strong>S. Han</strong>, S. Dai, M. Terziev, D. Kim, T. Tezdogan, D. Jung, and S. Song*
+                <span class="main-author">S. Han</span>
+                <span class="author-role">(First-author)</span>,
+                <span class="co-authors">S. Dai, M. Terziev, D. Kim, T. Tezdogan, D. Jung, and S. Song*</span>
               </span>
               <span class="author-short">
-                <strong>S. Han</strong>, S. Dai, M. Terziev, <em>et al.</em>
+                <span class="main-author">S. Han</span>
+                <span class="author-role">(First-author)</span>,
+                <span class="co-authors">S. Dai, M. Terziev, <em>et al.</em></span>
               </span>
             </div>
             <div class="pub-meta">
               <span class="pub-meta-text">
                 <a href="https://www.mdpi.com/journal/jmse" target="_blank"><em>Journal of Marine Science and
                     Engineering</em></a>
-                <span class="journal-if">(IF 2.8), </span>
+                <span class="journal-if">(Q2), </span>
               </span>
               <span class="pub-year">2025</span>
               <span class="cover-badge">Cover Article</span>
@@ -664,17 +685,23 @@
           <div class="pub-meta-block">
             <div class="pub-authors">
               <span class="author-full">
-                W. Choi, G. Min, <strong>S. Han</strong>, H. Yun, M. Terziev, S. Dai, D. Kim, and S. Song*
+                <span class="co-authors">W. Choi, G. Min,</span>
+                <span class="main-author">S. Han</span>
+                <span class="author-role">(Co-author)</span>,
+                <span class="co-authors">H. Yun, M. Terziev, S. Dai, D. Kim, and S. Song*</span>
               </span>
               <span class="author-short">
-                W. Choi, G. Min, <strong>S. Han</strong>, <em>et al.</em>
+                <span class="co-authors">W. Choi, G. Min,</span>
+                <span class="main-author">S. Han</span>
+                <span class="author-role">(Co-author)</span>,
+                <span class="co-authors"><em>et al.</em></span>
               </span>
             </div>
             <div class="pub-meta">
               <span class="pub-meta-text">
                 <a href="https://www.sciencedirect.com/journal/ocean-engineering" target="_blank"><em>Ocean
                     Engineering</em></a>
-                <span class="journal-if">(IF 4.5), </span>
+                <span class="journal-if">(Q1), </span>
               </span>
 
               <span class="pub-year">2024</span>
@@ -698,7 +725,15 @@
           </div>
           <div class="pub-meta-block">
             <div class="pub-authors">
-              <strong>S. Han*</strong>
+
+              <span class="author-full">
+                <span class="main-author">S. Han*</span>
+                <span class="author-role">(Solo-author)</span>
+              </span>
+              <span class="author-short">
+                <span class="main-author">S. Han*</span>
+                <span class="author-role">(Solo-author)</span>
+              </span>
             </div>
             <div class="pub-meta">
               <span class="pub-meta-text">
