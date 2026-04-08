@@ -91,12 +91,12 @@
     }
 
     .id-photo {
-      margin-top: 0px;
+      margin-top: 0;
       width: 110px;
       height: 110px;
       object-fit: cover;
-      transform: translateY(5px);
-      filter: grayscale(70%) contrast(1.03) brightness(0.96) blur(0.05px);
+      transform: none;
+      filter: none;
       border-radius: 2px;
       border: 1px solid rgba(11, 31, 58, 0.18);
       box-shadow: 0 8px 20px rgba(11, 31, 58, 0.08);
@@ -118,9 +118,8 @@
       }
 
       .page-content {
-        min-height: 0vh;
-        display: flex;
-        flex-direction: column;
+        transform: none;
+        transition: none;
       }
 
       .footer-meta {
