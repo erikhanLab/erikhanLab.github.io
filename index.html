@@ -65,6 +65,8 @@
       --muted: #475569;
       --line: rgba(11, 31, 58, 0.12);
       --bg: #EDEFF3;
+
+      --accent: #5A6A7A;
     }
 
     body {
@@ -86,7 +88,8 @@
     .header-row {
       display: flex;
       align-items: flex-start;
-      gap: 68px;
+      gap: 60px;
+      align-items: center;
     }
 
     .id-photo {
@@ -95,7 +98,7 @@
       height: 110px;
       object-fit: cover;
       transform: none;
-      filter: none;
+      filter: grayscale(50%) saturate(0.8) contrast(1.08) brightness(0.98);
       border-radius: 2px;
       border: 1px solid rgba(11, 31, 58, 0.18);
       box-shadow: 0 8px 20px rgba(11, 31, 58, 0.08);
@@ -247,9 +250,9 @@
     }
 
     h1 {
-      font-size: 3.4em;
+      font-size: 3.2em;
       font-weight: normal;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.02em;
       margin: 0 0 18px 0;
     }
 
@@ -257,8 +260,8 @@
       margin-top: 40px;
       padding-left: 2px;
       max-width: 740px;
-      border-left: 0.5px solid rgba(11, 31, 58, 0.08);
-      text-align: center;
+      border-left: 2px solid var(--accent);
+      text-align: left;
     }
 
     .tagline {
@@ -270,7 +273,7 @@
     .tagline .line-strong {
       display: block;
       font-weight: normal;
-      font-size: 1.1em;
+      font-size: 1.05em;
       color: var(--ink);
     }
 
@@ -278,7 +281,7 @@
       display: block;
       margin-top: 2px;
       font-size: 0.95em;
-      color: #4b5f77;
+      color: var(--accent);
     }
 
     .affiliation {
@@ -314,28 +317,41 @@
       color: var(--ink);
       border-top: 1px solid var(--line);
       transition: color 0.2s ease, padding-left 0.2s ease, transform 0.15s ease;
-      font-size: 1.1em;
+      font-size: 1.15em;
+      opacity: 0.8;
     }
 
     .nav a span {
       display: block;
-      font-size: 0.65em;
+      font-size: 0.7em;
       letter-spacing: 0.32em;
       color: #64748b;
       margin-bottom: 6px;
-      opacity: 0.35;
+      opacity: 0.6;
 
     }
 
     .nav a:hover {
-      color: #1f2f44;
       padding-left: 12px;
+      color: var(--ink);
       transform: translateY(-2px);
       will-change: transform;
+      opacity: 1;
     }
 
     .nav a:hover span {
-      opacity: 0.75;
+      color: var(--ink);
+      opacity: 0.7;
+    }
+
+    .nav a:last-child {
+      opacity: 0.6;
+      font-style: italic;
+    }
+
+    .nav a:last-child:hover {
+      color: var(--ink);
+      opacity: 0.7;
     }
 
     .meta {
@@ -350,7 +366,7 @@
       color: #445a73;
       background: rgba(11, 31, 58, 0.015);
       border-radius: 4px;
-      border-left: 2px solid rgba(11, 31, 58, 0.03);
+      border-left: 2px solid var(--accent);
       padding-left: 10px;
       display: inline-block;
     }
@@ -458,7 +474,7 @@
           </span>
           <span class="line-muted">
             <span class="desktop-only">
-              <em>Understanding where models break, with a focus on near-wall flows.</em>
+              <em>Understanding where models break — especially near-wall flows.</em>
             </span>
             <span class="mobile-only">
               <em>Understanding where models break.</em>
