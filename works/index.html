@@ -233,7 +233,7 @@
         z-index: 1000;
         display: flex;
         justify-content: center;
-        gap: 18px;
+        gap: clamp(12px, 4vw, 20px);
         padding: 6px 0;
         margin-bottom: 28px;
         background: rgba(225, 230, 238, 0.7);
@@ -369,8 +369,18 @@
         .querySelector('.page-content')
         ?.classList.add('loaded');
     });
+
+    const lang = localStorage.getItem("lang") || "en";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-en]").forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    });
   </script>
 
 </body>
+
+
 
 </html>

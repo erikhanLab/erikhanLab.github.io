@@ -75,6 +75,29 @@
       background: var(--bg-light);
     }
 
+    .lang-switch {
+      font-size: 0.65em;
+      letter-spacing: 0.22em;
+      color: #64748b;
+      opacity: 0.7;
+    }
+
+    .lang-switch a {
+      text-decoration: none;
+      color: inherit;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    .lang-switch a.active {
+      opacity: 1;
+      color: #111;
+    }
+
+    .lang-switch a:hover {
+      opacity: 0.8;
+    }
+
     .nav {
       position: sticky;
       top: env(safe-area-inset-top);
@@ -123,6 +146,7 @@
       left: 50%;
       bottom: -10px;
       transform: translateX(-50%);
+
       width: 22px;
       height: 1px;
       background: #111;
@@ -527,7 +551,7 @@
 
     @media (max-width: 640px) {
       .site-name {
-        font-size: 2.1em;
+        font-size: 1.9em;
         margin-left: 10px;
       }
 
@@ -547,7 +571,7 @@
         z-index: 1000;
         display: flex;
         justify-content: center;
-        gap: 18px;
+        gap: clamp(12px, 4vw, 20px);
         padding: 6px 0;
         margin-bottom: 28px;
         background: rgba(225, 230, 238, 0.7);
@@ -773,43 +797,60 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header class="site-header">
-    <a href="/" class="site-name">Sangseok Han</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+
+      <a href="/" class="site-name">Sangseok Han</a>
+
+      <!--
+      <div class="lang-switch">
+        <a href="#" data-lang="en">EN</a>
+        <span>·</span>
+        <a href="#" data-lang="jp">JP</a>
+      </div>
+    -->
+
+    </div>
   </header>
 
   <div class="nav">
-    <a href="/">Home</a>
-    <a href="/profile/">Profile</a>
-    <a href="/research/" class="active">Research</a>
-    <a href="/publications/">Publications</a>
+    <a href="/" data-en="Home" data-jp="ホーム">Home</a>
+    <a href="/profile/" data-en="Profile" data-jp="プロフィール">Profile</a>
+    <a href="/research/" class="active" data-en="Research" data-jp="研究">Research</a>
+    <a href="/publications/" data-en="Publications" data-jp="論文">Publications</a>
     <!--
     <a href="/works/">Works</a>
   -->
-    <a href="/archive/">Archive</a>
+    <a href="/archive/" data-en="Archive" data-jp="アーカイブ">Archive</a>
   </div>
   <div class="page-content">
 
     <div class="research-keywords">
-      <span>Turbulence</span>
-      <span>Roughness</span>
-      <span>Ship Hydrodynamics</span>
+      <span data-en="Turbulence" data-jp="乱流">Turbulence</span>
+      <span data-en="Roughness" data-jp="表面粗さ">Roughness</span>
+      <span data-en="Ship Hydrodynamics" data-jp="船舶流体力学">Ship Hydrodynamics</span>
     </div>
 
     <div class="research-overview">
       <ul>
         <li>
-          <em class="desktop">
+          <em class="desktop" data-en="I study how surface roughness affects turbulence and ship hydrodynamics."
+            data-jp="表面粗さが乱流および船舶流体力学に与える影響を研究しています。">
             I study how surface roughness affects turbulence and ship hydrodynamics.
           </em>
-          <em class="mobile">
+
+          <em class="mobile" data-en="Roughness effects on turbulence in marine flows." data-jp="海洋流れにおける粗さの影響を研究。">
             Roughness effects on turbulence in marine flows.
           </em>
         </li>
 
         <li>
-          <em class="desktop">
+          <em class="desktop" data-en="Using CFD, I study where modelling assumptions break down."
+            data-jp="CFDを用いて、モデル仮定が破綻する領域を明らかにします。">
             Using CFD, I study where modelling assumptions break down.
           </em>
-          <em class="mobile">
+
+          <em class="mobile" data-en="Using CFD, I study where modelling assumptions break down."
+            data-jp="CFDによりモデルの限界を探る。">
             Using CFD, I study where modelling assumptions break down.
           </em>
         </li>
@@ -817,27 +858,37 @@
     </div>
 
     <div class="research-timeline">
-      <h2 class="rt-header">Research Timeline (2023–2026) <span class="rt-dot">·</span>
-        <a href="/research/log/" class="rt-log-link">Research Log</a>
+      <h2 class="rt-header">
+        <span data-en="Research Timeline (2023–2026)" data-jp="研究年表 (2023–2026)">
+          Research Timeline (2023–2026)
+        </span>
+        <span class="rt-dot">·</span>
+        <a href="/research/log/" class="rt-log-link" data-en="Research Log" data-jp="研究ノート">
+          Research Log
+        </a>
       </h2>
       <div class="rt-item">
         <div class="rt-year">2026</div>
         <div class="rt-body">
-          <div class="rt-stage">Preparing for PhD</div>
+          <div class="rt-stage" data-en="Preparing for PhD" data-jp="博士課程進学準備中">
+            Preparing for PhD
+          </div>
 
-          <div class="rt-title rt-title-highlight">
+          <div class="rt-title rt-title-highlight" data-en="Research Highlights" data-jp="主要成果">
             Research Highlights
           </div>
           <div class="rt-block-group">
             <div class="rt-block">
-              <div class="rt-output">
+              <div class="rt-output" data-en="Journal Publication" data-jp="学術論文">
                 Journal Publication
               </div>
 
               <div class="rt-subtitle">Beyond uniform roughness: Ship resistance with spatially non-uniform hull
                 surface
                 conditions</div>
-              <div class="role-tag">First & corresponding author</div>
+              <div class="role-tag" data-en="First & corresponding author" data-jp="筆頭・責任著者">
+                First & corresponding author
+              </div>
               <div class="rt-meta">
                 <em>Ocean Engineering</em> <span class="q-rank">(Q1)</span>
               </div>
@@ -846,7 +897,7 @@
 
           <div class="rt-inst-divider"></div>
 
-          <div class="rt-title">
+          <div class="rt-title" data-en="Independent Research" data-jp="個人研究">
             Independent Research
             <span class="rt-loc-dot">·</span>
             <span class="rt-location-inline">South Korea</span>
@@ -856,11 +907,15 @@
             <div class="rt-block">
               <div class="rt-output">
                 SNH36
-                <span class="rt-small">— Full Paper Invited</span>
+                <span class="rt-small" data-en="— Full Paper Invited" data-jp="— フルペーパー招待">
+                  — Full Paper Invited
+                </span>
               </div>
               <div class="rt-subtitle">A computational fluid dynamics analysis of spatial roughness distributions on
                 ship resistance</div>
-              <div class="role-tag">First & corresponding author</div>
+              <div class="role-tag" data-en="First & corresponding author" data-jp="筆頭・責任著者">
+                First & corresponding author
+              </div>
 
               <div class="rt-meta">
                 <span class="rt-venue">
@@ -880,25 +935,31 @@
         <div class="rt-body">
 
           <div class="rt-stage">International Research</div>
-          <div class="rt-title rt-title-highlight">
+          <div class="rt-title rt-title-highlight" data-en="Research Highlights" data-jp="主要成果">
             Research Highlights
           </div>
           <div class="rt-block-group">
             <div class="rt-block">
-              <div class="rt-output">
+              <div class="rt-output" data-en="Cover Article" data-jp="表紙掲載論文">
                 Cover Article
-                <span class="rt-small">(Selected from 185 papers)</span>
+                <span class="rt-small" data-en="(Selected from 185 papers)" data-jp="（185本中選出）">
+                  (Selected from 185 papers)
+                </span>
               </div>
 
               <div class="rt-subtitle">Temperature-induced errors in ITTC model–ship extrapolation</div>
-              <div class="role-tag">First author</div>
+              <div class="role-tag" data-en="First author" data-jp="筆頭著者">
+                First author
+              </div>
               <div class="rt-meta">
                 <em>Journal of Marine Science and Engineering</em> <span class="q-rank">(Q2)</span>
               </div>
             </div>
 
             <div class="rt-block">
-              <div class="rt-output">Reviewer Excellence Award</div>
+              <div class="rt-output" data-en="Reviewer Excellence Award" data-jp="査読優秀賞">
+                Reviewer Excellence Award
+              </div>
               <div class="rt-meta">
                 <em>Ocean Engineering</em> <span class="q-rank">(Q1)</span>
               </div>
@@ -908,17 +969,26 @@
           <div class="rt-inst-divider"></div>
 
           <div class="rt-title">
-            Visiting Research — The University of Osaka
+            <span data-en="Visiting Research — The University of Osaka" data-jp="客員研究 — 大阪大学">
+              Visiting Research — The University of Osaka
+            </span>
             <span class="rt-loc-dot">·</span>
-            <span class="rt-location-inline">Japan</span>
+            <span class="rt-location-inline" data-en="Japan" data-jp="日本">
+              Japan
+            </span>
           </div>
           <div class="rt-block-group">
 
             <div class="rt-block">
-              <div class="rt-output">Conference Presentation</div>
+              <div class="rt-output" data-en="Conference Presentation" data-jp="国際会議発表">
+                Conference Presentation
+              </div>
               <div class="rt-subtitle">CFD-based model predictive control for point absorber wave energy converters
               </div>
-              <div class="role-tag">Presenting author</div>
+              <div class="role-tag" data-en="Presenting author" data-jp="発表者">
+                Presenting author
+              </div>
+
 
               <div class="rt-meta">
                 <span class="rt-venue">
@@ -931,7 +1001,12 @@
             </div>
 
             <div class="rt-block">
-              <div class="rt-output">Peer Reviewer <span class="rt-small">(Invited)</span></div>
+              <div class="rt-output" data-en="Peer Reviewer" data-jp="査読者">
+                Peer Reviewer
+                <span class="rt-small" data-en="(Invited)" data-jp="（招待）">
+                  (Invited)
+                </span>
+              </div>
               <div class="rt-meta">
                 <em>Physics of Fluids</em> <span class="q-rank">(Q1)</span>
               </div>
@@ -941,16 +1016,24 @@
           <div class="rt-inst-divider"></div>
 
           <div class="rt-title">
-            MSc Research — University of Strathclyde
+            <span data-en="MSc Research — University of Strathclyde" data-jp="修士研究 — ストラスクライド大学">
+              MSc Research — University of Strathclyde
+            </span>
             <span class="rt-loc-dot">·</span>
-            <span class="rt-location-inline">United Kingdom</span>
+            <span class="rt-location-inline" data-en="United Kingdom" data-jp="イギリス">
+              United Kingdom
+            </span>
           </div>
           <div class="rt-block-group">
 
             <div class="rt-block">
-              <div class="rt-output">Conference Presentation</div>
+              <div class="rt-output" data-en="Conference Presentation" data-jp="国際会議発表">
+                Conference Presentation
+              </div>
               <div class="rt-subtitle">Impact of towing tank temperature on model-ship extrapolation</div>
-              <div class="role-tag">Presenting author</div>
+              <div class="role-tag" data-en="Presenting author" data-jp="発表者">
+                Presenting author
+              </div>
               <div class="rt-meta">
                 <span class="rt-venue">
                   International Congress of Naval Architecture and Maritime Industry
@@ -964,10 +1047,14 @@
           <div class="rt-block-group">
 
             <div class="rt-block">
-              <div class="rt-output">Conference Paper</div>
+              <div class="rt-output" data-en="Conference Paper" data-jp="国際会議論文">
+                Conference Paper
+              </div>
               <div class="rt-subtitle">Numerical analysis of fluid-structure interaction for semi-submersible FOWT
               </div>
-              <div class="role-tag">First & corresponding author</div>
+              <div class="role-tag" data-en="First & corresponding author" data-jp="筆頭・責任著者">
+                First & corresponding author
+              </div>
 
               <div class="rt-meta">
                 <span class="rt-venue">
@@ -986,18 +1073,30 @@
         <div class="rt-year">2024</div>
         <div class="rt-body">
 
-          <div class="rt-stage">Early Outputs & Domestic Recognition</div>
+          <div class="rt-stage" data-en="Early Outputs & Domestic Recognition" data-jp="初期成果・国内評価">
+            Early Outputs & Domestic Recognition
+          </div>
+
 
           <div class="rt-title">
-            BSc Research — Inha University <span class="rt-loc-dot">·</span>
-            <span class="rt-location-inline">South Korea</span>
+            <span data-en="BSc Research — Inha University" data-jp="学部研究 — 仁荷大学">
+              BSc Research — Inha University
+            </span>
+            <span class="rt-loc-dot">·</span>
+            <span class="rt-location-inline" data-en="South Korea" data-jp="韓国">
+              South Korea
+            </span>
           </div>
           <div class="rt-block-group">
             <div class="rt-block">
-              <div class="rt-output">Best Paper Award</div>
+              <div class="rt-output" data-en="Best Paper Award" data-jp="最優秀論文賞">
+                Best Paper Award
+              </div>
               <div class="rt-subtitle">
                 Uncertainty of the ITTC 1957 correlation line with temperature variations</div>
-              <div class="role-tag">Presenting author</div>
+              <div class="role-tag" data-en="Presenting author" data-jp="発表者">
+                Presenting author
+              </div>
 
               <div class="rt-meta">
                 <span class="rt-venue">
@@ -1010,9 +1109,13 @@
             </div>
 
             <div class="rt-block">
-              <div class="rt-output">Journal Publication</div>
+              <div class="rt-output" data-en="Journal Publication" data-jp="学術論文">
+                Journal Publication
+              </div>
               <div class="rt-subtitle">Resistance and speed penalty of a naval ship with hull roughness</div>
-              <div class="role-tag">Co-author</div>
+              <div class="role-tag" data-en="Co-author" data-jp="共著者">
+                Co-author
+              </div>
               <div class="rt-meta">
                 <em>Ocean Engineering</em> <span class="q-rank">(Q1)</span>
               </div>
@@ -1025,16 +1128,25 @@
         <div class="rt-year">2023</div>
         <div class="rt-body">
 
-          <div class="rt-stage">Research Entry & Foundation</div>
+          <div class="rt-stage" data-en="Research Entry & Foundation" data-jp="研究基盤の形成">
+            Research Entry & Foundation
+          </div>
 
           <div class="rt-title">
-            BSc Project — Inha University <span class="rt-loc-dot">·</span>
-            <span class="rt-location-inline">South Korea</span>
+            <span data-en="BSc Project — Inha University" data-jp="学部プロジェクト — 仁荷大学">
+              BSc Project — Inha University
+            </span>
+            <span class="rt-loc-dot">·</span>
+            <span class="rt-location-inline" data-en="South Korea" data-jp="韓国">
+              South Korea
+            </span>
           </div>
           <div class="rt-block-group">
 
             <div class="rt-block">
-              <div class="rt-output">Industrial Technology Award</div>
+              <div class="rt-output" data-en="Industrial Technology Award" data-jp="産業技術賞">
+                Industrial Technology Award
+              </div>
 
               <div class="rt-meta">
                 <span class="rt-venue">
@@ -1044,10 +1156,14 @@
             </div>
 
             <div class="rt-block">
-              <div class="rt-output">Conference Presentation</div>
+              <div class="rt-output" data-en="Conference Presentation" data-jp="国際会議発表">
+                Conference Presentation
+              </div>
               <div class="rt-subtitle">
                 KABOAT 2023 competition report: Virtual simulation of an autonomous boat using MATLAB</div>
-              <div class="role-tag">Presenting author</div>
+              <div class="role-tag" data-en="Presenting author" data-jp="発表者">
+                Presenting author
+              </div>
               <div class="rt-meta">
                 <span class="rt-venue">
                   Fall Conference of The Society of Naval Architecture of Korea
@@ -1065,12 +1181,18 @@
         <div class="research-footnote">
           <p class="footnote-read">
             <span class="footnote-mark">·</span>
-            Research is driven by problems and refined through systematic investigation.
+            <span data-en="Research is driven by problems and refined through systematic investigation."
+              data-jp="研究は課題から始まり、体系的な探究を通じて深化する。">
+              Research is driven by problems and refined through systematic investigation.
+            </span>
           </p>
 
           <p class="footnote-collab">
             <span class="footnote-mark">·</span>
-            For collaboration — <a href="mailto:erikhan.nor@gmail.com">erikhan.nor@gmail.com</a>
+            <span data-en="For collaboration —" data-jp="共同研究については —">
+              For collaboration —
+            </span>
+            <a href="mailto:erikhan.nor@gmail.com">erikhan.nor@gmail.com</a>
           </p>
         </div>
 
@@ -1082,6 +1204,38 @@
             .querySelector('.page-content')
             ?.classList.add('loaded');
         });
+
+        const lang = localStorage.getItem("lang") || "en";
+
+        document.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll("[data-en]").forEach(el => {
+            el.textContent = el.getAttribute(`data-${lang}`);
+          });
+
+          document.querySelectorAll(".lang-switch a").forEach(a => {
+            if (a.dataset.lang === lang) {
+              a.classList.add("active");
+            } else {
+              a.classList.remove("active");
+            }
+          });
+        });
+
+        document.querySelectorAll(".lang-switch a").forEach(btn => {
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const selected = btn.dataset.lang;
+            localStorage.setItem("lang", selected);
+
+            location.reload();
+          });
+        });
+
+        const currentLang = localStorage.getItem("lang") || "en";
+
+        const homeLink = document.querySelector('.nav a[href="/"]');
+
       </script>
 
 </body>

@@ -322,7 +322,7 @@
 
     @media (max-width: 640px) {
       .site-name {
-        font-size: 2.1em;
+        font-size: 1.9em;
         margin-left: 10px;
       }
 
@@ -480,7 +480,7 @@
         z-index: 1000;
         display: flex;
         justify-content: center;
-        gap: 18px;
+        gap: clamp(12px, 4vw, 20px);
         padding: 6px 0;
         margin-bottom: 28px;
         background: rgba(225, 230, 238, 0.7);
@@ -601,6 +601,29 @@
       .timeline-node:hover .node-label {
         opacity: 0.7 !important;
       }
+    }
+
+    .lang-switch {
+      font-size: 0.65em;
+      letter-spacing: 0.22em;
+      color: #64748b;
+      opacity: 0.7;
+    }
+
+    .lang-switch a {
+      text-decoration: none;
+      color: inherit;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    .lang-switch a.active {
+      opacity: 1;
+      color: #111;
+    }
+
+    .lang-switch a:hover {
+      opacity: 0.8;
     }
 
     .entry span {
@@ -1123,7 +1146,19 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header class="site-header">
-    <a href="/" class="site-name">Sangseok Han</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+
+      <a href="/" class="site-name">Sangseok Han</a>
+
+      <!--
+      <div class="lang-switch">
+        <a href="#" data-lang="en">EN</a>
+        <span>·</span>
+        <a href="#" data-lang="jp">JP</a>
+      </div>
+    -->
+
+    </div>
   </header>
 
   <nav class="side-nav">
@@ -1135,21 +1170,24 @@
   </nav>
 
   <div class="nav">
-    <a href="/">Home</a>
-    <a href="/profile/">Profile</a>
-    <a href="/research/">Research</a>
-    <a href="/publications/">Publications</a>
+    <a href="/" data-en="Home" data-jp="ホーム">Home</a>
+    <a href="/profile/" data-en="Profile" data-jp="プロフィール">Profile</a>
+    <a href="/research/" data-en="Research" data-jp="研究">Research</a>
+    <a href="/publications/" data-en="Publications" data-jp="論文">Publications</a>
     <!--
     <a href="/works/">Works</a>
   -->
-    <a href="/archive/" class="active">Archive</a>
+    <a href="/archive/" class="active" data-en="Archive" data-jp="アーカイブ">Archive</a>
   </div>
+
   <div class="page-content">
 
     <section class="archive-curated" id="section-curated">
       <div class="archive-head">
-        <div class="archive-title">Curated Record</div>
-        <div class="archive-note">
+        <div class="archive-title" data-en="Curated Record" data-jp="記録">
+          Curated Record
+        </div>
+        <div class="archive-note" data-en="Curated by recognition, not just self-reporting" data-jp="自己申告ではなく、評価に基づく記録">
           <em>Curated by recognition, not just self-reporting</em>
         </div>
       </div>
@@ -1224,7 +1262,9 @@
     <div class="divider"></div>
 
     <section class="visual-record" id="section-visual-record">
-      <div class="year-label">Visual Record</div>
+      <div class="year-label" data-en="Visual Record" data-jp="視覚記録">
+        Visual Record
+      </div>
 
       <div class="visual-timeline">
 
@@ -1306,7 +1346,9 @@
     <div class="divider"></div>
 
     <section class="visual-work" id="section-visual-work">
-      <div class="year-label">Visual Work</div>
+      <div class="year-label" data-en="Visual Work" data-jp="制作">
+        Visual Work
+      </div>
 
       <div class="visual-work-grid">
         <figure class="visual-work-item">
@@ -1362,7 +1404,9 @@
   <div class="divider"></div>
 
   <section class="visual-record" id="section-timeline">
-    <div class="year-label">A chronological record</div>
+    <div class="year-label" data-en="A chronological record" data-jp="年表">
+      A chronological record
+    </div>
     <div class="scroll-spacer"></div>
     <div class="timeline-wrapper">
       <div class="timeline">
@@ -1608,7 +1652,7 @@
         sideNav.style.transform = 'none';
 
         sideNav.style.opacity = '1';
-        sideNav.style.pointerEvents = 'auto';  
+        sideNav.style.pointerEvents = 'auto';
       }
 
       positionSideNav();
@@ -1728,12 +1772,45 @@
         });
       });
     });
+
+    const lang = localStorage.getItem("lang") || "en";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-en]").forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+      document.querySelectorAll(".lang-switch a").forEach(a => {
+        if (a.dataset.lang === lang) {
+          a.classList.add("active");
+        } else {
+          a.classList.remove("active");
+        }
+      });
+
+    });
+
+    document.querySelectorAll(".lang-switch a").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const selected = btn.dataset.lang;
+        localStorage.setItem("lang", selected);
+
+        location.reload();
+      });
+    });
+
+    const currentLang = localStorage.getItem("lang") || "en";
+
+    const homeLink = document.querySelector('.nav a[href="/"]');
   </script>
 
   <div class="divider"></div>
 
   <section class="records">
-    <div class="records-label">Records</div>
+    <div class="records-label" data-en="Records" data-jp="記録">
+      Records
+    </div>
     <div class="record-item">
       <img src="/assets/navy_2017.jpg" alt="">
       <div class="record-text">
@@ -1769,7 +1846,9 @@
 
   <div class="divider"></div>
   <section class="visual-record" id="section-external">
-    <div class="year-label">External Records</div>
+    <div class="year-label" data-en="External Records" data-jp="外部記録">
+      External Records
+    </div>
     <div class="entry" style="margin-top:20px;">
       <div class="entry">
         <strong>

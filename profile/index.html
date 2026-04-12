@@ -67,6 +67,29 @@
       background: var(--bg-light);
     }
 
+    .lang-switch {
+      font-size: 0.65em;
+      letter-spacing: 0.22em;
+      color: #64748b;
+      opacity: 0.7;
+    }
+
+    .lang-switch a {
+      text-decoration: none;
+      color: inherit;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    .lang-switch a.active {
+      opacity: 1;
+      color: #111;
+    }
+
+    .lang-switch a:hover {
+      opacity: 0.8;
+    }
+
     .nav {
       position: sticky;
       top: env(safe-area-inset-top);
@@ -115,6 +138,7 @@
       left: 50%;
       bottom: -10px;
       transform: translateX(-50%);
+
       width: 22px;
       height: 1px;
       background: #111;
@@ -457,7 +481,7 @@
 
     @media (max-width: 640px) {
       .site-name {
-        font-size: 2.1em;
+        font-size: 1.9em;
         margin-left: 10px;
       }
 
@@ -497,7 +521,7 @@
         z-index: 1000;
         display: flex;
         justify-content: center;
-        gap: 18px;
+        gap: clamp(12px, 4vw, 20px);
         padding: 6px 0;
         margin-bottom: 28px;
         background: rgba(225, 230, 238, 0.7);
@@ -703,7 +727,19 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header class="site-header">
-    <a href="/" class="site-name">Sangseok Han</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+
+      <a href="/" class="site-name">Sangseok Han</a>
+
+      <!--
+      <div class="lang-switch">
+        <a href="#" data-lang="en">EN</a>
+        <span>·</span>
+        <a href="#" data-lang="jp">JP</a>
+      </div>
+    -->
+
+    </div>
   </header>
 
   <nav class="side-nav">
@@ -711,24 +747,32 @@
       <div class="thumb"></div>
     </div>
   </nav>
+
   <div class="nav">
-    <a href="/">Home</a>
-    <a href="/profile/" class="active">Profile</a>
-    <a href="/research/">Research</a>
-    <a href="/publications/">Publications</a>
+    <a href="/" data-en="Home" data-jp="ホーム">Home</a>
+    <a href="/profile/" class="active" data-en="Profile" data-jp="プロフィール">Profile</a>
+    <a href="/research/" data-en="Research" data-jp="研究">Research</a>
+    <a href="/publications/" data-en="Publications" data-jp="論文">Publications</a>
     <!--
     <a href="/works/">Works</a>
   -->
-    <a href="/archive/">Archive</a>
+    <a href="/archive/" data-en="Archive" data-jp="アーカイブ">Archive</a>
   </div>
 
   <div class="page-content">
-    <p class="subtitle">Fluid Mechanics · CFD</p>
+    <p class="subtitle" data-en="Fluid Mechanics · CFD" data-jp="流体力学 · CFD">
+      Fluid Mechanics · CFD
+    </p>
 
     <p class="tagline">
       <em>
-        I investigate roughness-driven turbulence using CFD, <br>
-        with a focus on modelling limits in marine hydrodynamics.
+        <span data-en="I investigate roughness-driven turbulence using CFD," data-jp="CFDを用いて粗さ起因乱流を研究し、">
+          I investigate roughness-driven turbulence using CFD,
+        </span>
+        <br>
+        <span data-en="with a focus on modelling limits in marine hydrodynamics." data-jp="海洋流体力学におけるモデリングの限界に着目する。">
+          with a focus on modelling limits in marine hydrodynamics.
+        </span>
       </em>
     </p>
     <div class="icons">
@@ -766,25 +810,36 @@
     </div>
 
     <p class="pub-link">
-      Selected publications are listed in the <a href="/publications/">Publications</a> section.
+      <span data-en="Selected publications are listed in the " data-jp="論文は ">
+        Selected publications are listed in the
+      </span>
+
+      <a href="/publications/">Publications</a>
+
+      <span data-en=" section." data-jp=" ページに掲載しています。">
+        section.
+      </span>
     </p>
 
     <div class="divider"></div>
     <div class="section" id="current">
-      <h2><strong>Current</strong></h2>
+      <h2 data-en="Current" data-jp="現在">Current</h2>
 
       <div class="current-block">
 
-        <div class="current-line secondary">
-          <span class="current-dot">·</span>
-          Intended PhD start · 2026
+        <div class="current-line secondary" data-en="· Intended PhD start · 2026" data-jp="・博士課程進学予定（2026）">
+          · Intended PhD start · 2026
         </div>
 
         <div class="current-line detail">
-          <span class="desktop-only">
+          <span class="desktop-only"
+            data-en="My research focuses on roughness-driven turbulence and multiphysics interactions in marine flows."
+            data-jp="海洋流体における粗さ起因乱流およびマルチフィジックス相互作用を研究対象とする。">
             My research focuses on roughness-driven turbulence and multiphysics interactions in marine flows.
           </span>
-          <span class="mobile-only">
+
+          <span class="mobile-only" data-en="Roughness-driven turbulence and multiphysics in marine flows."
+            data-jp="粗さ起因乱流およびマルチフィジックス（海洋流体）。">
             Roughness-driven turbulence and multiphysics in marine flows.
           </span>
         </div>
@@ -795,10 +850,14 @@
     <div class="divider"></div>
 
     <div class="section" id="academic-activity">
-      <h2><strong>Scholarly Contribution</strong></h2>
+      <h2 data-en="Scholarly Contribution" data-jp="学術活動">
+        Scholarly Contribution
+      </h2>
 
       <div class="affiliation-item">
-        Peer reviewer for international journals
+        <span data-en="Peer reviewer for international journals" data-jp="国際学術誌 査読者">
+          Peer reviewer for international journals
+        </span>
         <span class="affiliation-year">(2025–)</span>
 
         <ul style="margin-top:10px; padding-left:14px; list-style:none;">
@@ -816,10 +875,11 @@
           </li>
 
           <li style="margin-top:8px; font-size:0.65em; color:#777;">
-            <span style="margin-right:4px;">–</span>
-            Certificate of Excellence in Reviewing,
-            <em>Ocean Engineering</em>
-            <span style="font-size:0.76em;">(2025)</span>
+            <span data-en="Certificate of Excellence in Reviewing" data-jp="優秀査読者表彰">
+              Certificate of Excellence in Reviewing
+            </span>
+            (<em>Ocean Engineering,</em>
+            <span style="font-size:0.76em;"> 2025</span>)
           </li>
 
         </ul>
@@ -830,11 +890,15 @@
     <div class="divider"></div>
 
     <div class="section" id="research-interests">
-      <h2><strong>Research Direction</strong></h2>
+      <h2 data-en="Research Direction" data-jp="研究分野">
+        Research Direction
+      </h2>
       <div class="research-interest-grid">
 
         <div class="interest-item">
-          <div class="interest-title">Roughness Effects on Turbulence</div>
+          <div class="interest-title" data-en="Roughness Effects on Turbulence" data-jp="粗さによる乱流影響">
+            Roughness Effects on Turbulence
+          </div>
           <div class="interest-desc">
             <em>CFD-based investigation of surface roughness effects. <br class="mobile-only">
               Focus on flow behaviour and resistance.</em>
@@ -842,7 +906,9 @@
         </div>
 
         <div class="interest-item">
-          <div class="interest-title">Near-Wall Turbulence</div>
+          <div class="interest-title" data-en="Near-Wall Turbulence" data-jp="壁面近傍乱流">
+            Near-Wall Turbulence
+          </div>
           <div class="interest-desc">
             <em>Study of boundary-layer physics. <br class="mobile-only">
               Focus on turbulence structures near solid boundaries.</em>
@@ -850,7 +916,9 @@
         </div>
 
         <div class="interest-item">
-          <div class="interest-title">Multiphysics Interaction</div>
+          <div class="interest-title" data-en="Multiphysics Interaction" data-jp="マルチフィジックス相互作用">
+            Multiphysics Interaction
+          </div>
           <div class="interest-desc">
             <em>Fluid–structure interaction in complex flow systems. <br class="mobile-only">
               Coupled multiphysics phenomena.</em>
@@ -863,17 +931,24 @@
     <div class="divider"></div>
 
     <div class="section" id="affiliations">
-      <h2><strong>Affiliations</strong></h2>
+      <h2 data-en="Affiliations" data-jp="所属">
+        Affiliations
+      </h2>
       <div class="affiliation-block">
 
         <div class="affiliation-item">
-          <div class="affiliation-primary">
-            Visiting Researcher <span class="affiliation-year">(2025)</span>
+          <div class="affiliation-primary" data-en="Visiting Researcher" data-jp="客員研究員">
+            Visiting Researcher
+            <span class="affiliation-year">(2025)</span>
           </div>
           <div class="affiliation-secondary">
-            The University of Osaka
+            <span data-en="The University of Osaka" data-jp="大阪大学">
+              The University of Osaka
+            </span>
             <span class="affiliation-dot">·</span>
-            <span class="affiliation-country">Japan</span>
+            <span class="affiliation-country" data-en="Japan" data-jp="日本">
+              Japan
+            </span>
           </div>
           <div class="affiliation-detail">
             <em>CFD studies in offshore hydrodynamics and related systems.</em>
@@ -881,13 +956,18 @@
         </div>
 
         <div class="affiliation-item">
-          <div class="affiliation-primary">
-            MSc · Advanced Naval Architecture <span class="affiliation-year">(2024–2025)</span>
+          <div class="affiliation-primary" data-en="MSc · Advanced Naval Architecture" data-jp="修士（先進船舶工学）">
+            MSc · Advanced Naval Architecture
+            <span class="affiliation-year">(2024–2025)</span>
           </div>
           <div class="affiliation-secondary">
-            University of Strathclyde
+            <span data-en="University of Strathclyde" data-jp="ストラスクライド大学">
+              University of Strathclyde
+            </span>
             <span class="affiliation-dot">·</span>
-            <span class="affiliation-country">United Kingdom</span>
+            <span class="affiliation-country" data-en="United Kingdom" data-jp="イギリス">
+              United Kingdom
+            </span>
           </div>
           <div class="affiliation-detail">
             <em>CFD-based analysis of hull roughness effects on ship hydrodynamics.</em>
@@ -895,13 +975,18 @@
         </div>
 
         <div class="affiliation-item">
-          <div class="affiliation-primary">
-            BSc · Naval Architecture & Ocean Engineering <span class="affiliation-year">(2021–2024)</span>
+          <div class="affiliation-primary" data-en="BSc · Naval Architecture & Ocean Engineering" data-jp="学士（船舶海洋工学）">
+            BSc · Naval Architecture & Ocean Engineering
+            <span class="affiliation-year">(2021–2024)</span>
           </div>
           <div class="affiliation-secondary">
-            Inha University
+            <span data-en="Inha University" data-jp="仁荷大学">
+              Inha University
+            </span>
             <span class="affiliation-dot">·</span>
-            <span class="affiliation-country">South Korea</span>
+            <span class="affiliation-country" data-en="South Korea" data-jp="韓国">
+              South Korea
+            </span>
           </div>
           <div class="affiliation-detail">
             <em>Foundation in fluid mechanics and marine engineering.</em>
@@ -914,15 +999,23 @@
     <div class="divider"></div>
 
     <div class="section" id="background">
-      <h2><strong>Background</strong></h2>
+      <h2 data-en="Background" data-jp="経歴">
+        Background
+      </h2>
+
       <div class="affiliation-item">
-        <div class="affiliation-primary">
-          Sonar Petty Officer <span class="affiliation-year">(2016–2020)</span>
+        <div class="affiliation-primary" data-en="Sonar Petty Officer" data-jp="海軍 ソナー下士官">
+          Sonar Petty Officer
+          <span class="affiliation-year">(2016–2020)</span>
         </div>
         <div class="affiliation-secondary">
-          Navy
+          <span data-en="Republic of Korea Navy" data-jp="大韓民国海軍">
+            Republic of Korea Navy
+          </span>
           <span class="affiliation-dot">·</span>
-          <span class="affiliation-country">South Korea</span>
+          <span class="affiliation-country" data-en="South Korea" data-jp="韓国">
+            South Korea
+          </span>
         </div>
         <div class="affiliation-detail">
           <em>Experience in acoustic systems and operational training in naval environments.</em>
@@ -947,12 +1040,42 @@
       const railHeight = rail.clientHeight - thumb.clientHeight;
       thumb.style.top = `${progress * railHeight}px`;
     });
-  </script>
 
-  <script>
+    const lang = localStorage.getItem("lang") || "en";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-en]").forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+
+      document.querySelectorAll(".lang-switch a").forEach(a => {
+        if (a.dataset.lang === lang) {
+          a.classList.add("active");
+        } else {
+          a.classList.remove("active");
+        }
+      });
+    });
+
+    document.querySelectorAll(".lang-switch a").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const selected = btn.dataset.lang;
+        localStorage.setItem("lang", selected);
+
+        location.reload();
+      });
+    });
+
+    const currentLang = localStorage.getItem("lang") || "en";
+
+    const homeLink = document.querySelector('.nav a[href="/"]');
+
     window.addEventListener('load', () => {
       document.querySelector('.page-content')?.classList.add('loaded');
     });
+
   </script>
 
 </body>

@@ -40,6 +40,14 @@
   "url": "https://sangseokhan.com/"
 }
 </script>
+  <script>
+    (function () {
+      const lang = localStorage.getItem("lang");
+      if (lang) {
+        document.documentElement.setAttribute("data-lang", lang);
+      }
+    })();
+  </script>
 
   <script type="application/ld+json">
 {
@@ -55,11 +63,8 @@
 
 </script>
 
-  <style>
-    html {
-      overflow-y: scroll;
-    }
 
+  <style>
     :root {
       --ink: #0B1F3A;
       --muted: #475569;
@@ -88,7 +93,7 @@
     .header-row {
       display: flex;
       align-items: flex-start;
-      gap: 60px;
+      gap: 70px;
       align-items: center;
     }
 
@@ -148,13 +153,14 @@
       }
 
       .header-row h1 {
-        font-size: 2.8em;
+        font-size: 2.9em;
         margin: 0;
       }
 
       .id-photo {
         width: 56px;
         height: 56px;
+        margin-left: 10px;
       }
 
       .tagline {
@@ -228,11 +234,29 @@
       transform: translateY(0);
     }
 
-    .nav a span {
-      font-size: 0.65em;
-      letter-spacing: 0.14em;
-      margin-bottom: 4px;
+    .nav-index {
+      display: block;
+      font-size: 0.7em;
+      letter-spacing: 0.32em;
+      color: #64748b;
+      margin-bottom: 6px;
       opacity: 0.6;
+    }
+
+    .nav-label {
+      display: inline;
+      font-size: 1.15em;
+      letter-spacing: normal;
+      color: var(--ink);
+    }
+
+    /* hover */
+    .nav a:hover .nav-label {
+      color: var(--ink);
+    }
+
+    .nav a:hover .nav-index {
+      opacity: 0.8;
     }
 
     .nav a:last-child {
@@ -254,6 +278,48 @@
       font-weight: normal;
       letter-spacing: 0.02em;
       margin: 0 0 18px 0;
+      position: relative;
+    }
+
+    .name-jp {
+      position: absolute;
+      left: 2px;
+      bottom: -20px;
+      font-size: 0.38em;
+      letter-spacing: 0.18em;
+      color: #64748b;
+      opacity: 0.65;
+    }
+
+    .profile-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+    }
+
+    .lang-switch {
+      font-size: 0.6em;
+      margin-bottom: -30px;
+      letter-spacing: 0.22em;
+      color: #64748b;
+      opacity: 0.7;
+    }
+
+    .lang-switch a {
+      text-decoration: none;
+      color: inherit;
+      opacity: 0.5;
+      transition: opacity 0.2s ease;
+    }
+
+    .lang-switch a.active {
+      opacity: 1;
+      color: var(--ink);
+    }
+
+    .lang-switch a:hover {
+      opacity: 0.8;
     }
 
     .tagline-block {
@@ -321,37 +387,35 @@
       opacity: 0.8;
     }
 
-    .nav a span {
+    .nav-index {
       display: block;
       font-size: 0.7em;
       letter-spacing: 0.32em;
       color: #64748b;
       margin-bottom: 6px;
       opacity: 0.6;
+    }
 
+    .nav-label {
+      display: inline;
+      font-size: 1.05em;
+      letter-spacing: normal;
+      color: var(--ink);
+      opacity: 0.85;
     }
 
     .nav a:hover {
       padding-left: 12px;
-      color: var(--ink);
       transform: translateY(-2px);
-      will-change: transform;
+    }
+
+    .nav a:hover .nav-label {
+      color: var(--ink);
       opacity: 1;
     }
 
-    .nav a:hover span {
-      color: var(--ink);
-      opacity: 0.7;
-    }
-
-    .nav a:last-child {
-      opacity: 0.6;
-      font-style: italic;
-    }
-
-    .nav a:last-child:hover {
-      color: var(--ink);
-      opacity: 0.7;
+    .nav a:hover .nav-index {
+      opacity: 0.8;
     }
 
     .meta {
@@ -458,25 +522,42 @@
   <div class="page-content">
     <header class="header">
       <div class="header-row">
-        <h1>Sangseok Han</h1>
-        <img src="/assets/profile2.jpg" alt="Sangseok Han" class="id-photo">
+        <h1>
+          Sangseok Han
+          <span class="name-jp" data-en="" data-jp="ハン・サンソク"></span>
+        </h1>
+
+        <div class="profile-block">
+          <img src="/assets/profile2.jpg" alt="Sangseok Han" class="id-photo">
+          <!--
+          <div class="lang-switch">
+            <a href="#" data-lang="en">EN</a>
+            <span>·</span>
+            <a href="#" data-lang="jp">JP</a>
+          </div>
+          -->
+        </div>
       </div>
 
       <div class="tagline-block">
         <p class="tagline">
           <span class="line-strong">
-            <span class="desktop-only">
+            <span class="desktop-only" data-en="Turbulence and surface roughness in real-world marine flows."
+              data-jp="実海域における乱流と表面粗さの影響">
               Turbulence and surface roughness in real-world marine flows.
             </span>
-            <span class="mobile-only">
+            <span class="mobile-only" data-en="Turbulence and roughness in real-world marine flows."
+              data-jp="実海域における乱流と粗さ">
               Turbulence and roughness in real-world marine flows.
             </span>
           </span>
+
           <span class="line-muted">
-            <span class="desktop-only">
+            <span class="desktop-only" data-en="Understanding where models break — especially near-wall flows."
+              data-jp="特に壁面近傍流れにおけるモデルの限界を探る。">
               <em>Understanding where models break — especially near-wall flows.</em>
             </span>
-            <span class="mobile-only">
+            <span class="mobile-only" data-en="Understanding where models break." data-jp="モデルの限界を探る。">
               <em>Understanding where models break.</em>
             </span>
           </span>
@@ -484,17 +565,44 @@
       </div>
 
       <p class="affiliation">
-        <em>Visiting Researcher</em> · The University of Osaka (2025)<br>
-        <em>MSc</em> · University of Strathclyde (2025)<br>
-        <span class="affiliation-sub"><em>BSc</em> · Inha University (2024)</span>
+        <span data-en="Visiting Researcher" data-jp="客員研究員">
+          <em>Visiting Researcher</em>
+        </span>
+        ·
+        <span data-en="The University of Osaka" data-jp="大阪大学">
+          The University of Osaka
+        </span>
+        (2025)<br>
+
+        <span data-en="MSc" data-jp="修士">
+          <em>MSc</em>
+        </span>
+        ·
+        <span data-en="University of Strathclyde" data-jp="ストラスクライド大学">
+          University of Strathclyde
+        </span>
+        (2025)<br>
+
+        <span class="affiliation-sub">
+          <span data-en="BSc" data-jp="学士">
+            <em>BSc</em>
+          </span>
+          ·
+          <span data-en="Inha University" data-jp="仁荷大学">
+            Inha University
+          </span>
+          (2024)
+        </span>
       </p>
 
-      <p class="keywords">
+      <p class="keywords" data-en="Turbulence · Roughness · Marine Flows" data-jp="乱流・表面粗さ・海洋流体">
         Turbulence · Roughness · Marine Flows
       </p>
 
       <p class="recent-work">
-        <span class="recent-label">✦ Recent </span>
+        <span class="recent-label" data-en="✦ Recent Work" data-jp="✦ 最新の論文">
+          ✦ Recent Work
+        </span>
         <a href="/publications/beyond-resistance/">
           <span class="recent-title">
             Beyond uniform roughness: Ship resistance <span class="fade-ellipsis">...</span>
@@ -508,33 +616,38 @@
 
     <nav class="nav">
       <a href="/profile/">
-        <span>01</span>
-        Profile
+        <span class="nav-index">01</span>
+        <span class="nav-label" data-en="Profile" data-jp="プロフィール">Profile</span>
       </a>
+
       <a href="/research/">
-        <span>02</span>
-        Research
+        <span class="nav-index">02</span>
+        <span class="nav-label" data-en="Research" data-jp="研究">Research</span>
       </a>
+
       <a href="/publications/">
-        <span>03</span>
-        Publications
+        <span class="nav-index">03</span>
+        <span class="nav-label" data-en="Publications" data-jp="論文">Publications</span>
       </a>
 
       <!-- 
       <a href="/works/">
-        <span>04</span>
-        Works
+        <span class="nav-index">04</span>
+        <span class="nav-label">Works</span>
       </a>
       -->
+
       <a href="/archive/">
-        <span>04</span>
-        Archive
+        <span class="nav-index">04</span>
+        <span class="nav-label" data-en="Archive" data-jp="アーカイブ">Archive</span>
       </a>
     </nav>
 
     <footer>
       <div class="footer-contact">
-        <span class="footer-label">Contact</span><br>
+        <span class="footer-label" data-en="Contact" data-jp="連絡先">
+          Contact
+        </span><br>
         <a href="mailto:erikhan.nor@gmail.com" class="email-link">
           erikhan.nor@gmail.com
         </a>
@@ -552,6 +665,50 @@
       document
         .querySelector('.page-content')
         ?.classList.add('loaded');
+    });
+
+  </script>
+
+  <script>
+    let currentLang = localStorage.getItem("lang") || "en";
+
+    function applyLang(lang) {
+      document.querySelectorAll(".lang-switch a").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const selected = btn.dataset.lang;
+
+          localStorage.setItem("lang", selected);
+
+          location.reload();
+        });
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const lang = localStorage.getItem("lang") || "en";
+
+      document.querySelectorAll("[data-en]").forEach(el => {
+        const value = el.getAttribute(`data-${lang}`);
+        if (value !== null) el.innerHTML = value;
+      });
+
+      document.querySelectorAll(".lang-switch a").forEach(a => {
+        a.classList.toggle("active", a.dataset.lang === lang);
+      });
+
+      document.querySelectorAll(".lang-switch a").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const selected = btn.dataset.lang;
+
+          localStorage.setItem("lang", selected);
+
+          location.reload();
+        });
+      });
     });
   </script>
 
