@@ -31,7 +31,7 @@
   <script>
     (function () {
       const savedLang = sessionStorage.getItem("lang");
-      const lang = (savedLang === "jp") ? "jp" : "en";
+      const lang = (savedLang === "ja") ? "ja" : "en";
       document.documentElement.setAttribute("lang", lang);
       document.documentElement.setAttribute("data-lang", lang);
     })();
@@ -620,20 +620,20 @@
       <div class="lang-switch">
         <a href="#" data-lang="en">EN</a>
         <span>·</span>
-        <a href="#" data-lang="jp">JP</a>
+        <a href="#" data-lang="ja">JP</a>
       </div>
     </div>
   </header>
 
   <div class="nav">
-    <a href="/" data-en="Home" data-jp="ホーム">Home</a>
-    <a href="/profile/" data-en="Profile" data-jp="プロフィール">Profile</a>
-    <a href="/research/" data-en="Research" data-jp="研究">Research</a>
-    <a href="/publications/" class="active" data-en="Publications" data-jp="論文">Publications</a>
+    <a href="/" data-en="Home" data-ja="ホーム">Home</a>
+    <a href="/profile/" data-en="Profile" data-ja="プロフィール">Profile</a>
+    <a href="/research/" data-en="Research" data-ja="研究">Research</a>
+    <a href="/publications/" class="active" data-en="Publications" data-ja="論文">Publications</a>
     <!--
     <a href="/works/">Works</a>
   -->
-    <a href="/archive/" data-en="Archive" data-jp="アーカイブ">Archive</a>
+    <a href="/archive/" data-en="Archive" data-ja="アーカイブ">Archive</a>
   </div>
 
   <div class="page-content">
@@ -649,18 +649,18 @@
     </div>
 
     <div class="pub-note">
-      * <em data-en="Corresponding author" data-jp="責任著者 (Corresponding author)">
+      * <em data-en="Corresponding author" data-ja="責任著者 (Corresponding author)">
         Corresponding author
       </em>
     </div>
 
     <div class="section">
-      <h2 data-en="Journal Articles" data-jp="学術論文">
+      <h2 data-en="Journal Articles" data-ja="学術論文">
         <strong>Journal Articles</strong>
       </h2>
 
       <div class="subsection">
-        <h3 data-en="Published" data-jp="掲載済み">Published</h3>
+        <h3 data-en="Published" data-ja="掲載済み">Published</h3>
 
         <div class="pub-item">
           <div class="pub-title">
@@ -771,7 +771,7 @@
       </div>
 -->
       <div class="subsection">
-        <h3 data-en="Under Review" data-jp="査読中">Under Review</h3>
+        <h3 data-en="Under Review" data-ja="査読中">Under Review</h3>
 
         <div class="pub-item">
           <div class="pub-title">
@@ -804,12 +804,12 @@
     <div class="divider"></div>
 
     <div class="section">
-      <h2 data-en="Conference Papers" data-jp="国際会議論文">
+      <h2 data-en="Conference Papers" data-ja="国際会議論文">
         <strong>Conference Papers</strong>
       </h2>
 
       <div class="subsection">
-        <h3 data-en="Accepted and Published" data-jp="採択・発表済み">
+        <h3 data-en="Accepted and Published" data-ja="採択・発表済み">
           Accepted and Published
         </h3>
 
@@ -842,7 +842,7 @@
       </div>
 
       <div class="subsection">
-        <h3 data-en="Invited Full Papers" data-jp="招待論文">
+        <h3 data-en="Invited Full Papers" data-ja="招待論文">
           Invited Full Papers
         </h3>
 
@@ -881,7 +881,7 @@
 
   <script>
     const DEFAULT_LANG = "en";
-    const SUPPORTED_LANGS = new Set(["en", "jp"]);
+    const SUPPORTED_LANGS = new Set(["en", "ja"]);
 
     function getSessionLang() {
       const saved = sessionStorage.getItem("lang");
