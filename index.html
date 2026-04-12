@@ -42,7 +42,7 @@
 </script>
   <script>
     (function () {
-      const savedLang = localStorage.getItem("lang");
+      const savedLang = sessionStorage.getItem("lang");
       const lang = (savedLang === "jp") ? "jp" : "en";
       document.documentElement.setAttribute("lang", lang);
       document.documentElement.setAttribute("data-lang", lang);
@@ -381,19 +381,19 @@
       padding: 22px 0;
       text-decoration: none;
       color: var(--ink);
-      border-top: 1px solid var(--line);
-      transition: color 0.2s ease, padding-left 0.2s ease, transform 0.15s ease;
+      border-top: 1px solid rgba(11, 31, 58, 0.18);
+      transition: color 0.2s ease, padding-left 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
       font-size: 1.15em;
-      opacity: 0.8;
+      opacity: 0.9;
     }
 
     .nav-index {
       display: block;
       font-size: 0.7em;
       letter-spacing: 0.32em;
-      color: #64748b;
+      color: #526274;
       margin-bottom: 6px;
-      opacity: 0.6;
+      opacity: 0.72;
     }
 
     .nav-label {
@@ -401,12 +401,13 @@
       font-size: 1.05em;
       letter-spacing: normal;
       color: var(--ink);
-      opacity: 0.85;
+      opacity: 0.92;
     }
 
     .nav a:hover {
       padding-left: 12px;
       transform: translateY(-2px);
+      border-top-color: rgba(11, 31, 58, 0.24);
     }
 
     .nav a:hover .nav-label {
@@ -415,16 +416,16 @@
     }
 
     .nav a:hover .nav-index {
-      opacity: 1;
+      opacity: 0.95;
     }
 
     .nav a.archive .nav-label {
-      opacity: 0.5;
+      opacity: 0.62;
       font-style: italic;
     }
 
     .nav a.archive:hover .nav-label {
-      opacity: 0.8;
+      opacity: 0.82;
     }
 
     .meta {
@@ -433,14 +434,15 @@
     }
 
     .recent-work {
-      margin-bottom: 10px;
-      font-size: 0.82em;
-      letter-spacing: 0.05em;
-      color: #445a73;
-      background: rgba(11, 31, 58, 0.015);
-      border-radius: 4px;
+      margin-bottom: 12px;
+      margin-top: -5px;
+      font-size: 0.88em;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      background: rgba(11, 31, 58, 0.03);
+      border-radius: 5px;
       border-left: 2px solid var(--accent);
-      padding-left: 10px;
+      padding: 4px 0 4px 12px;
       display: inline-block;
     }
 
@@ -451,6 +453,7 @@
       overflow: hidden;
       border-bottom: 1px solid transparent;
       transition: border-color 0.2s ease, opacity 0.2s ease;
+      opacity: 0.8;
     }
 
     .recent-work a:hover {
@@ -459,10 +462,10 @@
     }
 
     .recent-label {
-      opacity: 0.4;
+      opacity: 0.62;
       letter-spacing: 0.1em;
-      font-size: 0.75em;
-      margin-right: 4px;
+      font-size: 0.72em;
+      margin-right: 6px;
     }
 
     .fade-ellipsis {
@@ -477,9 +480,13 @@
       color: #64748b
     }
 
-    .recent-title,
+    .recent-title {
+      opacity: 0.95;
+    }
+
     .recent-meta {
-      display: inline;
+      opacity: 0.72;
+      color: #64748b
     }
 
     footer {
@@ -680,8 +687,8 @@
     const DEFAULT_LANG = "en";
     const SUPPORTED_LANGS = new Set(["en", "jp"]);
 
-    function getStoredLang() {
-      const saved = localStorage.getItem("lang");
+    function getSessionLang() {
+      const saved = sessionStorage.getItem("lang");
       return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
     }
 
@@ -704,7 +711,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      const lang = getStoredLang();
+      const lang = getSessionLang();
       applyLang(lang);
 
       document.querySelectorAll(".lang-switch a").forEach(a => {
@@ -715,7 +722,7 @@
             ? a.dataset.lang
             : DEFAULT_LANG;
 
-          localStorage.setItem("lang", selected);
+          sessionStorage.setItem("lang", selected);
           applyLang(selected);
         });
       });

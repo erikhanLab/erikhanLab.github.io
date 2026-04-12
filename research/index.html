@@ -31,8 +31,8 @@
 
   <script>
     (function () {
-      const saved = localStorage.getItem("lang");
-      const lang = (saved === "jp" || saved === "en") ? saved : "en";
+      const savedLang = sessionStorage.getItem("lang");
+      const lang = (savedLang === "jp") ? "jp" : "en";
       document.documentElement.setAttribute("lang", lang);
       document.documentElement.setAttribute("data-lang", lang);
     })();
@@ -366,7 +366,7 @@
       font-weight: 500;
       margin-bottom: 3px;
       color: #0B2545;
-      opacity: 085;
+      opacity: 0.85;
       letter-spacing: 0.01em;
     }
 
@@ -1211,59 +1211,51 @@
             <a href="mailto:erikhan.nor@gmail.com">erikhan.nor@gmail.com</a>
           </p>
         </div>
-
       </section>
+    </div>
 
-      <script>
-        window.addEventListener("load", () => {
-          document.querySelector(".page-content")?.classList.add("loaded");
+    <script>
+      const DEFAULT_LANG = "en";
+      const SUPPORTED_LANGS = new Set(["en", "jp"]);
+
+      function getSessionLang() {
+        const saved = sessionStorage.getItem("lang");
+        return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
+      }
+
+      function applyLang(lang) {
+        const safeLang = SUPPORTED_LANGS.has(lang) ? lang : DEFAULT_LANG;
+
+        document.documentElement.setAttribute("lang", safeLang);
+        document.documentElement.setAttribute("data-lang", safeLang);
+
+        document.querySelectorAll("[data-en]").forEach(el => {
+          const value = el.getAttribute(`data-${safeLang}`);
+          if (value !== null) el.innerHTML = value;
         });
 
-        const DEFAULT_LANG = "en";
-        const SUPPORTED_LANGS = new Set(["en", "jp"]);
+        document.querySelectorAll(".lang-switch a").forEach(a => {
+          a.classList.toggle("active", a.dataset.lang === safeLang);
+        });
+      }
 
-        function getStoredLang() {
-          const saved = localStorage.getItem("lang");
-          return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
-        }
+      document.addEventListener("DOMContentLoaded", () => {
+        applyLang(getSessionLang());
 
-        function applyLang(lang) {
-          const safeLang = SUPPORTED_LANGS.has(lang) ? lang : DEFAULT_LANG;
-
-          document.documentElement.setAttribute("lang", safeLang);
-          document.documentElement.setAttribute("data-lang", safeLang);
-
-          document.querySelectorAll("[data-en]").forEach(el => {
-            const value = el.getAttribute(`data-${safeLang}`);
-            if (value !== null) {
-              el.textContent = value;
-            }
-          });
-
-          document.querySelectorAll(".lang-switch a").forEach(a => {
-            a.classList.toggle("active", a.dataset.lang === safeLang);
-          });
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-          const lang = getStoredLang();
-          applyLang(lang);
-
-          document.querySelectorAll(".lang-switch a").forEach(a => {
-            a.addEventListener("click", (e) => {
-              e.preventDefault();
-
-              const selected = SUPPORTED_LANGS.has(a.dataset.lang)
-                ? a.dataset.lang
-                : DEFAULT_LANG;
-
-              localStorage.setItem("lang", selected);
-              applyLang(selected);
-            });
+        document.querySelectorAll(".lang-switch a").forEach(a => {
+          a.addEventListener("click", (e) => {
+            e.preventDefault();
+            const selected = SUPPORTED_LANGS.has(a.dataset.lang) ? a.dataset.lang : DEFAULT_LANG;
+            sessionStorage.setItem("lang", selected);
+            applyLang(selected);
           });
         });
-      </script>
+      });
 
+      window.addEventListener("load", () => {
+        document.querySelector(".page-content")?.classList.add("loaded");
+      });
+    </script>
 </body>
 
 </html>

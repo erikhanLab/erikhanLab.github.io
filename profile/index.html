@@ -31,8 +31,8 @@
 
   <script>
     (function () {
-      const saved = localStorage.getItem("lang");
-      const lang = (saved === "jp" || saved === "en") ? saved : "en";
+      const savedLang = sessionStorage.getItem("lang");
+      const lang = (savedLang === "jp") ? "jp" : "en";
       document.documentElement.setAttribute("lang", lang);
       document.documentElement.setAttribute("data-lang", lang);
     })();
@@ -1045,8 +1045,8 @@
     const DEFAULT_LANG = "en";
     const SUPPORTED_LANGS = new Set(["en", "jp"]);
 
-    function getStoredLang() {
-      const saved = localStorage.getItem("lang");
+    function getSessionLang() {
+      const saved = sessionStorage.getItem("lang");
       return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
     }
 
@@ -1082,7 +1082,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      const lang = getStoredLang();
+      const lang = getSessionLang();
       applyLang(lang);
 
       document.querySelectorAll(".lang-switch a").forEach(a => {
@@ -1093,7 +1093,7 @@
             ? a.dataset.lang
             : DEFAULT_LANG;
 
-          localStorage.setItem("lang", selected);
+          sessionStorage.setItem("lang", selected);
           applyLang(selected);
         });
       });
