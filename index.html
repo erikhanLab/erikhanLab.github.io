@@ -415,6 +415,15 @@
     }
 
     .nav a:hover .nav-index {
+      opacity: 1;
+    }
+
+    .nav a.archive .nav-label {
+      opacity: 0.5;
+      font-style: italic;
+    }
+
+    .nav a.archive:hover .nav-label {
       opacity: 0.8;
     }
 
@@ -637,7 +646,7 @@
       </a>
       -->
 
-      <a href="/archive/">
+      <a href="/archive/" class="archive">
         <span class="nav-index">04</span>
         <span class="nav-label" data-en="Archive" data-jp="アーカイブ">Archive</span>
       </a>
