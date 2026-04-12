@@ -42,10 +42,10 @@
 </script>
   <script>
     (function () {
-      const lang = localStorage.getItem("lang");
-      if (lang) {
-        document.documentElement.setAttribute("data-lang", lang);
-      }
+      const savedLang = localStorage.getItem("lang");
+      const lang = (savedLang === "jp") ? "jp" : "en";
+      document.documentElement.setAttribute("lang", lang);
+      document.documentElement.setAttribute("data-lang", lang);
     })();
   </script>
 
@@ -677,43 +677,46 @@
   </script>
 
   <script>
-    let currentLang = localStorage.getItem("lang") || "en";
+    const DEFAULT_LANG = "en";
+    const SUPPORTED_LANGS = new Set(["en", "jp"]);
+
+    function getStoredLang() {
+      const saved = localStorage.getItem("lang");
+      return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
+    }
 
     function applyLang(lang) {
-      document.querySelectorAll(".lang-switch a").forEach(btn => {
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
+      const safeLang = SUPPORTED_LANGS.has(lang) ? lang : DEFAULT_LANG;
 
-          const selected = btn.dataset.lang;
+      document.documentElement.setAttribute("lang", safeLang);
+      document.documentElement.setAttribute("data-lang", safeLang);
 
-          localStorage.setItem("lang", selected);
+      document.querySelectorAll("[data-en]").forEach(el => {
+        const value = el.getAttribute(`data-${safeLang}`);
+        if (value !== null) {
+          el.innerHTML = value;
+        }
+      });
 
-          location.reload();
-        });
+      document.querySelectorAll(".lang-switch a").forEach(a => {
+        a.classList.toggle("active", a.dataset.lang === safeLang);
       });
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      const lang = localStorage.getItem("lang") || "en";
-
-      document.querySelectorAll("[data-en]").forEach(el => {
-        const value = el.getAttribute(`data-${lang}`);
-        if (value !== null) el.innerHTML = value;
-      });
+      const lang = getStoredLang();
+      applyLang(lang);
 
       document.querySelectorAll(".lang-switch a").forEach(a => {
-        a.classList.toggle("active", a.dataset.lang === lang);
-      });
-
-      document.querySelectorAll(".lang-switch a").forEach(btn => {
-        btn.addEventListener("click", (e) => {
+        a.addEventListener("click", (e) => {
           e.preventDefault();
 
-          const selected = btn.dataset.lang;
+          const selected = SUPPORTED_LANGS.has(a.dataset.lang)
+            ? a.dataset.lang
+            : DEFAULT_LANG;
 
           localStorage.setItem("lang", selected);
-
-          location.reload();
+          applyLang(selected);
         });
       });
     });

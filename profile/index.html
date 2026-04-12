@@ -29,6 +29,15 @@
     })(window, document, 'script', 'dataLayer', 'GTM-5MMRV373');</script>
   <!-- End Google Tag Manager -->
 
+  <script>
+    (function () {
+      const saved = localStorage.getItem("lang");
+      const lang = (saved === "jp" || saved === "en") ? saved : "en";
+      document.documentElement.setAttribute("lang", lang);
+      document.documentElement.setAttribute("data-lang", lang);
+    })();
+  </script>
+
   <style>
     html {
       overflow-y: scroll;
@@ -415,7 +424,7 @@
       display: none;
     }
 
-     .nav a[href="/archive/"] {
+    .nav a[href="/archive/"] {
       opacity: 0.4;
       font-style: italic;
     }
@@ -1033,56 +1042,71 @@
   </div>
 
   <script>
-    window.addEventListener('scroll', () => {
-      const rail = document.querySelector('.side-nav .rail');
-      const thumb = document.querySelector('.side-nav .thumb');
-      if (!rail || !thumb) return;
+    const DEFAULT_LANG = "en";
+    const SUPPORTED_LANGS = new Set(["en", "jp"]);
 
-      const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
+    function getStoredLang() {
+      const saved = localStorage.getItem("lang");
+      return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
+    }
 
-      const progress = Math.min(Math.max(scrollTop / docHeight, 0), 1);
+    function applyLang(lang) {
+      const safeLang = SUPPORTED_LANGS.has(lang) ? lang : DEFAULT_LANG;
 
-      const railHeight = rail.clientHeight - thumb.clientHeight;
-      thumb.style.top = `${progress * railHeight}px`;
-    });
+      document.documentElement.setAttribute("lang", safeLang);
+      document.documentElement.setAttribute("data-lang", safeLang);
 
-    const lang = localStorage.getItem("lang") || "en";
-
-    document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll("[data-en]").forEach(el => {
-        el.textContent = el.getAttribute(`data-${lang}`);
+        const value = el.getAttribute(`data-${safeLang}`);
+        if (value !== null) {
+          el.textContent = value;
+        }
       });
 
       document.querySelectorAll(".lang-switch a").forEach(a => {
-        if (a.dataset.lang === lang) {
-          a.classList.add("active");
-        } else {
-          a.classList.remove("active");
-        }
+        a.classList.toggle("active", a.dataset.lang === safeLang);
       });
-    });
+    }
 
-    document.querySelectorAll(".lang-switch a").forEach(btn => {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
+    function updateScrollThumb() {
+      const rail = document.querySelector(".side-nav .rail");
+      const thumb = document.querySelector(".side-nav .thumb");
+      if (!rail || !thumb) return;
 
-        const selected = btn.dataset.lang;
-        localStorage.setItem("lang", selected);
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? Math.min(Math.max(scrollTop / docHeight, 0), 1) : 0;
 
-        location.reload();
+      const railHeight = rail.clientHeight - thumb.clientHeight;
+      thumb.style.top = `${progress * railHeight}px`;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const lang = getStoredLang();
+      applyLang(lang);
+
+      document.querySelectorAll(".lang-switch a").forEach(a => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const selected = SUPPORTED_LANGS.has(a.dataset.lang)
+            ? a.dataset.lang
+            : DEFAULT_LANG;
+
+          localStorage.setItem("lang", selected);
+          applyLang(selected);
+        });
       });
+
+      updateScrollThumb();
     });
 
-    const currentLang = localStorage.getItem("lang") || "en";
+    window.addEventListener("scroll", updateScrollThumb);
 
-    const homeLink = document.querySelector('.nav a[href="/"]');
-
-    window.addEventListener('load', () => {
-      document.querySelector('.page-content')?.classList.add('loaded');
+    window.addEventListener("load", () => {
+      document.querySelector(".page-content")?.classList.add("loaded");
+      updateScrollThumb();
     });
-
   </script>
 
 </body>

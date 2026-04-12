@@ -29,6 +29,15 @@
     })(window, document, 'script', 'dataLayer', 'GTM-5MMRV373');</script>
   <!-- End Google Tag Manager -->
 
+  <script>
+    (function () {
+      const saved = localStorage.getItem("lang");
+      const lang = (saved === "jp" || saved === "en") ? saved : "en";
+      document.documentElement.setAttribute("lang", lang);
+      document.documentElement.setAttribute("data-lang", lang);
+    })();
+  </script>
+
   <style>
     html {
       overflow-y: scroll;
@@ -1206,43 +1215,53 @@
       </section>
 
       <script>
-        window.addEventListener('load', () => {
-          document
-            .querySelector('.page-content')
-            ?.classList.add('loaded');
+        window.addEventListener("load", () => {
+          document.querySelector(".page-content")?.classList.add("loaded");
         });
 
-        const lang = localStorage.getItem("lang") || "en";
+        const DEFAULT_LANG = "en";
+        const SUPPORTED_LANGS = new Set(["en", "jp"]);
 
-        document.addEventListener("DOMContentLoaded", () => {
+        function getStoredLang() {
+          const saved = localStorage.getItem("lang");
+          return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
+        }
+
+        function applyLang(lang) {
+          const safeLang = SUPPORTED_LANGS.has(lang) ? lang : DEFAULT_LANG;
+
+          document.documentElement.setAttribute("lang", safeLang);
+          document.documentElement.setAttribute("data-lang", safeLang);
+
           document.querySelectorAll("[data-en]").forEach(el => {
-            el.textContent = el.getAttribute(`data-${lang}`);
+            const value = el.getAttribute(`data-${safeLang}`);
+            if (value !== null) {
+              el.textContent = value;
+            }
           });
 
           document.querySelectorAll(".lang-switch a").forEach(a => {
-            if (a.dataset.lang === lang) {
-              a.classList.add("active");
-            } else {
-              a.classList.remove("active");
-            }
+            a.classList.toggle("active", a.dataset.lang === safeLang);
+          });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+          const lang = getStoredLang();
+          applyLang(lang);
+
+          document.querySelectorAll(".lang-switch a").forEach(a => {
+            a.addEventListener("click", (e) => {
+              e.preventDefault();
+
+              const selected = SUPPORTED_LANGS.has(a.dataset.lang)
+                ? a.dataset.lang
+                : DEFAULT_LANG;
+
+              localStorage.setItem("lang", selected);
+              applyLang(selected);
+            });
           });
         });
-
-        document.querySelectorAll(".lang-switch a").forEach(btn => {
-          btn.addEventListener("click", (e) => {
-            e.preventDefault();
-
-            const selected = btn.dataset.lang;
-            localStorage.setItem("lang", selected);
-
-            location.reload();
-          });
-        });
-
-        const currentLang = localStorage.getItem("lang") || "en";
-
-        const homeLink = document.querySelector('.nav a[href="/"]');
-
       </script>
 
 </body>
