@@ -17,10 +17,21 @@
   </url>
 
   <url>
+    <loc>https://sangseokhan.com/research/log/</loc>
+    <lastmod>2026-04-12</lastmod>
+  </url>
+
+  <url>
     <loc>https://sangseokhan.com/publications/</loc>
     <lastmod>2026-04-12</lastmod>
   </url>
 
+  <url>
+    <loc>https://sangseokhan.com/archive/</loc>
+    <lastmod>2026-04-12</lastmod>
+  </url>
+
+  <!-- 논문 -->
   <url>
     <loc>https://sangseokhan.com/publications/beyond-resistance/</loc>
     <lastmod>2026-04-12</lastmod>
