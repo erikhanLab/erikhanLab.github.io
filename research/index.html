@@ -633,6 +633,10 @@
         opacity: 0.6;
       }
 
+      .rt-inst-divider {
+        margin: -5px 0 10px;
+      }
+
       .research-keywords {
         font-size: 0.5em;
         margin-top: -5px;
@@ -683,6 +687,7 @@
       }
 
       .rt-item::before,
+      .rt-loc-dot,
       .rt-location-inline,
       .rt-stage {
         display: none;
@@ -913,13 +918,15 @@
 
           <div class="rt-inst-divider"></div>
 
-          <span data-en="Independent Research" data-ja="個人研究">
+          <div class="rt-title">
+            <span data-en="Independent Research" data-ja="個人研究">
               Independent Research
             </span>
             <span class="rt-loc-dot">·</span>
             <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
               South Korea
             </span>
+          </div>
           <div class="rt-block-group">
 
             <div class="rt-block">

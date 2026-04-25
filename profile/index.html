@@ -408,6 +408,13 @@
       opacity: 0.75;
     }
 
+    .publisher {
+      font-size: 0.72em;
+      color: #777;
+      opacity: 0.8;
+      margin-left: 3px;
+    }
+
     .divider {
       height: 0.5px;
       background: #dcdcdc;
@@ -699,6 +706,11 @@
         gap: 16px;
       }
 
+      .publisher {
+        font-size: 0.62em;
+        opacity: 0.72;
+      }
+
       .pub-link {
         font-size: 0.72em;
       }
@@ -825,13 +837,15 @@
     </div>
 
     <p class="pub-link">
-      <span data-en="Selected publications are listed in the " data-ja="論文は ">
+      <span data-en="Selected publications are listed in the " data-ja="主な業績は ">
         Selected publications are listed in the
       </span>
 
-      <a href="/publications/">Publications</a>
+      <a href="/publications/" data-en="Publications" data-ja="論文">
+        Publications
+      </a>
 
-      <span data-en=" section." data-ja=" ページに掲載しています。">
+      <span data-en=" section." data-ja="ページに掲載しています。">
         section.
       </span>
     </p>
@@ -882,10 +896,9 @@
               CFD-based analysis of roughness effects on flow development, resistance, and hydrodynamic response.
             </em>
 
-            <em class="mobile-only"
-              data-en="CFD-based analysis of roughness effects on flow development and resistance."
-              data-ja="粗さが流れの発達および抵抗に与える影響をCFDにより解析する。">
-              CFD-based analysis of roughness effects on flow development and resistance.
+            <em class="mobile-only" data-en="CFD analysis of roughness effects on flow and resistance."
+              data-ja="粗さが流れと抵抗に与える影響をCFDで解析。">
+              CFD analysis of roughness effects on flow and resistance.
             </em>
           </div>
         </div>
@@ -901,9 +914,9 @@
               Investigation of boundary-layer behaviour and near-wall turbulence modelling.
             </em>
 
-            <em class="mobile-only" data-en="Boundary-layer behaviour and near-wall turbulence modelling."
-              data-ja="境界層挙動および壁面近傍乱流モデリング。">
-              Boundary-layer behaviour and near-wall turbulence modelling.
+            <em class="mobile-only" data-en="Boundary layers and near-wall turbulence modelling."
+              data-ja="境界層と壁面近傍乱流モデリング。">
+              Boundary layers and near-wall turbulence modelling.
             </em>
           </div>
         </div>
@@ -919,9 +932,9 @@
               Coupled analysis of fluid–structure interaction and nonlinear responses in marine and offshore systems.
             </em>
 
-            <em class="mobile-only" data-en="Fluid–structure interaction and nonlinear responses in marine systems."
-              data-ja="海洋システムにおける流体構造連成および非線形応答。">
-              Fluid–structure interaction and nonlinear responses in marine systems.
+            <em class="mobile-only" data-en="Fluid–structure interaction in marine systems."
+              data-ja="海洋システムにおける流体構造連成。">
+              Fluid–structure interaction in marine systems.
             </em>
           </div>
         </div>
@@ -1011,8 +1024,8 @@
       </h2>
 
       <div class="affiliation-item">
-        <span data-en="Peer reviewer for international journals" data-ja="国際学術誌 査読者">
-          Peer reviewer for international journals
+        <span data-en="Peer reviewer" data-ja="査読者">
+          Peer reviewer
         </span>
         <span class="affiliation-year">(2025–)</span>
 
@@ -1021,13 +1034,13 @@
           <li style="margin-bottom:6px; font-size:0.8em; color:#222;">
             <span style="margin-right:6px;">·</span>
             <em>Ocean Engineering</em>
-            <span style="font-size:0.8em; color:#777;">(Elsevier)</span>
+            <span class="publisher">(Elsevier)</span>
           </li>
 
           <li style="margin-bottom:6px; font-size:0.8em; color:#222;">
             <span style="margin-right:6px;">·</span>
             <em>Physics of Fluids</em>
-            <span style="font-size:0.8em; color:#777;">(AIP Publishing)</span>
+            <span class="publisher">(AIP Publishing)</span>
           </li>
 
           <li style="margin-top:8px; font-size:0.65em; color:#777;">
