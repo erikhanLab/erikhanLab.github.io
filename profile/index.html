@@ -503,6 +503,109 @@
       transform: translateY(0);
     }
 
+    .review-note {
+      position: relative;
+      display: inline-block;
+      cursor: default;
+      padding-bottom: 1px;
+    }
+
+    .review-journal {
+      border-bottom: 1px solid rgba(11, 31, 58, 0.11);
+      padding-bottom: 1px;
+    }
+
+    .review-tooltip {
+      position: absolute;
+      left: 35%;
+      bottom: calc(100% + 9px);
+      transform: translateX(-50%) translateY(4px);
+      z-index: 20;
+      width: max-content;
+      max-width: 260px;
+      padding: 9px 12px;
+      font-family: Georgia, serif;
+      font-size: 0.9em;
+      line-height: 1.45;
+      letter-spacing: 0.03em;
+      color: rgba(17, 17, 17, 0.78);
+      background: rgba(245, 247, 250, 0.96);
+      border: 1px solid rgba(11, 31, 58, 0.12);
+      box-shadow: 0 8px 22px rgba(11, 31, 58, 0.08);
+      opacity: 0;
+      pointer-events: none;
+      transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
+    }
+
+    .review-tooltip>span {
+      display: block;
+    }
+
+    .review-tooltip>span span {
+      display: inline;
+    }
+
+    .review-tooltip strong {
+      font-weight: 600;
+      color: rgba(11, 31, 58, 0.86);
+    }
+
+    .tooltip-gap {
+      height: 8px;
+    }
+
+    .review-tooltip::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -4px;
+      transform: translateX(-50%) rotate(45deg);
+
+      width: 7px;
+      height: 7px;
+      background: rgba(245, 247, 250, 0.96);
+      border-right: 1px solid rgba(11, 31, 58, 0.12);
+      border-bottom: 1px solid rgba(11, 31, 58, 0.12);
+    }
+
+    .review-note:hover .review-tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .note-mark {
+      position: relative;
+      top: -0.28em;
+      margin-left: 3px;
+      font-size: 0.82em;
+      color: rgba(11, 31, 58, 0.45);
+      transition: color 0.18s ease, opacity 0.18s ease;
+    }
+
+    .review-note:hover .note-mark {
+      color: rgba(11, 31, 58, 0.85);
+    }
+
+    .note-mark {
+      position: relative;
+      top: -0.28em;
+      margin-left: 3px;
+      font-size: 0.82em;
+      color: rgba(11, 31, 58, 0.45);
+      transition: color 0.18s ease, opacity 0.18s ease;
+    }
+
+    .review-record {
+      margin-top: 9px;
+      font-size: 0.64em;
+      color: #777;
+      opacity: 0.72;
+      letter-spacing: 0.04em;
+    }
+
+
     @media (max-width: 640px) {
       .site-name {
         font-size: 1.9em;
@@ -713,6 +816,23 @@
 
       .pub-link {
         font-size: 0.72em;
+      }
+
+      .review-note {
+        cursor: default;
+      }
+
+      .review-tooltip {
+        display: none;
+        content: none;
+      }
+
+      .review-record {
+        display: none;
+      }
+
+      .review-journal {
+        border-bottom: none;
       }
     }
 
@@ -1024,8 +1144,8 @@
       </h2>
 
       <div class="affiliation-item">
-        <span data-en="Peer reviewer" data-ja="査読者">
-          Peer reviewer
+        <span data-en="Active peer reviewer" data-ja="査読者">
+          Active peer reviewer
         </span>
         <span class="affiliation-year">(2025–)</span>
 
@@ -1033,17 +1153,61 @@
 
           <li style="margin-bottom:6px; font-size:0.8em; color:#222;">
             <span style="margin-right:6px;">·</span>
-            <em>Ocean Engineering</em>
+
+            <span class="review-note">
+              <em class="review-journal">Ocean Engineering</em><span class="note-mark">⁺</span>
+
+              <span class="review-tooltip">
+                <span>
+                  <strong>2025</strong>
+                  <span data-en=" · 1 completed review" data-ja=" · 査読 1件完了">
+                    · 1 completed review
+                  </span>
+                </span>
+                <span data-en="Area: ship resistance · CFD" data-ja="Area: 船体抵抗 · CFD">
+                  Area: ship resistance · CFD
+                </span>
+              </span>
+            </span>
+
             <span class="publisher">(Elsevier)</span>
           </li>
 
           <li style="margin-bottom:6px; font-size:0.8em; color:#222;">
             <span style="margin-right:6px;">·</span>
-            <em>Physics of Fluids</em>
+
+            <span class="review-note">
+              <em class="review-journal">Physics of Fluids</em><span class="note-mark">⁺</span>
+
+              <span class="review-tooltip">
+                <span>
+                  <strong>2025</strong>
+                  <span data-en=" · 1 completed review" data-ja=" · 査読 1件完了">
+                    · 1 completed review
+                  </span>
+                </span>
+                <span data-en="Area: vortex flows · CFD" data-ja="Area: 渦流れ · CFD">
+                  Area: vortex flows · CFD
+                </span>
+
+                <span class="tooltip-gap"></span>
+
+                <span>
+                  <strong>2026</strong>
+                  <span data-en=" · 2 completed reviews" data-ja=" · 査読 2件完了">
+                    · 2 completed reviews
+                  </span>
+                </span>
+                <span data-en="Area: turbulence modelling · CFD" data-ja="Area: 乱流モデル · CFD">
+                  Area: turbulence modelling · CFD
+                </span>
+              </span>
+            </span>
+
             <span class="publisher">(AIP Publishing)</span>
           </li>
 
-          <li style="margin-top:8px; font-size:0.65em; color:#777;">
+          <li style="margin-top:8px; font-size:0.7em; color:#666;">
             <span data-en="Certificate of Excellence in Reviewing" data-ja="優秀査読者表彰">
               Certificate of Excellence in Reviewing
             </span>
@@ -1105,6 +1269,13 @@
         const value = el.getAttribute(`data-${safeLang}`);
         if (value !== null) {
           el.textContent = value;
+        }
+      });
+
+      document.querySelectorAll("[data-note-en]").forEach(el => {
+        const value = el.getAttribute(`data-note-${safeLang}`);
+        if (value !== null) {
+          el.setAttribute("data-note", value);
         }
       });
 
