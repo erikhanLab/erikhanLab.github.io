@@ -75,6 +75,29 @@
       background: var(--bg-light);
     }
 
+    .lang-switch {
+      font-size: 0.65em;
+      letter-spacing: 0.22em;
+      color: #64748b;
+      opacity: 0.7;
+    }
+
+    .lang-switch a {
+      text-decoration: none;
+      color: inherit;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    .lang-switch a.active {
+      opacity: 1;
+      color: #111;
+    }
+
+    .lang-switch a:hover {
+      opacity: 0.8;
+    }
+
     .nav {
       position: sticky;
       top: env(safe-area-inset-top);
@@ -551,18 +574,28 @@
 <body>
 
   <header class="site-header">
-    <a href="/" class="site-name">Sangseok Han</a>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+
+      <a href="/" class="site-name">Sangseok Han</a>
+
+      <div class="lang-switch">
+        <a href="#" data-lang="en">EN</a>
+        <span>·</span>
+        <a href="#" data-lang="ja">JP</a>
+      </div>
+
+    </div>
   </header>
 
   <div class="nav">
-    <a href="/">Home</a>
-    <a href="/profile/">Profile</a>
-    <a href="/research/" class="active">Research</a>
-    <a href="/publications/">Publications</a>
+    <a href="/" data-en="Home" data-ja="ホーム">Home</a>
+    <a href="/profile/" data-en="Profile" data-ja="プロフィール">Profile</a>
+    <a href="/research/" class="active" data-en="Research" data-ja="研究">Research</a>
+    <a href="/publications/" data-en="Publications" data-ja="論文">Publications</a>
     <!--
     <a href="/works/">Works</a>
-    -->
-    <a href="/archive/">Archive</a>
+  -->
+    <a href="/archive/" data-en="Archive" data-ja="アーカイブ">Archive</a>
   </div>
 
   <div class="page-content">
@@ -939,6 +972,46 @@
       el.classList.add('active');
     }
 
+    const DEFAULT_LANG = "en";
+    const SUPPORTED_LANGS = new Set(["en", "ja"]);
+
+    function getSessionLang() {
+      const saved = sessionStorage.getItem("lang");
+      return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
+    }
+
+    function applyLang(lang) {
+      const safeLang = SUPPORTED_LANGS.has(lang) ? lang : DEFAULT_LANG;
+
+      document.documentElement.setAttribute("lang", safeLang);
+      document.documentElement.setAttribute("data-lang", safeLang);
+
+      document.querySelectorAll("[data-en]").forEach(el => {
+        const value = el.getAttribute(`data-${safeLang}`);
+        if (value !== null) el.innerHTML = value;
+      });
+
+      document.querySelectorAll(".lang-switch a").forEach(a => {
+        a.classList.toggle("active", a.dataset.lang === safeLang);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      applyLang(getSessionLang());
+
+      document.querySelectorAll(".lang-switch a").forEach(a => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          const selected = SUPPORTED_LANGS.has(a.dataset.lang) ? a.dataset.lang : DEFAULT_LANG;
+          sessionStorage.setItem("lang", selected);
+          applyLang(selected);
+        });
+      });
+    });
+
+    window.addEventListener("load", () => {
+      document.querySelector(".page-content")?.classList.add("loaded");
+    });
 
   </script>
 
