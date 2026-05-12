@@ -59,7 +59,6 @@
     .page-content {
       transform: translateY(6px);
       transition: transform 0.12s ease-out;
-      position: relative;
     }
 
     .page-content.loaded {
@@ -132,7 +131,12 @@
     }
 
     .nav a[href="/archive/"] {
+      opacity: 0.4;
       font-style: italic;
+    }
+
+    .nav a[href="/archive/"]:hover {
+      opacity: 0.7;
     }
 
     .log-entry {
@@ -378,7 +382,7 @@
         z-index: 1000;
         display: flex;
         justify-content: center;
-        gap: 18px;
+        gap: clamp(12px, 4vw, 20px);
         padding: 6px 0;
         margin-bottom: 28px;
         background: rgba(225, 230, 238, 0.7);
