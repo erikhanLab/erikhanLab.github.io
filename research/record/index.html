@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Academic Record | Sangseok Han</title>
+
+  <meta name="description"
+    content="A monthly academic record of research development, academic decisions, and milestones by Sangseok Han.">
+
+  <link rel="canonical" href="https://sangseokhan.com/research/trace/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
+
+  <meta property="og:title" content="Academic Record | Sangseok Han">
+  <meta property="og:description"
+    content="A monthly academic record of research development, academic decisions, and milestones from 2021 to the present.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sangseokhan.com/research/trace/">
+  <meta property="og:site_name" content="Sangseok Han — Research">
+  <meta property="og:image" content="https://sangseokhan.com/assets/thumbnail.png">
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5MMRV373');</script>
+  <!-- End Google Tag Manager -->
+
+  <script>
+    (function () {
+      const savedLang = sessionStorage.getItem("lang");
+      const lang = (savedLang === "ja") ? "ja" : "en";
+      document.documentElement.setAttribute("lang", lang);
+      document.documentElement.setAttribute("data-lang", lang);
+    })();
+  </script>
+
+  <style>
+    html {
+      overflow-y: scroll;
+    }
+
+    :root {
+      --research-blue: #0B1F3A;
+      --bg-light: #EDEFF3;
+    }
+
+    .site-header {
+      margin: 60px 0 20px;
+    }
+
+    .site-name {
+      font-family: Georgia, serif;
+      font-size: 2.5em;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: #111;
+      text-decoration: none;
+    }
+
+    .site-name:hover {
+      opacity: 0.85;
+    }
+
+    .page-content {
+      transform: translateY(6px);
+      transition: transform 0.12s ease-out;
+    }
+
+    .page-content.loaded {
+      transform: translateY(0);
+    }
+
+    body {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-family: Georgia, serif;
+      color: #111;
+      line-height: 1.75;
+      background: var(--bg-light);
+    }
+
+    .lang-switch {
+      font-size: 0.65em;
+      letter-spacing: 0.22em;
+      color: #64748b;
+      opacity: 0.7;
+    }
+
+    .lang-switch a {
+      text-decoration: none;
+      color: inherit;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    .lang-switch a.active {
+      opacity: 1;
+      color: #111;
+    }
+
+    .lang-switch a:hover {
+      opacity: 0.8;
+    }
+
+    .nav {
+      position: sticky;
+      top: env(safe-area-inset-top);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: clamp(20px, 6vw, 90px);
+      padding: 14px 0;
+      margin-bottom: 36px;
+      background: rgba(245, 247, 250, 0.85);
+      backdrop-filter: blur(4px);
+      border-bottom: 1px solid rgba(11, 31, 58, 0.06);
+      border-top: 1px solid rgba(11, 31, 58, 0.06);
+    }
+
+    .nav a {
+      position: relative;
+      margin: 0;
+      padding: 6px 0;
+      text-align: center;
+      text-decoration: none;
+      font-size: 1em;
+      letter-spacing: 0.12em;
+      font-weight: 400;
+      color: #444;
+      opacity: 0.65;
+      transition:
+        opacity 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 1;
+      color: #111;
+    }
+
+    .nav a.active {
+      opacity: 1;
+      color: #111;
+      font-weight: 500;
+    }
+
+    .nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      width: 22px;
+      height: 1px;
+      background: #111;
+      opacity: 0.85;
+    }
+
+    .nav a[href="/archive/"] {
+      opacity: 0.4;
+      font-style: italic;
+    }
+
+    .nav a[href="/archive/"]:hover {
+      opacity: 0.7;
+    }
+
+    .log-header-block {
+      margin-bottom: 42px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .log-header {
+      font-size: 1.25em;
+      letter-spacing: 0.08em;
+      color: var(--research-blue);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .log-sub {
+      font-size: 0.75em;
+      opacity: 0.5;
+      letter-spacing: 0.05em;
+    }
+
+    .log-back {
+      margin-bottom: 12px;
+    }
+
+    .log-back a {
+      font-size: 0.72em;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      color: var(--research-blue);
+      opacity: 0.55;
+      transition: opacity 0.2s ease;
+    }
+
+    .log-back a:hover {
+      opacity: 0.85;
+    }
+
+    .year-tabs {
+      margin-bottom: 34px;
+      font-size: 0.9em;
+      letter-spacing: 0.08em;
+    }
+
+    .year-tabs span {
+      cursor: pointer;
+      opacity: 0.45;
+      margin-right: 14px;
+      transition: opacity 0.2s ease;
+    }
+
+    .year-tabs span.active {
+      opacity: 0.9;
+      color: var(--research-blue);
+    }
+
+    .year-tabs span:hover {
+      opacity: 0.75;
+    }
+
+    .year-section {
+      display: none;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .year-section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .trace-entry {
+      display: grid;
+      grid-template-columns: 155px 1fr;
+      column-gap: 28px;
+      max-width: 720px;
+      margin: 18px 0 24px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.055);
+    }
+
+    .trace-affiliation {
+      margin-top: 3px;
+      font-size: 0.58em;
+      letter-spacing: 0.06em;
+      color: #777;
+      opacity: 0.42;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
+    .trace-entry:last-child {
+      border-bottom: none;
+    }
+
+    .trace-month-block {
+      padding-top: 2px;
+    }
+
+    .trace-month {
+      font-size: 0.68em;
+      letter-spacing: 0.16em;
+      color: var(--research-blue);
+      opacity: 0.66;
+      white-space: nowrap;
+    }
+
+
+    .trace-lines {
+      min-width: 0;
+    }
+
+    .trace-line {
+      font-size: 0.84em;
+      line-height: 1.55;
+      margin-bottom: 5px;
+      color: #333;
+      opacity: 0.78;
+    }
+
+    .trace-line:last-child {
+      margin-bottom: 0;
+    }
+
+    .trace-event {
+      opacity: 0.84;
+    }
+
+    .trace-dot {
+      margin: 0 6px;
+      opacity: 0.3;
+    }
+
+    .trace-tag {
+      font-size: 0.88em;
+      color: var(--research-blue);
+      opacity: 0.55;
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      .site-name {
+        font-size: 2.1em;
+        margin-left: 10px;
+      }
+
+      body {
+        margin: 24px auto;
+        padding: 0 16px;
+        line-height: 1.6;
+      }
+
+      .nav {
+        position: sticky;
+        top: env(safe-area-inset-top);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        gap: clamp(12px, 4vw, 20px);
+        padding: 6px 0;
+        margin-bottom: 28px;
+        background: rgba(225, 230, 238, 0.7);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid rgba(11, 31, 58, 0.06);
+      }
+
+      .nav a {
+        position: relative;
+        padding: 4px 2px;
+        font-size: clamp(0.62em, 2.6vw, 0.7em);
+        letter-spacing: 0.14em;
+        font-weight: 400;
+        color: #444;
+        opacity: 0.55;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+      }
+
+      .nav a:hover {
+        opacity: 0.9;
+      }
+
+      .nav a.active {
+        opacity: 1;
+        color: #111;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+      }
+
+      .nav a.active::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -6px;
+        transform: translateX(-50%);
+        width: 10px;
+        height: 1px;
+        background: #111;
+        opacity: 0.6;
+      }
+
+      .log-header-block {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .log-header {
+        font-size: 1.1em;
+        text-transform: uppercase;
+        opacity: 0.6;
+      }
+
+      .log-back {
+        margin-bottom: 12px;
+        margin-top: -30px;
+        opacity: 0.7;
+      }
+
+      .log-sub {
+        display: none;
+      }
+
+      .year-tabs {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: -28px;
+        margin-bottom: 10px;
+        font-size: 0.78em;
+      }
+
+      .year-tabs span {
+        padding: 6px 4px;
+        margin-right: 0;
+      }
+
+      .trace-entry {
+        display: block;
+        margin: 16px 0 22px;
+        padding-bottom: 16px;
+      }
+
+      .trace-month {
+        font-size: 0.62em;
+        opacity: 0.58;
+      }
+
+      .trace-affiliation {
+        font-size: 0.54em;
+        margin-bottom: 7px;
+      }
+
+      .trace-line {
+        font-size: 0.74em;
+        line-height: 1.45;
+        margin-bottom: 4px;
+      }
+
+      .trace-tag {
+        font-size: 0.86em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+
+      <a href="/" class="site-name">Sangseok Han</a>
+
+      <div class="lang-switch">
+        <a href="#" data-lang="en">EN</a>
+        <span>·</span>
+        <a href="#" data-lang="ja">JP</a>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="nav">
+    <a href="/" data-en="Home" data-ja="ホーム">Home</a>
+    <a href="/profile/" data-en="Profile" data-ja="プロフィール">Profile</a>
+    <a href="/research/" class="active" data-en="Research" data-ja="研究">Research</a>
+    <a href="/publications/" data-en="Publications" data-ja="論文">Publications</a>
+    <a href="/archive/" data-en="Archive" data-ja="アーカイブ">Archive</a>
+  </div>
+
+  <div class="page-content">
+
+    <div class="log-header-block">
+
+      <div class="log-back">
+        <a href="/research/">← Research</a>
+      </div>
+
+      <h1 class="log-header">Academic Record</h1>
+      <div class="log-sub"><em>Academic development and research milestones since 2021</em></div>
+    </div>
+
+    <div class="year-tabs">
+      <span class="active" onclick="showYear('y2026', this)">2026</span>
+      <span onclick="showYear('y2025', this)">2025</span>
+      <span onclick="showYear('y2024', this)">2024</span>
+      <span onclick="showYear('y2023', this)">2023</span>
+      <span onclick="showYear('y2022', this)">2022</span>
+      <span onclick="showYear('y2021', this)">2021</span>
+    </div>
+
+    <div class="year-section active" id="y2026">
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Apr 2026</div>
+          <div class="trace-affiliation">Independent Research</div>
+        </div>
+
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">First citation of temperature journal article</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">JMSE</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">PhD route closure</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Georgia Tech</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">PhD application rejection</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Chalmers University of Technology</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Junior Surveyor application</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">DNV</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Mar 2026</div>
+          <div class="trace-affiliation">Independent Research</div>
+        </div>
+
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">ITTC roughness manuscript submission</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Ocean Engineering (ITTC Special Issue)</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Conditional PhD admission</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Georgia Tech</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">PhD application rejections</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Caltech / Johns Hopkins</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Peer review cycle completion</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Physics of Fluids</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Feb 2026</div>
+          <div class="trace-affiliation">Independent Research</div>
+        </div>
+
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Spatial roughness journal article publication</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Ocean Engineering</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Full paper submission</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Symposium on Naval Hydrodynamics</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">FOWT manuscript rejection</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Applied Ocean Research</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Full paper withdrawal</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">OMAE 2026</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Peer review completion</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Physics of Fluids</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">PhD application rejection</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Chalmers University of Technology</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Jan 2026</div>
+          <div class="trace-affiliation">Independent Research</div>
+        </div>
+
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Full paper submission</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">OMAE 2026</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Personal research website launch</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">sangseokhan.com</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">PhD application withdrawal</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">The University of Tokyo</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">PhD offer decline</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">University of Strathclyde</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="year-section" id="y2025">
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Dec 2025</div>
+          <div class="trace-affiliation">Independent Research</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">US PhD application submissions</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Caltech / Georgia Tech / Johns Hopkins</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">FOWT manuscript resubmission</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Applied Ocean Research</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Nov 2025</div>
+          <div class="trace-affiliation">The University of Osaka</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">FOWT manuscript submission and rejection</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Marine Energy Research</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">PhD interview withdrawal</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">NTNU</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Completion of visiting researcher period</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">The University of Osaka</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Peer review completion</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Physics of Fluids</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Conference presentation</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">JASNAOE 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Oct 2025</div>
+          <div class="trace-affiliation">The University of Osaka</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Full paper invitation</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">OMAE 2026</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Start of visiting researcher period</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">The University of Osaka</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Sep 2025</div>
+          <div class="trace-affiliation">University of Strathclyde</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Full paper submission</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">JASNAOE 2025</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Spatial roughness manuscript resubmission</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Ocean Engineering</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Spatial roughness manuscript submission and rejection</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Applied Ocean Research</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">PhD application rejection</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Chalmers University of Technology</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">MSc graduation with Distinction</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">University of Strathclyde</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Aug 2025</div>
+          <div class="trace-affiliation">University of Strathclyde</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Full paper invitation</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Symposium on Naval Hydrodynamics (SNH36)</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">University research news feature</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">University of Strathclyde</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">PhD offer decline</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">University of Southampton</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">International Conference Travel Bursary</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">The Worshipful Company of Shipwrights</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Jul 2025</div>
+          <div class="trace-affiliation">University of Strathclyde</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Temperature journal article publication</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">JMSE</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Cover article selection</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">JMSE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Jun 2025</div>
+          <div class="trace-affiliation">University of Strathclyde</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Conference paper presentation by co-author</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">MARINE 2025</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">PhD application rejection</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">NTNU</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">May 2025</div>
+          <div class="trace-affiliation">University of Strathclyde</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Conference presentation</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">WSOS 2025</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Temperature manuscript submission</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">JMSE</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Conference abstract submission</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Symposium on Naval Hydrodynamics (SNH36)</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Full paper submission</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">MARINE 2025</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Visiting researcher acceptance</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">The University of Osaka</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">PhD application rejection</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">NTNU</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Apr 2025</div>
+          <div class="trace-affiliation">University of Strathclyde</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">PhD application rejection</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">NTNU</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Mar 2025</div>
+          <div class="trace-affiliation">University of Strathclyde</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">First international conference presentation</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">64ICNEMI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Feb 2025</div>
+          <div class="trace-affiliation">University of Strathclyde</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Certificate of Excellence in Reviewing</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Ocean Engineering</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Full paper submission</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">64ICNEMI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Jan 2025</div>
+          <div class="trace-affiliation">University of Strathclyde</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Conference abstract submission</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">MARINE 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="year-section" id="y2024">
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Dec 2024</div>
+          <div class="trace-affiliation">University of Strathclyde</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">First international conference abstract submission</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">64ICNEMI</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Temperature manuscript resubmission and rejection</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Physics of Fluids</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Nov 2024</div>
+          <div class="trace-affiliation">University of Strathclyde</div>
+        </div>
+
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Co-author journal article publication</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Ocean Engineering</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Oct 2024</div>
+          <div class="trace-affiliation">University of Strathclyde</div>
+        </div>
+
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Temperature manuscript rejection</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Ocean Engineering</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Sep 2024</div>
+          <div class="trace-affiliation">University of Strathclyde</div>
+        </div>
+
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">MSc programme entry in Advanced Naval Architecture</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">University of Strathclyde</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Aug 2024</div>
+          <div class="trace-affiliation">Inha University</div>
+        </div>
+
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Early undergraduate graduation</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Inha University</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Jul 2024</div>
+          <div class="trace-affiliation">Inha University</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Temperature manuscript submission</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Ocean Engineering</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Best Paper Award</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">13NCFE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Jun 2024</div>
+          <div class="trace-affiliation">Inha University</div>
+        </div>
+
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Dean's International Excellence Scholarship</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">University of Strathclyde</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="year-section" id="y2023">
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Dec 2023</div>
+          <div class="trace-affiliation">Inha University</div>
+        </div>
+
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Early graduation application</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Inha University</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Oct 2023</div>
+          <div class="trace-affiliation">Inha University</div>
+        </div>
+
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">First conference presentation</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">The Society of Naval Architects of Korea</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Aug 2023</div>
+          <div class="trace-affiliation">Inha University</div>
+        </div>
+
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Industrial Technology Award</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">KABOAT 2023</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Jul 2023</div>
+          <div class="trace-affiliation">Inha University</div>
+        </div>
+
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Undergraduate research student entry</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Resistance Hydrodynamics Laboratory</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="year-section" id="y2022">
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Sep 2022</div>
+          <div class="trace-affiliation">Inha University</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Student reporter appointment</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">The Korean Society of Ocean Engineers</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Aug 2022</div>
+          <div class="trace-affiliation">Inha University</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Alumni scholarship recipient</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Inha NAOE Alumni</span>
+          </div>
+          <div class="trace-line">
+            <span class="trace-event">Autonomous System Award</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">KABOAT 2022</span>
+          </div>
+        </div>
+      </div>
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Jun 2022</div>
+          <div class="trace-affiliation">Inha University</div>
+        </div>
+
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Excellence Award in national competition</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Ship Design Project</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="year-section" id="y2021">
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Dec 2021</div>
+          <div class="trace-affiliation">Inha University</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">Autonomous boat competition team entry</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">i-Tricat</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trace-entry">
+        <div class="trace-month-block">
+          <div class="trace-month">Mar 2021</div>
+          <div class="trace-affiliation">Inha University</div>
+        </div>
+        <div class="trace-lines">
+          <div class="trace-line">
+            <span class="trace-event">BSc programme entry in Naval Architecture and Ocean Engineering</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">Inha University</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showYear(id, el) {
+      document.querySelectorAll('.year-section')
+        .forEach(sec => sec.classList.remove('active'));
+
+      document.getElementById(id).classList.add('active');
+
+      document.querySelectorAll('.year-tabs span')
+        .forEach(tab => tab.classList.remove('active'));
+
+      el.classList.add('active');
+    }
+
+    const DEFAULT_LANG = "en";
+    const SUPPORTED_LANGS = new Set(["en", "ja"]);
+
+    function getSessionLang() {
+      const saved = sessionStorage.getItem("lang");
+      return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
+    }
+
+    function applyLang(lang) {
+      const safeLang = SUPPORTED_LANGS.has(lang) ? lang : DEFAULT_LANG;
+
+      document.documentElement.setAttribute("lang", safeLang);
+      document.documentElement.setAttribute("data-lang", safeLang);
+
+      document.querySelectorAll("[data-en]").forEach(el => {
+        const value = el.getAttribute(`data-${safeLang}`);
+        if (value !== null) el.innerHTML = value;
+      });
+
+      document.querySelectorAll(".lang-switch a").forEach(a => {
+        a.classList.toggle("active", a.dataset.lang === safeLang);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      applyLang(getSessionLang());
+
+      document.querySelectorAll(".lang-switch a").forEach(a => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          const selected = SUPPORTED_LANGS.has(a.dataset.lang) ? a.dataset.lang : DEFAULT_LANG;
+          sessionStorage.setItem("lang", selected);
+          applyLang(selected);
+        });
+      });
+    });
+
+    window.addEventListener("load", () => {
+      document.querySelector(".page-content")?.classList.add("loaded");
+    });
+  </script>
+
+</body>
+
+</html>
