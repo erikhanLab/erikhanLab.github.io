@@ -380,18 +380,26 @@
       .log-header-block {
         border-bottom: none;
         padding-bottom: 0;
+        margin-bottom: 12px;
       }
 
       .log-header {
-        font-size: 1.1em;
+        font-size: 0.95em;
         text-transform: uppercase;
-        opacity: 0.6;
+        letter-spacing: 0.14em;
+        opacity: 0.72;
+        margin-bottom: 4px;
       }
 
       .log-back {
-        margin-bottom: 12px;
-        margin-top: -30px;
-        opacity: 0.7;
+        margin-bottom: 10px;
+        margin-top: -10px;
+        opacity: 0.65;
+      }
+
+      .log-back a {
+        font-size: 0.62em;
+        letter-spacing: 0.1em;
       }
 
       .log-sub {
@@ -400,42 +408,98 @@
 
       .year-tabs {
         display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
-        margin-top: -28px;
-        margin-bottom: 10px;
-        font-size: 0.78em;
+        gap: 10px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-top: -6px;
+        margin-bottom: -5px;
+        padding-bottom: 0px;
+        font-size: 0.72em;
+        letter-spacing: 0.08em;
+      }
+
+      .year-tabs::-webkit-scrollbar {
+        display: none;
       }
 
       .year-tabs span {
-        padding: 6px 4px;
+        flex: 0 0 auto;
+        padding: 4px 2px;
         margin-right: 0;
+        opacity: 0.38;
+      }
+
+      .year-tabs span.active {
+        opacity: 0.85;
       }
 
       .trace-entry {
         display: block;
-        margin: 16px 0 22px;
-        padding-bottom: 16px;
+        margin: 0;
+        padding: 14px 0 15px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.055);
       }
 
-      .trace-month {
-        font-size: 0.62em;
-        opacity: 0.58;
-      }
-
-      .trace-affiliation {
-        font-size: 0.54em;
+      .trace-month-block {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        padding-top: 0;
         margin-bottom: 7px;
       }
 
+      .trace-month {
+        font-size: 0.68em;
+        letter-spacing: 0.13em;
+        opacity: 0.66;
+        flex-shrink: 0;
+      }
+
+      .trace-affiliation {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 0.52em;
+        letter-spacing: 0.04em;
+        opacity: 0.34;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .trace-lines {
+        padding-left: 8px;
+        border-left: 1px solid rgba(11, 31, 58, 0.08);
+      }
+
       .trace-line {
-        font-size: 0.74em;
-        line-height: 1.45;
-        margin-bottom: 4px;
+        font-size: 0.71em;
+        line-height: 1.42;
+        margin-bottom: 5px;
+        opacity: 0.82;
+      }
+
+      .trace-line:last-child {
+        margin-bottom: 0;
+      }
+
+      .trace-event {
+        opacity: 0.84;
+      }
+
+      .trace-dot {
+        display: none;
       }
 
       .trace-tag {
-        font-size: 0.86em;
+        display: block;
+        margin-top: 1px;
+        font-size: 0.82em;
+        opacity: 0.42;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   </style>
@@ -804,6 +868,7 @@
           <div class="trace-month">May 2025</div>
           <div class="trace-affiliation">University of Strathclyde</div>
         </div>
+
         <div class="trace-lines">
           <div class="trace-line">
             <span class="trace-event">Conference presentation</span>
@@ -835,8 +900,7 @@
             <span class="trace-dot">·</span>
             <span class="trace-tag">NTNU</span>
           </div>
-        </div>
-        <div class="trace-line">
+          <div class="trace-line">
             <span class="trace-event">PhD application not selected, FOWT project</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">NTNU</span>
