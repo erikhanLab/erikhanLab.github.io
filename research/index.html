@@ -680,8 +680,42 @@
       }
 
       .rt-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        column-gap: 12px;
+        align-items: start;
+
         font-size: 0.69em;
         margin-top: -20px;
+        margin-bottom: 16px;
+        line-height: 1.45;
+      }
+
+      .rt-header>span:first-child {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+      }
+
+      .rt-header .rt-dot {
+        display: none;
+      }
+
+      .rt-header .rt-log-link {
+        grid-column: 2;
+        display: block;
+        margin-left: 0;
+
+        font-size: 0.9em;
+        letter-spacing: 0.07em;
+        line-height: 1.35;
+        text-align: right;
+        white-space: nowrap;
+
+        opacity: 0.48;
+      }
+
+      .rt-header .rt-log-link:last-of-type {
+        margin-top: 2px;
       }
 
       .rt-item {
@@ -892,8 +926,8 @@
           Research Log
         </a>
         <span class="rt-dot">·</span>
-        <a href="/research/record/" class="rt-log-link" data-en="Academic Record" data-ja="研究記録">
-          Academic Record
+        <a href="/research/timeline/" class="rt-log-link" data-en="Academic Timeline" data-ja="学術年表">
+          Academic Timeline
         </a>
       </h2>
       <div class="rt-item">
