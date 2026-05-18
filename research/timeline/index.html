@@ -44,6 +44,7 @@
   <style>
     html {
       overflow-y: scroll;
+      scroll-behavior: smooth;
     }
 
     :root {
@@ -212,7 +213,7 @@
 
     .year-tabs {
       margin-bottom: 34px;
-      font-size: 0.9em;
+      font-size: 1em;
       letter-spacing: 0.08em;
     }
 
@@ -245,6 +246,25 @@
       transform: translateY(0);
     }
 
+    .timeline-top-link {
+      margin-top: 52px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .timeline-top-link a {
+      font-size: 0.72em;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      color: var(--research-blue);
+      opacity: 0.45;
+      transition: opacity 0.2s ease;
+    }
+
+    .timeline-top-link a:hover {
+      opacity: 0.82;
+    }
+
     .trace-entry {
       display: grid;
       grid-template-columns: 155px 1fr;
@@ -257,7 +277,7 @@
 
     .trace-affiliation {
       margin-top: 3px;
-      font-size: 0.58em;
+      font-size: 0.63em;
       letter-spacing: 0.06em;
       color: #777;
       opacity: 0.42;
@@ -274,7 +294,7 @@
     }
 
     .trace-month {
-      font-size: 0.68em;
+      font-size: 0.78em;
       letter-spacing: 0.16em;
       color: var(--research-blue);
       opacity: 0.66;
@@ -286,7 +306,7 @@
     }
 
     .trace-line {
-      font-size: 0.84em;
+      font-size: 0.88em;
       line-height: 1.55;
       margin-bottom: 5px;
       color: #333;
@@ -506,11 +526,21 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
+      .timeline-top-link {
+        margin-top: 34px;
+        margin-bottom: 8px;
+      }
+
+      .timeline-top-link a {
+        font-size: 0.62em;
+        letter-spacing: 0.1em;
+      }
     }
   </style>
 </head>
 
-<body>
+<body id="top">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
@@ -941,6 +971,11 @@
         </div>
         <div class="trace-lines">
           <div class="trace-line">
+            <span class="trace-event">Full paper invitation received</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">64ICNAMI</span>
+          </div>
+          <div class="trace-line">
             <span class="trace-event">Reviewer invitation received</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Ocean Engineering</span>
@@ -1203,6 +1238,12 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="timeline-top-link">
+      <a href="#top" data-en="↑ Back to top" data-ja="↑ 上へ戻る">
+        ↑ Back to top
+      </a>
     </div>
   </div>
 
