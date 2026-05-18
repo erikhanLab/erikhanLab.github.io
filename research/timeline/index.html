@@ -309,8 +309,8 @@
       font-size: 0.88em;
       line-height: 1.55;
       margin-bottom: 5px;
-      color: #333;
-      opacity: 0.78;
+      color: #555;
+      opacity: 1;
     }
 
     .trace-line:last-child {
@@ -318,7 +318,30 @@
     }
 
     .trace-event {
+      color: #555;
+      opacity: 0.46;
+      font-weight: 400;
+    }
+
+    .trace-line.is-highlight .trace-event {
+      color: #444;
+      opacity: 0.8;
+      font-weight: 600;
+      letter-spacing: 0.008em;
+    }
+
+    .trace-line.is-highlight .trace-tag {
+      opacity: 0.76;
+    }
+
+    .trace-line.is-soft .trace-event {
+      color: #333;
       opacity: 0.84;
+      font-weight: 500;
+    }
+
+    .trace-line.is-soft .trace-tag {
+      opacity: 0.56;
     }
 
     .trace-dot {
@@ -329,7 +352,7 @@
     .trace-tag {
       font-size: 0.88em;
       color: var(--research-blue);
-      opacity: 0.55;
+      opacity: 0.42;
       font-style: italic;
       white-space: nowrap;
     }
@@ -492,15 +515,15 @@
         border-left: 1px solid rgba(11, 31, 58, 0.08);
       }
 
+      .trace-line:last-child {
+        margin-bottom: 0;
+      }
+
       .trace-line {
         font-size: 0.71em;
         line-height: 1.42;
         margin-bottom: 5px;
-        opacity: 0.82;
-      }
-
-      .trace-line:last-child {
-        margin-bottom: 0;
+        opacity: 1;
       }
 
       .trace-event {
@@ -509,8 +532,22 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        opacity: 0.95;
+        color: #555;
+        opacity: 0.65;
         font-size: 1.1em;
+        font-weight: 400;
+      }
+
+      .trace-line.is-soft .trace-event {
+        color: #222;
+        opacity: 0.8;
+        font-weight: 500;
+      }
+
+      .trace-line.is-highlight .trace-event {
+        color: #333;
+        opacity: 0.85;
+        font-weight: 600;
       }
 
       .trace-dot {
@@ -598,8 +635,8 @@
         </div>
 
         <div class="trace-lines">
-          <div class="trace-line">
-            <span class="trace-event">First citation received for temperature article</span>
+          <div class="trace-line is-soft">
+            <span class="trace-event">First citation recorded for first-author article</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">JMSE</span>
           </div>
@@ -623,12 +660,12 @@
         </div>
 
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-highlight">
             <span class="trace-event">Conditional PhD admission received</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Georgia Tech</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">ITTC roughness manuscript submitted</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Ocean Engineering</span>
@@ -653,12 +690,12 @@
         </div>
 
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-highlight">
             <span class="trace-event">Spatial roughness article accepted for publication</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Ocean Engineering</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Full paper submitted</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
@@ -688,7 +725,7 @@
         </div>
 
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Full paper submitted</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">OMAE 2026</span>
@@ -721,7 +758,7 @@
           <div class="trace-affiliation">Independent Research</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">FOWT manuscript resubmitted</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Applied Ocean Research</span>
@@ -735,12 +772,12 @@
           <div class="trace-affiliation">The University of Osaka</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-highlight">
             <span class="trace-event">Conference paper presented</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">JASNAOE 2025</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Visiting researcher period completed</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">The University of Osaka</span>
@@ -763,18 +800,18 @@
           <div class="trace-month">Oct 2025</div>
           <div class="trace-affiliation">The University of Osaka</div>
         </div>
-        <div class="trace-lines">
+        <div class="trace-lines is-soft">
           <div class="trace-line">
             <span class="trace-event">Full paper invitation received</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">OMAE 2026</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Visiting researcher period started</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">The University of Osaka</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Reviewer invitation received</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Physics of Fluids</span>
@@ -788,17 +825,17 @@
           <div class="trace-affiliation">University of Strathclyde</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-highlight">
             <span class="trace-event">MSc degree awarded with Distinction</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">University of Strathclyde</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Spatial roughness manuscript resubmitted</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Ocean Engineering</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Full paper submitted</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">JASNAOE 2025</span>
@@ -822,12 +859,12 @@
           <div class="trace-affiliation">University of Strathclyde</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Full paper invitation received</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Research featured in university news</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">University of Strathclyde</span>
@@ -846,7 +883,7 @@
           <div class="trace-affiliation">University of Strathclyde</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-highlight">
             <span class="trace-event">Temperature article selected as cover article</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">JMSE</span>
@@ -860,12 +897,12 @@
           <div class="trace-affiliation">University of Strathclyde</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-highlight">
             <span class="trace-event">Temperature article accepted for publication</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">JMSE</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">International conference paper presented by co-author</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">MARINE 2025</span>
@@ -884,17 +921,17 @@
           <div class="trace-affiliation">University of Strathclyde</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Conference presentation delivered</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">WSOS 2025</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Temperature manuscript resubmitted</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">JMSE</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Full paper submitted</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">MARINE 2025</span>
@@ -913,7 +950,7 @@
           <div class="trace-affiliation">University of Strathclyde</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">International Conference Travel Bursary awarded</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">The Worshipful Company of Shipwrights</span>
@@ -932,7 +969,7 @@
           <div class="trace-affiliation">University of Strathclyde</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-highlight">
             <span class="trace-event">First international conference presentation delivered</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">64ICNAMI</span>
@@ -946,17 +983,17 @@
           <div class="trace-affiliation">University of Strathclyde</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-highlight">
             <span class="trace-event">Certificate of Excellence in Reviewing awarded</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Ocean Engineering</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Full paper invitation received</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">MARINE 2025</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Full paper submitted</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">64ICNAMI</span>
@@ -970,12 +1007,12 @@
           <div class="trace-affiliation">University of Strathclyde</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Full paper invitation received</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">64ICNAMI</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Reviewer invitation received</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Ocean Engineering</span>
@@ -1021,7 +1058,7 @@
         </div>
 
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">MSc programme in Advanced Naval Architecture started</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">University of Strathclyde</span>
@@ -1036,12 +1073,12 @@
         </div>
 
         <div class="trace-lines">
-          <div class="trace-line">
-            <span class="trace-event">Undergraduate degree completed early</span>
+          <div class="trace-line is-highlight">
+            <span class="trace-event">BSc degree awarded with early completion</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Inha University</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Co-authored roughness article accepted for publication</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Ocean Engineering</span>
@@ -1055,12 +1092,12 @@
           <div class="trace-affiliation">Inha University</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-highlight">
             <span class="trace-event">Best Paper Award received</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">13NCFE</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Temperature manuscript submitted</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Ocean Engineering</span>
@@ -1075,7 +1112,7 @@
         </div>
 
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Dean's International Excellence Scholarship awarded</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">University of Strathclyde</span>
@@ -1090,7 +1127,7 @@
         </div>
 
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Co-authored roughness manuscript submitted</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Ocean Engineering</span>
@@ -1108,7 +1145,7 @@
         </div>
 
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Academic Excellence Scholarship awarded</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Inha University</span>
@@ -1122,7 +1159,7 @@
           <div class="trace-affiliation">Inha University</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">First conference presentation delivered</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">The Society of Naval Architects of Korea</span>
@@ -1137,7 +1174,7 @@
         </div>
 
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Industrial Technology Award received</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">KABOAT 2023</span>
@@ -1152,7 +1189,7 @@
         </div>
 
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Undergraduate research student role started</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Resistance Hydrodynamics Laboratory</span>
@@ -1170,7 +1207,7 @@
         </div>
 
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Excellence Award received in national competition</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Ship Design Project</span>
@@ -1196,12 +1233,12 @@
           <div class="trace-affiliation">Inha University</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Autonomous System Award received</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">KABOAT 2022</span>
           </div>
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">Alumni scholarship awarded</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Inha NAOE Alumni</span>
@@ -1231,7 +1268,7 @@
           <div class="trace-affiliation">Inha University</div>
         </div>
         <div class="trace-lines">
-          <div class="trace-line">
+          <div class="trace-line is-soft">
             <span class="trace-event">BSc programme in Naval Architecture and Ocean Engineering started</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Inha University</span>
