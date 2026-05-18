@@ -333,16 +333,6 @@
       opacity: 0.9;
     }
 
-    .rt-title-highlight {
-      font-size: 1.13em;
-      font-weight: 500;
-      margin-bottom: 10px;
-      padding-left: 10px;
-      border-left: 2px solid rgba(11, 37, 69, 0.1);
-      color: #111;
-      opacity: 0.95;
-    }
-
     .rt-block-group {
       margin-left: 14px;
       padding-top: 6px;
@@ -393,8 +383,7 @@
     }
 
     .rt-subtitle {
-      font-size: 0.90em;
-      font-style: italic;
+      font-size: 0.92em;
       color: #222;
       margin-bottom: 2px;
       line-height: 1.55;
@@ -453,11 +442,11 @@
       font-family: Georgia, serif;
       font-size: 0.68em;
       letter-spacing: 0.04em;
-      color: #888;
+      color: #777;
       margin-top: 4px;
       margin-left: 8px;
       padding-left: 6px;
-      border-left: 1px solid rgba(0, 0, 0, 0.06);
+      border-left: 1.3px solid rgba(0, 0, 0, 0.16);
     }
 
     .sections {
@@ -759,7 +748,7 @@
 
       .rt-block-group {
         padding-left: 0;
-        border-left: none;
+        border-left: 0.1px solid rgba(11, 37, 69, 0.12);
         margin-left: 5px;
       }
 
@@ -789,11 +778,15 @@
       }
 
       .role-tag {
-        font-size: 0.54em;
+        font-size: 0.55em;
+        margin-top: 0px;
+        margin-bottom: 5px;
         margin-left: 0;
         padding-left: 0;
         border-left: none;
-        opacity: 0.65;
+        color: #555;
+        opacity: 0.42;
+        letter-spacing: 0.04em;
       }
 
       .rt-meta {
@@ -1000,53 +993,6 @@
           <div class="rt-stage">International Research</div>
 
           <div class="rt-title">
-            <span data-en="Visiting Research — The University of Osaka" data-ja="客員研究 — 大阪大学">
-              Visiting Research — The University of Osaka
-            </span>
-            <span class="rt-loc-dot">·</span>
-            <span class="rt-location-inline" data-en="Japan" data-ja="日本">
-              Japan
-            </span>
-          </div>
-
-          <div class="rt-block-group">
-            <div class="rt-block">
-              <div class="rt-output" data-en="Conference Presentation" data-ja="国際会議発表">
-                Conference Presentation
-              </div>
-              <div class="rt-subtitle">CFD-based model predictive control for point absorber wave energy converters
-              </div>
-              <div class="role-tag" data-en="Presenting author" data-ja="発表者">
-                Presenting author
-              </div>
-              <div class="rt-meta">
-                <span class="rt-venue">
-                  The Japan Society of Naval Architects and Ocean Engineers (JASNAOE 2025)
-                </span>
-                <span class="rt-location">
-                  — Hyogo, Japan
-                </span>
-              </div>
-            </div>
-
-            <div class="rt-block">
-              <div class="rt-output">
-                <span data-en="Peer Reviewer" data-ja="査読者">
-                  Peer Reviewer
-                </span>
-                <span class="rt-small" data-en="(Invited)" data-ja="（招待）">
-                  (Invited)
-                </span>
-              </div>
-              <div class="rt-meta">
-                <em>Physics of Fluids</em> <span class="q-rank">(Q1)</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="rt-inst-divider"></div>
-
-          <div class="rt-title">
             <span data-en="MSc Research — University of Strathclyde" data-ja="修士研究 — ストラスクライド大学">
               MSc Research — University of Strathclyde
             </span>
@@ -1076,14 +1022,6 @@
             </div>
 
             <div class="rt-block">
-              <div class="rt-output" data-en="Certificate of Excellence in Reviewing" data-ja="優秀査読証明書">
-                Certificate of Excellence in Reviewing
-              </div>
-              <div class="rt-meta">
-                <em>Ocean Engineering</em> <span class="q-rank">(Q1)</span>
-              </div>
-            </div>
-            <div class="rt-block">
               <div class="rt-output" data-en="Conference Paper" data-ja="国際会議論文">
                 Conference Paper
               </div>
@@ -1102,6 +1040,7 @@
                 </span>
               </div>
             </div>
+
             <div class="rt-block">
               <div class="rt-output" data-en="Conference Presentation" data-ja="国際会議発表">
                 Conference Presentation
@@ -1119,8 +1058,63 @@
                 </span>
               </div>
             </div>
+
+            <div class="rt-block">
+              <div class="rt-output" data-en="Certificate of Excellence in Reviewing" data-ja="優秀査読証明書">
+                Certificate of Excellence in Reviewing
+              </div>
+              <div class="rt-meta">
+                <em>Ocean Engineering</em> <span class="q-rank">(Q1)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rt-inst-divider"></div>
+
+        <div class="rt-title">
+          <span data-en="Visiting Research — The University of Osaka" data-ja="客員研究 — 大阪大学">
+            Visiting Research — The University of Osaka
+          </span>
+          <span class="rt-loc-dot">·</span>
+          <span class="rt-location-inline" data-en="Japan" data-ja="日本">
+            Japan
+          </span>
+        </div>
+
+        <div class="rt-block-group">
+          <div class="rt-block">
+            <div class="rt-output" data-en="Conference Presentation" data-ja="国際会議発表">
+              Conference Presentation
+            </div>
+            <div class="rt-subtitle">CFD-based model predictive control for point absorber wave energy converters
+            </div>
+            <div class="role-tag" data-en="Presenting author" data-ja="発表者">
+              Presenting author
+            </div>
+            <div class="rt-meta">
+              <span class="rt-venue">
+                The Japan Society of Naval Architects and Ocean Engineers (JASNAOE 2025)
+              </span>
+              <span class="rt-location">
+                — Hyogo, Japan
+              </span>
+            </div>
           </div>
 
+          <div class="rt-block">
+            <div class="rt-output">
+              <span data-en="Peer Reviewer" data-ja="査読者">
+                Peer Reviewer
+              </span>
+              <span class="rt-small" data-en="(Invited)" data-ja="（招待）">
+                (Invited)
+              </span>
+            </div>
+            <div class="rt-meta">
+              <em>Physics of Fluids</em> <span class="q-rank">(Q1)</span>
+            </div>
+          </div>
         </div>
       </div>
 
