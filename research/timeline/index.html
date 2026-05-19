@@ -305,38 +305,47 @@
       min-width: 0;
     }
 
+    .trace-event {
+      color: #555;
+      opacity: 0.6;
+      font-weight: 400;
+    }
+
     .trace-line {
-      font-size: 0.88em;
+      position: relative;
+      font-size: 0.85em;
       line-height: 1.55;
       margin-bottom: 5px;
       color: #555;
       opacity: 1;
     }
 
-    .trace-line:last-child {
-      margin-bottom: 0;
-    }
-
-    .trace-event {
-      color: #555;
-      opacity: 0.46;
-      font-weight: 400;
+    .trace-line.is-highlight {
+      margin: 6px 0 7px;
+      padding: 3px 0 3px 10px;
+      background: linear-gradient(90deg,
+          rgba(11, 31, 58, 0.028),
+          rgba(11, 31, 58, 0.01) 54%,
+          transparent);
+      border-left: 1px solid rgba(11, 31, 58, 0.24);
     }
 
     .trace-line.is-highlight .trace-event {
-      color: #444;
-      opacity: 0.8;
-      font-weight: 600;
-      letter-spacing: 0.008em;
+      color: #2b3342;
+      opacity: 1;
+      font-weight: 560;
+      letter-spacing: 0.006em;
     }
 
     .trace-line.is-highlight .trace-tag {
-      opacity: 0.76;
+      color: var(--research-blue);
+      opacity: 0.52;
+      font-style: italic;
     }
 
     .trace-line.is-soft .trace-event {
-      color: #333;
-      opacity: 0.84;
+      color: #222;
+      opacity: 0.94;
       font-weight: 500;
     }
 
@@ -533,21 +542,35 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         color: #555;
-        opacity: 0.65;
+        opacity: 0.68;
         font-size: 1.1em;
         font-weight: 400;
       }
 
       .trace-line.is-soft .trace-event {
         color: #222;
-        opacity: 0.8;
+        opacity: 0.9;
         font-weight: 500;
       }
 
+      .trace-line.is-highlight {
+        margin: 5px 0 6px;
+        padding: 4px 0 4px 8px;
+        background: linear-gradient(90deg,
+            rgba(11, 31, 58, 0.032),
+            rgba(11, 31, 58, 0.012) 68%,
+            transparent);
+        border-left: 1px solid rgba(11, 31, 58, 0.22);
+      }
+
       .trace-line.is-highlight .trace-event {
-        color: #333;
-        opacity: 0.85;
-        font-weight: 600;
+        color: #2b3342;
+        opacity: 0.88;
+        font-weight: 560;
+      }
+
+      .trace-line.is-highlight .trace-tag {
+        opacity: 0.5;
       }
 
       .trace-dot {
@@ -635,7 +658,7 @@
         </div>
 
         <div class="trace-lines">
-          <div class="trace-line is-soft">
+          <div class="trace-line is-highlight">
             <span class="trace-event">Full paper accepted for presentation</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
@@ -685,7 +708,7 @@
         </div>
 
         <div class="trace-lines">
-          <div class="trace-line is-highlight">
+          <div class="trace-line is-soft">
             <span class="trace-event">PhD admission received (conditional)</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Georgia Tech</span>
@@ -798,7 +821,7 @@
         </div>
         <div class="trace-lines">
           <div class="trace-line is-highlight">
-            <span class="trace-event">Conference paper presented</span>
+            <span class="trace-event">Conference paper presentation delivered</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">JASNAOE 2025</span>
           </div>
@@ -826,15 +849,15 @@
           <div class="trace-affiliation">The University of Osaka</div>
         </div>
         <div class="trace-lines">
+          <div class="trace-line is-highlight">
+            <span class="trace-event">Visiting researcher period started</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">The University of Osaka</span>
+          </div>
           <div class="trace-line is-soft">
             <span class="trace-event">Full paper invitation received</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">OMAE 2026</span>
-          </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">Visiting researcher period started</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">The University of Osaka</span>
           </div>
           <div class="trace-line is-soft">
             <span class="trace-event">Reviewer invitation received</span>
@@ -952,14 +975,14 @@
         </div>
         <div class="trace-lines">
           <div class="trace-line is-soft">
-            <span class="trace-event">Conference presentation delivered</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">WSOS 2025</span>
-          </div>
-          <div class="trace-line is-soft">
             <span class="trace-event">Visiting researcher period arranged</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">The University of Osaka</span>
+          </div>
+          <div class="trace-line is-soft">
+            <span class="trace-event">Conference presentation delivered</span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">WSOS 2025</span>
           </div>
           <div class="trace-line is-soft">
             <span class="trace-event">Temperature manuscript resubmitted</span>
