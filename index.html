@@ -118,113 +118,6 @@
       display: inline;
     }
 
-    @media (max-width: 640px) {
-      body {
-        padding: 72px 18px 64px;
-        font-size: 15.5px;
-        line-height: 1.55;
-      }
-
-      .page-content {
-        transform: none;
-        transition: none;
-      }
-
-      .mobile-only {
-        display: inline;
-      }
-
-      .desktop-only {
-        display: none;
-      }
-
-      .footer-meta {
-        display: none;
-      }
-
-      .header {
-        margin-bottom: 0px;
-        font-size: 0.8em;
-      }
-
-      .header-row {
-        gap: 25px;
-        align-items: center;
-      }
-
-      .header-row h1 {
-        font-size: 2.9em;
-        margin: 0;
-      }
-
-      .id-photo {
-        width: 56px;
-        height: 56px;
-        margin-left: 10px;
-      }
-
-      .tagline {
-        text-align: left;
-        font-size: 0.95em;
-      }
-
-      .tagline-block {
-        padding: 0px 20px;
-        margin-top: 28px;
-      }
-
-      .nav {
-        margin-bottom: -20px;
-        font-size: 0.88em;
-      }
-
-      .recent-work {
-        display: block;
-        line-height: 1.4;
-      }
-
-      .recent-title {
-        display: inline;
-        font-size: 1.1em;
-      }
-
-      .recent-meta {
-        display: line;
-        margin-top: 2px;
-        font-size: 1.0em;
-        opacity: 0.7;
-      }
-
-      .recent-label {
-        display: block;
-        margin-bottom: 4px;
-        margin-left: -6px;
-        font-size: 0.9em;
-        opacity: 0.5;
-      }
-
-      .recent-work a {
-        font-size: 0.83em;
-        align-items: center;
-      }
-
-      footer {
-        padding-top: 0px;
-      }
-
-      .footer-contact {
-        margin-top: 20px;
-      }
-
-      .keywords {
-        font-size: 0.65em;
-        letter-spacing: 0.22em;
-        margin-top: 16px;
-        opacity: 0.7;
-        text-align: center;
-      }
-    }
-
     .page-content {
       transform: translateY(6px);
       transition: transform 0.12s ease-out;
@@ -352,15 +245,42 @@
 
     .affiliation {
       margin-top: 28px;
-      font-size: 0.85em;
+      font-size: 0.84em;
       letter-spacing: 0.025em;
       color: #4b5f77;
-      line-height: 1.5;
+      line-height: 1.55;
+    }
+
+    .affiliation-current {
+      display: inline-block;
+      color: var(--ink);
+      opacity: 0.88;
+      font-size: 1.02em;
+    }
+
+    .affiliation-mid {
+      display: inline-block;
+      margin-top: 2px;
+      color: #4b5f77;
+      opacity: 0.68;
+      font-size: 0.88em;
     }
 
     .affiliation-sub {
-      opacity: 0.65;
-      font-size: 0.88em;
+      display: inline-block;
+      margin-top: 2px;
+      color: #64748b;
+      opacity: 0.48;
+      font-size: 0.78em;
+    }
+
+    .expected-year {
+      margin-left: 4px;
+      font-size: 0.78em;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: #64748b;
+      opacity: 0.72;
     }
 
     .keywords {
@@ -526,6 +446,121 @@
       color: #94a3b8;
       letter-spacing: 0.06em;
     }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 72px 18px 64px;
+        font-size: 15.5px;
+        line-height: 1.55;
+      }
+
+      .page-content {
+        transform: none;
+        transition: none;
+      }
+
+      .mobile-only {
+        display: inline;
+      }
+
+      .desktop-only {
+        display: none;
+      }
+
+      .footer-meta {
+        display: none;
+      }
+
+      .header {
+        margin-bottom: 0px;
+        font-size: 0.8em;
+      }
+
+      .header-row {
+        gap: 25px;
+        align-items: center;
+      }
+
+      .header-row h1 {
+        font-size: 2.9em;
+        margin: 0;
+      }
+
+      .id-photo {
+        width: 56px;
+        height: 56px;
+        margin-left: 10px;
+      }
+
+      .tagline {
+        text-align: left;
+        font-size: 0.95em;
+      }
+
+      .nav {
+        margin-bottom: -20px;
+        font-size: 0.88em;
+      }
+
+      .affiliation {
+        margin-top: 22px;
+        font-size: 0.9em;
+        line-height: 1.55;
+      }
+
+      .affiliation-mid {
+        font-size: 0.78em;
+        opacity: 0.72;
+      }
+
+      .affiliation-sub {
+        font-size: 0.72em;
+        opacity: 0.58;
+      }
+
+      .expected-year {
+        font-size: 0.72em;
+        opacity: 0.65;
+      }
+
+      .recent-work {
+        display: block;
+        line-height: 1.4;
+      }
+
+      .recent-title {
+        display: inline;
+        font-size: 1.1em;
+      }
+
+      .recent-meta {
+        display: inline;
+        margin-top: 2px;
+        font-size: 1.0em;
+        opacity: 0.7;
+      }
+
+      .recent-label {
+        display: block;
+        margin-bottom: 4px;
+        margin-left: -6px;
+        font-size: 0.9em;
+        opacity: 0.5;
+      }
+
+      .recent-work a {
+        font-size: 0.83em;
+        align-items: center;
+      }
+
+      .footer-contact {
+        margin-top: 20px;
+      }
+
+      .keywords {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
@@ -579,23 +614,47 @@
       </div>
 
       <p class="affiliation">
-        <span data-en="Visiting Researcher" data-ja="客員研究員">
-          <em>Visiting Researcher</em>
-        </span>
-        ·
-        <span data-en="The University of Osaka" data-ja="大阪大学">
-          The University of Osaka
-        </span>
-        (2025)<br>
 
-        <span data-en="MSc" data-ja="修士">
-          <em>MSc</em>
+        <span class="affiliation-current">
+          <span data-en="Preparing for doctoral research" data-ja="博士課程研究準備中">
+            <em>Preparing for doctoral research</em>
+          </span>
+          ·
+          <span data-en="Kyoto University" data-ja="京都大学">
+            Kyoto University
+          </span>
+          <span class="expected-year" data-en="(expected 2027–)" data-ja="（2027年開始予定）">
+            (expected 2027–)
+          </span>
         </span>
-        ·
-        <span data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-          University of Strathclyde
+
+        <br>
+
+        <span class="affiliation-mid">
+          <span data-en="Visiting Researcher" data-ja="客員研究員">
+            <em>Visiting Researcher</em>
+          </span>
+          ·
+          <span data-en="The University of Osaka" data-ja="大阪大学">
+            The University of Osaka
+          </span>
+          (2025)
         </span>
-        (2025)<br>
+
+        <br>
+
+        <span class="affiliation-mid">
+          <span data-en="MSc" data-ja="修士">
+            <em>MSc</em>
+          </span>
+          ·
+          <span data-en="University of Strathclyde" data-ja="ストラスクライド大学">
+            University of Strathclyde
+          </span>
+          (2025)
+        </span>
+
+        <br>
 
         <span class="affiliation-sub">
           <span data-en="BSc" data-ja="学士">
@@ -607,10 +666,11 @@
           </span>
           (2024)
         </span>
+
       </p>
 
-      <p class="keywords" data-en="Turbulence · Roughness · Marine Flows" data-ja="乱流・表面粗さ・海洋流体">
-        Turbulence · Roughness · Marine Flows
+      <p class="keywords" data-en="Roughness · Hydroelasticity · Marine Flows" data-ja="粗さ・流体弾性・海洋流体">
+        Roughness · Hydroelasticity · Marine Flows
       </p>
 
       <p class="recent-work">
