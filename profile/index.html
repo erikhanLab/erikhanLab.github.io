@@ -596,6 +596,15 @@
       letter-spacing: 0.04em;
     }
 
+    .expected-year {
+      margin-left: 4px;
+      font-size: 0.78em;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: #555;
+      opacity: 0.75;
+    }
+
 
     @media (max-width: 640px) {
       .site-name {
@@ -967,22 +976,41 @@
       <h2 data-en="Current" data-ja="現在">Current</h2>
 
       <div class="current-block">
+        <!--
+        <div class="current-line secondary" data-en="Visiting Researcher · Seoul National University (2026)"
+          data-ja="客員研究員 · ソウル大学（2026年）">
+          Visiting Researcher · Seoul National University (2026)
+        </div>
+-->
+        <div class="current-line secondary">
+          <span class="desktop-only">
+            <span data-en="Preparing for doctoral research · Kyoto University" data-ja="博士課程研究準備中 · 京都大学">
+              Preparing for doctoral research · Kyoto University
+            </span>
+            <span class="expected-year" data-en="(expected 2027–)" data-ja="（2027年開始予定）">
+              (expected 2027–)
+            </span>
+          </span>
 
-        <div class="current-line secondary" data-en="Preparing for doctoral research" data-ja="博士課程に向けて研究準備中">
-          Preparing for doctoral research
+          <span class="mobile-only">
+            <span data-en="Doctoral research · Kyoto University" data-ja="博士研究 · 京都大学">
+              Doctoral research · Kyoto University
+            </span>
+            <span class="expected-year" data-en="(expected 2027–)" data-ja="（2027年開始予定）">
+              (expected 2027–)
+            </span>
+          </span>
         </div>
 
         <div class="current-line detail">
           <span class="desktop-only"
-            data-en="Current interests include near-wall turbulence, roughness effects, and multiphysics interactions in marine flows."
-            data-ja="現在の関心は、海洋流体における壁面近傍乱流、粗さの影響、およびマルチフィジックス相互作用にある。">
-            Current interests include near-wall turbulence, roughness effects, and multiphysics interactions in marine
-            flows.
+            data-en="Research interests focus on roughness effects and computational hydroelasticity in marine hydrodynamics."
+            data-ja="研究関心は、海洋流体力学における粗さの影響と計算流体弾性にある。">
+            Research interests focus on roughness effects and computational hydroelasticity in marine hydrodynamics.
           </span>
 
-          <span class="mobile-only" data-en="Near-wall turbulence, roughness effects, and multiphysics in marine flows."
-            data-ja="海洋流体における壁面近傍乱流、粗さの影響、マルチフィジックス。">
-            Near-wall turbulence, roughness effects, and multiphysics in marine flows.
+          <span class="mobile-only" data-en="Roughness · Computational Hydroelasticity" data-ja="粗さ · 計算流体弾性">
+            Roughness · Computational Hydroelasticity
           </span>
         </div>
       </div>
@@ -1034,19 +1062,20 @@
         </div>
 
         <div class="interest-item">
-          <div class="interest-title" data-en="Multiphysics Interaction" data-ja="マルチフィジックス相互作用">
-            Multiphysics Interaction
+          <div class="interest-title" data-en="Computational Hydroelasticity" data-ja="計算流体弾性">
+            Computational Hydroelasticity
           </div>
+
           <div class="interest-desc">
             <em class="desktop-only"
-              data-en="Coupled analysis of fluid–structure interaction and nonlinear responses in marine and offshore systems."
-              data-ja="海洋・オフショアシステムにおける流体構造連成および非線形応答を連成解析する。">
-              Coupled analysis of fluid–structure interaction and nonlinear responses in marine and offshore systems.
+              data-en="SPH-based modelling of hydroelastic impact, contact, and fluid–structure interaction in marine systems."
+              data-ja="海洋システムにおける流体弾性衝撃、接触、および流体構造連成をSPHによりモデル化する。">
+              SPH-based modelling of hydroelastic impact, contact, and fluid–structure interaction in marine systems.
             </em>
 
-            <em class="mobile-only" data-en="Fluid–structure interaction in marine systems."
-              data-ja="海洋システムにおける流体構造連成。">
-              Fluid–structure interaction in marine systems.
+            <em class="mobile-only" data-en="SPH modelling of hydroelastic impact and FSI."
+              data-ja="流体弾性衝撃とFSIのSPHモデリング。">
+              SPH modelling of hydroelastic impact and FSI.
             </em>
           </div>
         </div>
