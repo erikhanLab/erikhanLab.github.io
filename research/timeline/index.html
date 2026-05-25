@@ -89,10 +89,11 @@
     }
 
     .lang-switch {
-      font-size: 0.65em;
+      font-size: 0.75em;
       letter-spacing: 0.22em;
       color: #64748b;
       opacity: 0.7;
+      transform: translateY(35px);
     }
 
     .lang-switch a {
@@ -186,8 +187,8 @@
     }
 
     .log-header-block {
-      margin-bottom: 42px;
-      padding-bottom: 18px;
+      margin-bottom: 5px;
+      padding-bottom: 10px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
@@ -205,12 +206,8 @@
       letter-spacing: 0.05em;
     }
 
-    .log-back {
-      margin-bottom: 12px;
-    }
-
     .log-back a {
-      font-size: 0.72em;
+      font-size: 0.82em;
       letter-spacing: 0.08em;
       text-decoration: none;
       color: var(--research-blue);
@@ -223,20 +220,25 @@
     }
 
     .year-tabs {
-      margin-bottom: 34px;
-      font-size: 1em;
-      letter-spacing: 0.08em;
+      margin-bottom: 5px;
+      padding: 6px 10px;
+      font-size: 0.95em;
+      letter-spacing: 0.09em;
+      background: rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(11, 31, 58, 0.035);
+      border-radius: 3px;
     }
 
     .year-tabs span {
       cursor: pointer;
       opacity: 0.45;
-      margin-right: 14px;
+      margin-right: 25px;
       transition: opacity 0.2s ease;
     }
 
     .year-tabs span.active {
       opacity: 0.9;
+      font-size: 1.1em;
       color: var(--research-blue);
     }
 
@@ -324,7 +326,7 @@
 
     .trace-line {
       position: relative;
-      font-size: 0.82em;
+      font-size: 0.85em;
       line-height: 1.55;
       margin-bottom: 5px;
       color: #555;
@@ -412,6 +414,12 @@
       white-space: nowrap;
     }
 
+    .divider {
+      height: 0.5px;
+      background: #dcdcdc;
+      margin: 0px 0;
+    }
+
     @media (max-width: 640px) {
       .site-name {
         font-size: 1.9em;
@@ -431,8 +439,8 @@
         display: flex;
         justify-content: center;
         gap: clamp(12px, 4vw, 20px);
-        padding: 6px 0;
-        margin-bottom: 28px;
+        padding: 8px 0;
+        margin-bottom: 20px;
         background: rgba(225, 230, 238, 0.7);
         backdrop-filter: blur(6px);
         border-bottom: 1px solid rgba(11, 31, 58, 0.06);
@@ -441,7 +449,7 @@
       .nav a {
         position: relative;
         padding: 4px 2px;
-        font-size: clamp(0.62em, 2.6vw, 0.7em);
+        font-size: clamp(0.65em, 2.6vw, 0.75em);
         letter-spacing: 0.14em;
         font-weight: 400;
         color: #444;
@@ -472,6 +480,11 @@
         height: 1px;
         background: #111;
         opacity: 0.6;
+      }
+
+      .lang-switch {
+        font-size: 0.65em;
+        transform: translateY(30px);
       }
 
       .log-header-block {
@@ -510,10 +523,13 @@
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         margin-top: -6px;
-        margin-bottom: -2px;
-        padding-bottom: 0px;
+        margin-bottom: 6px;
+        padding: 6px 8px;
         font-size: 0.74em;
         letter-spacing: 0.08em;
+        background: rgba(255, 255, 255, 0.22);
+        border: 1px solid rgba(11, 31, 58, 0.035);
+        border-radius: 3px;
       }
 
       .year-tabs::-webkit-scrollbar {
@@ -529,6 +545,11 @@
 
       .year-tabs span.active {
         opacity: 0.85;
+      }
+
+      .divider {
+        margin: 5px 0;
+        max-width: 400px;
       }
 
       .trace-entry {
@@ -722,6 +743,8 @@
       <span onclick="showYear('y2022', this)">2022</span>
       <span onclick="showYear('y2021', this)">2021</span>
     </div>
+
+    <div class="divider"></div>
 
     <div class="year-section active" id="y2026">
 

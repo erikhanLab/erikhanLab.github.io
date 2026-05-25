@@ -86,10 +86,11 @@
     }
 
     .lang-switch {
-      font-size: 0.65em;
+      font-size: 0.75em;
       letter-spacing: 0.22em;
       color: #64748b;
       opacity: 0.7;
+      transform: translateY(35px);
     }
 
     .lang-switch a {
@@ -187,11 +188,6 @@
       color: #555;
     }
 
-    h1 {
-      gap: 14px;
-      margin-bottom: 40px;
-    }
-
     .pub-index {
       margin-top: 10px;
       margin-bottom: 24px;
@@ -239,8 +235,8 @@
     }
 
     .section {
-      margin-bottom: 70px;
-      margin-top: 20px;
+      margin-bottom: 60px;
+      margin-top: 15px;
     }
 
     .section h2 {
@@ -442,11 +438,6 @@
         display: none;
       }
 
-      .header h1 {
-        font-size: 1.55em;
-        margin-bottom: 0;
-      }
-
       .pub-index {
         display: none;
       }
@@ -458,8 +449,8 @@
         display: flex;
         justify-content: center;
         gap: clamp(12px, 4vw, 20px);
-        padding: 6px 0;
-        margin-bottom: 28px;
+        padding: 8px 0;
+        margin-bottom: 20px;
         background: rgba(225, 230, 238, 0.7);
         backdrop-filter: blur(6px);
         border-bottom: 1px solid rgba(11, 31, 58, 0.06);
@@ -468,7 +459,7 @@
       .nav a {
         position: relative;
         padding: 4px 2px;
-        font-size: clamp(0.62em, 2.6vw, 0.7em);
+        font-size: clamp(0.65em, 2.6vw, 0.75em);
         letter-spacing: 0.14em;
         font-weight: 400;
         color: #444;
@@ -522,6 +513,11 @@
         margin-bottom: 18px;
         letter-spacing: 0.12em;
         opacity: 0.85;
+      }
+
+      .lang-switch {
+        font-size: 0.65em;
+        transform: translateY(30px);
       }
 
       .journal-if {
@@ -814,38 +810,37 @@
       </div>
  -->
       <div class="subsection">
-        <h3 data-en="Invited Full Papers" data-ja="招待論文">
-          Invited Full Papers
+        <h3 data-en="Accepted / Published" data-ja="採択・発表済み">
+          Accepted / Published
         </h3>
 
         <div class="pub-item">
           <div class="pub-title">
-            <span class="status prep" aria-hidden="true">○</span>
+            <span class="status accepted" aria-hidden="true">○</span>
             A computational fluid dynamics analysis of spatial roughness distributions on ship resistance
           </div>
           <div class="pub-meta-block">
             <div class="pub-authors">
-
               <span class="author-full">
                 <span class="main-author">S. Han*</span>
                 <span class="author-role">(Corresponding-author)</span>,
                 <span class="co-authors">M. Terziev, and T. Tezdogan</span>
               </span>
               <span class="author-short">
-                <span class="main-author">S. Han</span>
+                <span class="main-author">S. Han*</span>
                 <span class="author-role">(Corresponding-author)</span>,
                 <span class="co-authors">M. Terziev, and T. Tezdogan</span>
               </span>
             </div>
             <div class="pub-meta">
-
               <span class="pub-meta-text">
-                36th Symposium on Naval Hydrodynamics (SNH36),
+                36th Symposium on Naval Hydrodynamics (SNH36) — accepted for presentation,
               </span>
               <span class="pub-year">2026</span>
             </div>
           </div>
         </div>
+
         <div class="pub-item">
           <div class="pub-title">
             <span class="status published">●</span>
@@ -859,7 +854,7 @@
                 <span class="co-authors">S. Dai, M. Terziev, H. Yun, and S. Song</span>
               </span>
               <span class="author-short">
-                <span class="main-author">S. Han</span>
+                <span class="main-author">S. Han*</span>
                 <span class="author-role">(Corresponding-author)</span>,
                 <span class="co-authors">S. Dai, M. Terziev, <em>et al.</em></span>
               </span>

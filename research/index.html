@@ -85,10 +85,11 @@
     }
 
     .lang-switch {
-      font-size: 0.65em;
+      font-size: 0.75em;
       letter-spacing: 0.22em;
       color: #64748b;
       opacity: 0.7;
+      transform: translateY(35px);
     }
 
     .lang-switch a {
@@ -579,8 +580,8 @@
         display: flex;
         justify-content: center;
         gap: clamp(12px, 4vw, 20px);
-        padding: 6px 0;
-        margin-bottom: 28px;
+        padding: 8px 0;
+        margin-bottom: 20px;
         background: rgba(225, 230, 238, 0.7);
         backdrop-filter: blur(6px);
         border-bottom: 1px solid rgba(11, 31, 58, 0.06);
@@ -589,7 +590,7 @@
       .nav a {
         position: relative;
         padding: 4px 2px;
-        font-size: clamp(0.62em, 2.6vw, 0.7em);
+        font-size: clamp(0.65em, 2.6vw, 0.75em);
         letter-spacing: 0.14em;
         font-weight: 400;
         color: #444;
@@ -620,6 +621,11 @@
         height: 1px;
         background: #111;
         opacity: 0.6;
+      }
+
+      .lang-switch {
+        font-size: 0.65em;
+        transform: translateY(30px);
       }
 
       .rt-dot {
@@ -963,8 +969,8 @@
             <div class="rt-block">
               <div class="rt-output">
                 SNH36
-                <span class="rt-small" data-en="— Full Paper Invited" data-ja="— フルペーパー招待">
-                  — Full Paper Invited
+                <span class="rt-small" data-en="— Accepted for Presentation" data-ja="— 発表採択">
+                  — Accepted for Presentation
                 </span>
               </div>
               <div class="rt-subtitle">A computational fluid dynamics analysis of spatial roughness distributions on
