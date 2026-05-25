@@ -251,27 +251,32 @@
       line-height: 1.55;
     }
 
+    .affiliation-line {
+      display: block;
+      margin-top: 2px;
+    }
+
     .affiliation-current {
-      display: inline-block;
       color: var(--ink);
-      opacity: 0.88;
+      opacity: 0.9;
       font-size: 1.1em;
     }
 
     .affiliation-mid {
-      display: inline-block;
-      margin-top: 2px;
       color: #4b5f77;
-      opacity: 0.68;
-      font-size: 0.95em;
+      opacity: 0.85;
+      font-size: 0.9em;
     }
 
     .affiliation-sub {
-      display: inline-block;
-      margin-top: 2px;
-      color: #64748b;
-      opacity: 0.48;
-      font-size: 0.85em;
+      color: #4b5f77;
+      opacity: 0.8;
+      font-size: 0.9em;
+    }
+
+    .affiliation-year {
+      font-size: 0.76em;
+      opacity: 0.7;
     }
 
     .expected-year {
@@ -281,6 +286,44 @@
       letter-spacing: 0.04em;
       color: #64748b;
       opacity: 0.72;
+    }
+
+    .affiliation-vr {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      column-gap: 0.35em;
+      margin-top: 4px;
+      line-height: 1.55;
+    }
+
+    .affiliation-vr-label {
+      grid-column: 1;
+      grid-row: 1;
+      color: #334155;
+      opacity: 0.82;
+      font-size: 0.98em;
+    }
+
+    .affiliation-vr-primary {
+      grid-column: 2;
+      grid-row: 1;
+      color: var(--ink);
+      opacity: 0.8;
+      font-size: 1.0em;
+    }
+
+    .affiliation-vr-secondary {
+      grid-column: 2;
+      grid-row: 2;
+      color: #4b5f77;
+      opacity: 0.66;
+      font-size: 0.88em;
+    }
+
+    .affiliation-degree-sep {
+      margin: 0 7px;
+      color: #4b5f77;
+      opacity: 0.6;
     }
 
     .keywords {
@@ -509,13 +552,39 @@
       }
 
       .affiliation-mid {
-        font-size: 0.85em;
-        opacity: 0.78;
+        font-size: 0.83em;
+        opacity: 0.7;
       }
 
       .affiliation-sub {
         font-size: 0.8em;
-        opacity: 0.58;
+        opacity: 0.7;
+      }
+
+      .affiliation-highlight {
+        font-weight: 600;
+      }
+
+      .affiliation-secondary {
+        opacity: 0.66;
+      }
+
+      .affiliation-visit-secondary {
+        font-size: 0.9em;
+        opacity: 0.6;
+      }
+
+      .affiliation-visit-sep {
+        margin: 0 5px;
+      }
+
+      .affiliation-degree-sep {
+        margin: 0 2px;
+        opacity: 0.6;
+      }
+
+      .affiliation-year {
+        opacity: 1;
       }
 
       .expected-year {
@@ -613,9 +682,9 @@
         </p>
       </div>
 
-      <p class="affiliation">
+      <div class="affiliation">
 
-        <span class="affiliation-current">
+        <span class="affiliation-line affiliation-current">
           <span data-en="Preparing for doctoral research" data-ja="博士課程研究準備中">
             <em>Preparing for doctoral research</em>
           </span>
@@ -623,27 +692,58 @@
           <span data-en="Kyoto University" data-ja="京都大学">
             Kyoto University
           </span>
-          <span class="expected-year" data-en="(expected 2027–)" data-ja="（2027年開始予定）">
+          <span class="affiliation-year" data-en="(expected 2027–)" data-ja="（2027年開始予定）">
             (expected 2027–)
           </span>
         </span>
 
-        <br>
-
-        <span class="affiliation-mid">
-          <span data-en="Visiting Researcher" data-ja="客員研究員">
-            <em>Visiting Researcher</em>
+        <div class="affiliation-vr">
+          <span class="affiliation-vr-label">
+            <span data-en="Visiting Researcher" data-ja="客員研究員">
+              <em>Visiting Researcher</em>
+            </span>
           </span>
-          ·
-          <span data-en="The University of Osaka" data-ja="大阪大学">
-            The University of Osaka
+
+          <span class="affiliation-vr-primary">
+            ·
+            <span data-en="The University of Osaka" data-ja="大阪大学">
+              The University of Osaka
+            </span>
+            <span class="affiliation-year" data-en="(2025)" data-ja="（2025）">
+              (2025)
+            </span>
           </span>
-          (2025)
-        </span>
+        </div>
+<!--
+        <div class="affiliation-vr">
+          <span class="affiliation-vr-label">
+            <span data-en="Visiting Researcher" data-ja="客員研究員">
+              <em>Visiting Researcher</em>
+            </span>
+          </span>
 
-        <br>
+          <span class="affiliation-vr-primary">
+            ·
+            <span data-en="Seoul National University" data-ja="ソウル大学">
+              Seoul National University
+            </span>
+            <span class="affiliation-year" data-en="(2026–)" data-ja="（2026–）">
+              (2026–)
+            </span>
+          </span>
 
-        <span class="affiliation-mid">
+          <span class="affiliation-vr-secondary">
+            ·
+            <span data-en="The University of Osaka" data-ja="大阪大学">
+              The University of Osaka
+            </span>
+            <span class="affiliation-year" data-en="(2025)" data-ja="（2025）">
+              (2025)
+            </span>
+          </span>
+        </div>
+-->
+        <span class="affiliation-line affiliation-mid">
           <span data-en="MSc" data-ja="修士">
             <em>MSc</em>
           </span>
@@ -651,23 +751,27 @@
           <span data-en="University of Strathclyde" data-ja="ストラスクライド大学">
             University of Strathclyde
           </span>
-          (2025)
+          <span class="affiliation-year" data-en="(2025)" data-ja="（2025）">
+            (2025)
+          </span>
+
+          <span class="affiliation-degree-sep">|</span>
+
+          <span class="affiliation-sub">
+            <span data-en="BSc" data-ja="学士">
+              <em>BSc</em>
+            </span>
+            ·
+            <span data-en="Inha University" data-ja="仁荷大学">
+              Inha University
+            </span>
+            <span class="affiliation-year" data-en="(2024)" data-ja="（2024）">
+              (2024)
+            </span>
+          </span>
         </span>
 
-        <br>
-
-        <span class="affiliation-sub">
-          <span data-en="BSc" data-ja="学士">
-            <em>BSc</em>
-          </span>
-          ·
-          <span data-en="Inha University" data-ja="仁荷大学">
-            Inha University
-          </span>
-          (2024)
-        </span>
-
-      </p>
+      </div>
 
       <p class="keywords" data-en="Roughness · Hydroelasticity · Marine Flows" data-ja="粗さ・流体弾性・海洋流体">
         Roughness · Hydroelasticity · Marine Flows
