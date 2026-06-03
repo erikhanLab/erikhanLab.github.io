@@ -127,38 +127,8 @@
       transform: translateY(0);
     }
 
-    .nav-index {
-      display: block;
-      font-size: 0.7em;
-      letter-spacing: 0.32em;
-      color: #64748b;
-      margin-bottom: 6px;
-      opacity: 0.6;
-    }
-
-    .nav-label {
-      display: inline;
-      font-size: 1.15em;
-      letter-spacing: normal;
-      color: var(--ink);
-    }
-
-    /* hover */
-    .nav a:hover .nav-label {
-      color: var(--ink);
-    }
-
-    .nav a:hover .nav-index {
-      opacity: 0.8;
-    }
-
-    .nav a:last-child {
-      grid-column: auto;
-
-    }
-
     .footer-contact {
-      margin-bottom: 14px;
+      margin-bottom: 4px;
     }
 
     .footer-meta {
@@ -256,74 +226,62 @@
       margin-top: 2px;
     }
 
-    .affiliation-current {
-      color: var(--ink);
-      opacity: 0.9;
-      font-size: 1.1em;
-    }
-
-    .affiliation-mid {
-      color: #4b5f77;
-      opacity: 0.85;
-      font-size: 0.9em;
-    }
-
-    .affiliation-sub {
-      color: #4b5f77;
-      opacity: 0.8;
-      font-size: 0.9em;
-    }
-
     .affiliation-year {
       font-size: 0.76em;
       opacity: 0.7;
-    }
-
-    .expected-year {
-      margin-left: 4px;
-      font-size: 0.78em;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      color: #64748b;
-      opacity: 0.72;
-    }
-
-    .affiliation-vr {
-      display: grid;
-      grid-template-columns: max-content 1fr;
-      column-gap: 0.35em;
-      margin-top: 4px;
-      line-height: 1.55;
-    }
-
-    .affiliation-vr-label {
-      grid-column: 1;
-      grid-row: 1;
-      color: #334155;
-      opacity: 0.82;
-      font-size: 0.98em;
-    }
-
-    .affiliation-vr-primary {
-      grid-column: 2;
-      grid-row: 1;
-      color: var(--ink);
-      opacity: 0.8;
-      font-size: 1.0em;
-    }
-
-    .affiliation-vr-secondary {
-      grid-column: 2;
-      grid-row: 2;
-      color: #4b5f77;
-      opacity: 0.66;
-      font-size: 0.88em;
     }
 
     .affiliation-degree-sep {
       margin: 0 7px;
       color: #4b5f77;
       opacity: 0.6;
+    }
+
+    .affiliation-group {
+      margin-top: 8px;
+      padding-left: 12px;
+      border-left: 2px solid rgba(11, 31, 58, 0.13);
+    }
+
+    .affiliation-group-past {
+      margin-top: 14px;
+      padding-left: 12px;
+      border-left: 1px solid rgba(11, 31, 58, 0.075);
+    }
+
+    .affiliation-section-label {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 0.68em;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #64748b;
+      opacity: 0.58;
+      font-weight: 400;
+    }
+
+    .affiliation-group .affiliation-section-label {
+      color: var(--ink);
+      opacity: 0.66;
+      font-weight: 500;
+    }
+
+    .affiliation-group-past .affiliation-section-label {
+      color: #64748b;
+      opacity: 0.48;
+      font-weight: 400;
+    }
+
+    .affiliation-current-item {
+      color: var(--ink);
+      opacity: 0.9;
+      font-size: 1.05em;
+    }
+
+    .affiliation-past-item {
+      color: #4b5f77;
+      opacity: 0.78;
+      font-size: 0.9em;
     }
 
     .keywords {
@@ -341,7 +299,7 @@
 
     .nav a {
       display: block;
-      padding: 22px 0;
+      padding: 13px 0;
       text-decoration: none;
       color: var(--ink);
       border-top: 1px solid rgba(11, 31, 58, 0.18);
@@ -365,6 +323,11 @@
       letter-spacing: normal;
       color: var(--ink);
       opacity: 0.92;
+    }
+
+    .nav a:last-child {
+      grid-column: auto;
+
     }
 
     .nav a:hover {
@@ -398,7 +361,7 @@
 
     .recent-work {
       margin-bottom: 12px;
-      margin-top: -5px;
+      margin-top: 25px;
       font-size: 0.88em;
       letter-spacing: 0.04em;
       color: var(--ink);
@@ -453,8 +416,8 @@
     }
 
     footer {
-      margin-top: 25px;
-      padding-top: 24px;
+      margin-top: 40px;
+      padding-top: 10px;
       border-top: 1px solid rgba(11, 31, 58, 0.12);
       font-size: 0.8em;
       color: #94a3b8;
@@ -474,7 +437,7 @@
     }
 
     .footer-contact {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
 
     .footer-label {
@@ -510,10 +473,6 @@
         display: none;
       }
 
-      .footer-meta {
-        display: none;
-      }
-
       .header {
         margin-bottom: 0px;
         font-size: 0.8em;
@@ -541,7 +500,7 @@
       }
 
       .nav {
-        margin-bottom: -20px;
+        margin-bottom: -10px;
         font-size: 0.88em;
       }
 
@@ -549,33 +508,6 @@
         margin-top: 20px;
         font-size: 0.86em;
         line-height: 1.55;
-      }
-
-      .affiliation-mid {
-        font-size: 0.83em;
-        opacity: 0.7;
-      }
-
-      .affiliation-sub {
-        font-size: 0.9em;
-        opacity: 0.8;
-      }
-
-      .affiliation-highlight {
-        font-weight: 600;
-      }
-
-      .affiliation-secondary {
-        opacity: 0.66;
-      }
-
-      .affiliation-visit-secondary {
-        font-size: 0.9em;
-        opacity: 0.6;
-      }
-
-      .affiliation-visit-sep {
-        margin: 0 5px;
       }
 
       .affiliation-degree-sep {
@@ -587,14 +519,31 @@
         opacity: 1;
       }
 
-      .expected-year {
+      .affiliation-group {
+        padding-left: 10px;
+      }
+
+      .affiliation-group-past {
+        margin-top: 12px;
+      }
+
+      .affiliation-section-label {
         font-size: 0.72em;
-        opacity: 0.65;
+        letter-spacing: 0.16em;
+      }
+
+      .affiliation-current-item {
+        font-size: 1.02em;
+      }
+
+      .affiliation-past-item {
+        font-size: 0.84em;
       }
 
       .recent-work {
         display: block;
         line-height: 1.5;
+        margin-top: 10px;
       }
 
       .recent-title {
@@ -623,7 +572,7 @@
       }
 
       .footer-contact {
-        margin-top: 10px;
+        margin-top: 0px;
       }
 
       .keywords {
@@ -684,80 +633,57 @@
 
       <div class="affiliation">
 
-        <span class="affiliation-line affiliation-current">
-          <span data-en="Preparing for doctoral research" data-ja="博士課程研究準備中">
-            <em>Preparing for doctoral research</em>
+        <div class="affiliation-group">
+          <span class="affiliation-section-label" data-en="Current" data-ja="現在">
+            Current
           </span>
-          ·
-          <span data-en="Kyoto University" data-ja="京都大学">
-            Kyoto University
-          </span>
-          <span class="affiliation-year" data-en="(expected 2027–)" data-ja="（2027年開始予定）">
-            (expected 2027–)
-          </span>
-        </span>
 
-        <div class="affiliation-vr">
-          <span class="affiliation-vr-label">
+          <span class="affiliation-line affiliation-current-item">
             <span data-en="Visiting Researcher" data-ja="客員研究員">
               <em>Visiting Researcher</em>
             </span>
-          </span>
-
-          <span class="affiliation-vr-primary">
             ·
-            <span data-en="The University of Osaka" data-ja="大阪大学">
-              The University of Osaka
-            </span>
-            <span class="affiliation-year" data-en="(2025)" data-ja="（2025）">
-              (2025)
-            </span>
-          </span>
-        </div>
-<!--
-        <div class="affiliation-vr">
-          <span class="affiliation-vr-label">
-            <span data-en="Visiting Researcher" data-ja="客員研究員">
-              <em>Visiting Researcher</em>
-            </span>
-          </span>
-
-          <span class="affiliation-vr-primary">
-            ·
-            <span data-en="Seoul National University" data-ja="ソウル大学">
+            <span data-en="Seoul National University" data-ja="ソウル大学校">
               Seoul National University
             </span>
-            <span class="affiliation-year" data-en="(2026–)" data-ja="（2026–）">
-              (2026–)
+            <span class="affiliation-year" data-en="(from July 2026)" data-ja="（2026年7月より）">
+              (from July 2026)
             </span>
           </span>
 
-          <span class="affiliation-vr-secondary">
+          <span class="affiliation-line affiliation-current-item">
+            <span data-en="Preparing for doctoral research" data-ja="博士課程研究準備中">
+              <em>Preparing for doctoral research</em>
+            </span>
             ·
-            <span data-en="The University of Osaka" data-ja="大阪大学">
-              The University of Osaka
+            <span data-en="Kyoto University" data-ja="京都大学">
+              Kyoto University
+            </span>
+            <span class="affiliation-year" data-en="(expected 2027–)" data-ja="（2027年開始予定）">
+              (expected 2027–)
+            </span>
+          </span>
+        </div>
+
+        <div class="affiliation-group affiliation-group-past">
+          <span class="affiliation-section-label" data-en="Past" data-ja="過去">
+            Past
+          </span>
+
+          <span class="affiliation-line affiliation-past-item">
+            <span data-en="MSc" data-ja="修士">
+              <em>MSc</em>
+            </span>
+            ·
+            <span data-en="University of Strathclyde" data-ja="ストラスクライド大学">
+              University of Strathclyde
             </span>
             <span class="affiliation-year" data-en="(2025)" data-ja="（2025）">
               (2025)
             </span>
-          </span>
-        </div>
--->
-        <span class="affiliation-line affiliation-mid">
-          <span data-en="MSc" data-ja="修士">
-            <em>MSc</em>
-          </span>
-          ·
-          <span data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-            University of Strathclyde
-          </span>
-          <span class="affiliation-year" data-en="(2025)" data-ja="（2025）">
-            (2025)
-          </span>
 
-          <span class="affiliation-degree-sep">|</span>
+            <span class="affiliation-degree-sep">|</span>
 
-          <span class="affiliation-sub">
             <span data-en="BSc" data-ja="学士">
               <em>BSc</em>
             </span>
@@ -769,13 +695,28 @@
               (2024)
             </span>
           </span>
-        </span>
+
+          <span class="affiliation-line affiliation-past-item">
+            <span data-en="Research Visit" data-ja="研究訪問">
+              <em>Research Visit</em>
+            </span>
+            ·
+            <span data-en="The University of Osaka" data-ja="大阪大学">
+              The University of Osaka
+            </span>
+            <span class="affiliation-year" data-en="(2025)" data-ja="（2025）">
+              (2025)
+            </span>
+          </span>
+        </div>
 
       </div>
 
-      <p class="keywords" data-en="Roughness · Hydroelasticity · Marine Flows" data-ja="粗さ・流体弾性・海洋流体">
-        Roughness · Hydroelasticity · Marine Flows
-      </p>
+      <!--
+<p class="keywords" data-en="Roughness · Hydroelasticity · Marine Flows" data-ja="粗さ・流体弾性・海洋流体">
+  Roughness · Hydroelasticity · Marine Flows
+</p>
+-->
 
       <p class="recent-work">
         <span class="recent-label" data-en="✦ Recent Work" data-ja="✦ 最新の論文">
@@ -832,7 +773,7 @@
       </div>
 
       <div class="footer-meta">
-        © Sangseok Han · Last updated: May 2026
+        © Sangseok Han · Last updated: June 2026
       </div>
     </footer>
 
