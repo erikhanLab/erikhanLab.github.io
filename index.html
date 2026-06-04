@@ -127,15 +127,6 @@
       transform: translateY(0);
     }
 
-    .footer-contact {
-      margin-bottom: 4px;
-    }
-
-    .footer-meta {
-      font-size: 0.65em;
-      letter-spacing: 0.05em;
-    }
-
     h1 {
       font-size: 3.2em;
       font-weight: normal;
@@ -214,8 +205,8 @@
     }
 
     .affiliation {
-      margin-top: 28px;
-      font-size: 0.84em;
+      margin-top: 22px;
+      font-size: 0.88em;
       letter-spacing: 0.025em;
       color: #4b5f77;
       line-height: 1.55;
@@ -227,7 +218,7 @@
     }
 
     .affiliation-year {
-      font-size: 0.76em;
+      font-size: 0.8em;
       opacity: 0.7;
     }
 
@@ -240,13 +231,29 @@
     .affiliation-group {
       margin-top: 8px;
       padding-left: 12px;
-      border-left: 2px solid rgba(11, 31, 58, 0.13);
+      border-left: 1px solid rgba(11, 31, 58, 0.13);
     }
 
     .affiliation-group-past {
       margin-top: 14px;
       padding-left: 12px;
       border-left: 1px solid rgba(11, 31, 58, 0.075);
+    }
+
+    .affiliation-current-primary {
+      color: var(--ink);
+      opacity: 0.92;
+      font-size: 1.02em;
+    }
+
+    .affiliation-current-secondary {
+      color: #333;
+      opacity: 0.9;
+      font-size: 0.88em;
+    }
+
+    .affiliation-current-spaced {
+      margin-top: 10px;
     }
 
     .affiliation-section-label {
@@ -258,6 +265,10 @@
       color: #64748b;
       opacity: 0.58;
       font-weight: 400;
+    }
+
+    .affiliation-group-current {
+      background: none;
     }
 
     .affiliation-group .affiliation-section-label {
@@ -272,16 +283,10 @@
       font-weight: 400;
     }
 
-    .affiliation-current-item {
-      color: var(--ink);
-      opacity: 0.9;
-      font-size: 1.05em;
-    }
-
     .affiliation-past-item {
       color: #4b5f77;
-      opacity: 0.78;
-      font-size: 0.9em;
+      opacity: 0.88;
+      font-size: 0.85em;
     }
 
     .keywords {
@@ -294,7 +299,7 @@
     .nav {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px 40px;
+      gap: 28px 40px;
     }
 
     .nav a {
@@ -360,8 +365,8 @@
     }
 
     .recent-work {
-      margin-bottom: 12px;
-      margin-top: 25px;
+      margin-bottom: 3px;
+      margin-top: 15px;
       font-size: 0.88em;
       letter-spacing: 0.04em;
       color: var(--ink);
@@ -416,7 +421,7 @@
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 22px;
       padding-top: 10px;
       border-top: 1px solid rgba(11, 31, 58, 0.12);
       font-size: 0.8em;
@@ -437,7 +442,7 @@
     }
 
     .footer-contact {
-      margin-bottom: 5px;
+      margin-bottom: 1px;
     }
 
     .footer-label {
@@ -496,17 +501,17 @@
 
       .tagline {
         text-align: left;
-        font-size: 0.95em;
+        font-size: 1.04em;
       }
 
       .nav {
-        margin-bottom: -10px;
+        margin-bottom: 30px;
         font-size: 0.88em;
       }
 
       .affiliation {
         margin-top: 20px;
-        font-size: 0.86em;
+        font-size: 0.98em;
         line-height: 1.55;
       }
 
@@ -517,14 +522,29 @@
 
       .affiliation-year {
         opacity: 1;
+        font-size: 0.88em;
       }
 
       .affiliation-group {
         padding-left: 10px;
       }
 
+      .affiliation-group-current {
+        background: rgba(11, 31, 58, 0.006);
+        border-radius: 3px;
+        padding: 7px 10px 8px 10px;
+      }
+
       .affiliation-group-past {
         margin-top: 12px;
+      }
+
+      .affiliation-current-primary {
+        font-size: 1.05em;
+      }
+
+      .affiliation-current-secondary {
+        font-size: 0.95em;
       }
 
       .affiliation-section-label {
@@ -532,12 +552,8 @@
         letter-spacing: 0.16em;
       }
 
-      .affiliation-current-item {
-        font-size: 1.02em;
-      }
-
       .affiliation-past-item {
-        font-size: 0.84em;
+        font-size: 0.85em;
       }
 
       .recent-work {
@@ -633,29 +649,44 @@
 
       <div class="affiliation">
 
-        <div class="affiliation-group">
+        <div class="affiliation-group affiliation-group-current">
           <span class="affiliation-section-label" data-en="Current" data-ja="現在">
             Current
           </span>
 
-          <span class="affiliation-line affiliation-current-item">
+          <span class="affiliation-line affiliation-current-primary">
             <span data-en="Visiting Researcher" data-ja="客員研究員">
               <em>Visiting Researcher</em>
             </span>
             ·
-            <span data-en="Seoul National University" data-ja="ソウル大学校">
-              Seoul National University
+            <span class="desktop-only" data-en="Research Institute of Marine Systems Engineering" data-ja="海洋システム工学研究所">
+              Research Institute of Marine Systems Engineering
             </span>
-            <span class="affiliation-year" data-en="(from July 2026)" data-ja="（2026年7月より）">
-              (from July 2026)
+            <span class="mobile-only" data-en="RIMSE" data-ja="RIMSE">
+              RIMSE
             </span>
           </span>
 
-          <span class="affiliation-line affiliation-current-item">
-            <span data-en="Preparing for doctoral research" data-ja="博士課程研究準備中">
-              <em>Preparing for doctoral research</em>
+          <span class="affiliation-line affiliation-current-secondary">
+            <span data-en="Seoul National University" data-ja="ソウル大学校">
+              Seoul National University
+            </span>
+            <span class="affiliation-year" data-en="(Jul 2026 – Dec 2026)" data-ja="（2026年7月 – 2026年12月）">
+              (Jul 2026 – Dec 2026)
+            </span>
+          </span>
+
+          <span class="affiliation-line affiliation-current-primary affiliation-current-spaced">
+            <span data-en="Doctoral research track" data-ja="博士課程研究トラック">
+              <em>Doctoral research track</em>
             </span>
             ·
+            <span data-en="JSPS DC1 under review" data-ja="JSPS DC1 審査中">
+              JSPS DC1 under review
+            </span>
+          </span>
+
+          <span class="affiliation-line affiliation-current-secondary">
             <span data-en="Kyoto University" data-ja="京都大学">
               Kyoto University
             </span>
