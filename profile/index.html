@@ -387,9 +387,10 @@
     }
 
     .current-line.secondary {
-      font-size: 1em;
-      color: #333;
+      font-size: 0.92em;
+      color: #444;
       letter-spacing: 0.02em;
+      opacity: 0.88;
     }
 
     .current-dot {
@@ -400,8 +401,8 @@
       font-size: 0.9em;
       color: #444;
       max-width: 100ch;
-      opacity: 0.75;
-      margin-top: 12px;
+      opacity: 0.72;
+      margin-top: 14px;
     }
 
     .affiliation-block {
@@ -1023,45 +1024,47 @@
       <h2 data-en="Current" data-ja="現在">Current</h2>
 
       <div class="current-block">
-        <div class="current-line secondary">
-          <span data-en="Visiting Researcher · Seoul National University" data-ja="客員研究員 · ソウル大学校">
-            Visiting Researcher · Seoul National University
+        <div class="current-line primary">
+          <span data-en="Visiting Researcher" data-ja="客員研究員">
+            Visiting Researcher
           </span>
-          <span class="expected-year" data-en="(from July 2026)" data-ja="（2026年7月より）">
-            (from July 2026)
+          <span class="current-dot">·</span>
+
+          <span class="desktop-only" data-en="Research Institute of Marine Systems Engineering (RIMSE)"
+            data-ja="海洋システム工学研究所（RIMSE）">
+            Research Institute of Marine Systems Engineering (RIMSE)
+          </span>
+
+          <span class="mobile-only" data-en="RIMSE" data-ja="RIMSE">
+            RIMSE
           </span>
         </div>
 
         <div class="current-line secondary">
-          <span class="desktop-only">
-            <span data-en="Preparing for doctoral research · Kyoto University" data-ja="博士課程研究準備中 · 京都大学">
-              Preparing for doctoral research · Kyoto University
-            </span>
-            <span class="expected-year" data-en="(expected 2027–)" data-ja="（2027年開始予定）">
-              (expected 2027–)
-            </span>
+          <span data-en="Seoul National University" data-ja="ソウル大学校">
+            Seoul National University
           </span>
-
-          <span class="mobile-only">
-            <span data-en="Preparing for doctoral research · Kyoto University" data-ja="博士課程研究準備中 · 京都大学">
-              Preparing for doctoral research · Kyoto University
-            </span>
-            <span class="expected-year" data-en="(expected 2027–)" data-ja="（2027年開始予定）">
-              (expected 2027–)
-            </span>
+          <span class="expected-year" data-en="(from Jul 2026)" data-ja="（2026年7月より）">
+            (from Jul 2026)
           </span>
         </div>
 
-        <div class="current-line detail">
-          <span class="desktop-only"
-            data-en="Research interests focus on roughness effects and computational hydroelasticity in marine hydrodynamics."
-            data-ja="研究関心は、海洋流体力学における粗さの影響と計算流体弾性にある。">
-            Research interests focus on roughness effects and computational hydroelasticity in marine hydrodynamics.
+        <div class="current-line primary" style="margin-top:14px;">
+          <span data-en="Doctoral research development" data-ja="博士課程研究計画の策定">
+            <em>Doctoral research development</em>
           </span>
+          <span class="current-dot">·</span>
+          <span data-en="JSPS DC1 under review" data-ja="JSPS DC1 審査中">
+            JSPS DC1 under review
+          </span>
+        </div>
 
-          <span class="mobile-only" data-en="Roughness effects · Computational Hydroelasticity"
-            data-ja="粗さの影響 · 計算流体弾性">
-            Roughness effects · Computational Hydroelasticity
+        <div class="current-line secondary">
+          <span data-en="Kyoto University" data-ja="京都大学">
+            Kyoto University
+          </span>
+          <span class="expected-year" data-en="(expected 2027–)" data-ja="（2027年開始予定）">
+            (expected 2027–)
           </span>
         </div>
       </div>
@@ -1077,19 +1080,18 @@
       <div class="research-interest-grid">
 
         <div class="interest-item">
-          <div class="interest-title" data-en="Roughness Effects" data-ja="粗さの影響">
-            Roughness Effects
+          <div class="interest-title" data-en="Spatial Roughness Effects" data-ja="空間的粗さ分布">
+            Spatial Roughness Effects
           </div>
           <div class="interest-desc">
             <em class="desktop-only"
-              data-en="CFD-based analysis of roughness effects on flow development, resistance, and hydrodynamic response."
-              data-ja="粗さが流れの発達、抵抗、および流体力学的応答に与える影響をCFDにより解析する。">
-              CFD-based analysis of roughness effects on flow development, resistance, and hydrodynamic response.
+              data-en="CFD analysis of spatial hull roughness effects on boundary layers, wake, and ship resistance."
+              data-ja="空間的な船体粗さが境界層、伴流、および船体抵抗に与える影響をCFDで解析。">
+              CFD analysis of spatial hull roughness effects on boundary layers, wake, and ship resistance.
             </em>
 
-            <em class="mobile-only" data-en="CFD analysis of roughness effects on flow and resistance."
-              data-ja="粗さが流れと抵抗に与える影響をCFDで解析。">
-              CFD analysis of roughness effects on flow and resistance.
+            <em class="mobile-only" data-en="Spatial hull roughness and ship resistance." data-ja="空間的船体粗さと船体抵抗。">
+              Spatial hull roughness and ship resistance.
             </em>
           </div>
         </div>
