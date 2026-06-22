@@ -403,10 +403,22 @@
       content: " · ";
     }
 
+    .mobile-only {
+      display: none;
+    }
+
     @media (max-width: 640px) {
       .site-name {
         font-size: 1.9em;
         margin-left: 10px;
+      }
+
+      .desktop-only {
+        display: none;
+      }
+
+      .mobile-only {
+        display: inline;
       }
 
       body {
@@ -603,6 +615,7 @@
 
       .log-image img {
         filter: grayscale(50%);
+        text-align: center;
         opacity: 1 !important;
         transition: none !important;
       }
@@ -675,7 +688,8 @@
           <div class="log-meta">
             <span>Presentation</span>
             <span class="dot">·</span>
-            <span>36th Symposium on Naval Hydrodynamics</span>
+            <span class="desktop-only">36th Symposium on Naval Hydrodynamics</span>
+            <span class="mobile-only">SNH36</span>
           </div>
 
           <div class="log-paper">
@@ -715,7 +729,7 @@
           <div class="log-caption"><em>SNH36 · Busan</em></div>
         </div>
       </div>
-      
+
       <div class="log-divider"></div>
     </div>
 
