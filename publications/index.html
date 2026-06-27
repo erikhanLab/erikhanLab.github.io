@@ -264,6 +264,18 @@
       text-transform: uppercase;
     }
 
+    .subsection-review {
+      opacity: 0.88;
+    }
+
+    .subsection-review h3 {
+      opacity: 0.82;
+    }
+
+    .subsection-review .status.review {
+      opacity: 0.48;
+    }
+
     .pub-item {
       position: relative;
       padding-left: 16px;
@@ -320,6 +332,7 @@
     }
 
     .pub-meta {
+      position: relative;
       font-size: 0.75em;
       color: #666;
       display: flex;
@@ -331,6 +344,7 @@
 
     .pub-meta-text {
       line-height: 1.2;
+      position: relative;
     }
 
     .pub-meta a {
@@ -375,6 +389,34 @@
       opacity: 0.7;
       font-weight: 400;
       line-height: 1.2;
+    }
+
+    .subsection+.subsection-prep-box {
+      margin-top: 3px;
+    }
+
+    .subsection-prep-box {
+      margin-bottom: 20px;
+      padding: 0px 14px 14px 14px;
+      background: rgba(11, 31, 58, 0.025);
+      border: 1px solid rgba(11, 31, 58, 0.03);
+      border-left: none;
+      border-radius: 9px;
+      opacity: 0.62;
+    }
+
+    .subsection-prep-box h3 {
+      margin-bottom: 12px;
+      color: #333;
+      opacity: 0.92;
+    }
+
+    .subsection-prep-box .pub-item {
+      padding-left: 8px;
+    }
+
+    .subsection-prep-box .pub-item+.pub-item {
+      margin-top: 13px;
     }
 
     .status {
@@ -426,6 +468,81 @@
 
     .nav a[href="/archive/"]:hover {
       opacity: 0.7;
+    }
+
+    .meta-tooltip {
+      display: inline-block;
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(11, 31, 58, 0.12);
+      cursor: default;
+      transition:
+        color 0.15s ease,
+        border-color 0.15s ease;
+    }
+
+    .meta-tooltip:hover {
+      color: inherit;
+      border-bottom-color: rgba(11, 31, 58, 0.26);
+    }
+
+    .meta-tooltip::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 0;
+      bottom: calc(100% + 9px);
+      transform: translateY(3px);
+      width: max-content;
+      max-width: min(320px, 72vw);
+      padding: 6px 9px;
+      font-family: Georgia, serif;
+      font-size: 0.72rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.35;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      color: #2f3742;
+      background: rgba(248, 249, 251, 0.96);
+      border: 1px solid rgba(11, 31, 58, 0.12);
+      border-radius: 6px;
+      box-shadow: 0 8px 20px rgba(11, 31, 58, 0.08);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      z-index: 2000;
+      transition:
+        opacity 0.16s ease,
+        transform 0.16s ease,
+        visibility 0.16s ease;
+    }
+
+    .meta-tooltip::before {
+      content: "";
+      position: absolute;
+      left: 14px;
+      bottom: calc(100% + 4px);
+      transform: none;
+      border-width: 5px 5px 0 5px;
+      border-style: solid;
+      border-color: rgba(248, 249, 251, 0.96) transparent transparent transparent;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      z-index: 2001;
+      transition:
+        opacity 0.16s ease,
+        visibility 0.16s ease;
+    }
+
+    .meta-tooltip:hover::after,
+    .meta-tooltip:hover::before {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .meta-tooltip:hover::after {
+      transform: translateY(0);
     }
 
     @media (max-width: 640px) {
@@ -515,6 +632,14 @@
         opacity: 0.85;
       }
 
+      .subsection-review {
+        opacity: 0.9;
+      }
+
+      .subsection-prep-box {
+        opacity: 0.7;
+      }
+
       .lang-switch {
         font-size: 0.65em;
         transform: translateY(30px);
@@ -552,6 +677,15 @@
 
       .pub-authors {
         font-size: 0.71em;
+      }
+
+      .meta-tooltip::after,
+      .meta-tooltip::before {
+        display: none;
+      }
+
+      .meta-tooltip {
+        border-bottom: none;
       }
 
       .pub-meta {
@@ -680,9 +814,10 @@
             </div>
             <div class="pub-meta">
               <span class="pub-meta-text">
-                <a href="https://www.sciencedirect.com/journal/ocean-engineering" target="_blank"><em>Ocean
-                    Engineering</em></a>
-                <span class="journal-if">(Q1), </span>
+                <span class="meta-tooltip" data-tooltip="Q1 · Impact Factor: 6.3 · JCR 2025">
+                  <em>Ocean Engineering</em>
+                </span>
+                <span class="journal-if">(Q1),</span>
               </span>
               <span class="pub-year">2026</span>
             </div>
@@ -713,9 +848,10 @@
             </div>
             <div class="pub-meta">
               <span class="pub-meta-text">
-                <a href="https://www.mdpi.com/journal/jmse" target="_blank"><em>Journal of Marine Science and
-                    Engineering</em></a>
-                <span class="journal-if">(Q2), </span>
+                <span class="meta-tooltip" data-tooltip="Q2 · Impact Factor: 2.8 · JCR 2024">
+                  <em>Journal of Marine Science and Engineering</em>
+                </span>
+                <span class="journal-if">(Q2),</span>
               </span>
               <span class="pub-year">2025</span>
               <span class="cover-badge">Cover Article</span>
@@ -749,11 +885,11 @@
             </div>
             <div class="pub-meta">
               <span class="pub-meta-text">
-                <a href="https://www.sciencedirect.com/journal/ocean-engineering" target="_blank"><em>Ocean
-                    Engineering</em></a>
-                <span class="journal-if">(Q1), </span>
+                <span class="meta-tooltip" data-tooltip="Q1 · Impact Factor: 4.6 · JCR 2023">
+                  <em>Ocean Engineering</em>
+                </span>
+                <span class="journal-if">(Q1),</span>
               </span>
-
               <span class="pub-year">2024</span>
             </div>
           </div>
@@ -766,161 +902,196 @@
       </div>
 -->
       <div class="subsection">
-        <h3 data-en="Under Review" data-ja="査読中">Under Review</h3>
+        <div class="subsection subsection-review">
+          <h3 data-en="Under Review" data-ja="査読中">Under Review</h3>
 
-        <div class="pub-item">
-          <div class="pub-title">
-            <span class="status review" aria-hidden="true">○</span>
-            Beyond uniform roughness: Spatial variability in hull surfaces and its implications for ship resistance
-          </div>
-          <div class="pub-meta-block">
-            <div class="pub-authors">
-
-              <span class="author-full">
-                <span class="main-author">S. Han*</span>
-                <span class="author-role">(Solo-author)</span>
-              </span>
-              <span class="author-short">
-                <span class="main-author">S. Han*</span>
-                <span class="author-role">(Solo-author)</span>
-              </span>
+          <div class="pub-item">
+            <div class="pub-title">
+              <span class="status review" aria-hidden="true">○</span>
+              Beyond uniform roughness: Spatial variability in hull surfaces and its implications for ship resistance
             </div>
-            <div class="pub-meta">
-              <span class="pub-meta-text">
-                <em>Ocean Engineering</em> — under review,
-              </span>
-              <span class="pub-year">2026</span>
+            <div class="pub-meta-block">
+              <div class="pub-authors">
+
+                <span class="author-full">
+                  <span class="main-author">S. Han*</span>
+                  <span class="author-role">(Solo-author)</span>
+                </span>
+                <span class="author-short">
+                  <span class="main-author">S. Han*</span>
+                  <span class="author-role">(Solo-author)</span>
+                </span>
+              </div>
+              <div class="pub-meta">
+                <span class="pub-meta-text">
+                  <em>Ocean Engineering</em> — under review,
+                </span>
+                <span class="pub-year">2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection subsection-prep-box">
+          <h3 data-en="In Preparation" data-ja="準備中">In Preparation</h3>
+
+          <div class="pub-item">
+            <div class="pub-title">
+              <span class="status prep" aria-hidden="true">○</span>
+              Ship resistance under controlled spatial roughness distributions across benchmark hulls: A CFD study
+            </div>
+
+            <div class="pub-meta-block">
+              <div class="pub-meta">
+                <span class="pub-meta-text">
+                  Manuscript in preparation,
+                </span>
+                <span class="pub-year">2026</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">
+              <span class="status prep" aria-hidden="true">○</span>
+              Simulation-based analysis of a gyroscopic WEC using a modular CFD–MBD approach
+            </div>
+
+            <div class="pub-meta-block">
+              <div class="pub-meta">
+                <span class="pub-meta-text">
+                  Manuscript in preparation,
+                </span>
+                <span class="pub-year">2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+
+      <div class="section">
+        <h2 data-en="Conference Papers" data-ja="国際会議論文">
+          <strong>Conference Papers</strong>
+        </h2>
+
+        <div class="subsection">
+          <h3 data-en="Published / Presented" data-ja="出版済み・発表済み">
+            Published / Presented
+          </h3>
+
+          <div class="pub-item">
+            <div class="pub-title">
+              <span class="status published">●</span>
+              A computational fluid dynamics analysis of spatial roughness distributions on ship resistance
+            </div>
+            <div class="pub-meta-block">
+              <div class="pub-authors">
+                <span class="author-full">
+                  <span class="main-author">S. Han*</span>
+                  <span class="author-role">(Corresponding-author)</span>,
+                  <span class="co-authors">M. Terziev, and T. Tezdogan</span>
+                </span>
+                <span class="author-short">
+                  <span class="main-author">S. Han*</span>
+                  <span class="author-role">(Corresponding-author)</span>,
+                  <span class="co-authors">M. Terziev, and T. Tezdogan</span>
+                </span>
+              </div>
+
+              <div class="pub-meta">
+                <span class="pub-meta-text">
+                  <span class="meta-tooltip" data-tooltip="International symposium · Busan, Korea">
+                    36th Symposium on Naval Hydrodynamics (SNH36)
+                  </span>
+                </span>
+                <span class="pub-year">2026</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">
+              <span class="status published">●</span>
+              Numerical analysis of fluid-structure interaction for semi-submersible floating offshore wind turbines
+            </div>
+            <div class="pub-meta-block">
+              <div class="pub-authors">
+                <span class="author-full">
+                  <span class="main-author">S. Han*</span>
+                  <span class="author-role">(Corresponding-author)</span>,
+                  <span class="co-authors">S. Dai, M. Terziev, H. Yun, and S. Song</span>
+                </span>
+                <span class="author-short">
+                  <span class="main-author">S. Han*</span>
+                  <span class="author-role">(Corresponding-author)</span>,
+                  <span class="co-authors">S. Dai, M. Terziev, <em>et al.</em></span>
+                </span>
+              </div>
+              <div class="pub-meta">
+                <span class="pub-meta-text">
+                  <span class="meta-tooltip" data-tooltip="International conference · Edinburgh, UK">
+                    International Conference on Computational Methods in Marine Engineering (MARINE 2025)
+                  </span><span>,</span>
+                </span>
+                <span class="pub-year">2025</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="scroll-spacer"></div>
 
-    <div class="divider"></div>
+    <script>
+      const DEFAULT_LANG = "en";
+      const SUPPORTED_LANGS = new Set(["en", "ja"]);
 
-    <div class="section">
-      <h2 data-en="Conference Papers" data-ja="国際会議論文">
-        <strong>Conference Papers</strong>
-      </h2>
-      <!-- 
-      <div class="subsection">
-        <h3 data-en="Accepted and Published" data-ja="採択・発表済み">
-          Accepted and Published
-        </h3>
-      </div>
- -->
-      <div class="subsection">
-        <h3 data-en="Published / Presented" data-ja="出版済み・発表済み">
-          Published / Presented
-        </h3>
+      function getSessionLang() {
+        const saved = sessionStorage.getItem("lang");
+        return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
+      }
 
-        <div class="pub-item">
-          <div class="pub-title">
-            <span class="status published">●</span>
-            A computational fluid dynamics analysis of spatial roughness distributions on ship resistance
-          </div>
-          <div class="pub-meta-block">
-            <div class="pub-authors">
-              <span class="author-full">
-                <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding-author)</span>,
-                <span class="co-authors">M. Terziev, and T. Tezdogan</span>
-              </span>
-              <span class="author-short">
-                <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding-author)</span>,
-                <span class="co-authors">M. Terziev, and T. Tezdogan</span>
-              </span>
-            </div>
-            <div class="pub-meta">
-              <span class="pub-meta-text">
-                36th Symposium on Naval Hydrodynamics (SNH36) — Fundamentals of Fluid Dynamics in the Naval Context,
-              </span>
-              <span class="pub-year">2026</span>
-            </div>
-          </div>
-        </div>
+      function applyLang(lang) {
+        const safeLang = SUPPORTED_LANGS.has(lang) ? lang : DEFAULT_LANG;
 
-        <div class="pub-item">
-          <div class="pub-title">
-            <span class="status published">●</span>
-            Numerical analysis of fluid-structure interaction for semi-submersible floating offshore wind turbines
-          </div>
-          <div class="pub-meta-block">
-            <div class="pub-authors">
-              <span class="author-full">
-                <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding-author)</span>,
-                <span class="co-authors">S. Dai, M. Terziev, H. Yun, and S. Song</span>
-              </span>
-              <span class="author-short">
-                <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding-author)</span>,
-                <span class="co-authors">S. Dai, M. Terziev, <em>et al.</em></span>
-              </span>
-            </div>
-            <div class="pub-meta">
-              <span class="pub-meta-text">
-                International Conference on Computational Methods in Marine Engineering (MARINE 2025),
-              </span>
-              <span class="pub-year">2025</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="scroll-spacer"></div>
+        document.documentElement.setAttribute("lang", safeLang);
+        document.documentElement.setAttribute("data-lang", safeLang);
 
-  <script>
-    const DEFAULT_LANG = "en";
-    const SUPPORTED_LANGS = new Set(["en", "ja"]);
+        document.querySelectorAll("[data-en]").forEach(el => {
+          const value = el.getAttribute(`data-${safeLang}`);
+          if (value !== null) {
+            el.textContent = value;
+          }
+        });
 
-    function getSessionLang() {
-      const saved = sessionStorage.getItem("lang");
-      return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
-    }
+        document.querySelectorAll(".lang-switch a").forEach(a => {
+          a.classList.toggle("active", a.dataset.lang === safeLang);
+        });
+      }
 
-    function applyLang(lang) {
-      const safeLang = SUPPORTED_LANGS.has(lang) ? lang : DEFAULT_LANG;
+      document.addEventListener("DOMContentLoaded", () => {
+        const lang = getSessionLang();
+        applyLang(lang);
 
-      document.documentElement.setAttribute("lang", safeLang);
-      document.documentElement.setAttribute("data-lang", safeLang);
+        document.querySelectorAll(".lang-switch a").forEach(a => {
+          a.addEventListener("click", (e) => {
+            e.preventDefault();
 
-      document.querySelectorAll("[data-en]").forEach(el => {
-        const value = el.getAttribute(`data-${safeLang}`);
-        if (value !== null) {
-          el.textContent = value;
-        }
-      });
+            const selected = SUPPORTED_LANGS.has(a.dataset.lang)
+              ? a.dataset.lang
+              : DEFAULT_LANG;
 
-      document.querySelectorAll(".lang-switch a").forEach(a => {
-        a.classList.toggle("active", a.dataset.lang === safeLang);
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const lang = getSessionLang();
-      applyLang(lang);
-
-      document.querySelectorAll(".lang-switch a").forEach(a => {
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
-
-          const selected = SUPPORTED_LANGS.has(a.dataset.lang)
-            ? a.dataset.lang
-            : DEFAULT_LANG;
-
-          sessionStorage.setItem("lang", selected);
-          applyLang(selected);
+            sessionStorage.setItem("lang", selected);
+            applyLang(selected);
+          });
         });
       });
-    });
 
-    window.addEventListener("load", () => {
-      document.querySelector(".page-content")?.classList.add("loaded");
-    });
-  </script>
+      window.addEventListener("load", () => {
+        document.querySelector(".page-content")?.classList.add("loaded");
+      });
+    </script>
 
 </body>
 
