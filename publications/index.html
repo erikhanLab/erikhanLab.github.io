@@ -283,7 +283,7 @@
     }
 
     .pub-title {
-      font-size: 0.9em;
+      font-size: 1.02em;
       font-weight: 500;
       color: #111;
       line-height: 1.35;
@@ -464,6 +464,25 @@
 
     .nav a[href="/archive/"]:hover {
       opacity: 0.7;
+    }
+
+    .pub-title-ellipsis {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .pub-title-ellipsis .status {
+      flex: 0 0 auto;
+    }
+
+    .pub-title-ellipsis .title-text {
+      display: block;
+      min-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .meta-tooltip {
@@ -907,13 +926,16 @@
         <h3 data-en="Under Review" data-ja="査読中">Under Review</h3>
 
         <div class="pub-item">
-          <div class="pub-title">
+          <div class="pub-title pub-title-ellipsis">
             <span class="status review" aria-hidden="true">○</span>
-            Beyond uniform roughness: Spatial variability of hull roughness and implications for single-parameter representation 
+            <span class="title-text">
+              Beyond uniform roughness: Spatial variability of hull roughness and implications for single-parameter
+              representation
+            </span>
           </div>
+
           <div class="pub-meta-block">
             <div class="pub-authors">
-
               <span class="author-full">
                 <span class="main-author">S. Han*</span>
                 <span class="author-role">(Solo-author)</span>
@@ -923,6 +945,7 @@
                 <span class="author-role">(Solo-author)</span>
               </span>
             </div>
+
             <div class="pub-meta">
               <span class="pub-meta-text">
                 <em>Ocean Engineering</em> — under review,
@@ -939,7 +962,7 @@
         <div class="pub-item">
           <div class="pub-title">
             <span class="status prep" aria-hidden="true">○</span>
-            Effects of controlled spatial roughness distributions on full-scale ship resistance 
+            Effects of controlled spatial roughness distributions on full-scale ship resistance
           </div>
 
           <div class="pub-meta-block">
@@ -1007,6 +1030,35 @@
                 </span>
               </span>
               <span class="pub-year">2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            <span class="status published">●</span>
+            CFD-Based Model Predictive Control for Point Absorber Wave Energy Converter
+          </div>
+          <div class="pub-meta-block">
+            <div class="pub-authors">
+              <span class="author-full">
+                <span class="main-author">S. Han</span>
+                <span class="author-role">(First-author)</span>
+                <span class="co-authors"> and M. Lee</span>
+              </span>
+              <span class="author-short">
+                <span class="main-author">S. Han</span>
+                <span class="author-role">(First-author)</span>
+                <span class="co-authors"> and M. Lee</span>
+              </span>
+            </div>
+            <div class="pub-meta">
+              <span class="pub-meta-text">
+                <span class="meta-tooltip" data-tooltip="Conference proceedings · Himeji, Japan">
+                  JASNAOE 2025 Annual Autumn Meeting
+                </span><span>,</span>
+              </span>
+              <span class="pub-year">2025</span>
             </div>
           </div>
         </div>
