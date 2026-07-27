@@ -636,6 +636,207 @@
       opacity: 0.75;
     }
 
+    /* =========================
+   Affiliation Timeline
+========================= */
+
+    .affiliation-timeline {
+      box-sizing: border-box;
+      width: min(100%, 560px);
+      margin: 34px 0 0;
+      padding: 19px 17px 17px;
+
+      background:
+        linear-gradient(135deg,
+          rgba(235, 238, 242, 0.78),
+          rgba(231, 234, 239, 0.68));
+
+      border: 1px solid rgba(11, 31, 58, 0.07);
+
+      box-shadow:
+        0 8px 22px rgba(11, 31, 58, 0.025),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+
+      overflow: visible;
+    }
+
+    .timeline-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 18px;
+      margin-bottom: 17px;
+    }
+
+    .timeline-title {
+      font-size: 0.68em;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(49, 60, 74, 0.82);
+    }
+
+    .timeline-range {
+      font-size: 0.6em;
+      letter-spacing: 0.065em;
+      color: rgba(78, 88, 101, 0.72);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timeline-month-label {
+      font-size: 0.47em;
+      line-height: 1;
+      text-align: center;
+      letter-spacing: 0;
+      color: rgba(82, 92, 105, 0.68);
+    }
+
+    .timeline-year {
+      font-size: 0.70em;
+      letter-spacing: 0.045em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timeline-year.is-past {
+      color: rgba(101, 109, 120, 0.56);
+      font-weight: 400;
+    }
+
+    .timeline-year.is-current {
+      color: rgba(57, 67, 80, 0.65);
+      font-weight: 600;
+    }
+
+    .timeline-legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-width: 0;
+
+      font-size: 0.63em;
+      line-height: 1.4;
+      letter-spacing: 0.02em;
+      color: rgba(57, 67, 80, 0.76);
+    }
+
+    /* 연도 + 12개월 블록만 표시 */
+    .timeline-scale,
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr);
+      column-gap: 12px;
+    }
+
+    .timeline-scale {
+      align-items: end;
+      margin-bottom: 7px;
+    }
+
+    .timeline-row {
+      position: relative;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .timeline-row:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .timeline-months {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 4px;
+    }
+
+
+    .month-block {
+      position: relative;
+      display: block;
+      min-width: 0;
+      height: 10px;
+
+      border-radius: 2px;
+      border: 1px solid rgba(11, 31, 58, 0.055);
+      background: transparent;
+    }
+
+    /* 공통: 강한 그림자와 광택 제거 */
+    .month-block.is-filled {
+      border-color: rgba(11, 31, 58, 0.055);
+      box-shadow: none;
+    }
+
+    /* Inha University — 아주 옅은 하늘색 */
+    .month-block.aff-inha {
+      background: rgba(83, 131, 165, 0.2);
+      border-color: rgba(112, 149, 174, 0.10);
+      box-shadow: none;
+    }
+
+    /* University of Strathclyde — deep navy */
+    .month-block.aff-strathclyde {
+      background: rgba(86, 124, 173, 0.58);
+      border-color: rgba(67, 103, 150, 0.18);
+      box-shadow: none;
+    }
+
+    /* The University of Osaka — 확실한 세이지 그린 */
+    .month-block.aff-osaka {
+      background: rgba(103, 137, 119, 0.32);
+      border-color: rgba(77, 111, 94, 0.13);
+      box-shadow: none;
+    }
+
+    /* Seoul National University — muted dusty mauve */
+    .month-block.aff-snu {
+      background: rgba(116, 91, 101, 0.34);
+      border-color: rgba(94, 70, 80, 0.12);
+      box-shadow: none;
+    }
+
+    /* 이미 지나간 소속 공백 */
+    .month-block.is-past-gap {
+      background: rgba(117, 124, 133, 0.15);
+      border-color: rgba(100, 108, 118, 0.06);
+    }
+
+    /* 미래 */
+    .month-block.is-future {
+      background: transparent;
+      border-color: rgba(11, 31, 58, 0.045);
+    }
+
+    /* Minimal legend */
+    .timeline-legend {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 18px;
+
+      margin-top: 17px;
+    }
+
+    .timeline-legend-mark {
+      display: inline-block;
+      width: 14px;
+      height: 5px;
+      flex-shrink: 0;
+      border-radius: 1px;
+    }
+
+    .timeline-legend-mark.aff-inha {
+      background: rgba(83, 131, 165, 0.38);
+    }
+
+    .timeline-legend-mark.aff-strathclyde {
+      background: rgba(86, 124, 173, 0.72);
+    }
+
+    .timeline-legend-mark.aff-osaka {
+      background: rgba(103, 137, 119, 0.50);
+    }
+
+    .timeline-legend-mark.aff-snu {
+      background: rgba(116, 91, 101, 0.52);
+    }
 
     @media (max-width: 640px) {
       .site-name {
@@ -777,6 +978,70 @@
       .interest-desc {
         font-size: 0.75em;
         margin-left: 5px;
+      }
+
+      .affiliation-timeline {
+        width: 100%;
+        margin-top: 24px;
+        padding: 15px 11px 14px;
+      }
+
+      .timeline-heading {
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+
+      .timeline-title {
+        font-size: 0.59em;
+      }
+
+      .timeline-range {
+        font-size: 0.5em;
+      }
+
+      .timeline-scale,
+      .timeline-row {
+        grid-template-columns: 30px minmax(0, 1fr);
+        column-gap: 8px;
+      }
+
+      .timeline-scale {
+        margin-bottom: 6px;
+      }
+
+      .timeline-months {
+        gap: 3px;
+      }
+
+      .timeline-month-label {
+        font-size: 0.4em;
+      }
+
+      .timeline-row {
+        margin-bottom: 11px;
+      }
+
+      .timeline-year {
+        font-size: 0.61em;
+        letter-spacing: 0.035em;
+      }
+
+      .month-block {
+        height: 9px;
+      }
+
+      .timeline-legend {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        margin-top: 14px;
+      }
+
+      .timeline-legend-item {
+        font-size: 0.51em;
+      }
+
+      .timeline-legend-mark {
+        width: 12px;
       }
 
       .side-nav {
@@ -1011,12 +1276,14 @@
         <span class="icon-label">LinkedIn</span>
       </a>
 
-      <a href="mailto:sangseok.han.contact@gmail.com" aria-label="Email">
+      <a href="mailto:sangseok.han.contact@gmail.com" class="copy-email" data-email="sangseok.han.contact@gmail.com"
+        aria-label="Copy email address" title="Click to copy email address">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M2 4h20v16H2V4zm10 7L2 6v2l10 5 10-5V6l-10 5z" />
         </svg>
         <span class="icon-label">Email</span>
       </a>
+
     </div>
 
     <div class="divider"></div>
@@ -1142,6 +1409,7 @@
       <h2 data-en="Affiliations" data-ja="所属">
         Affiliations
       </h2>
+
       <div class="affiliation-block">
 
         <div class="affiliation-item">
@@ -1153,6 +1421,7 @@
               (2026–)
             </span>
           </div>
+
           <div class="affiliation-secondary">
             <span data-en="Seoul National University" data-ja="ソウル大学校">
               Seoul National University
@@ -1162,6 +1431,7 @@
               South Korea
             </span>
           </div>
+
           <div class="affiliation-detail">
             <em data-en="Research in marine hydrodynamics and CFD." data-ja="海洋流体力学およびCFDに関する研究。">
               Research in marine hydrodynamics and CFD.
@@ -1176,6 +1446,7 @@
             </span>
             <span class="affiliation-year">(2025)</span>
           </div>
+
           <div class="affiliation-secondary">
             <span data-en="The University of Osaka" data-ja="大阪大学">
               The University of Osaka
@@ -1185,6 +1456,7 @@
               Japan
             </span>
           </div>
+
           <div class="affiliation-detail">
             <em data-en="CFD studies in offshore hydrodynamics and related systems."
               data-ja="海洋流体力学および関連システムに関するCFD研究。">
@@ -1200,6 +1472,7 @@
             </span>
             <span class="affiliation-year">(2024–2025)</span>
           </div>
+
           <div class="affiliation-secondary">
             <span data-en="University of Strathclyde" data-ja="ストラスクライド大学">
               University of Strathclyde
@@ -1209,6 +1482,7 @@
               United Kingdom
             </span>
           </div>
+
           <div class="affiliation-detail">
             <em data-en="CFD-based analysis of hull roughness effects on ship hydrodynamics."
               data-ja="船体粗さが船舶流体力学に与える影響に関するCFD解析。">
@@ -1224,6 +1498,7 @@
             </span>
             <span class="affiliation-year">(2021–2024)</span>
           </div>
+
           <div class="affiliation-secondary">
             <span data-en="Inha University" data-ja="仁荷大学">
               Inha University
@@ -1233,6 +1508,7 @@
               South Korea
             </span>
           </div>
+
           <div class="affiliation-detail">
             <em data-en="Foundation in fluid mechanics and marine engineering." data-ja="流体力学および船舶海洋工学の基礎。">
               Foundation in fluid mechanics and marine engineering.
@@ -1240,6 +1516,10 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- Affiliation timeline -->
+      <div id="affiliation-timeline" class="affiliation-timeline" aria-label="Affiliation timeline">
       </div>
     </div>
 
@@ -1370,6 +1650,350 @@
   </div>
 
   <script>
+    const AFFILIATION_TIMELINE_DATA = [
+      {
+        id: "inha",
+        start: "2021-03",
+        end: "2024-08",
+
+        institution: {
+          en: "Inha University",
+          ja: "仁荷大学"
+        },
+
+        country: {
+          en: "South Korea",
+          ja: "韓国"
+        },
+
+        role: {
+          en: "BSc",
+          ja: "学士"
+        }
+      },
+
+      {
+        id: "strathclyde",
+        start: "2024-09",
+        end: "2025-09",
+
+        institution: {
+          en: "University of Strathclyde",
+          ja: "ストラスクライド大学"
+        },
+
+        country: {
+          en: "United Kingdom",
+          ja: "イギリス"
+        },
+
+        role: {
+          en: "MSc",
+          ja: "修士"
+        }
+      },
+
+      {
+        id: "osaka",
+        start: "2025-10",
+        end: "2025-11",
+
+        institution: {
+          en: "The University of Osaka",
+          ja: "大阪大学"
+        },
+
+        country: {
+          en: "Japan",
+          ja: "日本"
+        },
+
+        role: {
+          en: "Research Visit",
+          ja: "研究訪問"
+        }
+      },
+
+      {
+        id: "snu",
+        start: "2026-07",
+        end: "present",
+
+        institution: {
+          en: "Seoul National University",
+          ja: "ソウル大学校"
+        },
+
+        country: {
+          en: "South Korea",
+          ja: "韓国"
+        },
+
+        role: {
+          en: "Visiting Researcher",
+          ja: "客員研究員"
+        }
+      }
+    ];
+
+    const TIMELINE_MONTH_LABELS = [
+      "J", "F", "M", "A", "M", "J",
+      "J", "A", "S", "O", "N", "D"
+    ];
+
+    function resolveTimelineDate(value) {
+      if (value !== "present") {
+        return value;
+      }
+
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, "0");
+
+      return `${year}-${month}`;
+    }
+
+    function timelineMonthIndex(value) {
+      const resolved = resolveTimelineDate(value);
+      const [year, month] = resolved.split("-").map(Number);
+
+      return year * 12 + month - 1;
+    }
+
+    function formatTimelineMonth(year, month) {
+      return `${year}.${String(month).padStart(2, "0")}`;
+    }
+
+    function getTimelineItem(year, month) {
+      const currentIndex = year * 12 + month - 1;
+
+      return AFFILIATION_TIMELINE_DATA.find(item => {
+        const startIndex = timelineMonthIndex(item.start);
+        const endIndex = timelineMonthIndex(item.end);
+
+        return currentIndex >= startIndex && currentIndex <= endIndex;
+      });
+    }
+
+    function getTimelineYears() {
+      const startYear = Math.min(
+        ...AFFILIATION_TIMELINE_DATA.map(item =>
+          Number(item.start.slice(0, 4))
+        )
+      );
+
+      const endYear = Math.max(
+        ...AFFILIATION_TIMELINE_DATA.map(item =>
+          Number(resolveTimelineDate(item.end).slice(0, 4))
+        )
+      );
+
+      const years = [];
+
+      for (let year = startYear; year <= endYear; year++) {
+        years.push(year);
+      }
+
+      return years;
+    }
+
+    function renderAffiliationTimeline(lang = "en") {
+      const container =
+        document.getElementById("affiliation-timeline");
+
+      if (!container) return;
+
+      const safeLang =
+        lang === "ja" ? "ja" : "en";
+
+      const years = getTimelineYears();
+
+      const currentYear = new Date().getFullYear();
+
+      container.innerHTML = "";
+
+      /* Heading */
+      const heading =
+        document.createElement("div");
+
+      heading.className = "timeline-heading";
+
+      const title =
+        document.createElement("div");
+
+      title.className = "timeline-title";
+
+      title.textContent =
+        safeLang === "ja"
+          ? "所属タイムライン"
+          : "Affiliation Timeline";
+
+      const range =
+        document.createElement("div");
+
+      range.className = "timeline-range";
+      range.textContent = "2021.03 — Present";
+
+      heading.append(title, range);
+      container.appendChild(heading);
+
+      /* Month header */
+      const scale =
+        document.createElement("div");
+
+      scale.className = "timeline-scale";
+
+      const yearPlaceholder =
+        document.createElement("div");
+
+      const monthScale =
+        document.createElement("div");
+
+      monthScale.className = "timeline-months";
+
+      TIMELINE_MONTH_LABELS.forEach(label => {
+        const monthLabel =
+          document.createElement("span");
+
+        monthLabel.className =
+          "timeline-month-label";
+
+        monthLabel.textContent = label;
+
+        monthScale.appendChild(monthLabel);
+      });
+
+      scale.append(
+        yearPlaceholder,
+        monthScale
+      );
+
+      container.appendChild(scale);
+
+      /* Year rows */
+      years.forEach(year => {
+        const row =
+          document.createElement("div");
+
+        row.className = "timeline-row";
+
+        const yearLabel =
+          document.createElement("div");
+
+        yearLabel.className = "timeline-year";
+        yearLabel.textContent = year;
+
+        if (year < currentYear) {
+          yearLabel.classList.add("is-past");
+        } else if (year === currentYear) {
+          yearLabel.classList.add("is-current");
+        }
+
+        const months =
+          document.createElement("div");
+
+        months.className = "timeline-months";
+
+        for (let month = 1; month <= 12; month++) {
+          const item =
+            getTimelineItem(year, month);
+
+          const block =
+            document.createElement("span");
+
+          block.className = "month-block";
+
+          const currentMonthIndex =
+            new Date().getFullYear() * 12 +
+            new Date().getMonth();
+
+          const blockMonthIndex =
+            year * 12 + month - 1;
+
+          if (item) {
+            const institution =
+              item.institution[safeLang];
+
+            const country =
+              item.country[safeLang];
+
+            const role =
+              item.role[safeLang];
+
+            block.classList.add(
+              "is-filled",
+              `aff-${item.id}`
+            );
+
+            block.setAttribute("role", "img");
+
+            block.setAttribute(
+              "aria-label",
+              `${formatTimelineMonth(year, month)}, ` +
+              `${institution}, ${country}, ${role}`
+            );
+
+            block.dataset.tooltip =
+              `${formatTimelineMonth(year, month)} · ` +
+              `${institution} · ${role}`;
+          } else if (blockMonthIndex <= currentMonthIndex) {
+            block.classList.add("is-past-gap");
+
+            block.setAttribute(
+              "aria-label",
+              safeLang === "ja"
+                ? `${formatTimelineMonth(year, month)}、所属記載なし`
+                : `${formatTimelineMonth(year, month)}, no listed affiliation`
+            );
+          } else {
+            block.classList.add("is-future");
+            block.setAttribute("aria-hidden", "true");
+          }
+
+          months.appendChild(block);
+        }
+
+        row.append(
+          yearLabel,
+          months
+        );
+
+        container.appendChild(row);
+      });
+
+      /* Legend */
+      const legend =
+        document.createElement("div");
+
+      legend.className = "timeline-legend";
+
+      AFFILIATION_TIMELINE_DATA.forEach(item => {
+        const legendItem =
+          document.createElement("div");
+
+        legendItem.className =
+          "timeline-legend-item";
+
+        const mark =
+          document.createElement("span");
+
+        mark.className =
+          `timeline-legend-mark aff-${item.id}`;
+
+        const label =
+          document.createElement("span");
+
+        label.textContent =
+          `${item.institution[safeLang]} ` +
+          `(${item.country[safeLang]})`;
+
+        legendItem.append(mark, label);
+        legend.appendChild(legendItem);
+      });
+
+      container.appendChild(legend);
+    }
+
     const DEFAULT_LANG = "en";
     const SUPPORTED_LANGS = new Set(["en", "ja"]);
 
@@ -1401,6 +2025,8 @@
       document.querySelectorAll(".lang-switch a").forEach(a => {
         a.classList.toggle("active", a.dataset.lang === safeLang);
       });
+
+      renderAffiliationTimeline(safeLang);
     }
 
     function updateScrollThumb() {
@@ -1418,6 +2044,7 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       const lang = getSessionLang();
+
       applyLang(lang);
 
       document.querySelectorAll(".lang-switch a").forEach(a => {
@@ -1441,6 +2068,30 @@
     window.addEventListener("load", () => {
       document.querySelector(".page-content")?.classList.add("loaded");
       updateScrollThumb();
+    });
+
+
+    const emailLink = document.querySelector(".copy-email");
+
+    emailLink?.addEventListener("click", async (event) => {
+      event.preventDefault();
+
+      const email = emailLink.dataset.email;
+      const label = emailLink.querySelector(".icon-label");
+
+      try {
+        await navigator.clipboard.writeText(email);
+
+        label.textContent = "Copied";
+        emailLink.setAttribute("aria-label", "Email address copied");
+
+        setTimeout(() => {
+          label.textContent = "Email";
+          emailLink.setAttribute("aria-label", "Copy email address");
+        }, 1500);
+      } catch {
+        window.location.href = `mailto:${email}`;
+      }
     });
   </script>
 
