@@ -174,11 +174,6 @@
       color: #555;
     }
 
-    h1 {
-      gap: 14px;
-      margin-bottom: 40px;
-    }
-
     .subtitle {
       margin-bottom: 18px;
       font-size: 0.82em;
@@ -264,51 +259,8 @@
       white-space: nowrap;
     }
 
-    .cv-link {
-      font-size: 0.85em;
-      color: var(--accent-dark);
-      text-decoration: none;
-      padding-left: 14px;
-      border-left: 1px solid #ccc;
-      letter-spacing: 0.05em;
-    }
-
-    .cv-link:hover {
-      opacity: 0.7;
-    }
-
-    .pub-link {
-      font-size: 0.8em;
-      color: #666;
-      margin-top: -35px;
-      margin-bottom: -10px;
-    }
-
-    .pub-link a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid #bbb;
-      padding-bottom: 1px;
-      transition: border-color 0.15s ease, color 0.15s ease;
-    }
-
-    .pub-link a:visited {
-      color: inherit;
-    }
-
-    .pub-link a:hover {
-      color: var(--accent-dark);
-      border-bottom-color: var(--accent-dark);
-    }
-
     .section {
       margin-bottom: 50px;
-    }
-
-    .page-wrapper {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
     }
 
     .section h2 {
@@ -319,11 +271,6 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       opacity: 0.9;
-    }
-
-    .section p {
-      font-size: 0.95em;
-      color: var(--text-muted);
     }
 
     .section ul {
@@ -366,14 +313,6 @@
       border-left: 2px solid rgba(11, 31, 58, 0.12);
     }
 
-    .current-label {
-      font-size: 0.7em;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: #9aa3af;
-      margin-bottom: 10px;
-    }
-
     .current-line {
       line-height: 1.6;
       margin-bottom: 4px;
@@ -395,14 +334,6 @@
 
     .current-dot {
       opacity: 0.45;
-    }
-
-    .current-line.detail {
-      font-size: 0.9em;
-      color: #444;
-      max-width: 100ch;
-      opacity: 0.72;
-      margin-top: 14px;
     }
 
     .affiliation-block {
@@ -447,6 +378,146 @@
       opacity: 0.75;
     }
 
+    /* =========================
+   Final affiliation layout
+========================= */
+
+    #affiliations .affiliation-layout {
+      display: grid;
+
+      grid-template-columns: 360px 360px;
+      column-gap: 10px;
+
+      justify-content: start;
+      align-items: start;
+
+      width: 100%;
+      margin-top: 10px;
+
+      padding-right: 0;
+      box-sizing: border-box;
+    }
+
+    #affiliations .affiliation-timeline {
+      width: 360px;
+      max-width: none;
+      min-width: 0;
+
+      margin: -18px 0 0;
+      padding: 15px 16px 14px;
+
+      justify-self: start;
+    }
+
+    #affiliations .affiliation-block {
+      width: 100%;
+      margin: 0;
+      gap: 22px;
+      position: relative;
+    }
+
+    #affiliations .affiliation-item {
+      box-sizing: border-box;
+      width: 100%;
+      padding-left: 18px;
+    }
+
+    #affiliations .affiliation-primary {
+      margin-bottom: 2px;
+
+      font-size: 1em;
+      font-weight: 500;
+      line-height: 1.45;
+      letter-spacing: 0.02em;
+
+      color: #0B1F3A;
+    }
+
+    .affiliation-context {
+      margin-left: 5px;
+      margin-bottom: 2px;
+
+      font-size: 0.82em;
+      line-height: 1.45;
+      letter-spacing: 0.018em;
+
+      color: rgba(57, 67, 80, 0.82);
+    }
+
+    .affiliation-context-dot {
+      margin: 0 5px;
+      color: rgba(85, 94, 106, 0.45);
+    }
+
+    .affiliation-achievement {
+      color: rgba(79, 89, 101, 0.72);
+    }
+
+    #affiliations .affiliation-secondary {
+      margin: 0 0 0 5px;
+
+      font-size: 0.76em;
+      line-height: 1.4;
+      letter-spacing: 0.035em;
+
+      color: rgba(82, 89, 99, 0.72);
+    }
+
+    #affiliations .affiliation-country {
+      font-size: 0.92em;
+      color: inherit;
+    }
+
+    .timeline-matrix {
+      display: grid;
+
+      grid-template-columns:
+        30px repeat(var(--timeline-year-count), minmax(0, 1fr));
+
+      column-gap: 5px;
+      row-gap: 5px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .timeline-corner {
+      min-width: 0;
+    }
+
+    .timeline-matrix .timeline-year {
+      text-align: center;
+    }
+
+    .timeline-matrix .timeline-month-label {
+      padding-left: 2px;
+      padding-right: 0;
+      text-align: left;
+    }
+
+    .timeline-matrix .month-block {
+      width: 100%;
+    }
+
+    .timeline-legend {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      margin-top: 17px;
+    }
+
+    .timeline-legend-item {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-width: 0;
+
+      font-size: 0.58em;
+      line-height: 1.35;
+      letter-spacing: 0.02em;
+      color: rgba(57, 67, 80, 0.72);
+    }
+
     .publisher {
       font-size: 0.72em;
       color: #777;
@@ -467,18 +538,6 @@
 
     .mobile-only {
       display: none;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(6px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .side-nav {
@@ -619,14 +678,6 @@
       transition: color 0.18s ease, opacity 0.18s ease;
     }
 
-    .review-record {
-      margin-top: 9px;
-      font-size: 0.64em;
-      color: #777;
-      opacity: 0.72;
-      letter-spacing: 0.04em;
-    }
-
     .expected-year {
       margin-left: 4px;
       font-size: 0.78em;
@@ -636,10 +687,6 @@
       opacity: 0.75;
     }
 
-    /* =========================
-   Affiliation Timeline
-========================= */
-
     .affiliation-timeline {
       box-sizing: border-box;
       width: min(100%, 560px);
@@ -648,50 +695,27 @@
 
       background:
         linear-gradient(135deg,
-          rgba(235, 238, 242, 0.78),
-          rgba(231, 234, 239, 0.68));
+          rgba(235, 238, 242, 0.46),
+          rgba(231, 234, 239, 0.34));
 
-      border: 1px solid rgba(11, 31, 58, 0.07);
+      border: 1px solid rgba(11, 31, 58, 0.04);
 
       box-shadow:
-        0 8px 22px rgba(11, 31, 58, 0.025),
-        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+        0 6px 18px rgba(11, 31, 58, 0.012),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16);
 
       overflow: visible;
     }
 
-    .timeline-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 18px;
-      margin-bottom: 17px;
-    }
-
-    .timeline-title {
-      font-size: 0.68em;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(49, 60, 74, 0.82);
-    }
-
-    .timeline-range {
-      font-size: 0.6em;
-      letter-spacing: 0.065em;
-      color: rgba(78, 88, 101, 0.72);
-      font-variant-numeric: tabular-nums;
-    }
-
     .timeline-month-label {
-      font-size: 0.47em;
+      font-size: 0.63em;
       line-height: 1;
-      text-align: center;
       letter-spacing: 0;
       color: rgba(82, 92, 105, 0.68);
     }
 
     .timeline-year {
-      font-size: 0.70em;
+      font-size: 0.7em;
       letter-spacing: 0.045em;
       font-variant-numeric: tabular-nums;
     }
@@ -707,46 +731,72 @@
     }
 
     .timeline-legend-item {
+      position: relative;
       display: inline-flex;
       align-items: center;
       gap: 7px;
       min-width: 0;
-
-      font-size: 0.63em;
+      font-size: 0.68em;
       line-height: 1.4;
       letter-spacing: 0.02em;
       color: rgba(57, 67, 80, 0.76);
+      cursor: default;
+      transition:
+        color 0.15s ease,
+        opacity 0.15s ease;
     }
 
-    /* 연도 + 12개월 블록만 표시 */
-    .timeline-scale,
-    .timeline-row {
-      display: grid;
-      grid-template-columns: 38px minmax(0, 1fr);
-      column-gap: 12px;
+
+    .timeline-legend-item:hover {
+      color: rgba(42, 52, 65, 0.9);
     }
 
-    .timeline-scale {
-      align-items: end;
-      margin-bottom: 7px;
+    .timeline-legend-tooltip {
+      position: absolute;
+      left: 0;
+      bottom: calc(100% + 8px);
+      z-index: 30;
+
+      width: max-content;
+      max-width: none;
+      padding: 7px 10px;
+      box-sizing: border-box;
+
+      font-family: Georgia, serif;
+      font-size: 10px;
+      line-height: 1.35;
+      letter-spacing: 0.025em;
+      white-space: nowrap;
+
+      color: rgba(43, 53, 66, 0.78);
+      background: rgba(239, 242, 246, 0.97);
+
+      border: 1px solid rgba(11, 31, 58, 0.08);
+
+      box-shadow:
+        0 5px 14px rgba(11, 31, 58, 0.055);
+
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(3px);
+      pointer-events: none;
+
+      transition:
+        opacity 0.15s ease,
+        visibility 0.15s ease,
+        transform 0.15s ease;
     }
 
-    .timeline-row {
-      position: relative;
-      align-items: center;
-      margin-bottom: 12px;
+    .timeline-legend-tooltip strong {
+      font-weight: 600;
+      color: rgba(11, 31, 58, 0.88);
     }
 
-    .timeline-row:last-of-type {
-      margin-bottom: 0;
+    .timeline-legend-item:hover .timeline-legend-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
-
-    .timeline-months {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 4px;
-    }
-
 
     .month-block {
       position: relative;
@@ -759,59 +809,43 @@
       background: transparent;
     }
 
-    /* 공통: 강한 그림자와 광택 제거 */
     .month-block.is-filled {
       border-color: rgba(11, 31, 58, 0.055);
       box-shadow: none;
     }
 
-    /* Inha University — 아주 옅은 하늘색 */
     .month-block.aff-inha {
       background: rgba(83, 131, 165, 0.2);
       border-color: rgba(112, 149, 174, 0.10);
       box-shadow: none;
     }
 
-    /* University of Strathclyde — deep navy */
     .month-block.aff-strathclyde {
       background: rgba(86, 124, 173, 0.58);
       border-color: rgba(67, 103, 150, 0.18);
       box-shadow: none;
     }
 
-    /* The University of Osaka — 확실한 세이지 그린 */
     .month-block.aff-osaka {
       background: rgba(103, 137, 119, 0.32);
       border-color: rgba(77, 111, 94, 0.13);
       box-shadow: none;
     }
 
-    /* Seoul National University — muted dusty mauve */
     .month-block.aff-snu {
       background: rgba(116, 91, 101, 0.34);
       border-color: rgba(94, 70, 80, 0.12);
       box-shadow: none;
     }
 
-    /* 이미 지나간 소속 공백 */
     .month-block.is-past-gap {
       background: rgba(117, 124, 133, 0.15);
       border-color: rgba(100, 108, 118, 0.06);
     }
 
-    /* 미래 */
     .month-block.is-future {
       background: transparent;
       border-color: rgba(11, 31, 58, 0.045);
-    }
-
-    /* Minimal legend */
-    .timeline-legend {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px 18px;
-
-      margin-top: 17px;
     }
 
     .timeline-legend-mark {
@@ -867,11 +901,6 @@
 
       .header {
         display: none;
-      }
-
-      .header h1 {
-        font-size: 1.55em;
-        margin-bottom: 0;
       }
 
       .nav {
@@ -942,13 +971,6 @@
         color: #444;
       }
 
-      .section p {
-        font-size: 0.9em;
-        line-height: 1.6;
-        margin-bottom: 18px;
-        color: #444;
-      }
-
       .lang-switch {
         font-size: 0.65em;
         transform: translateY(30px);
@@ -986,39 +1008,9 @@
         padding: 15px 11px 14px;
       }
 
-      .timeline-heading {
-        gap: 10px;
-        margin-bottom: 14px;
-      }
-
-      .timeline-title {
-        font-size: 0.59em;
-      }
-
-      .timeline-range {
-        font-size: 0.5em;
-      }
-
-      .timeline-scale,
-      .timeline-row {
-        grid-template-columns: 30px minmax(0, 1fr);
-        column-gap: 8px;
-      }
-
-      .timeline-scale {
-        margin-bottom: 6px;
-      }
-
-      .timeline-months {
-        gap: 3px;
-      }
 
       .timeline-month-label {
         font-size: 0.4em;
-      }
-
-      .timeline-row {
-        margin-bottom: 11px;
       }
 
       .timeline-year {
@@ -1044,6 +1036,61 @@
         width: 12px;
       }
 
+      .timeline-legend-tooltip {
+        display: none;
+      }
+
+      .affiliation-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .affiliation-layout .affiliation-timeline {
+        width: min(100%, 380px);
+        margin: 0;
+      }
+
+      #affiliations .affiliation-timeline {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 15px 11px 12px;
+        justify-self: stretch;
+      }
+
+      /* affiliation section 끝 여백 제거 */
+      #affiliations {
+        margin-bottom: -55px;
+      }
+
+      /* affiliations 바로 다음 divider만 더 타이트하게 */
+      #affiliations+.divider {
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+
+      #affiliations .affiliation-block {
+        gap: 17px;
+      }
+
+      #affiliations .affiliation-primary {
+        font-size: 0.85rem;
+        margin-bottom: 2px;
+      }
+
+      .affiliation-context {
+        margin-left: 4px;
+        margin-bottom: 2px;
+
+        font-size: 0.74rem;
+        line-height: 1.4;
+      }
+
+      #affiliations .affiliation-secondary {
+        margin-left: 4px;
+        font-size: 0.69rem;
+      }
+
       .side-nav {
         display: none !important;
       }
@@ -1066,24 +1113,12 @@
         font-size: 0.88em;
       }
 
-      .current-label {
-        font-size: 0.65em;
-        margin-bottom: 8px;
-      }
-
       .current-line.primary {
         font-size: 0.92em;
       }
 
       .current-line.secondary {
         font-size: 0.8em;
-      }
-
-      .current-line.detail {
-        font-size: 0.72em;
-        line-height: 1.45;
-        margin-top: 6px;
-        margin-left: 5px;
       }
 
       .icons {
@@ -1108,16 +1143,16 @@
 
       .affiliation-item {
         padding-left: 14px;
-        font-size: 0.85rem;
+        font-size: 0.88rem;
         opacity: 0.9;
       }
 
       .affiliation-primary {
-        font-size: 0.75rem;
+        font-size: 0.85rem;
       }
 
       .affiliation-secondary {
-        font-size: 0.68rem;
+        font-size: 0.7rem;
       }
 
       .expected-year {
@@ -1126,7 +1161,7 @@
       }
 
       .affiliation-detail {
-        font-size: 0.58rem;
+        font-size: 0.62em;
         line-height: 1.45;
         opacity: 0.6;
       }
@@ -1140,21 +1175,12 @@
         opacity: 0.72;
       }
 
-      .pub-link {
-        display: none;
-      }
-
       .review-note {
         cursor: default;
       }
 
       .review-tooltip,
       .note-mark {
-        display: none;
-        content: none;
-      }
-
-      .review-record {
         display: none;
       }
 
@@ -1410,116 +1436,133 @@
         Affiliations
       </h2>
 
-      <div class="affiliation-block">
+      <div class="affiliation-layout">
 
-        <div class="affiliation-item">
-          <div class="affiliation-primary">
-            <span data-en="Visiting Researcher" data-ja="客員研究員">
-              Visiting Researcher
-            </span>
-            <span class="affiliation-year" data-en="(2026–)" data-ja="(2026–)">
-              (2026–)
-            </span>
+        <!-- Left: compact affiliation list -->
+        <div class="affiliation-block">
+
+          <div class="affiliation-item" data-affiliation="snu">
+            <div class="affiliation-primary">
+              <span data-en="Visiting Researcher" data-ja="客員研究員">
+                Visiting Researcher
+              </span>
+
+              <span class="affiliation-year">
+                (2026–)
+              </span>
+            </div>
+
+            <div class="affiliation-context" data-en="Marine Hydrodynamics & CFD" data-ja="海洋流体力学・CFD">
+              Marine Hydrodynamics & CFD
+            </div>
+
+            <div class="affiliation-secondary">
+              <span data-en="Seoul National University" data-ja="ソウル大学校">
+                Seoul National University
+              </span>
+
+              <span class="affiliation-dot">·</span>
+
+              <span class="affiliation-country" data-en="South Korea" data-ja="韓国">
+                South Korea
+              </span>
+            </div>
           </div>
 
-          <div class="affiliation-secondary">
-            <span data-en="Seoul National University" data-ja="ソウル大学校">
-              Seoul National University
-            </span>
-            <span class="affiliation-dot">·</span>
-            <span class="affiliation-country" data-en="South Korea" data-ja="韓国">
-              South Korea
-            </span>
+          <div class="affiliation-item" data-affiliation="osaka">
+            <div class="affiliation-primary">
+              <span data-en="Research Visit" data-ja="研究訪問">
+                Research Visit
+              </span>
+
+              <span class="affiliation-year">
+                (2025)
+              </span>
+            </div>
+
+            <div class="affiliation-context" data-en="Offshore Hydrodynamics & CFD" data-ja="海洋流体力学・CFD">
+              Offshore Hydrodynamics & CFD
+            </div>
+
+            <div class="affiliation-secondary">
+              <span data-en="The University of Osaka" data-ja="大阪大学">
+                The University of Osaka
+              </span>
+
+              <span class="affiliation-dot">·</span>
+
+              <span class="affiliation-country" data-en="Japan" data-ja="日本">
+                Japan
+              </span>
+            </div>
           </div>
 
-          <div class="affiliation-detail">
-            <em data-en="Research in marine hydrodynamics and CFD." data-ja="海洋流体力学およびCFDに関する研究。">
-              Research in marine hydrodynamics and CFD.
-            </em>
+          <div class="affiliation-item" data-affiliation="strathclyde">
+            <div class="affiliation-primary">
+              <span data-en="Master of Science" data-ja="修士">
+                Master of Science
+              </span>
+
+              <span class="affiliation-year">
+                (2024–2025)
+              </span>
+            </div>
+
+            <div class="affiliation-context">
+              <span data-en="Advanced Naval Architecture" data-ja="先進船舶工学">
+                Advanced Naval Architecture
+              </span>
+            </div>
+
+            <div class="affiliation-secondary">
+              <span data-en="University of Strathclyde" data-ja="ストラスクライド大学">
+                University of Strathclyde
+              </span>
+
+              <span class="affiliation-dot">·</span>
+
+              <span class="affiliation-country" data-en="United Kingdom" data-ja="イギリス">
+                United Kingdom
+              </span>
+            </div>
           </div>
+
+          <div class="affiliation-item" data-affiliation="inha">
+            <div class="affiliation-primary">
+              <span data-en="Bachelor of Engineering" data-ja="学士（工学）">
+                Bachelor of Engineering
+              </span>
+
+              <span class="affiliation-year">
+                (2021–2024)
+              </span>
+            </div>
+
+            <div class="affiliation-context">
+              <span data-en="Naval Architecture and Ocean Engineering" data-ja="船舶海洋工学">
+                Naval Architecture and Ocean Engineering
+              </span>
+            </div>
+
+            <div class="affiliation-secondary">
+              <span data-en="Inha University" data-ja="仁荷大学">
+                Inha University
+              </span>
+
+              <span class="affiliation-dot">·</span>
+
+              <span class="affiliation-country" data-en="South Korea" data-ja="韓国">
+                South Korea
+              </span>
+            </div>
+          </div>
+
         </div>
 
-        <div class="affiliation-item">
-          <div class="affiliation-primary">
-            <span data-en="Research Visit" data-ja="研究訪問">
-              Research Visit
-            </span>
-            <span class="affiliation-year">(2025)</span>
-          </div>
-
-          <div class="affiliation-secondary">
-            <span data-en="The University of Osaka" data-ja="大阪大学">
-              The University of Osaka
-            </span>
-            <span class="affiliation-dot">·</span>
-            <span class="affiliation-country" data-en="Japan" data-ja="日本">
-              Japan
-            </span>
-          </div>
-
-          <div class="affiliation-detail">
-            <em data-en="CFD studies in offshore hydrodynamics and related systems."
-              data-ja="海洋流体力学および関連システムに関するCFD研究。">
-              CFD studies in offshore hydrodynamics and related systems.
-            </em>
-          </div>
+        <!-- Right: timeline and legend -->
+        <div id="affiliation-timeline" class="affiliation-timeline" aria-label="Affiliation timeline">
         </div>
 
-        <div class="affiliation-item">
-          <div class="affiliation-primary">
-            <span data-en="MSc · Advanced Naval Architecture" data-ja="修士（先進船舶工学）">
-              MSc · Advanced Naval Architecture
-            </span>
-            <span class="affiliation-year">(2024–2025)</span>
-          </div>
-
-          <div class="affiliation-secondary">
-            <span data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-              University of Strathclyde
-            </span>
-            <span class="affiliation-dot">·</span>
-            <span class="affiliation-country" data-en="United Kingdom" data-ja="イギリス">
-              United Kingdom
-            </span>
-          </div>
-
-          <div class="affiliation-detail">
-            <em data-en="CFD-based analysis of hull roughness effects on ship hydrodynamics."
-              data-ja="船体粗さが船舶流体力学に与える影響に関するCFD解析。">
-              CFD-based analysis of hull roughness effects on ship hydrodynamics.
-            </em>
-          </div>
-        </div>
-
-        <div class="affiliation-item">
-          <div class="affiliation-primary">
-            <span data-en="BSc · Naval Architecture & Ocean Engineering" data-ja="学士（船舶海洋工学）">
-              BSc · Naval Architecture & Ocean Engineering
-            </span>
-            <span class="affiliation-year">(2021–2024)</span>
-          </div>
-
-          <div class="affiliation-secondary">
-            <span data-en="Inha University" data-ja="仁荷大学">
-              Inha University
-            </span>
-            <span class="affiliation-dot">·</span>
-            <span class="affiliation-country" data-en="South Korea" data-ja="韓国">
-              South Korea
-            </span>
-          </div>
-
-          <div class="affiliation-detail">
-            <em data-en="Foundation in fluid mechanics and marine engineering." data-ja="流体力学および船舶海洋工学の基礎。">
-              Foundation in fluid mechanics and marine engineering.
-            </em>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Affiliation timeline -->
-      <div id="affiliation-timeline" class="affiliation-timeline" aria-label="Affiliation timeline">
       </div>
     </div>
 
@@ -1652,27 +1695,6 @@
   <script>
     const AFFILIATION_TIMELINE_DATA = [
       {
-        id: "inha",
-        start: "2021-03",
-        end: "2024-08",
-
-        institution: {
-          en: "Inha University",
-          ja: "仁荷大学"
-        },
-
-        country: {
-          en: "South Korea",
-          ja: "韓国"
-        },
-
-        role: {
-          en: "BSc",
-          ja: "学士"
-        }
-      },
-
-      {
         id: "strathclyde",
         start: "2024-09",
         end: "2025-09",
@@ -1688,8 +1710,29 @@
         },
 
         role: {
-          en: "MSc",
+          en: "Master of Science",
           ja: "修士"
+        }
+      },
+
+      {
+        id: "inha",
+        start: "2021-03",
+        end: "2024-08",
+
+        institution: {
+          en: "Inha University",
+          ja: "仁荷大学"
+        },
+
+        country: {
+          en: "South Korea",
+          ja: "韓国"
+        },
+
+        role: {
+          en: "Bachelor of Engineering",
+          ja: "学士（工学）"
         }
       },
 
@@ -1737,8 +1780,8 @@
     ];
 
     const TIMELINE_MONTH_LABELS = [
-      "J", "F", "M", "A", "M", "J",
-      "J", "A", "S", "O", "N", "D"
+      "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
     ];
 
     function resolveTimelineDate(value) {
@@ -1762,6 +1805,18 @@
 
     function formatTimelineMonth(year, month) {
       return `${year}.${String(month).padStart(2, "0")}`;
+    }
+
+    function formatLegendDate(value, lang = "en") {
+      if (value === "present") {
+        return lang === "ja"
+          ? "現在"
+          : "Present";
+      }
+
+      const [year, month] = value.split("-");
+
+      return `${year}.${month}`;
     }
 
     function getTimelineItem(year, month) {
@@ -1797,6 +1852,7 @@
       return years;
     }
 
+
     function renderAffiliationTimeline(lang = "en") {
       const container =
         document.getElementById("affiliation-timeline");
@@ -1807,105 +1863,95 @@
         lang === "ja" ? "ja" : "en";
 
       const years = getTimelineYears();
+      const now = new Date();
 
-      const currentYear = new Date().getFullYear();
+      const currentYear =
+        now.getFullYear();
+
+      const currentMonthIndex =
+        currentYear * 12 + now.getMonth();
 
       container.innerHTML = "";
 
-      /* Heading */
-      const heading =
-        document.createElement("div");
-
-      heading.className = "timeline-heading";
-
-      const title =
-        document.createElement("div");
-
-      title.className = "timeline-title";
-
-      title.textContent =
+      container.setAttribute(
+        "aria-label",
         safeLang === "ja"
           ? "所属タイムライン"
-          : "Affiliation Timeline";
+          : "Affiliation timeline"
+      );
 
-      const range =
+      /* Matrix */
+      const matrix =
         document.createElement("div");
 
-      range.className = "timeline-range";
-      range.textContent = "2021.03 — Present";
+      matrix.className =
+        "timeline-matrix";
 
-      heading.append(title, range);
-      container.appendChild(heading);
+      matrix.style.setProperty(
+        "--timeline-year-count",
+        years.length
+      );
 
-      /* Month header */
-      const scale =
+      /* Top-left blank cell */
+      const corner =
         document.createElement("div");
 
-      scale.className = "timeline-scale";
+      corner.className =
+        "timeline-corner";
 
-      const yearPlaceholder =
-        document.createElement("div");
+      corner.setAttribute(
+        "aria-hidden",
+        "true"
+      );
 
-      const monthScale =
-        document.createElement("div");
+      matrix.appendChild(corner);
 
-      monthScale.className = "timeline-months";
+      /* Horizontal year labels */
+      years.forEach(year => {
+        const yearLabel =
+          document.createElement("div");
 
-      TIMELINE_MONTH_LABELS.forEach(label => {
+        yearLabel.className =
+          "timeline-year";
+
+        yearLabel.textContent =
+          year;
+
+        if (year < currentYear) {
+          yearLabel.classList.add(
+            "is-past"
+          );
+        } else if (year === currentYear) {
+          yearLabel.classList.add(
+            "is-current"
+          );
+        }
+
+        matrix.appendChild(yearLabel);
+      });
+
+      /* Vertical month rows */
+      for (let month = 1; month <= 12; month++) {
         const monthLabel =
-          document.createElement("span");
+          document.createElement("div");
 
         monthLabel.className =
           "timeline-month-label";
 
-        monthLabel.textContent = label;
+        monthLabel.textContent =
+          TIMELINE_MONTH_LABELS[month - 1];
 
-        monthScale.appendChild(monthLabel);
-      });
+        matrix.appendChild(monthLabel);
 
-      scale.append(
-        yearPlaceholder,
-        monthScale
-      );
-
-      container.appendChild(scale);
-
-      /* Year rows */
-      years.forEach(year => {
-        const row =
-          document.createElement("div");
-
-        row.className = "timeline-row";
-
-        const yearLabel =
-          document.createElement("div");
-
-        yearLabel.className = "timeline-year";
-        yearLabel.textContent = year;
-
-        if (year < currentYear) {
-          yearLabel.classList.add("is-past");
-        } else if (year === currentYear) {
-          yearLabel.classList.add("is-current");
-        }
-
-        const months =
-          document.createElement("div");
-
-        months.className = "timeline-months";
-
-        for (let month = 1; month <= 12; month++) {
+        years.forEach(year => {
           const item =
             getTimelineItem(year, month);
 
           const block =
             document.createElement("span");
 
-          block.className = "month-block";
-
-          const currentMonthIndex =
-            new Date().getFullYear() * 12 +
-            new Date().getMonth();
+          block.className =
+            "month-block";
 
           const blockMonthIndex =
             year * 12 + month - 1;
@@ -1925,19 +1971,27 @@
               `aff-${item.id}`
             );
 
-            block.setAttribute("role", "img");
+            block.setAttribute(
+              "role",
+              "img"
+            );
 
             block.setAttribute(
               "aria-label",
               `${formatTimelineMonth(year, month)}, ` +
               `${institution}, ${country}, ${role}`
             );
+          } else if (
+            blockMonthIndex <= currentMonthIndex
+          ) {
+            block.classList.add(
+              "is-past-gap"
+            );
 
-            block.dataset.tooltip =
-              `${formatTimelineMonth(year, month)} · ` +
-              `${institution} · ${role}`;
-          } else if (blockMonthIndex <= currentMonthIndex) {
-            block.classList.add("is-past-gap");
+            block.setAttribute(
+              "role",
+              "img"
+            );
 
             block.setAttribute(
               "aria-label",
@@ -1946,33 +2000,51 @@
                 : `${formatTimelineMonth(year, month)}, no listed affiliation`
             );
           } else {
-            block.classList.add("is-future");
-            block.setAttribute("aria-hidden", "true");
+            block.classList.add(
+              "is-future"
+            );
+
+            block.setAttribute(
+              "aria-hidden",
+              "true"
+            );
           }
 
-          months.appendChild(block);
-        }
+          matrix.appendChild(block);
+        });
+      }
 
-        row.append(
-          yearLabel,
-          months
-        );
+      container.appendChild(matrix);
 
-        container.appendChild(row);
-      });
-
-      /* Legend */
+      /* Legend: SNU → Osaka → Strathclyde → Inha */
       const legend =
         document.createElement("div");
 
-      legend.className = "timeline-legend";
+      legend.className =
+        "timeline-legend";
 
-      AFFILIATION_TIMELINE_DATA.forEach(item => {
+      const legendItems =
+        [...AFFILIATION_TIMELINE_DATA].sort(
+          (a, b) => timelineMonthIndex(b.start) - timelineMonthIndex(a.start)
+        );
+
+      legendItems.forEach(item => {
         const legendItem =
           document.createElement("div");
 
         legendItem.className =
           "timeline-legend-item";
+
+        const period =
+          `${formatLegendDate(item.start, safeLang)} — ` +
+          `${formatLegendDate(item.end, safeLang)}`;
+
+        legendItem.setAttribute(
+          "aria-label",
+          `${item.institution[safeLang]}, ` +
+          `${item.role[safeLang]}, ` +
+          `${period}`
+        );
 
         const mark =
           document.createElement("span");
@@ -1984,11 +2056,41 @@
           document.createElement("span");
 
         label.textContent =
-          `${item.institution[safeLang]} ` +
-          `(${item.country[safeLang]})`;
+          item.institution[safeLang];
 
-        legendItem.append(mark, label);
-        legend.appendChild(legendItem);
+        /* Tooltip */
+        const tooltip =
+          document.createElement("span");
+
+        tooltip.className =
+          "timeline-legend-tooltip";
+
+        const tooltipRole =
+          document.createElement("strong");
+
+        tooltipRole.textContent =
+          item.role[safeLang];
+
+        const tooltipPeriod =
+          document.createElement("span");
+
+        tooltipPeriod.textContent =
+          ` · ${period}`;
+
+        tooltip.append(
+          tooltipRole,
+          tooltipPeriod
+        );
+
+        legendItem.append(
+          mark,
+          label,
+          tooltip
+        );
+
+        legend.appendChild(
+          legendItem
+        );
       });
 
       container.appendChild(legend);
