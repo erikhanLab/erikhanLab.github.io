@@ -120,8 +120,20 @@
       margin-bottom: 36px;
       background: rgba(245, 247, 250, 0.85);
       backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       border-bottom: 1px solid rgba(11, 31, 58, 0.06);
       border-top: 1px solid rgba(11, 31, 58, 0.06);
+
+      transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .nav.is-scrolled {
+      background: rgba(237, 239, 243, 0.94);
+      border-color: rgba(11, 31, 58, 0.08);
+      box-shadow: 0 4px 14px rgba(11, 31, 58, 0.025);
     }
 
     .nav a {
@@ -168,7 +180,7 @@
       display: inline-block;
       margin-left: 8px;
       padding: 1px 6px;
-      font-size: 0.7em;
+      font-size: 0.78em;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #2C3E50;
@@ -241,7 +253,7 @@
 
     .section h2 {
       font-size: 0.95em;
-      font-weight: normal;
+      font-weight: 600;
       margin-bottom: 18px;
       color: var(--accent-dark);
       letter-spacing: 0.12em;
@@ -367,9 +379,80 @@
       color: #666;
     }
 
+    .publication-overview {
+      margin: 0 0 28px;
+      padding: 16px 0 15px;
+
+      border-top: 1px solid rgba(11, 31, 58, 0.07);
+      border-bottom: 1px solid rgba(11, 31, 58, 0.07);
+    }
+
+    .publication-count {
+      margin: 0 0 8px;
+      font-size: 0.88em;
+      line-height: 1.5;
+      letter-spacing: 0.045em;
+      color: #26354a;
+    }
+
+    .scholar-metrics {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin: 0;
+      line-height: 1.4;
+      font-size: 0.78em;
+      color: rgba(82, 92, 105, 0.66);
+    }
+
+    .scholar-metric {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+      letter-spacing: 0.025em;
+    }
+
+    .scholar-metric+.scholar-metric::before {
+      content: "·";
+      margin: 0 11px;
+      color: rgba(82, 92, 105, 0.42);
+    }
+
+    .scholar-metric strong {
+      font-size: 1em;
+      font-weight: 400;
+      font-variant-numeric: tabular-nums;
+      color: rgba(11, 31, 58, 0.78);
+    }
+
+    .scholar-profile-link {
+      margin-left: 20px;
+      font-size: 0.9em;
+      letter-spacing: 0.05em;
+      color: rgba(57, 67, 80, 0.68);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition:
+        color 0.15s ease,
+        border-color 0.15s ease;
+    }
+
+    .scholar-profile-link:hover {
+      color: var(--accent-dark);
+      border-bottom-color: rgba(11, 31, 58, 0.25);
+    }
+
+    .metrics-source {
+      margin: 5px 0 0;
+
+      font-size: 0.65em;
+      letter-spacing: 0.045em;
+      color: rgba(82, 92, 105, 0.56);
+    }
+
     .pub-year {
-      font-size: 0.82em;
-      color: #666;
+      font-size: 0.9em;
+      color: #444;
       line-height: 1.2;
     }
 
@@ -464,6 +547,65 @@
 
     .nav a[href="/archive/"]:hover {
       opacity: 0.7;
+    }
+
+    .subsection-completed {
+      margin-bottom: 34px;
+      padding: 15px 16px 19px;
+
+      background: rgba(11, 31, 58, 0.012);
+      border: 1px solid rgba(11, 31, 58, 0.035);
+      border-left: 2px solid rgba(11, 31, 58, 0.11);
+      border-radius: 9px;
+
+      box-shadow:
+        0 4px 14px rgba(11, 31, 58, 0.01),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .subsection-completed h3 {
+      margin-top: 0;
+      margin-bottom: 17px;
+      color: rgba(11, 31, 58, 0.82);
+    }
+
+    .subsection-completed .pub-item {
+      padding-left: 8px;
+    }
+
+    .subsection-completed .pub-item+.pub-item {
+      margin-top: 20px;
+    }
+
+    .publication-count {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0;
+
+      margin: 0 0 8px;
+      font-size: 0.88em;
+      line-height: 1.5;
+      letter-spacing: 0.045em;
+      color: rgba(38, 53, 74, 0.78);
+    }
+
+    .publication-count-item {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .publication-count strong {
+      font-size: 1.0em;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      color: var(--accent-dark);
+    }
+
+    .publication-count-divider {
+      margin: 0 10px;
+      color: rgba(82, 92, 105, 0.4);
     }
 
     .meta-tooltip {
@@ -574,6 +716,7 @@
         margin-bottom: 20px;
         background: rgba(225, 230, 238, 0.7);
         backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
         border-bottom: 1px solid rgba(11, 31, 58, 0.06);
       }
 
@@ -644,14 +787,84 @@
         opacity: 0.7;
       }
 
+      .subsection-completed {
+        padding: 13px 12px 17px;
+        border-radius: 8px;
+        border-left-width: 1px;
+        box-shadow: none;
+      }
+
+      .subsection-completed .pub-item {
+        padding-left: 0;
+      }
+
+      .subsection-completed .pub-item+.pub-item {
+        margin-top: 18px;
+      }
+
       .lang-switch {
         font-size: 0.65em;
         transform: translateY(30px);
       }
 
+      .publication-count {
+        font-size: 0.76em;
+        margin-bottom: 8px;
+      }
+
+      .publication-count strong {
+        font-size: 1.08em;
+      }
+
+      .publication-count-divider {
+        margin: 0 7px;
+      }
+
       .journal-if {
         font-size: 0.65em;
         opacity: 0.95;
+      }
+
+      .publication-overview {
+        margin-bottom: 23px;
+        padding: 13px 0;
+      }
+
+      .publication-count {
+        margin-bottom: 7px;
+        font-size: 0.7em;
+        line-height: 1.5;
+      }
+
+      .scholar-metrics {
+        row-gap: 4px;
+      }
+
+      .scholar-metric {
+        font-size: 0.84em;
+        flex-wrap: nowrap;
+        align-items: baseline;
+      }
+
+      .scholar-metric strong {
+        font-size: 1.0em;
+      }
+
+      .scholar-profile-link {
+        width: auto;
+        margin: 0 0 0 10px;
+        font-size: 0.82em;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .metrics-source {
+        margin-top: 5px;
+        font-size: 0.55em;
+      }
+
+      .scholar-metric+.scholar-metric::before {
+        margin: 0 9px;
       }
 
       .pub-item {
@@ -772,7 +985,9 @@
     <a href="/" data-en="Home" data-ja="ホーム">Home</a>
     <a href="/profile/" data-en="Profile" data-ja="プロフィール">Profile</a>
     <a href="/research/" data-en="Research" data-ja="研究">Research</a>
-    <a href="/publications/" class="active" data-en="Publications" data-ja="論文">Publications</a>
+    <a href="/publications/" class="active" aria-current="page" data-en="Publications" data-ja="論文">
+      Publications
+    </a>
     <!--
     <a href="/works/">Works</a>
   -->
@@ -781,23 +996,69 @@
 
   <div class="page-content">
 
-    <div class="pub-index">
-      <a href="https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en" target="_blank" rel="noopener">
-        Google Scholar
-      </a>
-    </div>
+    <section class="publication-overview" aria-label="Publication summary">
+      <p class="publication-count">
+        <span class="publication-count-item">
+          <strong>3</strong>
+          <span data-en="peer-reviewed journal articles" data-ja="査読付き学術論文">
+            peer-reviewed journal articles
+          </span>
+        </span>
+
+        <span class="publication-count-divider" aria-hidden="true">·</span>
+
+        <span class="publication-count-item">
+          <strong>3</strong>
+          <span data-en="conference papers" data-ja="国際会議論文">
+            conference papers
+          </span>
+        </span>
+      </p>
+
+      <div class="scholar-metrics" aria-label="Google Scholar metrics">
+        <span class="scholar-metric">
+          <strong>22</strong>
+          <span data-en="citations" data-ja="被引用数">citations</span>
+        </span>
+
+        <span class="scholar-metric">
+          <strong>2</strong>
+          <span>h-index</span>
+        </span>
+
+        <span class="scholar-metric">
+          <strong>1</strong>
+          <span>i10-index</span>
+        </span>
+
+        <a class="scholar-profile-link" href="https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en"
+          target="_blank" rel="noopener">
+          Google Scholar ↗
+        </a>
+      </div>
+
+      <p class="metrics-source" data-en="Google Scholar · updated July 2026" data-ja="Google Scholar · 2026年7月更新">
+        Google Scholar · updated July 2026
+      </p>
+    </section>
 
     <div class="pub-legend">
-      <span><em>Title links to abstracts.</em></span>
+      <em data-en="Published titles link to abstracts." data-ja="掲載済み論文のタイトルから概要ページに移動できます。">
+        Published titles link to abstracts.
+      </em>
     </div>
 
     <div class="section">
-      <h2 data-en="Journal Articles" data-ja="学術論文">
-        <strong>Journal Articles</strong>
+      <h2>
+        <span data-en="Journal Articles" data-ja="学術論文">
+          Journal Articles
+        </span>
       </h2>
 
-      <div class="subsection">
-        <h3 data-en="Published" data-ja="掲載済み">Published</h3>
+      <div class="subsection subsection-completed">
+        <h3 data-en="Published" data-ja="掲載済み">
+          Published
+        </h3>
 
         <div class="pub-item">
           <div class="pub-title">
@@ -812,12 +1073,12 @@
             <div class="pub-authors">
               <span class="author-full">
                 <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding-author)</span>,
+                <span class="author-role">(Corresponding author)</span>,
                 <span class="co-authors">H. Lee, S. Dai, and M. Terziev</span>
               </span>
               <span class="author-short">
                 <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding-author)</span>,
+                <span class="author-role">(Corresponding author)</span>,
                 <span class="co-authors">H. Lee, S. Dai, and M. Terziev</span>
               </span>
             </div>
@@ -846,12 +1107,12 @@
             <div class="pub-authors">
               <span class="author-full">
                 <span class="main-author">S. Han</span>
-                <span class="author-role">(First-author)</span>,
+                <span class="author-role">(First author)</span>,
                 <span class="co-authors">S. Dai, M. Terziev, D. Kim, T. Tezdogan, D. Jung, and S. Song*</span>
               </span>
               <span class="author-short">
                 <span class="main-author">S. Han</span>
-                <span class="author-role">(First-author)</span>,
+                <span class="author-role">(First author)</span>,
                 <span class="co-authors">S. Dai, M. Terziev, <em>et al.</em></span>
               </span>
             </div>
@@ -870,7 +1131,7 @@
 
         <div class="pub-item">
           <div class="pub-title">
-            <span class="status published">●</span>
+            <span class="status published" aria-hidden="true">●</span>
             <span class="title-text">
               <a href="/publications/naval-roughness/">
                 Resistance and speed penalty of a naval ship with hull roughness
@@ -928,11 +1189,11 @@
             <div class="pub-authors">
               <span class="author-full">
                 <span class="main-author">S. Han*</span>
-                <span class="author-role">(Solo-author)</span>
+                <span class="author-role">(Sole author)</span>
               </span>
               <span class="author-short">
                 <span class="main-author">S. Han*</span>
-                <span class="author-role">(Solo-author)</span>
+                <span class="author-role">(Sole author)</span>
               </span>
             </div>
 
@@ -985,31 +1246,33 @@
     <div class="divider"></div>
 
     <div class="section">
-      <h2 data-en="Conference Papers" data-ja="国際会議論文">
-        <strong>Conference Papers</strong>
+      <h2>
+        <span data-en="Conference Papers" data-ja="国際会議論文">
+          Conference Papers
+        </span>
       </h2>
 
-      <div class="subsection">
+      <div class="subsection subsection-completed">
         <h3 data-en="Published / Presented" data-ja="出版済み・発表済み">
           Published / Presented
         </h3>
 
         <div class="pub-item">
           <div class="pub-title">
-            <span class="status published">●</span>
+            <span class="status published" aria-hidden="true">●</span>
             A computational fluid dynamics analysis of spatial roughness distributions on ship resistance
           </div>
           <div class="pub-meta-block">
             <div class="pub-authors">
               <span class="author-full">
                 <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding-author)</span>,
-                <span class="co-authors">M. Terziev, and T. Tezdogan</span>
+                <span class="author-role">(Corresponding author)</span>,
+                <span class="co-authors">M. Terziev and T. Tezdogan</span>
               </span>
               <span class="author-short">
                 <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding-author)</span>,
-                <span class="co-authors">M. Terziev, and T. Tezdogan</span>
+                <span class="author-role">(Corresponding author)</span>,
+                <span class="co-authors">M. Terziev and T. Tezdogan</span>
               </span>
             </div>
 
@@ -1026,7 +1289,7 @@
 
         <div class="pub-item">
           <div class="pub-title">
-            <span class="status published">●</span>
+            <span class="status published" aria-hidden="true">●</span>
             CFD-based model predictive control for point absorber wave energy converter
           </div>
 
@@ -1034,12 +1297,12 @@
             <div class="pub-authors">
               <span class="author-full">
                 <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding-author)</span>
+                <span class="author-role">(Corresponding author)</span>
                 <span class="co-authors"> and M. Lee</span>
               </span>
               <span class="author-short">
                 <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding-author)</span>
+                <span class="author-role">(Corresponding author)</span>
                 <span class="co-authors"> and M. Lee</span>
               </span>
             </div>
@@ -1056,19 +1319,19 @@
 
         <div class="pub-item">
           <div class="pub-title">
-            <span class="status published">●</span>
+            <span class="status published" aria-hidden="true">●</span>
             Numerical analysis of fluid-structure interaction for semi-submersible floating offshore wind turbines
           </div>
           <div class="pub-meta-block">
             <div class="pub-authors">
               <span class="author-full">
                 <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding-author)</span>,
+                <span class="author-role">(Corresponding author)</span>,
                 <span class="co-authors">S. Dai, M. Terziev, H. Yun, and S. Song</span>
               </span>
               <span class="author-short">
                 <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding-author)</span>,
+                <span class="author-role">(Corresponding author)</span>,
                 <span class="co-authors">S. Dai, M. Terziev, <em>et al.</em></span>
               </span>
             </div>
@@ -1118,6 +1381,8 @@
       const lang = getSessionLang();
       applyLang(lang);
 
+      updateNavigationState();
+
       document.querySelectorAll(".lang-switch a").forEach(a => {
         a.addEventListener("click", (e) => {
           e.preventDefault();
@@ -1132,8 +1397,22 @@
       });
     });
 
+    function updateNavigationState() {
+      const nav = document.querySelector(".nav");
+
+      if (!nav) return;
+
+      nav.classList.toggle(
+        "is-scrolled",
+        window.scrollY > 24
+      );
+    }
     window.addEventListener("load", () => {
       document.querySelector(".page-content")?.classList.add("loaded");
+    });
+
+    window.addEventListener("scroll", updateNavigationState, {
+      passive: true
     });
   </script>
 

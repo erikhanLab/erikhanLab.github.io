@@ -111,9 +111,36 @@
       margin-bottom: 36px;
       background: rgba(245, 247, 250, 0.85);
       backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       border-bottom: 1px solid rgba(11, 31, 58, 0.06);
       border-top: 1px solid rgba(11, 31, 58, 0.06);
+
+      transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
     }
+
+    .nav.is-scrolled {
+      background: rgba(237, 239, 243, 0.94);
+      border-color: rgba(11, 31, 58, 0.08);
+      box-shadow: 0 4px 14px rgba(11, 31, 58, 0.025);
+    }
+
+    /* Scroll reveal */
+    .reveal-ready {
+      opacity: 0;
+      transform: translateY(4px);
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+    .reveal-ready.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
 
     .nav a {
       position: relative;
@@ -460,10 +487,6 @@
       min-width: 0;
     }
 
-    .timeline-corner {
-      min-width: 0;
-    }
-
     .timeline-matrix .timeline-year {
       text-align: left;
       padding-left: 2px;
@@ -774,7 +797,13 @@
       color: rgba(11, 31, 58, 0.88);
     }
 
-    .timeline-legend-item:hover .timeline-legend-tooltip {
+    .timeline-legend-label {
+      position: relative;
+      display: inline-block;
+      cursor: default;
+    }
+
+    .timeline-legend-label:hover .timeline-legend-tooltip {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
@@ -854,6 +883,85 @@
       background: rgba(116, 91, 101, 0.52);
     }
 
+    #affiliations .affiliation-item,
+    #affiliations .affiliation-item span,
+    #affiliations .affiliation-item div {
+      cursor: default;
+    }
+
+    #affiliations .affiliation-item {
+      transition:
+        border-color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.45s ease;
+    }
+
+    #affiliations .affiliation-item:hover,
+    #affiliations .affiliation-item.is-active {
+      border-left-color: rgba(11, 31, 58, 0.28);
+    }
+
+    /* Timeline blocks */
+    #affiliations .month-block {
+      transition:
+        background-color 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s ease;
+    }
+
+    #affiliations.is-affiliation-focused .month-block:not(.is-active) {
+      background-color: rgba(117, 124, 133, 0.025);
+      border-color: rgba(11, 31, 58, 0.035);
+      box-shadow: none;
+    }
+
+    #affiliations.is-affiliation-focused .month-block.is-active {
+      box-shadow: 0 2px 6px rgba(11, 31, 58, 0.045);
+    }
+
+    #affiliations .timeline-legend-item {
+      cursor: default;
+      transition:
+        opacity 0.45s ease,
+        color 0.45s ease;
+    }
+
+    #affiliations .timeline-legend-mark {
+      box-sizing: border-box;
+      transition:
+        background-color 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    #affiliations.is-affiliation-focused .timeline-legend-item:not(.is-active) {
+      opacity: 0.42;
+    }
+
+    #affiliations.is-affiliation-focused .timeline-legend-item:not(.is-active) .timeline-legend-mark {
+      background-color: rgba(117, 124, 133, 0.025);
+      border: 1px solid rgba(11, 31, 58, 0.09);
+    }
+
+    #affiliations.is-affiliation-focused .timeline-legend-item.is-active {
+      opacity: 1;
+    }
+
+    #affiliations .timeline-year {
+      transition:
+        color 0.35s ease,
+        font-weight 0.35s ease;
+    }
+
+    #affiliations.is-affiliation-focused .timeline-year {
+      font-weight: 400;
+      color: rgba(101, 109, 120, 0.56);
+    }
+
+    #affiliations.is-affiliation-focused .timeline-year.is-active {
+      font-weight: 600;
+      color: rgba(57, 67, 80, 0.65);
+    }
+
+
     @media (max-width: 640px) {
       .site-name {
         font-size: 1.9em;
@@ -896,6 +1004,7 @@
         margin-bottom: 20px;
         background: rgba(225, 230, 238, 0.7);
         backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
         border-bottom: 1px solid rgba(11, 31, 58, 0.06);
       }
 
@@ -984,49 +1093,13 @@
         margin-left: 5px;
       }
 
-      .affiliation-timeline {
+      #affiliations .affiliation-layout {
+        display: block;
         width: 100%;
-        margin-top: 24px;
-        padding: 15px 11px 14px;
+        margin-top: 10px;
       }
 
-      .timeline-matrix {
-        grid-template-columns:
-          31px repeat(12, minmax(0, 1fr));
-
-        column-gap: 2px;
-        row-gap: 5px;
-      }
-
-      .timeline-month-label {
-        font-size: 0.38em;
-        text-align: center;
-      }
-
-      .timeline-year {
-        font-size: 0.54em;
-        letter-spacing: 0.02em;
-      }
-
-      .month-block {
-        height: 9px;
-      }
-
-      .timeline-legend {
-        grid-template-columns: 1fr;
-        gap: 6px;
-        margin-top: 14px;
-      }
-
-      .timeline-legend-item {
-        font-size: 0.51em;
-      }
-
-      .timeline-legend-mark {
-        width: 12px;
-      }
-
-      .timeline-legend-tooltip {
+      #affiliations .affiliation-timeline {
         display: none;
       }
 
@@ -1065,10 +1138,6 @@
       }
 
       .side-nav a::after {
-        display: none;
-      }
-
-      .side-nav {
         display: none;
       }
 
@@ -1140,6 +1209,29 @@
       }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .page-content,
+      .reveal-ready,
+      .nav,
+      #affiliations .affiliation-item,
+      #affiliations .month-block,
+      #affiliations .timeline-legend-item,
+      #affiliations .timeline-legend-mark,
+      #affiliations .timeline-year {
+        transition: none !important;
+      }
+
+      .page-content,
+      .reveal-ready {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
     #academic-activity {
       min-height: 10vh;
     }
@@ -1201,7 +1293,9 @@
 
   <div class="nav">
     <a href="/" data-en="Home" data-ja="ホーム">Home</a>
-    <a href="/profile/" class="active" data-en="Profile" data-ja="プロフィール">Profile</a>
+    <a href="/profile/" class="active" aria-current="page" data-en="Profile" data-ja="プロフィール">
+      Profile
+    </a>
     <a href="/research/" data-en="Research" data-ja="研究">Research</a>
     <a href="/publications/" data-en="Publications" data-ja="論文">Publications</a>
     <!--
@@ -1295,7 +1389,7 @@
 
         <div class="current-line primary" style="margin-top:14px;">
           <span data-en="Doctoral research development" data-ja="博士課程研究計画の策定">
-            <em>Doctoral research development</em>
+            Doctoral research development
           </span>
           <span class="current-dot">·</span>
           <span data-en="JSPS DC1 under review" data-ja="JSPS DC1 審査中">
@@ -1886,6 +1980,8 @@
         yearLabel.textContent =
           year;
 
+        yearLabel.dataset.year = year;
+
         if (year < currentYear) {
           yearLabel.classList.add(
             "is-past"
@@ -1927,6 +2023,8 @@
               "is-filled",
               `aff-${item.id}`
             );
+
+            block.dataset.affiliation = item.id;
 
             block.setAttribute(
               "role",
@@ -1992,6 +2090,8 @@
         legendItem.className =
           "timeline-legend-item";
 
+        legendItem.dataset.affiliation = item.id;
+
         const period =
           `${formatLegendDate(item.start, safeLang)} — ` +
           `${formatLegendDate(item.end, safeLang)}`;
@@ -2011,6 +2111,9 @@
 
         const label =
           document.createElement("span");
+
+        label.className =
+          "timeline-legend-label";
 
         label.textContent =
           item.institution[safeLang];
@@ -2039,10 +2142,11 @@
           tooltipPeriod
         );
 
+        label.appendChild(tooltip);
+
         legendItem.append(
           mark,
-          label,
-          tooltip
+          label
         );
 
         legend.appendChild(
@@ -2119,10 +2223,18 @@
         });
       });
 
+      initialiseAffiliationInteraction();
+      initialiseScrollReveal();
+      updateNavigationState();
       updateScrollThumb();
     });
 
-    window.addEventListener("scroll", updateScrollThumb);
+    window.addEventListener("scroll", () => {
+      updateScrollThumb();
+      updateNavigationState();
+    }, {
+      passive: true
+    });
 
     window.addEventListener("load", () => {
       document.querySelector(".page-content")?.classList.add("loaded");
@@ -2152,6 +2264,149 @@
         window.location.href = `mailto:${email}`;
       }
     });
+
+    function initialiseAffiliationInteraction() {
+      const section = document.getElementById("affiliations");
+      const affiliationBlock = section?.querySelector(".affiliation-block");
+
+      if (!section || !affiliationBlock) return;
+
+      const affiliationItems =
+        affiliationBlock.querySelectorAll(
+          ".affiliation-item[data-affiliation]"
+        );
+
+      let clearFocusTimer;
+
+      function clearAffiliationFocus() {
+        section.classList.remove("is-affiliation-focused");
+
+        section
+          .querySelectorAll(".is-active")
+          .forEach(element => {
+            element.classList.remove("is-active");
+          });
+      }
+
+      function activateAffiliation(item) {
+        const affiliationId = item.dataset.affiliation;
+
+        const affiliationData =
+          AFFILIATION_TIMELINE_DATA.find(
+            entry => entry.id === affiliationId
+          );
+
+        clearTimeout(clearFocusTimer);
+        clearAffiliationFocus();
+
+        section.classList.add("is-affiliation-focused");
+        item.classList.add("is-active");
+
+        section
+          .querySelectorAll(
+            `.month-block[data-affiliation="${affiliationId}"],
+       .timeline-legend-item[data-affiliation="${affiliationId}"]`
+          )
+          .forEach(element => {
+            element.classList.add("is-active");
+          });
+
+        if (!affiliationData) return;
+
+        const startYear =
+          Number(affiliationData.start.slice(0, 4));
+
+        const endYear =
+          Number(
+            resolveTimelineDate(
+              affiliationData.end
+            ).slice(0, 4)
+          );
+
+        section
+          .querySelectorAll(".timeline-year[data-year]")
+          .forEach(yearLabel => {
+            const year =
+              Number(yearLabel.dataset.year);
+
+            if (
+              year >= startYear &&
+              year <= endYear
+            ) {
+              yearLabel.classList.add("is-active");
+            }
+          });
+      }
+
+      affiliationItems.forEach(item => {
+        item.addEventListener("mouseenter", () => {
+          activateAffiliation(item);
+        });
+      });
+
+      affiliationBlock.addEventListener("mouseenter", () => {
+        clearTimeout(clearFocusTimer);
+      });
+
+      affiliationBlock.addEventListener("mouseleave", () => {
+        clearFocusTimer = setTimeout(() => {
+          clearAffiliationFocus();
+        }, 160);
+      });
+    }
+
+    function initialiseScrollReveal() {
+      const targets =
+        document.querySelectorAll(".section");
+
+      targets.forEach(target => {
+        target.classList.add("reveal-ready");
+      });
+
+      if (
+        !("IntersectionObserver" in window) ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        targets.forEach(target => {
+          target.classList.add("is-visible");
+        });
+
+        return;
+      }
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: "0px 0px -35px 0px"
+      });
+
+      targets.forEach(target => {
+        const rect = target.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight * 0.9) {
+          target.classList.add("is-visible");
+        } else {
+          observer.observe(target);
+        }
+      });
+    }
+
+    function updateNavigationState() {
+      const nav = document.querySelector(".nav");
+
+      if (!nav) return;
+
+      nav.classList.toggle(
+        "is-scrolled",
+        window.scrollY > 24
+      );
+    }
   </script>
 
 </body>
