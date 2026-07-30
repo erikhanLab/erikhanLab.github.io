@@ -220,8 +220,18 @@
       padding-top: 1px;
     }
 
+    .current-project-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+
+      margin-bottom: 10px;
+    }
+
     .current-project h2 {
-      margin: 0 0 10px;
+      min-width: 0;
+      margin: 0;
 
       font-size: 0.98em;
       font-weight: 500;
@@ -229,6 +239,19 @@
       letter-spacing: 0.015em;
 
       color: rgba(18, 32, 51, 0.88);
+    }
+
+    .current-project-period {
+      padding-top: 3px;
+
+      font-size: 0.61em;
+      line-height: 1.45;
+      letter-spacing: 0.045em;
+      white-space: nowrap;
+      font-style: normal;
+      font-variant-numeric: tabular-nums;
+
+      color: rgba(70, 82, 98, 0.42);
     }
 
     .current-project-description {
@@ -1061,6 +1084,20 @@
         color: rgba(11, 31, 58, 0.84);
       }
 
+      .current-project-heading {
+        gap: 10px;
+        margin-bottom: 0;
+      }
+
+      .current-project-period {
+        padding-top: 1px;
+
+        font-size: 0.52em;
+        letter-spacing: 0.035em;
+
+        color: rgba(11, 31, 58, 0.38);
+      }
+
       .current-project-topics {
         margin-top: 11px;
         gap: 5px;
@@ -1194,9 +1231,17 @@
 
         <div class="current-project-content">
 
-          <h2 data-en="Spatial Hull Roughness and Ship Hydrodynamics" data-ja="船体粗さの空間分布と船舶流体力学">
-            Spatial Hull Roughness and Ship Hydrodynamics
-          </h2>
+          <div class="current-project-heading">
+            <h2>
+              <span data-en="Spatial Hull Roughness and Ship Hydrodynamics" data-ja="船体粗さの空間分布と船舶流体力学">
+                Spatial Hull Roughness and Ship Hydrodynamics
+              </span>
+            </h2>
+
+            <time class="current-project-period" datetime="2024" aria-label="Ongoing since 2024">
+              2024–
+            </time>
+          </div>
 
           <p class="current-project-description"
             data-en="The work investigates how spatially non-uniform hull roughness distributions influence resistance, boundary-layer development, and wake response under identical area-averaged equivalent roughness. Current extensions address model-to-full-scale scaling, effective roughness descriptors, Reynolds-number sensitivity, and measurement-informed distributions."

@@ -330,6 +330,10 @@
       color: #111;
     }
 
+    .pub-authors+.pub-meta {
+      margin-top: 4px;
+    }
+
     .pub-authors .author-role {
       font-style: italic;
       font-weight: normal;
@@ -444,8 +448,7 @@
 
     .metrics-source {
       margin: 5px 0 0;
-
-      font-size: 0.65em;
+      font-size: 0.66em;
       letter-spacing: 0.045em;
       color: rgba(82, 92, 105, 0.56);
     }
@@ -691,6 +694,46 @@
       text-overflow: ellipsis;
     }
 
+    .pub-title-accepted {
+      display: flex;
+      align-items: baseline;
+      gap: 3px;
+
+      max-width: none;
+      white-space: nowrap;
+      overflow: visible;
+      text-overflow: clip;
+
+      font-size: 0.94em;
+      line-height: 1.35;
+    }
+
+    .pub-title-accepted .title-text {
+      min-width: 0;
+      letter-spacing: -0.025em;
+    }
+
+    .subsection-accepted {
+      margin-bottom: 24px;
+      padding: 13px 14px 16px;
+
+      background: rgba(11, 31, 58, 0.018);
+      border: 1px solid rgba(11, 31, 58, 0.04);
+      border-left: 2px solid rgba(11, 31, 58, 0.14);
+      border-radius: 7px;
+    }
+
+    .subsection-accepted h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+
+      color: rgba(11, 31, 58, 0.82);
+    }
+
+    .subsection-accepted .pub-item {
+      padding-left: 8px;
+    }
+
     @media (max-width: 640px) {
       .site-name {
         font-size: 1.9em;
@@ -802,6 +845,16 @@
         margin-top: 18px;
       }
 
+      .subsection-accepted {
+        padding: 12px 11px 15px;
+        border-radius: 6px;
+        border-left-width: 1px;
+      }
+
+      .subsection-accepted .pub-item {
+        padding-left: 0;
+      }
+
       .lang-switch {
         font-size: 0.65em;
         transform: translateY(30px);
@@ -894,6 +947,10 @@
 
       .pub-authors {
         font-size: 0.71em;
+      }
+
+      .pub-authors+.pub-meta {
+        margin-top: 1px;
       }
 
       .meta-tooltip::after,
@@ -1000,8 +1057,17 @@
       <p class="publication-count">
         <span class="publication-count-item">
           <strong>3</strong>
-          <span data-en="peer-reviewed journal articles" data-ja="査読付き学術論文">
-            peer-reviewed journal articles
+          <span data-en="published journal articles" data-ja="掲載済み学術論文">
+            published journal articles
+          </span>
+        </span>
+
+        <span class="publication-count-divider" aria-hidden="true">·</span>
+
+        <span class="publication-count-item">
+          <strong>1</strong>
+          <span data-en="accepted journal article" data-ja="採択済み学術論文">
+            accepted journal article
           </span>
         </span>
 
@@ -1037,8 +1103,8 @@
         </a>
       </div>
 
-      <p class="metrics-source" data-en="Google Scholar · updated July 2026" data-ja="Google Scholar · 2026年7月更新">
-        Google Scholar · updated July 2026
+      <p class="metrics-source" data-en="Citation metrics · July 2026" data-ja="引用指標 · 2026年7月">
+        Citation metrics · July 2026
       </p>
     </section>
 
@@ -1167,11 +1233,46 @@
         </div>
       </div>
 
-      <!--  
-      <div class="subsection">
-        <h3>Accepted</h3>
+      <div class="subsection subsection-accepted">
+        <h3 data-en="Accepted" data-ja="採択済み">
+          Accepted
+        </h3>
+
+        <div class="pub-item">
+          <div class="pub-title pub-title-accepted">
+            <span class="status accepted" aria-hidden="true">●</span>
+
+            <span class="title-text">
+              Beyond uniform roughness: Spatial variability of hull roughness and implications for single-parameter
+              representation
+            </span>
+          </div>
+
+          <div class="pub-meta-block">
+            <div class="pub-authors">
+              <span class="author-full">
+                <span class="main-author">S. Han</span>
+                <span class="author-role">(Sole author)</span>
+              </span>
+
+              <span class="author-short">
+                <span class="main-author">S. Han</span>
+                <span class="author-role">(Sole author)</span>
+              </span>
+            </div>
+
+            <div class="pub-meta">
+              <span class="pub-meta-text">
+                <em>Ocean Engineering</em> — accepted for publication,
+              </span>
+
+              <span class="pub-year">2026</span>
+            </div>
+          </div>
+        </div>
       </div>
--->
+      <!--  
+
       <div class="subsection subsection-review">
         <h3 data-en="Under Review" data-ja="査読中">Under Review</h3>
 
@@ -1206,7 +1307,7 @@
           </div>
         </div>
       </div>
-
+-->
       <div class="subsection subsection-prep-box">
         <h3 data-en="In Preparation" data-ja="準備中">In Preparation</h3>
 

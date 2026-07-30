@@ -370,7 +370,7 @@
       margin-top: 0;
       color: #333;
       opacity: 0;
-      font-size: 0.8em;
+      font-size: 0.85em;
       line-height: 1.45;
       font-style: italic;
       transform: translateY(-2px);
@@ -379,6 +379,13 @@
         opacity 0.18s ease,
         margin-top 0.18s ease,
         transform 0.18s ease;
+
+      width: 100%;
+      min-width: 0;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .trace-line.is-highlight:hover .trace-detail,
@@ -754,6 +761,22 @@
           <div class="trace-affiliation">Seoul National University</div>
         </div>
         <div class="trace-lines">
+
+          <div class="trace-line is-highlight" tabindex="0">
+            <span class="trace-event">
+              ITTC roughness article accepted for publication
+            </span>
+            <span class="trace-dot">·</span>
+            <span class="trace-tag">
+              Ocean Engineering
+            </span>
+            <span class="trace-detail"
+              title="Han (2026) — Beyond uniform roughness: Spatial variability of hull roughness and implications for single-parameter representation">
+              Han (2026) — Beyond uniform roughness: Spatial variability of hull roughness and implications for
+              single-parameter representation
+            </span>
+          </div>
+
           <div class="trace-line is-highlight" tabindex="0">
             <span class="trace-event">Visiting Researcher appointment began</span>
             <span class="trace-dot">·</span>
@@ -764,7 +787,7 @@
           </div>
 
           <div class="trace-line is-soft">
-            <span class="trace-event">Doctoral oral examination scheduled</span>
+            <span class="trace-event">Doctoral oral examination completed</span>
             <span class="trace-dot">·</span>
             <span class="trace-tag">Kyoto University</span>
           </div>
