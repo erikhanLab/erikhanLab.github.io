@@ -233,7 +233,7 @@
       min-width: 0;
       margin: 0;
 
-      font-size: 0.98em;
+      font-size: 0.94em;
       font-weight: 500;
       line-height: 1.48;
       letter-spacing: 0.015em;
@@ -245,7 +245,7 @@
       margin-right: 8px;
       padding-top: 3px;
 
-      font-size: 0.61em;
+      font-size: 0.71em;
       line-height: 1.45;
       letter-spacing: 0.045em;
       white-space: nowrap;
@@ -257,7 +257,7 @@
 
     .current-project-description {
       margin: 0;
-      font-size: 0.79em;
+      font-size: 0.77em;
       line-height: 1.62;
       letter-spacing: 0.005em;
       color: rgba(34, 42, 53, 0.76);
@@ -274,7 +274,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-
       margin-top: 14px;
     }
 
@@ -282,7 +281,7 @@
       display: inline-block;
       padding: 2px 7px;
 
-      font-size: 0.63em;
+      font-size: 0.68em;
       line-height: 1.5;
       letter-spacing: 0.025em;
       text-transform: none;
@@ -306,10 +305,7 @@
 
     .research-timeline {
       margin-top: 20px;
-      padding-top: 18px;
       padding-left: 4px;
-
-      border-top: 1px solid rgba(11, 31, 58, 0.08);
     }
 
     .rt-body {
@@ -330,8 +326,10 @@
       display: grid;
       grid-template-columns: 90px 1fr;
       column-gap: 34px;
-      padding: 22px 0 26px;
+
+      padding: 14px 0 18px;
       padding-left: 26px;
+
       border-left: 1px solid rgba(0, 0, 0, 0.10);
       position: relative;
     }
@@ -460,7 +458,7 @@
       font-size: 0.68em;
       letter-spacing: 0.04em;
       color: #777;
-      margin-top: 4px;
+      margin-top: 0px;
       margin-left: 8px;
       padding-left: 6px;
       border-left: 1.3px solid rgba(0, 0, 0, 0.16);
@@ -527,7 +525,7 @@
       display: block;
       margin-bottom: 6px;
 
-      font-size: 0.64em;
+      font-size: 0.68em;
       line-height: 1.4;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -553,9 +551,9 @@
       gap: 8px;
 
       min-width: 0;
+      height: 34px;
+      box-sizing: border-box;
       padding: 7px 2px 10px;
-
-      border-bottom: 0;
     }
 
     .research-network-list li::after {
@@ -564,18 +562,22 @@
       left: 2px;
       bottom: 2px;
 
-      width: 88px;
+      width: 160px;
       height: 1px;
 
       background: linear-gradient(to right,
-          rgba(11, 31, 58, 0.075),
+          rgba(11, 31, 58, 0.09),
           rgba(11, 31, 58, 0));
+    }
+
+    .research-network-list li:last-child::after {
+      display: none;
     }
 
     .research-network-name {
       flex: 0 0 auto;
 
-      font-size: 0.74em;
+      font-size: 0.8em;
       line-height: 1.4;
       letter-spacing: 0.02em;
       word-spacing: 0.08em;
@@ -630,67 +632,65 @@
     }
 
     .research-links {
-      display: grid;
-      grid-template-columns: auto auto;
-
-      width: fit-content;
-      max-width: 100%;
-
-      margin: 26px 0 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      max-width: none;
+      margin: 34px 0 0;
       padding: 0;
+      background: transparent;
+      border: 0;
+      overflow: visible;
+    }
 
-      background: rgba(11, 31, 58, 0.018);
-      border: 1px solid rgba(11, 31, 58, 0.045);
-      border-radius: 3px;
+    .research-links-separator {
+      flex: 0 0 auto;
 
-      overflow: hidden;
+      font-size: 0.68em;
+      line-height: 1;
+      color: rgba(11, 31, 58, 0.28);
+      transform: translateY(-0.02em);
+    }
+
+    .research-links::before {
+      content: "";
+      flex: 1 1 auto;
+
+      min-width: 40px;
+      height: 1px;
+
+      background: linear-gradient(to right,
+          rgba(11, 31, 58, 0.02),
+          rgba(11, 31, 58, 0.10));
     }
 
     .research-links a {
       display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-
-      min-width: 128px;
-      padding: 8px 11px;
-
-      font-size: 0.65em;
+      align-items: baseline;
+      justify-content: flex-start;
+      min-width: 0;
+      padding: 0;
+      font-size: 0.9em;
       line-height: 1.4;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.025em;
+      white-space: nowrap;
 
-      color: rgba(24, 39, 58, 0.64);
+      color: rgba(24, 39, 58, 0.58);
       text-decoration: none;
 
-      transition:
-        background 0.18s ease,
-        color 0.18s ease;
+      transition: color 0.18s ease;
     }
 
     .research-links a+a {
-      border-left: 1px solid rgba(11, 31, 58, 0.04);
-    }
-
-    .research-links-arrow {
-      flex: 0 0 auto;
-
-      font-size: 0.82em;
-      color: rgba(11, 31, 58, 0.24);
-
-      transition:
-        color 0.18s ease,
-        transform 0.18s ease;
+      border-left: 0;
     }
 
     .research-links a:hover {
       color: rgba(11, 31, 58, 0.88);
-      background: rgba(11, 31, 58, 0.024);
+      background: transparent;
     }
 
-    .research-links a:hover .research-links-arrow {
-      color: rgba(11, 31, 58, 0.54);
-      transform: translateX(2px);
-    }
 
     .rt-log-link {
       text-transform: none;
@@ -722,6 +722,33 @@
 
     .rt-subtitle a:hover {
       border-bottom-color: rgba(11, 31, 58, 0.2);
+    }
+
+    .current-project-figure--empty {
+      min-height: 190px;
+      background: transparent;
+    }
+
+    .current-project+.current-project {
+      position: relative;
+      margin-top: 20px;
+      padding-top: 28px;
+    }
+
+    .current-project+.current-project::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background: linear-gradient(to right,
+          rgba(11, 31, 58, 0),
+          rgba(11, 31, 58, 0.055) 18%,
+          rgba(11, 31, 58, 0.055) 82%,
+          rgba(11, 31, 58, 0));
     }
 
     .mobile {
@@ -862,8 +889,6 @@
         margin-top: 8px;
         padding-top: 15px;
         padding-left: 0;
-
-        border-top: 1px solid rgba(11, 31, 58, 0.075);
       }
 
       .research-timeline>.rt-header {
@@ -929,7 +954,7 @@
 
       .rt-item {
         display: block;
-        padding: 18px 0 22px;
+        padding: 12px 0 16px;
         border-left: none;
       }
 
@@ -983,16 +1008,17 @@
         white-space: nowrap;
       }
 
-      .role-tag {
-        font-size: 0.55em;
+      .current-project+.current-project {
         margin-top: 0px;
-        margin-bottom: 5px;
-        margin-left: 0;
-        padding-left: 0;
-        border-left: none;
-        color: #555;
-        opacity: 0.42;
-        letter-spacing: 0.04em;
+        padding-top: 16px;
+      }
+
+      .current-project+.current-project::before {
+        display: none;
+      }
+
+      .role-tag {
+        display: none;
       }
 
       .rt-meta {
@@ -1077,7 +1103,7 @@
       .current-project h2 {
         margin: 0;
 
-        font-size: 0.7em;
+        font-size: 0.65em;
         font-weight: 500;
         line-height: 1.48;
         letter-spacing: 0.055em;
@@ -1095,13 +1121,13 @@
 
         font-size: 0.52em;
         letter-spacing: 0.035em;
-
         color: rgba(11, 31, 58, 0.38);
       }
 
       .current-project-topics {
-        margin-top: 11px;
+        margin-top: 6px;
         gap: 5px;
+        font-size: 1em;
       }
 
       .current-project-topics span {
@@ -1119,33 +1145,45 @@
 
       .research-links {
         display: flex;
-        justify-content: flex-end;
-        align-items: baseline;
-        gap: 15px;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
 
-        width: fit-content;
-        max-width: 100%;
+        width: 100%;
+        max-width: none;
 
-        margin: 19px 0 0 auto;
+        margin: 24px 0 0;
         padding: 0;
 
         background: transparent;
         border: 0;
-        border-radius: 0;
-
         overflow: visible;
+      }
+
+      .research-links-separator {
+        font-size: 0.52em;
+        color: rgba(11, 31, 58, 0.24);
+      }
+
+      .research-links::before {
+        flex: 1 1 auto;
+        min-width: 24px;
+        height: 1px;
+
+        background: linear-gradient(to right,
+            rgba(11, 31, 58, 0.015),
+            rgba(11, 31, 58, 0.085));
       }
 
       .research-links a {
         display: inline-flex;
         align-items: baseline;
-        justify-content: flex-start;
-        gap: 4px;
+        gap: 3px;
 
         min-width: 0;
         padding: 0;
 
-        font-size: 0.56em;
+        font-size: 0.54em;
         line-height: 1.4;
         letter-spacing: 0.015em;
         white-space: nowrap;
@@ -1155,20 +1193,6 @@
 
       .research-links a+a {
         border-left: 0;
-      }
-
-      .research-links-arrow {
-        font-size: 0.78em;
-        color: rgba(11, 31, 58, 0.22);
-      }
-
-      .research-links a:hover {
-        background: transparent;
-        color: rgba(11, 31, 58, 0.78);
-      }
-
-      .research-links-arrow {
-        font-size: 0.82em;
       }
     }
   </style>
@@ -1348,6 +1372,76 @@
 
         </div>
       </article>
+
+      <article class="current-project">
+
+        <figure class="current-project-figure current-project-figure--empty" aria-hidden="true">
+        </figure>
+
+        <div class="current-project-content">
+
+          <div class="current-project-heading">
+            <h2>
+              <span data-en="Added Resistance CFD for ITTC Seakeeping Procedures" data-ja="ITTC耐航性能手順のための付加抵抗CFD">
+                Added Resistance CFD for ITTC Seakeeping Procedures
+              </span>
+            </h2>
+
+            <time class="current-project-period" datetime="2026" aria-label="Ongoing since 2026">
+              2026–
+            </time>
+          </div>
+
+          <p class="current-project-description"
+            data-en="Collaborative research on CFD parameters and verification methods for added-resistance computations supporting an ITTC seakeeping procedure."
+            data-ja="ITTC耐航性能手順の策定を支援するため、波浪中付加抵抗CFDの計算条件および検証手法を検討する共同研究です。">
+            Collaborative research on CFD parameters and verification methods for
+            added-resistance computations supporting an ITTC seakeeping procedure.
+          </p>
+
+          <div class="current-project-topics" aria-label="Research topics">
+            <span>CFD</span>
+
+            <span data-en="Added resistance" data-ja="付加抵抗">
+              Added resistance
+            </span>
+
+            <span data-en="ITTC seakeeping" data-ja="ITTC耐航性能">
+              ITTC seakeeping
+            </span>
+          </div>
+
+          <aside class="research-network" aria-labelledby="snu-project-network-title">
+
+            <span id="snu-project-network-title" class="research-network-heading" data-en="Research Connection"
+              data-ja="研究連携">
+              Research Connection
+            </span>
+
+            <ul class="research-network-list">
+              <li>
+                <span class="research-network-name">
+                  Seoul National University
+                </span>
+
+                <span class="research-network-meta">
+                  <span class="research-network-role" data-en="Visiting research" data-ja="訪問研究">
+                    Visiting research
+                  </span>
+
+                  <span class="research-network-separator">·</span>
+
+                  <time class="research-network-period" datetime="2026" data-en="2026–" data-ja="2026年–">
+                    2026–
+                  </time>
+                </span>
+              </li>
+            </ul>
+
+          </aside>
+
+        </div>
+      </article>
     </section>
 
     <nav class="research-links" aria-label="Research pages">
@@ -1355,16 +1449,17 @@
         <span data-en="Research Log" data-ja="研究ノート">
           Research Log
         </span>
-        <span class="research-links-arrow" aria-hidden="true">→</span>
       </a>
+
+      <span class="research-links-separator" aria-hidden="true">·</span>
 
       <a href="/research/timeline/">
         <span data-en="Academic Timeline" data-ja="学術年表">
           Academic Timeline
         </span>
-        <span class="research-links-arrow" aria-hidden="true">→</span>
       </a>
     </nav>
+
     <div class="research-timeline">
       <h2 class="rt-header">
         <span data-en="Research Timeline (2023–)" data-ja="研究年表 (2023–)">
@@ -1374,8 +1469,8 @@
       <div class="rt-item">
         <div class="rt-year">2026</div>
         <div class="rt-body">
-          <div class="rt-stage" data-en="Preparing for PhD" data-ja="博士課程進学準備中">
-            Preparing for PhD
+          <div class="rt-stage" data-en="Pre-Doctoral Research" data-ja="博士課程進学前研究">
+            Pre-Doctoral Research
           </div>
 
           <div class="rt-title">
