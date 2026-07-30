@@ -189,61 +189,36 @@
       vertical-align: middle;
     }
 
-    .header {
-      font-family: Georgia, serif;
-      font-size: 0.9em;
-      display: flex;
-      align-items: baseline;
-      font-weight: 300;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #555;
-    }
-
-    .pub-index {
-      margin-top: 10px;
-      margin-bottom: 24px;
-      font-size: 0.8em;
-      letter-spacing: 0.14em;
-      color: #222;
-      text-align: left;
-      opacity: 0.6;
-    }
-
-    .pub-index a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .pub-index a:hover {
-      opacity: 1;
-    }
 
     .pub-legend {
-      margin: 0px 0 10px;
+      margin: 0 0 10px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 18px;
+
       font-size: 0.82em;
+      line-height: 1.4;
       letter-spacing: 0.04em;
       color: #111;
-      opacity: 0.8;
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
+      opacity: 0.6;
+      text-align: right;
     }
 
-    .scholar-link {
-      text-transform: none;
-      font-size: 0.75em;
-      letter-spacing: 0.08em;
-      color: #777;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: color 0.15s ease, border-color 0.15s ease;
-      margin-left: 20px;
+    .author-key {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+      font-size: 0.82em;
+      opacity: 0.7;
+      white-space: nowrap;
+      font-style: normal;
     }
 
-    .scholar-link:hover {
-      color: var(--accent-dark);
-      border-bottom-color: rgba(11, 31, 58, 0.35);
+    .author-key-mark {
+      position: relative;
+      top: -0.04em;
     }
 
     .section {
@@ -259,6 +234,44 @@
       letter-spacing: 0.12em;
       opacity: 0.85;
       text-transform: uppercase;
+    }
+
+    .section-heading-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+
+    .section-heading-row h2 {
+      flex: 0 0 auto;
+      margin: 0;
+    }
+
+    .pub-legend {
+      display: flex;
+      align-items: baseline;
+      justify-content: flex-end;
+      gap: 18px;
+      margin: 0;
+
+      min-width: 0;
+      font-size: 0.72em;
+      line-height: 1.4;
+      letter-spacing: 0.035em;
+      color: #111;
+      opacity: 0.58;
+      text-align: right;
+    }
+
+    .author-key {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+      font-size: 1em;
+      white-space: nowrap;
+      font-style: normal;
     }
 
     .subsection {
@@ -295,12 +308,17 @@
     }
 
     .pub-title {
+      display: block;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      margin-left: -5px;
       font-size: 1.02em;
       font-weight: 500;
-      color: #111;
       line-height: 1.35;
-      margin-left: -5px;
-
+      color: #111;
     }
 
     .pub-title a {
@@ -334,14 +352,6 @@
       margin-top: 4px;
     }
 
-    .pub-authors .author-role {
-      font-style: italic;
-      font-weight: normal;
-      font-size: 0.78em;
-      color: #555;
-      margin-left: -0.1em;
-    }
-
     .pub-authors .co-authors {
       font-weight: normal;
       margin-left: 0.1em;
@@ -349,7 +359,7 @@
 
     .pub-meta {
       position: relative;
-      font-size: 0.75em;
+      font-size: 0.78em;
       color: #444;
       display: flex;
       gap: 8px;
@@ -363,24 +373,10 @@
       position: relative;
     }
 
-    .pub-meta a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.15s ease;
-    }
-
-    .pub-meta a:hover {
-      color: var(--accent-dark);
-    }
-
-    .journal-name {
-      color: #222;
-    }
-
     .journal-if {
-      font-size: 0.68em;
+      font-size: 0.72em;
       letter-spacing: 0.06em;
-      color: #666;
+      color: #333;
     }
 
     .publication-overview {
@@ -389,14 +385,6 @@
 
       border-top: 1px solid rgba(11, 31, 58, 0.07);
       border-bottom: 1px solid rgba(11, 31, 58, 0.07);
-    }
-
-    .publication-count {
-      margin: 0 0 8px;
-      font-size: 0.88em;
-      line-height: 1.5;
-      letter-spacing: 0.045em;
-      color: #26354a;
     }
 
     .scholar-metrics {
@@ -429,23 +417,6 @@
       color: rgba(11, 31, 58, 0.78);
     }
 
-    .scholar-profile-link {
-      margin-left: 20px;
-      font-size: 0.9em;
-      letter-spacing: 0.05em;
-      color: rgba(57, 67, 80, 0.68);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition:
-        color 0.15s ease,
-        border-color 0.15s ease;
-    }
-
-    .scholar-profile-link:hover {
-      color: var(--accent-dark);
-      border-bottom-color: rgba(11, 31, 58, 0.25);
-    }
-
     .metrics-source {
       margin: 5px 0 0;
       font-size: 0.66em;
@@ -459,38 +430,20 @@
       line-height: 1.2;
     }
 
-    .pub-note {
-      display: inline-block;
-      margin-top: 6px;
-      font-size: 0.74em;
-      color: #666;
-      opacity: 0.8;
-      letter-spacing: 0.02em;
-    }
-
-    .pub-status-label {
-      font-size: 0.68em;
-      letter-spacing: 0.12em;
-      color: #777;
-      opacity: 0.7;
-      font-weight: 400;
-      line-height: 1.2;
-    }
-
     .subsection-prep-box {
-      margin-bottom: 20px;
-      padding: 0px 14px 14px 14px;
-      background: rgba(11, 31, 58, 0.025);
-      border: 1px solid rgba(11, 31, 58, 0.03);
-      border-left: none;
-      border-radius: 9px;
+      margin-bottom: 24px;
+      padding: 13px 14px 16px;
+
+      background: transparent;
+      border: none;
+      border-radius: 0;
       opacity: 0.62;
     }
 
     .subsection-prep-box h3 {
-      margin-bottom: 12px;
-      color: #333;
-      opacity: 0.92;
+      margin-top: 0;
+      margin-bottom: 14px;
+      color: rgba(11, 31, 58, 0.82);
     }
 
     .subsection-prep-box .pub-item {
@@ -498,7 +451,7 @@
     }
 
     .subsection-prep-box .pub-item+.pub-item {
-      margin-top: 13px;
+      margin-top: 10px;
     }
 
     .status {
@@ -556,7 +509,8 @@
       margin-bottom: 34px;
       padding: 15px 16px 19px;
 
-      background: rgba(11, 31, 58, 0.012);
+      /* 기존 Accepted 배경색 */
+      background: rgba(11, 31, 58, 0.018);
       border: 1px solid rgba(11, 31, 58, 0.035);
       border-left: 2px solid rgba(11, 31, 58, 0.11);
       border-radius: 9px;
@@ -564,6 +518,17 @@
       box-shadow:
         0 4px 14px rgba(11, 31, 58, 0.01),
         inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .subsection-accepted {
+      margin-bottom: 24px;
+      padding: 13px 14px 16px;
+
+      /* 페이지 배경색과 동일하게 */
+      background: var(--bg-light);
+      border: 1px solid rgba(11, 31, 58, 0.04);
+      border-left: 2px solid rgba(11, 31, 58, 0.14);
+      border-radius: 7px;
     }
 
     .subsection-completed h3 {
@@ -615,16 +580,11 @@
       display: inline-block;
       color: inherit;
       text-decoration: none;
-      border-bottom: 1px dotted rgba(11, 31, 58, 0.12);
       cursor: default;
-      transition:
-        color 0.15s ease,
-        border-color 0.15s ease;
     }
 
     .meta-tooltip:hover {
       color: inherit;
-      border-bottom-color: rgba(11, 31, 58, 0.26);
     }
 
     .meta-tooltip::after {
@@ -686,14 +646,6 @@
       transform: translateY(0);
     }
 
-    .pub-title {
-      display: block;
-      max-width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
     .pub-title-accepted {
       display: flex;
       align-items: baseline;
@@ -713,16 +665,6 @@
       letter-spacing: -0.025em;
     }
 
-    .subsection-accepted {
-      margin-bottom: 24px;
-      padding: 13px 14px 16px;
-
-      background: rgba(11, 31, 58, 0.018);
-      border: 1px solid rgba(11, 31, 58, 0.04);
-      border-left: 2px solid rgba(11, 31, 58, 0.14);
-      border-radius: 7px;
-    }
-
     .subsection-accepted h3 {
       margin-top: 0;
       margin-bottom: 14px;
@@ -734,18 +676,75 @@
       padding-left: 8px;
     }
 
+    .count-label-short {
+      display: none;
+    }
+
+    .scholar-profile-link {
+      margin-left: 20px;
+      font-size: 0.9em;
+      letter-spacing: 0.05em;
+      color: rgba(57, 67, 80, 0.68);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition:
+        color 0.15s ease,
+        border-color 0.15s ease;
+    }
+
+    .scholar-profile-link:hover {
+      color: var(--accent-dark);
+      border-bottom-color: rgba(11, 31, 58, 0.25);
+    }
+
+    .external-link-icon {
+      width: 11px;
+      height: 11px;
+      flex: 0 0 auto;
+
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.15;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+
+      opacity: 0.68;
+      transform: translateY(-0.5px);
+      transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    .scholar-profile-link:hover .external-link-icon {
+      opacity: 1;
+      transform: translate(1px, -1.5px);
+    }
+
+    .author-marker {
+      position: relative;
+      top: -0.08em;
+      margin-left: 0.08em;
+      font-size: 0.72em;
+      font-weight: 400;
+      color: rgba(11, 31, 58, 0.62);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     @media (max-width: 640px) {
       .site-name {
         font-size: 1.9em;
         margin-left: 10px;
-      }
-
-      .header {
-        display: none;
-      }
-
-      .pub-index {
-        display: none;
       }
 
       .nav {
@@ -827,7 +826,16 @@
       }
 
       .subsection-prep-box {
+        padding: 12px 11px 15px;
         opacity: 0.7;
+      }
+
+      .subsection-prep-box .pub-item {
+        padding-left: 0;
+      }
+
+      .subsection-prep-box .pub-item+.pub-item {
+        margin-top: 10px;
       }
 
       .subsection-completed {
@@ -855,14 +863,24 @@
         padding-left: 0;
       }
 
-      .lang-switch {
-        font-size: 0.65em;
-        transform: translateY(30px);
+      .count-label-full {
+        display: none;
+      }
+
+      .count-label-short {
+        display: inline;
       }
 
       .publication-count {
-        font-size: 0.76em;
-        margin-bottom: 8px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        font-size: 0.64em;
+        letter-spacing: 0.02em;
+      }
+
+      .lang-switch {
+        font-size: 0.65em;
+        transform: translateY(30px);
       }
 
       .publication-count strong {
@@ -883,12 +901,6 @@
         padding: 13px 0;
       }
 
-      .publication-count {
-        margin-bottom: 7px;
-        font-size: 0.7em;
-        line-height: 1.5;
-      }
-
       .scholar-metrics {
         row-gap: 4px;
       }
@@ -901,14 +913,6 @@
 
       .scholar-metric strong {
         font-size: 1.0em;
-      }
-
-      .scholar-profile-link {
-        width: auto;
-        margin: 0 0 0 10px;
-        font-size: 0.82em;
-        white-space: nowrap;
-        flex-shrink: 0;
       }
 
       .metrics-source {
@@ -926,12 +930,8 @@
       }
 
       .pub-title {
-        white-space: nowrap;
         font-size: 0.88em;
         line-height: 1.4;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: block;
       }
 
       .status {
@@ -963,7 +963,7 @@
       }
 
       .pub-meta {
-        font-size: 0.62em;
+        font-size: 0.7em;
         line-height: 1.4;
         margin-top: 0px;
         opacity: 0.9;
@@ -990,15 +990,12 @@
 
       .pub-year {
         flex-shrink: 0;
-        font-size: 0.85em;
+        font-size: 0.9em;
         color: #555;
       }
 
       .cover-badge {
-        font-size: 0.36rem;
-        padding: 1px 4px;
-        margin-left: 3px;
-        flex-shrink: 0;
+        display: none;
       }
 
       .author-full {
@@ -1009,10 +1006,49 @@
         display: inline;
       }
 
+      .author-key {
+        font-size: 0.76em;
+      }
+
       .pub-legend {
-        font-size: 0.72em;
-        color: #222;
-        opacity: 0.8;
+        display: none;
+      }
+
+      .section-heading-row {
+        display: block;
+        margin-bottom: 18px;
+      }
+
+      .scholar-profile-link {
+        margin-left: 10px;
+        font-size: 0.82em;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .external-link-icon {
+        width: 9px;
+        height: 9px;
+        stroke-width: 1.1;
+        opacity: 0.58;
+      }
+
+      .pub-title-accepted {
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .pub-title-accepted .status {
+        flex-shrink: 0;
+      }
+
+      .pub-title-accepted .title-text {
+        display: block;
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
     }
   </style>
@@ -1057,8 +1093,11 @@
       <p class="publication-count">
         <span class="publication-count-item">
           <strong>3</strong>
-          <span data-en="published journal articles" data-ja="掲載済み学術論文">
+          <span class="count-label-full" data-en="published journal articles" data-ja="掲載済み学術論文">
             published journal articles
+          </span>
+          <span class="count-label-short" data-en="journals" data-ja="論文">
+            journals
           </span>
         </span>
 
@@ -1066,8 +1105,11 @@
 
         <span class="publication-count-item">
           <strong>1</strong>
-          <span data-en="accepted journal article" data-ja="採択済み学術論文">
+          <span class="count-label-full" data-en="accepted journal article" data-ja="採択済み学術論文">
             accepted journal article
+          </span>
+          <span class="count-label-short" data-en="accepted" data-ja="採択">
+            accepted
           </span>
         </span>
 
@@ -1075,8 +1117,11 @@
 
         <span class="publication-count-item">
           <strong>3</strong>
-          <span data-en="conference papers" data-ja="国際会議論文">
+          <span class="count-label-full" data-en="conference papers" data-ja="国際会議論文">
             conference papers
+          </span>
+          <span class="count-label-short" data-en="conferences" data-ja="国際会議">
+            conferences
           </span>
         </span>
       </p>
@@ -1099,27 +1144,42 @@
 
         <a class="scholar-profile-link" href="https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en"
           target="_blank" rel="noopener">
-          Google Scholar ↗
+          <span>Google Scholar</span>
+
+          <svg class="external-link-icon" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M6 3h7v7"></path>
+            <path d="M13 3 6.5 9.5"></path>
+            <path d="M11 8.5V13H3V5h4.5"></path>
+          </svg>
         </a>
       </div>
 
-      <p class="metrics-source" data-en="Citation metrics · July 2026" data-ja="引用指標 · 2026年7月">
-        Citation metrics · July 2026
+      <p class="metrics-source" data-en="Last updated · July 2026" data-ja="最終更新 · 2026年7月">
+        Last updated · July 2026
       </p>
     </section>
 
-    <div class="pub-legend">
-      <em data-en="Published titles link to abstracts." data-ja="掲載済み論文のタイトルから概要ページに移動できます。">
-        Published titles link to abstracts.
-      </em>
-    </div>
-
     <div class="section">
-      <h2>
-        <span data-en="Journal Articles" data-ja="学術論文">
-          Journal Articles
-        </span>
-      </h2>
+      <div class="section-heading-row">
+        <h2>
+          <span data-en="Journal Articles" data-ja="学術論文">
+            Journal Articles
+          </span>
+        </h2>
+
+        <div class="pub-legend">
+          <em data-en="Published titles link to abstracts." data-ja="掲載済み論文のタイトルから概要ページに移動できます。">
+            Published titles link to abstracts.
+          </em>
+
+          <span class="author-key">
+            <span class="author-key-mark" aria-hidden="true">*</span>
+            <span data-en="Corresponding author" data-ja="責任著者">
+              Corresponding author
+            </span>
+          </span>
+        </div>
+      </div>
 
       <div class="subsection subsection-completed">
         <h3 data-en="Published" data-ja="掲載済み">
@@ -1138,13 +1198,11 @@
           <div class="pub-meta-block">
             <div class="pub-authors">
               <span class="author-full">
-                <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding author)</span>,
+                <span class="main-author">S. Han*</span>,
                 <span class="co-authors">H. Lee, S. Dai, and M. Terziev</span>
               </span>
               <span class="author-short">
-                <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding author)</span>,
+                <span class="main-author">S. Han*</span>,
                 <span class="co-authors">H. Lee, S. Dai, and M. Terziev</span>
               </span>
             </div>
@@ -1172,13 +1230,11 @@
           <div class="pub-meta-block">
             <div class="pub-authors">
               <span class="author-full">
-                <span class="main-author">S. Han</span>
-                <span class="author-role">(First author)</span>,
+                <span class="main-author">S. Han</span>,
                 <span class="co-authors">S. Dai, M. Terziev, D. Kim, T. Tezdogan, D. Jung, and S. Song*</span>
               </span>
               <span class="author-short">
-                <span class="main-author">S. Han</span>
-                <span class="author-role">(First author)</span>,
+                <span class="main-author">S. Han</span>,
                 <span class="co-authors">S. Dai, M. Terziev, <em>et al.</em></span>
               </span>
             </div>
@@ -1209,14 +1265,12 @@
             <div class="pub-authors">
               <span class="author-full">
                 <span class="co-authors">W. Choi, G. Min,</span>
-                <span class="main-author">S. Han</span>
-                <span class="author-role">(Co-author)</span>,
+                <span class="main-author">S. Han</span>,
                 <span class="co-authors">H. Yun, M. Terziev, S. Dai, D. Kim, and S. Song*</span>
               </span>
               <span class="author-short">
                 <span class="co-authors">W. Choi, G. Min,</span>
-                <span class="main-author">S. Han</span>
-                <span class="author-role">(Co-author)</span>,
+                <span class="main-author">S. Han</span>,
                 <span class="co-authors"><em>et al.</em></span>
               </span>
             </div>
@@ -1252,12 +1306,10 @@
             <div class="pub-authors">
               <span class="author-full">
                 <span class="main-author">S. Han</span>
-                <span class="author-role">(Sole author)</span>
               </span>
 
               <span class="author-short">
                 <span class="main-author">S. Han</span>
-                <span class="author-role">(Sole author)</span>
               </span>
             </div>
 
@@ -1366,13 +1418,11 @@
           <div class="pub-meta-block">
             <div class="pub-authors">
               <span class="author-full">
-                <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding author)</span>,
+                <span class="main-author">S. Han*</span>,
                 <span class="co-authors">M. Terziev and T. Tezdogan</span>
               </span>
               <span class="author-short">
-                <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding author)</span>,
+                <span class="main-author">S. Han*</span>,
                 <span class="co-authors">M. Terziev and T. Tezdogan</span>
               </span>
             </div>
@@ -1398,12 +1448,10 @@
             <div class="pub-authors">
               <span class="author-full">
                 <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding author)</span>
                 <span class="co-authors"> and M. Lee</span>
               </span>
               <span class="author-short">
                 <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding author)</span>
                 <span class="co-authors"> and M. Lee</span>
               </span>
             </div>
@@ -1426,13 +1474,11 @@
           <div class="pub-meta-block">
             <div class="pub-authors">
               <span class="author-full">
-                <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding author)</span>,
+                <span class="main-author">S. Han*</span>,
                 <span class="co-authors">S. Dai, M. Terziev, H. Yun, and S. Song</span>
               </span>
               <span class="author-short">
-                <span class="main-author">S. Han*</span>
-                <span class="author-role">(Corresponding author)</span>,
+                <span class="main-author">S. Han*</span>,
                 <span class="co-authors">S. Dai, M. Terziev, <em>et al.</em></span>
               </span>
             </div>
