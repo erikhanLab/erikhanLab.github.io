@@ -183,6 +183,158 @@
       opacity: 0.7;
     }
 
+    html {
+      scroll-behavior: auto;
+    }
+
+    #ongoing-research,
+    #research-timeline,
+    #contact,
+    .rt-item[id] {
+      scroll-margin-top: 92px;
+    }
+
+    .research-side-nav {
+      position: fixed;
+      top: 50%;
+      left: calc(50% + 485px);
+      transform: translateY(-42%);
+      z-index: 30;
+
+      width: 170px;
+    }
+
+    .research-side-nav nav {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      padding-left: 24px;
+    }
+
+    /* 세로 rail */
+    .research-side-nav nav::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -14px;
+      bottom: -14px;
+
+      width: 1px;
+
+      background: linear-gradient(to bottom,
+          rgba(11, 31, 58, 0),
+          rgba(11, 31, 58, 0.12) 18%,
+          rgba(11, 31, 58, 0.12) 82%,
+          rgba(11, 31, 58, 0));
+    }
+
+    .research-side-nav a {
+      position: relative;
+      display: block;
+      width: fit-content;
+
+      font-size: 0.68em;
+      line-height: 1.45;
+      letter-spacing: 0.07em;
+
+      color: rgba(11, 31, 58, 0.36);
+      text-decoration: none;
+
+      transition:
+        color 0.28s ease,
+        opacity 0.28s ease,
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .research-side-nav a:hover {
+      color: rgba(11, 31, 58, 0.72);
+    }
+
+    .research-side-nav a::before {
+      content: "";
+      position: absolute;
+
+      left: -24px;
+      top: 50%;
+
+      width: 0;
+      height: 1px;
+
+      background: rgba(11, 31, 58, 0.72);
+      transform: translateY(-50%);
+
+      transition: width 0.18s ease;
+    }
+
+    .research-side-nav a.active {
+      color: rgba(11, 31, 58, 0.86);
+    }
+
+    .research-side-nav a.active::before {
+      width: 11px;
+    }
+
+    .research-side-nav-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .research-side-nav-parent {
+      font-weight: 500;
+    }
+
+    /* Timeline은 연도 활성화 중에도 조금 절제된 강도 */
+    .research-side-nav-parent.active {
+      color: rgba(11, 31, 58, 0.68);
+    }
+
+    .research-side-nav-parent.active::before {
+      width: 7px;
+      opacity: 0.65;
+    }
+
+    .research-side-nav-years {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      padding-left: 12px;
+    }
+
+    .research-side-nav-years a {
+      font-size: 0.65em;
+      letter-spacing: 0.09em;
+      font-variant-numeric: tabular-nums;
+
+      color: rgba(11, 31, 58, 0.28);
+    }
+
+    .research-side-nav-years a.active {
+      color: rgba(11, 31, 58, 0.9);
+      font-weight: 500;
+      transform: translateX(3px);
+    }
+
+    @media (max-width: 1320px) {
+      .research-side-nav {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .research-side-nav a {
+        transition: none;
+      }
+    }
+
     .ongoing-research {
       margin: 0;
     }
@@ -223,36 +375,36 @@
     .current-project-heading {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      gap: 12px;
+      column-gap: 5px;
       align-items: start;
 
       margin-bottom: 10px;
+    }
+
+    .current-project-period {
+      margin-right: 0;
+      padding-top: 3px;
+
+      font-size: 0.68em;
+      line-height: 1.45;
+      letter-spacing: 0.025em;
+      white-space: nowrap;
+      font-style: normal;
+      font-variant-numeric: tabular-nums;
+
+      color: rgba(70, 82, 98, 0.42);
     }
 
     .current-project h2 {
       min-width: 0;
       margin: 0;
 
-      font-size: 0.94em;
+      font-size: 0.86em;
       font-weight: 500;
       line-height: 1.48;
       letter-spacing: 0.015em;
 
       color: rgba(18, 32, 51, 0.88);
-    }
-
-    .current-project-period {
-      margin-right: 8px;
-      padding-top: 3px;
-
-      font-size: 0.71em;
-      line-height: 1.45;
-      letter-spacing: 0.045em;
-      white-space: nowrap;
-      font-style: normal;
-      font-variant-numeric: tabular-nums;
-
-      color: rgba(70, 82, 98, 0.42);
     }
 
     .current-project-description {
@@ -292,15 +444,65 @@
       border-radius: 3px;
     }
 
-    .current-project-caption {
-      margin-top: 8px;
+    .current-project-figure--published {
+      margin: 0;
+    }
 
-      font-size: 0.7em;
+    .current-project-figure-link {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .current-project-figure-link img {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      transition:
+        opacity 0.2s ease,
+        transform 0.25s ease;
+    }
+
+    .current-project-figure-link:hover img {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .current-project-caption {
+      margin-top: 9px;
+
       line-height: 1.45;
-      letter-spacing: 0.045em;
       text-align: center;
 
       color: rgba(48, 60, 76, 0.5);
+    }
+
+    .current-project-caption-title {
+      display: block;
+
+      font-size: 0.7em;
+      letter-spacing: 0.035em;
+    }
+
+    .current-project-caption-source {
+      display: inline-block;
+
+      margin-top: 2px;
+
+      font-size: 0.68em;
+      line-height: 1.4;
+      letter-spacing: 0.04em;
+      font-style: italic;
+
+      color: rgba(48, 60, 76, 0.42);
+      text-decoration: none;
+
+      transition: color 0.18s ease;
+    }
+
+    .current-project-caption-source:hover {
+      color: rgba(11, 31, 58, 0.72);
     }
 
     .research-timeline {
@@ -433,7 +635,6 @@
       color: #333;
       opacity: 0.78;
       padding-left: 14px;
-      margin-top: 2px;
       position: relative;
       margin-left: 0px;
       margin-bottom: 6px;
@@ -464,19 +665,6 @@
       border-left: 1.3px solid rgba(0, 0, 0, 0.16);
     }
 
-    .research-footnote {
-      margin-top: 110px;
-      padding-bottom: 20px;
-    }
-
-    .research-footnote p {
-      font-size: 0.78em;
-      line-height: 1.6;
-      color: #666;
-      opacity: 0.85;
-      margin: 0 0 10px 0;
-      letter-spacing: 0.01em;
-    }
 
     .footnote-mark {
       margin-right: 6px;
@@ -493,24 +681,115 @@
       border-bottom: none;
     }
 
-    .research-closure {
-      margin-top: 0px;
-      padding-top: 1px;
+    .research-contact {
       position: relative;
+
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.9fr);
+      column-gap: 60px;
+      align-items: start;
+
+      margin-top: 60px;
+      padding: 20px 4px 40px;
     }
 
-    .research-closure::before {
+    .research-contact::before {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
+
       width: 100%;
       height: 1px;
+
       background: linear-gradient(to right,
-          rgba(0, 0, 0, 0),
-          rgba(0, 0, 0, 0.10),
-          rgba(0, 0, 0, 0));
-      opacity: 0.9;
+          rgba(11, 31, 58, 0),
+          rgba(11, 31, 58, 0.12) 18%,
+          rgba(11, 31, 58, 0.12) 82%,
+          rgba(11, 31, 58, 0));
+    }
+
+    .research-contact-heading h2 {
+      margin: 0 0 14px;
+
+      font-size: 1.02em;
+      line-height: 1.4;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+
+      color: rgba(11, 31, 58, 0.88);
+    }
+
+    .research-contact-heading p {
+      max-width: 390px;
+      margin: 0;
+
+      font-size: 0.88em;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+
+      color: rgba(34, 42, 53, 0.62);
+    }
+
+    .research-contact-details {
+      display: grid;
+      gap: 16px;
+
+      margin: 10px 0 0;
+    }
+
+    .research-contact-row {
+      display: grid;
+      gap: 4px;
+
+      margin: 0;
+    }
+
+    .research-contact-row dt {
+      margin: 0;
+      margin-bottom: 2px;
+      font-size: 0.68em;
+      line-height: 1.4;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+
+      color: rgba(11, 31, 58, 0.42);
+    }
+
+    .research-contact-row dd {
+      margin-bottom: 5px;
+      margin: 0;
+      font-size: 0.86em;
+      line-height: 1.55;
+
+      color: rgba(24, 39, 58, 0.76);
+    }
+
+    .research-contact-row a {
+      color: inherit;
+      text-decoration: none;
+
+      border-bottom: 1px solid rgba(11, 31, 58, 0.1);
+
+      transition:
+        color 0.18s ease,
+        border-color 0.18s ease;
+    }
+
+    .research-contact-row a:hover {
+      color: rgba(11, 31, 58, 0.96);
+      border-bottom-color: rgba(11, 31, 58, 0.38);
+    }
+
+    .research-contact-links {
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+    }
+
+    .research-contact-links span {
+      color: rgba(11, 31, 58, 0.25);
     }
 
     .research-network {
@@ -529,7 +808,7 @@
       line-height: 1.4;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-
+      opacity: 0.9;
       color: rgba(11, 31, 58, 0.65);
     }
 
@@ -577,7 +856,7 @@
     .research-network-name {
       flex: 0 0 auto;
 
-      font-size: 0.8em;
+      font-size: 0.78em;
       line-height: 1.4;
       letter-spacing: 0.02em;
       word-spacing: 0.08em;
@@ -607,28 +886,26 @@
     }
 
     .research-network-role {
-      font-size: 0.67em;
+      font-size: 0.7em;
       line-height: 1.4;
       letter-spacing: 0.025em;
-
-      color: rgba(82, 92, 105, 0.52);
+      color: rgba(66, 62, 62, 0.52);
     }
 
     .research-network-separator {
       font-size: 0.54em;
       line-height: 1;
-
-      color: rgba(82, 92, 105, 0.26);
+      color: rgba(66, 62, 62, 0.52);
     }
 
     .research-network-period {
-      font-size: 0.62em;
+      font-size: 0.66em;
       line-height: 1.4;
       letter-spacing: 0.025em;
       font-style: normal;
       font-variant-numeric: tabular-nums;
 
-      color: rgba(82, 92, 105, 0.38);
+      color: rgba(66, 62, 62, 0.52);
     }
 
     .research-links {
@@ -691,6 +968,125 @@
       background: transparent;
     }
 
+    .research-contact-affiliation {
+      padding-bottom: 18px;
+      margin-bottom: 2px;
+    }
+
+    .research-contact-intro {
+      margin-bottom: 0;
+    }
+
+    .research-contact-affiliation {
+      position: relative;
+
+      margin-top: 22px;
+      padding-top: 17px;
+    }
+
+    .research-contact-affiliation::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 42px;
+      height: 1px;
+
+      background: rgba(11, 31, 58, 0.14);
+    }
+
+    .research-contact-institute-line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 5px;
+
+      max-width: 430px;
+    }
+
+    .research-contact-institute {
+      font-size: 0.79em;
+      line-height: 1.55;
+      letter-spacing: 0.008em;
+
+      color: rgba(18, 32, 51, 0.78);
+    }
+
+    .research-contact-abbreviation {
+      font-size: 0.9em;
+      letter-spacing: 0.025em;
+
+      color: rgba(18, 32, 51, 0.46);
+    }
+
+    .research-contact-divider {
+      margin: 0 2px;
+
+      font-size: 0.82em;
+      line-height: 1;
+
+      color: rgba(11, 31, 58, 0.48);
+    }
+
+    .research-contact-location-separator {
+      color: rgba(11, 31, 58, 0.48);
+    }
+
+    .research-contact-position-line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 5px;
+
+      margin-top: 4px;
+
+      font-size: 0.7em;
+      line-height: 1.55;
+      letter-spacing: 0.012em;
+
+      color: rgba(23, 24, 26, 0.76);
+    }
+
+    .research-contact-role {
+      font-size: 1.02em;
+      line-height: inherit;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+
+      color: rgba(23, 24, 26, 0.76);
+    }
+
+    .research-contact-location-separator {
+      color: rgba(23, 24, 26, 0.76);
+    }
+
+    .research-contact-abbreviation {
+      font-size: 0.86em;
+      letter-spacing: 0.035em;
+
+      color: rgba(23, 24, 26, 0.76);
+    }
+
+    .research-contact-university {
+      margin-top: 3px;
+
+      font-size: 0.94em;
+      line-height: 1.5;
+
+      color: rgba(23, 24, 26, 0.76);
+    }
+
+    .research-contact-location {
+      margin-top: 1px;
+
+      font-size: 0.9em;
+      line-height: 1.45;
+      font-style: italic;
+      letter-spacing: 0.025em;
+
+      color: rgba(23, 24, 26, 0.76);
+    }
 
     .rt-log-link {
       text-transform: none;
@@ -724,9 +1120,43 @@
       border-bottom-color: rgba(11, 31, 58, 0.2);
     }
 
-    .current-project-figure--empty {
+    .current-project-figure--pending {
       min-height: 190px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0;
+
       background: transparent;
+    }
+
+    .current-project-pending-note {
+      position: relative;
+      margin: 0;
+      padding-top: 13px;
+      font-size: 0.7em;
+      line-height: 1.5;
+      letter-spacing: 0.075em;
+      font-style: italic;
+      text-align: center;
+
+      color: rgba(27, 30, 32, 0.38);
+    }
+
+    .current-project-pending-note::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+
+      width: 34px;
+      height: 1px;
+
+      transform: translateX(-50%);
+
+      background: rgba(11, 31, 58, 0.11);
     }
 
     .current-project+.current-project {
@@ -748,6 +1178,22 @@
           rgba(11, 31, 58, 0),
           rgba(11, 31, 58, 0.055) 18%,
           rgba(11, 31, 58, 0.055) 82%,
+          rgba(11, 31, 58, 0));
+    }
+
+    .research-contact::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      margin-bottom: 20px;
+      width: 100%;
+      height: 1px;
+
+      background: linear-gradient(to right,
+          rgba(11, 31, 58, 0),
+          rgba(11, 31, 58, 0.12) 16%,
+          rgba(11, 31, 58, 0.12) 84%,
           rgba(11, 31, 58, 0));
     }
 
@@ -876,13 +1322,6 @@
       .current-project-network li {
         padding: 2px 6px;
         font-size: 0.54em;
-      }
-
-      .research-network {
-        display: block;
-        margin-top: 18px;
-        padding-top: 0;
-        border-top: 0;
       }
 
       .research-timeline {
@@ -1061,15 +1500,6 @@
         display: none;
       }
 
-      .research-footnote {
-        margin-top: 70px;
-      }
-
-      .research-footnote p {
-        font-size: 0.72em;
-        opacity: 0.8;
-      }
-
       .desktop {
         display: none;
       }
@@ -1088,22 +1518,13 @@
       }
 
       .research-network {
-        display: block;
-
-        margin-top: 18px;
-        padding-top: 0;
-
-        border: 0;
-      }
-
-      .research-network {
         display: none;
       }
 
       .current-project h2 {
         margin: 0;
 
-        font-size: 0.65em;
+        font-size: 0.63em;
         font-weight: 500;
         line-height: 1.48;
         letter-spacing: 0.055em;
@@ -1127,7 +1548,7 @@
       .current-project-topics {
         margin-top: 6px;
         gap: 5px;
-        font-size: 1em;
+        font-size: 1.15em;
       }
 
       .current-project-topics span {
@@ -1183,7 +1604,7 @@
         min-width: 0;
         padding: 0;
 
-        font-size: 0.54em;
+        font-size: 0.62em;
         line-height: 1.4;
         letter-spacing: 0.015em;
         white-space: nowrap;
@@ -1193,6 +1614,58 @@
 
       .research-links a+a {
         border-left: 0;
+      }
+
+      .research-contact {
+        display: block;
+
+        margin-top: 0px;
+        padding: 15px 2px 54px;
+      }
+
+      .research-contact-heading h2 {
+        margin-bottom: 10px;
+        font-size: 0.8em;
+      }
+
+      .research-contact-heading p {
+        font-size: 0.69em;
+        line-height: 1.65;
+      }
+
+      .research-contact-details {
+        gap: 15px;
+        margin-top: 10px;
+        margin-bottom: -30px;
+      }
+
+      .research-contact-row dt {
+        font-size: 0.65em;
+      }
+
+      .research-contact::after {
+        display: none;
+      }
+
+      .research-contact-row dd {
+        font-size: 0.76em;
+      }
+
+      .research-contact-affiliation {
+        margin-top: 15px;
+        padding-top: 0px;
+      }
+
+      .research-contact-institute-line {
+        display: block;
+      }
+
+      .research-contact-institute {
+        display: none;
+      }
+
+      .research-contact-position-line {
+        display: none;
       }
     }
   </style>
@@ -1230,12 +1703,36 @@
   -->
     <a href="/archive/" data-en="Archive" data-ja="アーカイブ">Archive</a>
   </div>
+
+  <aside class="research-side-nav" aria-label="Research section navigation">
+    <nav>
+      <a href="#ongoing-research" data-en="Ongoing Research" data-ja="進行中の研究">
+        Ongoing Research
+      </a>
+
+      <div class="research-side-nav-group">
+        <a href="#research-timeline" class="research-side-nav-parent" data-en="Research Timeline" data-ja="研究年表">
+          Research Timeline
+        </a>
+
+        <div class="research-side-nav-years">
+          <a href="#year-2026">2026</a>
+          <a href="#year-2025">2025</a>
+          <a href="#year-2024">2024</a>
+          <a href="#year-2023">2023</a>
+        </div>
+      </div>
+
+      <a href="#contact" data-en="Contact" data-ja="お問い合わせ">
+        Contact
+      </a>
+    </nav>
+  </aside>
   <div class="page-content">
 
-    <section class="ongoing-research" aria-labelledby="ongoing-research-title">
+    <section id="ongoing-research" class="ongoing-research" aria-labelledby="ongoing-research-title">
 
       <h1 id="ongoing-research-title" class="rt-header ongoing-header">
-
         <span data-en="Ongoing Research" data-ja="進行中の研究">
           Ongoing Research
         </span>
@@ -1243,14 +1740,28 @@
 
       <article class="current-project">
 
-        <figure class="current-project-figure">
-          <img src="/assets/hull-roughness.svg" width="879" height="973"
-            alt="Uniform, linear, random, and wall-shear-stress-based hull roughness distributions with equal mean roughness"
-            decoding="async" fetchpriority="high">
+        <figure class="current-project-figure current-project-figure--published">
 
-          <figcaption class="current-project-caption" data-en="Equal mean roughness — different spatial distributions"
-            data-ja="同一の平均粗さ — 異なる空間分布">
-            Equal mean roughness — different spatial distributions
+          <a class="current-project-figure-link" href="/publications/beyond-resistance/"
+            aria-label="View the related publication">
+            <img src="/assets/hull-roughness.svg" width="879" height="973"
+              alt="Uniform, linear, random, and wall-shear-stress-based hull roughness distributions with the same mean roughness"
+              decoding="async" fetchpriority="high">
+          </a>
+
+          <figcaption class="current-project-caption">
+
+            <span class="current-project-caption-title" data-en="Equal mean roughness — different spatial distributions"
+              data-ja="同一の平均粗さ — 異なる空間分布">
+              Equal mean roughness — different spatial distributions
+            </span>
+
+            <a class="current-project-caption-source" href="/publications/beyond-resistance/">
+              <span>Ocean Engineering</span>
+              <span aria-hidden="true"> · </span>
+              <span>Han et al. (2026)</span>
+            </a>
+
           </figcaption>
         </figure>
 
@@ -1361,8 +1872,8 @@
 
                   <span class="research-network-separator">·</span>
 
-                  <time class="research-network-period" data-en="2024–2025" data-ja="2024–2025">
-                    2024–2025
+                  <time class="research-network-period" data-en="2024–2026" data-ja="2024–2026">
+                    2024–2026
                   </time>
                 </span>
               </li>
@@ -1375,15 +1886,114 @@
 
       <article class="current-project">
 
-        <figure class="current-project-figure current-project-figure--empty" aria-hidden="true">
+        <figure class="current-project-figure current-project-figure--pending">
+          <figcaption class="current-project-pending-note" data-en="Manuscript in preparation" data-ja="原稿準備中">
+            Manuscript in preparation
+          </figcaption>
         </figure>
 
         <div class="current-project-content">
 
           <div class="current-project-heading">
             <h2>
-              <span data-en="Added Resistance CFD for ITTC Seakeeping Procedures" data-ja="ITTC耐航性能手順のための付加抵抗CFD">
-                Added Resistance CFD for ITTC Seakeeping Procedures
+              <span data-en="CFD–MBD Analysis of Gyroscopic Wave Energy Converters" data-ja="ジャイロ式波力発電装置のCFD–MBD解析">
+                CFD–MBD Analysis of Gyroscopic Wave Energy Converters
+              </span>
+            </h2>
+
+            <time class="current-project-period" datetime="2025" aria-label="Ongoing since 2025">
+              2025–
+            </time>
+          </div>
+
+          <p class="current-project-description"
+            data-en="Development of a modular CFD–MBD framework for analysing the coupled hydrodynamic and internal gyroscopic dynamics of wave energy converters."
+            data-ja="波力発電装置の流体力学応答と内部ジャイロダイナミクスを連成解析する、モジュール型CFD–MBDフレームワークの開発研究です。">
+            Development of a modular CFD–MBD framework for analysing the
+            coupled hydrodynamic and internal gyroscopic dynamics of wave
+            energy converters.
+          </p>
+
+          <div class="current-project-topics" aria-label="Research topics">
+            <span>CFD–MBD</span>
+
+            <span data-en="Wave energy" data-ja="波力エネルギー">
+              Wave energy
+            </span>
+
+            <span data-en="Gyroscopic dynamics" data-ja="ジャイロダイナミクス">
+              Gyroscopic dynamics
+            </span>
+
+          </div>
+
+          <aside class="research-network" aria-labelledby="gwec-project-network-title">
+
+            <span id="gwec-project-network-title" class="research-network-heading" data-en="Research Connections"
+              data-ja="研究連携">
+              Research Connections
+            </span>
+
+            <ul class="research-network-list">
+
+              <li>
+                <span class="research-network-name">
+                  University of Strathclyde
+                </span>
+
+                <span class="research-network-meta">
+                  <span class="research-network-role" data-en="Academic exchange" data-ja="学術交流">
+                    Academic exchange
+                  </span>
+
+                  <span class="research-network-separator">·</span>
+
+                  <time class="research-network-period" datetime="2025" data-en="2025–" data-ja="2025年–">
+                    2025–
+                  </time>
+                </span>
+              </li>
+              <li>
+                <span class="research-network-name">
+                  The University of Osaka
+                </span>
+
+                <span class="research-network-meta">
+                  <span class="research-network-role" data-en="Visiting research" data-ja="訪問研究">
+                    Visiting research
+                  </span>
+
+                  <span class="research-network-separator">·</span>
+
+                  <time class="research-network-period" datetime="2025" data-en="2025" data-ja="2025年">
+                    2025
+                  </time>
+                </span>
+              </li>
+
+
+            </ul>
+
+          </aside>
+
+        </div>
+      </article>
+
+      <article class="current-project">
+
+        <figure class="current-project-figure current-project-figure--pending">
+          <figcaption class="current-project-pending-note" data-en="Manuscript in preparation" data-ja="原稿準備中">
+            Manuscript in preparation
+          </figcaption>
+        </figure>
+
+        <div class="current-project-content">
+
+          <div class="current-project-heading">
+            <h2>
+              <span data-en="CFD Parameterisation for Added-Resistance Prediction in Waves"
+                data-ja="波浪中付加抵抗予測のためのCFDパラメータ設定">
+                CFD Parameterisation for Added-Resistance Prediction in Waves
               </span>
             </h2>
 
@@ -1393,10 +2003,11 @@
           </div>
 
           <p class="current-project-description"
-            data-en="Collaborative research on CFD parameters and verification methods for added-resistance computations supporting an ITTC seakeeping procedure."
-            data-ja="ITTC耐航性能手順の策定を支援するため、波浪中付加抵抗CFDの計算条件および検証手法を検討する共同研究です。">
-            Collaborative research on CFD parameters and verification methods for
-            added-resistance computations supporting an ITTC seakeeping procedure.
+            data-en="Collaborative research to establish CFD parameters and verification practices for added-resistance predictions supporting ITTC seakeeping procedures."
+            data-ja="ITTC耐航性能手順を支援する波浪中付加抵抗予測について、CFDパラメータおよび検証手法を整備する共同研究です。">
+            Collaborative research to establish CFD parameters and verification
+            practices for added-resistance predictions supporting ITTC seakeeping
+            procedures.
           </p>
 
           <div class="current-project-topics" aria-label="Research topics">
@@ -1406,8 +2017,8 @@
               Added resistance
             </span>
 
-            <span data-en="ITTC seakeeping" data-ja="ITTC耐航性能">
-              ITTC seakeeping
+            <span data-en="Verification" data-ja="検証">
+              Verification
             </span>
           </div>
 
@@ -1460,13 +2071,13 @@
       </a>
     </nav>
 
-    <div class="research-timeline">
+    <div class="research-timeline" id="research-timeline">
       <h2 class="rt-header">
         <span data-en="Research Timeline (2023–)" data-ja="研究年表 (2023–)">
           Research Timeline (2023–)
         </span>
       </h2>
-      <div class="rt-item">
+      <div class="rt-item" id="year-2026">
         <div class="rt-year">2026</div>
         <div class="rt-body">
           <div class="rt-stage" data-en="Pre-Doctoral Research" data-ja="博士課程進学前研究">
@@ -1523,8 +2134,9 @@
         </div>
       </div>
 
-      <div class="rt-item">
+      <div class="rt-item" id="year-2025">
         <div class="rt-year">2025</div>
+
         <div class="rt-body">
 
           <div class="rt-stage">International Research</div>
@@ -1662,8 +2274,9 @@
         </div>
       </div>
 
-      <div class="rt-item">
+      <div class="rt-item" id="year-2024">
         <div class="rt-year">2024</div>
+
         <div class="rt-body">
 
           <div class="rt-stage" data-en="Early Outputs & Domestic Recognition" data-ja="初期成果・国内評価">
@@ -1721,8 +2334,9 @@
         </div>
       </div>
 
-      <div class="rt-item">
+      <div class="rt-item" id="year-2023">
         <div class="rt-year">2023</div>
+
         <div class="rt-body">
 
           <div class="rt-stage" data-en="Research Entry & Foundation" data-ja="研究基盤の形成">
@@ -1774,16 +2388,85 @@
         </div>
       </div>
 
-      <section class="research-closure">
-        <div class="research-footnote">
-          <p class="footnote-collab">
-            <span class="footnote-mark">·</span>
-            <span data-en="For collaboration —" data-ja="共同研究については —">
-              For collaboration —
-            </span>
-            <a href="mailto:sangseok.han.contact@gmail.com">sangseok.han.contact@gmail.com</a>
+      <section id="contact" class="research-contact" aria-labelledby="contact-title">
+
+        <div class="research-contact-heading">
+          <h2 id="contact-title" data-en="Contact" data-ja="お問い合わせ">
+            Contact
+          </h2>
+
+          <p class="research-contact-intro"
+            data-en="For research collaboration, academic exchange, or related enquiries, please feel free to get in touch."
+            data-ja="共同研究、学術交流、その他の研究に関するお問い合わせは、下記までご連絡ください。">
+            For research collaboration, academic exchange, or related enquiries,
+            please feel free to get in touch.
           </p>
+
+          <div class="research-contact-affiliation">
+            <div class="research-contact-institute-line">
+              <span class="research-contact-institute">
+                Research Institute of Marine Systems Engineering
+                <span class="research-contact-abbreviation">(RIMSE)</span>
+              </span>
+            </div>
+
+            <div class="research-contact-position-line">
+              <span class="research-contact-role" data-en="Visiting Researcher" data-ja="客員研究員">
+                Visiting Researcher
+              </span>
+
+              <span class="research-contact-divider" aria-hidden="true">
+                ·
+              </span>
+
+              <span class="research-contact-university" data-en="Seoul National University" data-ja="ソウル大学校">
+                Seoul National University
+              </span>
+
+              <span class="research-contact-location-separator" aria-hidden="true">
+                —
+              </span>
+
+              <span class="research-contact-location" data-en="Republic of Korea" data-ja="大韓民国">
+                Republic of Korea
+              </span>
+            </div>
+          </div>
         </div>
+
+        <dl class="research-contact-details">
+          <div class="research-contact-row">
+            <dt data-en="Email" data-ja="メール">
+              Email
+            </dt>
+
+            <dd>
+              <a href="mailto:sangseok.han.contact@gmail.com">
+                sangseok.han.contact@gmail.com
+              </a>
+            </dd>
+          </div>
+
+          <div class="research-contact-row">
+            <dt data-en="Academic profiles" data-ja="学術プロフィール">
+              Academic profiles
+            </dt>
+
+            <dd class="research-contact-links">
+              <a href="https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en" target="_blank"
+                rel="noopener noreferrer">
+                Google Scholar
+              </a>
+
+              <span aria-hidden="true">·</span>
+
+              <a href="https://orcid.org/0009-0007-8276-2728" target="_blank" rel="noopener noreferrer">
+                ORCID
+              </a>
+            </dd>
+          </div>
+
+        </dl>
       </section>
     </div>
   </div>
@@ -1792,29 +2475,418 @@
     const DEFAULT_LANG = "en";
     const SUPPORTED_LANGS = new Set(["en", "ja"]);
 
+    let researchScrollMap = [];
+    let researchScrollMax = 0;
+    let researchMapDirty = true;
+    let scrollUpdateScheduled = false;
+    let researchLayoutObserver = null;
+    let smoothScrollFrame = null;
+
     function getSessionLang() {
       const saved = sessionStorage.getItem("lang");
-      return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
+
+      return SUPPORTED_LANGS.has(saved)
+        ? saved
+        : DEFAULT_LANG;
     }
 
     function applyLang(lang) {
-      const safeLang = SUPPORTED_LANGS.has(lang) ? lang : DEFAULT_LANG;
+      const safeLang = SUPPORTED_LANGS.has(lang)
+        ? lang
+        : DEFAULT_LANG;
 
-      document.documentElement.setAttribute("lang", safeLang);
-      document.documentElement.setAttribute("data-lang", safeLang);
+      document.documentElement.setAttribute(
+        "lang",
+        safeLang
+      );
+
+      document.documentElement.setAttribute(
+        "data-lang",
+        safeLang
+      );
 
       document.querySelectorAll("[data-en]").forEach(el => {
-        const value = el.getAttribute(`data-${safeLang}`);
-        if (value !== null) el.innerHTML = value;
+        const value = el.getAttribute(
+          `data-${safeLang}`
+        );
+
+        if (value !== null) {
+          el.innerHTML = value;
+        }
       });
 
       document.querySelectorAll(".lang-switch a").forEach(a => {
-        a.classList.toggle("active", a.dataset.lang === safeLang);
+        a.classList.toggle(
+          "active",
+          a.dataset.lang === safeLang
+        );
       });
     }
 
+    function clamp(value, min, max) {
+      return Math.min(
+        Math.max(value, min),
+        max
+      );
+    }
+
+    function easeInOutQuint(progress) {
+      return progress < 0.5
+        ? 16 * Math.pow(progress, 5)
+        : 1 - Math.pow(-2 * progress + 2, 5) / 2;
+    }
+
+    function cancelSmoothScroll() {
+      if (smoothScrollFrame !== null) {
+        cancelAnimationFrame(smoothScrollFrame);
+        smoothScrollFrame = null;
+      }
+    }
+
+    function smoothScrollTo(targetY) {
+      cancelSmoothScroll();
+
+      const scrollingElement =
+        document.scrollingElement ||
+        document.documentElement;
+
+      const maximumScrollY = Math.max(
+        0,
+        scrollingElement.scrollHeight -
+        window.innerHeight
+      );
+
+      const startY = window.scrollY;
+
+      const destinationY = clamp(
+        targetY,
+        0,
+        maximumScrollY
+      );
+
+      const distance =
+        destinationY - startY;
+
+      if (Math.abs(distance) < 1) {
+        window.scrollTo(0, destinationY);
+        return;
+      }
+
+      const reduceMotion =
+        window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+      if (reduceMotion) {
+        window.scrollTo(0, destinationY);
+        return;
+      }
+
+      /*
+        가까운 구간은 빠르게,
+        먼 구간은 조금 더 길게 이동
+      */
+      const duration = clamp(
+        420 + Math.abs(distance) * 0.16,
+        480,
+        1050
+      );
+
+      const startTime = performance.now();
+
+      function animate(currentTime) {
+        const elapsed =
+          currentTime - startTime;
+
+        const progress = clamp(
+          elapsed / duration,
+          0,
+          1
+        );
+
+        const easedProgress =
+          easeInOutQuint(progress);
+
+        window.scrollTo(
+          0,
+          startY + distance * easedProgress
+        );
+
+        if (progress < 1) {
+          smoothScrollFrame =
+            requestAnimationFrame(animate);
+        } else {
+          window.scrollTo(0, destinationY);
+          smoothScrollFrame = null;
+        }
+      }
+
+      smoothScrollFrame =
+        requestAnimationFrame(animate);
+    }
+
+    function getDocumentTop(element) {
+      return (
+        element.getBoundingClientRect().top +
+        window.scrollY
+      );
+    }
+
+    function getResearchSectionDefinitions() {
+      const sideNav =
+        document.querySelector(".research-side-nav");
+
+      if (!sideNav) return [];
+
+      const ongoingLink = sideNav.querySelector(
+        'a[href="#ongoing-research"]'
+      );
+
+      const timelineLink = sideNav.querySelector(
+        'a[href="#research-timeline"]'
+      );
+
+      const contactLink = sideNav.querySelector(
+        'a[href="#contact"]'
+      );
+
+      const yearLink = year =>
+        sideNav.querySelector(
+          `a[href="#year-${year}"]`
+        );
+
+      const definitions = [
+        {
+          key: "ongoing",
+          selector: "#ongoing-research",
+          activeLinks: [ongoingLink],
+          currentLink: ongoingLink
+        },
+        {
+          key: "timeline",
+          selector: "#research-timeline",
+          activeLinks: [timelineLink],
+          currentLink: timelineLink
+        },
+        {
+          key: "2026",
+          selector: "#year-2026",
+          activeLinks: [
+            timelineLink,
+            yearLink("2026")
+          ],
+          currentLink: yearLink("2026")
+        },
+        {
+          key: "2025",
+          selector: "#year-2025",
+          activeLinks: [
+            timelineLink,
+            yearLink("2025")
+          ],
+          currentLink: yearLink("2025")
+        },
+        {
+          key: "2024",
+          selector: "#year-2024",
+          activeLinks: [
+            timelineLink,
+            yearLink("2024")
+          ],
+          currentLink: yearLink("2024")
+        },
+        {
+          key: "2023",
+          selector: "#year-2023",
+          activeLinks: [
+            timelineLink,
+            yearLink("2023")
+          ],
+          currentLink: yearLink("2023")
+        },
+        {
+          key: "contact",
+          selector: "#contact",
+          activeLinks: [contactLink],
+          currentLink: contactLink
+        }
+      ];
+
+      return definitions
+        .map(definition => ({
+          ...definition,
+
+          target:
+            document.querySelector(
+              definition.selector
+            ),
+
+          activeLinks:
+            definition.activeLinks.filter(Boolean)
+        }))
+        .filter(definition =>
+          definition.target &&
+          definition.currentLink
+        );
+    }
+
+    /*
+      실제 페이지 구조를 전체 스크롤 구간에 매핑한다.
+  
+      예:
+      2023 실제 영역:
+      #year-2023 시작점 ~ #contact 시작점
+  
+      Contact 실제 영역:
+      #contact 시작점 ~ #contact 끝점
+    */
+    function buildResearchScrollMap() {
+      const definitions =
+        getResearchSectionDefinitions();
+
+      if (!definitions.length) {
+        researchScrollMap = [];
+        researchScrollMax = 0;
+        return;
+      }
+
+      const scrollingElement =
+        document.scrollingElement ||
+        document.documentElement;
+
+      researchScrollMax = Math.max(
+        0,
+        scrollingElement.scrollHeight -
+        window.innerHeight
+      );
+
+      const firstSection =
+        definitions[0].target;
+
+      const lastSection =
+        definitions.at(-1).target;
+
+      const contentStart =
+        getDocumentTop(firstSection);
+
+      const contentEnd = Math.max(
+        contentStart + 1,
+
+        getDocumentTop(lastSection) +
+        lastSection.offsetHeight
+      );
+
+      const contentHeight =
+        contentEnd - contentStart;
+
+      researchScrollMap = definitions.map(
+        (definition, index) => {
+          const sectionTop =
+            getDocumentTop(definition.target);
+
+          const nextSectionTop =
+            index < definitions.length - 1
+              ? getDocumentTop(
+                definitions[index + 1].target
+              )
+              : contentEnd;
+
+          const startRatio = clamp(
+            (
+              sectionTop -
+              contentStart
+            ) / contentHeight,
+            0,
+            1
+          );
+
+          const endRatio = clamp(
+            (
+              nextSectionTop -
+              contentStart
+            ) / contentHeight,
+            0,
+            1
+          );
+
+          return {
+            ...definition,
+
+            sectionTop,
+            sectionBottom: nextSectionTop,
+
+            startScroll:
+              startRatio * researchScrollMax,
+
+            endScroll:
+              index === definitions.length - 1
+                ? researchScrollMax
+                : endRatio * researchScrollMax
+          };
+        }
+      );
+    }
+
+    function updateResearchSideNavigation() {
+      const sideNav =
+        document.querySelector(".research-side-nav");
+
+      if (!sideNav) return;
+
+      if (
+        researchMapDirty ||
+        !researchScrollMap.length
+      ) {
+        buildResearchScrollMap();
+        researchMapDirty = false;
+      }
+
+      if (!researchScrollMap.length) return;
+
+      const currentScroll = clamp(
+        window.scrollY,
+        0,
+        researchScrollMax
+      );
+
+      let activeSection =
+        researchScrollMap[0];
+
+      /*
+        현재 scrollY가 배정된 구간에 들어간
+        가장 마지막 항목을 선택한다.
+      */
+      for (const section of researchScrollMap) {
+        if (
+          currentScroll + 0.5 >=
+          section.startScroll
+        ) {
+          activeSection = section;
+        } else {
+          break;
+        }
+      }
+
+      sideNav
+        .querySelectorAll('a[href^="#"]')
+        .forEach(link => {
+          link.classList.remove("active");
+          link.removeAttribute("aria-current");
+        });
+
+      activeSection.activeLinks.forEach(link => {
+        link.classList.add("active");
+      });
+
+      activeSection.currentLink.setAttribute(
+        "aria-current",
+        "location"
+      );
+    }
+
     function updateNavigationState() {
-      const nav = document.querySelector(".nav");
+      const nav =
+        document.querySelector(".nav");
 
       if (!nav) return;
 
@@ -1824,23 +2896,183 @@
       );
     }
 
-    window.addEventListener("scroll", updateNavigationState, {
-      passive: true
-    });
+    function schedulePageUpdate(
+      rebuildMap = false
+    ) {
+      if (rebuildMap) {
+        researchMapDirty = true;
+      }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      applyLang(getSessionLang());
-      updateNavigationState();
-      document.querySelector(".page-content")?.classList.add("loaded");
-      document.querySelectorAll(".lang-switch a").forEach(a => {
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
-          const selected = SUPPORTED_LANGS.has(a.dataset.lang) ? a.dataset.lang : DEFAULT_LANG;
-          sessionStorage.setItem("lang", selected);
-          applyLang(selected);
-        });
+      if (scrollUpdateScheduled) return;
+
+      scrollUpdateScheduled = true;
+
+      requestAnimationFrame(() => {
+        if (researchMapDirty) {
+          buildResearchScrollMap();
+          researchMapDirty = false;
+        }
+
+        updateNavigationState();
+        updateResearchSideNavigation();
+
+        scrollUpdateScheduled = false;
       });
-    });
+    }
+
+    /*
+      Rail 클릭도 같은 매핑을 사용한다.
+  
+      따라서 클릭 위치와 활성화 기준이
+      서로 어긋나지 않는다.
+    */
+    function bindResearchSideNavigation() {
+      const sideNav =
+        document.querySelector(".research-side-nav");
+
+      if (!sideNav) return;
+
+      sideNav.addEventListener("click", event => {
+        const link =
+          event.target.closest('a[href^="#"]');
+
+        if (
+          !link ||
+          !sideNav.contains(link)
+        ) {
+          return;
+        }
+
+        if (
+          researchMapDirty ||
+          !researchScrollMap.length
+        ) {
+          buildResearchScrollMap();
+          researchMapDirty = false;
+        }
+
+        const selector =
+          link.getAttribute("href");
+
+        const mappedSection =
+          researchScrollMap.find(
+            section =>
+              section.selector === selector
+          );
+
+        if (!mappedSection) return;
+
+        event.preventDefault();
+
+        history.replaceState(
+          null,
+          "",
+          selector
+        );
+
+        smoothScrollTo(
+          Math.min(
+            researchScrollMax,
+            mappedSection.startScroll + 1
+          )
+        );
+      });
+    }
+
+    function observeResearchLayout() {
+      const pageContent =
+        document.querySelector(".page-content");
+
+      if (
+        !pageContent ||
+        !("ResizeObserver" in window)
+      ) {
+        return;
+      }
+
+      researchLayoutObserver =
+        new ResizeObserver(() => {
+          schedulePageUpdate(true);
+        });
+
+      researchLayoutObserver.observe(
+        pageContent
+      );
+    }
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        schedulePageUpdate(false);
+      },
+      {
+        passive: true
+      }
+    );
+
+    window.addEventListener(
+      "resize",
+      () => {
+        schedulePageUpdate(true);
+      },
+      {
+        passive: true
+      }
+    );
+
+    window.addEventListener(
+      "load",
+      () => {
+        schedulePageUpdate(true);
+      }
+    );
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+        applyLang(getSessionLang());
+
+        document
+          .querySelector(".page-content")
+          ?.classList.add("loaded");
+
+        bindResearchSideNavigation();
+        observeResearchLayout();
+
+        document
+          .querySelectorAll(".lang-switch a")
+          .forEach(a => {
+            a.addEventListener(
+              "click",
+              event => {
+                event.preventDefault();
+
+                const selected =
+                  SUPPORTED_LANGS.has(
+                    a.dataset.lang
+                  )
+                    ? a.dataset.lang
+                    : DEFAULT_LANG;
+
+                sessionStorage.setItem(
+                  "lang",
+                  selected
+                );
+
+                applyLang(selected);
+
+                /*
+                  언어 변경으로 텍스트 높이가 달라지므로
+                  전체 매핑을 다시 계산한다.
+                */
+                schedulePageUpdate(true);
+              }
+            );
+          });
+
+        schedulePageUpdate(true);
+      }
+    );
   </script>
 </body>
 
