@@ -29,6 +29,15 @@
     })(window, document, 'script', 'dataLayer', 'GTM-5MMRV373');</script>
   <!-- End Google Tag Manager -->
 
+  <script>
+    (function () {
+      const savedLang = sessionStorage.getItem("lang");
+      const lang = savedLang === "ja" ? "ja" : "en";
+
+      document.documentElement.setAttribute("lang", lang);
+      document.documentElement.setAttribute("data-lang", lang);
+    })();
+  </script>
   <style>
     html {
       overflow-y: scroll;
@@ -39,22 +48,7 @@
       --bg-light: #EDEFF3;
     }
 
-    .site-header {
-      margin: 60px 0 20px;
-    }
 
-    .site-name {
-      font-family: Georgia, serif;
-      font-size: 2.5em;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      color: #111;
-      text-decoration: none;
-    }
-
-    .site-name:hover {
-      opacity: 0.85;
-    }
 
     .page-content {
       transform: translateY(6px);
@@ -75,92 +69,203 @@
       background: var(--bg-light);
     }
 
+    .site-header {
+      position: relative;
+      margin: 60px 0 28px;
+    }
+
+    .site-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-name {
+      font-family:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        Georgia,
+        serif;
+
+      font-size: 2.35em;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.075em;
+
+      color: rgba(17, 17, 17, 0.96);
+      text-decoration: none;
+
+      font-kerning: normal;
+      text-rendering: optimizeLegibility;
+
+      transition:
+        opacity 0.2s ease,
+        letter-spacing 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .site-name:hover {
+      opacity: 0.78;
+      letter-spacing: 0.09em;
+    }
+
     .lang-switch {
-      font-size: 0.75em;
-      letter-spacing: 0.22em;
-      color: #64748b;
-      opacity: 0.7;
-      transform: translateY(35px);
+      position: absolute;
+      right: 2px;
+      bottom: -21px;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      margin: 0;
+
+      font-family:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        Georgia,
+        serif;
+
+      font-size: 0.68em;
+      line-height: 1;
+      letter-spacing: 0.13em;
+
+      color: rgba(38, 54, 74, 0.5);
     }
 
     .lang-switch a {
-      text-decoration: none;
-      color: inherit;
-      opacity: 0.5;
-      cursor: pointer;
-    }
+      position: relative;
 
-    .lang-switch a.active {
-      opacity: 1;
-      color: #111;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      opacity: 0.55;
+
+      transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
     }
 
     .lang-switch a:hover {
-      opacity: 0.8;
+      color: rgba(18, 39, 66, 0.82);
+      opacity: 1;
+    }
+
+    .lang-switch a.active {
+      color: rgba(11, 31, 58, 0.94);
+      opacity: 1;
+    }
+
+    .lang-switch span {
+      font-size: 0.72em;
+      color: rgba(11, 31, 58, 0.24);
     }
 
     .nav {
       position: sticky;
       top: env(safe-area-inset-top);
       z-index: 1000;
+
       display: flex;
       justify-content: center;
-      gap: clamp(20px, 6vw, 90px);
-      padding: 14px 0;
-      margin-bottom: 36px;
-      background: rgba(245, 247, 250, 0.85);
-      backdrop-filter: blur(4px);
-      border-bottom: 1px solid rgba(11, 31, 58, 0.06);
-      border-top: 1px solid rgba(11, 31, 58, 0.06);
+      align-items: center;
+      gap: clamp(26px, 5.5vw, 76px);
+
+      padding: 12px 0 11px;
+      margin-bottom: 38px;
+
+      background: rgba(232, 236, 241, 0.84);
+
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+
+      border-top: 1px solid rgba(11, 31, 58, 0.055);
+      border-bottom: 1px solid rgba(11, 31, 58, 0.08);
+
+      transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .nav.is-scrolled {
+      background: rgba(232, 236, 241, 0.96);
+
+      border-top-color: rgba(11, 31, 58, 0.065);
+      border-bottom-color: rgba(11, 31, 58, 0.11);
+
+      box-shadow:
+        0 5px 18px rgba(11, 31, 58, 0.035);
     }
 
     .nav a {
       position: relative;
+      display: inline-block;
+
       margin: 0;
-      padding: 6px 0;
+      padding: 7px 0 9px;
+
+      font-family:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        Georgia,
+        serif;
+
+      font-size: 0.92em;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.105em;
+
+      font-kerning: normal;
+      text-rendering: optimizeLegibility;
+
+      color: rgba(38, 54, 74, 0.58);
       text-align: center;
       text-decoration: none;
-      font-size: 1em;
-      letter-spacing: 0.12em;
-      font-weight: 400;
-      color: #444;
-      opacity: 0.65;
+
       transition:
-        opacity 0.2s ease,
-        color 0.2s ease;
+        color 0.22s ease,
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        letter-spacing 0.28s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .nav a:hover {
-      opacity: 1;
-      color: #111;
+      color: rgba(18, 39, 66, 0.9);
+      letter-spacing: 0.12em;
+      transform: translateY(-1px);
     }
 
     .nav a.active {
-      opacity: 1;
-      color: #111;
+      color: rgba(11, 31, 58, 0.98);
       font-weight: 500;
     }
 
     .nav a.active::after {
       content: "";
       position: absolute;
-      left: 50%;
-      bottom: -10px;
-      transform: translateX(-50%);
 
-      width: 22px;
+      left: 50%;
+      bottom: 0;
+
+      width: 17px;
       height: 1px;
-      background: #111;
-      opacity: 0.85;
+
+      background: rgba(11, 31, 58, 0.72);
+      transform: translateX(-50%);
     }
 
     .nav a[href="/archive/"] {
-      opacity: 0.4;
-      font-style: italic;
+      color: rgba(56, 70, 88, 0.38);
+      font-style: normal;
     }
 
     .nav a[href="/archive/"]:hover {
-      opacity: 0.7;
+      color: rgba(28, 48, 73, 0.72);
     }
 
     .header {
@@ -408,17 +513,154 @@
     }
 
     @media (max-width: 640px) {
-      .site-name {
-        font-size: 1.9em;
-        margin-left: 10px;
-      }
-
       .desktop-only {
         display: none;
       }
 
       .mobile-only {
         display: inline;
+      }
+
+      .site-name {
+        margin-left: 8px;
+
+        font-size: 1.82em;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 0.065em;
+      }
+
+      .site-name:hover {
+        opacity: 0.9;
+        letter-spacing: 0.065em;
+      }
+
+      .site-header {
+        margin: 40px 0 27px;
+      }
+
+      .site-header-row {
+        align-items: flex-end;
+      }
+
+      .lang-switch {
+        right: 1px;
+        bottom: -20px;
+
+        gap: 6px;
+        font-size: 0.59em;
+        letter-spacing: 0.11em;
+      }
+
+      .nav {
+        position: sticky;
+        top: env(safe-area-inset-top);
+        z-index: 1000;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(12px, 3.8vw, 20px);
+
+        padding: 9px 0 8px;
+        margin-bottom: 22px;
+
+        background: rgba(232, 236, 241, 0.9);
+
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+
+        border-top: 1px solid rgba(11, 31, 58, 0.045);
+        border-bottom: 1px solid rgba(11, 31, 58, 0.075);
+
+        box-shadow: none;
+      }
+
+      .nav.is-scrolled {
+        background: rgba(232, 236, 241, 0.97);
+
+        border-top-color: rgba(11, 31, 58, 0.055);
+        border-bottom-color: rgba(11, 31, 58, 0.095);
+
+        box-shadow:
+          0 4px 14px rgba(11, 31, 58, 0.028);
+      }
+
+      .nav a {
+        position: relative;
+        display: inline-block;
+
+        margin: 0;
+        padding: 5px 0 7px;
+
+        font-family:
+          "Iowan Old Style",
+          "Palatino Linotype",
+          "Book Antiqua",
+          Palatino,
+          Georgia,
+          serif;
+
+        font-size: clamp(0.61em, 2.55vw, 0.69em);
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 0.085em;
+
+        font-kerning: normal;
+        text-rendering: optimizeLegibility;
+
+        color: rgba(38, 54, 74, 0.54);
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+
+        opacity: 1;
+        transform: none;
+
+        transition:
+          color 0.2s ease,
+          opacity 0.2s ease;
+      }
+
+      .nav a:hover {
+        color: rgba(18, 39, 66, 0.82);
+        letter-spacing: 0.085em;
+        opacity: 1;
+        transform: none;
+      }
+
+      .nav a.active {
+        color: rgba(11, 31, 58, 0.96);
+        font-weight: 500;
+        letter-spacing: 0.085em;
+        opacity: 1;
+      }
+
+      .nav a.active::after {
+        content: "";
+        position: absolute;
+
+        left: 50%;
+        bottom: 0;
+
+        width: 12px;
+        height: 1px;
+
+        background: rgba(11, 31, 58, 0.64);
+        opacity: 1;
+
+        transform: translateX(-50%);
+      }
+
+      .nav a[href="/archive/"] {
+        color: rgba(56, 70, 88, 0.34);
+        font-style: normal;
+        opacity: 1;
+      }
+
+      .nav a[href="/archive/"]:hover {
+        color: rgba(28, 48, 73, 0.68);
+        opacity: 1;
       }
 
       body {
@@ -431,60 +673,7 @@
         display: none;
       }
 
-      .nav {
-        position: sticky;
-        top: env(safe-area-inset-top);
-        z-index: 1000;
-        display: flex;
-        justify-content: center;
-        gap: clamp(12px, 4vw, 20px);
-        padding: 8px 0;
-        margin-bottom: 20px;
-        background: rgba(225, 230, 238, 0.7);
-        backdrop-filter: blur(6px);
-        border-bottom: 1px solid rgba(11, 31, 58, 0.06);
-      }
 
-      .nav a {
-        position: relative;
-        padding: 4px 2px;
-        font-size: clamp(0.65em, 2.6vw, 0.75em);
-        letter-spacing: 0.14em;
-        font-weight: 400;
-        color: #444;
-        opacity: 0.55;
-        text-decoration: none;
-        white-space: nowrap;
-        transition: all 0.2s ease;
-      }
-
-      .nav a:hover {
-        opacity: 0.9;
-      }
-
-      .nav a.active {
-        opacity: 1;
-        color: #111;
-        font-weight: 500;
-        letter-spacing: 0.16em;
-      }
-
-      .nav a.active::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: -6px;
-        transform: translateX(-50%);
-        width: 10px;
-        height: 1px;
-        background: #111;
-        opacity: 0.6;
-      }
-
-      .lang-switch {
-        font-size: 0.65em;
-        transform: translateY(30px);
-      }
 
       .divider {
         margin: 5px 0;
@@ -636,13 +825,13 @@
 <body>
 
   <header class="site-header">
-    <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div class="site-header-row">
 
       <a href="/" class="site-name">Sangseok Han</a>
 
-      <div class="lang-switch">
+      <div class="lang-switch" aria-label="Language selection">
         <a href="#" data-lang="en">EN</a>
-        <span>·</span>
+        <span aria-hidden="true">·</span>
         <a href="#" data-lang="ja">JP</a>
       </div>
 
@@ -652,7 +841,9 @@
   <div class="nav">
     <a href="/" data-en="Home" data-ja="ホーム">Home</a>
     <a href="/profile/" data-en="Profile" data-ja="プロフィール">Profile</a>
-    <a href="/research/" class="active" data-en="Research" data-ja="研究">Research</a>
+    <a href="/research/" class="active" aria-current="location" data-en="Research" data-ja="研究">
+      Research
+    </a>
     <a href="/publications/" data-en="Publications" data-ja="論文">Publications</a>
     <!--
     <a href="/works/">Works</a>
@@ -1059,21 +1250,51 @@
       });
     }
 
+    function updateNavigationState() {
+      const nav = document.querySelector(".nav");
+
+      if (!nav) return;
+
+      nav.classList.toggle(
+        "is-scrolled",
+        window.scrollY > 24
+      );
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
       applyLang(getSessionLang());
 
       document.querySelectorAll(".lang-switch a").forEach(a => {
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
-          const selected = SUPPORTED_LANGS.has(a.dataset.lang) ? a.dataset.lang : DEFAULT_LANG;
+        a.addEventListener("click", event => {
+          event.preventDefault();
+
+          const selected =
+            SUPPORTED_LANGS.has(a.dataset.lang)
+              ? a.dataset.lang
+              : DEFAULT_LANG;
+
           sessionStorage.setItem("lang", selected);
           applyLang(selected);
         });
       });
+
+      updateNavigationState();
     });
 
+    window.addEventListener(
+      "scroll",
+      updateNavigationState,
+      {
+        passive: true
+      }
+    );
+
     window.addEventListener("load", () => {
-      document.querySelector(".page-content")?.classList.add("loaded");
+      document
+        .querySelector(".page-content")
+        ?.classList.add("loaded");
+
+      updateNavigationState();
     });
 
   </script>

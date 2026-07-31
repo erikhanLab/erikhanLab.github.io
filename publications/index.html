@@ -50,21 +50,43 @@
       --status-published: #333;
     }
 
-    .site-header {
-      margin: 60px 0 20px;
-    }
-
     .site-name {
-      font-family: Georgia, serif;
-      font-size: 2.5em;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      color: #111;
+      font-family:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        Georgia,
+        serif;
+
+      font-size: 2.35em;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.075em;
+
+      color: rgba(17, 17, 17, 0.96);
       text-decoration: none;
+
+      font-kerning: normal;
+      text-rendering: optimizeLegibility;
+
+      transition:
+        opacity 0.2s ease,
+        letter-spacing 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .site-name:hover {
-      opacity: 0.85;
+      opacity: 0.78;
+      letter-spacing: 0.09em;
+    }
+
+    .page-content {
+      transform: translateY(6px);
+      transition: transform 0.12s ease-out;
+    }
+
+    .page-content.loaded {
+      transform: translateY(0);
     }
 
     body {
@@ -77,99 +99,176 @@
       background: var(--bg-light);
     }
 
-    .page-content {
-      transform: none;
+    .site-header {
+      position: relative;
+      margin: 60px 0 28px;
+    }
+
+    .site-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .lang-switch {
-      font-size: 0.75em;
-      letter-spacing: 0.22em;
-      color: #64748b;
-      opacity: 0.7;
-      transform: translateY(35px);
+      position: absolute;
+      right: 2px;
+      bottom: -21px;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      margin: 0;
+
+      font-family:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        Georgia,
+        serif;
+
+      font-size: 0.68em;
+      line-height: 1;
+      letter-spacing: 0.13em;
+
+      color: rgba(38, 54, 74, 0.5);
     }
 
     .lang-switch a {
-      text-decoration: none;
-      color: inherit;
-      opacity: 0.5;
-      cursor: pointer;
-    }
+      position: relative;
 
-    .lang-switch a.active {
-      opacity: 1;
-      color: #111;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+
+      opacity: 0.55;
+
+      transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
     }
 
     .lang-switch a:hover {
-      opacity: 0.8;
+      color: rgba(18, 39, 66, 0.82);
+      opacity: 1;
+    }
+
+    .lang-switch a.active {
+      color: rgba(11, 31, 58, 0.94);
+      opacity: 1;
+    }
+
+    .lang-switch span {
+      font-size: 0.72em;
+      color: rgba(11, 31, 58, 0.24);
     }
 
     .nav {
       position: sticky;
       top: env(safe-area-inset-top);
       z-index: 1000;
+
       display: flex;
       justify-content: center;
-      gap: clamp(20px, 6vw, 90px);
-      padding: 14px 0;
-      margin-bottom: 36px;
-      background: rgba(245, 247, 250, 0.85);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      border-bottom: 1px solid rgba(11, 31, 58, 0.06);
-      border-top: 1px solid rgba(11, 31, 58, 0.06);
+      align-items: center;
+      gap: clamp(26px, 5.5vw, 76px);
+
+      padding: 12px 0 11px;
+      margin-bottom: 38px;
+
+
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+
+      background: rgba(232, 236, 241, 0.84);
+
+      border-top: 1px solid rgba(11, 31, 58, 0.055);
+      border-bottom: 1px solid rgba(11, 31, 58, 0.08);
 
       transition:
-        background 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     .nav.is-scrolled {
-      background: rgba(237, 239, 243, 0.94);
-      border-color: rgba(11, 31, 58, 0.08);
-      box-shadow: 0 4px 14px rgba(11, 31, 58, 0.025);
+      background: rgba(232, 236, 241, 0.96);
+
+      border-top-color: rgba(11, 31, 58, 0.065);
+      border-bottom-color: rgba(11, 31, 58, 0.11);
+
+      box-shadow:
+        0 5px 18px rgba(11, 31, 58, 0.035);
     }
 
     .nav a {
       position: relative;
+      display: inline-block;
+
       margin: 0;
-      padding: 6px 0;
+      padding: 7px 0 9px;
+
+      font-family:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        Georgia,
+        serif;
+
+      font-size: 0.92em;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.105em;
+
+      font-kerning: normal;
+      text-rendering: optimizeLegibility;
+
+      color: rgba(38, 54, 74, 0.58);
       text-align: center;
       text-decoration: none;
-      font-size: 1em;
-      letter-spacing: 0.12em;
-      font-weight: 400;
-      color: #444;
-      opacity: 0.65;
+
       transition:
-        opacity 0.2s ease,
-        color 0.2s ease;
+        color 0.22s ease,
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        letter-spacing 0.28s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .nav a:hover {
-      opacity: 1;
-      color: #111;
+      color: rgba(18, 39, 66, 0.9);
+      letter-spacing: 0.12em;
+      transform: translateY(-1px);
     }
 
     .nav a.active {
-      opacity: 1;
-      color: #111;
+      color: rgba(11, 31, 58, 0.98);
       font-weight: 500;
     }
 
     .nav a.active::after {
       content: "";
       position: absolute;
-      left: 50%;
-      bottom: -10px;
-      transform: translateX(-50%);
 
-      width: 22px;
+      left: 50%;
+      bottom: 0;
+
+      width: 17px;
       height: 1px;
-      background: #111;
-      opacity: 0.85;
+
+      background: rgba(11, 31, 58, 0.72);
+
+      transform: translateX(-50%);
+    }
+
+    .nav a[href="/archive/"] {
+      color: rgba(56, 70, 88, 0.38);
+      font-style: italic;
+    }
+
+    .nav a[href="/archive/"]:hover {
+      color: rgba(28, 48, 73, 0.72);
     }
 
     .cover-badge {
@@ -206,6 +305,7 @@
       display: inline-flex;
       align-items: baseline;
       gap: 4px;
+      margin-right: 5px;
       font-size: 0.82em;
       opacity: 0.7;
       white-space: nowrap;
@@ -485,20 +585,9 @@
       display: none;
     }
 
-    .nav a[href="/archive/"] {
-      opacity: 0.4;
-      font-style: italic;
-    }
-
-    .nav a[href="/archive/"]:hover {
-      opacity: 0.7;
-    }
-
     .subsection-completed {
       margin-bottom: 34px;
       padding: 15px 16px 19px;
-
-      /* 기존 Accepted 배경색 */
       background: rgba(11, 31, 58, 0.018);
       border: 1px solid rgba(11, 31, 58, 0.035);
       border-left: 2px solid rgba(11, 31, 58, 0.11);
@@ -512,8 +601,6 @@
     .subsection-accepted {
       margin-bottom: 24px;
       padding: 13px 14px 16px;
-
-      /* 페이지 배경색과 동일하게 */
       background: var(--bg-light);
       border: 1px solid rgba(11, 31, 58, 0.04);
       border-left: 2px solid rgba(11, 31, 58, 0.14);
@@ -730,62 +817,300 @@
       border: 0;
     }
 
+    html {
+      scroll-behavior: auto;
+    }
+
+    #publication-overview,
+    #journal-articles,
+    #journal-published,
+    #journal-accepted,
+    #journal-preparation,
+    #conference-papers {
+      scroll-margin-top: 92px;
+    }
+
+    .publication-side-nav {
+      position: fixed;
+      top: 50%;
+      left: calc(50% + 485px);
+      transform: translateY(-42%);
+      z-index: 30;
+
+      width: 170px;
+    }
+
+    .publication-side-nav nav {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      padding-left: 24px;
+    }
+
+    .publication-side-nav nav::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -14px;
+      bottom: -14px;
+
+      width: 1px;
+
+      background: linear-gradient(to bottom,
+          rgba(11, 31, 58, 0),
+          rgba(11, 31, 58, 0.12) 18%,
+          rgba(11, 31, 58, 0.12) 82%,
+          rgba(11, 31, 58, 0));
+    }
+
+    .publication-side-nav a {
+      position: relative;
+      display: block;
+      width: fit-content;
+
+      font-size: 0.76em;
+      line-height: 1.45;
+      letter-spacing: 0.07em;
+
+      color: rgba(11, 31, 58, 0.36);
+      text-decoration: none;
+
+      transition:
+        color 0.28s ease,
+        opacity 0.28s ease,
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .publication-side-nav a:hover {
+      color: rgba(11, 31, 58, 0.72);
+    }
+
+    .publication-side-nav a::before {
+      content: "";
+      position: absolute;
+
+      left: -24px;
+      top: 50%;
+
+      width: 0;
+      height: 1px;
+
+      background: rgba(11, 31, 58, 0.72);
+      transform: translateY(-50%);
+
+      transition: width 0.18s ease;
+    }
+
+    .publication-side-nav a.active {
+      color: rgba(11, 31, 58, 0.86);
+    }
+
+    .publication-side-nav a.active::before {
+      width: 11px;
+    }
+
+    .publication-side-nav-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .publication-side-nav-parent {
+      font-weight: 500;
+    }
+
+    .publication-side-nav-parent.active {
+      color: rgba(11, 31, 58, 0.68);
+    }
+
+    .publication-side-nav-parent.active::before {
+      width: 7px;
+      opacity: 0.65;
+    }
+
+    .publication-side-nav-subitems {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      padding-left: 12px;
+    }
+
+    .publication-side-nav-subitems a {
+      font-size: 0.7em;
+      letter-spacing: 0.09em;
+
+      color: rgba(11, 31, 58, 0.28);
+    }
+
+    .publication-side-nav-subitems a.active {
+      color: rgba(11, 31, 58, 0.9);
+      font-weight: 500;
+      transform: translateX(3px);
+    }
+
+    @media (max-width: 1320px) {
+      .publication-side-nav {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .publication-side-nav a {
+        transition: none;
+      }
+    }
+
     @media (max-width: 640px) {
       .site-name {
-        font-size: 1.9em;
-        margin-left: 10px;
+        margin-left: 8px;
+
+        font-size: 1.82em;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 0.065em;
+      }
+
+      .site-name:hover {
+        opacity: 0.9;
+        letter-spacing: 0.065em;
       }
 
       .nav {
         position: sticky;
         top: env(safe-area-inset-top);
         z-index: 1000;
+
         display: flex;
         justify-content: center;
-        gap: clamp(12px, 4vw, 20px);
-        padding: 8px 0;
-        margin-bottom: 20px;
-        background: rgba(225, 230, 238, 0.7);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        border-bottom: 1px solid rgba(11, 31, 58, 0.06);
+        align-items: center;
+        gap: clamp(12px, 3.8vw, 20px);
+
+        padding: 9px 0 8px;
+        margin-bottom: 22px;
+
+        background: rgba(232, 236, 241, 0.9);
+
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+
+        border-top: 1px solid rgba(11, 31, 58, 0.045);
+        border-bottom: 1px solid rgba(11, 31, 58, 0.075);
+
+        box-shadow: none;
+      }
+
+      .nav.is-scrolled {
+        background: rgba(232, 236, 241, 0.97);
+
+        border-top-color: rgba(11, 31, 58, 0.055);
+        border-bottom-color: rgba(11, 31, 58, 0.095);
+
+        box-shadow:
+          0 4px 14px rgba(11, 31, 58, 0.028);
       }
 
       .nav a {
         position: relative;
-        padding: 4px 2px;
-        font-size: clamp(0.65em, 2.6vw, 0.75em);
-        letter-spacing: 0.14em;
+        display: inline-block;
+
+        margin: 0;
+        padding: 5px 0 7px;
+
+        font-family:
+          "Iowan Old Style",
+          "Palatino Linotype",
+          "Book Antiqua",
+          Palatino,
+          Georgia,
+          serif;
+
+        font-size: clamp(0.61em, 2.55vw, 0.69em);
         font-weight: 400;
-        color: #444;
-        opacity: 0.55;
+        line-height: 1;
+        letter-spacing: 0.085em;
+
+        font-kerning: normal;
+        text-rendering: optimizeLegibility;
+
+        color: rgba(38, 54, 74, 0.54);
+        text-align: center;
         text-decoration: none;
         white-space: nowrap;
-        transition: all 0.2s ease;
+
+        opacity: 1;
+        transform: none;
+
+        transition:
+          color 0.2s ease,
+          opacity 0.2s ease;
       }
 
       .nav a:hover {
-        opacity: 0.9;
+        color: rgba(18, 39, 66, 0.82);
+        letter-spacing: 0.085em;
+        opacity: 1;
+        transform: none;
       }
 
       .nav a.active {
-        opacity: 1;
-        color: #111;
+        color: rgba(11, 31, 58, 0.96);
         font-weight: 500;
-        letter-spacing: 0.16em;
+        letter-spacing: 0.085em;
+        opacity: 1;
       }
 
       .nav a.active::after {
         content: "";
         position: absolute;
+
         left: 50%;
-        bottom: -6px;
-        transform: translateX(-50%);
-        width: 10px;
+        bottom: 0;
+
+        width: 12px;
         height: 1px;
-        background: #111;
-        opacity: 0.6;
+
+        background: rgba(11, 31, 58, 0.64);
+        opacity: 1;
+
+        transform: translateX(-50%);
       }
+
+      .nav a[href="/archive/"] {
+        color: rgba(56, 70, 88, 0.44);
+        font-style: italic;
+        opacity: 1;
+      }
+
+      .nav a[href="/archive/"]:hover {
+        color: rgba(28, 48, 73, 0.68);
+        opacity: 1;
+      }
+
+      .site-header {
+        margin: 40px 0 27px;
+      }
+
+      .site-header-row {
+        align-items: flex-end;
+      }
+
+      .lang-switch {
+        right: 1px;
+        bottom: -20px;
+
+        gap: 6px;
+        font-size: 0.59em;
+        letter-spacing: 0.11em;
+      }
+
 
       body {
         margin: 24px auto;
@@ -858,11 +1183,6 @@
 
       .count-label-short {
         display: inline;
-      }
-
-      .lang-switch {
-        font-size: 0.65em;
-        transform: translateY(30px);
       }
 
       .publication-count strong {
@@ -1050,7 +1370,6 @@
         margin: 0 6px;
       }
 
-      /* 모바일에서는 citation / h-index / i10-index 숨김 */
       .scholar-metric {
         display: none;
       }
@@ -1098,14 +1417,16 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header class="site-header">
-    <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div class="site-header-row">
 
       <a href="/" class="site-name">Sangseok Han</a>
-      <div class="lang-switch">
+
+      <div class="lang-switch" aria-label="Language selection">
         <a href="#" data-lang="en">EN</a>
-        <span>·</span>
+        <span aria-hidden="true">·</span>
         <a href="#" data-lang="ja">JP</a>
       </div>
+
     </div>
   </header>
 
@@ -1122,9 +1443,41 @@
     <a href="/archive/" data-en="Archive" data-ja="アーカイブ">Archive</a>
   </div>
 
+  <aside class="publication-side-nav" aria-label="Publication section navigation">
+    <nav>
+      <a href="#publication-overview" data-en="Overview" data-ja="概要">
+        Overview
+      </a>
+
+      <div class="publication-side-nav-group">
+        <a href="#journal-articles" class="publication-side-nav-parent" data-en="Journal Articles" data-ja="学術論文">
+          Journal Articles
+        </a>
+
+        <div class="publication-side-nav-subitems">
+          <a href="#journal-published" data-en="Published" data-ja="掲載済み">
+            Published
+          </a>
+
+          <a href="#journal-accepted" data-en="Accepted" data-ja="採択済み">
+            Accepted
+          </a>
+
+          <a href="#journal-preparation" data-en="In Preparation" data-ja="準備中">
+            In Preparation
+          </a>
+        </div>
+      </div>
+
+      <a href="#conference-papers" data-en="Conference Papers" data-ja="国際会議論文">
+        Conference Papers
+      </a>
+    </nav>
+  </aside>
+
   <div class="page-content">
 
-    <section class="publication-overview" aria-label="Publication summary">
+    <section id="publication-overview" class="publication-overview" aria-label="Publication summary">
       <p class="publication-count">
         <span class="publication-count-item">
           <strong>3</strong>
@@ -1191,7 +1544,7 @@
 
     </section>
 
-    <div class="section">
+    <div class="section" id="journal-articles">
       <div class="section-heading-row">
         <h2>
           <span data-en="Journal Articles" data-ja="学術論文">
@@ -1213,7 +1566,7 @@
         </div>
       </div>
 
-      <div class="subsection subsection-completed">
+      <div class="subsection subsection-completed" id="journal-published">
         <h3 data-en="Published" data-ja="掲載済み">
           Published
         </h3>
@@ -1319,7 +1672,7 @@
         </div>
       </div>
 
-      <div class="subsection subsection-accepted">
+      <div class="subsection subsection-accepted" id="journal-accepted">
         <h3 data-en="Accepted" data-ja="採択済み">
           Accepted
         </h3>
@@ -1392,7 +1745,7 @@
         </div>
       </div>
 -->
-      <div class="subsection subsection-prep-box">
+      <div class="subsection subsection-prep-box" id="journal-preparation">
         <h3 data-en="In Preparation" data-ja="準備中">In Preparation</h3>
 
         <div class="pub-item">
@@ -1430,7 +1783,7 @@
     </div>
     <div class="divider"></div>
 
-    <div class="section">
+    <div class="section" id="conference-papers">
       <h2>
         <span data-en="Conference Papers" data-ja="国際会議論文">
           Conference Papers
@@ -1533,51 +1886,398 @@
     const DEFAULT_LANG = "en";
     const SUPPORTED_LANGS = new Set(["en", "ja"]);
 
+    let publicationScrollMap = [];
+    let publicationScrollMax = 0;
+    let publicationMapDirty = true;
+    let scrollUpdateScheduled = false;
+    let publicationLayoutObserver = null;
+    let smoothScrollFrame = null;
+
     function getSessionLang() {
       const saved = sessionStorage.getItem("lang");
-      return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
+
+      return SUPPORTED_LANGS.has(saved)
+        ? saved
+        : DEFAULT_LANG;
     }
 
     function applyLang(lang) {
-      const safeLang = SUPPORTED_LANGS.has(lang) ? lang : DEFAULT_LANG;
+      const safeLang = SUPPORTED_LANGS.has(lang)
+        ? lang
+        : DEFAULT_LANG;
 
-      document.documentElement.setAttribute("lang", safeLang);
-      document.documentElement.setAttribute("data-lang", safeLang);
+      document.documentElement.setAttribute(
+        "lang",
+        safeLang
+      );
 
-      document.querySelectorAll("[data-en]").forEach(el => {
-        const value = el.getAttribute(`data-${safeLang}`);
+      document.documentElement.setAttribute(
+        "data-lang",
+        safeLang
+      );
+
+      document.querySelectorAll("[data-en]").forEach(element => {
+        const value = element.getAttribute(
+          `data-${safeLang}`
+        );
+
         if (value !== null) {
-          el.textContent = value;
+          element.textContent = value;
         }
       });
 
-      document.querySelectorAll(".lang-switch a").forEach(a => {
-        a.classList.toggle("active", a.dataset.lang === safeLang);
+      document.querySelectorAll(".lang-switch a").forEach(link => {
+        link.classList.toggle(
+          "active",
+          link.dataset.lang === safeLang
+        );
       });
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const lang = getSessionLang();
-      applyLang(lang);
+    function clamp(value, minimum, maximum) {
+      return Math.min(
+        Math.max(value, minimum),
+        maximum
+      );
+    }
 
-      updateNavigationState();
+    function easeInOutQuint(progress) {
+      return progress < 0.5
+        ? 16 * Math.pow(progress, 5)
+        : 1 - Math.pow(-2 * progress + 2, 5) / 2;
+    }
 
-      document.querySelectorAll(".lang-switch a").forEach(a => {
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
+    function cancelSmoothScroll() {
+      if (smoothScrollFrame !== null) {
+        cancelAnimationFrame(smoothScrollFrame);
+        smoothScrollFrame = null;
+      }
+    }
 
-          const selected = SUPPORTED_LANGS.has(a.dataset.lang)
-            ? a.dataset.lang
-            : DEFAULT_LANG;
+    function smoothScrollTo(targetY) {
+      cancelSmoothScroll();
 
-          sessionStorage.setItem("lang", selected);
-          applyLang(selected);
+      const scrollingElement =
+        document.scrollingElement ||
+        document.documentElement;
+
+      const maximumScrollY = Math.max(
+        0,
+        scrollingElement.scrollHeight -
+        window.innerHeight
+      );
+
+      const startY = window.scrollY;
+
+      const destinationY = clamp(
+        targetY,
+        0,
+        maximumScrollY
+      );
+
+      const distance =
+        destinationY - startY;
+
+      if (Math.abs(distance) < 1) {
+        window.scrollTo(0, destinationY);
+        return;
+      }
+
+      const reduceMotion =
+        window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+      if (reduceMotion) {
+        window.scrollTo(0, destinationY);
+        return;
+      }
+
+      const duration = clamp(
+        420 + Math.abs(distance) * 0.16,
+        480,
+        1050
+      );
+
+      const startTime = performance.now();
+
+      function animate(currentTime) {
+        const elapsed =
+          currentTime - startTime;
+
+        const progress = clamp(
+          elapsed / duration,
+          0,
+          1
+        );
+
+        const easedProgress =
+          easeInOutQuint(progress);
+
+        window.scrollTo(
+          0,
+          startY + distance * easedProgress
+        );
+
+        if (progress < 1) {
+          smoothScrollFrame =
+            requestAnimationFrame(animate);
+        } else {
+          window.scrollTo(0, destinationY);
+          smoothScrollFrame = null;
+        }
+      }
+
+      smoothScrollFrame =
+        requestAnimationFrame(animate);
+    }
+
+    function getDocumentTop(element) {
+      return (
+        element.getBoundingClientRect().top +
+        window.scrollY
+      );
+    }
+
+    function getPublicationSectionDefinitions() {
+      const sideNav =
+        document.querySelector(".publication-side-nav");
+
+      if (!sideNav) return [];
+
+      const overviewLink = sideNav.querySelector(
+        'a[href="#publication-overview"]'
+      );
+
+      const journalLink = sideNav.querySelector(
+        'a[href="#journal-articles"]'
+      );
+
+      const publishedLink = sideNav.querySelector(
+        'a[href="#journal-published"]'
+      );
+
+      const acceptedLink = sideNav.querySelector(
+        'a[href="#journal-accepted"]'
+      );
+
+      const preparationLink = sideNav.querySelector(
+        'a[href="#journal-preparation"]'
+      );
+
+      const conferenceLink = sideNav.querySelector(
+        'a[href="#conference-papers"]'
+      );
+
+      const definitions = [
+        {
+          key: "overview",
+          selector: "#publication-overview",
+          activeLinks: [overviewLink],
+          currentLink: overviewLink
+        },
+        {
+          key: "journals",
+          selector: "#journal-articles",
+          activeLinks: [journalLink],
+          currentLink: journalLink
+        },
+        {
+          key: "published",
+          selector: "#journal-published",
+          activeLinks: [
+            journalLink,
+            publishedLink
+          ],
+          currentLink: publishedLink
+        },
+        {
+          key: "accepted",
+          selector: "#journal-accepted",
+          activeLinks: [
+            journalLink,
+            acceptedLink
+          ],
+          currentLink: acceptedLink
+        },
+        {
+          key: "preparation",
+          selector: "#journal-preparation",
+          activeLinks: [
+            journalLink,
+            preparationLink
+          ],
+          currentLink: preparationLink
+        },
+        {
+          key: "conferences",
+          selector: "#conference-papers",
+          activeLinks: [conferenceLink],
+          currentLink: conferenceLink
+        }
+      ];
+
+      return definitions
+        .map(definition => ({
+          ...definition,
+
+          target:
+            document.querySelector(
+              definition.selector
+            ),
+
+          activeLinks:
+            definition.activeLinks.filter(Boolean)
+        }))
+        .filter(definition =>
+          definition.target &&
+          definition.currentLink
+        );
+    }
+
+    function buildPublicationScrollMap() {
+      const definitions =
+        getPublicationSectionDefinitions();
+
+      if (!definitions.length) {
+        publicationScrollMap = [];
+        publicationScrollMax = 0;
+        return;
+      }
+
+      const scrollingElement =
+        document.scrollingElement ||
+        document.documentElement;
+
+      publicationScrollMax = Math.max(
+        0,
+        scrollingElement.scrollHeight -
+        window.innerHeight
+      );
+
+      const firstSection =
+        definitions[0].target;
+
+      const lastSection =
+        definitions.at(-1).target;
+
+      const contentStart =
+        getDocumentTop(firstSection);
+
+      const contentEnd = Math.max(
+        contentStart + 1,
+
+        getDocumentTop(lastSection) +
+        lastSection.offsetHeight
+      );
+
+      const contentHeight =
+        contentEnd - contentStart;
+
+      publicationScrollMap = definitions.map(
+        (definition, index) => {
+          const sectionTop =
+            getDocumentTop(definition.target);
+
+          const nextSectionTop =
+            index < definitions.length - 1
+              ? getDocumentTop(
+                definitions[index + 1].target
+              )
+              : contentEnd;
+
+          const startRatio = clamp(
+            (
+              sectionTop -
+              contentStart
+            ) / contentHeight,
+            0,
+            1
+          );
+
+          const endRatio = clamp(
+            (
+              nextSectionTop -
+              contentStart
+            ) / contentHeight,
+            0,
+            1
+          );
+
+          return {
+            ...definition,
+
+            sectionTop,
+            sectionBottom: nextSectionTop,
+
+            startScroll:
+              startRatio * publicationScrollMax,
+
+            endScroll:
+              index === definitions.length - 1
+                ? publicationScrollMax
+                : endRatio * publicationScrollMax
+          };
+        }
+      );
+    }
+
+    function updatePublicationSideNavigation() {
+      const sideNav =
+        document.querySelector(".publication-side-nav");
+
+      if (!sideNav) return;
+
+      if (
+        publicationMapDirty ||
+        !publicationScrollMap.length
+      ) {
+        buildPublicationScrollMap();
+        publicationMapDirty = false;
+      }
+
+      if (!publicationScrollMap.length) return;
+
+      const currentScroll = clamp(
+        window.scrollY,
+        0,
+        publicationScrollMax
+      );
+
+      let activeSection =
+        publicationScrollMap[0];
+
+      for (const section of publicationScrollMap) {
+        if (
+          currentScroll + 0.5 >=
+          section.startScroll
+        ) {
+          activeSection = section;
+        } else {
+          break;
+        }
+      }
+
+      sideNav
+        .querySelectorAll('a[href^="#"]')
+        .forEach(link => {
+          link.classList.remove("active");
+          link.removeAttribute("aria-current");
         });
+
+      activeSection.activeLinks.forEach(link => {
+        link.classList.add("active");
       });
-    });
+
+      activeSection.currentLink.setAttribute(
+        "aria-current",
+        "location"
+      );
+    }
 
     function updateNavigationState() {
-      const nav = document.querySelector(".nav");
+      const nav =
+        document.querySelector(".nav");
 
       if (!nav) return;
 
@@ -1586,13 +2286,174 @@
         window.scrollY > 24
       );
     }
-    window.addEventListener("load", () => {
-      document.querySelector(".page-content")?.classList.add("loaded");
-    });
 
-    window.addEventListener("scroll", updateNavigationState, {
-      passive: true
-    });
+    function schedulePageUpdate(
+      rebuildMap = false
+    ) {
+      if (rebuildMap) {
+        publicationMapDirty = true;
+      }
+
+      if (scrollUpdateScheduled) return;
+
+      scrollUpdateScheduled = true;
+
+      requestAnimationFrame(() => {
+        if (publicationMapDirty) {
+          buildPublicationScrollMap();
+          publicationMapDirty = false;
+        }
+
+        updateNavigationState();
+        updatePublicationSideNavigation();
+
+        scrollUpdateScheduled = false;
+      });
+    }
+
+    function bindPublicationSideNavigation() {
+      const sideNav =
+        document.querySelector(".publication-side-nav");
+
+      if (!sideNav) return;
+
+      sideNav.addEventListener("click", event => {
+        const link =
+          event.target.closest('a[href^="#"]');
+
+        if (
+          !link ||
+          !sideNav.contains(link)
+        ) {
+          return;
+        }
+
+        if (
+          publicationMapDirty ||
+          !publicationScrollMap.length
+        ) {
+          buildPublicationScrollMap();
+          publicationMapDirty = false;
+        }
+
+        const selector =
+          link.getAttribute("href");
+
+        const mappedSection =
+          publicationScrollMap.find(
+            section =>
+              section.selector === selector
+          );
+
+        if (!mappedSection) return;
+
+        event.preventDefault();
+
+        history.replaceState(
+          null,
+          "",
+          selector
+        );
+
+        smoothScrollTo(
+          Math.min(
+            publicationScrollMax,
+            mappedSection.startScroll + 1
+          )
+        );
+      });
+    }
+
+    function observePublicationLayout() {
+      const pageContent =
+        document.querySelector(".page-content");
+
+      if (
+        !pageContent ||
+        !("ResizeObserver" in window)
+      ) {
+        return;
+      }
+
+      publicationLayoutObserver =
+        new ResizeObserver(() => {
+          schedulePageUpdate(true);
+        });
+
+      publicationLayoutObserver.observe(
+        pageContent
+      );
+    }
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        schedulePageUpdate(false);
+      },
+      {
+        passive: true
+      }
+    );
+
+    window.addEventListener(
+      "resize",
+      () => {
+        schedulePageUpdate(true);
+      },
+      {
+        passive: true
+      }
+    );
+
+    window.addEventListener(
+      "load",
+      () => {
+        document
+          .querySelector(".page-content")
+          ?.classList.add("loaded");
+
+        schedulePageUpdate(true);
+      }
+    );
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+        applyLang(getSessionLang());
+
+        bindPublicationSideNavigation();
+        observePublicationLayout();
+
+        document
+          .querySelectorAll(".lang-switch a")
+          .forEach(link => {
+            link.addEventListener(
+              "click",
+              event => {
+                event.preventDefault();
+
+                const selected =
+                  SUPPORTED_LANGS.has(
+                    link.dataset.lang
+                  )
+                    ? link.dataset.lang
+                    : DEFAULT_LANG;
+
+                sessionStorage.setItem(
+                  "lang",
+                  selected
+                );
+
+                applyLang(selected);
+
+                schedulePageUpdate(true);
+              }
+            );
+          });
+
+        schedulePageUpdate(true);
+      }
+    );
   </script>
 
 </body>

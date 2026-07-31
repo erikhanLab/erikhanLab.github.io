@@ -48,21 +48,34 @@
       --bg-light: #EDEFF3;
     }
 
-    .site-header {
-      margin: 60px 0 20px;
-    }
-
     .site-name {
-      font-family: Georgia, serif;
-      font-size: 2.5em;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      color: #111;
+      font-family:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        Georgia,
+        serif;
+
+      font-size: 2.35em;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.075em;
+
+      color: rgba(17, 17, 17, 0.96);
       text-decoration: none;
+
+      font-kerning: normal;
+      text-rendering: optimizeLegibility;
+
+      transition:
+        opacity 0.2s ease,
+        letter-spacing 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .site-name:hover {
-      opacity: 0.85;
+      opacity: 0.78;
+      letter-spacing: 0.09em;
     }
 
     .page-content {
@@ -84,103 +97,176 @@
       background: var(--bg-light);
     }
 
+    .site-header {
+      position: relative;
+      margin: 60px 0 28px;
+    }
+
+    .site-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     .lang-switch {
-      font-size: 0.75em;
-      letter-spacing: 0.22em;
-      color: #64748b;
-      opacity: 0.7;
-      transform: translateY(35px);
+      position: absolute;
+      right: 2px;
+      bottom: -21px;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      margin: 0;
+
+      font-family:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        Georgia,
+        serif;
+
+      font-size: 0.68em;
+      line-height: 1;
+      letter-spacing: 0.13em;
+
+      color: rgba(38, 54, 74, 0.5);
     }
 
     .lang-switch a {
-      text-decoration: none;
-      color: inherit;
-      opacity: 0.5;
-      cursor: pointer;
-    }
+      position: relative;
 
-    .lang-switch a.active {
-      opacity: 1;
-      color: #111;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+
+      opacity: 0.55;
+
+      transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
     }
 
     .lang-switch a:hover {
-      opacity: 0.8;
+      color: rgba(18, 39, 66, 0.82);
+      opacity: 1;
+    }
+
+    .lang-switch a.active {
+      color: rgba(11, 31, 58, 0.94);
+      opacity: 1;
+    }
+
+    .lang-switch span {
+      font-size: 0.72em;
+      color: rgba(11, 31, 58, 0.24);
     }
 
     .nav {
       position: sticky;
       top: env(safe-area-inset-top);
       z-index: 1000;
+
       display: flex;
       justify-content: center;
-      gap: clamp(20px, 6vw, 90px);
-      padding: 14px 0;
-      margin-bottom: 36px;
-      background: rgba(245, 247, 250, 0.85);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
+      align-items: center;
+      gap: clamp(26px, 5.5vw, 76px);
+
+      padding: 12px 0 11px;
+      margin-bottom: 38px;
+
+
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+
+      background: rgba(232, 236, 241, 0.84);
+
+      border-top: 1px solid rgba(11, 31, 58, 0.055);
+      border-bottom: 1px solid rgba(11, 31, 58, 0.08);
+
       transition:
-        background 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
-      border-bottom: 1px solid rgba(11, 31, 58, 0.06);
-      border-top: 1px solid rgba(11, 31, 58, 0.06);
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     .nav.is-scrolled {
-      background: rgba(237, 239, 243, 0.94);
-      border-color: rgba(11, 31, 58, 0.08);
-      box-shadow: 0 4px 14px rgba(11, 31, 58, 0.025);
+      background: rgba(232, 236, 241, 0.96);
+
+      border-top-color: rgba(11, 31, 58, 0.065);
+      border-bottom-color: rgba(11, 31, 58, 0.11);
+
+      box-shadow:
+        0 5px 18px rgba(11, 31, 58, 0.035);
     }
 
     .nav a {
       position: relative;
+      display: inline-block;
+
       margin: 0;
-      padding: 6px 0;
+      padding: 7px 0 9px;
+
+      font-family:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        Georgia,
+        serif;
+
+      font-size: 0.92em;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.105em;
+
+      font-kerning: normal;
+      text-rendering: optimizeLegibility;
+
+      color: rgba(38, 54, 74, 0.58);
       text-align: center;
       text-decoration: none;
-      font-size: 1em;
-      letter-spacing: 0.12em;
-      font-weight: 400;
-      color: #444;
-      opacity: 0.65;
+
       transition:
-        opacity 0.2s ease,
-        color 0.2s ease;
+        color 0.22s ease,
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        letter-spacing 0.28s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .nav a:hover {
-      opacity: 1;
-      color: #111;
+      color: rgba(18, 39, 66, 0.9);
+      letter-spacing: 0.12em;
+      transform: translateY(-1px);
     }
 
     .nav a.active {
-      opacity: 1;
-      color: #111;
+      color: rgba(11, 31, 58, 0.98);
       font-weight: 500;
     }
 
     .nav a.active::after {
       content: "";
       position: absolute;
-      left: 50%;
-      bottom: -10px;
-      transform: translateX(-50%);
 
-      width: 22px;
+      left: 50%;
+      bottom: 0;
+
+      width: 17px;
       height: 1px;
-      background: #111;
-      opacity: 0.85;
+
+      background: rgba(11, 31, 58, 0.72);
+
+      transform: translateX(-50%);
     }
 
     .nav a[href="/archive/"] {
-      opacity: 0.4;
+      color: rgba(56, 70, 88, 0.38);
       font-style: italic;
     }
 
     .nav a[href="/archive/"]:hover {
-      opacity: 0.7;
+      color: rgba(28, 48, 73, 0.72);
     }
 
     html {
@@ -214,7 +300,6 @@
       padding-left: 24px;
     }
 
-    /* 세로 rail */
     .research-side-nav nav::before {
       content: "";
       position: absolute;
@@ -236,7 +321,7 @@
       display: block;
       width: fit-content;
 
-      font-size: 0.68em;
+      font-size: 0.76em;
       line-height: 1.45;
       letter-spacing: 0.07em;
 
@@ -287,7 +372,6 @@
       font-weight: 500;
     }
 
-    /* Timeline은 연도 활성화 중에도 조금 절제된 강도 */
     .research-side-nav-parent.active {
       color: rgba(11, 31, 58, 0.68);
     }
@@ -306,7 +390,7 @@
     }
 
     .research-side-nav-years a {
-      font-size: 0.65em;
+      font-size: 0.7em;
       letter-spacing: 0.09em;
       font-variant-numeric: tabular-nums;
 
@@ -448,39 +532,17 @@
       margin: 0;
     }
 
-    .current-project-figure-link {
-      display: block;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .current-project-figure-link img {
-      display: block;
-      width: 100%;
-      height: auto;
-
-      transition:
-        opacity 0.2s ease,
-        transform 0.25s ease;
-    }
-
-    .current-project-figure-link:hover img {
-      opacity: 0.92;
-      transform: translateY(-1px);
-    }
-
     .current-project-caption {
       margin-top: 9px;
 
       line-height: 1.45;
       text-align: center;
 
-      color: rgba(48, 60, 76, 0.5);
+      color: rgba(8, 8, 8, 0.75);
     }
 
     .current-project-caption-title {
       display: block;
-
       font-size: 0.7em;
       letter-spacing: 0.035em;
     }
@@ -495,7 +557,7 @@
       letter-spacing: 0.04em;
       font-style: italic;
 
-      color: rgba(48, 60, 76, 0.42);
+      color: rgba(48, 60, 76, 0.62);
       text-decoration: none;
 
       transition: color 0.18s ease;
@@ -889,7 +951,7 @@
       font-size: 0.7em;
       line-height: 1.4;
       letter-spacing: 0.025em;
-      color: rgba(66, 62, 62, 0.52);
+      color: rgba(66, 62, 62, 0.76);
     }
 
     .research-network-separator {
@@ -923,7 +985,6 @@
 
     .research-links-separator {
       flex: 0 0 auto;
-
       font-size: 0.68em;
       line-height: 1;
       color: rgba(11, 31, 58, 0.28);
@@ -953,7 +1014,7 @@
       letter-spacing: 0.025em;
       white-space: nowrap;
 
-      color: rgba(24, 39, 58, 0.58);
+      color: rgba(24, 39, 58, 0.78);
       text-decoration: none;
 
       transition: color 0.18s ease;
@@ -1181,6 +1242,15 @@
           rgba(11, 31, 58, 0));
     }
 
+    .current-project-description {
+      line-height: 1.55;
+    }
+
+    .current-project-description .desc-second-line {
+      display: block;
+      margin-top: 0.35rem;
+    }
+
     .research-contact::after {
       content: "";
       position: absolute;
@@ -1203,8 +1273,17 @@
 
     @media (max-width: 640px) {
       .site-name {
-        font-size: 1.9em;
-        margin-left: 10px;
+        margin-left: 8px;
+
+        font-size: 1.82em;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 0.065em;
+      }
+
+      .site-name:hover {
+        opacity: 0.9;
+        letter-spacing: 0.065em;
       }
 
       body {
@@ -1221,56 +1300,128 @@
         position: sticky;
         top: env(safe-area-inset-top);
         z-index: 1000;
+
         display: flex;
         justify-content: center;
-        gap: clamp(12px, 4vw, 20px);
-        padding: 8px 0;
-        margin-bottom: 20px;
-        background: rgba(225, 230, 238, 0.7);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        border-bottom: 1px solid rgba(11, 31, 58, 0.06);
+        align-items: center;
+        gap: clamp(12px, 3.8vw, 20px);
+
+        padding: 9px 0 8px;
+        margin-bottom: 22px;
+
+        background: rgba(232, 236, 241, 0.9);
+
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+
+        border-top: 1px solid rgba(11, 31, 58, 0.045);
+        border-bottom: 1px solid rgba(11, 31, 58, 0.075);
+
+        box-shadow: none;
+      }
+
+      .nav.is-scrolled {
+        background: rgba(232, 236, 241, 0.97);
+
+        border-top-color: rgba(11, 31, 58, 0.055);
+        border-bottom-color: rgba(11, 31, 58, 0.095);
+
+        box-shadow:
+          0 4px 14px rgba(11, 31, 58, 0.028);
       }
 
       .nav a {
         position: relative;
-        padding: 4px 2px;
-        font-size: clamp(0.65em, 2.6vw, 0.75em);
-        letter-spacing: 0.14em;
+        display: inline-block;
+
+        margin: 0;
+        padding: 5px 0 7px;
+
+        font-family:
+          "Iowan Old Style",
+          "Palatino Linotype",
+          "Book Antiqua",
+          Palatino,
+          Georgia,
+          serif;
+
+        font-size: clamp(0.61em, 2.55vw, 0.69em);
         font-weight: 400;
-        color: #444;
-        opacity: 0.55;
+        line-height: 1;
+        letter-spacing: 0.085em;
+
+        font-kerning: normal;
+        text-rendering: optimizeLegibility;
+
+        color: rgba(38, 54, 74, 0.54);
+        text-align: center;
         text-decoration: none;
         white-space: nowrap;
-        transition: all 0.2s ease;
+
+        opacity: 1;
+        transform: none;
+
+        transition:
+          color 0.2s ease,
+          opacity 0.2s ease;
       }
 
       .nav a:hover {
-        opacity: 0.9;
+        color: rgba(18, 39, 66, 0.82);
+        letter-spacing: 0.085em;
+        opacity: 1;
+        transform: none;
       }
 
       .nav a.active {
-        opacity: 1;
-        color: #111;
+        color: rgba(11, 31, 58, 0.96);
         font-weight: 500;
-        letter-spacing: 0.16em;
+        letter-spacing: 0.085em;
+        opacity: 1;
       }
 
       .nav a.active::after {
         content: "";
         position: absolute;
+
         left: 50%;
-        bottom: -6px;
-        transform: translateX(-50%);
-        width: 10px;
+        bottom: 0;
+
+        width: 12px;
         height: 1px;
-        background: #111;
-        opacity: 0.6;
+
+        background: rgba(11, 31, 58, 0.64);
+        opacity: 1;
+
+        transform: translateX(-50%);
+      }
+
+      .nav a[href="/archive/"] {
+        color: rgba(56, 70, 88, 0.44);
+        font-style: italic;
+        opacity: 1;
+      }
+
+      .nav a[href="/archive/"]:hover {
+        color: rgba(28, 48, 73, 0.68);
+        opacity: 1;
+      }
+
+      .site-header {
+        margin: 40px 0 27px;
+      }
+
+      .site-header-row {
+        align-items: flex-end;
       }
 
       .lang-switch {
-        font-size: 0.65em;
-        transform: translateY(30px);
+        right: 1px;
+        bottom: -20px;
+
+        gap: 6px;
+        font-size: 0.59em;
+        letter-spacing: 0.11em;
       }
 
       .rt-dot {
@@ -1678,7 +1829,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header class="site-header">
-    <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div class="site-header-row">
 
       <a href="/" class="site-name">Sangseok Han</a>
 
@@ -1742,12 +1893,9 @@
 
         <figure class="current-project-figure current-project-figure--published">
 
-          <a class="current-project-figure-link" href="/publications/beyond-resistance/"
-            aria-label="View the related publication">
-            <img src="/assets/hull-roughness.svg" width="879" height="973"
-              alt="Uniform, linear, random, and wall-shear-stress-based hull roughness distributions with the same mean roughness"
-              decoding="async" fetchpriority="high">
-          </a>
+          <img src="/assets/hull-roughness.svg" width="879" height="973"
+            alt="Uniform, linear, random, and wall-shear-stress-based hull roughness distributions with the same mean roughness"
+            decoding="async" fetchpriority="high">
 
           <figcaption class="current-project-caption">
 
@@ -1780,14 +1928,17 @@
           </div>
 
           <p class="current-project-description"
-            data-en="The work investigates how spatially non-uniform hull roughness distributions influence resistance, boundary-layer development, and wake response under identical area-averaged equivalent roughness. Current extensions address model-to-full-scale scaling, effective roughness descriptors, Reynolds-number sensitivity, and measurement-informed distributions."
-            data-ja="本研究では、面積平均等価粗さが同一の条件下で、空間的に非一様な船体粗さ分布が抵抗、境界層の発達、および後流応答にどのような影響を与えるかを検討しています。現在は、模型船スケールから実船スケールへのスケーリング、有効粗さ指標、レイノルズ数依存性、および計測に基づく粗さ分布へと研究を展開しています。">
+            data-en="The work investigates how spatially non-uniform hull roughness distributions influence resistance, boundary-layer development, and wake response under identical area-averaged equivalent roughness.&lt;span class=&quot;desc-second-line&quot;&gt;Current extensions move from model-scale resistance analysis toward full-scale powering prediction, with attention to effective roughness descriptors and measurement-informed roughness distributions.&lt;/span&gt;"
+            data-ja="本研究では、面積平均等価粗さが同一の条件下で、空間的に非一様な船体粗さ分布が抵抗、境界層の発達、および後流応答にどのような影響を与えるかを検討しています。&lt;span class=&quot;desc-second-line&quot;&gt;現在は、模型船スケールの抵抗解析から実船の推進性能予測へと研究を展開しており、有効粗さ指標および計測に基づく粗さ分布に注目しています。&lt;/span&gt;">
             The work investigates how spatially non-uniform hull roughness
             distributions influence resistance, boundary-layer development, and wake
-            response under identical area-averaged equivalent roughness. Current
-            extensions address model-to-full-scale scaling, effective roughness
-            descriptors, Reynolds-number sensitivity, and measurement-informed
-            distributions.
+            response under identical area-averaged equivalent roughness.
+
+            <span class="desc-second-line">
+              Current extensions move from model-scale resistance analysis toward
+              full-scale powering prediction, with attention to effective roughness
+              descriptors and measurement-informed roughness distributions.
+            </span>
           </p>
 
           <div class="current-project-topics" aria-label="Research topics">
@@ -1831,6 +1982,22 @@
               </li>
 
               <li>
+                <span class="research-network-name">MARIN</span>
+
+                <span class="research-network-meta">
+                  <span class="research-network-role" data-en="W2025 discussion" data-ja="W2025 に関する議論">
+                    W2025 discussion
+                  </span>
+
+                  <span class="research-network-separator">·</span>
+
+                  <time class="research-network-period" datetime="2026" data-en="2026–" data-ja="2026年–">
+                    2026–
+                  </time>
+                </span>
+              </li>
+
+              <li>
                 <span class="research-network-name">University of Iowa</span>
 
                 <span class="research-network-meta">
@@ -1850,8 +2017,8 @@
                 <span class="research-network-name">University of Southampton</span>
 
                 <span class="research-network-meta">
-                  <span class="research-network-role" data-en="Academic exchange" data-ja="学術交流">
-                    Academic exchange
+                  <span class="research-network-role" data-en="Academic guidance" data-ja="学術的助言">
+                    Academic guidance
                   </span>
 
                   <span class="research-network-separator">·</span>
@@ -1872,7 +2039,7 @@
 
                   <span class="research-network-separator">·</span>
 
-                  <time class="research-network-period" data-en="2024–2026" data-ja="2024–2026">
+                  <time class="research-network-period" datetime="2024/2026" data-en="2024–2026" data-ja="2024–2026">
                     2024–2026
                   </time>
                 </span>
@@ -1991,10 +2158,8 @@
 
           <div class="current-project-heading">
             <h2>
-              <span data-en="CFD Parameterisation for Added-Resistance Prediction in Waves"
-                data-ja="波浪中付加抵抗予測のためのCFDパラメータ設定">
-                CFD Parameterisation for Added-Resistance Prediction in Waves
-              </span>
+              <span data-en="CFD Parameterisation for Added Resistance in Waves" data-ja="波浪中付加抵抗予測のCFDパラメータ設定"> CFD
+                Parameterisation for Added Resistance in Waves </span>
             </h2>
 
             <time class="current-project-period" datetime="2026" aria-label="Ongoing since 2026">
@@ -2582,10 +2747,6 @@
         return;
       }
 
-      /*
-        가까운 구간은 빠르게,
-        먼 구간은 조금 더 길게 이동
-      */
       const duration = clamp(
         420 + Math.abs(distance) * 0.16,
         480,
@@ -2730,16 +2891,6 @@
         );
     }
 
-    /*
-      실제 페이지 구조를 전체 스크롤 구간에 매핑한다.
-  
-      예:
-      2023 실제 영역:
-      #year-2023 시작점 ~ #contact 시작점
-  
-      Contact 실제 영역:
-      #contact 시작점 ~ #contact 끝점
-    */
     function buildResearchScrollMap() {
       const definitions =
         getResearchSectionDefinitions();
@@ -2852,10 +3003,6 @@
       let activeSection =
         researchScrollMap[0];
 
-      /*
-        현재 scrollY가 배정된 구간에 들어간
-        가장 마지막 항목을 선택한다.
-      */
       for (const section of researchScrollMap) {
         if (
           currentScroll + 0.5 >=
@@ -2920,12 +3067,6 @@
       });
     }
 
-    /*
-      Rail 클릭도 같은 매핑을 사용한다.
-  
-      따라서 클릭 위치와 활성화 기준이
-      서로 어긋나지 않는다.
-    */
     function bindResearchSideNavigation() {
       const sideNav =
         document.querySelector(".research-side-nav");
@@ -3060,11 +3201,6 @@
                 );
 
                 applyLang(selected);
-
-                /*
-                  언어 변경으로 텍스트 높이가 달라지므로
-                  전체 매핑을 다시 계산한다.
-                */
                 schedulePageUpdate(true);
               }
             );

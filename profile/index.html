@@ -49,21 +49,43 @@
       --text-muted: #4A4A4A;
     }
 
-    .site-header {
-      margin: 60px 0 20px;
-    }
-
     .site-name {
-      font-family: Georgia, serif;
-      font-size: 2.5em;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      color: #111;
+      font-family:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        Georgia,
+        serif;
+
+      font-size: 2.35em;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.075em;
+
+      color: rgba(17, 17, 17, 0.96);
       text-decoration: none;
+
+      font-kerning: normal;
+      text-rendering: optimizeLegibility;
+
+      transition:
+        opacity 0.2s ease,
+        letter-spacing 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .site-name:hover {
-      opacity: 0.85;
+      opacity: 0.78;
+      letter-spacing: 0.09em;
+    }
+
+    .page-content {
+      transform: translateY(6px);
+      transition: transform 0.12s ease-out;
+    }
+
+    .page-content.loaded {
+      transform: translateY(0);
     }
 
     body {
@@ -76,58 +98,178 @@
       background: var(--bg-light);
     }
 
+    .site-header {
+      position: relative;
+      margin: 60px 0 28px;
+    }
+
+    .site-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     .lang-switch {
-      font-size: 0.75em;
-      letter-spacing: 0.22em;
-      color: #64748b;
-      opacity: 0.7;
-      transform: translateY(35px);
+      position: absolute;
+      right: 2px;
+      bottom: -21px;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      margin: 0;
+
+      font-family:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        Georgia,
+        serif;
+
+      font-size: 0.68em;
+      line-height: 1;
+      letter-spacing: 0.13em;
+
+      color: rgba(38, 54, 74, 0.5);
     }
 
     .lang-switch a {
-      text-decoration: none;
-      color: inherit;
-      opacity: 0.5;
-      cursor: pointer;
-    }
+      position: relative;
 
-    .lang-switch a.active {
-      opacity: 1;
-      color: #111;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+
+      opacity: 0.55;
+
+      transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
     }
 
     .lang-switch a:hover {
-      opacity: 0.8;
+      color: rgba(18, 39, 66, 0.82);
+      opacity: 1;
+    }
+
+    .lang-switch a.active {
+      color: rgba(11, 31, 58, 0.94);
+      opacity: 1;
+    }
+
+    .lang-switch span {
+      font-size: 0.72em;
+      color: rgba(11, 31, 58, 0.24);
     }
 
     .nav {
       position: sticky;
       top: env(safe-area-inset-top);
       z-index: 1000;
+
       display: flex;
       justify-content: center;
-      gap: clamp(20px, 6vw, 90px);
-      padding: 14px 0;
-      margin-bottom: 36px;
-      background: rgba(245, 247, 250, 0.85);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      border-bottom: 1px solid rgba(11, 31, 58, 0.06);
-      border-top: 1px solid rgba(11, 31, 58, 0.06);
+      align-items: center;
+      gap: clamp(26px, 5.5vw, 76px);
+
+      padding: 12px 0 11px;
+      margin-bottom: 38px;
+
+
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+
+      background: rgba(232, 236, 241, 0.84);
+
+      border-top: 1px solid rgba(11, 31, 58, 0.055);
+      border-bottom: 1px solid rgba(11, 31, 58, 0.08);
 
       transition:
-        background 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     .nav.is-scrolled {
-      background: rgba(237, 239, 243, 0.94);
-      border-color: rgba(11, 31, 58, 0.08);
-      box-shadow: 0 4px 14px rgba(11, 31, 58, 0.025);
+      background: rgba(232, 236, 241, 0.96);
+
+      border-top-color: rgba(11, 31, 58, 0.065);
+      border-bottom-color: rgba(11, 31, 58, 0.11);
+
+      box-shadow:
+        0 5px 18px rgba(11, 31, 58, 0.035);
     }
 
-    /* Scroll reveal */
+    .nav a {
+      position: relative;
+      display: inline-block;
+
+      margin: 0;
+      padding: 7px 0 9px;
+
+      font-family:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        Georgia,
+        serif;
+
+      font-size: 0.92em;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.105em;
+
+      font-kerning: normal;
+      text-rendering: optimizeLegibility;
+
+      color: rgba(38, 54, 74, 0.58);
+      text-align: center;
+      text-decoration: none;
+
+      transition:
+        color 0.22s ease,
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        letter-spacing 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .nav a:hover {
+      color: rgba(18, 39, 66, 0.9);
+      letter-spacing: 0.12em;
+      transform: translateY(-1px);
+    }
+
+    .nav a.active {
+      color: rgba(11, 31, 58, 0.98);
+      font-weight: 500;
+    }
+
+    .nav a.active::after {
+      content: "";
+      position: absolute;
+
+      left: 50%;
+      bottom: 0;
+
+      width: 17px;
+      height: 1px;
+
+      background: rgba(11, 31, 58, 0.72);
+
+      transform: translateX(-50%);
+    }
+
+    .nav a[href="/archive/"] {
+      color: rgba(56, 70, 88, 0.38);
+      font-style: italic;
+    }
+
+    .nav a[href="/archive/"]:hover {
+      color: rgba(28, 48, 73, 0.72);
+    }
+
     .reveal-ready {
       opacity: 0;
       transform: translateY(4px);
@@ -139,55 +281,6 @@
     .reveal-ready.is-visible {
       opacity: 1;
       transform: translateY(0);
-    }
-
-
-    .nav a {
-      position: relative;
-      margin: 0;
-      padding: 6px 0;
-      text-align: center;
-      text-decoration: none;
-      font-size: 1em;
-      letter-spacing: 0.12em;
-      font-weight: 400;
-      color: #444;
-      opacity: 0.65;
-      transition:
-        opacity 0.2s ease,
-        color 0.2s ease;
-    }
-
-    .nav a:hover {
-      opacity: 1;
-      color: #111;
-    }
-
-    .nav a.active {
-      opacity: 1;
-      color: #111;
-      font-weight: 500;
-    }
-
-    .nav a.active::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -10px;
-      transform: translateX(-50%);
-      width: 22px;
-      height: 1px;
-      background: #111;
-      opacity: 0.85;
-    }
-
-    .nav a[href="/archive/"] {
-      opacity: 0.4;
-      font-style: italic;
-    }
-
-    .nav a[href="/archive/"]:hover {
-      opacity: 0.7;
     }
 
     .header {
@@ -265,6 +358,10 @@
       fill: currentColor;
       flex-shrink: 0;
       opacity: 0.75;
+    }
+
+    .icons a[aria-label="LinkedIn"] svg {
+      transform: translateY(-1.2px);
     }
 
     .icon-label {
@@ -349,76 +446,97 @@
       opacity: 0.45;
     }
 
-    .affiliation-block {
+    #affiliations .affiliation-block {
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 27px;
 
       width: 100%;
       margin: 0;
-
       position: relative;
     }
 
-    .affiliation-item {
+    :is(#affiliations, #background) .affiliation-item {
       box-sizing: border-box;
       width: 100%;
 
-      padding-left: 18px;
-      border-left: 2px solid rgba(11, 31, 58, 0.12);
+      padding: 1px 0 2px 18px;
+
+      border-left: 2px solid rgba(11, 31, 58, 0.11);
     }
 
-    .affiliation-primary {
-      margin-bottom: 2px;
+    :is(#affiliations, #background) .affiliation-primary {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 6px;
 
-      font-size: 1em;
+      margin: 0 0 5px;
+
+      font-size: 0.98em;
       font-weight: 500;
-      line-height: 1.45;
-      letter-spacing: 0.06em;
+      line-height: 1.4;
+      letter-spacing: 0.045em;
 
-      color: #0B1F3A;
+      color: rgba(11, 31, 58, 0.94);
     }
 
-    .affiliation-year {
-      margin-left: 4px;
+    :is(#affiliations, #background) .affiliation-year {
+      margin-left: 0;
+
+      font-size: 0.68em;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.09em;
+      font-variant-numeric: tabular-nums;
+
+      color: rgba(79, 89, 101, 0.58);
+    }
+
+    :is(#affiliations, #background) .affiliation-context {
+      margin: 0 0 7px 1px;
+
+      font-size: 0.77em;
+      line-height: 1.45;
+      letter-spacing: 0.035em;
+      font-style: italic;
+
+      color: rgba(68, 79, 94, 0.64);
+    }
+
+    :is(#affiliations, #background) .affiliation-secondary {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+
+      margin: 0 0 0 1px;
+
+      font-size: 0.75em;
+      line-height: 1.45;
+      letter-spacing: 0.025em;
+
+      color: rgba(45, 55, 69, 0.76);
+    }
+
+    :is(#affiliations, #background) .affiliation-secondary>span:first-child {
+      font-weight: 500;
+      color: rgba(35, 47, 63, 0.8);
+    }
+
+    :is(#affiliations, #background) .affiliation-dot {
+      margin: 0 7px;
 
       font-size: 0.72em;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-
-      color: #777;
+      color: rgba(11, 31, 58, 0.28);
     }
 
-    .affiliation-context {
-      margin-left: 5px;
-      margin-bottom: 4px;
-
-      font-size: 0.82em;
-      line-height: 1.45;
-      letter-spacing: 0.04em;
-
-      color: rgba(57, 67, 80, 0.82);
-    }
-
-    .affiliation-secondary {
-      margin: 0 0 0 5px;
-
-      font-size: 0.76em;
+    :is(#affiliations, #background) .affiliation-country {
+      font-size: 0.78em;
       line-height: 1.4;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
 
-      color: rgba(82, 89, 99, 0.72);
-    }
-
-    .affiliation-country {
-      font-size: 0.92em;
-      letter-spacing: inherit;
-      color: inherit;
-    }
-
-    .affiliation-dot {
-      margin: 0 6px;
-      opacity: 0.5;
+      color: rgba(82, 92, 105, 0.56);
     }
 
     .affiliation-detail {
@@ -429,10 +547,6 @@
       margin-left: 5px;
       opacity: 0.75;
     }
-
-    /* =========================
-   Final affiliation layout
-========================= */
 
     #affiliations .affiliation-layout {
       display: grid;
@@ -536,53 +650,17 @@
       margin: 10px 0;
     }
 
+    .icons+.divider {
+      margin-top: 18px;
+      margin-bottom: 24px;
+    }
+
     .desktop-only {
       display: inline;
     }
 
     .mobile-only {
       display: none;
-    }
-
-    .side-nav {
-      position: fixed;
-      right: clamp(0px, calc((100vw - 800px) / 2 + 20px), 400px);
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 100;
-    }
-
-    .side-nav .rail {
-      position: relative;
-      width: 3px;
-      height: 160px;
-      background: linear-gradient(to bottom,
-          rgba(11, 31, 58, 0.08),
-          rgba(11, 31, 58, 0.18),
-          rgba(11, 31, 58, 0.08));
-      border-radius: 3px;
-    }
-
-    .side-nav .thumb {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 8px;
-      height: 20px;
-      border-radius: 6px;
-      background: linear-gradient(to bottom,
-          rgba(11, 31, 58, 0.95),
-          rgba(11, 31, 58, 0.65));
-      box-shadow:
-        0 2px 6px rgba(0, 0, 0, 0.15);
-      transition: top 0.14s cubic-bezier(0.4, 0, 0.2, 1);
-      opacity: 0.85;
-    }
-
-    .side-nav:hover .thumb {
-      box-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.22);
-      opacity: 1;
     }
 
     .page-content {
@@ -900,7 +978,6 @@
       border-left-color: rgba(11, 31, 58, 0.28);
     }
 
-    /* Timeline blocks */
     #affiliations .month-block {
       transition:
         background-color 0.55s cubic-bezier(0.22, 1, 0.36, 1),
@@ -961,11 +1038,122 @@
       color: rgba(57, 67, 80, 0.65);
     }
 
+    html {
+      scroll-behavior: auto;
+    }
+
+    #current,
+    #research-interests,
+    #affiliations,
+    #academic-activity,
+    #background {
+      scroll-margin-top: 92px;
+    }
+
+    .profile-side-nav {
+      position: fixed;
+      top: 50%;
+      left: calc(50% + 485px);
+      transform: translateY(-42%);
+      z-index: 30;
+
+      width: 170px;
+    }
+
+    .profile-side-nav nav {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      padding-left: 24px;
+    }
+
+    .profile-side-nav nav::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -14px;
+      bottom: -14px;
+
+      width: 1px;
+
+      background: linear-gradient(to bottom,
+          rgba(11, 31, 58, 0),
+          rgba(11, 31, 58, 0.12) 18%,
+          rgba(11, 31, 58, 0.12) 82%,
+          rgba(11, 31, 58, 0));
+    }
+
+    .profile-side-nav a {
+      position: relative;
+      display: block;
+      width: fit-content;
+
+      font-size: 0.76em;
+      line-height: 1.45;
+      letter-spacing: 0.07em;
+
+      color: rgba(11, 31, 58, 0.36);
+      text-decoration: none;
+
+      transition:
+        color 0.28s ease,
+        opacity 0.28s ease,
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .profile-side-nav a:hover {
+      color: rgba(11, 31, 58, 0.72);
+    }
+
+    .profile-side-nav a::before {
+      content: "";
+      position: absolute;
+
+      left: -24px;
+      top: 50%;
+
+      width: 0;
+      height: 1px;
+
+      background: rgba(11, 31, 58, 0.72);
+      transform: translateY(-50%);
+
+      transition: width 0.18s ease;
+    }
+
+    .profile-side-nav a.active {
+      color: rgba(11, 31, 58, 0.86);
+    }
+
+    .profile-side-nav a.active::before {
+      width: 11px;
+    }
+
+    @media (max-width: 1320px) {
+      .profile-side-nav {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .profile-side-nav a {
+        transition: none;
+      }
+    }
 
     @media (max-width: 640px) {
       .site-name {
-        font-size: 1.9em;
-        margin-left: 10px;
+        margin-left: 8px;
+        font-size: 1.82em;
+        letter-spacing: 0.065em;
+      }
+
+      .site-name:hover {
+        opacity: 0.9;
+        letter-spacing: 0.065em;
       }
 
       body {
@@ -979,14 +1167,7 @@
       }
 
       .subtitle {
-        font-size: 0.8em;
-        line-height: 1.45;
-        letter-spacing: 0.04em;
-        color: #777;
-        margin-top: 12px;
-        margin-bottom: 18px;
-        max-width: 36ch;
-        opacity: 0.7;
+        display: none;
       }
 
       .header {
@@ -997,52 +1178,130 @@
         position: sticky;
         top: env(safe-area-inset-top);
         z-index: 1000;
+
         display: flex;
         justify-content: center;
-        gap: clamp(12px, 4vw, 20px);
-        padding: 8px 0;
-        margin-bottom: 20px;
-        background: rgba(225, 230, 238, 0.7);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        border-bottom: 1px solid rgba(11, 31, 58, 0.06);
+        align-items: center;
+        gap: clamp(12px, 3.8vw, 20px);
+
+        padding: 9px 0 8px;
+        margin-bottom: 22px;
+
+        background: rgba(232, 236, 241, 0.9);
+
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+
+        border-top: 1px solid rgba(11, 31, 58, 0.045);
+        border-bottom: 1px solid rgba(11, 31, 58, 0.075);
+
+        box-shadow: none;
+      }
+
+      .nav.is-scrolled {
+        background: rgba(232, 236, 241, 0.97);
+
+        border-top-color: rgba(11, 31, 58, 0.055);
+        border-bottom-color: rgba(11, 31, 58, 0.095);
+
+        box-shadow:
+          0 4px 14px rgba(11, 31, 58, 0.028);
       }
 
       .nav a {
         position: relative;
-        padding: 4px 2px;
-        font-size: clamp(0.65em, 2.6vw, 0.75em);
-        letter-spacing: 0.14em;
+        display: inline-block;
+
+        margin: 0;
+        padding: 5px 0 7px;
+
+        font-family:
+          "Iowan Old Style",
+          "Palatino Linotype",
+          "Book Antiqua",
+          Palatino,
+          Georgia,
+          serif;
+
+        font-size: clamp(0.61em, 2.55vw, 0.69em);
         font-weight: 400;
-        color: #444;
-        opacity: 0.55;
+        line-height: 1;
+        letter-spacing: 0.085em;
+
+        font-kerning: normal;
+        text-rendering: optimizeLegibility;
+
+        color: rgba(38, 54, 74, 0.54);
+        text-align: center;
         text-decoration: none;
         white-space: nowrap;
-        transition: all 0.2s ease;
+
+        opacity: 1;
+        transform: none;
+
+        transition:
+          color 0.2s ease,
+          opacity 0.2s ease;
       }
 
       .nav a:hover {
-        opacity: 0.9;
+        color: rgba(18, 39, 66, 0.82);
+        letter-spacing: 0.085em;
+        opacity: 1;
+        transform: none;
       }
 
       .nav a.active {
-        opacity: 1;
-        color: #111;
+        color: rgba(11, 31, 58, 0.96);
         font-weight: 500;
-        letter-spacing: 0.16em;
+        letter-spacing: 0.085em;
+        opacity: 1;
       }
 
       .nav a.active::after {
         content: "";
         position: absolute;
+
         left: 50%;
-        bottom: -6px;
-        transform: translateX(-50%);
-        width: 10px;
+        bottom: 0;
+
+        width: 12px;
         height: 1px;
-        background: #111;
-        opacity: 0.6;
+
+        background: rgba(11, 31, 58, 0.64);
+        opacity: 1;
+
+        transform: translateX(-50%);
       }
+
+      .nav a[href="/archive/"] {
+        color: rgba(56, 70, 88, 0.44);
+        font-style: italic;
+        opacity: 1;
+      }
+
+      .nav a[href="/archive/"]:hover {
+        color: rgba(28, 48, 73, 0.68);
+        opacity: 1;
+      }
+
+      .site-header {
+        margin: 40px 0 27px;
+      }
+
+      .site-header-row {
+        align-items: flex-end;
+      }
+
+      .lang-switch {
+        right: 1px;
+        bottom: -20px;
+
+        gap: 6px;
+        font-size: 0.59em;
+        letter-spacing: 0.11em;
+      }
+
 
       .section {
         margin-bottom: 0px;
@@ -1062,10 +1321,6 @@
         color: #444;
       }
 
-      .lang-switch {
-        font-size: 0.65em;
-        transform: translateY(30px);
-      }
 
       .desktop-only {
         display: none;
@@ -1103,42 +1358,53 @@
         display: none;
       }
 
-      .affiliation-block {
-        gap: 17px;
+      #affiliations .affiliation-block {
+        gap: 22px;
       }
 
-      .affiliation-item {
-        padding-left: 14px;
+      :is(#affiliations, #background) .affiliation-item {
+        padding: 1px 0 2px 14px;
+        border-left-width: 1.5px;
       }
 
-      .affiliation-primary {
-        margin-bottom: 2px;
-        font-size: 0.85rem;
-      }
+      :is(#affiliations, #background) .affiliation-primary {
+        gap: 5px;
+        margin-bottom: 5px;
 
-      .affiliation-context {
-        margin-left: 4px;
-        margin-bottom: 3px;
-
-        font-size: 0.74rem;
+        font-size: 0.84rem;
         line-height: 1.4;
+        letter-spacing: 0.035em;
       }
 
-      .affiliation-secondary {
-        margin-left: 4px;
+      :is(#affiliations, #background) .affiliation-year {
+        font-size: 0.64em;
+        letter-spacing: 0.075em;
+      }
+
+      :is(#affiliations, #background) .affiliation-context {
+        margin: 0 0 6px 1px;
+
         font-size: 0.69rem;
+        line-height: 1.42;
+        letter-spacing: 0.025em;
       }
 
-      .affiliation-year {
-        font-size: 0.7em;
+      :is(#affiliations, #background) .affiliation-secondary {
+        margin-left: 1px;
+
+        font-size: 0.67rem;
+        line-height: 1.45;
+        letter-spacing: 0.018em;
       }
 
-      .side-nav {
-        display: none !important;
+      :is(#affiliations, #background) .affiliation-dot {
+        margin: 0 6px;
+        font-size: 0.68em;
       }
 
-      .side-nav a::after {
-        display: none;
+      :is(#affiliations, #background) .affiliation-country {
+        font-size: 0.76em;
+        letter-spacing: 0.085em;
       }
 
       .divider {
@@ -1156,12 +1422,12 @@
       }
 
       .current-line.secondary {
-        font-size: 0.8em;
+        font-size: 0.83em;
       }
 
       .icons {
-        margin-top: -4px;
-        margin-bottom: 12px;
+        margin-top: 10px;
+        margin-bottom: -10px;
         font-size: 0.68em;
         letter-spacing: 0.035em;
       }
@@ -1179,8 +1445,12 @@
         height: 12px;
       }
 
+      .icons a[aria-label="LinkedIn"] svg {
+        transform: translateY(-1px);
+      }
+
       .expected-year {
-        font-size: 0.7em;
+        font-size: 0.8em;
         opacity: 0.75;
       }
 
@@ -1272,24 +1542,18 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header class="site-header">
-    <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div class="site-header-row">
 
       <a href="/" class="site-name">Sangseok Han</a>
 
-      <div class="lang-switch">
+      <div class="lang-switch" aria-label="Language selection">
         <a href="#" data-lang="en">EN</a>
-        <span>·</span>
+        <span aria-hidden="true">·</span>
         <a href="#" data-lang="ja">JP</a>
       </div>
 
     </div>
   </header>
-
-  <nav class="side-nav">
-    <div class="rail">
-      <div class="thumb"></div>
-    </div>
-  </nav>
 
   <div class="nav">
     <a href="/" data-en="Home" data-ja="ホーム">Home</a>
@@ -1304,11 +1568,34 @@
     <a href="/archive/" data-en="Archive" data-ja="アーカイブ">Archive</a>
   </div>
 
-  <div class="page-content">
-    <p class="subtitle" data-en="Fluid Mechanics · CFD" data-ja="流体力学 · CFD">
-      Fluid Mechanics · CFD
-    </p>
+  <aside class="profile-side-nav" aria-label="Profile section navigation">
+    <nav>
+      <a href="#current" data-en="Current" data-ja="現在">
+        Current
+      </a>
 
+      <a href="#research-interests" data-en="Research Direction" data-ja="研究分野">
+        Research Direction
+      </a>
+
+      <a href="#affiliations" data-en="Affiliations" data-ja="所属">
+        Affiliations
+      </a>
+
+      <a href="#academic-activity" data-en="Scholarly Contribution" data-ja="学術活動">
+        Scholarly Contribution
+      </a>
+
+      <a href="#background" data-en="Background" data-ja="経歴">
+        Background
+      </a>
+    </nav>
+  </aside>
+
+  <div class="page-content">
+    <p class="subtitle" data-en="Marine Hydrodynamics" data-ja="海洋流体力学">
+      Marine Hydrodynamics
+    </p>
     <p class="tagline">
       <em>
         <span data-en="I investigate roughness-driven turbulence using CFD," data-ja="CFDを用いて粗さ起因乱流を研究し、">
@@ -1388,8 +1675,8 @@
         </div>
 
         <div class="current-line primary" style="margin-top:14px;">
-          <span data-en="Doctoral research development" data-ja="博士課程研究計画の策定">
-            Doctoral research development
+          <span data-en="Admission decision pending" data-ja="合否結果待ち">
+            Admission decision pending
           </span>
           <span class="current-dot">·</span>
           <span data-en="JSPS DC1 under review" data-ja="JSPS DC1 審査中">
@@ -1401,8 +1688,8 @@
           <span data-en="Kyoto University" data-ja="京都大学">
             Kyoto University
           </span>
-          <span class="expected-year" data-en="(expected 2027–)" data-ja="（2027年開始予定）">
-            (expected 2027–)
+          <span class="expected-year" data-en="(anticipated 2027–)" data-ja="（2027年開始予定）">
+            (anticipated 2027–)
           </span>
         </div>
       </div>
@@ -1415,39 +1702,24 @@
       <h2 data-en="Research Direction" data-ja="研究分野">
         Research Direction
       </h2>
+
       <div class="research-interest-grid">
 
         <div class="interest-item">
-          <div class="interest-title" data-en="Spatial Roughness Effects" data-ja="空間的粗さ分布">
-            Spatial Roughness Effects
+          <div class="interest-title" data-en="Spatial Hull Roughness Effects" data-ja="空間的不均一船体粗さの影響">
+            Spatial Hull Roughness Effects
           </div>
+
           <div class="interest-desc">
             <em class="desktop-only"
-              data-en="CFD analysis of spatial hull roughness effects on boundary layers, wake, and ship resistance."
-              data-ja="空間的な船体粗さが境界層、伴流、および船体抵抗に与える影響をCFDで解析。">
-              CFD analysis of spatial hull roughness effects on boundary layers, wake, and ship resistance.
+              data-en="CFD analysis of spatially non-uniform hull roughness effects on ship hydrodynamics."
+              data-ja="空間的に不均一な船体粗さが船舶流体力学に与える影響をCFDで解析する。">
+              CFD analysis of spatially non-uniform hull roughness effects on ship hydrodynamics.
             </em>
 
-            <em class="mobile-only" data-en="Spatial hull roughness and ship resistance." data-ja="空間的船体粗さと船体抵抗。">
-              Spatial hull roughness and ship resistance.
-            </em>
-          </div>
-        </div>
-
-        <div class="interest-item">
-          <div class="interest-title" data-en="Near-Wall Turbulence" data-ja="壁面近傍乱流">
-            Near-Wall Turbulence
-          </div>
-          <div class="interest-desc">
-            <em class="desktop-only"
-              data-en="Investigation of boundary-layer behaviour and near-wall turbulence modelling close to solid surfaces."
-              data-ja="固体壁面近傍における境界層挙動および壁面近傍乱流モデリングを調査する。">
-              Investigation of boundary-layer behaviour and near-wall turbulence modelling.
-            </em>
-
-            <em class="mobile-only" data-en="Boundary layers and near-wall turbulence modelling."
-              data-ja="境界層と壁面近傍乱流モデリング。">
-              Boundary layers and near-wall turbulence modelling.
+            <em class="mobile-only" data-en="Ship hydrodynamics, boundary layers, and wake flows."
+              data-ja="船舶流体力学、境界層、および伴流。">
+              Ship hydrodynamics, boundary layers, and wake flows.
             </em>
           </div>
         </div>
@@ -1464,12 +1736,13 @@
               SPH-based modelling of hydroelastic impact, contact, and fluid–structure interaction in marine systems.
             </em>
 
-            <em class="mobile-only" data-en="SPH modelling of hydroelastic impact and FSI."
-              data-ja="流体弾性衝撃とFSIのSPHモデリング。">
-              SPH modelling of hydroelastic impact and FSI.
+            <em class="mobile-only" data-en="SPH modelling of hydroelastic impact and fluid–structure interaction."
+              data-ja="流体弾性衝撃と流体構造連成のSPHモデリング。">
+              SPH modelling of hydroelastic impact and fluid–structure interaction.
             </em>
           </div>
         </div>
+
       </div>
 
     </div>
@@ -1932,14 +2205,12 @@
           : "Affiliation timeline"
       );
 
-      /* Matrix */
       const matrix =
         document.createElement("div");
 
       matrix.className =
         "timeline-matrix";
 
-      /* Top-left blank cell */
       const corner =
         document.createElement("div");
 
@@ -1953,8 +2224,6 @@
 
       matrix.appendChild(corner);
 
-
-      /* Horizontal month labels */
       TIMELINE_MONTH_LABELS.forEach(month => {
         const monthLabel =
           document.createElement("div");
@@ -1968,8 +2237,6 @@
         matrix.appendChild(monthLabel);
       });
 
-
-      /* Vertical year rows */
       years.forEach(year => {
         const yearLabel =
           document.createElement("div");
@@ -1994,8 +2261,6 @@
 
         matrix.appendChild(yearLabel);
 
-
-        /* Jan → Dec */
         for (let month = 1; month <= 12; month++) {
           const item =
             getTimelineItem(year, month);
@@ -2070,8 +2335,6 @@
       });
 
       container.appendChild(matrix);
-
-      /* Legend: SNU → Osaka → Strathclyde → Inha */
       const legend =
         document.createElement("div");
 
@@ -2118,7 +2381,6 @@
         label.textContent =
           item.institution[safeLang];
 
-        /* Tooltip */
         const tooltip =
           document.createElement("span");
 
@@ -2159,6 +2421,12 @@
 
     const DEFAULT_LANG = "en";
     const SUPPORTED_LANGS = new Set(["en", "ja"]);
+    let profileScrollMap = [];
+    let profileScrollMax = 0;
+    let profileMapDirty = true;
+    let scrollUpdateScheduled = false;
+    let profileLayoutObserver = null;
+    let smoothScrollFrame = null;
 
     function getSessionLang() {
       const saved = sessionStorage.getItem("lang");
@@ -2192,55 +2460,483 @@
       renderAffiliationTimeline(safeLang);
     }
 
-    function updateScrollThumb() {
-      const rail = document.querySelector(".side-nav .rail");
-      const thumb = document.querySelector(".side-nav .thumb");
-      if (!rail || !thumb) return;
-
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? Math.min(Math.max(scrollTop / docHeight, 0), 1) : 0;
-
-      const railHeight = rail.clientHeight - thumb.clientHeight;
-      thumb.style.top = `${progress * railHeight}px`;
+    function clamp(value, min, max) {
+      return Math.min(
+        Math.max(value, min),
+        max
+      );
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const lang = getSessionLang();
+    function easeInOutQuint(progress) {
+      return progress < 0.5
+        ? 16 * Math.pow(progress, 5)
+        : 1 - Math.pow(-2 * progress + 2, 5) / 2;
+    }
 
-      applyLang(lang);
+    function cancelSmoothScroll() {
+      if (smoothScrollFrame !== null) {
+        cancelAnimationFrame(smoothScrollFrame);
+        smoothScrollFrame = null;
+      }
+    }
 
-      document.querySelectorAll(".lang-switch a").forEach(a => {
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
+    function smoothScrollTo(targetY) {
+      cancelSmoothScroll();
 
-          const selected = SUPPORTED_LANGS.has(a.dataset.lang)
-            ? a.dataset.lang
-            : DEFAULT_LANG;
+      const scrollingElement =
+        document.scrollingElement ||
+        document.documentElement;
 
-          sessionStorage.setItem("lang", selected);
-          applyLang(selected);
+      const maximumScrollY = Math.max(
+        0,
+        scrollingElement.scrollHeight -
+        window.innerHeight
+      );
+
+      const startY = window.scrollY;
+
+      const destinationY = clamp(
+        targetY,
+        0,
+        maximumScrollY
+      );
+
+      const distance =
+        destinationY - startY;
+
+      if (Math.abs(distance) < 1) {
+        window.scrollTo(0, destinationY);
+        return;
+      }
+
+      const reduceMotion =
+        window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+      if (reduceMotion) {
+        window.scrollTo(0, destinationY);
+        return;
+      }
+
+      const duration = clamp(
+        420 + Math.abs(distance) * 0.16,
+        480,
+        1050
+      );
+
+      const startTime =
+        performance.now();
+
+      function animate(currentTime) {
+        const elapsed =
+          currentTime - startTime;
+
+        const progress = clamp(
+          elapsed / duration,
+          0,
+          1
+        );
+
+        const easedProgress =
+          easeInOutQuint(progress);
+
+        window.scrollTo(
+          0,
+          startY + distance * easedProgress
+        );
+
+        if (progress < 1) {
+          smoothScrollFrame =
+            requestAnimationFrame(animate);
+        } else {
+          window.scrollTo(0, destinationY);
+          smoothScrollFrame = null;
+        }
+      }
+
+      smoothScrollFrame =
+        requestAnimationFrame(animate);
+    }
+
+    function getDocumentTop(element) {
+      return (
+        element.getBoundingClientRect().top +
+        window.scrollY
+      );
+    }
+
+    function getProfileSectionDefinitions() {
+      const sideNav =
+        document.querySelector(".profile-side-nav");
+
+      if (!sideNav) return [];
+
+      const definitions = [
+        {
+          key: "current",
+          selector: "#current"
+        },
+        {
+          key: "research",
+          selector: "#research-interests"
+        },
+        {
+          key: "affiliations",
+          selector: "#affiliations"
+        },
+        {
+          key: "activity",
+          selector: "#academic-activity"
+        },
+        {
+          key: "background",
+          selector: "#background"
+        }
+      ];
+
+      return definitions
+        .map(definition => {
+          const currentLink =
+            sideNav.querySelector(
+              `a[href="${definition.selector}"]`
+            );
+
+          return {
+            ...definition,
+
+            target:
+              document.querySelector(
+                definition.selector
+              ),
+
+            currentLink,
+
+            activeLinks:
+              currentLink
+                ? [currentLink]
+                : []
+          };
+        })
+        .filter(definition =>
+          definition.target &&
+          definition.currentLink
+        );
+    }
+
+    function buildProfileScrollMap() {
+      const definitions =
+        getProfileSectionDefinitions();
+
+      if (!definitions.length) {
+        profileScrollMap = [];
+        profileScrollMax = 0;
+        return;
+      }
+
+      const scrollingElement =
+        document.scrollingElement ||
+        document.documentElement;
+
+      profileScrollMax = Math.max(
+        0,
+        scrollingElement.scrollHeight -
+        window.innerHeight
+      );
+
+      const firstSection =
+        definitions[0].target;
+
+      const lastSection =
+        definitions.at(-1).target;
+
+      const contentStart =
+        getDocumentTop(firstSection);
+
+      const contentEnd = Math.max(
+        contentStart + 1,
+
+        getDocumentTop(lastSection) +
+        lastSection.offsetHeight
+      );
+
+      const contentHeight =
+        contentEnd - contentStart;
+
+      profileScrollMap = definitions.map(
+        (definition, index) => {
+          const sectionTop =
+            getDocumentTop(definition.target);
+
+          const nextSectionTop =
+            index < definitions.length - 1
+              ? getDocumentTop(
+                definitions[index + 1].target
+              )
+              : contentEnd;
+
+          const startRatio = clamp(
+            (
+              sectionTop -
+              contentStart
+            ) / contentHeight,
+            0,
+            1
+          );
+
+          const endRatio = clamp(
+            (
+              nextSectionTop -
+              contentStart
+            ) / contentHeight,
+            0,
+            1
+          );
+
+          return {
+            ...definition,
+
+            sectionTop,
+            sectionBottom: nextSectionTop,
+
+            startScroll:
+              startRatio * profileScrollMax,
+
+            endScroll:
+              index === definitions.length - 1
+                ? profileScrollMax
+                : endRatio * profileScrollMax
+          };
+        }
+      );
+    }
+
+    function updateProfileSideNavigation() {
+      const sideNav =
+        document.querySelector(".profile-side-nav");
+
+      if (!sideNav) return;
+
+      if (
+        profileMapDirty ||
+        !profileScrollMap.length
+      ) {
+        buildProfileScrollMap();
+        profileMapDirty = false;
+      }
+
+      if (!profileScrollMap.length) return;
+
+      const currentScroll = clamp(
+        window.scrollY,
+        0,
+        profileScrollMax
+      );
+
+      let activeSection =
+        profileScrollMap[0];
+
+      for (const section of profileScrollMap) {
+        if (
+          currentScroll + 0.5 >=
+          section.startScroll
+        ) {
+          activeSection = section;
+        } else {
+          break;
+        }
+      }
+
+      sideNav
+        .querySelectorAll('a[href^="#"]')
+        .forEach(link => {
+          link.classList.remove("active");
+          link.removeAttribute("aria-current");
         });
+
+      activeSection.activeLinks.forEach(link => {
+        link.classList.add("active");
       });
 
-      initialiseAffiliationInteraction();
-      initialiseScrollReveal();
-      updateNavigationState();
-      updateScrollThumb();
-    });
+      activeSection.currentLink.setAttribute(
+        "aria-current",
+        "location"
+      );
+    }
 
-    window.addEventListener("scroll", () => {
-      updateScrollThumb();
-      updateNavigationState();
-    }, {
-      passive: true
-    });
+    function schedulePageUpdate(
+      rebuildMap = false
+    ) {
+      if (rebuildMap) {
+        profileMapDirty = true;
+      }
 
-    window.addEventListener("load", () => {
-      document.querySelector(".page-content")?.classList.add("loaded");
-      updateScrollThumb();
-    });
+      if (scrollUpdateScheduled) return;
 
+      scrollUpdateScheduled = true;
+
+      requestAnimationFrame(() => {
+        if (profileMapDirty) {
+          buildProfileScrollMap();
+          profileMapDirty = false;
+        }
+
+        updateNavigationState();
+        updateProfileSideNavigation();
+
+        scrollUpdateScheduled = false;
+      });
+    }
+
+    function bindProfileSideNavigation() {
+      const sideNav =
+        document.querySelector(".profile-side-nav");
+
+      if (!sideNav) return;
+
+      sideNav.addEventListener("click", event => {
+        const link =
+          event.target.closest('a[href^="#"]');
+
+        if (
+          !link ||
+          !sideNav.contains(link)
+        ) {
+          return;
+        }
+
+        if (
+          profileMapDirty ||
+          !profileScrollMap.length
+        ) {
+          buildProfileScrollMap();
+          profileMapDirty = false;
+        }
+
+        const selector =
+          link.getAttribute("href");
+
+        const mappedSection =
+          profileScrollMap.find(
+            section =>
+              section.selector === selector
+          );
+
+        if (!mappedSection) return;
+
+        event.preventDefault();
+
+        history.replaceState(
+          null,
+          "",
+          selector
+        );
+
+        smoothScrollTo(
+          Math.min(
+            profileScrollMax,
+            mappedSection.startScroll + 1
+          )
+        );
+      });
+    }
+
+    function observeProfileLayout() {
+      const pageContent =
+        document.querySelector(".page-content");
+
+      if (
+        !pageContent ||
+        !("ResizeObserver" in window)
+      ) {
+        return;
+      }
+
+      profileLayoutObserver =
+        new ResizeObserver(() => {
+          schedulePageUpdate(true);
+        });
+
+      profileLayoutObserver.observe(
+        pageContent
+      );
+    }
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+        const lang =
+          getSessionLang();
+
+        applyLang(lang);
+
+        document
+          .querySelectorAll(".lang-switch a")
+          .forEach(link => {
+            link.addEventListener(
+              "click",
+              event => {
+                event.preventDefault();
+
+                const selected =
+                  SUPPORTED_LANGS.has(
+                    link.dataset.lang
+                  )
+                    ? link.dataset.lang
+                    : DEFAULT_LANG;
+
+                sessionStorage.setItem(
+                  "lang",
+                  selected
+                );
+
+                applyLang(selected);
+
+                schedulePageUpdate(true);
+              }
+            );
+          });
+
+        bindProfileSideNavigation();
+        observeProfileLayout();
+
+        initialiseAffiliationInteraction();
+        initialiseScrollReveal();
+
+        schedulePageUpdate(true);
+      }
+    );
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        schedulePageUpdate(false);
+      },
+      {
+        passive: true
+      }
+    );
+
+    window.addEventListener(
+      "resize",
+      () => {
+        schedulePageUpdate(true);
+      },
+      {
+        passive: true
+      }
+    );
+
+    window.addEventListener(
+      "load",
+      () => {
+        document
+          .querySelector(".page-content")
+          ?.classList.add("loaded");
+
+        schedulePageUpdate(true);
+      }
+    );
 
     const emailLink = document.querySelector(".copy-email");
 
