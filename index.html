@@ -75,9 +75,13 @@
     }
 
     body {
-      max-width: 800px;
+      width: 100%;
+      max-width: 900px;
+      box-sizing: border-box;
+
       margin: 0 auto;
-      padding: 60px 24px 40px;
+      padding: 60px 28px 40px;
+
       font-family: Georgia, "Times New Roman", serif;
       font-size: 18px;
       color: var(--ink);
@@ -92,9 +96,23 @@
 
     .header-row {
       display: flex;
-      align-items: flex-start;
-      gap: 70px;
       align-items: center;
+      width: 100%;
+      gap: 36px;
+    }
+
+    .profile-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      margin-right: 30px;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+
+    .header-row h1 {
+      font-size: 3.1em;
     }
 
     .id-photo {
@@ -121,6 +139,7 @@
     .page-content {
       transform: translateY(6px);
       transition: transform 0.12s ease-out;
+      font-size: 1.02em;
     }
 
     .page-content.loaded {
@@ -299,7 +318,7 @@
     .nav {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 28px 40px;
+      gap: 23px 40px;
     }
 
     .nav a {
@@ -403,7 +422,7 @@
     }
 
     .fade-ellipsis {
-      opacity: 0.5;
+      opacity: 0.8;
       font-size: 0.85em;
       letter-spacing: -0.08em;
       margin-left: -4px;
@@ -437,6 +456,7 @@
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: border-color 0.2s ease, color 0.2s ease;
+      font-size: 0.93em;
     }
 
     .email-link:hover {
@@ -459,6 +479,7 @@
       font-size: 0.7em;
       color: #94a3b8;
       letter-spacing: 0.06em;
+      margin-top: 5px;
     }
 
     @media (max-width: 640px) {
@@ -486,20 +507,22 @@
         font-size: 0.8em;
       }
 
-      .header-row {
-        gap: 25px;
-        align-items: center;
+      .header-row h1 {
+        font-size: 2.8em;
       }
 
-      .header-row h1 {
-        font-size: 2.9em;
-        margin: 0;
+      .header-row {
+        gap: 18px;
+      }
+
+      .profile-block {
+        margin-left: auto;
       }
 
       .id-photo {
         width: 56px;
         height: 56px;
-        margin-left: 10px;
+        margin-left: 0;
       }
 
       .tagline {
@@ -529,17 +552,24 @@
       }
 
       .affiliation-group {
-        padding-left: 10px;
+        background: transparent;
+        border-radius: 0;
       }
 
       .affiliation-group-current {
-        background: rgba(11, 31, 58, 0.006);
-        border-radius: 3px;
-        padding: 7px 10px 8px 10px;
+        margin-top: 0;
+        padding: 2px 0 3px 10px;
+
+        background: transparent;
+        border-left: 1px solid rgba(11, 31, 58, 0.14);
       }
 
       .affiliation-group-past {
-        margin-top: 12px;
+        margin-top: 16px;
+        padding: 0;
+
+        background: transparent;
+        border-left: 0;
       }
 
       .affiliation-current-primary {
@@ -574,7 +604,7 @@
       .recent-meta {
         display: inline;
         margin-top: 2px;
-        font-size: 0.93em;
+        font-size: 0.85em;
         opacity: 0.7;
       }
 
@@ -587,8 +617,13 @@
       }
 
       .recent-work a {
-        font-size: 0.83em;
+        font-size: 0.82em;
         align-items: center;
+      }
+
+      .fade-ellipsis {
+        margin-left: 0;
+        letter-spacing: -0.04em;
       }
 
       .footer-contact {
@@ -629,23 +664,26 @@
       <div class="tagline-block">
         <p class="tagline">
           <span class="line-strong">
-            <span class="desktop-only" data-en="Turbulence and surface roughness in real-world marine flows."
-              data-ja="実海域における乱流と表面粗さの影響">
-              Turbulence and surface roughness in real-world marine flows.
+            <span class="desktop-only" data-en="CFD for ship hydrodynamics, hull roughness, and near-wall turbulence."
+              data-ja="船舶流体力学、船体粗さ、壁近傍乱流を対象としたCFD研究。">
+              CFD for ship hydrodynamics, hull roughness, and near-wall turbulence.
             </span>
-            <span class="mobile-only" data-en="Turbulence and roughness in real-world marine flows."
-              data-ja="実海域における乱流と粗さ">
-              Turbulence and roughness in real-world marine flows.
+
+            <span class="mobile-only" data-en="CFD, hull roughness, and marine flows." data-ja="CFD、船体粗さ、海洋流れの研究。">
+              CFD, hull roughness, and marine flows.
             </span>
           </span>
 
           <span class="line-muted">
-            <span class="desktop-only" data-en="Understanding where models break — especially near-wall flows."
-              data-ja="特に壁面近傍流れにおけるモデルの限界を探る。">
-              <em>Understanding where models break — especially near-wall flows.</em>
+            <span class="desktop-only"
+              data-en="Understanding where models break — from hull roughness to hydroelastic impact."
+              data-ja="船体粗さから流体弾性衝撃まで、モデルが破綻し始める領域を理解する。">
+              <em>Understanding where models break — from hull roughness to hydroelastic impact.</em>
             </span>
-            <span class="mobile-only" data-en="Understanding where models break." data-ja="モデルの限界を探る。">
-              <em>Understanding where models break.</em>
+
+            <span class="mobile-only" data-en="Where models break — from roughness to impact."
+              data-ja="粗さから衝撃まで、モデルの限界を探る。">
+              <em>Where models break — from roughness to impact.</em>
             </span>
           </span>
         </p>
@@ -757,10 +795,20 @@
         <span class="recent-label" data-en="✦ Recent Work" data-ja="✦ 最新の論文">
           ✦ Recent Work
         </span>
+
         <a href="/publications/beyond-resistance/">
           <span class="recent-title">
-            Beyond uniform roughness: Ship resistance with spatially <span class="fade-ellipsis">...</span>
+            <span class="desktop-only">
+              Beyond uniform roughness: Ship resistance with spatially
+              <span class="fade-ellipsis">...</span>
+            </span>
+
+            <span class="mobile-only">
+              Beyond uniform roughness: Ship resistance
+              <span class="fade-ellipsis">...</span>
+            </span>
           </span>
+
           <span class="recent-meta">
             (<em>Ocean Engineering</em>, 2026)
           </span>
@@ -808,7 +856,7 @@
       </div>
 
       <div class="footer-meta">
-        © Sangseok Han · Last updated: July 2026
+        © Sangseok Han · Last updated: August 2026
       </div>
     </footer>
 

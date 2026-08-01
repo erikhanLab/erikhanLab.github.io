@@ -1,0 +1,366 @@
+html {
+  overflow-y: scroll;
+}
+
+:root {
+  --bg-light: #EDEFF3;
+  --site-width: 1000px;
+  --side-nav-offset: 525px;
+}
+
+body {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--site-width);
+  margin: 40px auto;
+  padding: 0 24px;
+
+  font-family: Georgia, serif;
+  color: #111;
+  line-height: 1.75;
+  background: var(--bg-light);
+}
+
+.site-header {
+  position: relative;
+  margin: 60px 0 28px;
+}
+
+.site-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-name {
+  font-family:
+    "Iowan Old Style",
+    "Palatino Linotype",
+    "Book Antiqua",
+    Palatino,
+    Georgia,
+    serif;
+
+  font-size: 2.35em;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.075em;
+
+  color: rgba(17, 17, 17, 0.96);
+  text-decoration: none;
+
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+
+  transition:
+    opacity 0.2s ease,
+    letter-spacing 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-name:hover {
+  opacity: 0.78;
+  letter-spacing: 0.09em;
+}
+
+/* =========================
+   Language switch
+========================= */
+
+.lang-switch {
+  position: absolute;
+  right: 2px;
+  bottom: -21px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin: 0;
+
+  font-family:
+    "Iowan Old Style",
+    "Palatino Linotype",
+    "Book Antiqua",
+    Palatino,
+    Georgia,
+    serif;
+
+  font-size: 0.68em;
+  line-height: 1;
+  letter-spacing: 0.13em;
+
+  color: rgba(38, 54, 74, 0.5);
+}
+
+.lang-switch a {
+  position: relative;
+
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.55;
+
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.lang-switch a:hover {
+  color: rgba(18, 39, 66, 0.82);
+  opacity: 1;
+}
+
+.lang-switch a.active {
+  color: rgba(11, 31, 58, 0.94);
+  opacity: 1;
+}
+
+.lang-switch span {
+  font-size: 0.72em;
+  color: rgba(11, 31, 58, 0.24);
+}
+
+/* =========================
+   Primary navigation
+========================= */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+
+  box-sizing: border-box;
+  width: 100%;
+
+  padding:
+    13px clamp(28px, 5vw, 58px) 12px;
+  margin-bottom: 38px;
+
+  position: sticky;
+  top: env(safe-area-inset-top);
+  z-index: 1000;
+
+  background: rgba(232, 236, 241, 0.97);
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  border-top: 1px solid rgba(11, 31, 58, 0.055);
+  border-bottom: 1px solid rgba(11, 31, 58, 0.08);
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.nav.is-scrolled {
+  background: rgba(232, 236, 241, 0.96);
+
+  border-top-color: rgba(11, 31, 58, 0.065);
+  border-bottom-color: rgba(11, 31, 58, 0.11);
+
+  box-shadow:
+    0 5px 18px rgba(11, 31, 58, 0.035);
+}
+
+.nav a {
+  position: relative;
+  display: inline-block;
+
+  margin: 0;
+  padding: 7px 2px 9px;
+
+  font-family:
+    "Iowan Old Style",
+    "Palatino Linotype",
+    "Book Antiqua",
+    Palatino,
+    Georgia,
+    serif;
+
+  font-size: 1.02em;
+  letter-spacing: 0.115em;
+  font-weight: 400;
+  line-height: 1;
+
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+
+  color: rgba(38, 54, 74, 0.58);
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    color 0.22s ease,
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    letter-spacing 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav a:hover {
+  color: rgba(18, 39, 66, 0.9);
+  letter-spacing: 0.135em;
+  transform: translateY(-1px);
+}
+
+.nav a.active {
+  color: rgba(11, 31, 58, 0.98);
+  font-weight: 500;
+}
+
+.nav a.active::after {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 17px;
+  height: 1px;
+
+  background: rgba(11, 31, 58, 0.72);
+  transform: translateX(-50%);
+}
+
+/* =========================
+   Mobile shell
+========================= */
+
+@media (max-width: 640px) {
+  body {
+    margin: 24px auto;
+    padding: 0 16px;
+    line-height: 1.6;
+  }
+
+  .site-header {
+    margin: 40px 0 27px;
+  }
+
+  .site-header-row {
+    align-items: flex-end;
+  }
+
+  .site-name {
+    margin-left: 8px;
+
+    font-size: 1.82em;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.065em;
+  }
+
+  .site-name:hover {
+    opacity: 0.9;
+    letter-spacing: 0.065em;
+  }
+
+  .lang-switch {
+    right: 1px;
+    bottom: -20px;
+
+    gap: 6px;
+    font-size: 0.59em;
+    letter-spacing: 0.11em;
+  }
+
+  .nav {
+    position: sticky;
+    top: env(safe-area-inset-top);
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(20px, 3.8vw, 30px);
+
+    padding: 9px 0 8px;
+    margin-bottom: 22px;
+
+    background: rgba(232, 236, 241, 0.97);
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    border-top: 1px solid rgba(11, 31, 58, 0.045);
+    border-bottom: 1px solid rgba(11, 31, 58, 0.075);
+
+    box-shadow: none;
+  }
+
+  .nav.is-scrolled {
+    background: rgba(232, 236, 241, 0.97);
+
+    border-top-color: rgba(11, 31, 58, 0.055);
+    border-bottom-color: rgba(11, 31, 58, 0.095);
+
+    box-shadow:
+      0 4px 14px rgba(11, 31, 58, 0.028);
+  }
+
+  .nav a {
+    position: relative;
+    display: inline-block;
+
+    margin: 0;
+    padding: 5px 0 7px;
+
+    font-family:
+      "Iowan Old Style",
+      "Palatino Linotype",
+      "Book Antiqua",
+      Palatino,
+      Georgia,
+      serif;
+
+    font-size: clamp(0.63em, 2.65vw, 0.72em);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.085em;
+
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+
+    color: rgba(38, 54, 74, 0.54);
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+
+    opacity: 1;
+    transform: none;
+
+    transition:
+      color 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .nav a:hover {
+    color: rgba(18, 39, 66, 0.82);
+    letter-spacing: 0.085em;
+    opacity: 1;
+    transform: none;
+  }
+
+  .nav a.active {
+    color: rgba(11, 31, 58, 0.96);
+    font-weight: 500;
+    letter-spacing: 0.085em;
+    opacity: 1;
+  }
+
+  .nav a.active::after {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 12px;
+    height: 1px;
+
+    background: rgba(11, 31, 58, 0.64);
+    opacity: 1;
+
+    transform: translateX(-50%);
+  }
+}

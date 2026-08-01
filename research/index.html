@@ -38,226 +38,21 @@
     })();
   </script>
 
-  <style>
-    html {
-      overflow-y: scroll;
-    }
+  <link rel="stylesheet" href="/assets/css/site-shell.css?v=1">
 
+  <style>
     :root {
       --research-blue: #0B1F3A;
-      --bg-light: #EDEFF3;
-    }
-
-    .site-name {
-      font-family:
-        "Iowan Old Style",
-        "Palatino Linotype",
-        "Book Antiqua",
-        Palatino,
-        Georgia,
-        serif;
-
-      font-size: 2.35em;
-      font-weight: 400;
-      line-height: 1;
-      letter-spacing: 0.075em;
-
-      color: rgba(17, 17, 17, 0.96);
-      text-decoration: none;
-
-      font-kerning: normal;
-      text-rendering: optimizeLegibility;
-
-      transition:
-        opacity 0.2s ease,
-        letter-spacing 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .site-name:hover {
-      opacity: 0.78;
-      letter-spacing: 0.09em;
     }
 
     .page-content {
       transform: translateY(6px);
       transition: transform 0.12s ease-out;
+      font-size: 1.1em;
     }
 
     .page-content.loaded {
       transform: translateY(0);
-    }
-
-    body {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      font-family: Georgia, serif;
-      color: #111;
-      line-height: 1.75;
-      background: var(--bg-light);
-    }
-
-    .site-header {
-      position: relative;
-      margin: 60px 0 28px;
-    }
-
-    .site-header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .lang-switch {
-      position: absolute;
-      right: 2px;
-      bottom: -21px;
-
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-
-      margin: 0;
-
-      font-family:
-        "Iowan Old Style",
-        "Palatino Linotype",
-        "Book Antiqua",
-        Palatino,
-        Georgia,
-        serif;
-
-      font-size: 0.68em;
-      line-height: 1;
-      letter-spacing: 0.13em;
-
-      color: rgba(38, 54, 74, 0.5);
-    }
-
-    .lang-switch a {
-      position: relative;
-
-      color: inherit;
-      text-decoration: none;
-      cursor: pointer;
-
-      opacity: 0.55;
-
-      transition:
-        color 0.2s ease,
-        opacity 0.2s ease;
-    }
-
-    .lang-switch a:hover {
-      color: rgba(18, 39, 66, 0.82);
-      opacity: 1;
-    }
-
-    .lang-switch a.active {
-      color: rgba(11, 31, 58, 0.94);
-      opacity: 1;
-    }
-
-    .lang-switch span {
-      font-size: 0.72em;
-      color: rgba(11, 31, 58, 0.24);
-    }
-
-    .nav {
-      position: sticky;
-      top: env(safe-area-inset-top);
-      z-index: 1000;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: clamp(26px, 5.5vw, 76px);
-
-      padding: 12px 0 11px;
-      margin-bottom: 38px;
-
-
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-
-      background: rgba(232, 236, 241, 0.84);
-
-      border-top: 1px solid rgba(11, 31, 58, 0.055);
-      border-bottom: 1px solid rgba(11, 31, 58, 0.08);
-
-      transition:
-        background 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-    }
-
-    .nav.is-scrolled {
-      background: rgba(232, 236, 241, 0.96);
-
-      border-top-color: rgba(11, 31, 58, 0.065);
-      border-bottom-color: rgba(11, 31, 58, 0.11);
-
-      box-shadow:
-        0 5px 18px rgba(11, 31, 58, 0.035);
-    }
-
-    .nav a {
-      position: relative;
-      display: inline-block;
-
-      margin: 0;
-      padding: 7px 0 9px;
-
-      font-family:
-        "Iowan Old Style",
-        "Palatino Linotype",
-        "Book Antiqua",
-        Palatino,
-        Georgia,
-        serif;
-
-      font-size: 0.92em;
-      font-weight: 400;
-      line-height: 1;
-      letter-spacing: 0.105em;
-
-      font-kerning: normal;
-      text-rendering: optimizeLegibility;
-
-      color: rgba(38, 54, 74, 0.58);
-      text-align: center;
-      text-decoration: none;
-
-      transition:
-        color 0.22s ease,
-        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
-        letter-spacing 0.28s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .nav a:hover {
-      color: rgba(18, 39, 66, 0.9);
-      letter-spacing: 0.12em;
-      transform: translateY(-1px);
-    }
-
-    .nav a.active {
-      color: rgba(11, 31, 58, 0.98);
-      font-weight: 500;
-    }
-
-    .nav a.active::after {
-      content: "";
-      position: absolute;
-
-      left: 50%;
-      bottom: 0;
-
-      width: 17px;
-      height: 1px;
-
-      background: rgba(11, 31, 58, 0.72);
-
-      transform: translateX(-50%);
     }
 
     .nav a[href="/archive/"] {
@@ -283,7 +78,7 @@
     .research-side-nav {
       position: fixed;
       top: 50%;
-      left: calc(50% + 485px);
+      left: calc(50% + var(--side-nav-offset));
       transform: translateY(-42%);
       z-index: 30;
 
@@ -483,7 +278,7 @@
       min-width: 0;
       margin: 0;
 
-      font-size: 0.86em;
+      font-size: 0.95em;
       font-weight: 500;
       line-height: 1.48;
       letter-spacing: 0.015em;
@@ -493,7 +288,7 @@
 
     .current-project-description {
       margin: 0;
-      font-size: 0.77em;
+      font-size: 0.84em;
       line-height: 1.62;
       letter-spacing: 0.005em;
       color: rgba(34, 42, 53, 0.76);
@@ -543,7 +338,7 @@
 
     .current-project-caption-title {
       display: block;
-      font-size: 0.7em;
+      font-size: 0.66em;
       letter-spacing: 0.035em;
     }
 
@@ -679,8 +474,8 @@
     }
 
     .rt-meta .q-rank {
-      font-size: 0.62em;
-      opacity: 0.85;
+      font-size: 0.65em;
+      opacity: 0.95;
       letter-spacing: 0.04em;
     }
 
@@ -694,8 +489,8 @@
 
     .rt-meta {
       font-size: 0.74em;
-      color: #333;
-      opacity: 0.78;
+      color: #222;
+      opacity: 0.88;
       padding-left: 14px;
       position: relative;
       margin-left: 0px;
@@ -726,7 +521,6 @@
       padding-left: 6px;
       border-left: 1.3px solid rgba(0, 0, 0, 0.16);
     }
-
 
     .footnote-mark {
       margin-right: 6px;
@@ -784,14 +578,38 @@
     }
 
     .research-contact-heading p {
-      max-width: 390px;
+      width: 100%;
+      max-width: none;
       margin: 0;
 
       font-size: 0.88em;
       line-height: 1.7;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.02em;
+
+      text-align: justify;
+      text-align-last: left;
+      text-justify: inter-word;
 
       color: rgba(34, 42, 53, 0.62);
+    }
+
+    .research-contact-intro>span {
+      display: block;
+      width: 100%;
+    }
+
+    .research-contact-focus {
+      margin-top: 8px;
+    }
+
+
+    .research-contact-intro>span {
+      display: block;
+      width: 100%;
+    }
+
+    .research-contact-focus {
+      margin-top: 8px;
     }
 
     .research-contact-details {
@@ -1090,6 +908,14 @@
       color: rgba(11, 31, 58, 0.48);
     }
 
+    .research-contact-intro>span {
+      display: block;
+    }
+
+    .research-contact-focus {
+      margin-top: 8px;
+    }
+
     .research-contact-location-separator {
       color: rgba(11, 31, 58, 0.48);
     }
@@ -1272,128 +1098,9 @@
     }
 
     @media (max-width: 640px) {
-      .site-name {
-        margin-left: 8px;
-
-        font-size: 1.82em;
-        font-weight: 400;
-        line-height: 1;
-        letter-spacing: 0.065em;
-      }
-
-      .site-name:hover {
-        opacity: 0.9;
-        letter-spacing: 0.065em;
-      }
-
-      body {
-        margin: 24px auto;
-        padding: 0 16px;
-        line-height: 1.6;
-      }
 
       .research-tagline {
         display: none;
-      }
-
-      .nav {
-        position: sticky;
-        top: env(safe-area-inset-top);
-        z-index: 1000;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: clamp(12px, 3.8vw, 20px);
-
-        padding: 9px 0 8px;
-        margin-bottom: 22px;
-
-        background: rgba(232, 236, 241, 0.9);
-
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-
-        border-top: 1px solid rgba(11, 31, 58, 0.045);
-        border-bottom: 1px solid rgba(11, 31, 58, 0.075);
-
-        box-shadow: none;
-      }
-
-      .nav.is-scrolled {
-        background: rgba(232, 236, 241, 0.97);
-
-        border-top-color: rgba(11, 31, 58, 0.055);
-        border-bottom-color: rgba(11, 31, 58, 0.095);
-
-        box-shadow:
-          0 4px 14px rgba(11, 31, 58, 0.028);
-      }
-
-      .nav a {
-        position: relative;
-        display: inline-block;
-
-        margin: 0;
-        padding: 5px 0 7px;
-
-        font-family:
-          "Iowan Old Style",
-          "Palatino Linotype",
-          "Book Antiqua",
-          Palatino,
-          Georgia,
-          serif;
-
-        font-size: clamp(0.61em, 2.55vw, 0.69em);
-        font-weight: 400;
-        line-height: 1;
-        letter-spacing: 0.085em;
-
-        font-kerning: normal;
-        text-rendering: optimizeLegibility;
-
-        color: rgba(38, 54, 74, 0.54);
-        text-align: center;
-        text-decoration: none;
-        white-space: nowrap;
-
-        opacity: 1;
-        transform: none;
-
-        transition:
-          color 0.2s ease,
-          opacity 0.2s ease;
-      }
-
-      .nav a:hover {
-        color: rgba(18, 39, 66, 0.82);
-        letter-spacing: 0.085em;
-        opacity: 1;
-        transform: none;
-      }
-
-      .nav a.active {
-        color: rgba(11, 31, 58, 0.96);
-        font-weight: 500;
-        letter-spacing: 0.085em;
-        opacity: 1;
-      }
-
-      .nav a.active::after {
-        content: "";
-        position: absolute;
-
-        left: 50%;
-        bottom: 0;
-
-        width: 12px;
-        height: 1px;
-
-        background: rgba(11, 31, 58, 0.64);
-        opacity: 1;
-
-        transform: translateX(-50%);
       }
 
       .nav a[href="/archive/"] {
@@ -1407,21 +1114,8 @@
         opacity: 1;
       }
 
-      .site-header {
-        margin: 40px 0 27px;
-      }
-
-      .site-header-row {
-        align-items: flex-end;
-      }
-
-      .lang-switch {
-        right: 1px;
-        bottom: -20px;
-
-        gap: 6px;
-        font-size: 0.59em;
-        letter-spacing: 0.11em;
+      .page-content {
+        font-size: 1.1em;
       }
 
       .rt-dot {
@@ -1612,10 +1306,10 @@
       }
 
       .rt-meta {
-        font-size: 0.63rem;
+        font-size: 0.68rem;
         margin-left: 0;
         padding-left: 0;
-        opacity: 0.55;
+        opacity: 0.65;
         overflow: hidden;
         align-items: baseline;
         text-overflow: ellipsis;
@@ -1642,8 +1336,8 @@
       }
 
       .rt-meta .q-rank {
-        font-size: 0.43rem;
-        opacity: 0.85;
+        font-size: 0.73em;
+        opacity: 1;
         letter-spacing: 0.04em;
       }
 
@@ -1674,11 +1368,10 @@
 
       .current-project h2 {
         margin: 0;
-
-        font-size: 0.63em;
+        font-size: 0.68em;
         font-weight: 500;
         line-height: 1.48;
-        letter-spacing: 0.055em;
+        letter-spacing: 0.015em;
 
         color: rgba(11, 31, 58, 0.84);
       }
@@ -1689,17 +1382,13 @@
       }
 
       .current-project-period {
-        padding-top: 1px;
-
-        font-size: 0.52em;
-        letter-spacing: 0.035em;
-        color: rgba(11, 31, 58, 0.38);
+        display: none;
       }
 
       .current-project-topics {
         margin-top: 6px;
         gap: 5px;
-        font-size: 1.15em;
+        font-size: 1.13em;
       }
 
       .current-project-topics span {
@@ -1769,7 +1458,6 @@
 
       .research-contact {
         display: block;
-
         margin-top: 0px;
         padding: 15px 2px 54px;
       }
@@ -1782,6 +1470,7 @@
       .research-contact-heading p {
         font-size: 0.69em;
         line-height: 1.65;
+        max-width: 340px;
       }
 
       .research-contact-details {
@@ -1799,7 +1488,7 @@
       }
 
       .research-contact-row dd {
-        font-size: 0.76em;
+        font-size: 0.75em;
       }
 
       .research-contact-affiliation {
@@ -2559,12 +2248,18 @@
           <h2 id="contact-title" data-en="Contact" data-ja="お問い合わせ">
             Contact
           </h2>
+          <p class="research-contact-intro">
+            <span data-en="I welcome enquiries regarding research collaboration and academic exchange."
+              data-ja="共同研究や学術交流に関するお問い合わせを歓迎します。">
+              I welcome enquiries regarding research collaboration and academic exchange.
+            </span>
 
-          <p class="research-contact-intro"
-            data-en="For research collaboration, academic exchange, or related enquiries, please feel free to get in touch."
-            data-ja="共同研究、学術交流、その他の研究に関するお問い合わせは、下記までご連絡ください。">
-            For research collaboration, academic exchange, or related enquiries,
-            please feel free to get in touch.
+            <span class="research-contact-focus"
+              data-en="I am particularly interested in discussions related to ship hydrodynamics, hull roughness, and CFD-based modelling."
+              data-ja="特に、船舶流体力学、船体粗さ、CFDモデリングに関する議論に関心があります。">
+              I am particularly interested in discussions related to ship hydrodynamics,
+              hull roughness, and CFD-based modelling.
+            </span>
           </p>
 
           <div class="research-contact-affiliation">
