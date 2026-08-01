@@ -471,8 +471,8 @@
     }
 
     .publisher {
-      font-size: 0.72em;
-      color: #777;
+      font-size: 0.76em;
+      color: #666;
       opacity: 0.8;
       margin-left: 3px;
     }
@@ -689,19 +689,6 @@
       border-bottom: 1px solid rgba(11, 31, 58, 0.12);
     }
 
-    .review-note:hover .note-mark {
-      color: rgba(11, 31, 58, 0.85);
-    }
-
-    .note-mark {
-      position: relative;
-      top: -0.28em;
-      margin-left: 3px;
-      font-size: 0.82em;
-      color: rgba(11, 31, 58, 0.45);
-      transition: color 0.18s ease, opacity 0.18s ease;
-    }
-
     .expected-year {
       margin-left: 4px;
       font-size: 0.78em;
@@ -829,10 +816,13 @@
     .timeline-legend-label {
       position: relative;
       display: block;
+
       min-width: 0;
+      max-width: 100%;
 
       white-space: nowrap;
-      overflow: visible;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       cursor: default;
     }
@@ -1401,15 +1391,16 @@
         gap: 6px;
       }
 
-      .reviewer-journal-item {
+      #academic-activity .reviewer-list>li.reviewer-journal-item {
         padding-left: 11px;
+        margin-bottom: 0;
 
-        font-size: 0.68rem;
+        font-size: 0.64rem;
         line-height: 1.5;
       }
 
-      #academic-activity .reviewer-list>li {
-        margin-bottom: 0;
+      #academic-activity .review-note {
+        font-size: 1em;
       }
 
       #academic-activity .reviewer-award {
@@ -1426,6 +1417,18 @@
       #academic-activity .reviewer-award::before {
         left: 11px;
         width: 32px;
+      }
+
+      #academic-activity .reviewer-journal-item {
+        padding-left: 11px;
+        margin-bottom: 0;
+
+        font-size: 0.64rem;
+        line-height: 1.5;
+      }
+
+      #academic-activity .review-note {
+        font-size: 1em;
       }
 
       .reviewer-award-title,
@@ -1454,8 +1457,7 @@
         cursor: default;
       }
 
-      .review-tooltip,
-      .note-mark {
+      .review-tooltip {
         display: none;
       }
 
@@ -1957,7 +1959,7 @@
           <li class="reviewer-journal-item">
 
             <span class="review-note">
-              <em class="review-journal">Ocean Engineering</em><span class="note-mark">⁺</span>
+              <em class="review-journal">Ocean Engineering</em>
 
               <span class="review-tooltip">
                 <span>
@@ -1989,7 +1991,7 @@
 
           <li class="reviewer-journal-item">
             <span class="review-note">
-              <em class="review-journal">Physics of Fluids</em><span class="note-mark">⁺</span>
+              <em class="review-journal">Physics of Fluids</em>
 
               <span class="review-tooltip">
                 <span>

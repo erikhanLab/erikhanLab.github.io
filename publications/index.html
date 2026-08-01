@@ -204,9 +204,9 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-
+      letter-spacing: -0.015em;
       margin-left: -5px;
-      font-size: 1.02em;
+      font-size: 1.0em;
       font-weight: 500;
       line-height: 1.35;
       color: #111;
@@ -528,25 +528,6 @@
 
     .meta-tooltip:hover::after {
       transform: translateY(0);
-    }
-
-    .pub-title-accepted {
-      display: flex;
-      align-items: baseline;
-      gap: 3px;
-
-      max-width: none;
-      white-space: nowrap;
-      overflow: visible;
-      text-overflow: clip;
-
-      font-size: 0.94em;
-      line-height: 1.35;
-    }
-
-    .pub-title-accepted .title-text {
-      min-width: 0;
-      letter-spacing: -0.025em;
     }
 
     .subsection-accepted h3 {
@@ -990,24 +971,6 @@
         opacity: 0.58;
       }
 
-      .pub-title-accepted {
-        max-width: 100%;
-        overflow: hidden;
-        white-space: nowrap;
-      }
-
-      .pub-title-accepted .status {
-        flex-shrink: 0;
-      }
-
-      .pub-title-accepted .title-text {
-        display: block;
-        min-width: 0;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
-
       .scholar-metric {
         display: none;
       }
@@ -1363,7 +1326,7 @@
         </h3>
 
         <div class="pub-item">
-          <div class="pub-title pub-title-accepted">
+          <div class="pub-title">
             <span class="status accepted" aria-hidden="true">●</span>
 
             <span class="title-text">

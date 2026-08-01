@@ -302,7 +302,7 @@
 
     .trace-line.is-soft .trace-tag {
       opacity: 0.6;
-      font-size: 0.85em;
+      font-size: 0.8em;
     }
 
     .trace-dot {
@@ -322,6 +322,183 @@
       height: 0.5px;
       background: #dcdcdc;
       margin: 0px 0;
+    }
+
+    .timeline-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 750px) 125px;
+      column-gap: 42px;
+      align-items: start;
+
+      overflow: visible;
+    }
+
+    .timeline-main {
+      min-width: 0;
+    }
+
+    .timeline-signal-panel {
+      position: sticky;
+      top: 118px;
+
+      width: 270px;
+      box-sizing: border-box;
+      justify-self: start;
+
+      margin-top: 18px;
+      padding: 18px 0 18px 22px;
+
+      border-left: 1px solid rgba(11, 31, 58, 0.12);
+      color: var(--research-blue);
+      font-family: Georgia, serif;
+    }
+
+    .signal-kicker {
+      font-size: 0.68em;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.45;
+      margin-bottom: 14px;
+    }
+
+    .signal-year {
+      font-size: 1.00em;
+      letter-spacing: 0.14em;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    .signal-note {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+      max-width: 250px;
+      font-size: 0.68em;
+      line-height: 1.45;
+      letter-spacing: 0.045em;
+      font-style: normal;
+
+      color: rgba(11, 31, 58, 0.56);
+    }
+
+    .signal-note span {
+      position: relative;
+      display: block;
+
+      padding-left: 12px;
+    }
+
+    .signal-note span::before {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      top: 0.68em;
+
+      width: 3px;
+      height: 3px;
+
+      border-radius: 50%;
+      background: rgba(11, 31, 58, 0.36);
+
+      transform: translateY(-50%);
+    }
+
+    .signal-rows {
+      margin-bottom: 22px;
+    }
+
+    .signal-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      column-gap: 0px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(11, 31, 58, 0.055);
+    }
+
+    .signal-label {
+      font-size: 0.7em;
+      letter-spacing: 0.035em;
+      opacity: 0.62;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .signal-blocks {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      justify-content: flex-end;
+      min-width: 58px;
+    }
+
+    .signal-blocks i {
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 1px;
+      background: rgba(11, 31, 58, 0.28);
+      box-shadow: inset 0 0 0 1px rgba(11, 31, 58, 0.08);
+    }
+
+    .signal-blocks i.is-soft {
+      background: rgba(11, 31, 58, 0.12);
+    }
+
+    .signal-month-title {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 0.64em;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.4;
+    }
+
+    .signal-month-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 4px;
+      max-width: 210px;
+    }
+
+    .signal-month {
+      position: relative;
+      height: 12px;
+      border-radius: 2px;
+      background: rgba(11, 31, 58, 0.035);
+      box-shadow: inset 0 0 0 1px rgba(11, 31, 58, 0.045);
+    }
+
+    .signal-month.has-signal {
+      background: rgba(11, 31, 58, 0.12);
+    }
+
+    .signal-month.strong {
+      background: rgba(11, 31, 58, 0.24);
+    }
+
+    .signal-month::after {
+      content: attr(data-month);
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.52em;
+      opacity: 0.32;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 1200px) {
+      .timeline-layout {
+        display: block;
+      }
+
+      .timeline-signal-panel {
+        display: none;
+      }
     }
 
     @media (max-width: 640px) {
@@ -601,963 +778,1078 @@
 
     <div class="divider"></div>
 
-    <div class="year-section active" id="y2026">
 
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">July 2026</div>
-          <div class="trace-affiliation">Seoul National University</div>
+    <div class="timeline-layout">
+      <main class="timeline-main">
+
+        <div class="year-section active" id="y2026">
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">July 2026</div>
+              <div class="trace-affiliation">Seoul National University</div>
+            </div>
+            <div class="trace-lines">
+
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">
+                  ITTC roughness article accepted for publication
+                </span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">
+                  Ocean Engineering
+                </span>
+                <span class="trace-detail"
+                  title="Han (2026) — Beyond uniform roughness: Spatial variability of hull roughness and implications for single-parameter representation">
+                  Han (2026) — Beyond uniform roughness: Spatial variability of hull roughness and implications for
+                  single-parameter representation
+                </span>
+              </div>
+
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">Visiting Researcher appointment began</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">RIMSE, Seoul National University</span>
+                <span class="trace-detail">
+                  Research appointment supporting the development of an ITTC Recommended Procedure
+                </span>
+              </div>
+
+              <div class="trace-line is-soft">
+                <span class="trace-event">Doctoral oral examination completed</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Kyoto University</span>
+              </div>
+
+              <div class="trace-line is-soft">
+                <span class="trace-event">JoRes-informed roughness study initiated</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Siemens</span>
+              </div>
+
+              <div class="trace-line is-soft">
+                <span class="trace-event">Wageningen 2025 JoRes analysis pathway proposed</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">University of Iowa / MARIN</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">June 2026</div>
+              <div class="trace-affiliation">Independent Research</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">Symposium paper presented</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
+                <span class="trace-detail">
+                  Han et al. (2026) — A computational fluid dynamics analysis of spatial roughness distributions on
+                  ship
+                  resistance
+                </span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Research appointment approved; assigned to a RIMSE project</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Seoul National University</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD enrolment process initiated</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Kyoto University</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">May 2026</div>
+              <div class="trace-affiliation">Independent Research</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">Full paper accepted; presentation invited</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
+                <span class="trace-detail">
+                  Han et al. (2026) — A computational fluid dynamics analysis of spatial roughness distributions on
+                  ship
+                  resistance
+                </span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Visiting research period arranged</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Seoul National University</span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Upcoming research visit arranged</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">UPC Barcelona / University of Vigo</span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">JSPS DC1 research fellowship application submitted</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Japan Society for the Promotion of Science</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD research proposal developed</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Kyoto University</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD application withdrawn</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Georgia Tech</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Apr 2026</div>
+              <div class="trace-affiliation">Independent Research</div>
+            </div>
+
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">First citation recorded for first-author article</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Journal of Marine Science and Engineering</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD application concluded after screening</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Chalmers University of Technology</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Mar 2026</div>
+              <div class="trace-affiliation">Independent Research</div>
+            </div>
+
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">PhD admission approved; funding review pending</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Georgia Tech</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">ITTC roughness manuscript submitted</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Ocean Engineering</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD application concluded after screening</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">California Institute of Technology</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD application concluded after screening</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Johns Hopkins University</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Feb 2026</div>
+              <div class="trace-affiliation">Independent Research</div>
+            </div>
+
+            <div class="trace-lines">
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">Spatial roughness article accepted for publication</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Ocean Engineering</span>
+                <span class="trace-detail">
+                  Han et al. (2026) — Beyond uniform roughness: Ship resistance with spatially non-uniform hull
+                  surface
+                  conditions
+                </span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Full paper submitted</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Editorial decision received for FOWT manuscript</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Applied Ocean Research</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Full paper withdrawn from consideration</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">OMAE 2026</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD application concluded after interview</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Chalmers University of Technology</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Jan 2026</div>
+              <div class="trace-affiliation">Independent Research</div>
+            </div>
+
+            <div class="trace-lines">
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">Conference proceedings paper published</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">JASNAOE 2025</span>
+                <span class="trace-detail">
+                  Han and Lee (2025) — CFD-based model predictive control for point absorber wave energy converters
+                </span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Personal research website launched</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Research Portfolio</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Full paper submitted</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">OMAE 2026</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD offer declined</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">University of Strathclyde</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD application withdrawn</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">The University of Tokyo</span>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="trace-lines">
 
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">
-              ITTC roughness article accepted for publication
-            </span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">
-              Ocean Engineering
-            </span>
-            <span class="trace-detail"
-              title="Han (2026) — Beyond uniform roughness: Spatial variability of hull roughness and implications for single-parameter representation">
-              Han (2026) — Beyond uniform roughness: Spatial variability of hull roughness and implications for
-              single-parameter representation
-            </span>
+        <div class="year-section" id="y2025">
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Dec 2025</div>
+              <div class="trace-affiliation">Independent Research</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line">
+                <span class="trace-event">FOWT manuscript resubmitted</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Applied Ocean Research</span>
+              </div>
+            </div>
           </div>
 
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">Visiting Researcher appointment began</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">RIMSE, Seoul National University</span>
-            <span class="trace-detail">
-              Research appointment supporting the development of an ITTC Recommended Procedure
-            </span>
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Nov 2025</div>
+              <div class="trace-affiliation">The University of Osaka</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">Conference paper presented</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">JASNAOE 2025</span>
+                <span class="trace-detail">
+                  Han and Lee (2025) — CFD-based model predictive control for point absorber wave energy converters
+                </span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Visiting research period concluded</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">The University of Osaka</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Editorial decision received for FOWT manuscript</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Marine Energy Research</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD application withdrawn</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">NTNU</span>
+              </div>
+            </div>
           </div>
 
-          <div class="trace-line is-soft">
-            <span class="trace-event">Doctoral oral examination completed</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Kyoto University</span>
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Oct 2025</div>
+              <div class="trace-affiliation">The University of Osaka</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">Visiting research period began</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">The University of Osaka</span>
+                <span class="trace-detail">
+                  Research visit focused on CFD-based control for wave energy converters
+                </span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Full paper invitation received</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">OMAE 2026</span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Reviewer invitation received</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Physics of Fluids</span>
+              </div>
+            </div>
           </div>
 
-          <div class="trace-line is-soft">
-            <span class="trace-event">JoRes-informed roughness study initiated</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Siemens</span>
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Sep 2025</div>
+              <div class="trace-affiliation">University of Strathclyde</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">MSc degree awarded with Distinction</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">University of Strathclyde</span>
+                <span class="trace-detail">
+                  MSc thesis — Numerical investigation of fluid–structure interaction in semi-submersible FOWT
+                </span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Full paper discussors confirmed</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Spatial roughness manuscript resubmitted</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Ocean Engineering</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Full paper submitted</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">JASNAOE 2025</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Editorial decision received for spatial roughness manuscript</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Applied Ocean Research</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD application concluded after interview</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Chalmers University of Technology</span>
+              </div>
+            </div>
           </div>
 
-          <div class="trace-line is-soft">
-            <span class="trace-event">Wageningen 2025 JoRes analysis pathway proposed</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">University of Iowa / MARIN</span>
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Aug 2025</div>
+              <div class="trace-affiliation">University of Strathclyde</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">Full paper invitation received</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Research featured in university news</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">University of Strathclyde</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD offer declined</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">University of Southampton</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Jul 2025</div>
+              <div class="trace-affiliation">University of Strathclyde</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">Temperature article selected as cover article</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Journal of Marine Science and Engineering</span>
+                <span class="trace-detail">
+                  Selected as the July 2025 cover article from 185 papers
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Jun 2025</div>
+              <div class="trace-affiliation">University of Strathclyde</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">Temperature article accepted for publication</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Journal of Marine Science and Engineering</span>
+                <span class="trace-detail">
+                  Han et al. (2025) — Temperature-induced errors in ITTC model–ship extrapolation
+                </span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">International conference paper presented by co-author</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">MARINE 2025</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD application concluded after interview</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">NTNU</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">May 2025</div>
+              <div class="trace-affiliation">University of Strathclyde</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">Visiting research period arranged</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">The University of Osaka</span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Conference presentation delivered</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">WSOS 2025</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Temperature manuscript resubmitted</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Journal of Marine Science and Engineering</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Full paper submitted</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">MARINE 2025</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD application concluded after interview</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">NTNU</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Apr 2025</div>
+              <div class="trace-affiliation">University of Strathclyde</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">International Conference Travel Bursary awarded</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">The Worshipful Company of Shipwrights</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">PhD application concluded after screening</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">NTNU</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Mar 2025</div>
+              <div class="trace-affiliation">University of Strathclyde</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">First international conference presentation delivered</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">64ICNAMI</span>
+                <span class="trace-detail">
+                  Han et al. (2025) — Impact of towing tank temperature on model-ship extrapolation
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Feb 2025</div>
+              <div class="trace-affiliation">University of Strathclyde</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">Certificate of Excellence in Reviewing awarded</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Ocean Engineering</span>
+                <span class="trace-detail">
+                  Recognition for peer-review contribution to Ocean Engineering
+                </span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Full paper invitation received</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">MARINE 2025</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Full paper submitted</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">64ICNAMI</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Jan 2025</div>
+              <div class="trace-affiliation">University of Strathclyde</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">Full paper invitation received</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">64ICNAMI</span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Reviewer invitation received</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Ocean Engineering</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+        <div class="year-section" id="y2024">
 
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">June 2026</div>
-          <div class="trace-affiliation">Independent Research</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">Symposium paper presented</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
-            <span class="trace-detail">
-              Han et al. (2026) — A computational fluid dynamics analysis of spatial roughness distributions on ship
-              resistance
-            </span>
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Dec 2024</div>
+              <div class="trace-affiliation">University of Strathclyde</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line">
+                <span class="trace-event">Editorial decision received for temperature manuscript</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Physics of Fluids</span>
+              </div>
+            </div>
           </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">Research appointment approved; assigned to a RIMSE project</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Seoul National University</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD enrolment process initiated</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Kyoto University</span>
-          </div>
-        </div>
-      </div>
 
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">May 2026</div>
-          <div class="trace-affiliation">Independent Research</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">Full paper accepted; presentation invited</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
-            <span class="trace-detail">
-              Han et al. (2026) — A computational fluid dynamics analysis of spatial roughness distributions on ship
-              resistance
-            </span>
-          </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">Visiting research period arranged</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Seoul National University</span>
-          </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">Upcoming research visit arranged</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">UPC Barcelona / University of Vigo</span>
-          </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">JSPS DC1 research fellowship application submitted</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Japan Society for the Promotion of Science</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD research proposal developed</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Kyoto University</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD application withdrawn</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Georgia Tech</span>
-          </div>
-        </div>
-      </div>
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Oct 2024</div>
+              <div class="trace-affiliation">University of Strathclyde</div>
+            </div>
 
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Apr 2026</div>
-          <div class="trace-affiliation">Independent Research</div>
-        </div>
+            <div class="trace-lines">
+              <div class="trace-line">
+                <span class="trace-event">Editorial decision received for temperature manuscript</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Ocean Engineering</span>
+              </div>
+            </div>
+          </div>
 
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">First citation recorded for first-author article</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Journal of Marine Science and Engineering</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD application concluded after screening</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Chalmers University of Technology</span>
-          </div>
-        </div>
-      </div>
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Sep 2024</div>
+              <div class="trace-affiliation">University of Strathclyde</div>
+            </div>
 
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Mar 2026</div>
-          <div class="trace-affiliation">Independent Research</div>
-        </div>
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">MSc programme in Advanced Naval Architecture started</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">University of Strathclyde</span>
+              </div>
+            </div>
+          </div>
 
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">PhD admission approved; funding review pending</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Georgia Tech</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">ITTC roughness manuscript submitted</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Ocean Engineering</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD application concluded after screening</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">California Institute of Technology</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD application concluded after screening</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Johns Hopkins University</span>
-          </div>
-        </div>
-      </div>
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Aug 2024</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
 
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Feb 2026</div>
-          <div class="trace-affiliation">Independent Research</div>
-        </div>
+            <div class="trace-lines">
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">BSc degree awarded with early completion</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Inha University</span>
+                <span class="trace-detail">
+                  Graduation project — FOWT and wave-breaker interaction analysis using CFD and EFD
+                </span>
+              </div>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Co-authored roughness article accepted for publication</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Ocean Engineering</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Undergraduate research student role completed</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Resistance Hydrodynamics Laboratory</span>
+              </div>
+            </div>
+          </div>
 
-        <div class="trace-lines">
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">Spatial roughness article accepted for publication</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Ocean Engineering</span>
-            <span class="trace-detail">
-              Han et al. (2026) — Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface
-              conditions
-            </span>
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Jul 2024</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">Best Paper Award received</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">13th National Congress on Fluid Engineering</span>
+                <span class="trace-detail">
+                  Han et al. (2024) — Uncertainty of the ITTC 1957 correlation line with temperature variations
+                </span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Temperature manuscript submitted</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Ocean Engineering</span>
+              </div>
+            </div>
           </div>
-          <div class="trace-line">
-            <span class="trace-event">Full paper submitted</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">Editorial decision received for FOWT manuscript</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Applied Ocean Research</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">Full paper withdrawn from consideration</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">OMAE 2026</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD application concluded after interview</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Chalmers University of Technology</span>
-          </div>
-        </div>
-      </div>
 
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Jan 2026</div>
-          <div class="trace-affiliation">Independent Research</div>
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Jun 2024</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">Dean's International Excellence Scholarship awarded</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">University of Strathclyde</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Apr 2024</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+
+            <div class="trace-lines">
+              <div class="trace-line">
+                <span class="trace-event">Co-authored roughness manuscript submitted</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Ocean Engineering</span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <div class="trace-lines">
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">Conference proceedings paper published</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">JASNAOE 2025</span>
-            <span class="trace-detail">
-              Han and Lee (2025) — CFD-based model predictive control for point absorber wave energy converters
-            </span>
+        <div class="year-section" id="y2023">
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Dec 2023</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+
+            <div class="trace-lines">
+              <div class="trace-line">
+                <span class="trace-event">Academic Merit Scholarship awarded</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Inha University</span>
+              </div>
+            </div>
           </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">Personal research website launched</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Research Portfolio</span>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Nov 2023</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">BSc graduation project on FOWT–wave-breaker interaction</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Inha University</span>
+              </div>
+            </div>
           </div>
-          <div class="trace-line">
-            <span class="trace-event">Full paper submitted</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">OMAE 2026</span>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Oct 2023</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">First conference presentation delivered</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">The Society of Naval Architects of Korea</span>
+              </div>
+            </div>
           </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD offer declined</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">University of Strathclyde</span>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Sep 2023</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+
+            <div class="trace-lines">
+              <div class="trace-line">
+                <span class="trace-event">Student reporter role completed</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">The Korean Society of Ocean Engineers</span>
+              </div>
+            </div>
           </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD application withdrawn</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">The University of Tokyo</span>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Aug 2023</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">Industrial Technology Award received</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">KABOAT 2023</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Autonomous boat competition team role completed</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Inha University</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Jul 2023</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">Undergraduate research student role started</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Resistance Hydrodynamics Laboratory</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="year-section" id="y2022">
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Nov 2022</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">Excellence Award received in national competition</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Student Ship Design Project</span>
+              </div>
+            </div>
+          </div>
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Sep 2022</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line">
+                <span class="trace-event">Student reporter role started</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">The Korean Society of Ocean Engineers</span>
+              </div>
+            </div>
+          </div>
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Aug 2022</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">Autonomous System Award received</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">KABOAT 2022</span>
+              </div>
+              <div class="trace-line">
+                <span class="trace-event">Alumni scholarship awarded</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Inha NAOE Alumni</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">April 2022</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+            <div class="trace-line">
+              <span class="trace-event">Student ship design project team joined</span>
+              <span class="trace-dot">·</span>
+              <span class="trace-tag">Inha University</span>
+            </div>
           </div>
         </div>
-      </div>
+        <div class="year-section" id="y2021">
 
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Dec 2021</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line">
+                <span class="trace-event">Autonomous boat competition team joined</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Inha University</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month">Mar 2021</div>
+              <div class="trace-affiliation">Inha University</div>
+            </div>
+            <div class="trace-lines">
+              <div class="trace-line is-soft">
+                <span class="trace-event">BSc programme in Naval Architecture and Ocean Engineering started</span>
+                <span class="trace-dot">·</span>
+                <span class="trace-tag">Inha University</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-top-link">
+          <a href="#top" data-en="↑ Back to top" data-ja="↑ 上へ戻る">
+            ↑ Back to top
+          </a>
+        </div>
+
+      </main>
+
+      <aside class="timeline-signal-panel" aria-label="Academic record signal summary">
+        <div class="signal-kicker">Academic Summary</div>
+        <div class="signal-year" id="signal-year">2026</div>
+        <div class="signal-note" id="signal-note">
+          Ocean Engineering · Seoul National University · W2025
+        </div>
+
+        <div class="signal-rows" id="signal-rows"></div>
+      </aside>
     </div>
 
-    <div class="year-section" id="y2025">
+    <script>
+      const TIMELINE_SIGNALS = {
+        y2026: {
+          year: "2026",
+          note: "Visiting Research Appointment · Doctoral Preparation · W2025 Post-workshop Discussion",
+          rows: [
+            { label: "Journal articles", count: 2 },
+            { label: "Scholarly presentations", count: 1 },
+            { label: "Research appointments & visits", count: 1 }
+          ]
+        },
 
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Dec 2025</div>
-          <div class="trace-affiliation">Independent Research</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line">
-            <span class="trace-event">FOWT manuscript resubmitted</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Applied Ocean Research</span>
-          </div>
-        </div>
-      </div>
+        y2025: {
+          year: "2025",
+          note: "Master’s Degree Completion · Visiting Research",
+          rows: [
+            { label: "Journal articles", count: 1 },
+            { label: "Scholarly presentations", count: 3 },
+            { label: "Research appointments & visits", count: 1 },
+            { label: "Honours & awards", count: 2 }
+          ]
+        },
 
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Nov 2025</div>
-          <div class="trace-affiliation">The University of Osaka</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">Conference paper presented</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">JASNAOE 2025</span>
-            <span class="trace-detail">
-              Han and Lee (2025) — CFD-based model predictive control for point absorber wave energy converters
-            </span>
-          </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">Visiting research period concluded</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">The University of Osaka</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">Editorial decision received for FOWT manuscript</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Marine Energy Research</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD application withdrawn</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">NTNU</span>
-          </div>
-        </div>
-      </div>
+        y2024: {
+          year: "2024",
+          note: "Bachelor’s Degree Completion · Master’s Programme Entry",
+          rows: [
+            { label: "Journal articles", count: 1 },
+            { label: "Scholarly presentations", count: 1 },
+            { label: "Honours & awards", count: 2 }
+          ]
+        },
 
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Oct 2025</div>
-          <div class="trace-affiliation">The University of Osaka</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">Visiting research period began</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">The University of Osaka</span>
-            <span class="trace-detail">
-              Research visit focused on CFD-based control for wave energy converters
-            </span>
-          </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">Full paper invitation received</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">OMAE 2026</span>
-          </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">Reviewer invitation received</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Physics of Fluids</span>
-          </div>
-        </div>
-      </div>
+        y2023: {
+          year: "2023",
+          note: "Undergraduate Research Initiation",
+          rows: [
+            { label: "Scholarly presentations", count: 1 },
+            { label: "Research appointments & visits", count: 1 },
+            { label: "Honours & awards", count: 2 }
+          ]
+        },
 
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Sep 2025</div>
-          <div class="trace-affiliation">University of Strathclyde</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">MSc degree awarded with Distinction</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">University of Strathclyde</span>
-            <span class="trace-detail">
-              MSc thesis — Numerical investigation of fluid–structure interaction in semi-submersible FOWT
-            </span>
-          </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">Full paper discussors confirmed</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">Spatial roughness manuscript resubmitted</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Ocean Engineering</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">Full paper submitted</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">JASNAOE 2025</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">Editorial decision received for spatial roughness manuscript</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Applied Ocean Research</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD application concluded after interview</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Chalmers University of Technology</span>
-          </div>
-        </div>
-      </div>
+        y2022: {
+          year: "2022",
+          note: "Engineering Project Activities",
+          rows: [
+            { label: "Honours & awards", count: 3 }
+          ]
+        },
 
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Aug 2025</div>
-          <div class="trace-affiliation">University of Strathclyde</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">Full paper invitation received</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
-          </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">Research featured in university news</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">University of Strathclyde</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD offer declined</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">University of Southampton</span>
-          </div>
-        </div>
-      </div>
+        y2021: {
+          year: "2021",
+          note: "Bachelor’s Programme Entry",
+          rows: []
+        }
+      };
 
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Jul 2025</div>
-          <div class="trace-affiliation">University of Strathclyde</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">Temperature article selected as cover article</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Journal of Marine Science and Engineering</span>
-            <span class="trace-detail">
-              Selected as the July 2025 cover article from 185 papers
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Jun 2025</div>
-          <div class="trace-affiliation">University of Strathclyde</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">Temperature article accepted for publication</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Journal of Marine Science and Engineering</span>
-            <span class="trace-detail">
-              Han et al. (2025) — Temperature-induced errors in ITTC model–ship extrapolation
-            </span>
-          </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">International conference paper presented by co-author</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">MARINE 2025</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD application concluded after interview</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">NTNU</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">May 2025</div>
-          <div class="trace-affiliation">University of Strathclyde</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">Visiting research period arranged</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">The University of Osaka</span>
-          </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">Conference presentation delivered</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">WSOS 2025</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">Temperature manuscript resubmitted</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Journal of Marine Science and Engineering</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">Full paper submitted</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">MARINE 2025</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD application concluded after interview</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">NTNU</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Apr 2025</div>
-          <div class="trace-affiliation">University of Strathclyde</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">International Conference Travel Bursary awarded</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">The Worshipful Company of Shipwrights</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">PhD application concluded after screening</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">NTNU</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Mar 2025</div>
-          <div class="trace-affiliation">University of Strathclyde</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">First international conference presentation delivered</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">64ICNAMI</span>
-            <span class="trace-detail">
-              Han et al. (2025) — Impact of towing tank temperature on model-ship extrapolation
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Feb 2025</div>
-          <div class="trace-affiliation">University of Strathclyde</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">Certificate of Excellence in Reviewing awarded</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Ocean Engineering</span>
-            <span class="trace-detail">
-              Recognition for peer-review contribution to Ocean Engineering
-            </span>
-          </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">Full paper invitation received</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">MARINE 2025</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">Full paper submitted</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">64ICNAMI</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Jan 2025</div>
-          <div class="trace-affiliation">University of Strathclyde</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">Full paper invitation received</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">64ICNAMI</span>
-          </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">Reviewer invitation received</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Ocean Engineering</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="year-section" id="y2024">
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Dec 2024</div>
-          <div class="trace-affiliation">University of Strathclyde</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line">
-            <span class="trace-event">Editorial decision received for temperature manuscript</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Physics of Fluids</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Oct 2024</div>
-          <div class="trace-affiliation">University of Strathclyde</div>
-        </div>
-
-        <div class="trace-lines">
-          <div class="trace-line">
-            <span class="trace-event">Editorial decision received for temperature manuscript</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Ocean Engineering</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Sep 2024</div>
-          <div class="trace-affiliation">University of Strathclyde</div>
-        </div>
-
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">MSc programme in Advanced Naval Architecture started</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">University of Strathclyde</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Aug 2024</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-
-        <div class="trace-lines">
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">BSc degree awarded with early completion</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Inha University</span>
-            <span class="trace-detail">
-              Graduation project — FOWT and wave-breaker interaction analysis using CFD and EFD
-            </span>
-          </div>
-          <div class="trace-line is-soft">
-            <span class="trace-event">Co-authored roughness article accepted for publication</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Ocean Engineering</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">Undergraduate research student role completed</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Resistance Hydrodynamics Laboratory</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Jul 2024</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-highlight" tabindex="0">
-            <span class="trace-event">Best Paper Award received</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">13th National Congress on Fluid Engineering</span>
-            <span class="trace-detail">
-              Han et al. (2024) — Uncertainty of the ITTC 1957 correlation line with temperature variations
-            </span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">Temperature manuscript submitted</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Ocean Engineering</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Jun 2024</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">Dean's International Excellence Scholarship awarded</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">University of Strathclyde</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Apr 2024</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-
-        <div class="trace-lines">
-          <div class="trace-line">
-            <span class="trace-event">Co-authored roughness manuscript submitted</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Ocean Engineering</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="year-section" id="y2023">
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Dec 2023</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-
-        <div class="trace-lines">
-          <div class="trace-line">
-            <span class="trace-event">Academic Merit Scholarship awarded</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Inha University</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Nov 2023</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">BSc graduation project on FOWT–wave-breaker interaction</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Inha University</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Oct 2023</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">First conference presentation delivered</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">The Society of Naval Architects of Korea</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Sep 2023</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-
-        <div class="trace-lines">
-          <div class="trace-line">
-            <span class="trace-event">Student reporter role completed</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">The Korean Society of Ocean Engineers</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Aug 2023</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">Industrial Technology Award received</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">KABOAT 2023</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">Autonomous boat competition team role completed</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Inha University</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Jul 2023</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">Undergraduate research student role started</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Resistance Hydrodynamics Laboratory</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="year-section" id="y2022">
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Nov 2022</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">Excellence Award received in national competition</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Student Ship Design Project</span>
-          </div>
-        </div>
-      </div>
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Sep 2022</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line">
-            <span class="trace-event">Student reporter role started</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">The Korean Society of Ocean Engineers</span>
-          </div>
-        </div>
-      </div>
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Aug 2022</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">Autonomous System Award received</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">KABOAT 2022</span>
-          </div>
-          <div class="trace-line">
-            <span class="trace-event">Alumni scholarship awarded</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Inha NAOE Alumni</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">April 2022</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-        <div class="trace-line">
-          <span class="trace-event">Student ship design project team joined</span>
-          <span class="trace-dot">·</span>
-          <span class="trace-tag">Inha University</span>
-        </div>
-      </div>
-    </div>
-    <div class="year-section" id="y2021">
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Dec 2021</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line">
-            <span class="trace-event">Autonomous boat competition team joined</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Inha University</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="trace-entry">
-        <div class="trace-month-block">
-          <div class="trace-month">Mar 2021</div>
-          <div class="trace-affiliation">Inha University</div>
-        </div>
-        <div class="trace-lines">
-          <div class="trace-line is-soft">
-            <span class="trace-event">BSc programme in Naval Architecture and Ocean Engineering started</span>
-            <span class="trace-dot">·</span>
-            <span class="trace-tag">Inha University</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-top-link">
-      <a href="#top" data-en="↑ Back to top" data-ja="↑ 上へ戻る">
-        ↑ Back to top
-      </a>
-    </div>
-  </div>
-
-  <script>
-    function showYear(id, el) {
-      document.querySelectorAll('.year-section')
-        .forEach(sec => sec.classList.remove('active'));
-
-      document.getElementById(id).classList.add('active');
-
-      document.querySelectorAll('.year-tabs span')
-        .forEach(tab => tab.classList.remove('active'));
-
-      el.classList.add('active');
-    }
-
-    const DEFAULT_LANG = "en";
-    const SUPPORTED_LANGS = new Set(["en", "ja"]);
-
-    function getSessionLang() {
-      const saved = sessionStorage.getItem("lang");
-      return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
-    }
-
-    function applyLang(lang) {
-      const safeLang = SUPPORTED_LANGS.has(lang) ? lang : DEFAULT_LANG;
-
-      document.documentElement.setAttribute("lang", safeLang);
-      document.documentElement.setAttribute("data-lang", safeLang);
-
-      document.querySelectorAll("[data-en]").forEach(el => {
-        const value = el.getAttribute(`data-${safeLang}`);
-        if (value !== null) el.innerHTML = value;
-      });
-
-      document.querySelectorAll(".lang-switch a").forEach(a => {
-        a.classList.toggle("active", a.dataset.lang === safeLang);
-      });
-    }
-
-    function updateNavigationState() {
-      const nav = document.querySelector(".nav");
-
-      if (!nav) return;
-
-      nav.classList.toggle(
-        "is-scrolled",
-        window.scrollY > 24
-      );
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      applyLang(getSessionLang());
-
-      document.querySelectorAll(".lang-switch a").forEach(a => {
-        a.addEventListener("click", event => {
-          event.preventDefault();
-
-          const selected =
-            SUPPORTED_LANGS.has(a.dataset.lang)
-              ? a.dataset.lang
-              : DEFAULT_LANG;
-
-          sessionStorage.setItem("lang", selected);
-          applyLang(selected);
-        });
-      });
-
-      updateNavigationState();
-    });
-
-    window.addEventListener(
-      "scroll",
-      updateNavigationState,
-      {
-        passive: true
+      function createSignalBlocks(count, soft = false) {
+        return Array.from({ length: count })
+          .map(() => `<i class="${soft ? "is-soft" : ""}" aria-hidden="true"></i>`)
+          .join("");
       }
-    );
 
-    window.addEventListener("load", () => {
-      document
-        .querySelector(".page-content")
-        ?.classList.add("loaded");
-    });
-  </script>
+      function updateTimelineSignals(id) {
+        const data = TIMELINE_SIGNALS[id];
+
+        if (!data) return;
+
+        const yearEl = document.getElementById("signal-year");
+        const noteEl = document.getElementById("signal-note");
+        const rowsEl = document.getElementById("signal-rows");
+
+        if (!yearEl || !noteEl || !rowsEl) return;
+
+        yearEl.textContent = data.year;
+
+        noteEl.replaceChildren(
+          ...data.note.split("·").map(item => {
+            const span = document.createElement("span");
+            span.textContent = item.trim();
+            return span;
+          })
+        );
+
+        rowsEl.innerHTML = data.rows.map(row => `
+    <div class="signal-row">
+      <span class="signal-label">${row.label}</span>
+      <span class="signal-blocks" aria-label="${row.count} ${row.label}">
+        ${createSignalBlocks(row.count, row.soft)}
+      </span>
+    </div>
+  `).join("");
+
+      }
+      function showYear(id, el) {
+        document.querySelectorAll(".year-section")
+          .forEach(sec => sec.classList.remove("active"));
+
+        document.getElementById(id).classList.add("active");
+
+        document.querySelectorAll(".year-tabs span")
+          .forEach(tab => tab.classList.remove("active"));
+
+        el.classList.add("active");
+
+        updateTimelineSignals(id);
+      }
+
+      const DEFAULT_LANG = "en";
+      const SUPPORTED_LANGS = new Set(["en", "ja"]);
+
+      function getSessionLang() {
+        const saved = sessionStorage.getItem("lang");
+        return SUPPORTED_LANGS.has(saved) ? saved : DEFAULT_LANG;
+      }
+
+      function applyLang(lang) {
+        const safeLang = SUPPORTED_LANGS.has(lang) ? lang : DEFAULT_LANG;
+
+        document.documentElement.setAttribute("lang", safeLang);
+        document.documentElement.setAttribute("data-lang", safeLang);
+
+        document.querySelectorAll("[data-en]").forEach(el => {
+          const value = el.getAttribute(`data-${safeLang}`);
+          if (value !== null) el.innerHTML = value;
+        });
+
+        document.querySelectorAll(".lang-switch a").forEach(a => {
+          a.classList.toggle("active", a.dataset.lang === safeLang);
+        });
+      }
+
+      function updateNavigationState() {
+        const nav = document.querySelector(".nav");
+
+        if (!nav) return;
+
+        nav.classList.toggle(
+          "is-scrolled",
+          window.scrollY > 24
+        );
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        applyLang(getSessionLang());
+        updateTimelineSignals("y2026");
+
+        document.querySelectorAll(".lang-switch a").forEach(a => {
+          a.addEventListener("click", event => {
+            event.preventDefault();
+
+            const selected =
+              SUPPORTED_LANGS.has(a.dataset.lang)
+                ? a.dataset.lang
+                : DEFAULT_LANG;
+
+            sessionStorage.setItem("lang", selected);
+            applyLang(selected);
+          });
+        });
+
+        updateNavigationState();
+      });
+
+      window.addEventListener(
+        "scroll",
+        updateNavigationState,
+        {
+          passive: true
+        }
+      );
+
+      window.addEventListener("load", () => {
+        document
+          .querySelector(".page-content")
+          ?.classList.add("loaded");
+      });
+    </script>
 
 </body>
 
