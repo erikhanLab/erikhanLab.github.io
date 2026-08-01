@@ -172,7 +172,7 @@
     }
 
     .lang-switch {
-      font-size: 0.6em;
+      font-size: 0.65em;
       margin-bottom: -30px;
       letter-spacing: 0.22em;
       color: #64748b;
@@ -503,36 +503,24 @@
       }
 
       .header {
-        margin-bottom: 0px;
         font-size: 0.8em;
-      }
-
-      .header-row h1 {
-        font-size: 2.8em;
       }
 
       .header-row {
         gap: 18px;
       }
 
-      .profile-block {
-        margin-left: auto;
+      .header-row h1 {
+        font-size: 2.8em;
       }
 
       .id-photo {
         width: 56px;
         height: 56px;
-        margin-left: 0;
       }
 
       .tagline {
-        text-align: left;
         font-size: 1.04em;
-      }
-
-      .nav {
-        margin-bottom: 30px;
-        font-size: 0.88em;
       }
 
       .affiliation {
@@ -541,35 +529,19 @@
         line-height: 1.55;
       }
 
-      .affiliation-degree-sep {
-        margin: 0 1px;
-        opacity: 0.7;
-      }
-
-      .affiliation-year {
-        opacity: 1;
-        font-size: 0.88em;
-      }
-
-      .affiliation-group {
-        background: transparent;
-        border-radius: 0;
+      .affiliation-group-past {
+        display: none;
       }
 
       .affiliation-group-current {
         margin-top: 0;
         padding: 2px 0 3px 10px;
-
-        background: transparent;
         border-left: 1px solid rgba(11, 31, 58, 0.14);
       }
 
-      .affiliation-group-past {
-        margin-top: 16px;
-        padding: 0;
-
-        background: transparent;
-        border-left: 0;
+      .affiliation-year {
+        font-size: 0.88em;
+        opacity: 1;
       }
 
       .affiliation-current-primary {
@@ -585,27 +557,9 @@
         letter-spacing: 0.16em;
       }
 
-      .affiliation-past-item {
-        font-size: 0.87em;
-      }
-
       .recent-work {
-        display: block;
-        line-height: 1.5;
-        margin-top: 10px;
-        margin-bottom: 5px;
-      }
-
-      .recent-title {
-        display: inline;
-        font-size: 1.13em;
-      }
-
-      .recent-meta {
-        display: inline;
-        margin-top: 2px;
-        font-size: 0.85em;
-        opacity: 0.7;
+        margin-top: 24px;
+        margin-bottom: 26px;
       }
 
       .recent-label {
@@ -617,8 +571,26 @@
       }
 
       .recent-work a {
-        font-size: 0.82em;
-        align-items: center;
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .recent-title {
+        font-size: 1.13em;
+      }
+
+      .recent-title,
+      .recent-meta {
+        display: inline;
+        white-space: nowrap;
+      }
+
+      .recent-meta {
+        font-size: 0.8em;
+        opacity: 0.7;
       }
 
       .fade-ellipsis {
@@ -626,12 +598,9 @@
         letter-spacing: -0.04em;
       }
 
-      .footer-contact {
-        margin-top: 0px;
-      }
-
-      .keywords {
-        text-align: center;
+      .nav {
+        margin-bottom: 30px;
+        font-size: 0.88em;
       }
     }
   </style>
@@ -712,9 +681,6 @@
           <span class="affiliation-line affiliation-current-secondary">
             <span data-en="Seoul National University" data-ja="ソウル大学校">
               Seoul National University
-            </span>
-            <span class="affiliation-year" data-en="(from July 2026)" data-ja="（2026年7月より）">
-              (from July 2026)
             </span>
           </span>
 
@@ -804,7 +770,7 @@
             </span>
 
             <span class="mobile-only">
-              Beyond uniform roughness: Ship resistance
+              Beyond uniform roughness:
               <span class="fade-ellipsis">...</span>
             </span>
           </span>

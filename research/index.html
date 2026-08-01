@@ -539,14 +539,17 @@
 
     .research-contact {
       position: relative;
-
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.9fr);
+      grid-template-columns: minmax(0, 1fr) 250px;
       column-gap: 60px;
       align-items: start;
-
       margin-top: 60px;
       padding: 20px 4px 40px;
+      width: 850px;
+    }
+
+    .research-contact-heading {
+      min-width: 0;
     }
 
     .research-contact::before {
@@ -584,7 +587,7 @@
 
       font-size: 0.88em;
       line-height: 1.7;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.012em;
 
       text-align: justify;
       text-align-last: left;
@@ -616,6 +619,7 @@
       display: grid;
       gap: 16px;
 
+      width: 250px;
       margin: 10px 0 0;
     }
 
