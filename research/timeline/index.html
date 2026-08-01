@@ -185,16 +185,6 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.055);
     }
 
-    .trace-affiliation {
-      margin-top: 3px;
-      font-size: 0.68em;
-      letter-spacing: 0.06em;
-      color: #666;
-      opacity: 0.78;
-      line-height: 1.35;
-      white-space: nowrap;
-    }
-
     .trace-entry:last-child {
       border-bottom: none;
     }
@@ -211,117 +201,177 @@
       white-space: nowrap;
     }
 
+    .trace-affiliation {
+      margin-top: 3px;
+      font-size: 0.68em;
+      letter-spacing: 0.06em;
+      color: #666;
+      opacity: 0.78;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
     .trace-lines {
       min-width: 0;
     }
 
-    .trace-event {
-      color: #555;
-      opacity: 0.72;
+    .trace-line,
+    .trace-line.is-soft {
+      display: grid;
+      grid-template-columns: minmax(0, max-content) auto minmax(0, 1fr);
+      align-items: baseline;
+
+      position: relative;
+      margin: 0 0 7px;
+      padding: 0;
+
+      color: #454b54;
+      font-size: 0.85em;
+      line-height: 1.45;
+
+      background: none;
+      border: 0;
+      cursor: default;
+    }
+
+    .trace-line:last-child,
+    .trace-line.is-soft:last-child {
+      margin-bottom: 0;
+    }
+
+    .trace-event,
+    .trace-line.is-soft .trace-event {
+      grid-column: 1;
+      grid-row: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #333333;
+      font-size: 1.1em;
+      opacity: 0.7;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .trace-dot,
+    .trace-line.is-soft .trace-dot {
+      grid-column: 2;
+
+      display: inline;
+      margin: 0 6px;
+
+      color: var(--research-blue);
+      opacity: 0.25;
+    }
+
+    .trace-tag,
+    .trace-line.is-soft .trace-tag {
+      grid-column: 3;
+
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      margin: 0;
+
+      color: var(--research-blue);
+      opacity: 0.65;
+
+      font-size: 0.78em;
+      font-style: normal;
       font-weight: 400;
     }
 
-    .trace-line {
-      position: relative;
-      font-size: 0.85em;
-      line-height: 1.55;
-      margin-bottom: 5px;
-      color: #555;
-      opacity: 1;
+    .trace-line:not(.is-highlight) .trace-detail {
+      display: none;
+    }
+
+    .trace-line.is-soft {
+      padding: 3px 0 3px 9px;
+      border-left: 1px solid rgba(11, 31, 58, 0.2);
     }
 
     .trace-line.is-highlight {
-      margin: 6px 0 7px;
+      display: grid;
+      grid-template-columns: minmax(0, max-content) auto minmax(0, 1fr);
+      grid-template-rows: auto auto;
+      align-items: baseline;
+      margin: 4px 0 11px;
+      padding: 3px 0 4px 9px;
+      background: none;
+      border: 0;
+      border-left: 1.5px solid rgba(11, 31, 58, 0.4);
       cursor: default;
-      padding: 3px 0 3px 8px;
-      background: linear-gradient(90deg,
-          rgba(11, 31, 58, 0.028),
-          rgba(11, 31, 58, 0.01) 54%,
-          transparent);
-      border-left: 1px solid rgba(11, 31, 58, 0.24);
     }
 
     .trace-line.is-highlight .trace-event {
-      color: #2b3342;
+      grid-column: 1;
+      grid-row: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #111111;
+      font-size: 1.1em;
       opacity: 1;
-      font-weight: 560;
-      letter-spacing: 0.006em;
+      font-weight: 500;
+      letter-spacing: 0;
     }
 
     .trace-line.is-highlight .trace-dot {
+      grid-column: 2;
+      grid-row: 1;
       display: inline;
-    }
-
-    .trace-line.is-highlight .trace-tag {
-      color: var(--research-blue);
-      opacity: 0.82;
-      font-style: italic;
-      font-size: 0.85em;
-      margin-top: 1px;
-    }
-
-    .trace-detail {
-      display: block;
-      max-height: 0;
-      overflow: hidden;
-      margin-top: 0;
-      color: #333;
-      opacity: 0;
-      font-size: 0.85em;
-      line-height: 1.45;
-      font-style: italic;
-      transform: translateY(-2px);
-      transition:
-        max-height 0.22s ease,
-        opacity 0.18s ease,
-        margin-top 0.18s ease,
-        transform 0.18s ease;
-
-      width: 100%;
-      min-width: 0;
-
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .trace-line.is-highlight:hover .trace-detail,
-    .trace-line.is-highlight:focus-within .trace-detail,
-    .trace-line.is-highlight:focus .trace-detail {
-      max-height: 80px;
-      margin-top: 5px;
-      opacity: 0.48;
-      transform: translateY(0);
-    }
-
-    .trace-line.is-soft .trace-event {
-      color: #111;
-      opacity: 0.98;
-      font-weight: 500;
-    }
-
-    .trace-line.is-soft .trace-tag {
-      opacity: 0.6;
-      font-size: 0.8em;
-    }
-
-    .trace-dot {
       margin: 0 6px;
+      color: var(--research-blue);
       opacity: 0.3;
     }
 
-    .trace-tag {
-      font-size: 0.85em;
-      color: var(--research-blue);
-      opacity: 0.42;
-      font-style: italic;
+    .trace-line.is-highlight .trace-tag {
+      grid-column: 3;
+      grid-row: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
       white-space: nowrap;
+      margin: 0;
+      color: var(--research-blue);
+      opacity: 0.9;
+      font-size: 0.78em;
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    .trace-line.is-highlight .trace-detail {
+      grid-column: 1 / -1;
+      grid-row: 2;
+
+      display: block;
+      width: 100%;
+      min-width: 0;
+      max-height: none;
+
+      margin: 3px 0 0;
+      padding: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #444444;
+      opacity: 0.81;
+      font-size: 0.8em;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.4;
+      transform: none;
+      transition: none;
     }
 
     .divider {
       height: 0.5px;
       background: #dcdcdc;
-      margin: 0px 0;
+      margin: 0;
     }
 
     .timeline-layout {
@@ -329,7 +379,6 @@
       grid-template-columns: minmax(0, 750px) 125px;
       column-gap: 42px;
       align-items: start;
-
       overflow: visible;
     }
 
@@ -362,7 +411,7 @@
     }
 
     .signal-year {
-      font-size: 1.00em;
+      font-size: 1em;
       letter-spacing: 0.14em;
       font-weight: 400;
       margin-bottom: 6px;
@@ -372,8 +421,10 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+
       margin-bottom: 20px;
       max-width: 250px;
+
       font-size: 0.68em;
       line-height: 1.45;
       letter-spacing: 0.045em;
@@ -385,7 +436,6 @@
     .signal-note span {
       position: relative;
       display: block;
-
       padding-left: 12px;
     }
 
@@ -413,7 +463,7 @@
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       align-items: center;
-      column-gap: 0px;
+
       padding: 8px 0;
       border-bottom: 1px solid rgba(11, 31, 58, 0.055);
     }
@@ -422,6 +472,7 @@
       font-size: 0.7em;
       letter-spacing: 0.035em;
       opacity: 0.62;
+
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -439,6 +490,7 @@
       display: block;
       width: 8px;
       height: 8px;
+
       border-radius: 1px;
       background: rgba(11, 31, 58, 0.28);
       box-shadow: inset 0 0 0 1px rgba(11, 31, 58, 0.08);
@@ -451,6 +503,7 @@
     .signal-month-title {
       margin-top: 20px;
       margin-bottom: 10px;
+
       font-size: 0.64em;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -467,6 +520,7 @@
     .signal-month {
       position: relative;
       height: 12px;
+
       border-radius: 2px;
       background: rgba(11, 31, 58, 0.035);
       box-shadow: inset 0 0 0 1px rgba(11, 31, 58, 0.045);
@@ -482,10 +536,12 @@
 
     .signal-month::after {
       content: attr(data-month);
+
       position: absolute;
       top: 18px;
       left: 50%;
       transform: translateX(-50%);
+
       font-size: 0.52em;
       opacity: 0.32;
       letter-spacing: 0.02em;
@@ -503,7 +559,7 @@
 
     @media (max-width: 640px) {
       .page-content {
-        font-size: 1.0em;
+        font-size: 1em;
       }
 
       .nav a[href="/archive/"] {
@@ -552,11 +608,14 @@
         flex-wrap: nowrap;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+
         margin-top: -3px;
         margin-bottom: 3px;
         padding: 3px 8px;
+
         font-size: 0.74em;
         letter-spacing: 0.08em;
+
         background: rgba(255, 255, 255, 0.22);
         border: 1px solid rgba(11, 31, 58, 0.035);
         border-radius: 3px;
@@ -585,7 +644,6 @@
       .trace-entry {
         display: block;
         margin: 0;
-
         padding: 10px 0 20px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.055);
       }
@@ -594,132 +652,212 @@
         display: flex;
         align-items: baseline;
         gap: 8px;
+
         padding-top: 0;
         margin-bottom: 7px;
       }
 
       .trace-month {
+        flex-shrink: 0;
+
         font-size: 0.73em;
         letter-spacing: 0.13em;
         opacity: 0.86;
-        flex-shrink: 0;
       }
 
       .trace-affiliation {
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: 0.62em;
-        letter-spacing: 0.04em;
-        opacity: 0.72;
-        line-height: 1.2;
-        white-space: nowrap;
+        min-width: 0;
+        margin: 0;
+
         overflow: hidden;
         text-overflow: ellipsis;
+        white-space: nowrap;
+
+        font-size: 0.62em;
+        letter-spacing: 0.04em;
+        line-height: 1.2;
+        opacity: 0.72;
       }
 
       .trace-lines {
-        padding-left: 8px;
-        border-left: 1px solid rgba(11, 31, 58, 0.08);
+        min-width: 0;
+        padding-left: 0;
+        border-left: 0;
       }
 
-      .trace-line:last-child {
+      /* Normal: title + source = two lines */
+      .trace-line,
+      .trace-line.is-soft {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        row-gap: 2px;
+
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+
+        margin: 0 0 9px;
+        padding: 0;
+
+        font-size: 0.74em;
+        line-height: 1.4;
+
+        background: none;
+        border: 0;
+      }
+
+      .trace-line.is-soft {
+        padding: 3px 0 3px 8px;
+        border: 0;
+        border-left: 1px solid rgba(11, 31, 58, 0.14);
+      }
+
+      .trace-line:last-child,
+      .trace-line.is-soft:last-child {
         margin-bottom: 0;
       }
 
-      .trace-line {
-        font-size: 0.71em;
-        line-height: 1.42;
-        margin-bottom: 5px;
-        opacity: 1;
-      }
-
-      .trace-event {
+      .trace-event,
+      .trace-line.is-soft .trace-event {
         display: block;
+        grid-column: 1;
+        grid-row: 1;
+
+        min-width: 0;
         max-width: 100%;
+
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        color: #555;
-        opacity: 0.68;
-        font-size: 1.1em;
+
+        color: #424954;
+        opacity: 0.86;
+
+        font-size: 1em;
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+
+      .trace-dot,
+      .trace-line.is-soft .trace-dot,
+      .trace-line.is-highlight .trace-dot {
+        display: none;
+      }
+
+      .trace-tag,
+      .trace-line.is-soft .trace-tag {
+        display: block;
+        grid-column: 1;
+        grid-row: 2;
+
+        min-width: 0;
+        max-width: 100%;
+        margin: 0;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        color: var(--research-blue);
+        opacity: 0.5;
+
+        font-size: 0.9em;
+        font-style: normal;
         font-weight: 400;
       }
 
-      .trace-line.is-soft .trace-event {
-        color: #222;
-        opacity: 0.9;
-        font-weight: 500;
+      .trace-line:not(.is-highlight) .trace-detail {
+        display: none;
       }
 
+      /* Highlight: title + source + detail = three lines */
       .trace-line.is-highlight {
-        margin: 5px 0 6px;
-        padding: 4px 0 4px 8px;
-        background: linear-gradient(90deg,
-            rgba(11, 31, 58, 0.032),
-            rgba(11, 31, 58, 0.012) 68%,
-            transparent);
-        border-left: 1px solid rgba(11, 31, 58, 0.22);
-        cursor: default;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto auto;
+        row-gap: 2px;
+
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+
+        margin: 3px 0 12px;
+        padding: 4px 0 5px 8px;
+
+        background: none;
+        border: 0;
+        border-left: 1px solid rgba(11, 31, 58, 0.2);
       }
 
       .trace-line.is-highlight .trace-event {
-        color: #2b3342;
-        opacity: 0.98;
-        font-weight: 560;
+        display: block;
+        grid-column: 1;
+        grid-row: 1;
+
+        min-width: 0;
+        max-width: 100%;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        color: #293342;
+        opacity: 0.95;
+
+        font-size: 1em;
+        font-weight: 500;
+        letter-spacing: 0;
       }
 
       .trace-line.is-highlight .trace-tag {
-        opacity: 0.8;
-        font-size: 1em;
-      }
-
-      .trace-line.is-soft .trace-tag {
-        opacity: 0.6;
-        font-size: 1em;
-      }
-
-      .trace-line.is-highlight .trace-dot,
-      .trace-dot {
-        display: none;
-      }
-
-      .trace-line.is-highlight .trace-detail,
-      .trace-line.is-highlight:hover .trace-detail,
-      .trace-line.is-highlight:focus-within .trace-detail,
-      .trace-line.is-highlight:focus .trace-detail {
-        display: none;
-        max-height: 0;
-        margin-top: 0;
-        opacity: 0;
-        transform: none;
-      }
-
-      .trace-tag {
         display: block;
-        font-size: 1em;
-        margin-top: 2px;
-        opacity: 0.45;
-        white-space: nowrap;
+        grid-column: 1;
+        grid-row: 2;
+
+        min-width: 0;
+        max-width: 100%;
+        margin: 0;
+
         overflow: hidden;
         text-overflow: ellipsis;
+        white-space: nowrap;
+
+        color: var(--research-blue);
+        opacity: 0.65;
+
+        font-size: 0.9em;
+        font-style: normal;
+        font-weight: 400;
       }
 
-      .timeline-top-link {
-        margin-top: 34px;
-        margin-bottom: 8px;
-      }
+      .trace-line.is-highlight .trace-detail {
+        display: block;
+        grid-column: 1;
+        grid-row: 3;
 
-      .timeline-top-link a {
-        font-size: 0.62em;
-        letter-spacing: 0.1em;
-      }
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        max-height: none;
 
-      .trace-detail {
-        display: none;
-        max-height: 0;
-        margin-top: 0;
-        opacity: 0;
+        margin: 2px 0 0;
+        padding: 0;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        color: #535b66;
+        opacity: 0.6;
+
+        font-size: 0.82em;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.35;
+
         transform: none;
+        transition: none;
       }
     }
   </style>
@@ -790,46 +928,15 @@
             </div>
             <div class="trace-lines">
 
-              <div class="trace-line is-highlight" tabindex="0">
-                <span class="trace-event">
-                  ITTC roughness article accepted for publication
-                </span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">
-                  Ocean Engineering
-                </span>
-                <span class="trace-detail"
-                  title="Han (2026) — Beyond uniform roughness: Spatial variability of hull roughness and implications for single-parameter representation">
-                  Han (2026) — Beyond uniform roughness: Spatial variability of hull roughness and implications for
-                  single-parameter representation
-                </span>
-              </div>
+
 
               <div class="trace-line is-highlight" tabindex="0">
-                <span class="trace-event">Visiting Researcher appointment began</span>
+                <span class="trace-event">Visiting Researcher appointment commenced</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">RIMSE, Seoul National University</span>
                 <span class="trace-detail">
                   Research appointment supporting the development of an ITTC Recommended Procedure
                 </span>
-              </div>
-
-              <div class="trace-line is-soft">
-                <span class="trace-event">Doctoral oral examination completed</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Kyoto University</span>
-              </div>
-
-              <div class="trace-line is-soft">
-                <span class="trace-event">JoRes-informed roughness study initiated</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Siemens</span>
-              </div>
-
-              <div class="trace-line is-soft">
-                <span class="trace-event">Wageningen 2025 JoRes analysis pathway proposed</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">University of Iowa / MARIN</span>
               </div>
             </div>
           </div>
@@ -841,24 +948,14 @@
             </div>
             <div class="trace-lines">
               <div class="trace-line is-highlight" tabindex="0">
-                <span class="trace-event">Symposium paper presented</span>
+                <span class="trace-event">Conference paper presented</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
                 <span class="trace-detail">
-                  Han et al. (2026) — A computational fluid dynamics analysis of spatial roughness distributions on
+                  Han et al. — A computational fluid dynamics analysis of spatial roughness distributions on
                   ship
                   resistance
                 </span>
-              </div>
-              <div class="trace-line is-soft">
-                <span class="trace-event">Research appointment approved; assigned to a RIMSE project</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Seoul National University</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD enrolment process initiated</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Kyoto University</span>
               </div>
             </div>
           </div>
@@ -869,40 +966,10 @@
               <div class="trace-affiliation">Independent Research</div>
             </div>
             <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
-                <span class="trace-event">Full paper accepted; presentation invited</span>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Conference paper accepted for presentation</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
-                <span class="trace-detail">
-                  Han et al. (2026) — A computational fluid dynamics analysis of spatial roughness distributions on
-                  ship
-                  resistance
-                </span>
-              </div>
-              <div class="trace-line is-soft">
-                <span class="trace-event">Visiting research period arranged</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Seoul National University</span>
-              </div>
-              <div class="trace-line is-soft">
-                <span class="trace-event">Upcoming research visit arranged</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">UPC Barcelona / University of Vigo</span>
-              </div>
-              <div class="trace-line is-soft">
-                <span class="trace-event">JSPS DC1 research fellowship application submitted</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Japan Society for the Promotion of Science</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD research proposal developed</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Kyoto University</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD application withdrawn</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Georgia Tech</span>
               </div>
             </div>
           </div>
@@ -914,85 +981,15 @@
             </div>
 
             <div class="trace-lines">
-              <div class="trace-line is-soft">
-                <span class="trace-event">First citation recorded for first-author article</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Journal of Marine Science and Engineering</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD application concluded after screening</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Chalmers University of Technology</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month">Mar 2026</div>
-              <div class="trace-affiliation">Independent Research</div>
-            </div>
-
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
-                <span class="trace-event">PhD admission approved; funding review pending</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Georgia Tech</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">ITTC roughness manuscript submitted</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Ocean Engineering</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD application concluded after screening</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">California Institute of Technology</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD application concluded after screening</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Johns Hopkins University</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month">Feb 2026</div>
-              <div class="trace-affiliation">Independent Research</div>
-            </div>
-
-            <div class="trace-lines">
               <div class="trace-line is-highlight" tabindex="0">
-                <span class="trace-event">Spatial roughness article accepted for publication</span>
+                <span class="trace-event">Journal article published</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">Ocean Engineering</span>
                 <span class="trace-detail">
-                  Han et al. (2026) — Beyond uniform roughness: Ship resistance with spatially non-uniform hull
+                  Han et al. — Beyond uniform roughness: Ship resistance with spatially non-uniform hull
                   surface
                   conditions
                 </span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">Full paper submitted</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">Editorial decision received for FOWT manuscript</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Applied Ocean Research</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">Full paper withdrawn from consideration</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">OMAE 2026</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD application concluded after interview</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Chalmers University of Technology</span>
               </div>
             </div>
           </div>
@@ -1009,28 +1006,8 @@
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">JASNAOE 2025</span>
                 <span class="trace-detail">
-                  Han and Lee (2025) — CFD-based model predictive control for point absorber wave energy converters
+                  Han and Lee — CFD-based model predictive control for point absorber wave energy converters
                 </span>
-              </div>
-              <div class="trace-line is-soft">
-                <span class="trace-event">Personal research website launched</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Research Portfolio</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">Full paper submitted</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">OMAE 2026</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD offer declined</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">University of Strathclyde</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD application withdrawn</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">The University of Tokyo</span>
               </div>
             </div>
           </div>
@@ -1038,20 +1015,6 @@
         </div>
 
         <div class="year-section" id="y2025">
-
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month">Dec 2025</div>
-              <div class="trace-affiliation">Independent Research</div>
-            </div>
-            <div class="trace-lines">
-              <div class="trace-line">
-                <span class="trace-event">FOWT manuscript resubmitted</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Applied Ocean Research</span>
-              </div>
-            </div>
-          </div>
 
           <div class="trace-entry">
             <div class="trace-month-block">
@@ -1064,23 +1027,13 @@
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">JASNAOE 2025</span>
                 <span class="trace-detail">
-                  Han and Lee (2025) — CFD-based model predictive control for point absorber wave energy converters
+                  Han and Lee — CFD-based model predictive control for point absorber wave energy converters
                 </span>
               </div>
               <div class="trace-line is-soft">
-                <span class="trace-event">Visiting research period concluded</span>
+                <span class="trace-event">Research visit concluded</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">The University of Osaka</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">Editorial decision received for FOWT manuscript</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Marine Energy Research</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD application withdrawn</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">NTNU</span>
               </div>
             </div>
           </div>
@@ -1091,23 +1044,10 @@
               <div class="trace-affiliation">The University of Osaka</div>
             </div>
             <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
-                <span class="trace-event">Visiting research period began</span>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Research visit commenced</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">The University of Osaka</span>
-                <span class="trace-detail">
-                  Research visit focused on CFD-based control for wave energy converters
-                </span>
-              </div>
-              <div class="trace-line is-soft">
-                <span class="trace-event">Full paper invitation received</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">OMAE 2026</span>
-              </div>
-              <div class="trace-line is-soft">
-                <span class="trace-event">Reviewer invitation received</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Physics of Fluids</span>
               </div>
             </div>
           </div>
@@ -1126,31 +1066,6 @@
                   MSc thesis — Numerical investigation of fluid–structure interaction in semi-submersible FOWT
                 </span>
               </div>
-              <div class="trace-line is-soft">
-                <span class="trace-event">Full paper discussors confirmed</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">Spatial roughness manuscript resubmitted</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Ocean Engineering</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">Full paper submitted</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">JASNAOE 2025</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">Editorial decision received for spatial roughness manuscript</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Applied Ocean Research</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD application concluded after interview</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Chalmers University of Technology</span>
-              </div>
             </div>
           </div>
 
@@ -1161,20 +1076,11 @@
             </div>
             <div class="trace-lines">
               <div class="trace-line is-soft">
-                <span class="trace-event">Full paper invitation received</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">36th Symposium on Naval Hydrodynamics</span>
-              </div>
-              <div class="trace-line is-soft">
-                <span class="trace-event">Research featured in university news</span>
+                <span class="trace-event">Research featured in institutional news</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">University of Strathclyde</span>
               </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD offer declined</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">University of Southampton</span>
-              </div>
+
             </div>
           </div>
 
@@ -1185,11 +1091,11 @@
             </div>
             <div class="trace-lines">
               <div class="trace-line is-highlight" tabindex="0">
-                <span class="trace-event">Temperature article selected as cover article</span>
+                <span class="trace-event">Journal article featured on issue cover</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">Journal of Marine Science and Engineering</span>
                 <span class="trace-detail">
-                  Selected as the July 2025 cover article from 185 papers
+                  Han et al. — Temperature-induced errors in ITTC model–ship extrapolation
                 </span>
               </div>
             </div>
@@ -1202,23 +1108,19 @@
             </div>
             <div class="trace-lines">
               <div class="trace-line is-highlight" tabindex="0">
-                <span class="trace-event">Temperature article accepted for publication</span>
+                <span class="trace-event">Journal article published</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">Journal of Marine Science and Engineering</span>
                 <span class="trace-detail">
-                  Han et al. (2025) — Temperature-induced errors in ITTC model–ship extrapolation
+                  Han et al. — Temperature-induced errors in ITTC model–ship extrapolation
                 </span>
               </div>
               <div class="trace-line is-soft">
-                <span class="trace-event">International conference paper presented by co-author</span>
+                <span class="trace-event">Conference paper presented by co-author</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">MARINE 2025</span>
               </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD application concluded after interview</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">NTNU</span>
-              </div>
+
             </div>
           </div>
 
@@ -1229,29 +1131,9 @@
             </div>
             <div class="trace-lines">
               <div class="trace-line is-soft">
-                <span class="trace-event">Visiting research period arranged</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">The University of Osaka</span>
-              </div>
-              <div class="trace-line is-soft">
                 <span class="trace-event">Conference presentation delivered</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">WSOS 2025</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">Temperature manuscript resubmitted</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Journal of Marine Science and Engineering</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">Full paper submitted</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">MARINE 2025</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD application concluded after interview</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">NTNU</span>
               </div>
             </div>
           </div>
@@ -1263,14 +1145,9 @@
             </div>
             <div class="trace-lines">
               <div class="trace-line is-soft">
-                <span class="trace-event">International Conference Travel Bursary awarded</span>
+                <span class="trace-event">Conference Travel Bursary awarded</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">The Worshipful Company of Shipwrights</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">PhD application concluded after screening</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">NTNU</span>
               </div>
             </div>
           </div>
@@ -1282,11 +1159,11 @@
             </div>
             <div class="trace-lines">
               <div class="trace-line is-highlight" tabindex="0">
-                <span class="trace-event">First international conference presentation delivered</span>
+                <span class="trace-event">Conference paper presented</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">64ICNAMI</span>
                 <span class="trace-detail">
-                  Han et al. (2025) — Impact of towing tank temperature on model-ship extrapolation
+                  Han et al. — Impact of towing tank temperature on model-ship extrapolation
                 </span>
               </div>
             </div>
@@ -1298,40 +1175,8 @@
               <div class="trace-affiliation">University of Strathclyde</div>
             </div>
             <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
-                <span class="trace-event">Certificate of Excellence in Reviewing awarded</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Ocean Engineering</span>
-                <span class="trace-detail">
-                  Recognition for peer-review contribution to Ocean Engineering
-                </span>
-              </div>
               <div class="trace-line is-soft">
-                <span class="trace-event">Full paper invitation received</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">MARINE 2025</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">Full paper submitted</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">64ICNAMI</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month">Jan 2025</div>
-              <div class="trace-affiliation">University of Strathclyde</div>
-            </div>
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
-                <span class="trace-event">Full paper invitation received</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">64ICNAMI</span>
-              </div>
-              <div class="trace-line is-soft">
-                <span class="trace-event">Reviewer invitation received</span>
+                <span class="trace-event">Certificate of Excellence in Reviewing received</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">Ocean Engineering</span>
               </div>
@@ -1340,31 +1185,21 @@
         </div>
         <div class="year-section" id="y2024">
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month">Dec 2024</div>
-              <div class="trace-affiliation">University of Strathclyde</div>
-            </div>
-            <div class="trace-lines">
-              <div class="trace-line">
-                <span class="trace-event">Editorial decision received for temperature manuscript</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Physics of Fluids</span>
-              </div>
-            </div>
-          </div>
 
           <div class="trace-entry">
             <div class="trace-month-block">
-              <div class="trace-month">Oct 2024</div>
+              <div class="trace-month">Nov 2024</div>
               <div class="trace-affiliation">University of Strathclyde</div>
             </div>
 
             <div class="trace-lines">
-              <div class="trace-line">
-                <span class="trace-event">Editorial decision received for temperature manuscript</span>
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event">Journal article published</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">Ocean Engineering</span>
+                <span class="trace-detail">
+                  Choi et al. — Resistance and speed penalty of a naval ship with hull roughness
+                </span>
               </div>
             </div>
           </div>
@@ -1377,9 +1212,9 @@
 
             <div class="trace-lines">
               <div class="trace-line is-soft">
-                <span class="trace-event">MSc programme in Advanced Naval Architecture started</span>
+                <span class="trace-event">MSc programme commenced</span>
                 <span class="trace-dot">·</span>
-                <span class="trace-tag">University of Strathclyde</span>
+                <span class="trace-tag">Advanced Naval Architecture, University of Strathclyde</span>
               </div>
             </div>
           </div>
@@ -1392,22 +1227,12 @@
 
             <div class="trace-lines">
               <div class="trace-line is-highlight" tabindex="0">
-                <span class="trace-event">BSc degree awarded with early completion</span>
+                <span class="trace-event">BEng degree awarded with early completion</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">Inha University</span>
                 <span class="trace-detail">
                   Graduation project — FOWT and wave-breaker interaction analysis using CFD and EFD
                 </span>
-              </div>
-              <div class="trace-line is-soft">
-                <span class="trace-event">Co-authored roughness article accepted for publication</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Ocean Engineering</span>
-              </div>
-              <div class="trace-line">
-                <span class="trace-event">Undergraduate research student role completed</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Resistance Hydrodynamics Laboratory</span>
               </div>
             </div>
           </div>
@@ -1423,14 +1248,10 @@
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">13th National Congress on Fluid Engineering</span>
                 <span class="trace-detail">
-                  Han et al. (2024) — Uncertainty of the ITTC 1957 correlation line with temperature variations
+                  Han et al. — Uncertainty of the ITTC 1957 correlation line with temperature variations
                 </span>
               </div>
-              <div class="trace-line">
-                <span class="trace-event">Temperature manuscript submitted</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Ocean Engineering</span>
-              </div>
+
             </div>
           </div>
 
@@ -1449,21 +1270,6 @@
             </div>
           </div>
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month">Apr 2024</div>
-              <div class="trace-affiliation">Inha University</div>
-            </div>
-
-            <div class="trace-lines">
-              <div class="trace-line">
-                <span class="trace-event">Co-authored roughness manuscript submitted</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Ocean Engineering</span>
-              </div>
-            </div>
-          </div>
-
         </div>
 
         <div class="year-section" id="y2023">
@@ -1474,22 +1280,8 @@
             </div>
 
             <div class="trace-lines">
-              <div class="trace-line">
-                <span class="trace-event">Academic Merit Scholarship awarded</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Inha University</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month">Nov 2023</div>
-              <div class="trace-affiliation">Inha University</div>
-            </div>
-            <div class="trace-lines">
               <div class="trace-line is-soft">
-                <span class="trace-event">BSc graduation project on FOWT–wave-breaker interaction</span>
+                <span class="trace-event">Academic Merit Scholarship awarded</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">Inha University</span>
               </div>
@@ -1503,7 +1295,7 @@
             </div>
             <div class="trace-lines">
               <div class="trace-line is-soft">
-                <span class="trace-event">First conference presentation delivered</span>
+                <span class="trace-event">Conference presentation delivered</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">The Society of Naval Architects of Korea</span>
               </div>
@@ -1517,8 +1309,8 @@
             </div>
 
             <div class="trace-lines">
-              <div class="trace-line">
-                <span class="trace-event">Student reporter role completed</span>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Student reporter role concluded</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">The Korean Society of Ocean Engineers</span>
               </div>
@@ -1537,8 +1329,8 @@
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">KABOAT 2023</span>
               </div>
-              <div class="trace-line">
-                <span class="trace-event">Autonomous boat competition team role completed</span>
+              <div class="trace-line is-soft">
+                <span class="trace-event">Autonomous boat competition team participation concluded</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">Inha University</span>
               </div>
@@ -1553,7 +1345,7 @@
 
             <div class="trace-lines">
               <div class="trace-line is-soft">
-                <span class="trace-event">Undergraduate research student role started</span>
+                <span class="trace-event">Undergraduate research role commenced</span>
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">Resistance Hydrodynamics Laboratory</span>
               </div>
@@ -1577,19 +1369,7 @@
               </div>
             </div>
           </div>
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month">Sep 2022</div>
-              <div class="trace-affiliation">Inha University</div>
-            </div>
-            <div class="trace-lines">
-              <div class="trace-line">
-                <span class="trace-event">Student reporter role started</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">The Korean Society of Ocean Engineers</span>
-              </div>
-            </div>
-          </div>
+
           <div class="trace-entry">
             <div class="trace-month-block">
               <div class="trace-month">Aug 2022</div>
@@ -1601,42 +1381,10 @@
                 <span class="trace-dot">·</span>
                 <span class="trace-tag">KABOAT 2022</span>
               </div>
-              <div class="trace-line">
-                <span class="trace-event">Alumni scholarship awarded</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Inha NAOE Alumni</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month">April 2022</div>
-              <div class="trace-affiliation">Inha University</div>
-            </div>
-            <div class="trace-line">
-              <span class="trace-event">Student ship design project team joined</span>
-              <span class="trace-dot">·</span>
-              <span class="trace-tag">Inha University</span>
             </div>
           </div>
         </div>
         <div class="year-section" id="y2021">
-
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month">Dec 2021</div>
-              <div class="trace-affiliation">Inha University</div>
-            </div>
-            <div class="trace-lines">
-              <div class="trace-line">
-                <span class="trace-event">Autonomous boat competition team joined</span>
-                <span class="trace-dot">·</span>
-                <span class="trace-tag">Inha University</span>
-              </div>
-            </div>
-          </div>
-
           <div class="trace-entry">
             <div class="trace-month-block">
               <div class="trace-month">Mar 2021</div>
@@ -1644,9 +1392,9 @@
             </div>
             <div class="trace-lines">
               <div class="trace-line is-soft">
-                <span class="trace-event">BSc programme in Naval Architecture and Ocean Engineering started</span>
+                <span class="trace-event">BEng programme commenced</span>
                 <span class="trace-dot">·</span>
-                <span class="trace-tag">Inha University</span>
+                <span class="trace-tag">Naval Architecture and Ocean Engineering, Inha University</span>
               </div>
             </div>
           </div>
@@ -1662,11 +1410,8 @@
 
       <aside class="timeline-signal-panel" aria-label="Academic record signal summary">
         <div class="signal-kicker">Academic Summary</div>
-        <div class="signal-year" id="signal-year">2026</div>
-        <div class="signal-note" id="signal-note">
-          Ocean Engineering · Seoul National University · W2025
-        </div>
-
+        <div class="signal-year" id="signal-year"></div>
+        <div class="signal-note" id="signal-note"></div>
         <div class="signal-rows" id="signal-rows"></div>
       </aside>
     </div>
@@ -1677,7 +1422,7 @@
           year: "2026",
           note: "Visiting Research Appointment · Doctoral Preparation · W2025 Post-workshop Discussion",
           rows: [
-            { label: "Journal articles", count: 2 },
+            { label: "Journal articles", count: 1 },
             { label: "Scholarly presentations", count: 1 },
             { label: "Research appointments & visits", count: 1 }
           ]
@@ -1688,9 +1433,9 @@
           note: "Master’s Degree Completion · Visiting Research",
           rows: [
             { label: "Journal articles", count: 1 },
-            { label: "Scholarly presentations", count: 3 },
+            { label: "Scholarly presentations", count: 4 },
             { label: "Research appointments & visits", count: 1 },
-            { label: "Honours & awards", count: 2 }
+            { label: "Awards & recognition", count: 3 }
           ]
         },
 
@@ -1700,7 +1445,7 @@
           rows: [
             { label: "Journal articles", count: 1 },
             { label: "Scholarly presentations", count: 1 },
-            { label: "Honours & awards", count: 2 }
+            { label: "Awards & recognition", count: 2 }
           ]
         },
 
@@ -1709,8 +1454,7 @@
           note: "Undergraduate Research Initiation",
           rows: [
             { label: "Scholarly presentations", count: 1 },
-            { label: "Research appointments & visits", count: 1 },
-            { label: "Honours & awards", count: 2 }
+            { label: "Awards & recognition", count: 2 }
           ]
         },
 
@@ -1718,7 +1462,7 @@
           year: "2022",
           note: "Engineering Project Activities",
           rows: [
-            { label: "Honours & awards", count: 3 }
+            { label: "Awards & recognition", count: 2 }
           ]
         },
 
@@ -1818,6 +1562,12 @@
       document.addEventListener("DOMContentLoaded", () => {
         applyLang(getSessionLang());
         updateTimelineSignals("y2026");
+
+        document.querySelectorAll(".trace-line[tabindex]")
+          .forEach(line => line.removeAttribute("tabindex"));
+
+        document.querySelectorAll(".trace-detail[title]")
+          .forEach(detail => detail.removeAttribute("title"));
 
         document.querySelectorAll(".lang-switch a").forEach(a => {
           a.addEventListener("click", event => {

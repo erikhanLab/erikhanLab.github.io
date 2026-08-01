@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Archive | Sangseok Han</title>
   <meta name="description"
-    content="An archive of visual records, curated recognitions, and chronological traces documenting long-term development across research and personal systems.">
+    content="An archive of visual records, selected milestones, and creative work across research, travel, and everyday life.">
   <link rel="canonical" href="https://sangseokhan.com/archive/" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
 
   <meta property="og:title" content="Archive | Sangseok Han">
   <meta property="og:description"
-    content="A chronological archive of visual work, records, and external recognition, documenting long-term development across research and life stages.">
+    content="A personal archive of visual records, selected milestones, and creative work across research, travel, and everyday life.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sangseokhan.com/archive/">
   <meta property="og:site_name" content="Sangseok Han — Archive">
@@ -368,18 +368,44 @@
     }
 
     .archive-title {
-      font-size: 0.85em;
-      letter-spacing: 0.2em;
-      color: #777;
+      margin: 0 0 14px;
+
+      font-size: 0.82em;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      margin-bottom: 6px;
+
+      color: rgba(11, 31, 58, 0.62);
     }
 
     .archive-note {
-      font-size: 0.75em;
-      color: #9aa3af;
-      line-height: 1.6;
-      letter-spacing: 0.06em;
+      position: relative;
+
+      max-width: 520px;
+      margin: 0;
+      padding-left: 14px;
+
+      font-size: 0.74em;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.75;
+      letter-spacing: 0.075em;
+
+      color: rgba(82, 92, 105, 0.62);
+    }
+
+    .archive-note::before {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      top: 0.35em;
+      bottom: 0.35em;
+
+      width: 1px;
+
+      background: rgba(11, 31, 58, 0.14);
     }
 
     .curated-entry {
@@ -454,6 +480,14 @@
       letter-spacing: 0.14em;
       color: #9aa3af;
       font-style: italic;
+    }
+
+    .curated-meta-full {
+      display: inline;
+    }
+
+    .curated-meta-short {
+      display: none;
     }
 
     .visual-record {
@@ -715,7 +749,7 @@
     .archive-side-nav {
       position: fixed;
       top: 50%;
-left: calc(50% + var(--side-nav-offset));
+      left: calc(50% + var(--side-nav-offset));
       transform: translateY(-42%);
       z-index: 30;
 
@@ -931,8 +965,33 @@ left: calc(50% + var(--side-nav-offset));
         display: none;
       }
 
+      .curated-meta-full {
+        display: none;
+      }
+
+      .curated-meta-short {
+        display: inline;
+      }
+
+      .archive-head {
+        margin-bottom: 32px;
+      }
+
+      .archive-title {
+        margin-bottom: 12px;
+
+        font-size: 0.8em;
+        letter-spacing: 0.2em;
+      }
+
       .archive-note {
-        opacity: 0.7;
+        max-width: 92%;
+        padding-left: 14px;
+
+        font-size: 0.7em;
+        line-height: 1.7;
+        letter-spacing: 0.055em;
+        opacity: 1;
       }
 
       .zoom-overlay-content {
@@ -1169,14 +1228,17 @@ left: calc(50% + var(--side-nav-offset));
         <div class="archive-title" data-en="Curated Record" data-ja="記録">
           Curated Record
         </div>
-        <div class="archive-note" data-en="A curated archive of external records and recognitions"
-          data-ja="外部記録と評価によるキュレーション・アーカイブ">
-          <em>A curated archive of external records and recognitions</em>
+
+        <div class="archive-note" data-en="Selected institutional records and external recognition"
+          data-ja="選定した機関記録と外部評価">
+          Selected institutional records and external recognition
         </div>
       </div>
 
+
       <div class="curated-entry">
         <div class="curated-year">2026</div>
+
         <div class="curated-body">
           <div class="curated-title static">
             Research Appointment
@@ -1187,84 +1249,38 @@ left: calc(50% + var(--side-nav-offset));
             <div class="curated-locale">SOUTH KOREA</div>
           </div>
 
-          <div class="curated-desc">
-            Appointment approved through institute committee review.
-          </div>
-
           <div class="curated-meta">
-            Research project · RIMSE
-          </div>
-        </div>
-      </div>
+            <span class="curated-meta-full">
+              Research Assistant · Research Institute of Marine Systems Engineering
+            </span>
 
-      <div class="curated-entry">
-        <div class="curated-year">2026</div>
-        <div class="curated-body">
-          <div class="curated-title static">
-            Tribunal Decision
-          </div>
-
-          <div class="curated-affiliation">
-            <div class="curated-org">First-tier Tribunal for Scotland</div>
-            <div class="curated-locale">UNITED KINGDOM</div>
-          </div>
-
-          <div class="curated-desc">
-            Decision issued in favour of the applicant.
-          </div>
-
-          <div class="curated-meta">
-            Self-represented ·
-            <a href="https://www.housingandpropertychamber.scot/apply-tribunal/evictions-and-civil-proceedings/eviction-and-civil-proceedings-decisions/ftshpccv251964"
-              target="_blank" rel="noopener" class="subtle-link">
-              FTS/HPC/CV/25/1964
-            </a>
+            <span class="curated-meta-short">
+              Research Assistant · RIMSE
+            </span>
           </div>
         </div>
       </div>
 
       <div class="curated-entry">
         <div class="curated-year">2025</div>
-        <div class="curated-body">
-          <div class="curated-title static">
-            Certificate of Excellence in Reviewing
-          </div>
 
-          <div class="curated-affiliation">
-            <div class="curated-org"><em>Ocean Engineering</em></div>
-            <div class="curated-locale">ELSEVIER</div>
-          </div>
-
-          <div class="curated-desc">
-            Recognition for outstanding peer review.
-          </div>
-
-          <div class="curated-meta">
-            Certificate recipient
-          </div>
-        </div>
-      </div>
-
-      <div class="curated-entry">
-        <div class="curated-year">2025</div>
         <div class="curated-body">
           <a href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/" target="_blank"
             rel="noopener" class="curated-title linked">
-            Official University Research News
+            Research Feature
           </a>
 
           <div class="curated-affiliation">
             <div class="curated-org">University of Strathclyde</div>
             <div class="curated-locale">UNITED KINGDOM</div>
           </div>
-          <div class="curated-desc">
-            Featured for research on ship resistance and towing tank temperature effects.
-          </div>
+
           <div class="curated-meta">
-            First author · Journal cover article
+            Towing tank temperature and ship resistance
           </div>
         </div>
       </div>
+
     </section>
 
     <div class="scroll-spacer"></div>
@@ -1385,30 +1401,6 @@ left: calc(50% + var(--side-nav-offset));
         </figure>
       </div>
     </section>
-    <!--
-      <div class="visual-essay">
-        <div class="visual-essay-label">Visual essay</div>
-
-        <div class="visual-essay-title">
-          Designing Existence · 2015–2025
-        </div>
-
-        <div class="visual-essay-scale">
-          11 chapters · one year per chapter
-        </div>
-
-        <div class="visual-essay-meta">
-          <a href="/assets/Designing_Existence_Selected_Pages.pdf" target="_blank" rel="noopener"
-            class="visual-essay-link">
-            Selected pages (PDF)
-          </a>
-          <span style="opacity:0.4;">
-            · Full archive available upon request
-          </span>
-        </div>
-      </div>
-    -->
-
     <div class="scroll-spacer"></div>
     <div class="divider"></div>
 
@@ -1435,7 +1427,7 @@ left: calc(50% + var(--side-nav-offset));
                 <span class="year-age">Age 15–17</span>
               </div>
               <div class="entry">
-                Secondary school · not doing particularly well
+                Secondary school · an uneven beginning
               </div>
             </section>
 
@@ -1473,7 +1465,7 @@ left: calc(50% + var(--side-nav-offset));
                 <span class="year-age">Age 19</span>
               </div>
               <div class="entry">
-                A transition year · trying to reset things
+                A transition year
               </div>
             </section>
 
@@ -1492,7 +1484,7 @@ left: calc(50% + var(--side-nav-offset));
                 <span class="year-age">Age 20</span>
               </div>
               <div class="entry">
-                Starting from scratch in English · independent study
+                Independent study in English
               </div>
             </section>
 
@@ -1511,7 +1503,7 @@ left: calc(50% + var(--side-nav-offset));
                 <span class="year-age">Age 21</span>
               </div>
               <div class="entry">
-                Building mathematical foundations · continued self-study
+                Independent study in mathematics
               </div>
             </section>
 
@@ -1568,10 +1560,7 @@ left: calc(50% + var(--side-nav-offset));
                 <span class="year-age">Age 24</span>
               </div>
               <div class="entry">
-                Project work · decision to pursue <em>MSc</em>
-                <div class="meta">
-                  – Short stay in Norway
-                </div>
+                Project work · decision to pursue an <em>MSc</em>
               </div>
             </section>
 
@@ -1590,7 +1579,10 @@ left: calc(50% + var(--side-nav-offset));
                 <span class="year-age">Age 25</span>
               </div>
               <div class="entry">
-                Undergraduate research · first conference
+                Undergraduate research · first conference presentation
+                <div class="meta">
+                  – Resistance Hydrodynamics Laboratory
+                </div>
               </div>
             </section>
 
@@ -1611,7 +1603,7 @@ left: calc(50% + var(--side-nav-offset));
                 <span class="year-age">Age 26</span>
               </div>
               <div class="entry">
-                Graduated early · moved to the UK for <em>MSc</em>
+                Graduated early · moved to the UK for an <em>MSc</em>
                 <div class="meta">
                   – Best Paper Award
                 </div>
@@ -1634,9 +1626,9 @@ left: calc(50% + var(--side-nav-offset));
                 <span class="year-age">Age 27</span>
               </div>
               <div class="entry">
-                <em>MSc</em> Distinction · international collaborations
+                <em>MSc</em> with Distinction · research and creative work
                 <div class="meta">
-                  – Cover article · research visit (Japan) · piano recital (Chopin)
+                  – Journal Cover article · research visit (Japan) · piano performance (Chopin)
                 </div>
               </div>
             </section>
@@ -1727,9 +1719,7 @@ left: calc(50% + var(--side-nav-offset));
     <div class="scroll-spacer"></div>
   </div>
 
-  <section class="archive-blank" aria-hidden="true">
-    <div class="blank-title">Blank</div>
-  </section>
+  <section class="archive-blank" aria-hidden="true"></section>
 
   <script>
     const DEFAULT_LANG = "en";
