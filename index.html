@@ -95,30 +95,34 @@
     }
 
     .header-row {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      gap: 36px;
-    }
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      column-gap: 36px;
 
-    .profile-block {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 6px;
-      margin-right: 30px;
-      margin-left: auto;
-      flex-shrink: 0;
+      width: 100%;
     }
 
     .header-row h1 {
-      font-size: 3.1em;
+      margin: 0 0 5px;
+
+      font-size: 3.4em;
+      line-height: 1;
+      letter-spacing: 0.012em;
+    }
+
+    .profile-block {
+      align-self: end;
+
+      margin-top: 0;
+      margin-right: 30px;
+      margin-left: auto;
     }
 
     .id-photo {
       margin-top: 0;
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       object-fit: cover;
       transform: none;
       filter: grayscale(50%) saturate(0.8) contrast(1.08) brightness(0.98);
@@ -150,7 +154,7 @@
       font-size: 3.2em;
       font-weight: normal;
       letter-spacing: 0.02em;
-      margin: 0 0 18px 0;
+      margin: 0 0 0px 0;
       position: relative;
     }
 
@@ -479,7 +483,7 @@
       font-size: 0.7em;
       color: #94a3b8;
       letter-spacing: 0.06em;
-      margin-top: 5px;
+      margin-top: 2px;
     }
 
     @media (max-width: 640px) {
@@ -507,20 +511,35 @@
       }
 
       .header-row {
-        gap: 18px;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: end;
+        column-gap: 8px;
       }
 
       .header-row h1 {
-        font-size: 2.8em;
+        min-width: 0;
+        margin: 0 0 2px;
+
+        font-size: clamp(2.15em, 9.4vw, 2.6em);
+        line-height: 0.98;
+        letter-spacing: 0.005em;
+
+        white-space: nowrap;
+      }
+
+      .profile-block {
+        margin: 0;
+        gap: 4px;
       }
 
       .id-photo {
-        width: 56px;
-        height: 56px;
+        width: 60px;
+        height: 60px;
       }
 
       .tagline {
-        font-size: 1.04em;
+        font-size: 1.02em;
+        margin-left: 10px;
       }
 
       .affiliation {
@@ -650,9 +669,9 @@
               <em>Understanding where models break — from hull roughness to hydroelastic impact.</em>
             </span>
 
-            <span class="mobile-only" data-en="Where models break — from roughness to impact."
-              data-ja="粗さから衝撃まで、モデルの限界を探る。">
-              <em>Where models break — from roughness to impact.</em>
+            <span class="mobile-only" data-en="Where models break — from roughness to contact dynamics."
+              data-ja="粗さから接触力学まで、モデルの限界を探る。">
+              <em>Where models break — from roughness to contact dynamics.</em>
             </span>
           </span>
         </p>
@@ -751,12 +770,6 @@
 
       </div>
 
-      <!--
-<p class="keywords" data-en="Roughness · Hydroelasticity · Marine Flows" data-ja="粗さ・流体弾性・海洋流体">
-  Roughness · Hydroelasticity · Marine Flows
-</p>
--->
-
       <p class="recent-work">
         <span class="recent-label" data-en="✦ Recent Work" data-ja="✦ 最新の論文">
           ✦ Recent Work
@@ -797,13 +810,6 @@
         <span class="nav-index">03</span>
         <span class="nav-label" data-en="Publications" data-ja="論文">Publications</span>
       </a>
-
-      <!-- 
-      <a href="/works/">
-        <span class="nav-index">04</span>
-        <span class="nav-label">Works</span>
-      </a>
-      -->
 
       <a href="/archive/" class="archive">
         <span class="nav-index">04</span>

@@ -433,7 +433,7 @@
         38px repeat(12, minmax(0, 1fr));
 
       column-gap: 4px;
-      row-gap: 6px;
+      row-gap: 9px;
 
       align-items: center;
       width: 100%;
@@ -605,11 +605,6 @@
       background: rgba(11, 31, 58, 0.1);
     }
 
-    .reviewer-award-year {
-      font-size: 0.88em;
-      font-variant-numeric: tabular-nums;
-    }
-
     .review-note {
       position: relative;
       display: inline-block;
@@ -751,25 +746,28 @@
       letter-spacing: 0.02em;
       color: rgba(57, 67, 80, 0.76);
       cursor: default;
+
       transition:
-        color 0.15s ease,
-        opacity 0.15s ease;
+        color 0.14s ease,
+        opacity 0.14s ease;
     }
 
     .timeline-legend-item:hover,
     .timeline-legend-item.is-active {
+      z-index: 50;
       color: rgba(28, 40, 56, 0.92);
-      transform: translateX(2px);
     }
 
     .timeline-legend-tooltip {
       position: absolute;
-      left: 0;
       bottom: calc(100% + 9px);
       z-index: 30;
 
+
+      left: 0;
       width: max-content;
       max-width: 260px;
+      visibility: hidden;
 
       padding: 8px 10px 7px;
 
@@ -797,15 +795,18 @@
 
       opacity: 0;
       visibility: hidden;
-
-      transform: translateY(5px);
-
+      transform: translateY(3px);
       pointer-events: none;
 
       transition:
-        opacity 0.32s ease,
-        visibility 0.32s ease,
-        transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+        opacity 0.14s ease,
+        transform 0.16s ease,
+        visibility 0s linear 0.16s;
+    }
+
+    .timeline-legend-item:nth-child(even) .timeline-legend-tooltip {
+      left: auto;
+      right: 0;
     }
 
     .timeline-legend-tooltip strong {
@@ -831,7 +832,8 @@
       font-weight: 500;
     }
 
-    .timeline-legend-label:hover .timeline-legend-tooltip {
+    .timeline-legend-item:hover .timeline-legend-tooltip,
+    .timeline-legend-item:focus-within .timeline-legend-tooltip {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
@@ -849,7 +851,7 @@
       position: relative;
       display: block;
       min-width: 0;
-      height: 10px;
+      height: 12px;
 
       border-radius: 2px;
       border: 1px solid rgba(11, 31, 58, 0.055);
@@ -897,27 +899,22 @@
 
     .timeline-legend-mark {
       display: block;
-
       width: 20px;
       height: 3.5px;
 
       border-radius: 999px;
       opacity: 0.72;
 
-      box-shadow:
-        0 1px 2px rgba(11, 31, 58, 0.05);
-
       transition:
-        opacity 0.75s ease,
-        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-        background-color 0.92s cubic-bezier(0.22, 1, 0.36, 1),
-        border-color 0.92s cubic-bezier(0.22, 1, 0.36, 1);
+        opacity 0.16s ease,
+        transform 0.16s ease,
+        background-color 0.18s ease;
     }
 
     .timeline-legend-item:hover .timeline-legend-mark,
     .timeline-legend-item.is-active .timeline-legend-mark {
       opacity: 1;
-      transform: scaleX(1.12);
+      transform: scaleX(1.06);
     }
 
     .timeline-legend-mark.aff-inha {
@@ -1007,7 +1004,7 @@
       transition:
         background-color 0.92s cubic-bezier(0.22, 1, 0.36, 1),
         border-color 0.92s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.68s ease;
+
     }
 
     #affiliations.is-affiliation-focused .month-block:not(.is-active) {
@@ -1032,6 +1029,15 @@
       transition:
         background-color 0.92s cubic-bezier(0.22, 1, 0.36, 1),
         border-color 0.92s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    #affiliations .timeline-legend:hover .timeline-legend-item {
+      opacity: 0.64;
+    }
+
+    #affiliations .timeline-legend:hover .timeline-legend-item:hover {
+      opacity: 1;
+      color: rgba(28, 40, 56, 0.92);
     }
 
     #affiliations.is-affiliation-focused .timeline-legend-item:not(.is-active) {
@@ -1395,7 +1401,7 @@
         padding-left: 11px;
         margin-bottom: 0;
 
-        font-size: 0.64rem;
+        font-size: 0.65rem;
         line-height: 1.5;
       }
 
@@ -1407,7 +1413,7 @@
         margin: 8px 0 0;
         padding: 10px 0 0 11px;
 
-        font-size: 0.62rem;
+        font-size: 0.58rem;
         line-height: 1.5;
         letter-spacing: 0.01em;
 
@@ -1444,12 +1450,8 @@
         color: rgba(75, 82, 92, 0.58);
       }
 
-      .reviewer-award-year {
-        font-size: 1em;
-      }
-
       .publisher {
-        font-size: 0.62em;
+        font-size: 0.76em;
         opacity: 0.72;
       }
 
@@ -2027,8 +2029,7 @@
             </span>
 
             <span class="reviewer-award-source">
-              (<em>Ocean Engineering</em>,
-              <span class="reviewer-award-year">2025</span>)
+              (<em>Ocean Engineering</em>)
             </span>
           </li>
 
@@ -2461,11 +2462,10 @@
           tooltipPeriod
         );
 
-        label.appendChild(tooltip);
-
         legendItem.append(
           mark,
-          label
+          label,
+          tooltip
         );
 
         legend.appendChild(
@@ -3019,8 +3019,11 @@
     });
 
     function initialiseAffiliationInteraction() {
-      const section = document.getElementById("affiliations");
-      const affiliationBlock = section?.querySelector(".affiliation-block");
+      const section =
+        document.getElementById("affiliations");
+
+      const affiliationBlock =
+        section?.querySelector(".affiliation-block");
 
       if (!section || !affiliationBlock) return;
 
@@ -3032,7 +3035,9 @@
       let clearFocusTimer;
 
       function clearAffiliationFocus() {
-        section.classList.remove("is-affiliation-focused");
+        section.classList.remove(
+          "is-affiliation-focused"
+        );
 
         section
           .querySelectorAll(".is-active")
@@ -3042,7 +3047,8 @@
       }
 
       function activateAffiliation(item) {
-        const affiliationId = item.dataset.affiliation;
+        const affiliationId =
+          item.dataset.affiliation;
 
         const affiliationData =
           AFFILIATION_TIMELINE_DATA.find(
@@ -3052,13 +3058,16 @@
         clearTimeout(clearFocusTimer);
         clearAffiliationFocus();
 
-        section.classList.add("is-affiliation-focused");
+        section.classList.add(
+          "is-affiliation-focused"
+        );
+
         item.classList.add("is-active");
 
         section
           .querySelectorAll(
             `.month-block[data-affiliation="${affiliationId}"],
-       .timeline-legend-item[data-affiliation="${affiliationId}"]`
+         .timeline-legend-item[data-affiliation="${affiliationId}"]`
           )
           .forEach(element => {
             element.classList.add("is-active");
@@ -3067,7 +3076,9 @@
         if (!affiliationData) return;
 
         const startYear =
-          Number(affiliationData.start.slice(0, 4));
+          Number(
+            affiliationData.start.slice(0, 4)
+          );
 
         const endYear =
           Number(
@@ -3077,7 +3088,9 @@
           );
 
         section
-          .querySelectorAll(".timeline-year[data-year]")
+          .querySelectorAll(
+            ".timeline-year[data-year]"
+          )
           .forEach(yearLabel => {
             const year =
               Number(yearLabel.dataset.year);
@@ -3092,20 +3105,30 @@
       }
 
       affiliationItems.forEach(item => {
-        item.addEventListener("mouseenter", () => {
-          activateAffiliation(item);
-        });
+        item.addEventListener(
+          "mouseenter",
+          () => {
+            activateAffiliation(item);
+          }
+        );
       });
 
-      affiliationBlock.addEventListener("mouseenter", () => {
-        clearTimeout(clearFocusTimer);
-      });
+      affiliationBlock.addEventListener(
+        "mouseenter",
+        () => {
+          clearTimeout(clearFocusTimer);
+        }
+      );
 
-      affiliationBlock.addEventListener("mouseleave", () => {
-        clearFocusTimer = setTimeout(() => {
-          clearAffiliationFocus();
-        }, 200);
-      });
+      affiliationBlock.addEventListener(
+        "mouseleave",
+        () => {
+          clearFocusTimer =
+            setTimeout(() => {
+              clearAffiliationFocus();
+            }, 120);
+        }
+      );
     }
 
     function initialiseScrollReveal() {

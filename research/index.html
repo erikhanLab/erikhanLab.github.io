@@ -248,7 +248,8 @@
 
     .current-project-content {
       min-width: 0;
-      padding-top: 1px;
+      padding: 1px 20px 0 0;
+      box-sizing: border-box;
     }
 
     .current-project-heading {
@@ -793,16 +794,61 @@
     }
 
     .research-links {
+      position: relative;
+
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       gap: 8px;
+
       width: 100%;
-      max-width: none;
-      margin: 34px 0 0;
-      padding: 0;
+      margin: 0 0 28px;
+      padding: 0 0 5px;
+
       background: transparent;
       border: 0;
       overflow: visible;
+    }
+
+    .research-links::before {
+      display: none;
+    }
+
+    .research-links::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 35%;
+      height: 1px;
+
+      background: rgba(11, 31, 58, 0.065);
+    }
+
+    .research-links a {
+      display: inline-flex;
+      align-items: baseline;
+      padding-bottom: 1px;
+
+      font-size: 0.76em;
+      line-height: 1.4;
+      letter-spacing: 0.035em;
+      white-space: nowrap;
+
+      color: rgba(24, 39, 58, 0.58);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+
+      transition:
+        color 0.16s ease,
+        border-color 0.16s ease;
+    }
+
+    .research-links a:hover {
+      color: rgba(11, 31, 58, 0.92);
+      border-bottom-color: rgba(11, 31, 58, 0.24);
+      transform: none;
     }
 
     .research-links-separator {
@@ -813,42 +859,8 @@
       transform: translateY(-0.02em);
     }
 
-    .research-links::before {
-      content: "";
-      flex: 1 1 auto;
-
-      min-width: 40px;
-      height: 1px;
-
-      background: linear-gradient(to right,
-          rgba(11, 31, 58, 0.02),
-          rgba(11, 31, 58, 0.10));
-    }
-
-    .research-links a {
-      display: inline-flex;
-      align-items: baseline;
-      justify-content: flex-start;
-      min-width: 0;
-      padding: 0;
-      font-size: 0.9em;
-      line-height: 1.4;
-      letter-spacing: 0.025em;
-      white-space: nowrap;
-
-      color: rgba(24, 39, 58, 0.78);
-      text-decoration: none;
-
-      transition: color 0.18s ease;
-    }
-
     .research-links a+a {
       border-left: 0;
-    }
-
-    .research-links a:hover {
-      color: rgba(11, 31, 58, 0.88);
-      background: transparent;
     }
 
     .research-contact-affiliation {
@@ -1102,6 +1114,10 @@
     }
 
     @media (max-width: 640px) {
+
+      .research-links::after {
+        width: 65%;
+      }
 
       .research-tagline {
         display: none;
@@ -1372,7 +1388,7 @@
 
       .current-project h2 {
         margin: 0;
-        font-size: 0.68em;
+        font-size: 0.7em;
         font-weight: 500;
         line-height: 1.48;
         letter-spacing: 0.015em;
@@ -1389,10 +1405,14 @@
         display: none;
       }
 
+      .current-project-topics span:nth-child(n + 4) {
+        display: none;
+      }
+
       .current-project-topics {
         margin-top: 6px;
         gap: 5px;
-        font-size: 1.13em;
+        font-size: 1.2em;
       }
 
       .current-project-topics span {
@@ -1409,20 +1429,15 @@
       }
 
       .research-links {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 5px;
+        justify-content: flex-end;
+        gap: 6px;
+        margin: 0 0 20px;
+        padding-bottom: 3px;
+      }
 
-        width: 100%;
-        max-width: none;
-
-        margin: 24px 0 0;
-        padding: 0;
-
-        background: transparent;
-        border: 0;
-        overflow: visible;
+      .research-links a {
+        font-size: 0.62em;
+        color: rgba(24, 39, 58, 0.52);
       }
 
       .research-links-separator {
@@ -1430,30 +1445,9 @@
         color: rgba(11, 31, 58, 0.24);
       }
 
-      .research-links::before {
-        flex: 1 1 auto;
-        min-width: 24px;
-        height: 1px;
-
-        background: linear-gradient(to right,
-            rgba(11, 31, 58, 0.015),
-            rgba(11, 31, 58, 0.085));
-      }
-
-      .research-links a {
-        display: inline-flex;
-        align-items: baseline;
-        gap: 3px;
-
-        min-width: 0;
-        padding: 0;
-
-        font-size: 0.62em;
-        line-height: 1.4;
-        letter-spacing: 0.015em;
-        white-space: nowrap;
-
-        color: rgba(24, 39, 58, 0.48);
+      .research-links-separator {
+        font-size: 0.52em;
+        color: rgba(11, 31, 58, 0.24);
       }
 
       .research-links a+a {
@@ -1574,6 +1568,22 @@
   </aside>
   <div class="page-content">
 
+    <nav class="research-links" aria-label="Research pages">
+      <a href="/research/log/">
+        <span data-en="Research Log" data-ja="研究ノート">
+          Research Log
+        </span>
+      </a>
+
+      <span class="research-links-separator" aria-hidden="true">·</span>
+
+      <a href="/research/timeline/">
+        <span data-en="Academic Timeline" data-ja="学術年表">
+          Academic Timeline
+        </span>
+      </a>
+    </nav>
+
     <section id="ongoing-research" class="ongoing-research" aria-labelledby="ongoing-research-title">
 
       <h1 id="ongoing-research-title" class="rt-header ongoing-header">
@@ -1641,12 +1651,12 @@
               Non-uniform roughness
             </span>
 
-            <span data-en="Scale effects" data-ja="スケール影響">
-              Scale effects
-            </span>
-
             <span data-en="Boundary layer & wake" data-ja="境界層・後流">
               Boundary layer &amp; wake
+            </span>
+
+            <span data-en="Full-scale extensions" data-ja="実船スケールへの展開">
+              Full-scale extensions
             </span>
           </div>
 
@@ -1726,14 +1736,14 @@
                 <span class="research-network-name">University of Strathclyde</span>
 
                 <span class="research-network-meta">
-                  <span class="research-network-role" data-en="MSc research" data-ja="修士研究">
-                    MSc research
+                  <span class="research-network-role" data-en="MSc research · Academic exchange" data-ja="修士研究 · 学術交流">
+                    MSc research · Academic exchange
                   </span>
 
                   <span class="research-network-separator">·</span>
 
-                  <time class="research-network-period" datetime="2024/2026" data-en="2024–2026" data-ja="2024–2026">
-                    2024–2026
+                  <time class="research-network-period" datetime="2024" data-en="2024–" data-ja="2024–">
+                    2024–
                   </time>
                 </span>
               </li>
@@ -1912,22 +1922,6 @@
         </div>
       </article>
     </section>
-
-    <nav class="research-links" aria-label="Research pages">
-      <a href="/research/log/">
-        <span data-en="Research Log" data-ja="研究ノート">
-          Research Log
-        </span>
-      </a>
-
-      <span class="research-links-separator" aria-hidden="true">·</span>
-
-      <a href="/research/timeline/">
-        <span data-en="Academic Timeline" data-ja="学術年表">
-          Academic Timeline
-        </span>
-      </a>
-    </nav>
 
     <div class="research-timeline" id="research-timeline">
       <h2 class="rt-header">
