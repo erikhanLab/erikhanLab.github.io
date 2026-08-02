@@ -642,41 +642,61 @@
       }
 
       .trace-entry {
+        position: relative;
         display: block;
+
         margin: 0;
-        padding: 10px 0 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.055);
+        padding: 10px 0 5px;
+
+        border-bottom: 0;
+      }
+
+      .trace-entry:not(:last-child)::after {
+        content: "";
+        position: absolute;
+
+        left: 3%;
+        right: 3%;
+        bottom: 0;
+
+        height: 1px;
+
+        background: linear-gradient(to right,
+            rgba(11, 31, 58, 0) 0%,
+            rgba(11, 31, 58, 0.035) 14%,
+            rgba(11, 31, 58, 0.075) 50%,
+            rgba(11, 31, 58, 0.035) 86%,
+            rgba(11, 31, 58, 0) 100%);
       }
 
       .trace-month-block {
         display: flex;
-        align-items: baseline;
+        align-items: flex-end;
         gap: 8px;
+        margin-bottom: 15px;
+      }
 
-        padding-top: 0;
-        margin-bottom: 7px;
+      .trace-month,
+      .trace-affiliation {
+        display: block;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
       }
 
       .trace-month {
         flex-shrink: 0;
-
         font-size: 0.73em;
-        letter-spacing: 0.13em;
-        opacity: 0.86;
       }
 
       .trace-affiliation {
         min-width: 0;
-        margin: 0;
-
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-
-        font-size: 0.62em;
-        letter-spacing: 0.04em;
-        line-height: 1.2;
-        opacity: 0.72;
+        transform: translateY(0.6px);
+        font-size: 0.7em;
+        font-style: italic;
       }
 
       .trace-lines {
@@ -685,7 +705,6 @@
         border-left: 0;
       }
 
-      /* Normal: title + source = two lines */
       .trace-line,
       .trace-line.is-soft {
         display: grid;
@@ -732,11 +751,11 @@
         white-space: nowrap;
 
         color: #424954;
-        opacity: 0.86;
+        opacity: 0.82;
 
-        font-size: 1em;
+        font-size: 1.05em;
         font-weight: 400;
-        letter-spacing: 0;
+        letter-spacing: 0.03em;
       }
 
       .trace-dot,
@@ -745,7 +764,6 @@
         display: none;
       }
 
-      .trace-tag,
       .trace-line.is-soft .trace-tag {
         display: block;
         grid-column: 1;
@@ -754,15 +772,15 @@
         min-width: 0;
         max-width: 100%;
         margin: 0;
-
+        margin-top: 2px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
 
         color: var(--research-blue);
-        opacity: 0.5;
-
-        font-size: 0.9em;
+        opacity: 0.55;
+        letter-spacing: 0.02em;
+        font-size: 0.95em;
         font-style: normal;
         font-weight: 400;
       }
@@ -771,7 +789,6 @@
         display: none;
       }
 
-      /* Highlight: title + source + detail = three lines */
       .trace-line.is-highlight {
         display: grid;
         grid-template-columns: minmax(0, 1fr);
@@ -802,12 +819,11 @@
         text-overflow: ellipsis;
         white-space: nowrap;
 
-        color: #293342;
-        opacity: 0.95;
-
-        font-size: 1em;
+        color: #111111;
+        opacity: 0.9;
+        letter-spacing: 0.06em;
+        font-size: 1.03em;
         font-weight: 500;
-        letter-spacing: 0;
       }
 
       .trace-line.is-highlight .trace-tag {
@@ -818,15 +834,16 @@
         min-width: 0;
         max-width: 100%;
         margin: 0;
+        margin-top: 5px;
 
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
 
         color: var(--research-blue);
-        opacity: 0.65;
-
-        font-size: 0.9em;
+        opacity: 0.75;
+        letter-spacing: 0.02em;
+        font-size: 0.95em;
         font-style: normal;
         font-weight: 400;
       }
@@ -849,10 +866,10 @@
         white-space: nowrap;
 
         color: #535b66;
-        opacity: 0.6;
-
-        font-size: 0.82em;
-        font-style: normal;
+        opacity: 0.8;
+        letter-spacing: 0.01em;
+        font-size: 0.98em;
+        font-style: italic;
         font-weight: 400;
         line-height: 1.35;
 
@@ -984,7 +1001,7 @@
               <div class="trace-line is-highlight" tabindex="0">
                 <span class="trace-event">Journal article published</span>
                 <span class="trace-dot">·</span>
-                <span class="trace-tag">Ocean Engineering</span>
+                <span class="trace-tag"><em>Ocean Engineering</em></span>
                 <span class="trace-detail">
                   Han et al. — Beyond uniform roughness: Ship resistance with spatially non-uniform hull
                   surface
@@ -1110,7 +1127,7 @@
               <div class="trace-line is-highlight" tabindex="0">
                 <span class="trace-event">Journal article published</span>
                 <span class="trace-dot">·</span>
-                <span class="trace-tag">Journal of Marine Science and Engineering</span>
+                <span class="trace-tag"><em>Journal of Marine Science and Engineering</em></span>
                 <span class="trace-detail">
                   Han et al. — Temperature-induced errors in ITTC model–ship extrapolation
                 </span>
@@ -1196,7 +1213,7 @@
               <div class="trace-line is-highlight" tabindex="0">
                 <span class="trace-event">Journal article published</span>
                 <span class="trace-dot">·</span>
-                <span class="trace-tag">Ocean Engineering</span>
+                <span class="trace-tag"><em>Ocean Engineering</em></span>
                 <span class="trace-detail">
                   Choi et al. — Resistance and speed penalty of a naval ship with hull roughness
                 </span>

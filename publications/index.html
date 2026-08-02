@@ -790,17 +790,30 @@
 
     .pub-doi {
       margin-left: 8px;
-
-      color: rgba(11, 31, 58, 0.4);
+      color: rgba(11, 31, 58, 0.68);
       text-decoration: none;
-
       font-size: 0.82em;
       font-variant: normal;
       text-transform: uppercase;
       letter-spacing: 0.09em;
       white-space: nowrap;
+      transform: translateY(0.4px);
+      transition:
+        color 0.15s ease,
+        border-color 0.15s ease;
+      border-bottom: 0;
+    }
 
-      transition: color 0.15s ease;
+    .pub-doi-label {
+      border-bottom: 0.2px solid transparent;
+
+      transition:
+        color 0.15s ease,
+        border-color 0.15s ease;
+    }
+
+    a.pub-doi:hover .pub-doi-label {
+      border-bottom-color: rgba(11, 31, 58, 0.22);
     }
 
     .pub-doi::before {
@@ -814,7 +827,17 @@
     }
 
     .pub-doi:hover {
-      color: rgba(11, 31, 58, 0.76);
+      color: rgba(11, 31, 58, 0.95);
+      border-bottom-color: rgba(11, 31, 58, 0.28);
+    }
+
+    span.pub-doi:hover {
+      color: rgba(11, 31, 58, 0.68);
+      border-bottom-color: transparent;
+    }
+
+    .conference-name-short {
+      display: none;
     }
 
     @media (max-width: 1320px) {
@@ -1037,7 +1060,7 @@
         line-height: inherit;
         letter-spacing: 0.07em;
 
-        color: rgba(11, 31, 58, 0.4);
+        color: rgba(11, 31, 58, 0.68);
         text-decoration: none;
         text-transform: uppercase;
         white-space: nowrap;
@@ -1046,15 +1069,7 @@
       }
 
       .pub-doi::before {
-        content: "·";
-
-        margin-right: 7px;
-
-        color: rgba(82, 92, 105, 0.3);
-
-        font-size: 1em;
-        line-height: inherit;
-        letter-spacing: 0;
+        display: none;
       }
 
       .pub-doi:hover {
@@ -1157,6 +1172,14 @@
         stroke-width: 1.1;
         opacity: 0.7;
         transform: translateY(-0.3px);
+      }
+
+      .conference-name-full {
+        display: none;
+      }
+
+      .conference-name-short {
+        display: inline;
       }
     }
   </style>
@@ -1341,7 +1364,7 @@
 
               <a class="pub-doi" href="https://doi.org/10.1016/j.oceaneng.2026.124462" target="_blank"
                 rel="noopener noreferrer" aria-label="Open DOI for Beyond uniform roughness">
-                DOI
+                <span class="pub-doi-label">DOI</span>
               </a>
             </div>
           </div>
@@ -1374,13 +1397,13 @@
               </span>
 
               <span class="pub-year">2025</span>
-
+              <span class="cover-badge">Issue Cover</span>
               <a class="pub-doi" href="https://doi.org/10.3390/jmse13071203" target="_blank" rel="noopener noreferrer"
                 aria-label="Open DOI for Temperature-induced errors">
-                DOI
+                <span class="pub-doi-label">DOI</span>
               </a>
 
-              <span class="cover-badge">Issue Cover</span>
+
             </div>
           </div>
         </div>
@@ -1418,7 +1441,7 @@
 
               <a class="pub-doi" href="https://doi.org/10.1016/j.oceaneng.2024.119058" target="_blank"
                 rel="noopener noreferrer" aria-label="Open DOI for Resistance and speed penalty of a naval ship">
-                DOI
+                <span class="pub-doi-label">DOI</span>
               </a>
             </div>
           </div>
@@ -1516,27 +1539,50 @@
         <div class="pub-item">
           <div class="pub-title">
             <span class="status published" aria-hidden="true">●</span>
-            A computational fluid dynamics analysis of spatial roughness distributions on ship resistance
+
+            <span class="title-text">
+              A computational fluid dynamics analysis of spatial roughness
+              distributions on ship resistance
+            </span>
           </div>
+
           <div class="pub-meta-block">
             <div class="pub-authors">
               <span class="author-full">
                 <span class="main-author">Sang-seok Han*</span>,
-                <span class="co-authors">Momchil Terziev, and Tahsin Tezdogan</span>
+                <span class="co-authors">
+                  Momchil Terziev, and Tahsin Tezdogan
+                </span>
               </span>
+
               <span class="author-short">
                 <span class="main-author">S. Han*</span>,
-                <span class="co-authors">M. Terziev, and T. Tezdogan</span>
+                <span class="co-authors">
+                  M. Terziev, and T. Tezdogan
+                </span>
               </span>
             </div>
 
             <div class="pub-meta">
-              <span class="pub-meta-text">
-                <span class="meta-tooltip" data-tooltip="International symposium · Busan, Korea">
-                  36th Symposium on Naval Hydrodynamics (SNH36),
+              <span class="pub-meta-text meta-tooltip" data-tooltip="International symposium · Busan, South Korea">
+                <span class="conference-name-full">
+                  36th Symposium on Naval Hydrodynamics (SNH36)
                 </span>
+                <span class="conference-name-short">
+                  SNH36
+                </span>,
               </span>
-              <span class="pub-year">2026</span>
+
+              <span class="pub-year">June 2026</span>
+              <span class="pub-doi" aria-label="Proceedings forthcoming">
+                <span class="pub-doi-label">Forthcoming</span>
+              </span>
+              <!--
+              <a class="pub-doi" href="https://doi.org/" target="_blank" rel="noopener noreferrer"
+                aria-label="Open DOI for spatial roughness distributions on ship resistance">
+                DOI
+              </a>
+              -->
             </div>
           </div>
         </div>
@@ -1544,7 +1590,11 @@
         <div class="pub-item">
           <div class="pub-title">
             <span class="status published" aria-hidden="true">●</span>
-            CFD-based model predictive control for point absorber wave energy converter
+
+            <span class="title-text">
+              CFD-based model predictive control for point absorber wave energy
+              converter
+            </span>
           </div>
 
           <div class="pub-meta-block">
@@ -1553,18 +1603,29 @@
                 <span class="main-author">Sang-seok Han*</span>
                 <span class="co-authors"> and Minhong Lee</span>
               </span>
+
               <span class="author-short">
                 <span class="main-author">S. Han*</span>
                 <span class="co-authors"> and M. Lee</span>
               </span>
             </div>
+
             <div class="pub-meta">
-              <span class="pub-meta-text">
-                <span class="meta-tooltip" data-tooltip="Conference proceedings · Himeji, Japan">
+              <span class="pub-meta-text meta-tooltip" data-tooltip="Conference proceedings · Himeji, Japan">
+                <span class="conference-name-full">
                   JASNAOE 2025 Annual Autumn Meeting
-                </span><span>,</span>
+                </span>
+                <span class="conference-name-short">
+                  JASNAOE 2025
+                </span>,
               </span>
-              <span class="pub-year">2025</span>
+
+              <span class="pub-year">October 2025</span>
+
+              <a class="pub-doi" href="https://doi.org/10.14856/conf.41.0_979" target="_blank" rel="noopener noreferrer"
+                aria-label="Open DOI for CFD-based model predictive control">
+                <span class="pub-doi-label">DOI</span>
+              </a>
             </div>
           </div>
         </div>
@@ -1572,26 +1633,47 @@
         <div class="pub-item">
           <div class="pub-title">
             <span class="status published" aria-hidden="true">●</span>
-            Numerical analysis of fluid-structure interaction for semi-submersible floating offshore wind turbines
+
+            <span class="title-text">
+              Numerical analysis of fluid-structure interaction for
+              semi-submersible floating offshore wind turbines
+            </span>
           </div>
+
           <div class="pub-meta-block">
             <div class="pub-authors">
               <span class="author-full">
                 <span class="main-author">Sang-seok Han*</span>,
-                <span class="co-authors">Saishuai Dai, Momchil Terziev, Hae-chan Yun, and Soonseok Song</span>
+                <span class="co-authors">
+                  Saishuai Dai, Momchil Terziev, Hae-chan Yun, and Soonseok Song
+                </span>
               </span>
+
               <span class="author-short">
                 <span class="main-author">S. Han*</span>,
-                <span class="co-authors">S. Dai, M. Terziev, <em>et al.</em></span>
+                <span class="co-authors">
+                  S. Dai, M. Terziev, <em>et al.</em>
+                </span>
               </span>
             </div>
+
             <div class="pub-meta">
-              <span class="pub-meta-text">
-                <span class="meta-tooltip" data-tooltip="International conference · Edinburgh, UK">
+              <span class="pub-meta-text meta-tooltip"
+                data-tooltip="International conference · Edinburgh, United Kingdom">
+                <span class="conference-name-full">
                   International Conference on Computational Methods in Marine Engineering (MARINE 2025)
-                </span><span>,</span>
+                </span>
+                <span class="conference-name-short">
+                  MARINE 2025
+                </span>,
               </span>
-              <span class="pub-year">2025</span>
+
+              <span class="pub-year">June 2025</span>
+
+              <a class="pub-doi" href="http://doi.org/10.23967/marine.2025.141" target="_blank"
+                rel="noopener noreferrer" aria-label="Open DOI for fluid-structure interaction analysis">
+                <span class="pub-doi-label">DOI</span>
+              </a>
             </div>
           </div>
         </div>

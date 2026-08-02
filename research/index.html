@@ -218,11 +218,6 @@
       margin: 0;
     }
 
-    .ongoing-header {
-      margin-top: 0;
-      margin-bottom: 18px;
-    }
-
     .current-project {
       display: grid;
       grid-template-columns: minmax(290px, 320px) minmax(0, 1fr);
@@ -380,6 +375,11 @@
       margin-bottom: 15px;
       text-transform: uppercase;
       opacity: 0.92;
+    }
+
+    .ongoing-header {
+      margin-top: 0;
+      margin-bottom: 25px;
     }
 
     .rt-item {
@@ -802,8 +802,8 @@
       gap: 8px;
 
       width: 100%;
-      margin: 0 0 28px;
-      padding: 0 0 5px;
+      margin: 0 0 12px;
+      padding: 0 0 3px;
 
       background: transparent;
       border: 0;
@@ -1000,6 +1000,29 @@
       opacity: 0.48;
       text-decoration: none;
       transition: opacity 0.2s ease;
+    }
+
+    .ongoing-project-list {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .ongoing-project-list::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 2px;
+
+      width: 1px;
+
+      background: linear-gradient(to bottom,
+          rgba(11, 31, 58, 0),
+          rgba(11, 31, 58, 0.07) 10%,
+          rgba(11, 31, 58, 0.10) 28%,
+          rgba(11, 31, 58, 0.10) 72%,
+          rgba(11, 31, 58, 0.07) 90%,
+          rgba(11, 31, 58, 0));
     }
 
     .rt-log-link:hover {
@@ -1592,247 +1615,232 @@
         </span>
       </h1>
 
-      <article class="current-project">
+      <div class="ongoing-project-list">
 
-        <figure class="current-project-figure current-project-figure--published">
+        <article class="current-project">
 
-          <img src="/assets/hull-roughness.svg" width="879" height="973"
-            alt="Uniform, linear, random, and wall-shear-stress-based hull roughness distributions with the same mean roughness"
-            decoding="async" fetchpriority="high">
+          <figure class="current-project-figure current-project-figure--published">
 
-          <figcaption class="current-project-caption">
+            <img src="/assets/hull-roughness.svg" width="879" height="973"
+              alt="Uniform, linear, random, and wall-shear-stress-based hull roughness distributions with the same mean roughness"
+              decoding="async" fetchpriority="high">
 
-            <span class="current-project-caption-title" data-en="Equal mean roughness — different spatial distributions"
-              data-ja="同一の平均粗さ — 異なる空間分布">
-              Equal mean roughness — different spatial distributions
-            </span>
+            <figcaption class="current-project-caption">
 
-            <a class="current-project-caption-source" href="/publications/beyond-resistance/">
-              <span>Ocean Engineering</span>
-              <span aria-hidden="true"> · </span>
-              <span>Han et al. (2026)</span>
-            </a>
-
-          </figcaption>
-        </figure>
-
-        <div class="current-project-content">
-
-          <div class="current-project-heading">
-            <h2>
-              <span data-en="Spatial Hull Roughness and Ship Hydrodynamics" data-ja="船体粗さの空間分布と船舶流体力学">
-                Spatial Hull Roughness and Ship Hydrodynamics
+              <span class="current-project-caption-title"
+                data-en="Equal mean roughness — different spatial distributions" data-ja="同一の平均粗さ — 異なる空間分布">
+                Equal mean roughness — different spatial distributions
               </span>
-            </h2>
 
-            <time class="current-project-period" datetime="2024" aria-label="Ongoing since 2024">
-              2024–
-            </time>
-          </div>
+              <a class="current-project-caption-source" href="/publications/beyond-resistance/">
+                <span>Ocean Engineering</span>
+                <span aria-hidden="true"> · </span>
+                <span>Han et al. (2026)</span>
+              </a>
 
-          <p class="current-project-description"
-            data-en="The work investigates how spatially non-uniform hull roughness distributions influence resistance, boundary-layer development, and wake response under identical area-averaged equivalent roughness.&lt;span class=&quot;desc-second-line&quot;&gt;Current extensions move from model-scale resistance analysis toward full-scale powering prediction, with attention to effective roughness descriptors and measurement-informed roughness distributions.&lt;/span&gt;"
-            data-ja="本研究では、面積平均等価粗さが同一の条件下で、空間的に非一様な船体粗さ分布が抵抗、境界層の発達、および後流応答にどのような影響を与えるかを検討しています。&lt;span class=&quot;desc-second-line&quot;&gt;現在は、模型船スケールの抵抗解析から実船の推進性能予測へと研究を展開しており、有効粗さ指標および計測に基づく粗さ分布に注目しています。&lt;/span&gt;">
-            The work investigates how spatially non-uniform hull roughness
-            distributions influence resistance, boundary-layer development, and wake
-            response under identical area-averaged equivalent roughness.
+            </figcaption>
+          </figure>
 
-            <span class="desc-second-line">
-              Current extensions move from model-scale resistance analysis toward
-              full-scale powering prediction, with attention to effective roughness
-              descriptors and measurement-informed roughness distributions.
-            </span>
-          </p>
+          <div class="current-project-content">
 
-          <div class="current-project-topics" aria-label="Research topics">
-            <span>CFD</span>
-
-            <span data-en="Non-uniform roughness" data-ja="非一様粗さ">
-              Non-uniform roughness
-            </span>
-
-            <span data-en="Boundary layer & wake" data-ja="境界層・後流">
-              Boundary layer &amp; wake
-            </span>
-
-            <span data-en="Full-scale extensions" data-ja="実船スケールへの展開">
-              Full-scale extensions
-            </span>
-          </div>
-
-          <aside class="research-network" aria-labelledby="research-network-title">
-
-            <span id="research-network-title" class="research-network-heading" data-en="Selected Research Interactions"
-              data-ja="主な研究交流">
-              Selected Research Interactions
-            </span>
-
-            <ul class="research-network-list">
-              <li>
-                <span class="research-network-name">MARIN</span>
-
-                <span class="research-network-meta">
-                  <span class="research-network-role" data-en="Technical discussion related to W2025"
-                    data-ja="W2025に関する技術的議論">
-                    Technical discussion related to W2025
-                  </span>
-
-                  <span class="research-network-separator">·</span>
-
-                  <time class="research-network-period" datetime="2026" data-en="2026" data-ja="2026年">
-                    2026
-                  </time>
+            <div class="current-project-heading">
+              <h2>
+                <span data-en="Spatial Hull Roughness and Ship Hydrodynamics" data-ja="船体粗さの空間分布と船舶流体力学">
+                  Spatial Hull Roughness and Ship Hydrodynamics
                 </span>
-              </li>
+              </h2>
 
-              <li>
-                <span class="research-network-name">Siemens</span>
+              <time class="current-project-period" datetime="2024" aria-label="Ongoing since 2024">
+                2024–
+              </time>
+            </div>
 
-                <span class="research-network-meta">
-                  <span class="research-network-role" data-en="Technical discussion" data-ja="技術的議論">
-                    Technical discussion
-                  </span>
+            <p class="current-project-description"
+              data-en="The work investigates how spatially non-uniform hull roughness distributions influence resistance, boundary-layer development, and wake response under identical area-averaged equivalent roughness.&lt;span class=&quot;desc-second-line&quot;&gt;Current extensions move from model-scale resistance analysis toward full-scale powering prediction, with attention to effective roughness descriptors and measurement-informed roughness distributions.&lt;/span&gt;"
+              data-ja="本研究では、面積平均等価粗さが同一の条件下で、空間的に非一様な船体粗さ分布が抵抗、境界層の発達、および後流応答にどのような影響を与えるかを検討しています。&lt;span class=&quot;desc-second-line&quot;&gt;現在は、模型船スケールの抵抗解析から実船の推進性能予測へと研究を展開しており、有効粗さ指標および計測に基づく粗さ分布に注目しています。&lt;/span&gt;">
+              The work investigates how spatially non-uniform hull roughness
+              distributions influence resistance, boundary-layer development, and wake
+              response under identical area-averaged equivalent roughness.
 
-                  <span class="research-network-separator">·</span>
-
-                  <time class="research-network-period" datetime="2026" data-en="2026" data-ja="2026年">
-                    2026
-                  </time>
-                </span>
-              </li>
-
-              <li>
-                <span class="research-network-name">University of Iowa</span>
-
-                <span class="research-network-meta">
-                  <span class="research-network-role" data-en="Research discussion and advice" data-ja="研究に関する議論・助言">
-                    Research discussion and advice
-                  </span>
-
-                  <span class="research-network-separator">·</span>
-
-                  <time class="research-network-period" datetime="2026" data-en="2026" data-ja="2026年">
-                    2026
-                  </time>
-                </span>
-              </li>
-
-              <li>
-                <span class="research-network-name">University of Southampton</span>
-
-                <span class="research-network-meta">
-                  <span class="research-network-role" data-en="Research discussion and advice" data-ja="研究に関する議論・助言">
-                    Research discussion and advice
-                  </span>
-
-                  <span class="research-network-separator">·</span>
-
-                  <time class="research-network-period" datetime="2025/2026" data-en="2025–2026" data-ja="2025–2026年">
-                    2025
-                  </time>
-                </span>
-              </li>
-
-              <li>
-                <span class="research-network-name">University of Strathclyde</span>
-
-                <span class="research-network-meta">
-                  <span class="research-network-role" data-en="MSc research" data-ja="修士研究">
-                    MSc research
-                  </span>
-
-                  <span class="research-network-separator">·</span>
-
-                  <time class="research-network-period" datetime="2024/2025" data-en="2024–2025" data-ja="2024–2025年">
-                    2024–2025
-                  </time>
-                </span>
-              </li>
-            </ul>
-
-          </aside>
-
-        </div>
-      </article>
-
-      <article class="current-project">
-
-        <figure class="current-project-figure current-project-figure--pending">
-          <figcaption class="current-project-pending-note" data-en="Manuscript in preparation" data-ja="原稿準備中">
-            Manuscript in preparation
-          </figcaption>
-        </figure>
-
-        <div class="current-project-content">
-
-          <div class="current-project-heading">
-            <h2>
-              <span data-en="CFD–MBD Analysis of Gyroscopic Wave Energy Converters" data-ja="ジャイロ式波力発電装置のCFD–MBD解析">
-                CFD–MBD Analysis of Gyroscopic Wave Energy Converters
+              <span class="desc-second-line">
+                Current extensions move from model-scale resistance analysis toward
+                full-scale powering prediction, with attention to effective roughness
+                descriptors and measurement-informed roughness distributions.
               </span>
-            </h2>
+            </p>
 
-            <time class="current-project-period" datetime="2025" aria-label="Ongoing since 2025">
-              2025
-            </time>
-          </div>
+            <div class="current-project-topics" aria-label="Research topics">
+              <span>CFD</span>
 
-          <p class="current-project-description"
-            data-en="Development of a modular CFD–MBD framework for analysing the coupled hydrodynamic and internal gyroscopic dynamics of wave energy converters."
-            data-ja="波力発電装置の流体力学応答と内部ジャイロダイナミクスを連成解析する、モジュール型CFD–MBDフレームワークの開発研究です。">
-            Development of a modular CFD–MBD framework for analysing the
-            coupled hydrodynamic and internal gyroscopic dynamics of wave
-            energy converters.
-          </p>
+              <span data-en="Non-uniform roughness" data-ja="非一様粗さ">
+                Non-uniform roughness
+              </span>
 
-          <div class="current-project-topics" aria-label="Research topics">
-            <span>CFD–MBD</span>
+              <span data-en="Boundary layer & wake" data-ja="境界層・後流">
+                Boundary layer &amp; wake
+              </span>
 
-            <span data-en="Wave energy" data-ja="波力エネルギー">
-              Wave energy
-            </span>
+              <span data-en="Full-scale extensions" data-ja="実船スケールへの展開">
+                Full-scale extensions
+              </span>
+            </div>
 
-            <span data-en="Gyroscopic dynamics" data-ja="ジャイロダイナミクス">
-              Gyroscopic dynamics
-            </span>
+            <aside class="research-network" aria-labelledby="research-network-title">
 
-          </div>
+              <span id="research-network-title" class="research-network-heading"
+                data-en="Selected Research Interactions" data-ja="主な研究交流">
+                Selected Research Interactions
+              </span>
 
-          <aside class="research-network" aria-labelledby="gwec-project-network-title">
+              <ul class="research-network-list">
+                <li>
+                  <span class="research-network-name">MARIN</span>
 
-            <span id="gwec-project-network-title" class="research-network-heading" data-en="Project Background"
-              data-ja="研究背景">
-              Project Background
-            </span>
+                  <span class="research-network-meta">
+                    <span class="research-network-role" data-en="Technical discussion related to W2025"
+                      data-ja="W2025に関する技術的議論">
+                      Technical discussion related to W2025
+                    </span>
 
-            <ul class="research-network-list">
+                    <span class="research-network-separator">·</span>
 
-              <li>
-                <span class="research-network-name">
-                  University of Strathclyde
-                </span>
-
-                <span class="research-network-meta">
-                  <span class="research-network-role" data-en="Research discussion" data-ja="研究に関する議論">
-                    Research discussion
+                    <time class="research-network-period" datetime="2026" data-en="2026" data-ja="2026年">
+                      2026
+                    </time>
                   </span>
-                </span>
+                </li>
 
-                <span class="research-network-separator">·</span>
+                <li>
+                  <span class="research-network-name">Siemens</span>
 
-                <time class="research-network-period" datetime="2025" data-en="2025" data-ja="2025年">
-                  2025
-                </time>
-                </span>
-              </li>
-              <li>
-                <span class="research-network-name">
-                  The University of Osaka
-                </span>
+                  <span class="research-network-meta">
+                    <span class="research-network-role" data-en="Technical discussion" data-ja="技術的議論">
+                      Technical discussion
+                    </span>
 
-                <span class="research-network-meta">
-                  <span class="research-network-role" data-en="Visiting research" data-ja="訪問研究">
-                    Visiting research
+                    <span class="research-network-separator">·</span>
+
+                    <time class="research-network-period" datetime="2026" data-en="2026" data-ja="2026年">
+                      2026
+                    </time>
+                  </span>
+                </li>
+
+                <li>
+                  <span class="research-network-name">University of Iowa</span>
+
+                  <span class="research-network-meta">
+                    <span class="research-network-role" data-en="Research discussion and advice" data-ja="研究に関する議論・助言">
+                      Research discussion and advice
+                    </span>
+
+                    <span class="research-network-separator">·</span>
+
+                    <time class="research-network-period" datetime="2026" data-en="2026" data-ja="2026年">
+                      2026
+                    </time>
+                  </span>
+                </li>
+
+                <li>
+                  <span class="research-network-name">University of Southampton</span>
+
+                  <span class="research-network-meta">
+                    <span class="research-network-role" data-en="Research discussion and advice" data-ja="研究に関する議論・助言">
+                      Research discussion and advice
+                    </span>
+
+                    <span class="research-network-separator">·</span>
+
+                    <time class="research-network-period" datetime="2025/2026" data-en="2025–2026" data-ja="2025–2026年">
+                      2025
+                    </time>
+                  </span>
+                </li>
+
+                <li>
+                  <span class="research-network-name">University of Strathclyde</span>
+
+                  <span class="research-network-meta">
+                    <span class="research-network-role" data-en="MSc research" data-ja="修士研究">
+                      MSc research
+                    </span>
+
+                    <span class="research-network-separator">·</span>
+
+                    <time class="research-network-period" datetime="2024/2025" data-en="2024–2025" data-ja="2024–2025年">
+                      2024–2025
+                    </time>
+                  </span>
+                </li>
+              </ul>
+
+            </aside>
+
+          </div>
+        </article>
+
+        <article class="current-project">
+
+          <figure class="current-project-figure current-project-figure--pending">
+            <figcaption class="current-project-pending-note" data-en="Manuscript in preparation" data-ja="原稿準備中">
+              Manuscript in preparation
+            </figcaption>
+          </figure>
+
+          <div class="current-project-content">
+
+            <div class="current-project-heading">
+              <h2>
+                <span data-en="CFD–MBD Analysis of Gyroscopic Wave Energy Converters" data-ja="ジャイロ式波力発電装置のCFD–MBD解析">
+                  CFD–MBD Analysis of Gyroscopic Wave Energy Converters
+                </span>
+              </h2>
+
+              <time class="current-project-period" datetime="2025" aria-label="Ongoing since 2025">
+                2025
+              </time>
+            </div>
+
+            <p class="current-project-description"
+              data-en="Development of a modular CFD–MBD framework for analysing the coupled hydrodynamic and internal gyroscopic dynamics of wave energy converters."
+              data-ja="波力発電装置の流体力学応答と内部ジャイロダイナミクスを連成解析する、モジュール型CFD–MBDフレームワークの開発研究です。">
+              Development of a modular CFD–MBD framework for analysing the
+              coupled hydrodynamic and internal gyroscopic dynamics of wave
+              energy converters.
+            </p>
+
+            <div class="current-project-topics" aria-label="Research topics">
+              <span>CFD–MBD</span>
+
+              <span data-en="Wave energy" data-ja="波力エネルギー">
+                Wave energy
+              </span>
+
+              <span data-en="Gyroscopic dynamics" data-ja="ジャイロダイナミクス">
+                Gyroscopic dynamics
+              </span>
+
+            </div>
+
+            <aside class="research-network" aria-labelledby="gwec-project-network-title">
+
+              <span id="gwec-project-network-title" class="research-network-heading" data-en="Project Background"
+                data-ja="研究背景">
+                Project Background
+              </span>
+
+              <ul class="research-network-list">
+
+                <li>
+                  <span class="research-network-name">
+                    University of Strathclyde
+                  </span>
+
+                  <span class="research-network-meta">
+                    <span class="research-network-role" data-en="Research discussion" data-ja="研究に関する議論">
+                      Research discussion
+                    </span>
                   </span>
 
                   <span class="research-network-separator">·</span>
@@ -1840,88 +1848,106 @@
                   <time class="research-network-period" datetime="2025" data-en="2025" data-ja="2025年">
                     2025
                   </time>
-                </span>
-              </li>
-
-
-            </ul>
-
-          </aside>
-
-        </div>
-      </article>
-
-      <article class="current-project">
-
-        <figure class="current-project-figure current-project-figure--pending">
-          <figcaption class="current-project-pending-note" data-en="Manuscript in preparation" data-ja="原稿準備中">
-            Manuscript in preparation
-          </figcaption>
-        </figure>
-
-        <div class="current-project-content">
-
-          <div class="current-project-heading">
-            <h2>
-              <span data-en="CFD Parameterisation for Added Resistance in Waves" data-ja="波浪中付加抵抗予測のCFDパラメータ設定"> CFD
-                Parameterisation for Added Resistance in Waves </span>
-            </h2>
-
-            <time class="current-project-period" datetime="2026" aria-label="Ongoing since 2026">
-              2026–
-            </time>
-          </div>
-
-          <p class="current-project-description"
-            data-en="Collaborative research to establish CFD parameters and verification practices for added-resistance predictions supporting ITTC seakeeping procedures."
-            data-ja="ITTC耐航性能手順を支援する波浪中付加抵抗予測について、CFDパラメータおよび検証手法を整備する共同研究です。">
-            Collaborative research to establish CFD parameters and verification
-            practices for added-resistance predictions supporting ITTC seakeeping
-            procedures.
-          </p>
-
-          <div class="current-project-topics" aria-label="Research topics">
-            <span>CFD</span>
-
-            <span data-en="Added resistance" data-ja="付加抵抗">
-              Added resistance
-            </span>
-
-            <span data-en="Verification" data-ja="検証">
-              Verification
-            </span>
-          </div>
-
-          <aside class="research-network" aria-labelledby="snu-project-network-title">
-
-            <span id="snu-project-network-title" class="research-network-heading" data-en="Research Setting"
-              data-ja="研究環境">
-              Research Setting
-            </span>
-            <ul class="research-network-list">
-              <li>
-                <span class="research-network-name">
-                  Seoul National University
-                </span>
-
-                <span class="research-network-meta">
-                  <span class="research-network-role" data-en="Visiting research" data-ja="訪問研究">
-                    Visiting research
+                  </span>
+                </li>
+                <li>
+                  <span class="research-network-name">
+                    The University of Osaka
                   </span>
 
-                  <span class="research-network-separator">·</span>
+                  <span class="research-network-meta">
+                    <span class="research-network-role" data-en="Visiting research" data-ja="訪問研究">
+                      Visiting research
+                    </span>
 
-                  <span class="research-network-period" data-en="Jul–Nov 2026" data-ja="2026年7月–11月">
-                    Jul–Nov 2026
+                    <span class="research-network-separator">·</span>
+
+                    <time class="research-network-period" datetime="2025" data-en="2025" data-ja="2025年">
+                      2025
+                    </time>
                   </span>
-                </span>
-              </li>
-            </ul>
+                </li>
 
-          </aside>
 
-        </div>
-      </article>
+              </ul>
+
+            </aside>
+
+          </div>
+        </article>
+
+        <article class="current-project">
+
+          <figure class="current-project-figure current-project-figure--pending">
+            <figcaption class="current-project-pending-note" data-en="Manuscript in preparation" data-ja="原稿準備中">
+              Manuscript in preparation
+            </figcaption>
+          </figure>
+
+          <div class="current-project-content">
+
+            <div class="current-project-heading">
+              <h2>
+                <span data-en="CFD Parameterisation for Added Resistance in Waves" data-ja="波浪中付加抵抗予測のCFDパラメータ設定"> CFD
+                  Parameterisation for Added Resistance in Waves </span>
+              </h2>
+
+              <time class="current-project-period" datetime="2026" aria-label="Ongoing since 2026">
+                2026–
+              </time>
+            </div>
+
+            <p class="current-project-description"
+              data-en="Collaborative research to establish CFD parameters and verification practices for added-resistance predictions supporting ITTC seakeeping procedures."
+              data-ja="ITTC耐航性能手順を支援する波浪中付加抵抗予測について、CFDパラメータおよび検証手法を整備する共同研究です。">
+              Collaborative research to establish CFD parameters and verification
+              practices for added-resistance predictions supporting ITTC seakeeping
+              procedures.
+            </p>
+
+            <div class="current-project-topics" aria-label="Research topics">
+              <span>CFD</span>
+
+              <span data-en="Added resistance" data-ja="付加抵抗">
+                Added resistance
+              </span>
+
+              <span data-en="Verification" data-ja="検証">
+                Verification
+              </span>
+            </div>
+
+            <aside class="research-network" aria-labelledby="snu-project-network-title">
+
+              <span id="snu-project-network-title" class="research-network-heading" data-en="Research Setting"
+                data-ja="研究環境">
+                Research Setting
+              </span>
+              <ul class="research-network-list">
+                <li>
+                  <span class="research-network-name">
+                    Seoul National University
+                  </span>
+
+                  <span class="research-network-meta">
+                    <span class="research-network-role" data-en="Visiting research" data-ja="訪問研究">
+                      Visiting research
+                    </span>
+
+                    <span class="research-network-separator">·</span>
+
+                    <span class="research-network-period" data-en="Jul–Nov 2026" data-ja="2026年7月–11月">
+                      Jul–Nov 2026
+                    </span>
+                  </span>
+                </li>
+              </ul>
+
+            </aside>
+
+          </div>
+        </article>
+      </div>
     </section>
 
     <div class="research-timeline" id="research-timeline">
