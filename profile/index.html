@@ -272,13 +272,55 @@
       border-bottom-color: transparent;
     }
 
-    #background .affiliation-item {
+    #background .background-affiliation-item {
+      position: relative;
+
+      display: grid;
+      grid-template-columns: 58px minmax(0, 1fr);
+      column-gap: 16px;
+      align-items: center;
+
       box-sizing: border-box;
       width: 100%;
+      max-width: 420px;
+      min-height: 88px;
 
-      padding: 1px 0 2px 18px;
+      margin: 0;
+      padding: 12px 13px 13px 12px;
 
-      border-left: 2px solid rgba(11, 31, 58, 0.11);
+      background: rgba(255, 255, 255, 0.045);
+
+      border-left: 2px solid rgba(11, 31, 58, 0.065);
+      border-bottom: 1px solid transparent;
+    }
+
+    #background .background-affiliation-item {
+      position: relative;
+
+      display: grid;
+      grid-template-columns: 58px minmax(0, 1fr);
+      column-gap: 16px;
+      align-items: center;
+
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 420px;
+      min-height: 88px;
+
+      margin: 0;
+      padding: 12px 13px 13px 12px;
+
+      background: transparent;
+
+      border-left: 2px solid rgba(11, 31, 58, 0.065);
+      border-bottom: 0;
+
+      cursor: default;
+    }
+
+    #background .background-affiliation-item:hover .affiliation-logo img {
+      filter:
+        grayscale(0) saturate(0.9) contrast(1.02);
     }
 
     :is(#affiliations, #background) .affiliation-primary {
@@ -1000,8 +1042,7 @@
     #affiliations .month-block {
       transition:
         background-color 0.92s cubic-bezier(0.22, 1, 0.36, 1),
-        border-color 0.92s cubic-bezier(0.22, 1, 0.36, 1),
-
+        border-color 0.92s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     #affiliations.is-affiliation-focused .month-block:not(.is-active) {
@@ -1492,6 +1533,60 @@
       #affiliations .affiliation-item.is-active {
         transform: none;
       }
+
+      #background .background-affiliation-item {
+        grid-template-columns: 40px minmax(0, 1fr);
+        column-gap: 12px;
+
+        width: 100%;
+        max-width: none;
+        min-height: 0;
+
+        padding: 9px 4px 10px 10px;
+
+        background: transparent;
+        border-left: 1.5px solid rgba(11, 31, 58, 0.065);
+
+        transform: none;
+        transition: none;
+      }
+
+      #background .background-affiliation-item .affiliation-logo {
+        width: 36px;
+        height: 36px;
+
+        opacity: 0.5;
+        transform: none;
+        transition: none;
+      }
+
+      #background .background-affiliation-item .affiliation-logo img,
+      #background .background-affiliation-item:hover .affiliation-logo img {
+        filter: none;
+        transition: none;
+      }
+
+      #background .background-affiliation-item:hover {
+        background: transparent;
+        border-left-color: rgba(11, 31, 58, 0.065);
+        transform: none;
+      }
+
+      #background .background-affiliation-item .affiliation-logo,
+      #background .background-affiliation-item:hover .affiliation-logo {
+        width: 36px;
+        height: 36px;
+
+        opacity: 0.5;
+        transform: none;
+        transition: none;
+      }
+
+      #background .background-affiliation-item .affiliation-logo img,
+      #background .background-affiliation-item:hover .affiliation-logo img {
+        filter: none;
+        transition: none;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1521,10 +1616,6 @@
       min-height: 10vh;
     }
 
-    .scroll-spacer {
-      height: 2.5vh;
-    }
-
     #research-interests ul {
       margin-top: 18px;
     }
@@ -1550,7 +1641,7 @@
   </style>
 </head>
 
-<body>
+<body id="top">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
@@ -1596,8 +1687,8 @@
         Affiliations
       </a>
 
-      <a href="#academic-activity" data-en="Scholarly Contribution" data-ja="学術活動">
-        Scholarly Contribution
+      <a href="#academic-activity" data-en="Academic Service" data-ja="学術活動">
+        Academic Service
       </a>
 
       <a href="#background" data-en="Background" data-ja="経歴">
@@ -1808,8 +1899,9 @@
                 </span>
               </div>
 
-              <div class="affiliation-context" data-en="Offshore hydrodynamics and CFD research" data-ja="海洋流体力学・CFD研究">
-                Offshore hydrodynamics and CFD research
+              <div class="affiliation-context" data-en="Research visit in offshore hydrodynamics"
+                data-ja="海洋流体力学に関する研究訪問">
+                Research visit in offshore hydrodynamics
               </div>
 
               <div class="affiliation-secondary">
@@ -1943,35 +2035,62 @@
         Background
       </h2>
 
-      <div class="affiliation-item">
-        <div class="affiliation-primary">
-          <span data-en="Sonar Petty Officer" data-ja="海軍 ソナー下士官">
-            Sonar Petty Officer
-          </span>
-
-          <span class="affiliation-year">
-            (2016–2020)
-          </span>
+      <div class="affiliation-item background-affiliation-item">
+        <div class="affiliation-logo" aria-hidden="true">
+          <img src="/assets/logos/navy-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
         </div>
 
-        <div class="affiliation-context" data-en="Acoustic Systems & Naval Operations" data-ja="音響システム・海軍運用">
-          Acoustic Systems & Naval Operations
-        </div>
+        <div class="affiliation-copy">
+          <div class="affiliation-primary">
+            <span data-en="Sonar Petty Officer" data-ja="海軍 ソナー下士官">
+              Sonar Petty Officer
+            </span>
 
-        <div class="affiliation-secondary">
-          <span data-en="Republic of Korea Navy" data-ja="大韓民国海軍">
-            Republic of Korea Navy
-          </span>
+            <span class="affiliation-year">
+              (2016–2020)
+            </span>
+          </div>
 
-          <span class="affiliation-dot">·</span>
+          <div class="affiliation-context" data-en="Acoustic Systems & Naval Operations" data-ja="音響システム・海軍運用">
+            Acoustic Systems &amp; Naval Operations
+          </div>
 
-          <span class="affiliation-country" data-en="South Korea" data-ja="韓国">
-            South Korea
-          </span>
+          <div class="affiliation-secondary">
+            <span data-en="Republic of Korea Navy" data-ja="大韓民国海軍">
+              Republic of Korea Navy
+            </span>
+
+            <span class="affiliation-dot">·</span>
+
+            <span class="affiliation-country" data-en="South Korea" data-ja="韓国">
+              South Korea
+            </span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="scroll-spacer"></div>
+
+    <footer class="site-footer">
+      <div class="footer-signature">
+        <span class="footer-name">
+          Sangseok Han
+        </span>
+
+        <span class="footer-field" data-en="Research portfolio" data-ja="研究ポートフォリオ">
+          Research portfolio
+        </span>
+      </div>
+
+      <a class="footer-top" href="#top">
+        <span data-en="Back to top" data-ja="ページ上部へ">
+          Back to top
+        </span>
+
+        <span class="footer-top-arrow" aria-hidden="true">
+          ↑
+        </span>
+      </a>
+    </footer>
   </div>
 
   <script>

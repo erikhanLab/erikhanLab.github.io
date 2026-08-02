@@ -120,10 +120,6 @@ body {
   color: rgba(11, 31, 58, 0.24);
 }
 
-/* =========================
-   Primary navigation
-========================= */
-
 .nav {
   display: flex;
   justify-content: space-between;
@@ -225,6 +221,138 @@ body {
 
   background: rgba(11, 31, 58, 0.72);
   transform: translateX(-50%);
+}
+
+.site-footer {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  column-gap: 36px;
+
+  box-sizing: border-box;
+  width: 100%;
+
+  margin-top: 30px;
+  padding-top: 22px;
+
+  color: rgba(71, 85, 105, 0.56);
+}
+
+.site-footer::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: min(360px, 48%);
+  height: 1px;
+
+  background:
+    linear-gradient(90deg,
+      rgba(11, 31, 58, 0.26) 0%,
+      rgba(11, 31, 58, 0.16) 42%,
+      rgba(11, 31, 58, 0.06) 74%,
+      rgba(11, 31, 58, 0) 100%);
+}
+
+.footer-signature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+
+  min-width: 0;
+}
+
+.footer-name {
+  font-family:
+    "Iowan Old Style",
+    "Palatino Linotype",
+    "Book Antiqua",
+    Palatino,
+    Georgia,
+    serif;
+
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.075em;
+
+  color: rgba(11, 31, 58, 0.6);
+}
+
+.footer-field {
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0.055em;
+  margin-top: 3px;
+  font-style: italic;
+  color: rgba(100, 116, 139, 0.54);
+}
+
+.footer-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  width: fit-content;
+
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.075em;
+  white-space: nowrap;
+
+  color: rgba(71, 85, 105, 0.52);
+  text-decoration: none;
+
+  transition: color 0.18s ease;
+}
+
+.footer-top-arrow {
+  display: inline-block;
+
+  font-size: 1.05em;
+  line-height: 1;
+
+  color: rgba(11, 31, 58, 0.34);
+
+  transition:
+    color 0.18s ease,
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-top:hover {
+  color: rgba(11, 31, 58, 0.82);
+}
+
+.footer-top:hover .footer-top-arrow {
+  color: rgba(11, 31, 58, 0.72);
+  transform: translateY(-3px);
+}
+
+.footer-top:focus-visible {
+  color: rgba(11, 31, 58, 0.88);
+
+  outline: 1px solid rgba(11, 31, 58, 0.22);
+  outline-offset: 5px;
+}
+
+html[data-lang="ja"] .footer-field,
+html[data-lang="ja"] .footer-top {
+  letter-spacing: 0.035em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .footer-top,
+  .footer-top-arrow {
+    transition: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -372,5 +500,29 @@ body {
     opacity: 1;
 
     transform: translateX(-50%);
+  }
+
+  .site-footer {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 16px;
+
+    margin-top: 28px;
+    padding-top: 11px;
+  }
+
+  .footer-name {
+    font-size: 0.72rem;
+  }
+
+  .footer-field {
+    max-width: 220px;
+
+    font-size: 0.63rem;
+    line-height: 1.4;
+  }
+
+  .footer-top {
+    gap: 5px;
+    font-size: 0.64rem;
   }
 }

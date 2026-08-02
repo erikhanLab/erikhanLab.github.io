@@ -906,8 +906,8 @@
       width: 100%;
       max-width: 850px;
 
-      margin-top: 58px;
-      padding: 20px 4px 24px;
+      margin: 44px 0 58px;
+      padding: 18px 4px 20px;
     }
 
     .research-contact-cta::before {
@@ -1317,30 +1317,41 @@
         border-left: 0;
       }
 
-      .research-contact-cta {
-        display: block;
+      @media (max-width: 640px) {
+        .research-contact-cta {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          gap: 14px;
 
-        margin-top: 30px;
-        padding: 15px 2px 22px;
-      }
+          margin: 26px 0 0;
+          padding: 14px 2px 10px;
+        }
 
-      .research-contact-cta p {
-        max-width: 290px;
+        .research-contact-cta p {
+          flex: 1 1 auto;
+          min-width: 0;
+          max-width: none;
 
-        font-size: 0.64em;
-        line-height: 1.6;
-      }
+          font-size: 0.64em;
+          line-height: 1.45;
+          white-space: nowrap;
+        }
 
-      .research-contact-cta a {
-        margin-top: 10px;
+        .research-contact-cta a {
+          flex: 0 0 auto;
 
-        font-size: 0.62em;
+          margin-top: 0;
+
+          font-size: 0.62em;
+          white-space: nowrap;
+        }
       }
     }
   </style>
 </head>
 
-<body>
+<body id="top">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
@@ -1753,6 +1764,31 @@
       </div>
     </section>
 
+    <section class="research-contact-cta" aria-label="Research collaboration">
+
+      <p>
+        <span class="desktop" data-en="For collaboration or academic exchange related to these projects."
+          data-ja="これらの研究に関する共同研究・学術交流について。">
+          For collaboration or academic exchange related to these projects.
+        </span>
+
+        <span class="mobile" data-en="For research collaboration." data-ja="共同研究について。">
+          For research collaboration.
+        </span>
+      </p>
+
+      <a href="/contact/">
+        <span data-en="Research enquiries" data-ja="研究に関するお問い合わせ">
+          Research enquiries
+        </span>
+
+        <span class="research-contact-cta-arrow" aria-hidden="true">
+          →
+        </span>
+      </a>
+    </section>
+
+
     <div class="research-timeline" id="research-timeline">
       <h2 class="rt-header">
         <span data-en="Research Timeline (2023–)" data-ja="研究年表 (2023–)">
@@ -2041,23 +2077,29 @@
           </div>
         </div>
       </div>
-
-      <section class="research-contact-cta" aria-label="Research contact">
-        <p data-en="For research collaboration and academic exchange." data-ja="共同研究および学術交流に関するお問い合わせ。">
-          For research collaboration and academic exchange.
-        </p>
-
-        <a href="/contact/">
-          <span data-en="Contact" data-ja="連絡先">
-            Contact
-          </span>
-
-          <span class="research-contact-cta-arrow" aria-hidden="true">
-            →
-          </span>
-        </a>
-      </section>
     </div>
+
+    <footer class="site-footer">
+      <div class="footer-signature">
+        <span class="footer-name">
+          Sangseok Han
+        </span>
+
+        <span class="footer-field" data-en="Research portfolio" data-ja="研究ポートフォリオ">
+          Research portfolio
+        </span>
+      </div>
+
+      <a class="footer-top" href="#top">
+        <span data-en="Back to top" data-ja="ページ上部へ">
+          Back to top
+        </span>
+
+        <span class="footer-top-arrow" aria-hidden="true">
+          ↑
+        </span>
+      </a>
+    </footer>
   </div>
 
   <script>
