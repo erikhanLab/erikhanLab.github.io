@@ -874,6 +874,16 @@
       box-shadow: none;
     }
 
+    .month-block.aff-snu.is-planned {
+      background: rgba(116, 91, 101, 0.1);
+      border-color: rgba(94, 70, 80, 0.08);
+    }
+
+    .month-block.is-current-month {
+      box-shadow:
+        inset 0 0 0 1px rgba(11, 31, 58, 0.24);
+    }
+
     .month-block.is-past-gap {
       background: rgba(117, 124, 133, 0.15);
       border-color: rgba(100, 108, 118, 0.06);
@@ -2231,10 +2241,24 @@
             const role =
               item.role[safeLang];
 
+            const isPlanned =
+              blockMonthIndex > currentMonthIndex;
+
+            const isCurrentMonth =
+              blockMonthIndex === currentMonthIndex;
+
             block.classList.add(
               "is-filled",
               `aff-${item.id}`
             );
+
+            if (isPlanned) {
+              block.classList.add("is-planned");
+            }
+
+            if (isCurrentMonth) {
+              block.classList.add("is-current-month");
+            }
 
             block.dataset.affiliation = item.id;
 
@@ -2245,8 +2269,11 @@
 
             block.setAttribute(
               "aria-label",
-              `${formatTimelineMonth(year, month)}, ` +
-              `${institution}, ${country}, ${role}`
+              isPlanned
+                ? `${formatTimelineMonth(year, month)}, ` +
+                `${institution}, ${country}, ${role}, scheduled`
+                : `${formatTimelineMonth(year, month)}, ` +
+                `${institution}, ${country}, ${role}`
             );
           } else if (
             blockMonthIndex <= currentMonthIndex
