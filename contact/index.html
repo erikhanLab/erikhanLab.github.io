@@ -1024,15 +1024,10 @@
     </div>
 
 
-    <section class="archive-blank" aria-hidden="true"></section>
-
     <script>
         const DEFAULT_LANG = "en";
         const SUPPORTED_LANGS = new Set(["en", "ja"]);
 
-        let archiveScrollMap = [];
-        let archiveScrollMax = 0;
-        let archiveMapDirty = true;
         let scrollUpdateScheduled = false;
         let archiveLayoutObserver = null;
         let smoothScrollFrame = null;
