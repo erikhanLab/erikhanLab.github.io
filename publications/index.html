@@ -57,15 +57,6 @@
       transform: translateY(0);
     }
 
-    .nav a[href="/archive/"] {
-      color: rgba(56, 70, 88, 0.38);
-      font-style: italic;
-    }
-
-    .nav a[href="/archive/"]:hover {
-      color: rgba(28, 48, 73, 0.72);
-    }
-
     .cover-badge {
       display: inline-block;
       align-self: baseline;
@@ -260,12 +251,6 @@
     .pub-authors .co-authors {
       font-weight: normal;
       margin-left: 0.1em;
-    }
-
-    .journal-if {
-      font-size: 0.72em;
-      letter-spacing: 0.06em;
-      color: #333;
     }
 
     .publication-overview {
@@ -493,16 +478,19 @@
       left: 0;
       bottom: calc(100% + 9px);
       transform: translateY(3px);
+      box-sizing: border-box;
       width: max-content;
-      max-width: min(320px, 72vw);
+      max-width: min(420px, calc(100vw - 32px));
+      white-space: normal;
+      overflow-wrap: normal;
+      word-break: normal;
       padding: 6px 9px;
       font-family: Georgia, serif;
       font-size: 0.72rem;
       font-style: normal;
       font-weight: 400;
-      line-height: 1.35;
+      line-height: 1.4;
       letter-spacing: 0.03em;
-      white-space: nowrap;
       color: #2f3742;
       background: rgba(248, 249, 251, 0.96);
       border: 1px solid rgba(11, 31, 58, 0.12);
@@ -836,6 +824,201 @@
       border-bottom-color: transparent;
     }
 
+    .journal-metric-trigger {
+      appearance: none;
+      -webkit-appearance: none;
+      display: inline-flex;
+      align-items: baseline;
+      margin: 0;
+      padding: 0;
+      font: inherit;
+      line-height: inherit;
+      color: inherit;
+      text-align: left;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+    }
+
+    .journal-metric-trigger em {
+      color: inherit;
+
+      text-decoration-line: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 0.5px;
+      text-underline-offset: 3px;
+
+      transition:
+        color 0.18s ease,
+        text-decoration-color 0.18s ease;
+    }
+
+    .journal-metric-trigger:hover em,
+    .journal-metric-trigger:focus-visible em,
+    .journal-metric-trigger.is-open em {
+      color: rgba(11, 31, 58, 0.96);
+      text-decoration-color: rgba(11, 31, 58, 0.2);
+    }
+
+    .journal-metric-trigger:focus-visible {
+      outline: none;
+    }
+
+    .journal-metric-popover {
+      --metric-arrow-left: 28px;
+
+      position: fixed;
+      z-index: 5000;
+
+      width: max-content;
+      min-width: 220px;
+      max-width: min(292px, calc(100vw - 24px));
+
+      box-sizing: border-box;
+      padding: 12px 14px 11px;
+
+      font-family:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        Georgia,
+        serif;
+
+      color: rgba(30, 39, 51, 0.88);
+      background:
+        linear-gradient(145deg,
+          rgba(249, 250, 252, 0.985),
+          rgba(241, 244, 248, 0.985));
+
+      border: 1px solid rgba(11, 31, 58, 0.11);
+      border-radius: 8px;
+
+      box-shadow:
+        0 14px 34px rgba(11, 31, 58, 0.11),
+        0 2px 7px rgba(11, 31, 58, 0.045),
+        inset 0 1px 0 rgba(255, 255, 255, 0.72);
+
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(5px);
+      pointer-events: none;
+
+      transition:
+        opacity 0.16s ease,
+        transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 0.18s;
+    }
+
+    .journal-metric-popover.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+
+      transition-delay: 0s;
+    }
+
+    .journal-metric-popover.is-below {
+      transform: translateY(-5px);
+    }
+
+    .journal-metric-popover.is-below.is-visible {
+      transform: translateY(0);
+    }
+
+    .journal-metric-popover::after {
+      content: "";
+
+      position: absolute;
+      left: var(--metric-arrow-left);
+      bottom: -5px;
+
+      width: 8px;
+      height: 8px;
+
+      background: rgba(243, 246, 249, 0.985);
+
+      border-right: 1px solid rgba(11, 31, 58, 0.11);
+      border-bottom: 1px solid rgba(11, 31, 58, 0.11);
+
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    .journal-metric-popover.is-below::after {
+      top: -5px;
+      bottom: auto;
+
+      background: rgba(249, 250, 252, 0.985);
+
+      border: 0;
+      border-left: 1px solid rgba(11, 31, 58, 0.11);
+      border-top: 1px solid rgba(11, 31, 58, 0.11);
+    }
+
+    .journal-metric-kicker {
+      margin-bottom: 8px;
+
+      font-family: Georgia, serif;
+      font-size: 0.59rem;
+      line-height: 1;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+
+      color: rgba(70, 80, 94, 0.52);
+    }
+
+    .journal-metric-primary {
+      display: flex;
+      align-items: baseline;
+      gap: 9px;
+
+      margin-bottom: 7px;
+
+      line-height: 1.2;
+    }
+
+    .journal-metric-quartile {
+      font-size: 1.02rem;
+      font-weight: 600;
+      letter-spacing: 0.035em;
+
+      color: rgba(11, 31, 58, 0.94);
+    }
+
+    .journal-metric-rule {
+      display: block;
+      width: 1px;
+      height: 12px;
+
+      background: rgba(11, 31, 58, 0.14);
+    }
+
+    .journal-metric-impact {
+      font-size: 0.77rem;
+      letter-spacing: 0.025em;
+
+      color: rgba(45, 55, 69, 0.82);
+    }
+
+    .journal-metric-impact strong {
+      font-size: 1.04em;
+      font-weight: 600;
+      color: rgba(11, 31, 58, 0.9);
+    }
+
+    .journal-metric-source {
+      padding-top: 7px;
+      margin-top: 7px;
+
+      font-size: 0.59rem;
+      line-height: 1.3;
+      letter-spacing: 0.045em;
+
+      color: rgba(76, 86, 99, 0.48);
+      border-top: 1px solid rgba(11, 31, 58, 0.07);
+    }
+
+
     .conference-name-short {
       display: none;
     }
@@ -857,16 +1040,6 @@
     }
 
     @media (max-width: 640px) {
-      .nav a[href="/archive/"] {
-        color: rgba(56, 70, 88, 0.44);
-        font-style: italic;
-        opacity: 1;
-      }
-
-      .nav a[href="/archive/"]:hover {
-        color: rgba(28, 48, 73, 0.68);
-        opacity: 1;
-      }
 
       .page-content {
         font-size: 1.04em;
@@ -1181,6 +1354,27 @@
       .conference-name-short {
         display: inline;
       }
+
+      .journal-metric-popover {
+        min-width: 210px;
+        max-width: calc(100vw - 24px);
+
+        padding: 11px 13px 10px;
+
+        border-radius: 7px;
+      }
+
+      .journal-metric-kicker {
+        font-size: 0.56rem;
+      }
+
+      .journal-metric-quartile {
+        font-size: 0.94rem;
+      }
+
+      .journal-metric-impact {
+        font-size: 0.72rem;
+      }
     }
   </style>
 </head>
@@ -1214,10 +1408,9 @@
     <a href="/publications/" class="active" aria-current="page" data-en="Publications" data-ja="論文">
       Publications
     </a>
-    <!--
-    <a href="/works/">Works</a>
-  -->
-    <a href="/archive/" data-en="Archive" data-ja="アーカイブ">Archive</a>
+    <a href="/contact/" data-en="Contact" data-ja="連絡先">
+      Contact
+    </a>
   </div>
 
   <aside class="publication-side-nav" aria-label="Publication section navigation">
@@ -1357,7 +1550,10 @@
             </div>
             <div class="pub-meta">
               <span class="pub-meta-text">
-                <em>Ocean Engineering</em>,
+                <button type="button" class="journal-metric-trigger" data-journal="Ocean Engineering" data-quartile="Q1"
+                  data-jif="6.3" data-metric-year="2025" aria-expanded="false">
+                  <em>Ocean Engineering</em>
+                </button><span aria-hidden="true">,</span>
               </span>
 
               <span class="pub-year">2026</span>
@@ -1393,7 +1589,11 @@
             </div>
             <div class="pub-meta">
               <span class="pub-meta-text">
-                <em>Journal of Marine Science and Engineering</em>,
+                <button type="button" class="journal-metric-trigger"
+                  data-journal="Journal of Marine Science and Engineering" data-quartile="Q2" data-jif="2.8"
+                  data-metric-year="2024" aria-expanded="false">
+                  <em>Journal of Marine Science and Engineering</em>
+                </button><span aria-hidden="true">,</span>
               </span>
 
               <span class="pub-year">2025</span>
@@ -1402,8 +1602,6 @@
                 aria-label="Open DOI for Temperature-induced errors">
                 <span class="pub-doi-label">DOI</span>
               </a>
-
-
             </div>
           </div>
         </div>
@@ -1434,7 +1632,10 @@
             </div>
             <div class="pub-meta">
               <span class="pub-meta-text">
-                <em>Ocean Engineering</em>,
+                <button type="button" class="journal-metric-trigger" data-journal="Ocean Engineering" data-quartile="Q1"
+                  data-jif="4.6" data-metric-year="2023" aria-expanded="false">
+                  <em>Ocean Engineering</em>
+                </button><span aria-hidden="true">,</span>
               </span>
 
               <span class="pub-year">2024</span>
@@ -1601,7 +1802,7 @@
             <div class="pub-authors">
               <span class="author-full">
                 <span class="main-author">Sang-seok Han*</span>
-                <span class="co-authors"> and Minhong Lee</span>
+                <span class="co-authors"> and Min-hong Lee</span>
               </span>
 
               <span class="author-short">
@@ -1611,16 +1812,19 @@
             </div>
 
             <div class="pub-meta">
-              <span class="pub-meta-text meta-tooltip" data-tooltip="Conference proceedings · Himeji, Japan">
+              <span class="pub-meta-text meta-tooltip"
+                data-tooltip="Conference Proceedings The Japan Society of Naval Architects and Ocean Engineers · Himeji, Japan">
+
                 <span class="conference-name-full">
-                  JASNAOE 2025 Annual Autumn Meeting
+                  <em>JASNAOE Conference Proceedings</em>, Vol. 41, pp. 979–983
                 </span>
+
                 <span class="conference-name-short">
-                  JASNAOE 2025
+                  <em>JASNAOE Proceedings</em>, Vol. 41, pp. 979–983
                 </span>,
               </span>
 
-              <span class="pub-year">October 2025</span>
+              <span class="pub-year">November 2025</span>
 
               <a class="pub-doi" href="https://doi.org/10.14856/conf.41.0_979" target="_blank" rel="noopener noreferrer"
                 aria-label="Open DOI for CFD-based model predictive control">
@@ -1732,6 +1936,8 @@
           link.dataset.lang === safeLang
         );
       });
+
+      refreshJournalMetricLabels(safeLang);
     }
 
     function clamp(value, minimum, maximum) {
@@ -2216,13 +2422,487 @@
       }
     );
 
+    let activeJournalMetricTrigger = null;
+    let journalMetricLocked = false;
+    let journalMetricPopover = null;
+
+    function getJournalMetricLanguage() {
+      return document.documentElement.dataset.lang === "ja"
+        ? "ja"
+        : "en";
+    }
+
+    function getJournalMetricCopy(lang) {
+      if (lang === "ja") {
+        return {
+          kicker: "ジャーナル指標",
+          impact: "Journal Impact Factor",
+          source: "Journal Citation Reports",
+          show: "のジャーナル指標を表示"
+        };
+      }
+
+      return {
+        kicker: "Journal metrics",
+        impact: "Journal Impact Factor",
+        source: "Journal Citation Reports",
+        show: "Show journal metrics for"
+      };
+    }
+
+    function createJournalMetricPopover() {
+      if (journalMetricPopover) {
+        return journalMetricPopover;
+      }
+
+      const popover = document.createElement("div");
+
+      popover.id = "journal-metric-popover";
+      popover.className = "journal-metric-popover";
+      popover.setAttribute("role", "tooltip");
+      popover.setAttribute("aria-hidden", "true");
+
+      const kicker = document.createElement("div");
+      kicker.className = "journal-metric-kicker";
+
+      const primary = document.createElement("div");
+      primary.className = "journal-metric-primary";
+
+      const quartile = document.createElement("strong");
+      quartile.className = "journal-metric-quartile";
+
+      const rule = document.createElement("span");
+      rule.className = "journal-metric-rule";
+      rule.setAttribute("aria-hidden", "true");
+
+      const impact = document.createElement("span");
+      impact.className = "journal-metric-impact";
+
+      const impactLabel = document.createElement("span");
+      impactLabel.className = "journal-metric-impact-label";
+
+      const impactValue = document.createElement("strong");
+      impactValue.className = "journal-metric-impact-value";
+
+      impact.append(
+        impactLabel,
+        document.createTextNode(" "),
+        impactValue
+      );
+
+      primary.append(
+        quartile,
+        rule,
+        impact
+      );
+
+      const source = document.createElement("div");
+      source.className = "journal-metric-source";
+
+      popover.append(
+        kicker,
+        primary,
+        source
+      );
+
+      document.body.appendChild(popover);
+
+      journalMetricPopover = popover;
+
+      return popover;
+    }
+
+    function populateJournalMetricPopover(trigger) {
+      const popover = createJournalMetricPopover();
+      const lang = getJournalMetricLanguage();
+      const copy = getJournalMetricCopy(lang);
+
+      popover.querySelector(
+        ".journal-metric-kicker"
+      ).textContent = copy.kicker;
+
+      popover.querySelector(
+        ".journal-metric-quartile"
+      ).textContent = trigger.dataset.quartile;
+
+      popover.querySelector(
+        ".journal-metric-impact-label"
+      ).textContent = `${copy.impact}`;
+
+      popover.querySelector(
+        ".journal-metric-impact-value"
+      ).textContent = trigger.dataset.jif;
+
+      popover.querySelector(
+        ".journal-metric-source"
+      ).textContent =
+        `${trigger.dataset.metricYear} ${copy.source}`;
+    }
+    function positionJournalMetricPopover() {
+      if (
+        !activeJournalMetricTrigger ||
+        !journalMetricPopover
+      ) {
+        return;
+      }
+
+      const triggerRect =
+        activeJournalMetricTrigger.getBoundingClientRect();
+
+      const popoverRect =
+        journalMetricPopover.getBoundingClientRect();
+
+      const horizontalAnchor =
+        document.querySelector(
+          "#journal-articles .pub-meta-block"
+        ) ||
+        document.querySelector(
+          "#journal-articles"
+        ) ||
+        document.querySelector(
+          ".page-content"
+        );
+
+      const anchorRect =
+        horizontalAnchor.getBoundingClientRect();
+
+      const viewportPadding = 12;
+      const verticalGap = 11;
+      let top =
+        triggerRect.top -
+        popoverRect.height -
+        verticalGap;
+
+      let placeBelow = false;
+
+      if (top < viewportPadding) {
+        top =
+          triggerRect.bottom +
+          verticalGap;
+
+        placeBelow = true;
+      }
+
+      let left = anchorRect.left;
+
+      left = Math.min(
+        Math.max(
+          left,
+          viewportPadding
+        ),
+        window.innerWidth -
+        popoverRect.width -
+        viewportPadding
+      );
+
+      const triggerCentre =
+        triggerRect.left +
+        triggerRect.width / 2;
+
+      const arrowLeft = Math.min(
+        Math.max(
+          triggerCentre - left,
+          16
+        ),
+        popoverRect.width - 16
+      );
+
+      journalMetricPopover.style.left =
+        `${Math.round(left)}px`;
+
+      journalMetricPopover.style.top =
+        `${Math.round(top)}px`;
+
+      journalMetricPopover.style.setProperty(
+        "--metric-arrow-left",
+        `${Math.round(arrowLeft)}px`
+      );
+
+      journalMetricPopover.classList.toggle(
+        "is-below",
+        placeBelow
+      );
+    }
+
+    function showJournalMetricPopover(
+      trigger,
+      lockPopover = false
+    ) {
+      const popover =
+        createJournalMetricPopover();
+
+      if (
+        activeJournalMetricTrigger &&
+        activeJournalMetricTrigger !== trigger
+      ) {
+        activeJournalMetricTrigger.classList.remove(
+          "is-open"
+        );
+
+        activeJournalMetricTrigger.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        activeJournalMetricTrigger.removeAttribute(
+          "aria-describedby"
+        );
+      }
+
+      activeJournalMetricTrigger = trigger;
+      journalMetricLocked = lockPopover;
+
+      populateJournalMetricPopover(trigger);
+
+      trigger.classList.toggle(
+        "is-open",
+        lockPopover
+      );
+
+      trigger.setAttribute(
+        "aria-expanded",
+        "true"
+      );
+
+      trigger.setAttribute(
+        "aria-describedby",
+        popover.id
+      );
+
+      popover.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      popover.classList.add(
+        "is-visible"
+      );
+
+      requestAnimationFrame(() => {
+        positionJournalMetricPopover();
+      });
+    }
+
+    function hideJournalMetricPopover(
+      force = false
+    ) {
+      if (
+        journalMetricLocked &&
+        !force
+      ) {
+        return;
+      }
+
+      if (activeJournalMetricTrigger) {
+        activeJournalMetricTrigger.classList.remove(
+          "is-open"
+        );
+
+        activeJournalMetricTrigger.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        activeJournalMetricTrigger.removeAttribute(
+          "aria-describedby"
+        );
+      }
+
+      if (journalMetricPopover) {
+        journalMetricPopover.classList.remove(
+          "is-visible",
+          "is-below"
+        );
+
+        journalMetricPopover.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+      }
+
+      activeJournalMetricTrigger = null;
+      journalMetricLocked = false;
+    }
+
+    function refreshJournalMetricLabels(
+      lang = getJournalMetricLanguage()
+    ) {
+      const copy = getJournalMetricCopy(lang);
+
+      document
+        .querySelectorAll(".journal-metric-trigger")
+        .forEach(trigger => {
+          const journal =
+            trigger.dataset.journal || "";
+
+          const label =
+            lang === "ja"
+              ? `${journal}${copy.show}`
+              : `${copy.show} ${journal}`;
+
+          trigger.setAttribute(
+            "aria-label",
+            label
+          );
+        });
+
+      if (activeJournalMetricTrigger) {
+        populateJournalMetricPopover(
+          activeJournalMetricTrigger
+        );
+
+        requestAnimationFrame(() => {
+          positionJournalMetricPopover();
+        });
+      }
+    }
+
+    function initialiseJournalMetricTooltips() {
+      createJournalMetricPopover();
+
+      const triggers =
+        document.querySelectorAll(
+          ".journal-metric-trigger"
+        );
+
+      const supportsHover =
+        window.matchMedia(
+          "(hover: hover) and (pointer: fine)"
+        );
+
+      triggers.forEach(trigger => {
+        trigger.addEventListener(
+          "pointerenter",
+          () => {
+            if (
+              supportsHover.matches &&
+              !journalMetricLocked
+            ) {
+              showJournalMetricPopover(
+                trigger,
+                false
+              );
+            }
+          }
+        );
+
+        trigger.addEventListener(
+          "pointerleave",
+          () => {
+            if (!journalMetricLocked) {
+              hideJournalMetricPopover();
+            }
+          }
+        );
+
+        trigger.addEventListener(
+          "focus",
+          () => {
+            if (!journalMetricLocked) {
+              showJournalMetricPopover(
+                trigger,
+                false
+              );
+            }
+          }
+        );
+
+        trigger.addEventListener(
+          "blur",
+          () => {
+            if (!journalMetricLocked) {
+              hideJournalMetricPopover();
+            }
+          }
+        );
+
+        trigger.addEventListener(
+          "click",
+          event => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const isSameLockedTrigger =
+              activeJournalMetricTrigger === trigger &&
+              journalMetricLocked;
+
+            if (isSameLockedTrigger) {
+              hideJournalMetricPopover(true);
+              return;
+            }
+
+            showJournalMetricPopover(
+              trigger,
+              true
+            );
+          }
+        );
+
+        trigger.addEventListener(
+          "keydown",
+          event => {
+            if (event.key !== "Escape") {
+              return;
+            }
+
+            hideJournalMetricPopover(true);
+            trigger.focus();
+          }
+        );
+      });
+
+      document.addEventListener(
+        "pointerdown",
+        event => {
+          if (
+            event.target.closest(
+              ".journal-metric-trigger"
+            )
+          ) {
+            return;
+          }
+
+          hideJournalMetricPopover(true);
+        }
+      );
+
+      window.addEventListener(
+        "resize",
+        () => {
+          if (activeJournalMetricTrigger) {
+            positionJournalMetricPopover();
+          }
+        },
+        {
+          passive: true
+        }
+      );
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (activeJournalMetricTrigger) {
+            positionJournalMetricPopover();
+          }
+        },
+        {
+          passive: true
+        }
+      );
+
+      refreshJournalMetricLabels();
+    }
+
     document.addEventListener(
       "DOMContentLoaded",
       () => {
         applyLang(getSessionLang());
 
+        initialiseJournalMetricTooltips();
+
         bindPublicationSideNavigation();
         observePublicationLayout();
+
 
         document
           .querySelectorAll(".lang-switch a")

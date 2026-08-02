@@ -55,22 +55,12 @@
       transform: translateY(0);
     }
 
-    .nav a[href="/archive/"] {
-      color: rgba(56, 70, 88, 0.38);
-      font-style: italic;
-    }
-
-    .nav a[href="/archive/"]:hover {
-      color: rgba(28, 48, 73, 0.72);
-    }
-
     html {
       scroll-behavior: auto;
     }
 
     #ongoing-research,
     #research-timeline,
-    #contact,
     .rt-item[id] {
       scroll-margin-top: 92px;
     }
@@ -538,144 +528,7 @@
       border-bottom: none;
     }
 
-    .research-contact {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 250px;
-      column-gap: 60px;
-      align-items: start;
-      margin-top: 60px;
-      padding: 20px 4px 40px;
-      width: 850px;
-    }
 
-    .research-contact-heading {
-      min-width: 0;
-    }
-
-    .research-contact::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      width: 100%;
-      height: 1px;
-
-      background: linear-gradient(to right,
-          rgba(11, 31, 58, 0),
-          rgba(11, 31, 58, 0.12) 18%,
-          rgba(11, 31, 58, 0.12) 82%,
-          rgba(11, 31, 58, 0));
-    }
-
-    .research-contact-heading h2 {
-      margin: 0 0 14px;
-
-      font-size: 1.02em;
-      line-height: 1.4;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-
-      color: rgba(11, 31, 58, 0.88);
-    }
-
-    .research-contact-heading p {
-      width: 100%;
-      max-width: none;
-      margin: 0;
-
-      font-size: 0.88em;
-      line-height: 1.7;
-      letter-spacing: 0.012em;
-
-      text-align: justify;
-      text-align-last: left;
-      text-justify: inter-word;
-
-      color: rgba(34, 42, 53, 0.62);
-    }
-
-    .research-contact-intro>span {
-      display: block;
-      width: 100%;
-    }
-
-    .research-contact-focus {
-      margin-top: 8px;
-    }
-
-
-    .research-contact-intro>span {
-      display: block;
-      width: 100%;
-    }
-
-    .research-contact-focus {
-      margin-top: 8px;
-    }
-
-    .research-contact-details {
-      display: grid;
-      gap: 16px;
-
-      width: 250px;
-      margin: 10px 0 0;
-    }
-
-    .research-contact-row {
-      display: grid;
-      gap: 4px;
-
-      margin: 0;
-    }
-
-    .research-contact-row dt {
-      margin: 0;
-      margin-bottom: 2px;
-      font-size: 0.68em;
-      line-height: 1.4;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-
-      color: rgba(11, 31, 58, 0.42);
-    }
-
-    .research-contact-row dd {
-      margin-bottom: 5px;
-      margin: 0;
-      font-size: 0.86em;
-      line-height: 1.55;
-
-      color: rgba(24, 39, 58, 0.76);
-    }
-
-    .research-contact-row a {
-      color: inherit;
-      text-decoration: none;
-
-      border-bottom: 1px solid rgba(11, 31, 58, 0.1);
-
-      transition:
-        color 0.18s ease,
-        border-color 0.18s ease;
-    }
-
-    .research-contact-row a:hover {
-      color: rgba(11, 31, 58, 0.96);
-      border-bottom-color: rgba(11, 31, 58, 0.38);
-    }
-
-    .research-contact-links {
-      display: flex;
-      align-items: baseline;
-      gap: 7px;
-    }
-
-    .research-contact-links span {
-      color: rgba(11, 31, 58, 0.25);
-    }
 
     .research-network {
       display: block;
@@ -827,6 +680,9 @@
     }
 
     .research-links a {
+      position: relative;
+      z-index: 1;
+
       display: inline-flex;
       align-items: baseline;
       padding-bottom: 1px;
@@ -838,17 +694,67 @@
 
       color: rgba(24, 39, 58, 0.58);
       text-decoration: none;
-      border-bottom: 1px solid transparent;
+
+      border-bottom: 0;
+
+      transition: color 0.16s ease;
+    }
+
+    .research-links a::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -3px;
+
+      height: 1px;
+
+      background: rgba(11, 31, 58, 0.3);
+
+      opacity: 0;
+      transform: scaleX(0.25);
+      transform-origin: left center;
+
+      pointer-events: none;
 
       transition:
-        color 0.16s ease,
-        border-color 0.16s ease;
+        opacity 0.16s ease,
+        transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .research-links::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+
+      width: 35%;
+      height: 1px;
+
+      background: rgba(11, 31, 58, 0.065);
+
+      pointer-events: none;
     }
 
     .research-links a:hover {
       color: rgba(11, 31, 58, 0.92);
-      border-bottom-color: rgba(11, 31, 58, 0.24);
-      transform: none;
+    }
+
+    .research-links a:hover::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    .research-links a:focus-visible {
+      color: rgba(11, 31, 58, 0.92);
+      outline: none;
+    }
+
+    .research-links a:focus-visible::after {
+      opacity: 1;
+      transform: scaleX(1);
     }
 
     .research-links-separator {
@@ -861,134 +767,6 @@
 
     .research-links a+a {
       border-left: 0;
-    }
-
-    .research-contact-affiliation {
-      padding-bottom: 18px;
-      margin-bottom: 2px;
-    }
-
-    .research-contact-intro {
-      margin-bottom: 0;
-    }
-
-    .research-contact-affiliation {
-      position: relative;
-
-      margin-top: 22px;
-      padding-top: 17px;
-    }
-
-    .research-contact-affiliation::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      width: 42px;
-      height: 1px;
-
-      background: rgba(11, 31, 58, 0.14);
-    }
-
-    .research-contact-institute-line {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 5px;
-
-      max-width: 430px;
-    }
-
-    .research-contact-institute {
-      font-size: 0.79em;
-      line-height: 1.55;
-      letter-spacing: 0.008em;
-
-      color: rgba(18, 32, 51, 0.78);
-    }
-
-    .research-contact-abbreviation {
-      font-size: 0.9em;
-      letter-spacing: 0.025em;
-
-      color: rgba(18, 32, 51, 0.46);
-    }
-
-    .research-contact-divider {
-      margin: 0 2px;
-
-      font-size: 0.82em;
-      line-height: 1;
-
-      color: rgba(11, 31, 58, 0.48);
-    }
-
-    .research-contact-intro>span {
-      display: block;
-    }
-
-    .research-contact-focus {
-      margin-top: 8px;
-    }
-
-    .research-contact-location-separator {
-      color: rgba(11, 31, 58, 0.48);
-    }
-
-    .research-contact-position-line {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 5px;
-
-      margin-top: 4px;
-
-      font-size: 0.7em;
-      line-height: 1.55;
-      letter-spacing: 0.012em;
-
-      color: rgba(23, 24, 26, 0.76);
-    }
-
-    .research-contact-role {
-      font-size: 1.02em;
-      line-height: inherit;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
-
-      color: rgba(23, 24, 26, 0.76);
-    }
-
-    .research-contact-location-separator {
-      color: rgba(23, 24, 26, 0.76);
-    }
-
-    .research-contact-abbreviation {
-      font-size: 0.86em;
-      letter-spacing: 0.035em;
-
-      color: rgba(23, 24, 26, 0.76);
-    }
-
-    .research-contact-university {
-      margin-top: 3px;
-
-      font-size: 0.94em;
-      line-height: 1.5;
-
-      color: rgba(23, 24, 26, 0.76);
-    }
-
-    .research-contact-location {
-      margin-top: 1px;
-
-      font-size: 0.9em;
-      line-height: 1.45;
-      font-style: italic;
-      letter-spacing: 0.025em;
-
-      color: rgba(23, 24, 26, 0.76);
     }
 
     .rt-log-link {
@@ -1116,20 +894,93 @@
       margin-top: 0.35rem;
     }
 
-    .research-contact::after {
+    .research-contact-cta {
+      position: relative;
+
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 28px;
+
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 850px;
+
+      margin-top: 58px;
+      padding: 20px 4px 24px;
+    }
+
+    .research-contact-cta::before {
       content: "";
+
       position: absolute;
+      top: 0;
       left: 0;
-      bottom: 0;
-      margin-bottom: 20px;
+
       width: 100%;
       height: 1px;
 
-      background: linear-gradient(to right,
+      background:
+        linear-gradient(to right,
           rgba(11, 31, 58, 0),
-          rgba(11, 31, 58, 0.12) 16%,
-          rgba(11, 31, 58, 0.12) 84%,
+          rgba(11, 31, 58, 0.1) 18%,
+          rgba(11, 31, 58, 0.1) 82%,
           rgba(11, 31, 58, 0));
+    }
+
+    .research-contact-cta p {
+      margin: 0;
+
+      font-size: 0.86em;
+      line-height: 1.55;
+      letter-spacing: 0.02em;
+
+      color: rgba(44, 55, 70, 0.5);
+    }
+
+    .research-contact-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      flex: 0 0 auto;
+
+      font-size: 0.75em;
+      line-height: 1.4;
+      letter-spacing: 0.08em;
+
+      color: rgba(11, 31, 58, 0.58);
+      text-decoration: none;
+
+      transition: color 0.18s ease;
+    }
+
+    .research-contact-cta-arrow {
+      display: inline-block;
+
+      color: rgba(11, 31, 58, 0.4);
+
+      transition:
+        color 0.18s ease,
+        transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .research-contact-cta a:hover {
+      color: rgba(11, 31, 58, 0.9);
+    }
+
+    .research-contact-cta a:hover .research-contact-cta-arrow {
+      color: rgba(11, 31, 58, 0.76);
+      transform: translateX(3px);
+    }
+
+    .research-contact-cta a:focus-visible {
+      color: rgba(11, 31, 58, 0.92);
+      outline: 1px solid rgba(11, 31, 58, 0.22);
+      outline-offset: 5px;
+    }
+
+    html[data-lang="ja"] .research-contact-cta a {
+      letter-spacing: 0.05em;
     }
 
     .mobile {
@@ -1144,17 +995,6 @@
 
       .research-tagline {
         display: none;
-      }
-
-      .nav a[href="/archive/"] {
-        color: rgba(56, 70, 88, 0.44);
-        font-style: italic;
-        opacity: 1;
-      }
-
-      .nav a[href="/archive/"]:hover {
-        color: rgba(28, 48, 73, 0.68);
-        opacity: 1;
       }
 
       .page-content {
@@ -1477,56 +1317,24 @@
         border-left: 0;
       }
 
-      .research-contact {
+      .research-contact-cta {
         display: block;
-        margin-top: 0px;
-        padding: 15px 2px 54px;
+
+        margin-top: 30px;
+        padding: 15px 2px 22px;
       }
 
-      .research-contact-heading h2 {
-        margin-bottom: 10px;
-        font-size: 0.8em;
+      .research-contact-cta p {
+        max-width: 290px;
+
+        font-size: 0.64em;
+        line-height: 1.6;
       }
 
-      .research-contact-heading p {
-        font-size: 0.69em;
-        line-height: 1.65;
-        max-width: 340px;
-      }
-
-      .research-contact-details {
-        gap: 15px;
+      .research-contact-cta a {
         margin-top: 10px;
-        margin-bottom: -30px;
-      }
 
-      .research-contact-row dt {
-        font-size: 0.65em;
-      }
-
-      .research-contact::after {
-        display: none;
-      }
-
-      .research-contact-row dd {
-        font-size: 0.75em;
-      }
-
-      .research-contact-affiliation {
-        margin-top: 15px;
-        padding-top: 0px;
-      }
-
-      .research-contact-institute-line {
-        display: block;
-      }
-
-      .research-contact-institute {
-        display: none;
-      }
-
-      .research-contact-position-line {
-        display: none;
+        font-size: 0.62em;
       }
     }
   </style>
@@ -1559,10 +1367,9 @@
       Research
     </a>
     <a href="/publications/" data-en="Publications" data-ja="論文">Publications</a>
-    <!--
-    <a href="/works/">Works</a>
-  -->
-    <a href="/archive/" data-en="Archive" data-ja="アーカイブ">Archive</a>
+    <a href="/contact/" data-en="Contact" data-ja="連絡先">
+      Contact
+    </a>
   </div>
 
   <aside class="research-side-nav" aria-label="Research section navigation">
@@ -1583,10 +1390,6 @@
           <a href="#year-2023">2023</a>
         </div>
       </div>
-
-      <a href="#contact" data-en="Contact" data-ja="お問い合わせ">
-        Contact
-      </a>
     </nav>
   </aside>
   <div class="page-content">
@@ -1687,9 +1490,9 @@
 
             <aside class="research-network" aria-labelledby="research-network-title">
 
-              <span id="research-network-title" class="research-network-heading"
-                data-en="Selected Research Interactions" data-ja="主な研究交流">
-                Selected Research Interactions
+              <span id="research-network-title" class="research-network-heading" data-en="Research Exchanges"
+                data-ja="研究交流">
+                Research Exchanges
               </span>
 
               <ul class="research-network-list">
@@ -2262,91 +2065,20 @@
         </div>
       </div>
 
-      <section id="contact" class="research-contact" aria-labelledby="contact-title">
+      <section class="research-contact-cta" aria-label="Research contact">
+        <p data-en="For research collaboration and academic exchange." data-ja="共同研究および学術交流に関するお問い合わせ。">
+          For research collaboration and academic exchange.
+        </p>
 
-        <div class="research-contact-heading">
-          <h2 id="contact-title" data-en="Contact" data-ja="お問い合わせ">
+        <a href="/contact/">
+          <span data-en="Contact" data-ja="連絡先">
             Contact
-          </h2>
-          <p class="research-contact-intro">
-            <span data-en="I welcome enquiries regarding research collaboration and academic exchange."
-              data-ja="共同研究や学術交流に関するお問い合わせを歓迎します。">
-              I welcome enquiries regarding research collaboration and academic exchange.
-            </span>
+          </span>
 
-            <span class="research-contact-focus"
-              data-en="I am particularly interested in discussions related to ship hydrodynamics, hull roughness, and CFD-based modelling."
-              data-ja="特に、船舶流体力学、船体粗さ、CFDモデリングに関する議論に関心があります。">
-              I am particularly interested in discussions related to ship hydrodynamics,
-              hull roughness, and CFD-based modelling.
-            </span>
-          </p>
-
-          <div class="research-contact-affiliation">
-            <div class="research-contact-institute-line">
-              <span class="research-contact-institute">
-                Research Institute of Marine Systems Engineering
-                <span class="research-contact-abbreviation">(RIMSE)</span>
-              </span>
-            </div>
-
-            <div class="research-contact-position-line">
-              <span class="research-contact-role" data-en="Visiting Researcher" data-ja="客員研究員">
-                Visiting Researcher
-              </span>
-
-              <span class="research-contact-divider" aria-hidden="true">
-                ·
-              </span>
-
-              <span class="research-contact-university" data-en="Seoul National University" data-ja="ソウル大学校">
-                Seoul National University
-              </span>
-
-              <span class="research-contact-location-separator" aria-hidden="true">
-                —
-              </span>
-
-              <span class="research-contact-location" data-en="Republic of Korea" data-ja="大韓民国">
-                Republic of Korea
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <dl class="research-contact-details">
-          <div class="research-contact-row">
-            <dt data-en="Email" data-ja="メール">
-              Email
-            </dt>
-
-            <dd>
-              <a href="mailto:sangseok.han.contact@gmail.com">
-                sangseok.han.contact@gmail.com
-              </a>
-            </dd>
-          </div>
-
-          <div class="research-contact-row">
-            <dt data-en="Academic profiles" data-ja="学術プロフィール">
-              Academic profiles
-            </dt>
-
-            <dd class="research-contact-links">
-              <a href="https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en" target="_blank"
-                rel="noopener noreferrer">
-                Google Scholar
-              </a>
-
-              <span aria-hidden="true">·</span>
-
-              <a href="https://orcid.org/0009-0007-8276-2728" target="_blank" rel="noopener noreferrer">
-                ORCID
-              </a>
-            </dd>
-          </div>
-
-        </dl>
+          <span class="research-contact-cta-arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
       </section>
     </div>
   </div>
@@ -2522,10 +2254,6 @@
         'a[href="#research-timeline"]'
       );
 
-      const contactLink = sideNav.querySelector(
-        'a[href="#contact"]'
-      );
-
       const yearLink = year =>
         sideNav.querySelector(
           `a[href="#year-${year}"]`
@@ -2579,12 +2307,6 @@
             yearLink("2023")
           ],
           currentLink: yearLink("2023")
-        },
-        {
-          key: "contact",
-          selector: "#contact",
-          activeLinks: [contactLink],
-          currentLink: contactLink
         }
       ];
 

@@ -55,15 +55,6 @@
       transform: translateY(0);
     }
 
-    .nav a[href="/archive/"] {
-      color: rgba(56, 70, 88, 0.38);
-      font-style: normal;
-    }
-
-    .nav a[href="/archive/"]:hover {
-      color: rgba(28, 48, 73, 0.72);
-    }
-
     .header {
       font-family: Georgia, serif;
       font-size: 0.9em;
@@ -112,12 +103,6 @@
       color: var(--research-blue);
       margin-bottom: 10px;
       opacity: 0.7;
-    }
-
-    .log-back span {
-      font-size: 0.75em;
-      letter-spacing: 0.08em;
-      opacity: 0.4;
     }
 
     .log-meta {
@@ -216,17 +201,69 @@
       opacity: 0.7;
     }
 
+    .log-back {
+      margin: 0 0 18px;
+    }
+
     .log-back a {
-      font-size: 0.82em;
-      letter-spacing: 0.08em;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      width: fit-content;
+
+      font-size: 0.68em;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: 0.09em;
+
+      color: rgba(11, 31, 58, 0.46);
       text-decoration: none;
-      color: var(--research-blue);
-      opacity: 0.55;
-      transition: opacity 0.2s ease;
+
+      transition:
+        color 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .log-back-arrow {
+      display: inline-block;
+
+      font-size: 1.08em;
+      line-height: 1;
+
+      color: rgba(11, 31, 58, 0.38);
+
+      transform: translateY(-0.02em);
+
+      transition:
+        color 0.18s ease,
+        transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .log-back-text {
+      font-size: inherit;
+      letter-spacing: inherit;
+      opacity: 1;
     }
 
     .log-back a:hover {
-      opacity: 0.85;
+      color: rgba(11, 31, 58, 0.82);
+    }
+
+    .log-back a:hover .log-back-arrow {
+      color: rgba(11, 31, 58, 0.72);
+      transform: translate(-3px, -0.02em);
+    }
+
+    .log-back a:focus-visible {
+      color: rgba(11, 31, 58, 0.88);
+
+      outline: 1px solid rgba(11, 31, 58, 0.22);
+      outline-offset: 5px;
+    }
+
+    html[data-lang="ja"] .log-back a {
+      letter-spacing: 0.06em;
     }
 
     .log-caption {
@@ -315,17 +352,6 @@
         display: inline;
       }
 
-      .nav a[href="/archive/"] {
-        color: rgba(56, 70, 88, 0.34);
-        font-style: normal;
-        opacity: 1;
-      }
-
-      .nav a[href="/archive/"]:hover {
-        color: rgba(28, 48, 73, 0.68);
-        opacity: 1;
-      }
-
       .page-content {
         font-size: 1.0em;
       }
@@ -355,17 +381,19 @@
         opacity: 0.72;
       }
 
-
-
       .log-back {
-        margin-top: -10px;
-        margin-bottom: 10px;
-        opacity: 0.65;
+        margin: -3px 0 13px;
       }
 
       .log-back a {
+        gap: 6px;
+
         font-size: 0.62em;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.08em;
+      }
+
+      .log-back-arrow {
+        font-size: 1.05em;
       }
 
       .log-meta {
@@ -490,6 +518,16 @@
         font-size: 0.75em;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .page-content,
+      .year-section,
+      .log-back a,
+      .log-back-arrow {
+        transition: none;
+      }
+    }
   </style>
 </head>
 
@@ -519,16 +557,24 @@
     <!--
     <a href="/works/">Works</a>
   -->
-    <a href="/archive/" data-en="Archive" data-ja="アーカイブ">Archive</a>
+    <a href="/contact/" data-en="Contact" data-ja="連絡先">
+      Contact
+    </a>
   </div>
 
   <div class="page-content">
 
     <div class="log-header-block">
 
-      <div class="log-back">
-        <a href="/research/">← Research</a>
-      </div>
+      <nav class="log-back" aria-label="Research log navigation">
+        <a href="/research/">
+          <span class="log-back-arrow" aria-hidden="true">←</span>
+
+          <span class="log-back-text" data-en="Research" data-ja="研究">
+            Research
+          </span>
+        </a>
+      </nav>
 
       <h1 class="log-header">Research log</h1>
       <div class="log-sub"><em>Selected presentations and research development</em></div>
@@ -608,7 +654,7 @@
           </div>
 
           <div class="log-paper">
-            CFD-based model predictive control for point absorber wave energy converters
+            CFD-based model predictive control for point absorber wave energy converter
           </div>
 
           <div class="log-structure">

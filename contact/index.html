@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact | Sangseok Han</title>
+    <meta name="description" content="Contact information and academic profiles for Sangseok Han.">
+    <link rel="canonical" href="https://sangseokhan.com/contact/">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
+
+    <meta property="og:title" content="Contact | Sangseok Han">
+    <meta property="og:description" content="Contact information and academic profiles for Sangseok Han.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sangseokhan.com/contact/">
+    <meta property="og:site_name" content="Sangseok Han — Contact">
+    <meta property="og:image" content="https://sangseokhan.com/assets/thumbnail.png">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5MMRV373');</script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+        (function () {
+            const savedLang = sessionStorage.getItem("lang");
+            const lang = (savedLang === "ja") ? "ja" : "en";
+            document.documentElement.setAttribute("lang", lang);
+            document.documentElement.setAttribute("data-lang", lang);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/site-shell.css?v=1">
+    <style>
+        :root {
+            --contact-rule: rgba(11, 31, 58, 0.11);
+            --contact-text: rgba(24, 34, 47, 0.88);
+            --contact-muted: rgba(67, 78, 93, 0.62);
+            --contact-faint: rgba(67, 78, 93, 0.44);
+        }
+
+
+        .nav a[href="/contact/"] {
+            color: rgba(56, 70, 88, 0.38);
+            font-style: normal;
+        }
+
+        .nav a[href="/contact/"]:hover {
+            color: rgba(28, 48, 73, 0.72);
+        }
+
+        .nav a[href="/contact/"].active {
+            color: rgba(11, 31, 58, 0.98);
+        }
+
+        .page-content {
+            transform: translateY(6px);
+            transition: transform 0.12s ease-out;
+            font-size: 1.1em;
+        }
+
+        .page-content.loaded {
+            transform: translateY(0);
+        }
+
+        .divider {
+            width: 100%;
+            max-width: none;
+            height: 1px;
+
+            margin: 0;
+
+            border: 0;
+
+            background:
+                linear-gradient(90deg,
+                    rgba(11, 31, 58, 0) 0%,
+                    rgba(11, 31, 58, 0.035) 10%,
+                    rgba(11, 31, 58, 0.11) 32%,
+                    rgba(11, 31, 58, 0.16) 50%,
+                    rgba(11, 31, 58, 0.11) 68%,
+                    rgba(11, 31, 58, 0.035) 90%,
+                    rgba(11, 31, 58, 0) 100%);
+        }
+
+        .scroll-spacer {
+            height: 0.5vh;
+        }
+
+        .contact-intro {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 120px;
+            align-items: start;
+            column-gap: 44px;
+
+            box-sizing: border-box;
+            width: 100%;
+            max-width: none;
+            padding-right: 40px;
+
+            margin: 30px 0 20px;
+        }
+
+        .contact-head {
+            width: 100%;
+            max-width: none;
+            min-width: 0;
+
+            padding-top: 3px;
+        }
+
+        .contact-profile {
+            display: grid;
+            gap: 15px;
+
+            width: 100%;
+            max-width: none;
+        }
+
+        .contact-profile-row {
+            display: grid;
+            grid-template-columns: 78px minmax(0, 1fr);
+            align-items: start;
+            column-gap: 18px;
+        }
+
+        .contact-profile-key {
+            padding-top: 0.24em;
+
+            font-size: 0.63em;
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: 0.17em;
+            text-transform: uppercase;
+
+            color: rgba(11, 31, 58, 0.4);
+        }
+
+        .contact-profile-copy {
+            min-width: 0;
+        }
+
+        .contact-profile-primary {
+            font-size: 0.95em;
+            font-weight: 500;
+            line-height: 1.42;
+            letter-spacing: 0.025em;
+
+            color: rgba(18, 32, 50, 0.9);
+        }
+
+        .contact-profile-secondary {
+            margin-top: 2px;
+
+            font-size: 0.8em;
+            font-weight: 400;
+            line-height: 1.55;
+            letter-spacing: 0.028em;
+
+            color: rgba(67, 78, 93, 0.6);
+        }
+
+        .contact-note {
+            position: relative;
+
+            max-width: 510px;
+            margin: 30px 0 0;
+            padding-left: 15px;
+
+            font-size: 0.78em;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.72;
+            letter-spacing: 0.045em;
+
+            color: var(--contact-muted);
+        }
+
+        .contact-note::before {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            top: 0.3em;
+            bottom: 0.3em;
+
+            width: 1px;
+
+            background: rgba(11, 31, 58, 0.15);
+        }
+
+        .contact-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            justify-self: end;
+            align-self: start;
+
+            width: 120px;
+            margin: 1px 0 0;
+        }
+
+        .contact-visual-frame {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+
+            width: 100%;
+            aspect-ratio: 1 / 1;
+
+            background: rgba(11, 31, 58, 0.025);
+
+            border: 1px solid rgba(11, 31, 58, 0.075);
+
+            box-shadow:
+                0 8px 22px rgba(11, 31, 58, 0.035);
+        }
+
+        .contact-visual-frame img {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+
+            filter:
+                saturate(0.5) contrast(0.97) brightness(1.035);
+
+            opacity: 0.9;
+
+            transform: scale(1.001);
+
+            transition:
+                filter 0.4s ease,
+                opacity 0.4s ease,
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .contact-visual-frame::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+
+            pointer-events: none;
+
+            background:
+                linear-gradient(180deg,
+                    rgba(237, 239, 243, 0.01),
+                    rgba(11, 31, 58, 0.035));
+        }
+
+        .contact-visual:hover .contact-visual-frame img {
+            filter:
+                saturate(0.6) contrast(0.99) brightness(1.04);
+
+            opacity: 0.97;
+            transform: scale(1.012);
+        }
+
+        .contact-visual figcaption {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 3px;
+
+            width: max-content;
+            max-width: none;
+
+            margin-top: 7px;
+            padding-top: 6px;
+
+            text-align: right;
+
+            border-top: 1px solid rgba(11, 31, 58, 0.07);
+
+            font-size: 0.66em;
+            font-weight: 400;
+            line-height: 1.4;
+            letter-spacing: 0.025em;
+
+            color: rgba(67, 78, 93, 0.45);
+        }
+
+        .contact-visual-event,
+        .contact-visual-meta {
+            display: block;
+            white-space: nowrap;
+        }
+
+        .contact-visual-event {
+            color: rgba(37, 49, 65, 0.57);
+        }
+
+        .contact-visual-meta {
+            color: rgba(67, 78, 93, 0.38);
+        }
+
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            row-gap: 18px;
+
+            box-sizing: border-box;
+            width: 100%;
+            max-width: none;
+
+            margin: 25px auto 40px;
+            padding-inline: 20px;
+
+            text-align: center;
+        }
+
+        .contact-section .contact-entry,
+        .contact-section .contact-links {
+            margin-left: 0;
+        }
+
+        .contact-label {
+            width: max-content;
+            white-space: nowrap;
+            padding-top: 0;
+            font-size: 0.72em;
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(11, 31, 58, 0.5);
+        }
+
+        .contact-entry {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            min-width: 0;
+
+            text-align: center;
+        }
+
+        .contact-meta {
+            max-width: 520px;
+            margin-top: 10px;
+
+            font-size: 0.7em;
+            font-style: italic;
+            line-height: 1.6;
+            letter-spacing: 0.065em;
+
+            text-align: center;
+
+            color: var(--contact-faint);
+        }
+
+        .contact-entry>a {
+            display: inline-block;
+            width: fit-content;
+
+            font-size: 1.02em;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: 0.025em;
+
+            color: var(--contact-text);
+            text-decoration: none;
+
+            border-bottom: 1px solid rgba(11, 31, 58, 0.18);
+
+            transition:
+                color 0.18s ease,
+                border-color 0.18s ease,
+                opacity 0.18s ease;
+        }
+
+        .contact-entry>a:hover {
+            color: rgba(11, 31, 58, 1);
+            border-bottom-color: rgba(11, 31, 58, 0.6);
+        }
+
+        .contact-title {
+            width: max-content;
+            margin: 0 0 30px;
+
+            font-size: 1.04em;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            white-space: nowrap;
+
+            color: rgba(11, 31, 58, 0.72);
+        }
+
+        .contact-title,
+        .contact-profile-key {
+            width: max-content;
+            white-space: nowrap;
+        }
+
+        @media (min-width: 641px) {
+
+            .contact-profile-primary,
+            .contact-profile-secondary {
+                white-space: nowrap;
+            }
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: baseline;
+            gap: 8px 30px;
+
+            width: 100%;
+            min-width: 0;
+            padding-top: 0.02em;
+
+            text-align: center;
+        }
+
+        .contact-links a {
+            position: relative;
+
+            display: inline-block;
+            width: fit-content;
+
+            font-size: 0.92em;
+            line-height: 1.5;
+            letter-spacing: 0.035em;
+
+            color: rgba(34, 45, 59, 0.78);
+            text-decoration: none;
+
+            border-bottom: 1px solid transparent;
+
+            transition:
+                color 0.18s ease,
+                border-color 0.18s ease,
+                opacity 0.18s ease;
+        }
+
+        .contact-links a:hover {
+            color: rgba(11, 31, 58, 0.98);
+            border-bottom-color: rgba(11, 31, 58, 0.38);
+        }
+
+        .contact-footer {
+            position: relative;
+
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 700px;
+
+            margin: 40px 0 10px;
+            padding: 19px 2px 0;
+
+            text-align: left;
+        }
+
+        .contact-footer::before {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 260px;
+            height: 1px;
+
+            background:
+                linear-gradient(90deg,
+                    rgba(11, 31, 58, 0.1) 0%,
+                    rgba(11, 31, 58, 0.042) 48%,
+                    rgba(11, 31, 58, 0) 100%);
+        }
+
+        .contact-site-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 4px 8px;
+
+            margin-top: 20px;
+
+            font-size: 0.7em;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: 0.025em;
+
+            color: rgba(67, 78, 93, 0.57);
+        }
+
+        .contact-footer-separator {
+            color: rgba(67, 78, 93, 0.18);
+        }
+
+        .contact-archive-entry {
+            margin-top: 0;
+        }
+
+        .contact-archive-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            width: fit-content;
+            padding-bottom: 2px;
+
+            font-size: 0.68em;
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+
+            color: rgba(11, 31, 58, 0.48);
+            text-decoration: none;
+
+            border-bottom: 1px solid rgba(11, 31, 58, 0.14);
+
+            transition:
+                color 0.18s ease,
+                border-color 0.18s ease;
+        }
+
+        .contact-archive-arrow {
+            display: inline-block;
+
+            color: rgba(11, 31, 58, 0.37);
+
+            transition:
+                color 0.18s ease,
+                transform 0.22s ease;
+        }
+
+        .contact-archive-link:hover {
+            color: rgba(11, 31, 58, 0.78);
+            border-bottom-color: rgba(11, 31, 58, 0.38);
+        }
+
+        .contact-archive-link:hover .contact-archive-arrow {
+            color: rgba(11, 31, 58, 0.7);
+            transform: translateX(3px);
+        }
+
+        .contact-archive-link:focus-visible {
+            color: rgba(11, 31, 58, 0.82);
+            border-bottom-color: currentColor;
+            outline: none;
+        }
+
+        .contact-archive-description {
+            max-width: 520px;
+            margin: 7px 0 0;
+            font-style: italic;
+            font-size: 0.71em;
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 0.022em;
+
+            color: rgba(67, 78, 93, 0.35);
+        }
+
+        html[data-lang="ja"] .contact-site-meta {
+            letter-spacing: 0.015em;
+        }
+
+        html[data-lang="ja"] .contact-archive-link {
+            letter-spacing: 0.08em;
+        }
+
+        html[data-lang="ja"] .contact-archive-description {
+            letter-spacing: 0.015em;
+        }
+
+        .desktop-only {
+            display: inline;
+        }
+
+        .mobile-only {
+            display: none;
+        }
+
+        @media (max-width: 640px) {
+            .nav a[href="/contact/"] {
+                color: rgba(56, 70, 88, 0.34);
+                opacity: 1;
+            }
+
+            .nav a[href="/contact/"].active {
+                color: rgba(11, 31, 58, 0.96);
+            }
+
+            .page-content {
+                max-width: none;
+                min-height: 62vh;
+
+                font-size: 1.02em;
+            }
+
+            .contact-title {
+                margin-bottom: 12px;
+
+                font-size: 0.8em;
+                letter-spacing: 0.19em;
+            }
+
+            .contact-note {
+                max-width: 92%;
+                padding-left: 14px;
+
+                font-size: 0.7em;
+                line-height: 1.7;
+                letter-spacing: 0.035em;
+            }
+
+            .divider {
+                margin: 23px 0;
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+                row-gap: 10px;
+
+                max-width: none;
+                margin: 24px 0;
+            }
+
+            .contact-label {
+                padding-top: 0;
+
+                font-size: 0.68em;
+                letter-spacing: 0.17em;
+            }
+
+            .contact-entry>a {
+                max-width: 100%;
+
+                font-size: 0.95em;
+                overflow-wrap: anywhere;
+            }
+
+            .contact-meta {
+                margin-top: 6px;
+
+                font-size: 0.66em;
+                line-height: 1.55;
+                letter-spacing: 0.045em;
+            }
+
+            .contact-links {
+                gap: 8px 22px;
+            }
+
+            .contact-links a {
+                font-size: 0.84em;
+            }
+
+            .contact-footer {
+                width: 100%;
+                max-width: none;
+
+                margin: 43px 0 16px;
+                padding: 16px 0 0;
+
+                text-align: left;
+            }
+
+            .contact-footer::before {
+                width: 150px;
+
+                background:
+                    linear-gradient(90deg,
+                        rgba(11, 31, 58, 0.085) 0%,
+                        rgba(11, 31, 58, 0.032) 52%,
+                        rgba(11, 31, 58, 0) 100%);
+            }
+
+            .contact-site-meta {
+                margin-top: 18px;
+
+                gap: 3px 7px;
+
+                font-size: 0.52em;
+                line-height: 1.5;
+                letter-spacing: 0.015em;
+
+                color: rgba(67, 78, 93, 0.25);
+            }
+
+            .contact-archive-entry {
+                margin-top: 0;
+            }
+
+            .contact-archive-link {
+                gap: 6px;
+
+                font-size: 0.64em;
+                letter-spacing: 0.13em;
+            }
+
+            .contact-archive-description {
+                max-width: 92%;
+                margin-top: 6px;
+
+                font-size: 0.6em;
+                line-height: 1.55;
+                letter-spacing: 0.015em;
+            }
+
+            .scroll-spacer {
+                height: 0.5vh;
+            }
+
+            .contact-intro {
+                display: block;
+
+                width: 100%;
+                max-width: none;
+
+                padding-right: 0;
+                margin: 20px 0 29px;
+            }
+
+            .contact-head {
+                max-width: none;
+                padding-top: 0;
+            }
+
+            .contact-title {
+                margin-bottom: 18px;
+
+                font-size: 0.8em;
+                letter-spacing: 0.19em;
+            }
+
+            .contact-profile {
+                gap: 13px;
+                max-width: none;
+            }
+
+            .contact-profile-row {
+                grid-template-columns: 60px minmax(0, 1fr);
+                column-gap: 13px;
+            }
+
+            .contact-profile-key {
+                padding-top: 0.22em;
+
+                font-size: 0.52em;
+                letter-spacing: 0.14em;
+            }
+
+            .contact-profile-primary {
+                font-size: 0.76em;
+                line-height: 1.4;
+            }
+
+            .contact-profile-secondary {
+                margin-top: 2px;
+
+                font-size: 0.61em;
+                line-height: 1.5;
+                letter-spacing: 0.018em;
+            }
+
+            .contact-note {
+                max-width: 94%;
+                margin-top: 19px;
+                padding-left: 13px;
+
+                font-size: 0.66em;
+                line-height: 1.68;
+                letter-spacing: 0.028em;
+            }
+
+            .contact-visual {
+                display: none;
+            }
+
+            .desktop-only {
+                display: none !important;
+            }
+
+            .mobile-only {
+                display: inline;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .page-content,
+            .contact-entry>a,
+            .contact-links a,
+            .contact-archive-link,
+            .contact-archive-arrow {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="site-header">
+        <div class="site-header-row">
+
+            <a href="/" class="site-name">Sangseok Han</a>
+
+            <div class="lang-switch" aria-label="Language selection">
+                <a href="#" data-lang="en">EN</a>
+                <span aria-hidden="true">·</span>
+                <a href="#" data-lang="ja">JP</a>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="nav">
+        <a href="/" data-en="Home" data-ja="ホーム">Home</a>
+        <a href="/profile/" data-en="Profile" data-ja="プロフィール">Profile</a>
+        <a href="/research/" data-en="Research" data-ja="研究">Research</a>
+        <a href="/publications/" data-en="Publications" data-ja="論文">Publications</a>
+        <a href="/contact/" class="active" aria-current="page" data-en="Contact" data-ja="連絡先">
+            Contact
+        </a>
+    </div>
+
+    <div class="page-content">
+
+        <section class="contact-intro">
+            <div class="contact-head">
+                <div class="contact-title" data-en="Contact" data-ja="連絡先">
+                    Contact
+                </div>
+
+                <div class="contact-profile">
+
+                    <div class="contact-profile-row">
+                        <div class="contact-profile-key" data-en="Current" data-ja="現在">
+                            Current
+                        </div>
+
+                        <div class="contact-profile-copy">
+                            <div class="contact-profile-primary" data-en="Visiting Researcher" data-ja="客員研究員">
+                                Visiting Researcher
+                            </div>
+
+                            <div class="contact-profile-secondary">
+                                <span class="desktop-only"
+                                    data-en="Research Institute of Marine Systems Engineering (RIMSE) · Seoul National University"
+                                    data-ja="海洋システム工学研究所（RIMSE）· ソウル大学校">
+                                    Research Institute of Marine Systems Engineering (RIMSE)
+                                    · Seoul National University
+                                </span>
+
+                                <span class="mobile-only" data-en="RIMSE · Seoul National University"
+                                    data-ja="RIMSE · ソウル大学校">
+                                    RIMSE · Seoul National University
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-profile-row">
+                        <div class="contact-profile-key" data-en="Degree" data-ja="学位">
+                            Degree
+                        </div>
+
+                        <div class="contact-profile-copy">
+                            <div class="contact-profile-primary" data-en="MSc with Distinction" data-ja="修士（優等）">
+                                MSc with Distinction
+                            </div>
+
+                            <div class="contact-profile-secondary">
+                                <span class="desktop-only"
+                                    data-en="Advanced Naval Architecture · University of Strathclyde"
+                                    data-ja="先進船舶工学 · ストラスクライド大学">
+                                    Advanced Naval Architecture · University of Strathclyde
+                                </span>
+
+                                <span class="mobile-only" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
+                                    University of Strathclyde
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contact-note">
+                    <span class="desktop-only"
+                        data-en="For research discussions, academic enquiries, and related correspondence."
+                        data-ja="研究討議、学術的なお問い合わせ、および関連するご連絡について。">
+                        For research discussions, academic enquiries, and related correspondence.
+                    </span>
+
+                    <span class="mobile-only" data-en="For research and academic enquiries." data-ja="研究・学術に関するお問い合わせ。">
+                        For research and academic enquiries.
+                    </span>
+                </div>
+            </div>
+
+            <figure class="contact-visual">
+                <div class="contact-visual-frame">
+                    <img src="/assets/contact-snh36.png" alt="Sangseok Han presenting at the SNH36 conference"
+                        decoding="async" fetchpriority="high">
+                </div>
+
+                <figcaption>
+                    <span class="contact-visual-event" data-en="Symposium presentation" data-ja="シンポジウム発表">
+                        Symposium presentation
+                    </span>
+
+                    <span class="contact-visual-meta" data-en="SNH36 · Busan, 2026" data-ja="SNH36 · 釜山、2026年">
+                        SNH36 · Busan, 2026
+                    </span>
+                </figcaption>
+            </figure>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="contact-section">
+            <div class="contact-label" data-en="Email" data-ja="メール">
+                Email
+            </div>
+
+            <div class="contact-entry">
+                <a href="mailto:sangseok.han.contact@gmail.com">
+                    sangseok.han.contact@gmail.com
+                </a>
+
+                <div class="contact-meta">
+                    <span class="desktop-only" data-en="Preferred contact for research and academic correspondence"
+                        data-ja="研究・学術関連の連絡先">
+                        Preferred contact for research and academic correspondence
+                    </span>
+
+                    <span class="mobile-only" data-en="Preferred academic contact" data-ja="学術連絡用">
+                        Preferred academic contact
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-label">
+                <span class="desktop-only" data-en="Academic Profiles" data-ja="研究者プロフィール">
+                    Academic Profiles
+                </span>
+
+                <span class="mobile-only" data-en="Profiles" data-ja="研究者情報">
+                    Profiles
+                </span>
+            </div>
+
+            <div class="contact-links">
+                <a href="https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en" target="_blank"
+                    rel="noopener noreferrer">
+                    Google Scholar
+                </a>
+
+                <a href="https://orcid.org/0009-0007-8276-2728" target="_blank" rel="noopener noreferrer">
+                    ORCID
+                </a>
+
+                <a href="https://www.linkedin.com/in/erik-han97/" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+            </div>
+        </section>
+
+        <footer class="contact-footer" aria-label="Site information">
+
+            <div class="contact-archive-entry">
+                <a href="/archive/" class="contact-archive-link">
+                    <span data-en="Archive" data-ja="アーカイブ">
+                        Archive
+                    </span>
+
+                    <span class="contact-archive-arrow" aria-hidden="true">
+                        →
+                    </span>
+                </a>
+
+                <p class="contact-archive-description" data-en="Selected visual work, milestones, and personal records."
+                    data-ja="選定した作品、節目、および個人的記録。">
+                    Selected visual work, milestones, and personal records.
+                </p>
+            </div>
+
+            <div class="contact-site-meta">
+                <span data-en="Academic website" data-ja="研究者ウェブサイト">
+                    Academic website
+                </span>
+
+                <span class="contact-footer-separator" aria-hidden="true">
+                    ·
+                </span>
+
+                <span>© 2026 Sangseok Han</span>
+            </div>
+
+        </footer>
+
+        <div class="scroll-spacer"></div>
+        <div class="scroll-spacer"></div>
+    </div>
+
+
+    <section class="archive-blank" aria-hidden="true"></section>
+
+    <script>
+        const DEFAULT_LANG = "en";
+        const SUPPORTED_LANGS = new Set(["en", "ja"]);
+
+        let archiveScrollMap = [];
+        let archiveScrollMax = 0;
+        let archiveMapDirty = true;
+        let scrollUpdateScheduled = false;
+        let archiveLayoutObserver = null;
+        let smoothScrollFrame = null;
+
+        function getSessionLang() {
+            const saved = sessionStorage.getItem("lang");
+
+            return SUPPORTED_LANGS.has(saved)
+                ? saved
+                : DEFAULT_LANG;
+        }
+
+        function applyLang(lang) {
+            const safeLang = SUPPORTED_LANGS.has(lang)
+                ? lang
+                : DEFAULT_LANG;
+
+            document.documentElement.setAttribute(
+                "lang",
+                safeLang
+            );
+
+            document.documentElement.setAttribute(
+                "data-lang",
+                safeLang
+            );
+
+            document.querySelectorAll("[data-en]").forEach(element => {
+                const value = element.getAttribute(
+                    `data-${safeLang}`
+                );
+
+                if (value !== null) {
+                    element.innerHTML = value;
+                }
+            });
+
+            document.querySelectorAll(".lang-switch a").forEach(link => {
+                link.classList.toggle(
+                    "active",
+                    link.dataset.lang === safeLang
+                );
+            });
+        }
+
+        function clamp(value, minimum, maximum) {
+            return Math.min(
+                Math.max(value, minimum),
+                maximum
+            );
+        }
+
+        function easeInOutQuint(progress) {
+            return progress < 0.5
+                ? 16 * Math.pow(progress, 5)
+                : 1 - Math.pow(-2 * progress + 2, 5) / 2;
+        }
+
+        function cancelSmoothScroll() {
+            if (smoothScrollFrame !== null) {
+                cancelAnimationFrame(smoothScrollFrame);
+                smoothScrollFrame = null;
+            }
+        }
+
+        function smoothScrollTo(targetY) {
+            cancelSmoothScroll();
+
+            const scrollingElement =
+                document.scrollingElement ||
+                document.documentElement;
+
+            const maximumScrollY = Math.max(
+                0,
+                scrollingElement.scrollHeight -
+                window.innerHeight
+            );
+
+            const startY =
+                window.scrollY;
+
+            const destinationY = clamp(
+                targetY,
+                0,
+                maximumScrollY
+            );
+
+            const distance =
+                destinationY - startY;
+
+            if (Math.abs(distance) < 1) {
+                window.scrollTo(0, destinationY);
+                return;
+            }
+
+            const reduceMotion =
+                window.matchMedia(
+                    "(prefers-reduced-motion: reduce)"
+                ).matches;
+
+            if (reduceMotion) {
+                window.scrollTo(0, destinationY);
+                return;
+            }
+
+            const duration = clamp(
+                420 + Math.abs(distance) * 0.16,
+                480,
+                1050
+            );
+
+            const startTime =
+                performance.now();
+
+            function animate(currentTime) {
+                const elapsed =
+                    currentTime - startTime;
+
+                const progress = clamp(
+                    elapsed / duration,
+                    0,
+                    1
+                );
+
+                const easedProgress =
+                    easeInOutQuint(progress);
+
+                window.scrollTo(
+                    0,
+                    startY + distance * easedProgress
+                );
+
+                if (progress < 1) {
+                    smoothScrollFrame =
+                        requestAnimationFrame(animate);
+                } else {
+                    window.scrollTo(
+                        0,
+                        destinationY
+                    );
+
+                    smoothScrollFrame = null;
+                }
+            }
+
+            smoothScrollFrame =
+                requestAnimationFrame(animate);
+        }
+
+        function getDocumentTop(element) {
+            return (
+                element.getBoundingClientRect().top +
+                window.scrollY
+            );
+        }
+
+        function getArchiveSectionDefinitions() {
+            const sideNav =
+                document.querySelector(".archive-side-nav");
+
+            if (!sideNav) return [];
+
+            const definitions = [
+                {
+                    key: "curated",
+                    selector: "#section-curated"
+                },
+                {
+                    key: "visual-record",
+                    selector: "#section-visual-record"
+                },
+                {
+                    key: "visual-work",
+                    selector: "#section-visual-work"
+                },
+                {
+                    key: "chronology",
+                    selector: "#section-timeline"
+                },
+                {
+                    key: "records",
+                    selector: "#section-records"
+                },
+                {
+                    key: "external",
+                    selector: "#section-external"
+                }
+            ];
+
+            return definitions
+                .map(definition => {
+                    const currentLink =
+                        sideNav.querySelector(
+                            `a[href="${definition.selector}"]`
+                        );
+
+                    return {
+                        ...definition,
+
+                        target:
+                            document.querySelector(
+                                definition.selector
+                            ),
+
+                        currentLink,
+
+                        activeLinks:
+                            currentLink
+                                ? [currentLink]
+                                : []
+                    };
+                })
+                .filter(definition =>
+                    definition.target &&
+                    definition.currentLink
+                );
+        }
+
+        function buildArchiveScrollMap() {
+            const definitions =
+                getArchiveSectionDefinitions();
+
+            if (!definitions.length) {
+                archiveScrollMap = [];
+                archiveScrollMax = 0;
+                return;
+            }
+
+            const scrollingElement =
+                document.scrollingElement ||
+                document.documentElement;
+
+            archiveScrollMax = Math.max(
+                0,
+                scrollingElement.scrollHeight -
+                window.innerHeight
+            );
+
+            const firstSection =
+                definitions[0].target;
+
+            const lastSection =
+                definitions.at(-1).target;
+
+            const contentStart =
+                getDocumentTop(firstSection);
+
+            const contentEnd = Math.max(
+                contentStart + 1,
+
+                getDocumentTop(lastSection) +
+                lastSection.offsetHeight
+            );
+
+            const contentHeight =
+                contentEnd - contentStart;
+
+            archiveScrollMap = definitions.map(
+                (definition, index) => {
+                    const sectionTop =
+                        getDocumentTop(definition.target);
+
+                    const nextSectionTop =
+                        index < definitions.length - 1
+                            ? getDocumentTop(
+                                definitions[index + 1].target
+                            )
+                            : contentEnd;
+
+                    const startRatio = clamp(
+                        (
+                            sectionTop -
+                            contentStart
+                        ) / contentHeight,
+                        0,
+                        1
+                    );
+
+                    const endRatio = clamp(
+                        (
+                            nextSectionTop -
+                            contentStart
+                        ) / contentHeight,
+                        0,
+                        1
+                    );
+
+                    return {
+                        ...definition,
+
+                        sectionTop,
+                        sectionBottom: nextSectionTop,
+
+                        startScroll:
+                            startRatio * archiveScrollMax,
+
+                        endScroll:
+                            index === definitions.length - 1
+                                ? archiveScrollMax
+                                : endRatio * archiveScrollMax
+                    };
+                }
+            );
+        }
+
+        function updateArchiveSideNavigation() {
+            const sideNav =
+                document.querySelector(".archive-side-nav");
+
+            if (!sideNav) return;
+
+            if (
+                archiveMapDirty ||
+                !archiveScrollMap.length
+            ) {
+                buildArchiveScrollMap();
+                archiveMapDirty = false;
+            }
+
+            if (!archiveScrollMap.length) return;
+
+            const currentScroll = clamp(
+                window.scrollY,
+                0,
+                archiveScrollMax
+            );
+
+            let activeSection =
+                archiveScrollMap[0];
+
+            for (const section of archiveScrollMap) {
+                if (
+                    currentScroll + 0.5 >=
+                    section.startScroll
+                ) {
+                    activeSection = section;
+                } else {
+                    break;
+                }
+            }
+
+            sideNav
+                .querySelectorAll('a[href^="#"]')
+                .forEach(link => {
+                    link.classList.remove("active");
+                    link.removeAttribute("aria-current");
+                });
+
+            activeSection.activeLinks.forEach(link => {
+                link.classList.add("active");
+            });
+
+            activeSection.currentLink.setAttribute(
+                "aria-current",
+                "location"
+            );
+        }
+
+        function updateNavigationState() {
+            const nav =
+                document.querySelector(".nav");
+
+            if (!nav) return;
+
+            nav.classList.toggle(
+                "is-scrolled",
+                window.scrollY > 24
+            );
+        }
+
+        function schedulePageUpdate(
+            rebuildMap = false
+        ) {
+            if (rebuildMap) {
+                archiveMapDirty = true;
+            }
+
+            if (scrollUpdateScheduled) return;
+
+            scrollUpdateScheduled = true;
+
+            requestAnimationFrame(() => {
+                if (archiveMapDirty) {
+                    buildArchiveScrollMap();
+                    archiveMapDirty = false;
+                }
+
+                updateNavigationState();
+                updateArchiveSideNavigation();
+
+                scrollUpdateScheduled = false;
+            });
+        }
+
+        function bindArchiveSideNavigation() {
+            const sideNav =
+                document.querySelector(".archive-side-nav");
+
+            if (!sideNav) return;
+
+            sideNav.addEventListener("click", event => {
+                const link =
+                    event.target.closest('a[href^="#"]');
+
+                if (
+                    !link ||
+                    !sideNav.contains(link)
+                ) {
+                    return;
+                }
+
+                if (
+                    archiveMapDirty ||
+                    !archiveScrollMap.length
+                ) {
+                    buildArchiveScrollMap();
+                    archiveMapDirty = false;
+                }
+
+                const selector =
+                    link.getAttribute("href");
+
+                const mappedSection =
+                    archiveScrollMap.find(
+                        section =>
+                            section.selector === selector
+                    );
+
+                if (!mappedSection) return;
+
+                event.preventDefault();
+
+                history.replaceState(
+                    null,
+                    "",
+                    selector
+                );
+
+                smoothScrollTo(
+                    Math.min(
+                        archiveScrollMax,
+                        mappedSection.startScroll + 1
+                    )
+                );
+            });
+        }
+
+        function observeArchiveLayout() {
+            const pageContent =
+                document.querySelector(".page-content");
+
+            if (
+                !pageContent ||
+                !("ResizeObserver" in window)
+            ) {
+                return;
+            }
+
+            archiveLayoutObserver =
+                new ResizeObserver(() => {
+                    schedulePageUpdate(true);
+                });
+
+            archiveLayoutObserver.observe(
+                pageContent
+            );
+        }
+
+        window.addEventListener(
+            "scroll",
+            () => {
+                schedulePageUpdate(false);
+            },
+            {
+                passive: true
+            }
+        );
+
+        window.addEventListener(
+            "resize",
+            () => {
+                schedulePageUpdate(true);
+            },
+            {
+                passive: true
+            }
+        );
+
+        window.addEventListener(
+            "load",
+            () => {
+                document
+                    .querySelector(".page-content")
+                    ?.classList.add("loaded");
+
+                schedulePageUpdate(true);
+            }
+        );
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+                applyLang(getSessionLang());
+
+                bindArchiveSideNavigation();
+                observeArchiveLayout();
+
+                document
+                    .querySelectorAll(".lang-switch a")
+                    .forEach(link => {
+                        link.addEventListener(
+                            "click",
+                            event => {
+                                event.preventDefault();
+
+                                const selected =
+                                    SUPPORTED_LANGS.has(
+                                        link.dataset.lang
+                                    )
+                                        ? link.dataset.lang
+                                        : DEFAULT_LANG;
+
+                                sessionStorage.setItem(
+                                    "lang",
+                                    selected
+                                );
+
+                                applyLang(selected);
+
+                                schedulePageUpdate(true);
+                            }
+                        );
+                    });
+
+                schedulePageUpdate(true);
+            }
+        );
+    </script>
+
+    <script>
+        document.querySelectorAll('.zoomable-drawing').forEach(img => {
+            img.addEventListener('click', () => {
+                const overlay = document.createElement('div');
+                overlay.className = 'zoom-overlay';
+
+                const wrapper = document.createElement('div');
+                wrapper.className = 'zoom-overlay-content';
+
+                const clone = img.cloneNode();
+                clone.style.width = '100%';
+                clone.style.maxWidth = '90vw';
+                clone.style.height = 'auto';
+                clone.style.maxHeight = '80vh';
+
+
+                const meta = document.createElement('div');
+                meta.className = 'zoom-meta';
+
+                const title = document.createElement('div');
+                title.className = 'zoom-title';
+                title.textContent = img.dataset.title || '';
+
+                const metaLine = document.createElement('div');
+                metaLine.className = 'zoom-meta-line';
+                metaLine.textContent = img.dataset.meta || '';
+
+                const desc = document.createElement('div');
+                desc.className = 'zoom-desc';
+                desc.textContent = img.dataset.desc || '';
+
+                meta.appendChild(title);
+                meta.appendChild(metaLine);
+                meta.appendChild(desc);
+                wrapper.appendChild(clone);
+                wrapper.appendChild(meta);
+                overlay.appendChild(wrapper);
+
+                document.body.appendChild(overlay);
+                requestAnimationFrame(() => overlay.classList.add('active'));
+
+                overlay.addEventListener("click", () => {
+                    overlay.classList.remove("active");
+
+                    setTimeout(() => {
+                        overlay.remove();
+                    }, 200);
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

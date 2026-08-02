@@ -387,15 +387,6 @@
       opacity: 0.95;
     }
 
-    .nav a.archive .nav-label {
-      opacity: 0.62;
-      font-style: italic;
-    }
-
-    .nav a.archive:hover .nav-label {
-      opacity: 0.82;
-    }
-
     .meta {
       font-size: 0.8em;
       opacity: 0.55;
@@ -593,15 +584,6 @@
       opacity: 0.46;
     }
 
-    footer {
-      margin-top: 20px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(11, 31, 58, 0.12);
-      font-size: 0.8em;
-      color: #94a3b8;
-      letter-spacing: 0.04em;
-    }
-
     .email-link {
       color: inherit;
       text-decoration: none;
@@ -615,22 +597,72 @@
       border-bottom-color: #cbd5e1;
     }
 
+    .site-footer {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      column-gap: 40px;
+
+      margin-top: 30px;
+      padding-top: 20px;
+
+      border-top: 1px solid rgba(11, 31, 58, 0.12);
+
+      color: #94a3b8;
+    }
+
     .footer-contact {
-      margin-bottom: 1px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+      min-width: 0;
     }
 
     .footer-label {
+      font-size: 0.6em;
+      line-height: 1.4;
       letter-spacing: 0.18em;
-      font-size: 0.75em;
-      color: #999;
-      opacity: 0.8;
+      text-transform: uppercase;
+
+      color: #64748b;
+      opacity: 0.62;
+    }
+
+    .email-link {
+      display: inline-block;
+      width: fit-content;
+
+      font-size: 0.74em;
+      line-height: 1.5;
+
+      color: rgba(71, 85, 105, 0.72);
+      text-decoration: none;
+
+      border-bottom: 1px solid transparent;
+
+      transition:
+        color 0.18s ease,
+        border-color 0.18s ease;
+    }
+
+    .email-link:hover {
+      color: var(--ink);
+      border-bottom-color: rgba(11, 31, 58, 0.2);
     }
 
     .footer-meta {
-      font-size: 0.7em;
-      color: #94a3b8;
-      letter-spacing: 0.06em;
-      margin-top: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3px;
+
+      font-size: 0.58em;
+      line-height: 1.5;
+      letter-spacing: 0.045em;
+      text-align: right;
+
+      color: rgba(100, 116, 139, 0.56);
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -835,10 +867,29 @@
         color: inherit;
         opacity: 1;
       }
-      
+
       .nav {
         margin-bottom: 30px;
         font-size: 0.88em;
+      }
+
+      .site-footer {
+        grid-template-columns: 1fr;
+        row-gap: 13px;
+
+        margin-top: 18px;
+        padding-top: 11px;
+      }
+
+      .footer-meta {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+
+        width: 100%;
+
+        font-size: 0.57em;
+        text-align: left;
       }
     }
   </style>
@@ -1027,24 +1078,29 @@
         <span class="nav-label" data-en="Publications" data-ja="論文">Publications</span>
       </a>
 
-      <a href="/archive/" class="archive">
+      <a href="/contact/" class="contact">
         <span class="nav-index">04</span>
-        <span class="nav-label" data-en="Archive" data-ja="アーカイブ">Archive</span>
+        <span class="nav-label" data-en="Contact" data-ja="連絡先">Contact</span>
       </a>
     </nav>
 
-    <footer>
+    <footer class="site-footer">
       <div class="footer-contact">
         <span class="footer-label" data-en="Contact" data-ja="連絡先">
           Contact
-        </span><br>
+        </span>
+
         <a href="mailto:sangseok.han.contact@gmail.com" class="email-link">
           sangseok.han.contact@gmail.com
         </a>
       </div>
 
       <div class="footer-meta">
-        © Sangseok Han · Last updated: August 2026
+        <span data-en="Last updated: August 2026" data-ja="最終更新：2026年8月">
+          Last updated: August 2026
+        </span>
+
+        <span>© 2026 Sangseok Han</span>
       </div>
     </footer>
 
