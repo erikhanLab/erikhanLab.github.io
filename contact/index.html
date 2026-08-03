@@ -417,6 +417,357 @@
             border-bottom-color: rgba(11, 31, 58, 0.38);
         }
 
+        .contact-section--profiles {
+            margin-bottom: 27px;
+        }
+
+        .research-visuals {
+            box-sizing: border-box;
+
+            width: min(950px, calc(100vw - 48px));
+            max-width: none;
+
+            margin: 0 0 4px;
+            margin-left: 50%;
+            padding-top: 21px;
+
+            transform: translateX(-50%);
+
+            border-top: 1px solid rgba(11, 31, 58, 0.07);
+        }
+
+        .research-visuals-head {
+            display: block;
+            margin-bottom: 14px;
+        }
+
+        .research-visuals-heading {
+            min-width: 0;
+        }
+
+        .research-visuals-controls,
+        .research-visuals-button {
+            display: none;
+        }
+
+
+        .research-visuals-title {
+            margin: 0;
+
+            font-size: 0.7em;
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+
+            color: rgba(11, 31, 58, 0.52);
+        }
+
+        .research-visuals-description {
+            margin: 5px 0 0;
+
+            font-size: 0.67em;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: 0.022em;
+
+            color: rgba(67, 78, 93, 0.36);
+        }
+
+        .research-visuals-button {
+            display: grid;
+            place-items: center;
+
+            box-sizing: border-box;
+            width: 30px;
+            height: 27px;
+            padding: 0;
+
+            font-family: inherit;
+            font-size: 0.77em;
+            line-height: 1;
+
+            color: rgba(11, 31, 58, 0.5);
+            background: transparent;
+
+            border: 1px solid rgba(11, 31, 58, 0.09);
+            border-radius: 1px;
+
+            cursor: pointer;
+
+            transition:
+                color 0.18s ease,
+                border-color 0.18s ease,
+                background-color 0.18s ease,
+                opacity 0.18s ease;
+        }
+
+        .research-visuals-button:hover:not(:disabled),
+        .research-visuals-button:focus-visible:not(:disabled) {
+            color: rgba(11, 31, 58, 0.86);
+            background: rgba(255, 255, 255, 0.16);
+
+            border-color: rgba(11, 31, 58, 0.24);
+
+            outline: none;
+        }
+
+        .research-visuals-button:disabled {
+            opacity: 0.23;
+            cursor: default;
+        }
+
+        .research-visuals-window {
+            position: relative;
+            width: 100%;
+            overflow: visible;
+        }
+
+        .research-visuals-window::after {
+            display: none;
+        }
+
+        .research-visuals-window.is-at-end::after {
+            opacity: 0;
+        }
+
+        .research-visuals-viewport {
+            width: 100%;
+            overflow: visible;
+
+            scrollbar-width: auto;
+            scroll-snap-type: none;
+            overscroll-behavior-inline: auto;
+        }
+
+        .research-visuals-viewport::-webkit-scrollbar {
+            display: none;
+        }
+
+        .research-visuals-viewport:focus-visible {
+            outline: 1px solid rgba(11, 31, 58, 0.12);
+            outline-offset: 5px;
+        }
+
+        .research-visuals-track {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            align-items: start;
+            gap: 12px;
+
+            width: 100%;
+            min-width: 0;
+            padding: 0;
+        }
+
+        .research-visual-card {
+            display: flex;
+            flex-direction: column;
+
+            width: 100%;
+            min-width: 0;
+            margin: 0;
+        }
+
+        .research-visual-media {
+            position: relative;
+            isolation: isolate;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            box-sizing: border-box;
+            width: 100%;
+            height: 160px;
+            padding: 0;
+
+            background: transparent;
+
+            border: 1px solid rgba(11, 31, 58, 0.055);
+            border-radius: 1px;
+
+            box-shadow: none;
+        }
+
+
+
+        .research-visual-media::after {
+            display: none;
+        }
+
+        .research-visual-media img,
+        .research-visual-media video {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            padding: 0;
+
+            object-fit: contain;
+            object-position: center;
+
+            opacity: 0.88;
+
+            filter:
+                brightness(0.94) saturate(0.82);
+
+            transform: none;
+            image-rendering: auto;
+
+            transition:
+                opacity 0.28s ease,
+                filter 0.28s ease;
+        }
+
+        .research-visual-card:hover .research-visual-media img,
+        .research-visual-card:hover .research-visual-media video {
+            opacity: 1;
+
+            filter:
+                brightness(1) saturate(1);
+
+            transform: none;
+        }
+
+        .research-visual-card:hover .research-visual-media img,
+        .research-visual-card:hover .research-visual-media video {
+            opacity: 1;
+
+            filter:
+                brightness(1) saturate(1);
+
+            transform: none;
+        }
+
+        .research-visual-video:focus-visible {
+            border-color: rgba(11, 31, 58, 0.28);
+            outline: none;
+        }
+
+        .research-visual-motion {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            z-index: 3;
+
+            padding: 3px 5px 2px;
+
+            font-size: 8px;
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+
+            color: rgba(245, 247, 250, 0.86);
+            background: rgba(11, 31, 58, 0.42);
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+
+            transition:
+                opacity 0.2s ease,
+                background-color 0.2s ease;
+        }
+
+        .research-visual-video.is-playing .research-visual-motion {
+            opacity: 0.52;
+            background: rgba(11, 31, 58, 0.55);
+        }
+
+        .research-visual-card figcaption {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+
+            box-sizing: border-box;
+            width: 100%;
+            min-width: 0;
+
+            margin-top: 8px;
+            padding-right: 4px;
+        }
+
+        .research-visual-name,
+        .research-visual-meta {
+            display: block;
+            min-width: 0;
+        }
+
+        .research-visual-name {
+            font-size: 0.67em;
+            font-weight: 500;
+            line-height: 1.42;
+            letter-spacing: 0.027em;
+
+            color: rgba(37, 49, 65, 0.68);
+        }
+
+        .research-visual-meta {
+            font-size: 0.59em;
+            font-weight: 400;
+            line-height: 1.45;
+            letter-spacing: 0.024em;
+
+            color: rgba(67, 78, 93, 0.39);
+        }
+
+        .research-visual-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+
+            width: fit-content;
+            margin-top: 6px;
+            padding-bottom: 1px;
+
+            font-size: 0.52em;
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: 0.075em;
+            text-transform: uppercase;
+
+            color: rgba(11, 31, 58, 0.42);
+            text-decoration: none;
+
+            border-bottom: 1px solid rgba(11, 31, 58, 0.11);
+
+            transition:
+                color 0.18s ease,
+                border-color 0.18s ease;
+        }
+
+        .research-visual-link-arrow {
+            display: inline-block;
+
+            color: rgba(11, 31, 58, 0.3);
+
+            transition:
+                color 0.18s ease,
+                transform 0.2s ease;
+        }
+
+        .research-visual-link:hover,
+        .research-visual-link:focus-visible {
+            color: rgba(11, 31, 58, 0.76);
+            border-bottom-color: rgba(11, 31, 58, 0.32);
+
+            outline: none;
+        }
+
+        .research-visual-link:hover .research-visual-link-arrow,
+        .research-visual-link:focus-visible .research-visual-link-arrow {
+            color: rgba(11, 31, 58, 0.66);
+            transform: translateX(2px);
+        }
+
+        html[data-lang="ja"] .research-visual-link {
+            letter-spacing: 0.035em;
+            text-transform: none;
+        }
+
         .contact-footer {
             position: relative;
 
@@ -467,7 +818,7 @@
             color: rgba(11, 31, 58, 0.48);
             text-decoration: none;
 
-            border-bottom: 1px solid rgba(11, 31, 58, 0.14);
+            border-bottom: 0.1px solid rgba(11, 31, 58, 0.08);
 
             transition:
                 color 0.18s ease,
@@ -544,6 +895,26 @@
 
         html[data-lang="ja"] .contact-archive-description {
             letter-spacing: 0.015em;
+        }
+
+        .research-visual-open {
+            appearance: none;
+
+            font: inherit;
+            color: inherit;
+
+            cursor: zoom-in;
+        }
+
+        .research-visual-open:hover {
+            border-color: rgba(11, 31, 58, 0.16);
+        }
+
+        .research-visual-open:focus-visible {
+            border-color: rgba(11, 31, 58, 0.3);
+
+            outline: 1px solid rgba(11, 31, 58, 0.18);
+            outline-offset: 3px;
         }
 
         .desktop-only {
@@ -670,6 +1041,10 @@
                 font-size: 0.84em;
             }
 
+            .research-visuals {
+                display: none;
+            }
+
             .contact-footer {
                 width: 100%;
                 max-width: none;
@@ -734,6 +1109,150 @@
             .contact-visual-frame img,
             .contact-archive-link,
             .contact-archive-arrow {
+                transition: none;
+            }
+        }
+
+        body.research-lightbox-open {
+            overflow: hidden;
+        }
+
+        .research-lightbox[hidden] {
+            display: none;
+        }
+
+        .research-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+
+            display: grid;
+            place-items: center;
+
+            box-sizing: border-box;
+            padding: 32px;
+
+            background: rgba(8, 16, 27, 0.78);
+            backdrop-filter: blur(4px);
+
+            opacity: 0;
+
+            transition: opacity 0.18s ease;
+        }
+
+        .research-lightbox.is-open {
+            opacity: 1;
+        }
+
+        .research-lightbox-dialog {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+
+            width: fit-content;
+            max-width: 94vw;
+            max-height: 92vh;
+
+            background: rgba(247, 248, 250, 0.99);
+
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+        }
+
+        .research-lightbox-media {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 0;
+            min-height: 0;
+
+            background: rgba(247, 248, 250, 0.99);
+        }
+
+        .research-lightbox-media img {
+            display: block;
+
+            width: auto;
+            height: auto;
+
+            max-width: 92vw;
+            max-height: 79vh;
+
+            object-fit: contain;
+            object-position: center;
+
+            opacity: 1 !important;
+            filter: none !important;
+            transform: none !important;
+
+            image-rendering: auto;
+        }
+
+        .research-lightbox-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+
+            padding: 12px 15px 14px;
+
+            border-top: 1px solid rgba(11, 31, 58, 0.07);
+        }
+
+        .research-lightbox-title {
+            font-size: 0.78em;
+            font-weight: 500;
+            line-height: 1.45;
+            letter-spacing: 0.025em;
+
+            color: rgba(25, 38, 54, 0.82);
+        }
+
+        .research-lightbox-meta {
+            font-size: 0.66em;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+
+            color: rgba(67, 78, 93, 0.52);
+        }
+
+        .research-lightbox-close {
+            position: absolute;
+            top: -14px;
+            right: -14px;
+            z-index: 2;
+
+            display: grid;
+            place-items: center;
+
+            width: 30px;
+            height: 30px;
+            padding: 0;
+
+            font: inherit;
+            font-size: 17px;
+            line-height: 1;
+
+            color: rgba(245, 247, 250, 0.88);
+            background: rgba(11, 31, 58, 0.82);
+
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 50%;
+
+            cursor: pointer;
+        }
+
+        .research-lightbox-close:hover,
+        .research-lightbox-close:focus-visible {
+            background: rgba(11, 31, 58, 0.98);
+
+            outline: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .research-lightbox {
                 transition: none;
             }
         }
@@ -896,6 +1415,144 @@
                 <a href="https://www.linkedin.com/in/erik-han97/" target="_blank" rel="noopener noreferrer">
                     LinkedIn
                 </a>
+            </div>
+        </section>
+
+        <section class="research-visuals" aria-labelledby="research-visuals-title">
+            <div class="research-visuals-head">
+                <div class="research-visuals-heading">
+                    <h2 id="research-visuals-title" class="research-visuals-title" data-en="Research Visuals"
+                        data-ja="研究ビジュアル">
+                        Research Visuals
+                    </h2>
+
+                    <p class="research-visuals-description"
+                        data-en="Selected flow fields and dynamic responses from published and ongoing research."
+                        data-ja="発表済みおよび進行中の研究から選定した流れ場と動的応答。">
+                        Selected flow fields and dynamic responses from published and ongoing research.
+                    </p>
+                </div>
+            </div>
+
+            <div class="research-visuals-window">
+                <div class="research-visuals-viewport">
+                    <div class="research-visuals-track">
+
+                        <figure class="research-visual-card">
+                            <div class="research-visual-media">
+                                <img src="/assets/research/spatial-axial.svg"
+                                    alt="Axial velocity contours around the KCS hull, comparing the uniform roughness case and the relative axial velocity response"
+                                    loading="lazy" decoding="async">
+                            </div>
+
+                            <figcaption>
+                                <span class="research-visual-name" data-en="KCS Axial Velocity Field"
+                                    data-ja="KCS軸方向速度場">
+                                    KCS Axial Velocity Field
+                                </span>
+
+                                <span class="research-visual-meta" data-en="Spatial roughness distributions"
+                                    data-ja="空間的粗さ分布">
+                                    Spatial roughness distributions
+                                </span>
+
+                                <a class="research-visual-link" href="/publications/beyond-resistance/">
+                                    <span data-en="Related research" data-ja="関連研究">
+                                        Related research
+                                    </span>
+
+                                    <span class="research-visual-link-arrow" aria-hidden="true">→</span>
+                                </a>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="research-visual-card">
+                            <button class="research-visual-media research-visual-open" type="button"
+                                aria-label="Enlarge FOWT pitch free-decay response">
+                                <img src="/assets/research/fowt-pitch.gif"
+                                    alt="Numerical validation of the FOWT pitch free-decay response" loading="lazy"
+                                    decoding="async">
+
+                                <span class="research-visual-motion" aria-hidden="true">
+                                    Motion
+                                </span>
+                            </button>
+
+                            <figcaption>
+                                <span class="research-visual-name" data-en="FOWT Pitch Free-Decay Response"
+                                    data-ja="FOWTピッチ自由減衰応答">
+                                    FOWT Pitch Free-Decay Response
+                                </span>
+
+                                <span class="research-visual-meta" data-en="Numerical free-decay validation"
+                                    data-ja="自由減衰応答の数値検証">
+                                    Numerical free-decay validation
+                                </span>
+
+                                <a class="research-visual-link" href="/publications/fowt-fsi/">
+                                    <span data-en="Related research" data-ja="関連研究">
+                                        Related research
+                                    </span>
+
+                                    <span class="research-visual-link-arrow" aria-hidden="true">→</span>
+                                </a>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="research-visual-card">
+                            <button class="research-visual-media research-visual-open" type="button"
+                                aria-label="Enlarge gyroscopic WEC response">
+                                <img src="/assets/research/wec-cfd-mbd.gif"
+                                    alt="Coupled response of a gyroscopic wave energy converter" loading="lazy"
+                                    decoding="async">
+
+                                <span class="research-visual-motion" aria-hidden="true">
+                                    Motion
+                                </span>
+                            </button>
+
+                            <figcaption>
+                                <span class="research-visual-name" data-en="Gyroscopic WEC Response"
+                                    data-ja="ジャイロ式WEC応答">
+                                    Gyroscopic WEC Response
+                                </span>
+
+                                <span class="research-visual-meta" data-en="Pitch–gyroscope coupling"
+                                    data-ja="ピッチ・ジャイロ連成">
+                                    Pitch–gyroscope coupling
+                                </span>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="research-visual-card">
+                            <div class="research-visual-media is-contain research-visual-paper">
+                                <img src="/assets/research/kcs-temperature.svg"
+                                    alt="Comparison of wave patterns around the KCS hull at towing-tank temperatures of 5 and 30 degrees Celsius"
+                                    loading="lazy" decoding="async">
+                            </div>
+
+                            <figcaption>
+                                <span class="research-visual-name" data-en="KCS Kelvin Wake" data-ja="KCSケルビン航跡">
+                                    KCS Kelvin Wake
+                                </span>
+
+                                <span class="research-visual-meta" data-en="Towing-tank temperature comparison"
+                                    data-ja="曳航水槽温度比較">
+                                    Towing-tank temperature comparison
+                                </span>
+
+                                <a class="research-visual-link" href="/publications/temperature-ittc/">
+                                    <span data-en="Related research" data-ja="関連研究">
+                                        Related research
+                                    </span>
+
+                                    <span class="research-visual-link-arrow" aria-hidden="true">→</span>
+                                </a>
+                            </figcaption>
+                        </figure>
+
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1478,55 +2135,461 @@
     </script>
 
     <script>
-        document.querySelectorAll('.zoomable-drawing').forEach(img => {
-            img.addEventListener('click', () => {
-                const overlay = document.createElement('div');
-                overlay.className = 'zoom-overlay';
+        function initialiseResearchLightbox() {
+            const triggers =
+                document.querySelectorAll(".research-visual-open");
 
-                const wrapper = document.createElement('div');
-                wrapper.className = 'zoom-overlay-content';
+            if (!triggers.length) return;
 
-                const clone = img.cloneNode();
-                clone.style.width = '100%';
-                clone.style.maxWidth = '90vw';
-                clone.style.height = 'auto';
-                clone.style.maxHeight = '80vh';
+            const overlay =
+                document.createElement("div");
 
+            overlay.className = "research-lightbox";
+            overlay.hidden = true;
 
-                const meta = document.createElement('div');
-                meta.className = 'zoom-meta';
+            overlay.innerHTML = `
+            <div
+                class="research-lightbox-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="research-lightbox-title"
+            >
+                <button
+                    class="research-lightbox-close"
+                    type="button"
+                    aria-label="Close enlarged image"
+                >
+                    ×
+                </button>
 
-                const title = document.createElement('div');
-                title.className = 'zoom-title';
-                title.textContent = img.dataset.title || '';
+                <div class="research-lightbox-media"></div>
 
-                const metaLine = document.createElement('div');
-                metaLine.className = 'zoom-meta-line';
-                metaLine.textContent = img.dataset.meta || '';
+                <div class="research-lightbox-caption">
+                    <div
+                        id="research-lightbox-title"
+                        class="research-lightbox-title"
+                    ></div>
 
-                const desc = document.createElement('div');
-                desc.className = 'zoom-desc';
-                desc.textContent = img.dataset.desc || '';
+                    <div class="research-lightbox-meta"></div>
+                </div>
+            </div>
+        `;
 
-                meta.appendChild(title);
-                meta.appendChild(metaLine);
-                meta.appendChild(desc);
-                wrapper.appendChild(clone);
-                wrapper.appendChild(meta);
-                overlay.appendChild(wrapper);
+            document.body.appendChild(overlay);
 
-                document.body.appendChild(overlay);
-                requestAnimationFrame(() => overlay.classList.add('active'));
+            const dialog =
+                overlay.querySelector(
+                    ".research-lightbox-dialog"
+                );
 
-                overlay.addEventListener("click", () => {
-                    overlay.classList.remove("active");
+            const media =
+                overlay.querySelector(
+                    ".research-lightbox-media"
+                );
 
-                    setTimeout(() => {
-                        overlay.remove();
-                    }, 200);
+            const title =
+                overlay.querySelector(
+                    ".research-lightbox-title"
+                );
+
+            const meta =
+                overlay.querySelector(
+                    ".research-lightbox-meta"
+                );
+
+            const closeButton =
+                overlay.querySelector(
+                    ".research-lightbox-close"
+                );
+
+            let activeTrigger = null;
+            let closeTimer = null;
+
+            function openLightbox(trigger) {
+                const sourceImage =
+                    trigger.querySelector("img");
+
+                const figure =
+                    trigger.closest(
+                        ".research-visual-card"
+                    );
+
+                if (!sourceImage || !figure) return;
+
+                clearTimeout(closeTimer);
+
+                activeTrigger = trigger;
+
+                const enlargedImage =
+                    document.createElement("img");
+
+                enlargedImage.src =
+                    sourceImage.dataset.fullSrc ||
+                    sourceImage.currentSrc ||
+                    sourceImage.src;
+
+                enlargedImage.alt =
+                    sourceImage.alt || "";
+
+                enlargedImage.decoding = "async";
+
+                media.replaceChildren(enlargedImage);
+
+                title.innerHTML =
+                    figure.querySelector(
+                        ".research-visual-name"
+                    )?.innerHTML || "";
+
+                meta.innerHTML =
+                    figure.querySelector(
+                        ".research-visual-meta"
+                    )?.innerHTML || "";
+
+                overlay.hidden = false;
+
+                document.body.classList.add(
+                    "research-lightbox-open"
+                );
+
+                requestAnimationFrame(() => {
+                    overlay.classList.add("is-open");
                 });
+
+                closeButton.focus();
+            }
+
+            function closeLightbox() {
+                overlay.classList.remove("is-open");
+
+                document.body.classList.remove(
+                    "research-lightbox-open"
+                );
+
+                closeTimer = setTimeout(() => {
+                    overlay.hidden = true;
+                    media.replaceChildren();
+
+                    activeTrigger?.focus();
+                    activeTrigger = null;
+                }, 180);
+            }
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener(
+                    "click",
+                    () => openLightbox(trigger)
+                );
             });
-        });
+
+            closeButton.addEventListener(
+                "click",
+                closeLightbox
+            );
+
+            overlay.addEventListener(
+                "click",
+                event => {
+                    if (event.target === overlay) {
+                        closeLightbox();
+                    }
+                }
+            );
+
+            dialog.addEventListener(
+                "click",
+                event => {
+                    event.stopPropagation();
+                }
+            );
+
+            document.addEventListener(
+                "keydown",
+                event => {
+                    if (
+                        event.key === "Escape" &&
+                        !overlay.hidden
+                    ) {
+                        closeLightbox();
+                    }
+                }
+            );
+        }
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initialiseResearchLightbox
+        );
+    </script>
+
+    <script>
+        function initialiseResearchVisuals() {
+            const section =
+                document.querySelector(".research-visuals");
+
+            const windowElement =
+                section?.querySelector(".research-visuals-window");
+
+            const viewport =
+                section?.querySelector(".research-visuals-viewport");
+
+            const track =
+                section?.querySelector(".research-visuals-track");
+
+            const previousButton =
+                section?.querySelector(".research-visuals-prev");
+
+            const nextButton =
+                section?.querySelector(".research-visuals-next");
+
+            if (
+                !section ||
+                !windowElement ||
+                !viewport ||
+                !track ||
+                !previousButton ||
+                !nextButton
+            ) {
+                return;
+            }
+
+            const reduceMotion =
+                window.matchMedia(
+                    "(prefers-reduced-motion: reduce)"
+                ).matches;
+
+            const canHover =
+                window.matchMedia(
+                    "(hover: hover) and (pointer: fine)"
+                ).matches;
+
+            let controlUpdateFrame = null;
+
+            function getScrollAmount() {
+                const firstCard =
+                    track.querySelector(".research-visual-card");
+
+                if (!firstCard) {
+                    return viewport.clientWidth * 0.75;
+                }
+
+                const trackStyle =
+                    window.getComputedStyle(track);
+
+                const gap =
+                    parseFloat(trackStyle.columnGap) || 0;
+
+                return (
+                    firstCard.getBoundingClientRect().width +
+                    gap
+                );
+            }
+
+            function updateControls() {
+                const maximumScroll =
+                    Math.max(
+                        0,
+                        viewport.scrollWidth -
+                        viewport.clientWidth
+                    );
+
+                const isAtStart =
+                    viewport.scrollLeft <= 2;
+
+                const isAtEnd =
+                    viewport.scrollLeft >=
+                    maximumScroll - 2;
+
+                previousButton.disabled =
+                    isAtStart;
+
+                nextButton.disabled =
+                    isAtEnd;
+
+                windowElement.classList.toggle(
+                    "is-at-end",
+                    isAtEnd
+                );
+            }
+
+            function scheduleControlUpdate() {
+                if (controlUpdateFrame !== null) {
+                    return;
+                }
+
+                controlUpdateFrame =
+                    requestAnimationFrame(() => {
+                        updateControls();
+                        controlUpdateFrame = null;
+                    });
+            }
+
+            previousButton.addEventListener(
+                "click",
+                () => {
+                    viewport.scrollBy({
+                        left: -getScrollAmount(),
+                        behavior: reduceMotion
+                            ? "auto"
+                            : "smooth"
+                    });
+                }
+            );
+
+            nextButton.addEventListener(
+                "click",
+                () => {
+                    viewport.scrollBy({
+                        left: getScrollAmount(),
+                        behavior: reduceMotion
+                            ? "auto"
+                            : "smooth"
+                    });
+                }
+            );
+
+            viewport.addEventListener(
+                "scroll",
+                scheduleControlUpdate,
+                {
+                    passive: true
+                }
+            );
+
+            window.addEventListener(
+                "resize",
+                scheduleControlUpdate,
+                {
+                    passive: true
+                }
+            );
+
+            section
+                .querySelectorAll(".research-visual-video")
+                .forEach(button => {
+                    const video =
+                        button.querySelector("video");
+
+                    if (!video) return;
+
+                    function playVideo() {
+                        video
+                            .play()
+                            .then(() => {
+                                button.classList.add(
+                                    "is-playing"
+                                );
+                            })
+                            .catch(() => {
+                                button.classList.remove(
+                                    "is-playing"
+                                );
+                            });
+                    }
+
+                    function pauseVideo() {
+                        video.pause();
+
+                        button.classList.remove(
+                            "is-playing"
+                        );
+                    }
+
+                    function toggleVideo() {
+                        if (video.paused) {
+                            playVideo();
+                        } else {
+                            pauseVideo();
+                        }
+                    }
+
+                    if (canHover && !reduceMotion) {
+                        button.addEventListener(
+                            "mouseenter",
+                            playVideo
+                        );
+
+                        button.addEventListener(
+                            "mouseleave",
+                            pauseVideo
+                        );
+
+                        button.addEventListener(
+                            "focusin",
+                            playVideo
+                        );
+
+                        button.addEventListener(
+                            "focusout",
+                            pauseVideo
+                        );
+                    }
+
+                    button.addEventListener(
+                        "click",
+                        event => {
+                            if (
+                                canHover &&
+                                event.detail > 0
+                            ) {
+                                return;
+                            }
+
+                            toggleVideo();
+                        }
+                    );
+
+                    video.addEventListener(
+                        "pause",
+                        () => {
+                            button.classList.remove(
+                                "is-playing"
+                            );
+                        }
+                    );
+                });
+
+            if ("IntersectionObserver" in window) {
+                const videoObserver =
+                    new IntersectionObserver(
+                        entries => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    return;
+                                }
+
+                                const video =
+                                    entry.target;
+
+                                video.pause();
+
+                                video
+                                    .closest(".research-visual-video")
+                                    ?.classList.remove(
+                                        "is-playing"
+                                    );
+                            });
+                        },
+                        {
+                            threshold: 0.15
+                        }
+                    );
+
+                section
+                    .querySelectorAll(
+                        ".research-visual-video video"
+                    )
+                    .forEach(video => {
+                        videoObserver.observe(video);
+                    });
+            }
+
+            updateControls();
+        }
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initialiseResearchVisuals
+        );
     </script>
 
 </body>
