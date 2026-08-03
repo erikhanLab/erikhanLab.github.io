@@ -900,10 +900,19 @@
         .research-visual-open {
             appearance: none;
 
+            position: relative;
+            z-index: 1;
+
             font: inherit;
             color: inherit;
 
+            pointer-events: auto !important;
             cursor: zoom-in;
+        }
+
+        .research-visual-open img,
+        .research-visual-open .research-visual-motion {
+            pointer-events: none;
         }
 
         .research-visual-open:hover {
@@ -1113,72 +1122,141 @@
             }
         }
 
-        body.research-lightbox-open {
-            overflow: hidden;
+        /* Thumbnail buttons */
+
+        .research-visual-open {
+            appearance: none;
+
+            position: relative;
+            z-index: 1;
+
+            font: inherit;
+            color: inherit;
+
+            pointer-events: auto;
+            cursor: zoom-in;
         }
 
-        .research-lightbox[hidden] {
-            display: none;
+        .research-visual-open img,
+        .research-visual-open .research-visual-motion {
+            pointer-events: none;
         }
+
+        .research-visual-open:hover {
+            border-color: rgba(11, 31, 58, 0.14);
+        }
+
+        .research-visual-open:focus-visible {
+            border-color: rgba(11, 31, 58, 0.24);
+
+            outline: 1px solid rgba(11, 31, 58, 0.14);
+            outline-offset: 3px;
+        }
+
+
+        /* Lightbox */
 
         .research-lightbox {
             position: fixed;
             inset: 0;
-            z-index: 1000;
+            z-index: 2147483647;
 
             display: grid;
             place-items: center;
 
             box-sizing: border-box;
-            padding: 32px;
+            width: 100vw;
+            height: 100vh;
+            padding: 24px;
 
-            background: rgba(8, 16, 27, 0.78);
-            backdrop-filter: blur(4px);
-
+            visibility: hidden;
+            pointer-events: none;
             opacity: 0;
 
-            transition: opacity 0.18s ease;
+            /*
+     * backdrop-filter는 전체 화면을 매 프레임 다시 계산하므로 제거.
+     * 반투명 단색만으로도 충분히 차분하게 보인다.
+     */
+            background: rgba(10, 19, 31, 0.58);
+
+            touch-action: none;
+
+            transition:
+                opacity 0.16s ease,
+                visibility 0s linear 0.16s;
         }
 
         .research-lightbox.is-open {
+            visibility: visible;
+            pointer-events: auto;
             opacity: 1;
+
+            transition-delay: 0s;
         }
+
+
+        /* Dialog */
 
         .research-lightbox-dialog {
             position: relative;
 
             display: flex;
             flex-direction: column;
+            overflow: hidden;
 
-            width: fit-content;
-            max-width: 94vw;
-            max-height: 92vh;
+            width: min(680px, 76vw);
+            max-height: 78vh;
 
-            background: rgba(247, 248, 250, 0.99);
+            background: rgba(248, 249, 251, 0.99);
 
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+            border: 1px solid rgba(255, 255, 255, 0.34);
+            border-radius: 3px;
+
+            box-shadow:
+                0 16px 40px rgba(3, 12, 24, 0.17),
+                0 3px 10px rgba(3, 12, 24, 0.07);
+
+            opacity: 0;
+            transform: translate3d(0, 6px, 0);
+
+            contain: layout paint;
+            will-change: opacity, transform;
+
+            transition:
+                opacity 0.15s ease,
+                transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
         }
+
+        .research-lightbox.is-open .research-lightbox-dialog {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+
+        /* Image */
 
         .research-lightbox-media {
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
 
-            min-width: 0;
-            min-height: 0;
+            box-sizing: border-box;
+            width: 100%;
+            height: min(48vh, 420px);
+            min-height: 250px;
+            padding: 18px 18px 10px;
 
-            background: rgba(247, 248, 250, 0.99);
+            background: rgba(248, 249, 251, 0.99);
         }
 
         .research-lightbox-media img {
             display: block;
 
-            width: auto;
-            height: auto;
-
-            max-width: 92vw;
-            max-height: 79vh;
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            max-height: none;
 
             object-fit: contain;
             object-position: center;
@@ -1188,71 +1266,94 @@
             transform: none !important;
 
             image-rendering: auto;
+
+            cursor: zoom-out;
         }
+
+
+        /* Caption */
 
         .research-lightbox-caption {
             display: flex;
             flex-direction: column;
-            gap: 3px;
+            gap: 2px;
 
-            padding: 12px 15px 14px;
+            padding: 10px 18px 14px;
 
-            border-top: 1px solid rgba(11, 31, 58, 0.07);
+            border-top: 1px solid rgba(11, 31, 58, 0.055);
         }
 
         .research-lightbox-title {
-            font-size: 0.78em;
+            font-size: 0.7em;
             font-weight: 500;
             line-height: 1.45;
             letter-spacing: 0.025em;
 
-            color: rgba(25, 38, 54, 0.82);
+            color: rgba(25, 38, 54, 0.72);
         }
 
         .research-lightbox-meta {
-            font-size: 0.66em;
+            font-size: 0.59em;
             font-weight: 400;
             line-height: 1.5;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.018em;
 
-            color: rgba(67, 78, 93, 0.52);
+            color: rgba(67, 78, 93, 0.4);
         }
 
+
+        /* Close button */
+
         .research-lightbox-close {
+            appearance: none;
+
             position: absolute;
-            top: -14px;
-            right: -14px;
-            z-index: 2;
+            top: 9px;
+            right: 9px;
+            z-index: 3;
 
             display: grid;
             place-items: center;
 
-            width: 30px;
-            height: 30px;
+            box-sizing: border-box;
+            width: 26px;
+            height: 26px;
             padding: 0;
 
             font: inherit;
-            font-size: 17px;
+            font-size: 15px;
+            font-weight: 300;
             line-height: 1;
 
-            color: rgba(245, 247, 250, 0.88);
-            background: rgba(11, 31, 58, 0.82);
+            color: rgba(32, 45, 61, 0.58);
+            background: rgba(248, 249, 251, 0.86);
 
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(11, 31, 58, 0.075);
             border-radius: 50%;
 
             cursor: pointer;
+            opacity: 0.72;
+
+            transition:
+                opacity 0.15s ease,
+                color 0.15s ease,
+                background-color 0.15s ease;
         }
 
         .research-lightbox-close:hover,
         .research-lightbox-close:focus-visible {
-            background: rgba(11, 31, 58, 0.98);
+            color: rgba(20, 34, 51, 0.86);
+            background: rgba(250, 251, 252, 0.99);
 
+            opacity: 1;
             outline: none;
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .research-lightbox {
+
+            .research-lightbox,
+            .research-lightbox-dialog,
+            .research-lightbox-close {
                 transition: none;
             }
         }
@@ -1439,11 +1540,13 @@
                     <div class="research-visuals-track">
 
                         <figure class="research-visual-card">
-                            <div class="research-visual-media">
+                            <button class="research-visual-media research-visual-open" type="button"
+                                aria-label="Enlarge KCS axial velocity field">
+
                                 <img src="/assets/research/spatial-axial.svg"
                                     alt="Axial velocity contours around the KCS hull, comparing the uniform roughness case and the relative axial velocity response"
                                     loading="lazy" decoding="async">
-                            </div>
+                            </button>
 
                             <figcaption>
                                 <span class="research-visual-name" data-en="KCS Axial Velocity Field"
@@ -1489,6 +1592,7 @@
                                     Numerical free-decay validation
                                 </span>
 
+                                <!-- 
                                 <a class="research-visual-link" href="/publications/fowt-fsi/">
                                     <span data-en="Related research" data-ja="関連研究">
                                         Related research
@@ -1496,12 +1600,15 @@
 
                                     <span class="research-visual-link-arrow" aria-hidden="true">→</span>
                                 </a>
+                                -->
+
                             </figcaption>
                         </figure>
 
                         <figure class="research-visual-card">
                             <button class="research-visual-media research-visual-open" type="button"
                                 aria-label="Enlarge gyroscopic WEC response">
+
                                 <img src="/assets/research/wec-cfd-mbd.gif"
                                     alt="Coupled response of a gyroscopic wave energy converter" loading="lazy"
                                     decoding="async">
@@ -1525,11 +1632,13 @@
                         </figure>
 
                         <figure class="research-visual-card">
-                            <div class="research-visual-media is-contain research-visual-paper">
+                            <button class="research-visual-media research-visual-open" type="button"
+                                aria-label="Enlarge KCS Kelvin wake comparison">
+
                                 <img src="/assets/research/kcs-temperature.svg"
                                     alt="Comparison of wave patterns around the KCS hull at towing-tank temperatures of 5 and 30 degrees Celsius"
                                     loading="lazy" decoding="async">
-                            </div>
+                            </button>
 
                             <figcaption>
                                 <span class="research-visual-name" data-en="KCS Kelvin Wake" data-ja="KCSケルビン航跡">
@@ -1590,7 +1699,258 @@
         </footer>
     </div>
 
+    <div id="research-lightbox" class="research-lightbox" aria-hidden="true">
+        <div class="research-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="research-lightbox-title">
+            <button class="research-lightbox-close" type="button" aria-label="Close enlarged image">
+                ×
+            </button>
 
+            <div class="research-lightbox-media"></div>
+
+            <div class="research-lightbox-caption">
+                <div id="research-lightbox-title" class="research-lightbox-title"></div>
+
+                <div class="research-lightbox-meta"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const lightbox =
+                document.getElementById("research-lightbox");
+
+            const lightboxMedia =
+                lightbox?.querySelector(".research-lightbox-media");
+
+            const lightboxTitle =
+                lightbox?.querySelector(".research-lightbox-title");
+
+            const lightboxMeta =
+                lightbox?.querySelector(".research-lightbox-meta");
+
+            const closeButton =
+                lightbox?.querySelector(".research-lightbox-close");
+
+            const triggers =
+                document.querySelectorAll(".research-visual-open");
+
+            if (
+                !lightbox ||
+                !lightboxMedia ||
+                !lightboxTitle ||
+                !lightboxMeta ||
+                !closeButton
+            ) {
+                console.error(
+                    "Research lightbox elements were not found."
+                );
+
+                return;
+            }
+
+            let activeTrigger = null;
+            let activeImage = null;
+
+            let originalParent = null;
+            let originalNextElement = null;
+
+            let closeTimer = null;
+
+            function restoreImage() {
+                if (
+                    !activeImage ||
+                    !originalParent
+                ) {
+                    return;
+                }
+
+                /*
+                 * Motion 배지가 있으면 그 앞에 이미지를 복원한다.
+                 * 정적 이미지 카드라면 원래 부모 끝에 돌려놓는다.
+                 */
+                if (
+                    originalNextElement &&
+                    originalNextElement.parentElement === originalParent
+                ) {
+                    originalParent.insertBefore(
+                        activeImage,
+                        originalNextElement
+                    );
+                } else {
+                    originalParent.appendChild(
+                        activeImage
+                    );
+                }
+
+                activeImage = null;
+                originalParent = null;
+                originalNextElement = null;
+            }
+
+            function openLightbox(trigger) {
+                clearTimeout(closeTimer);
+
+                if (
+                    lightbox.classList.contains("is-open")
+                ) {
+                    return;
+                }
+
+                const sourceImage =
+                    trigger.querySelector("img");
+
+                const card =
+                    trigger.closest(".research-visual-card");
+
+                if (!sourceImage || !card) return;
+
+                const name =
+                    card.querySelector(".research-visual-name");
+
+                const meta =
+                    card.querySelector(".research-visual-meta");
+
+                activeTrigger = trigger;
+                activeImage = sourceImage;
+
+                originalParent =
+                    sourceImage.parentElement;
+
+                originalNextElement =
+                    sourceImage.nextElementSibling;
+
+                /*
+                 * 복제하지 않고 기존 이미지 노드를 lightbox로 이동한다.
+                 * 따라서 GIF가 두 개 동시에 디코딩되지 않는다.
+                 */
+                lightboxMedia.appendChild(
+                    sourceImage
+                );
+
+                lightboxTitle.textContent =
+                    name?.textContent.trim() || "";
+
+                lightboxMeta.textContent =
+                    meta?.textContent.trim() || "";
+
+                lightbox.setAttribute(
+                    "aria-hidden",
+                    "false"
+                );
+
+                requestAnimationFrame(() => {
+                    lightbox.classList.add("is-open");
+                });
+
+                closeButton.focus({
+                    preventScroll: true
+                });
+            }
+
+            function closeLightbox() {
+                if (
+                    !lightbox.classList.contains("is-open")
+                ) {
+                    return;
+                }
+
+                lightbox.classList.remove("is-open");
+
+                lightbox.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                clearTimeout(closeTimer);
+
+                closeTimer = window.setTimeout(() => {
+                    restoreImage();
+
+                    activeTrigger?.focus({
+                        preventScroll: true
+                    });
+
+                    activeTrigger = null;
+                }, 180);
+            }
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener("click", () => {
+                    openLightbox(trigger);
+                });
+            });
+
+            lightboxMedia.addEventListener(
+                "click",
+                event => {
+                    if (event.target === activeImage) {
+                        closeLightbox();
+                    }
+                }
+            );
+
+            closeButton.addEventListener(
+                "click",
+                closeLightbox
+            );
+
+            lightbox.addEventListener(
+                "click",
+                event => {
+                    if (event.target === lightbox) {
+                        closeLightbox();
+                    }
+                }
+            );
+
+            /*
+             * body overflow를 바꾸지 않고
+             * overlay 위의 스크롤 입력만 차단한다.
+             * 페이지 폭이 변하지 않아 ResizeObserver도 자극하지 않는다.
+             */
+            lightbox.addEventListener(
+                "wheel",
+                event => {
+                    if (
+                        lightbox.classList.contains("is-open")
+                    ) {
+                        event.preventDefault();
+                    }
+                },
+                {
+                    passive: false
+                }
+            );
+
+            lightbox.addEventListener(
+                "touchmove",
+                event => {
+                    if (
+                        lightbox.classList.contains("is-open")
+                    ) {
+                        event.preventDefault();
+                    }
+                },
+                {
+                    passive: false
+                }
+            );
+
+            document.addEventListener(
+                "keydown",
+                event => {
+                    if (
+                        event.key === "Escape" &&
+                        lightbox.classList.contains("is-open")
+                    ) {
+                        closeLightbox();
+                    }
+                }
+            );
+        });
+    </script>
+    
     <script>
         const DEFAULT_LANG = "en";
         const SUPPORTED_LANGS = new Set(["en", "ja"]);
@@ -2135,193 +2495,6 @@
     </script>
 
     <script>
-        function initialiseResearchLightbox() {
-            const triggers =
-                document.querySelectorAll(".research-visual-open");
-
-            if (!triggers.length) return;
-
-            const overlay =
-                document.createElement("div");
-
-            overlay.className = "research-lightbox";
-            overlay.hidden = true;
-
-            overlay.innerHTML = `
-            <div
-                class="research-lightbox-dialog"
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="research-lightbox-title"
-            >
-                <button
-                    class="research-lightbox-close"
-                    type="button"
-                    aria-label="Close enlarged image"
-                >
-                    ×
-                </button>
-
-                <div class="research-lightbox-media"></div>
-
-                <div class="research-lightbox-caption">
-                    <div
-                        id="research-lightbox-title"
-                        class="research-lightbox-title"
-                    ></div>
-
-                    <div class="research-lightbox-meta"></div>
-                </div>
-            </div>
-        `;
-
-            document.body.appendChild(overlay);
-
-            const dialog =
-                overlay.querySelector(
-                    ".research-lightbox-dialog"
-                );
-
-            const media =
-                overlay.querySelector(
-                    ".research-lightbox-media"
-                );
-
-            const title =
-                overlay.querySelector(
-                    ".research-lightbox-title"
-                );
-
-            const meta =
-                overlay.querySelector(
-                    ".research-lightbox-meta"
-                );
-
-            const closeButton =
-                overlay.querySelector(
-                    ".research-lightbox-close"
-                );
-
-            let activeTrigger = null;
-            let closeTimer = null;
-
-            function openLightbox(trigger) {
-                const sourceImage =
-                    trigger.querySelector("img");
-
-                const figure =
-                    trigger.closest(
-                        ".research-visual-card"
-                    );
-
-                if (!sourceImage || !figure) return;
-
-                clearTimeout(closeTimer);
-
-                activeTrigger = trigger;
-
-                const enlargedImage =
-                    document.createElement("img");
-
-                enlargedImage.src =
-                    sourceImage.dataset.fullSrc ||
-                    sourceImage.currentSrc ||
-                    sourceImage.src;
-
-                enlargedImage.alt =
-                    sourceImage.alt || "";
-
-                enlargedImage.decoding = "async";
-
-                media.replaceChildren(enlargedImage);
-
-                title.innerHTML =
-                    figure.querySelector(
-                        ".research-visual-name"
-                    )?.innerHTML || "";
-
-                meta.innerHTML =
-                    figure.querySelector(
-                        ".research-visual-meta"
-                    )?.innerHTML || "";
-
-                overlay.hidden = false;
-
-                document.body.classList.add(
-                    "research-lightbox-open"
-                );
-
-                requestAnimationFrame(() => {
-                    overlay.classList.add("is-open");
-                });
-
-                closeButton.focus();
-            }
-
-            function closeLightbox() {
-                overlay.classList.remove("is-open");
-
-                document.body.classList.remove(
-                    "research-lightbox-open"
-                );
-
-                closeTimer = setTimeout(() => {
-                    overlay.hidden = true;
-                    media.replaceChildren();
-
-                    activeTrigger?.focus();
-                    activeTrigger = null;
-                }, 180);
-            }
-
-            triggers.forEach(trigger => {
-                trigger.addEventListener(
-                    "click",
-                    () => openLightbox(trigger)
-                );
-            });
-
-            closeButton.addEventListener(
-                "click",
-                closeLightbox
-            );
-
-            overlay.addEventListener(
-                "click",
-                event => {
-                    if (event.target === overlay) {
-                        closeLightbox();
-                    }
-                }
-            );
-
-            dialog.addEventListener(
-                "click",
-                event => {
-                    event.stopPropagation();
-                }
-            );
-
-            document.addEventListener(
-                "keydown",
-                event => {
-                    if (
-                        event.key === "Escape" &&
-                        !overlay.hidden
-                    ) {
-                        closeLightbox();
-                    }
-                }
-            );
-        }
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            initialiseResearchLightbox
-        );
-    </script>
-
-    <script>
         function initialiseResearchVisuals() {
             const section =
                 document.querySelector(".research-visuals");
@@ -2591,6 +2764,7 @@
             initialiseResearchVisuals
         );
     </script>
+
 
 </body>
 
