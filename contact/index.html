@@ -39,12 +39,9 @@
     <link rel="stylesheet" href="/assets/css/site-shell.css?v=1">
     <style>
         :root {
-            --contact-rule: rgba(11, 31, 58, 0.11);
             --contact-text: rgba(24, 34, 47, 0.88);
-            --contact-muted: rgba(67, 78, 93, 0.62);
             --contact-faint: rgba(67, 78, 93, 0.44);
         }
-
 
         .nav a[href="/contact/"] {
             color: rgba(56, 70, 88, 0.38);
@@ -60,9 +57,10 @@
         }
 
         .page-content {
+            font-size: 1.1em;
+
             transform: translateY(6px);
             transition: transform 0.12s ease-out;
-            font-size: 1.1em;
         }
 
         .page-content.loaded {
@@ -70,67 +68,124 @@
         }
 
         .divider {
-            width: 100%;
-            max-width: none;
+            width: min(420px, 58%);
             height: 1px;
 
-            margin: 0;
+            margin: 3px auto 0;
 
             border: 0;
 
             background:
                 linear-gradient(90deg,
                     rgba(11, 31, 58, 0) 0%,
-                    rgba(11, 31, 58, 0.035) 10%,
-                    rgba(11, 31, 58, 0.11) 32%,
-                    rgba(11, 31, 58, 0.16) 50%,
-                    rgba(11, 31, 58, 0.11) 68%,
-                    rgba(11, 31, 58, 0.035) 90%,
+                    rgba(11, 31, 58, 0.025) 12%,
+                    rgba(11, 31, 58, 0.065) 34%,
+                    rgba(11, 31, 58, 0.085) 50%,
+                    rgba(11, 31, 58, 0.065) 66%,
+                    rgba(11, 31, 58, 0.025) 88%,
                     rgba(11, 31, 58, 0) 100%);
-        }
-
-        .scroll-spacer {
-            height: 0.5vh;
         }
 
         .contact-intro {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) 120px;
+            grid-template-columns: minmax(0, 1fr) 108px;
             align-items: start;
-            column-gap: 44px;
+            column-gap: 48px;
 
             box-sizing: border-box;
             width: 100%;
-            max-width: none;
-            padding-right: 40px;
-
-            margin: 30px 0 20px;
+            padding-right: 38px;
+            margin: 30px 0 28px;
         }
 
         .contact-head {
             width: 100%;
-            max-width: none;
             min-width: 0;
-
             padding-top: 3px;
+        }
+
+        .contact-title {
+            width: max-content;
+            margin: 0 0 18px;
+
+            font-size: 1.04em;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            white-space: nowrap;
+
+            color: rgba(11, 31, 58, 0.72);
+        }
+
+        .contact-email-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            width: 100%;
+            margin-bottom: 34px;
+
+            text-align: center;
+        }
+
+        .contact-email-link {
+            display: inline-block;
+            width: fit-content;
+
+            font-size: 1.14em;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: 0.035em;
+
+            color: rgba(18, 32, 50, 0.94);
+            text-decoration: none;
+
+            border-bottom: 1px solid rgba(11, 31, 58, 0.25);
+
+            transition:
+                color 0.18s ease,
+                border-color 0.18s ease,
+                opacity 0.18s ease;
+        }
+
+        .contact-email-link:hover {
+            color: rgba(11, 31, 58, 1);
+            border-bottom-color: rgba(11, 31, 58, 0.68);
+        }
+
+        .contact-email-meta {
+            width: 100%;
+            max-width: 570px;
+            margin-top: 9px;
+
+            font-size: 0.7em;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 0.055em;
+
+            text-align: center;
+
+            color: var(--contact-faint);
         }
 
         .contact-profile {
             display: grid;
-            gap: 15px;
+            gap: 16px;
 
             width: 100%;
-            max-width: none;
         }
 
         .contact-profile-row {
             display: grid;
-            grid-template-columns: 78px minmax(0, 1fr);
+            grid-template-columns: 112px minmax(0, 1fr);
             align-items: start;
-            column-gap: 18px;
+            column-gap: 19px;
         }
 
         .contact-profile-key {
+            width: max-content;
             padding-top: 0.24em;
 
             font-size: 0.63em;
@@ -138,6 +193,7 @@
             line-height: 1.4;
             letter-spacing: 0.17em;
             text-transform: uppercase;
+            white-space: nowrap;
 
             color: rgba(11, 31, 58, 0.4);
         }
@@ -166,33 +222,12 @@
             color: rgba(67, 78, 93, 0.6);
         }
 
-        .contact-note {
-            position: relative;
+        @media (min-width: 641px) {
 
-            max-width: 510px;
-            margin: 30px 0 0;
-            padding-left: 15px;
-
-            font-size: 0.78em;
-            font-style: italic;
-            font-weight: 400;
-            line-height: 1.72;
-            letter-spacing: 0.045em;
-
-            color: var(--contact-muted);
-        }
-
-        .contact-note::before {
-            content: "";
-
-            position: absolute;
-            left: 0;
-            top: 0.3em;
-            bottom: 0.3em;
-
-            width: 1px;
-
-            background: rgba(11, 31, 58, 0.15);
+            .contact-profile-primary,
+            .contact-profile-secondary {
+                white-space: nowrap;
+            }
         }
 
         .contact-visual {
@@ -203,8 +238,16 @@
             justify-self: end;
             align-self: start;
 
-            width: 120px;
-            margin: 1px 0 0;
+            width: 108px;
+            margin: 112px 0 0;
+
+            opacity: 0.78;
+
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-visual:hover {
+            opacity: 0.9;
         }
 
         .contact-visual-frame {
@@ -217,10 +260,10 @@
 
             background: rgba(11, 31, 58, 0.025);
 
-            border: 1px solid rgba(11, 31, 58, 0.075);
+            border: 1px solid rgba(11, 31, 58, 0.06);
 
             box-shadow:
-                0 8px 22px rgba(11, 31, 58, 0.035);
+                0 7px 18px rgba(11, 31, 58, 0.025);
         }
 
         .contact-visual-frame img {
@@ -232,10 +275,10 @@
             object-fit: cover;
             object-position: center;
 
-            filter:
-                saturate(0.5) contrast(0.97) brightness(1.035);
+            opacity: 0.86;
 
-            opacity: 0.9;
+            filter:
+                saturate(0.42) contrast(0.96) brightness(1.045);
 
             transform: scale(1.001);
 
@@ -261,10 +304,11 @@
         }
 
         .contact-visual:hover .contact-visual-frame img {
-            filter:
-                saturate(0.6) contrast(0.99) brightness(1.04);
+            opacity: 0.94;
 
-            opacity: 0.97;
+            filter:
+                saturate(0.5) contrast(0.98) brightness(1.045);
+
             transform: scale(1.012);
         }
 
@@ -275,8 +319,6 @@
             gap: 3px;
 
             width: max-content;
-            max-width: none;
-
             margin-top: 7px;
             padding-top: 6px;
 
@@ -310,110 +352,29 @@
             display: grid;
             grid-template-columns: 1fr;
             justify-items: center;
-            row-gap: 18px;
+            row-gap: 14px;
 
             box-sizing: border-box;
             width: 100%;
-            max-width: none;
-
-            margin: 25px auto 40px;
+            margin: 27px auto 40px;
             padding-inline: 20px;
 
             text-align: center;
         }
 
-        .contact-section .contact-entry,
-        .contact-section .contact-links {
-            margin-left: 0;
-        }
-
         .contact-label {
             width: max-content;
-            white-space: nowrap;
+            margin: 0 auto;
             padding-top: 0;
+
             font-size: 0.72em;
             font-weight: 500;
             line-height: 1.4;
             letter-spacing: 0.2em;
             text-transform: uppercase;
+            white-space: nowrap;
+
             color: rgba(11, 31, 58, 0.5);
-        }
-
-        .contact-entry {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            min-width: 0;
-
-            text-align: center;
-        }
-
-        .contact-meta {
-            max-width: 520px;
-            margin-top: 10px;
-
-            font-size: 0.7em;
-            font-style: italic;
-            line-height: 1.6;
-            letter-spacing: 0.065em;
-
-            text-align: center;
-
-            color: var(--contact-faint);
-        }
-
-        .contact-entry>a {
-            display: inline-block;
-            width: fit-content;
-
-            font-size: 1.02em;
-            font-weight: 400;
-            line-height: 1.5;
-            letter-spacing: 0.025em;
-
-            color: var(--contact-text);
-            text-decoration: none;
-
-            border-bottom: 1px solid rgba(11, 31, 58, 0.18);
-
-            transition:
-                color 0.18s ease,
-                border-color 0.18s ease,
-                opacity 0.18s ease;
-        }
-
-        .contact-entry>a:hover {
-            color: rgba(11, 31, 58, 1);
-            border-bottom-color: rgba(11, 31, 58, 0.6);
-        }
-
-        .contact-title {
-            width: max-content;
-            margin: 0 0 30px;
-
-            font-size: 1.04em;
-            font-weight: 400;
-            line-height: 1.2;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            white-space: nowrap;
-
-            color: rgba(11, 31, 58, 0.72);
-        }
-
-        .contact-title,
-        .contact-profile-key {
-            width: max-content;
-            white-space: nowrap;
-        }
-
-        @media (min-width: 641px) {
-
-            .contact-profile-primary,
-            .contact-profile-secondary {
-                white-space: nowrap;
-            }
         }
 
         .contact-links {
@@ -462,7 +423,6 @@
             box-sizing: border-box;
             width: 100%;
             max-width: 700px;
-
             margin: 40px 0 10px;
             padding: 19px 2px 0;
 
@@ -484,26 +444,6 @@
                     rgba(11, 31, 58, 0.1) 0%,
                     rgba(11, 31, 58, 0.042) 48%,
                     rgba(11, 31, 58, 0) 100%);
-        }
-
-        .contact-site-meta {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            gap: 4px 8px;
-
-            margin-top: 20px;
-
-            font-size: 0.7em;
-            font-weight: 400;
-            line-height: 1.5;
-            letter-spacing: 0.025em;
-
-            color: rgba(67, 78, 93, 0.57);
-        }
-
-        .contact-footer-separator {
-            color: rgba(67, 78, 93, 0.18);
         }
 
         .contact-archive-entry {
@@ -557,19 +497,41 @@
         .contact-archive-link:focus-visible {
             color: rgba(11, 31, 58, 0.82);
             border-bottom-color: currentColor;
+
             outline: none;
         }
 
         .contact-archive-description {
             max-width: 520px;
             margin: 7px 0 0;
-            font-style: italic;
+
             font-size: 0.71em;
+            font-style: italic;
             font-weight: 400;
             line-height: 1.6;
             letter-spacing: 0.022em;
 
             color: rgba(67, 78, 93, 0.35);
+        }
+
+        .contact-site-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 4px 8px;
+
+            margin-top: 20px;
+
+            font-size: 0.7em;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: 0.025em;
+
+            color: rgba(67, 78, 93, 0.57);
+        }
+
+        .contact-footer-separator {
+            color: rgba(67, 78, 93, 0.18);
         }
 
         html[data-lang="ja"] .contact-site-meta {
@@ -609,149 +571,58 @@
                 font-size: 1.02em;
             }
 
-            .contact-title {
-                margin-bottom: 12px;
-
-                font-size: 0.8em;
-                letter-spacing: 0.19em;
-            }
-
-            .contact-note {
-                max-width: 92%;
-                padding-left: 14px;
-
-                font-size: 0.7em;
-                line-height: 1.7;
-                letter-spacing: 0.035em;
-            }
-
             .divider {
                 margin: 23px 0;
-            }
-
-            .contact-section {
-                grid-template-columns: 1fr;
-                row-gap: 10px;
-
-                max-width: none;
-                margin: 24px 0;
-            }
-
-            .contact-label {
-                padding-top: 0;
-
-                font-size: 0.68em;
-                letter-spacing: 0.17em;
-            }
-
-            .contact-entry>a {
-                max-width: 100%;
-
-                font-size: 0.95em;
-                overflow-wrap: anywhere;
-            }
-
-            .contact-meta {
-                margin-top: 6px;
-
-                font-size: 0.66em;
-                line-height: 1.55;
-                letter-spacing: 0.045em;
-            }
-
-            .contact-links {
-                gap: 8px 22px;
-            }
-
-            .contact-links a {
-                font-size: 0.84em;
-            }
-
-            .contact-footer {
-                width: 100%;
-                max-width: none;
-
-                margin: 43px 0 16px;
-                padding: 16px 0 0;
-
-                text-align: left;
-            }
-
-            .contact-footer::before {
-                width: 150px;
-
-                background:
-                    linear-gradient(90deg,
-                        rgba(11, 31, 58, 0.085) 0%,
-                        rgba(11, 31, 58, 0.032) 52%,
-                        rgba(11, 31, 58, 0) 100%);
-            }
-
-            .contact-site-meta {
-                margin-top: 18px;
-
-                gap: 3px 7px;
-
-                font-size: 0.52em;
-                line-height: 1.5;
-                letter-spacing: 0.015em;
-
-                color: rgba(67, 78, 93, 0.25);
-            }
-
-            .contact-archive-entry {
-                margin-top: 0;
-            }
-
-            .contact-archive-link {
-                gap: 6px;
-
-                font-size: 0.64em;
-                letter-spacing: 0.13em;
-            }
-
-            .contact-archive-description {
-                max-width: 92%;
-                margin-top: 6px;
-
-                font-size: 0.6em;
-                line-height: 1.55;
-                letter-spacing: 0.015em;
-            }
-
-            .scroll-spacer {
-                height: 0.5vh;
             }
 
             .contact-intro {
                 display: block;
 
                 width: 100%;
-                max-width: none;
-
                 padding-right: 0;
-                margin: 20px 0 29px;
+                margin: 20px 0 27px;
             }
 
             .contact-head {
-                max-width: none;
                 padding-top: 0;
             }
 
             .contact-title {
-                margin-bottom: 18px;
+                margin-bottom: 16px;
 
                 font-size: 0.8em;
                 letter-spacing: 0.19em;
             }
 
+            .contact-email-block {
+                margin-bottom: 29px;
+            }
+
+            .contact-email-link {
+                max-width: 100%;
+
+                font-size: 0.96em;
+                font-weight: 500;
+                letter-spacing: 0.02em;
+
+                overflow-wrap: anywhere;
+            }
+
+            .contact-email-meta {
+                max-width: 92%;
+                margin-top: 7px;
+
+                font-size: 0.63em;
+                line-height: 1.55;
+                letter-spacing: 0.035em;
+            }
+
             .contact-profile {
-                gap: 13px;
-                max-width: none;
+                gap: 14px;
             }
 
             .contact-profile-row {
-                grid-template-columns: 60px minmax(0, 1fr);
+                grid-template-columns: 82px minmax(0, 1fr);
                 column-gap: 13px;
             }
 
@@ -775,18 +646,74 @@
                 letter-spacing: 0.018em;
             }
 
-            .contact-note {
-                max-width: 94%;
-                margin-top: 19px;
-                padding-left: 13px;
-
-                font-size: 0.66em;
-                line-height: 1.68;
-                letter-spacing: 0.028em;
-            }
-
             .contact-visual {
                 display: none;
+            }
+
+            .contact-section {
+                row-gap: 11px;
+
+                margin: 22px 0 36px;
+                padding-inline: 0;
+            }
+
+            .contact-label {
+                font-size: 0.68em;
+                letter-spacing: 0.17em;
+            }
+
+            .contact-links {
+                gap: 8px 22px;
+            }
+
+            .contact-links a {
+                font-size: 0.84em;
+            }
+
+            .contact-footer {
+                width: 100%;
+                max-width: none;
+
+                margin: 43px 0 16px;
+                padding: 16px 0 0;
+            }
+
+            .contact-footer::before {
+                width: 150px;
+
+                background:
+                    linear-gradient(90deg,
+                        rgba(11, 31, 58, 0.085) 0%,
+                        rgba(11, 31, 58, 0.032) 52%,
+                        rgba(11, 31, 58, 0) 100%);
+            }
+
+            .contact-archive-link {
+                gap: 6px;
+
+                font-size: 0.64em;
+                letter-spacing: 0.13em;
+            }
+
+            .contact-archive-description {
+                max-width: 92%;
+                margin-top: 6px;
+
+                font-size: 0.6em;
+                line-height: 1.55;
+                letter-spacing: 0.015em;
+            }
+
+            .contact-site-meta {
+                gap: 3px 7px;
+
+                margin-top: 18px;
+
+                font-size: 0.52em;
+                line-height: 1.5;
+                letter-spacing: 0.015em;
+
+                color: rgba(67, 78, 93, 0.25);
             }
 
             .desktop-only {
@@ -801,8 +728,10 @@
         @media (prefers-reduced-motion: reduce) {
 
             .page-content,
-            .contact-entry>a,
+            .contact-email-link,
             .contact-links a,
+            .contact-visual,
+            .contact-visual-frame img,
             .contact-archive-link,
             .contact-archive-arrow {
                 transition: none;
@@ -848,6 +777,25 @@
                 <h1 class="contact-title" data-en="Contact" data-ja="連絡先">
                     Contact
                 </h1>
+
+                <div class="contact-email-block">
+                    <a class="contact-email-link" href="mailto:sangseok.han.contact@gmail.com">
+                        sangseok.han.contact@gmail.com
+                    </a>
+
+                    <div class="contact-email-meta">
+                        <span class="desktop-only"
+                            data-en="For research discussions, academic enquiries, and related correspondence."
+                            data-ja="研究討議、学術的なお問い合わせ、および関連するご連絡について。">
+                            For research discussions, academic enquiries, and related correspondence.
+                        </span>
+
+                        <span class="mobile-only" data-en="For research and academic enquiries."
+                            data-ja="研究・学術に関するお問い合わせ。">
+                            For research and academic enquiries.
+                        </span>
+                    </div>
+                </div>
 
                 <div class="contact-profile">
 
@@ -902,18 +850,6 @@
                     </div>
 
                 </div>
-
-                <div class="contact-note">
-                    <span class="desktop-only"
-                        data-en="For research discussions, academic enquiries, and related correspondence."
-                        data-ja="研究討議、学術的なお問い合わせ、および関連するご連絡について。">
-                        For research discussions, academic enquiries, and related correspondence.
-                    </span>
-
-                    <span class="mobile-only" data-en="For research and academic enquiries." data-ja="研究・学術に関するお問い合わせ。">
-                        For research and academic enquiries.
-                    </span>
-                </div>
             </div>
 
             <figure class="contact-visual">
@@ -936,30 +872,7 @@
 
         <div class="divider"></div>
 
-        <section class="contact-section">
-            <div class="contact-label" data-en="Email" data-ja="メール">
-                Email
-            </div>
-
-            <div class="contact-entry">
-                <a href="mailto:sangseok.han.contact@gmail.com">
-                    sangseok.han.contact@gmail.com
-                </a>
-
-                <div class="contact-meta">
-                    <span class="desktop-only" data-en="Preferred contact for research and academic correspondence"
-                        data-ja="研究・学術関連の連絡先">
-                        Preferred contact for research and academic correspondence
-                    </span>
-
-                    <span class="mobile-only" data-en="Preferred academic contact" data-ja="学術連絡用">
-                        Preferred academic contact
-                    </span>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-section">
+        <section class="contact-section contact-section--profiles">
             <div class="contact-label">
                 <span class="desktop-only" data-en="Academic Profiles" data-ja="研究者プロフィール">
                     Academic Profiles
