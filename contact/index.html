@@ -466,11 +466,11 @@
         .research-visuals-description {
             margin: 5px 0 0;
 
-            font-size: 0.67em;
+            font-size: 0.7em;
             font-style: italic;
             font-weight: 400;
             line-height: 1.5;
-            letter-spacing: 0.022em;
+            letter-spacing: 0.032em;
 
             color: rgba(67, 78, 93, 0.36);
         }
@@ -598,49 +598,30 @@
             display: none;
         }
 
-        .research-visual-media img,
-        .research-visual-media video {
+        .research-visual-media img {
             display: block;
 
             width: 100%;
             height: 100%;
-            max-width: none;
-            padding: 0;
 
             object-fit: contain;
             object-position: center;
 
-            opacity: 0.88;
-
-            filter:
-                brightness(0.94) saturate(0.82);
-
-            transform: none;
+            opacity: 0.7;
             image-rendering: auto;
 
-            transition:
-                opacity 0.28s ease,
-                filter 0.28s ease;
+            transition: opacity 0.24s ease;
         }
 
-        .research-visual-card:hover .research-visual-media img,
-        .research-visual-card:hover .research-visual-media video {
+        .research-visual-open:hover img,
+        .research-visual-open:focus-visible img {
             opacity: 1;
-
-            filter:
-                brightness(1) saturate(1);
-
-            transform: none;
         }
 
-        .research-visual-card:hover .research-visual-media img,
-        .research-visual-card:hover .research-visual-media video {
-            opacity: 1;
-
-            filter:
-                brightness(1) saturate(1);
-
-            transform: none;
+        .research-visual-media .research-visual-gif,
+        .research-visual-open:hover .research-visual-gif,
+        .research-visual-open:focus-visible .research-visual-gif {
+            filter: none;
         }
 
         .research-visual-video:focus-visible {
@@ -697,16 +678,17 @@
         }
 
         .research-visual-name {
-            font-size: 0.67em;
+            font-size: 0.74em;
             font-weight: 500;
             line-height: 1.42;
             letter-spacing: 0.027em;
-
+            margin-top: 5px;
+            margin-bottom: 3px;
             color: rgba(37, 49, 65, 0.68);
         }
 
         .research-visual-meta {
-            font-size: 0.59em;
+            font-size: 0.63em;
             font-weight: 400;
             line-height: 1.45;
             letter-spacing: 0.024em;
@@ -1270,39 +1252,42 @@
             cursor: zoom-out;
         }
 
+        .research-visual-media .research-visual-gif {
+            filter: none;
+        }
 
-        /* Caption */
+        .research-visual-card:hover .research-visual-media .research-visual-gif {
+            filter: none;
+            opacity: 1;
+        }
 
         .research-lightbox-caption {
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 6px;
 
-            padding: 10px 18px 14px;
+            padding: 16px 22px 20px;
 
-            border-top: 1px solid rgba(11, 31, 58, 0.055);
+            border-top: 1px solid rgba(11, 31, 58, 0.07);
         }
 
         .research-lightbox-title {
-            font-size: 0.7em;
+            font-size: 1.05rem;
             font-weight: 500;
-            line-height: 1.45;
+            line-height: 1.4;
             letter-spacing: 0.025em;
 
-            color: rgba(25, 38, 54, 0.72);
+            color: rgba(25, 38, 54, 0.82);
         }
 
         .research-lightbox-meta {
-            font-size: 0.59em;
+            font-size: 0.82rem;
             font-weight: 400;
-            line-height: 1.5;
-            letter-spacing: 0.018em;
+            line-height: 1.55;
+            letter-spacing: 0.025em;
 
-            color: rgba(67, 78, 93, 0.4);
+            color: rgba(67, 78, 93, 0.58);
         }
-
-
-        /* Close button */
 
         .research-lightbox-close {
             appearance: none;
@@ -1528,9 +1513,9 @@
                     </h2>
 
                     <p class="research-visuals-description"
-                        data-en="Selected flow fields and dynamic responses from published and ongoing research."
-                        data-ja="発表済みおよび進行中の研究から選定した流れ場と動的応答。">
-                        Selected flow fields and dynamic responses from published and ongoing research.
+                        data-en="Selected flow and motion visualisations from published and ongoing research."
+                        data-ja="発表済みおよび進行中の研究から選定した流れ場と運動の可視化。">
+                        Selected flow and motion visualisations from published and ongoing research.
                     </p>
                 </div>
             </div>
@@ -1549,16 +1534,14 @@
                             </button>
 
                             <figcaption>
-                                <span class="research-visual-name" data-en="KCS Axial Velocity Field"
-                                    data-ja="KCS軸方向速度場">
-                                    KCS Axial Velocity Field
+                                <span class="research-visual-name" data-en="Axial Velocity Field" data-ja="軸方向速度場">
+                                    Axial Velocity Field
                                 </span>
 
-                                <span class="research-visual-meta" data-en="Spatial roughness distributions"
-                                    data-ja="空間的粗さ分布">
-                                    Spatial roughness distributions
+                                <span class="research-visual-meta" data-en="KCS · Spatial roughness · Wake response"
+                                    data-ja="KCS · 空間粗さ · 伴流応答">
+                                    KCS · Spatial roughness · Wake response
                                 </span>
-
                                 <a class="research-visual-link" href="/publications/beyond-resistance/">
                                     <span data-en="Related research" data-ja="関連研究">
                                         Related research
@@ -1572,7 +1555,7 @@
                         <figure class="research-visual-card">
                             <button class="research-visual-media research-visual-open" type="button"
                                 aria-label="Enlarge FOWT pitch free-decay response">
-                                <img src="/assets/research/fowt-pitch.gif"
+                                <img class="research-visual-gif" src="/assets/research/fowt-pitch.gif"
                                     alt="Numerical validation of the FOWT pitch free-decay response" loading="lazy"
                                     decoding="async">
 
@@ -1582,14 +1565,13 @@
                             </button>
 
                             <figcaption>
-                                <span class="research-visual-name" data-en="FOWT Pitch Free-Decay Response"
-                                    data-ja="FOWTピッチ自由減衰応答">
-                                    FOWT Pitch Free-Decay Response
+                                <span class="research-visual-name" data-en="Pitch Free Decay" data-ja="ピッチ自由減衰">
+                                    Pitch Free Decay
                                 </span>
 
-                                <span class="research-visual-meta" data-en="Numerical free-decay validation"
-                                    data-ja="自由減衰応答の数値検証">
-                                    Numerical free-decay validation
+                                <span class="research-visual-meta" data-en="FOWT · CFD–FSI · Validation"
+                                    data-ja="FOWT · CFD–FSI · 検証">
+                                    FOWT · CFD–FSI · Validation
                                 </span>
 
                                 <!-- 
@@ -1609,24 +1591,22 @@
                             <button class="research-visual-media research-visual-open" type="button"
                                 aria-label="Enlarge gyroscopic WEC response">
 
-                                <img src="/assets/research/wec-cfd-mbd.gif"
+                                <img class="research-visual-gif" src="/assets/research/wec-cfd-mbd.gif"
                                     alt="Coupled response of a gyroscopic wave energy converter" loading="lazy"
                                     decoding="async">
-
                                 <span class="research-visual-motion" aria-hidden="true">
                                     Motion
                                 </span>
                             </button>
 
                             <figcaption>
-                                <span class="research-visual-name" data-en="Gyroscopic WEC Response"
-                                    data-ja="ジャイロ式WEC応答">
-                                    Gyroscopic WEC Response
+                                <span class="research-visual-name" data-en="Gyroscopic Response" data-ja="ジャイロ応答">
+                                    Gyroscopic Response
                                 </span>
 
-                                <span class="research-visual-meta" data-en="Pitch–gyroscope coupling"
-                                    data-ja="ピッチ・ジャイロ連成">
-                                    Pitch–gyroscope coupling
+                                <span class="research-visual-meta" data-en="GWEC · Pitch motion · MBD output"
+                                    data-ja="GWEC · ピッチ運動 · MBD出力">
+                                    GWEC · Pitch motion · MBD output
                                 </span>
                             </figcaption>
                         </figure>
@@ -1641,13 +1621,13 @@
                             </button>
 
                             <figcaption>
-                                <span class="research-visual-name" data-en="KCS Kelvin Wake" data-ja="KCSケルビン航跡">
-                                    KCS Kelvin Wake
+                                <span class="research-visual-name" data-en="Kelvin Wake" data-ja="ケルビン航跡">
+                                    Kelvin Wake
                                 </span>
 
-                                <span class="research-visual-meta" data-en="Towing-tank temperature comparison"
-                                    data-ja="曳航水槽温度比較">
-                                    Towing-tank temperature comparison
+                                <span class="research-visual-meta" data-en="KCS · 5°C vs 30°C · Temperature effect"
+                                    data-ja="KCS · 5°C vs 30°C · 温度影響">
+                                    KCS · 5°C vs 30°C · Temperature effect
                                 </span>
 
                                 <a class="research-visual-link" href="/publications/temperature-ittc/">
@@ -1950,7 +1930,7 @@
             );
         });
     </script>
-    
+
     <script>
         const DEFAULT_LANG = "en";
         const SUPPORTED_LANGS = new Set(["en", "ja"]);
