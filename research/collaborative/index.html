@@ -217,9 +217,20 @@
 
     .collaborative-content {
       width: 100%;
-      max-width: 980px;
+      max-width: 1120px;
 
       margin-top: 30px;
+    }
+
+    .collab-entry {
+      position: relative;
+
+      display: grid;
+      grid-template-columns:
+        clamp(280px, 30vw, 340px) minmax(0, 1fr);
+      column-gap: clamp(24px, 3vw, 36px);
+
+      padding: 19px 4px 21px;
     }
 
     .collab-records-header {
@@ -385,7 +396,7 @@
 
       display: grid;
       grid-template-columns:
-        clamp(170px, 22vw, 225px) minmax(0, 1fr);
+        clamp(200px, 22vw, 250px) minmax(0, 1fr);
       column-gap: clamp(20px, 3vw, 32px);
 
       padding: 19px 4px 21px;
@@ -440,7 +451,7 @@
     .collab-affiliation {
       margin: 1px 0 0;
 
-      font-size: 0.64em;
+      font-size: 0.59em;
       line-height: 1.5;
       letter-spacing: 0.025em;
 
@@ -645,6 +656,23 @@
       display: none;
     }
 
+    @media (min-width: 641px) {
+      .collab-identity {
+        min-width: 0;
+      }
+
+      .collab-position,
+      .collab-affiliation {
+        display: block;
+        width: 100%;
+        min-width: 0;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
     @media (max-width: 640px) {
       .collab-filters {
         margin: 0 2px 11px;
@@ -808,10 +836,6 @@
         opacity: 0.42;
       }
 
-      .collaborative-content {
-        margin-top: 17px;
-      }
-
       .collab-records-header {
         margin: 0 2px 9px;
         padding-top: 14px;
@@ -821,14 +845,6 @@
         font-size: 0.68em;
         line-height: 1.4;
         letter-spacing: 0.075em;
-      }
-
-      .collab-entry {
-        display: grid;
-        grid-template-columns: auto minmax(0, 1fr) auto;
-        column-gap: 0;
-
-        padding: 14px 2px 16px;
       }
 
       .collab-identity,
@@ -1891,9 +1907,9 @@
                 Researcher
               </p>
 
-              <p class="collab-affiliation" data-en="RIMS" data-ja="RIMS"
-                title="Research Institute of Medium &amp; Small Shipbuilding">
-                RIMS
+              <p class="collab-affiliation" data-en="Research Institute of Medium &amp; Small Shipbuilding"
+                data-ja="中小造船研究院" title="Research Institute of Medium &amp; Small Shipbuilding">
+                Research Institute of Medium &amp; Small Shipbuilding
               </p>
             </div>
 
