@@ -89,9 +89,30 @@
     }
 
     .log-sub {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 30px;
+
       font-size: 0.75em;
       opacity: 0.5;
       letter-spacing: 0.05em;
+    }
+
+    .log-sub-description {
+      flex: 0 1 auto;
+    }
+
+    .log-affiliation-note {
+      flex: 0 1 auto;
+      max-width: 430px;
+
+      font-size: 0.85em;
+      line-height: 1.4;
+      letter-spacing: 0.025em;
+      text-align: right;
+
+      color: rgba(11, 31, 58, 0.72);
     }
 
     .log-back {
@@ -195,9 +216,12 @@
 
     .trace-entry {
       display: grid;
-      grid-template-columns: 155px 1fr;
+      grid-template-columns: 155px minmax(0, 1fr);
       column-gap: 20px;
-      max-width: 750px;
+
+      width: 100%;
+      max-width: none;
+
       margin: 18px 0 24px;
       padding-bottom: 18px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.055);
@@ -233,6 +257,29 @@
       min-width: 0;
     }
 
+    .trace-detail a {
+      color: inherit;
+      text-decoration-line: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+
+      transition:
+        color 0.15s ease,
+        text-decoration-color 0.15s ease;
+    }
+
+    .trace-detail a:hover,
+    .trace-detail a:focus-visible {
+      color: var(--research-blue);
+      text-decoration-color: rgba(11, 31, 58, 0.28);
+    }
+
+    .trace-detail a:focus-visible {
+      outline: 1px solid rgba(11, 31, 58, 0.22);
+      outline-offset: 3px;
+    }
+
     .trace-line,
     .trace-line.is-soft {
       display: grid;
@@ -249,7 +296,6 @@
 
       background: none;
       border: 0;
-      cursor: default;
     }
 
     .trace-line:last-child,
@@ -321,7 +367,6 @@
       background: none;
       border: 0;
       border-left: 1.5px solid rgba(11, 31, 58, 0.55);
-      cursor: default;
     }
 
     .trace-line.is-highlight .trace-event {
@@ -379,7 +424,7 @@
       white-space: nowrap;
       color: #444444;
       opacity: 0.91;
-      font-size: 0.79em;
+      font-size: 0.86em;
       font-style: normal;
       font-weight: 400;
       line-height: 1.4;
@@ -395,13 +440,18 @@
 
     .timeline-layout {
       display: grid;
-      grid-template-columns: minmax(0, 750px) 125px;
-      column-gap: 42px;
+      grid-template-columns: minmax(0, 1fr) 270px;
+      column-gap: 20px;
       align-items: start;
+
+      width: calc(100% + 270px);
+      max-width: 1360px;
+
       overflow: visible;
     }
 
     .timeline-main {
+      width: 100%;
       min-width: 0;
     }
 
@@ -410,8 +460,9 @@
       top: 118px;
 
       width: 270px;
+      min-width: 0;
       box-sizing: border-box;
-      justify-self: start;
+      justify-self: stretch;
 
       margin-top: 18px;
       padding: 18px 0 18px 22px;
@@ -578,10 +629,26 @@
     @media (max-width: 1200px) {
       .timeline-layout {
         display: block;
+        width: 100%;
+        max-width: none;
+      }
+
+      .timeline-main {
+        width: 100%;
+        max-width: none;
       }
 
       .timeline-signal-panel {
         display: none;
+      }
+
+      .trace-entry {
+        width: 100%;
+        max-width: none;
+      }
+
+      .trace-lines {
+        width: 100%;
       }
     }
 
@@ -962,9 +1029,16 @@
       </h1>
 
       <div class="log-sub">
-        <em data-en="Academic development and research milestones since 2021" data-ja="2021年以降の学術的発展と研究上の主要な歩み">
+        <em class="log-sub-description" data-en="Academic development and research milestones since 2021"
+          data-ja="2021年以降の学術的発展と研究上の主要な歩み">
           Academic development and research milestones since 2021
         </em>
+
+        <span class="log-affiliation-note"
+          data-en="Affiliation indicates my institution at the time; research location may differ."
+          data-ja="所属は当時の在籍機関を示しており、研究実施機関とは異なる場合があります。">
+          Affiliation indicates my institution at the time; research location may differ.
+        </span>
       </div>
     </div>
 
@@ -984,6 +1058,39 @@
       <main class="timeline-main">
 
         <div class="year-section active" id="y2026">
+          <div class="trace-entry">
+            <div class="trace-month-block">
+              <div class="trace-month" data-en="August 2026" data-ja="2026年8月">
+                August 2026
+              </div>
+
+              <div class="trace-affiliation" data-en="Seoul National University" data-ja="ソウル大学校">
+                Seoul National University
+              </div>
+            </div>
+
+            <div class="trace-lines">
+              <div class="trace-line is-highlight" tabindex="0">
+                <span class="trace-event" data-en="Journal article published" data-ja="学術論文を発表">
+                  Journal article published
+                </span>
+
+                <span class="trace-dot">·</span>
+
+                <span class="trace-tag">
+                  <em>Ocean Engineering</em>
+                </span>
+
+                <span class="trace-detail">
+                  Han et al. —
+                  <a href="/publications/spatial-variability/">
+                    Beyond uniform roughness: Spatial variability of hull roughness and implications for
+                    single-parameter representation
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
 
           <div class="trace-entry">
             <div class="trace-month-block">
@@ -1098,8 +1205,10 @@
                 </span>
 
                 <span class="trace-detail">
-                  Han et al. — Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface
-                  conditions
+                  Han et al. —
+                  <a href="/publications/beyond-resistance/">
+                    Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface conditions
+                  </a>
                 </span>
               </div>
             </div>
@@ -1289,7 +1398,10 @@
                 </span>
 
                 <span class="trace-detail">
-                  Han et al. — Temperature-induced errors in ITTC model–ship extrapolation
+                  Han et al. —
+                  <a href="/publications/temperature-ittc/">
+                    Temperature-induced errors in ITTC model–ship extrapolation
+                  </a>
                 </span>
               </div>
             </div>
@@ -1319,7 +1431,10 @@
                 </span>
 
                 <span class="trace-detail">
-                  Han et al. — Temperature-induced errors in ITTC model–ship extrapolation
+                  Han et al. —
+                  <a href="/publications/temperature-ittc/">
+                    Temperature-induced errors in ITTC model–ship extrapolation
+                  </a>
                 </span>
               </div>
 
@@ -1475,7 +1590,10 @@
                 </span>
 
                 <span class="trace-detail">
-                  Choi et al. — Resistance and speed penalty of a naval ship with hull roughness
+                  Choi et al. —
+                  <a href="/publications/naval-roughness/">
+                    Resistance and speed penalty of a naval ship with hull roughness
+                  </a>
                 </span>
               </div>
             </div>
@@ -1892,7 +2010,7 @@
                 en: "Journal articles",
                 ja: "学術論文"
               },
-              count: 1
+              count: 2
             },
             {
               label: {
