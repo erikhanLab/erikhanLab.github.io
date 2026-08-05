@@ -353,7 +353,8 @@
     }
 
     .rt-body {
-      margin-left: -25px;
+      min-width: 0;
+      margin-left: -20px;
     }
 
     .rt-header {
@@ -372,21 +373,22 @@
     }
 
     .rt-item {
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      column-gap: 34px;
+      position: relative;
 
-      padding: 14px 0 18px;
-      padding-left: 26px;
+      display: grid;
+      grid-template-columns: 58px minmax(0, 1fr);
+      column-gap: 25px;
+
+      padding: 14px 0 18px 20px;
 
       border-left: 1px solid rgba(0, 0, 0, 0.10);
-      position: relative;
     }
 
     .rt-item::before {
       content: "";
       position: absolute;
-      left: -7px;
+      left: -4px;
+      margin-top: -7px;
       top: 40px;
       width: 7px;
       height: 7px;
@@ -397,12 +399,16 @@
     }
 
     .rt-year {
+      padding-top: 6px;
+      margin-left: -8px;
+
       font-size: 1.06em;
       font-weight: 600;
+      line-height: 1.5;
+      letter-spacing: 0.03em;
+
       color: #0B2545;
       opacity: 0.92;
-      padding-top: 6px;
-      letter-spacing: 0.03em;
     }
 
     .rt-stage {
@@ -428,10 +434,13 @@
     }
 
     .rt-block-group {
-      margin-left: 14px;
+      min-width: 0;
+
+      margin-left: 6px;
       padding-top: 6px;
-      border-left: 0.4px solid rgba(11, 37, 69, 0.18);
       padding-left: 12px;
+
+      border-left: 0.4px solid rgba(11, 37, 69, 0.18);
     }
 
     .rt-loc-dot {
@@ -450,8 +459,10 @@
     }
 
     .rt-block {
+      min-width: 0;
+
       margin-bottom: 20px;
-      padding-left: 2px;
+      padding-left: 0;
     }
 
     .rt-output {
@@ -470,11 +481,20 @@
     }
 
     .rt-subtitle {
-      font-size: 0.92em;
-      color: #222;
-      margin-bottom: 2px;
+      min-width: 0;
+      max-width: 100%;
+
+      margin: 0;
+
+      font-size: 0.96em;
       line-height: 1.55;
-      margin-left: 6px;
+      letter-spacing: -0.02em;
+
+      color: #222;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .rt-meta {
@@ -799,14 +819,26 @@
     }
 
     .rt-subtitle a {
+      display: block;
+      min-width: 0;
+      max-width: 100%;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
       color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.15s ease;
+      text-decoration-line: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+
+      transition: text-decoration-color 0.15s ease;
     }
 
-    .rt-subtitle a:hover {
-      border-bottom-color: rgba(11, 31, 58, 0.2);
+    .rt-subtitle a:hover,
+    .rt-subtitle a:focus-visible {
+      text-decoration-color: rgba(11, 31, 58, 0.28);
     }
 
     .current-project-figure--pending {
@@ -1210,6 +1242,7 @@
         opacity: 0.7;
         margin-bottom: 5px;
         margin-top: -20px;
+        margin-left: 0;
       }
 
       .rt-title {
@@ -1238,6 +1271,8 @@
       }
 
       .rt-subtitle {
+        width: auto;
+        max-width: 100%;
         font-size: 0.75em;
         margin-left: 0;
         line-height: 1.45;
@@ -1914,6 +1949,45 @@
           <div class="rt-stage" data-en="Pre-Doctoral Research" data-ja="博士課程進学前研究">
             Pre-Doctoral Research
           </div>
+
+          <div class="rt-title">
+            <span data-en="Visiting Research — Seoul National University" data-ja="訪問研究 — ソウル大学校">
+              Visiting Research — Seoul National University
+            </span>
+
+            <span class="rt-loc-dot">
+              ·
+            </span>
+
+            <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
+              South Korea
+            </span>
+          </div>
+
+          <div class="rt-block-group">
+            <div class="rt-block">
+              <div class="rt-output" data-en="Journal Publication" data-ja="学術論文">
+                Journal Publication
+              </div>
+
+              <div class="rt-subtitle">
+                <a href="/publications/beyond-resistance/">
+                  Beyond uniform roughness: Spatial variability of hull roughness
+                  and implications for single-parameter representation
+                </a>
+              </div>
+
+              <div class="role-tag" data-en="Sole author" data-ja="単著">
+                Sole author
+              </div>
+
+              <div class="rt-meta">
+                <em>Ocean Engineering</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="rt-inst-divider"></div>
 
           <div class="rt-title">
             <span data-en="Independent Research" data-ja="個人研究">

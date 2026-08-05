@@ -222,17 +222,6 @@
       margin-top: 30px;
     }
 
-    .collab-entry {
-      position: relative;
-
-      display: grid;
-      grid-template-columns:
-        clamp(280px, 30vw, 340px) minmax(0, 1fr);
-      column-gap: clamp(24px, 3vw, 36px);
-
-      padding: 19px 4px 21px;
-    }
-
     .collab-records-header {
       position: relative;
 
@@ -499,8 +488,8 @@
       width: 100%;
       max-width: none;
       min-width: 0;
-
       margin: 9px 0 0;
+      margin-top: 5px;
       padding-left: 1.05em;
 
       box-sizing: border-box;
@@ -614,6 +603,27 @@
       transform: scaleX(1);
     }
 
+    .collab-affiliation-mobile {
+      display: none;
+    }
+
+    .collab-work-heading {
+      margin-top: 11px;
+
+      font-size: 0.61em;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.075em;
+      text-transform: uppercase;
+
+      color: rgba(11, 31, 58, 0.42);
+    }
+
+    html[data-lang="ja"] .collab-work-heading {
+      letter-spacing: 0.05em;
+      text-transform: none;
+    }
+
     .collab-principle {
       position: relative;
 
@@ -640,13 +650,11 @@
     }
 
     .collab-principle p {
-      max-width: 700px;
-
       margin: 0;
 
-      font-size: 0.65em;
+      font-size: 0.71em;
       line-height: 1.6;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
       font-style: italic;
 
       color: rgba(51, 62, 76, 0.4);
@@ -654,6 +662,16 @@
 
     .collab-filter-mobile {
       display: none;
+    }
+
+    .collab-list,
+    .collab-entry {
+      overflow-anchor: none;
+    }
+
+    .collab-filter {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
     }
 
     @media (min-width: 641px) {
@@ -673,7 +691,7 @@
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 800px) {
       .collab-filters {
         margin: 0 2px 11px;
         overflow: visible;
@@ -702,7 +720,7 @@
 
         overflow: visible;
 
-        font-size: clamp(0.64em, 2.65vw, 0.7em);
+        font-size: clamp(0.72em, 2.65vw, 0.8em);
         line-height: 1.3;
         letter-spacing: 0;
         text-align: left;
@@ -717,6 +735,7 @@
       .collab-filter-mobile {
         position: relative;
         display: inline-block;
+        line-height: 1.3;
       }
 
       .collab-filter-mobile::after {
@@ -798,6 +817,52 @@
         display: inline;
       }
 
+      .collab-work-heading {
+        grid-column: 1 / -1;
+        grid-row: 4;
+
+        margin: 10px 0 0 10px;
+
+        font-size: 0.62em;
+        letter-spacing: 0.065em;
+      }
+
+      .collab-work-list {
+        grid-column: 1 / -1;
+        grid-row: 5;
+      }
+
+      .collab-links {
+        grid-row: 6;
+      }
+
+      .collab-entry {
+        grid-template-columns:
+          auto minmax(0, 1fr) auto;
+
+        column-gap: 0;
+        align-items: baseline;
+        row-gap: 0;
+
+        padding: 10px 2px 15px;
+      }
+
+      .collab-position,
+      .collab-affiliation {
+        align-self: baseline;
+
+        margin-top: 2px;
+        line-height: 1.5;
+      }
+
+      .collab-affiliation-desktop {
+        display: none;
+      }
+
+      .collab-affiliation-mobile {
+        display: inline;
+      }
+
       .log-header-block {
         margin-bottom: 7px;
       }
@@ -860,7 +925,7 @@
         min-width: 0;
         margin: 0;
 
-        font-size: 0.8em;
+        font-size: 0.85em;
       }
 
       .collab-principle {
@@ -883,11 +948,17 @@
         grid-column: 1;
         grid-row: 2;
 
-        margin: 2px 0 0;
+        min-width: 0;
+        max-width: 48vw;
 
-        font-size: 0.59em;
-        line-height: 1.5;
+        margin: 4px 0 0;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
         white-space: nowrap;
+
+        font-size: 0.7em;
+        line-height: 1.5;
       }
 
       .collab-position::after {
@@ -898,7 +969,7 @@
       }
 
       .collab-affiliation {
-        grid-column: 2 / -1;
+        grid-column: 2 / 4;
         grid-row: 2;
 
         min-width: 0;
@@ -908,7 +979,7 @@
         text-overflow: ellipsis;
         white-space: nowrap;
 
-        font-size: 0.59em;
+        font-size: 0.63em;
         line-height: 1.5;
       }
 
@@ -922,12 +993,11 @@
         grid-column: 1 / -1;
       }
 
-
       .collab-role {
         grid-column: 1 / -1;
         grid-row: 3;
 
-        margin-top: 8px;
+        margin-top: 6px;
         padding-left: 6px;
 
         border-left:
@@ -963,12 +1033,12 @@
         box-sizing: border-box;
 
         padding-left: 10px;
-
+        margin-left: 10px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         opacity: 1;
-        font-size: 0.58em;
+        font-size: 0.66em;
         line-height: 1.55;
       }
 
@@ -977,10 +1047,10 @@
 
         position: absolute;
         left: 1px;
-        top: 0.74em;
+        top: 0.75em;
 
-        width: 3px;
-        height: 3px;
+        width: 2px;
+        height: 2px;
 
         border-radius: 50%;
         background: rgba(11, 31, 58, 0.3);
@@ -993,30 +1063,135 @@
       }
 
       .collab-work-list li+li {
-        margin-top: 5px;
+        margin-top: 3px;
       }
 
       .collab-work-title {
-        display: inline;
-        width: auto;
 
-        overflow: visible;
-        white-space: inherit;
+        font-style: normal;
+        color: rgba(30, 42, 58, 0.72);
       }
 
       .collab-work-source {
-        display: inline;
-        margin: 0;
-
-        font-size: 0.88em;
+        font-style: italic;
+        color: rgba(58, 68, 80, 0.48);
+        margin-top: 0px;
       }
 
       .collab-work-source::before {
-        content: " · ";
+        display: none;
       }
 
       .collab-links {
         display: none;
+      }
+    }
+
+    @media (max-width: 1050px) {
+      .collab-filters {
+        margin: 0 2px 13px;
+        overflow: visible;
+      }
+
+      .collab-filter-list {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        align-items: end;
+
+        width: 100%;
+        gap: 8px 3px;
+
+        overflow: visible;
+      }
+
+      .collab-filter {
+        width: 100%;
+        min-width: 0;
+
+        padding: 0 5px 8px;
+
+        overflow: visible;
+
+        font-size: clamp(0.72em, 1.15vw, 0.8em);
+        line-height: 1.3;
+        letter-spacing: 0;
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      .collab-filter::after {
+        display: none;
+      }
+
+      .collab-filter-mobile::after {
+        content: "";
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -8px;
+
+        height: 1px;
+
+        background: var(--research-blue);
+
+        opacity: 0;
+        transform: scaleX(0.35);
+        transform-origin: left center;
+
+        transition:
+          opacity 0.16s ease,
+          transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .collab-filter:hover .collab-filter-mobile::after {
+        opacity: 0.25;
+        transform: scaleX(1);
+      }
+
+      .collab-filter.is-active .collab-filter-mobile::after {
+        opacity: 0.55;
+        transform: scaleX(1);
+      }
+
+      .collab-filter[data-affiliation-filter="all"] {
+        order: 0;
+      }
+
+      .collab-filter[data-affiliation-filter="inha"] {
+        order: 1;
+      }
+
+      .collab-filter[data-affiliation-filter="iowa"] {
+        order: 2;
+      }
+
+      .collab-filter[data-affiliation-filter="marin"] {
+        order: 3;
+      }
+
+      .collab-filter[data-affiliation-filter="osaka"] {
+        order: 4;
+      }
+
+      .collab-filter[data-affiliation-filter="rims"] {
+        order: 5;
+      }
+
+      .collab-filter[data-affiliation-filter="siemens"] {
+        order: 6;
+      }
+
+      .collab-filter[data-affiliation-filter="snu"] {
+        order: 7;
+      }
+
+      .collab-filter[data-affiliation-filter="southampton"] {
+        order: 8;
+      }
+
+      .collab-filter[data-affiliation-filter="strathclyde"] {
+        order: 9;
       }
     }
 
@@ -1334,9 +1509,15 @@
                 Global Head of Marine
               </p>
 
-              <p class="collab-affiliation" data-en="Siemens Digital Industries Software"
-                data-ja="シーメンス・デジタル・インダストリーズ・ソフトウェア">
-                Siemens Digital Industries Software
+              <p class="collab-affiliation">
+                <span class="collab-affiliation-desktop" data-en="Siemens Digital Industries Software"
+                  data-ja="シーメンス・デジタル・インダストリーズ・ソフトウェア">
+                  Siemens Digital Industries Software
+                </span>
+
+                <span class="collab-affiliation-mobile" data-en="Siemens" data-ja="シーメンス">
+                  Siemens
+                </span>
               </p>
             </div>
 
@@ -1419,6 +1600,10 @@
                 Co-author
               </p>
 
+              <div class="collab-work-heading" data-en="Shared Research Outputs" data-ja="共同研究成果">
+                Shared Research Outputs
+              </div>
+
               <ul class="collab-work-list">
                 <li>
                   <span class="collab-work-title">
@@ -1450,14 +1635,19 @@
                 Miles Wheeler
               </h3>
 
-              <p class="collab-position" data-en="Senior Marine Applications Specialist"
-                data-ja="船舶分野シニア・アプリケーション・スペシャリスト">
-                Senior Marine Applications Specialist
+              <p class="collab-position" data-en="Senior Marine Specialist" data-ja="船舶分野シニアスペシャリスト">
+                Senior Marine Specialist
               </p>
 
-              <p class="collab-affiliation" data-en="Siemens Digital Industries Software"
-                data-ja="シーメンス・デジタル・インダストリーズ・ソフトウェア">
-                Siemens Digital Industries Software
+              <p class="collab-affiliation">
+                <span class="collab-affiliation-desktop" data-en="Siemens Digital Industries Software"
+                  data-ja="シーメンス・デジタル・インダストリーズ・ソフトウェア">
+                  Siemens Digital Industries Software
+                </span>
+
+                <span class="collab-affiliation-mobile" data-en="Siemens" data-ja="シーメンス">
+                  Siemens
+                </span>
               </p>
             </div>
 
@@ -1507,6 +1697,10 @@
               <p class="collab-role" data-en="Research adviser &amp; co-author" data-ja="研究助言者・共著者">
                 Research adviser &amp; co-author
               </p>
+
+              <div class="collab-work-heading" data-en="Shared Research Outputs" data-ja="共同研究成果">
+                Shared Research Outputs
+              </div>
 
               <ul class="collab-work-list">
                 <li>
@@ -1604,6 +1798,10 @@
               <p class="collab-role" data-en="MSc supervisor &amp; co-author" data-ja="修士研究指導者・共著者">
                 MSc supervisor &amp; co-author
               </p>
+
+              <div class="collab-work-heading" data-en="Shared Research Outputs" data-ja="共同研究成果">
+                Shared Research Outputs
+              </div>
 
               <ul class="collab-work-list">
                 <li>
@@ -1755,6 +1953,10 @@
                 Undergraduate supervisor &amp; co-author
               </p>
 
+              <div class="collab-work-heading" data-en="Shared Research Outputs" data-ja="共同研究成果">
+                Shared Research Outputs
+              </div>
+
               <ul class="collab-work-list">
                 <li>
                   <span class="collab-work-title">
@@ -1829,6 +2031,10 @@
               <p class="collab-role" data-en="Research adviser &amp; co-author" data-ja="研究助言者・共著者">
                 Research adviser &amp; co-author
               </p>
+
+              <div class="collab-work-heading" data-en="Shared Research Outputs" data-ja="共同研究成果">
+                Shared Research Outputs
+              </div>
 
               <ul class="collab-work-list">
                 <li>
