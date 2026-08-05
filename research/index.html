@@ -242,7 +242,6 @@
       grid-template-columns: minmax(0, 1fr) auto;
       column-gap: 5px;
       align-items: start;
-
       margin-bottom: 10px;
     }
 
@@ -527,8 +526,6 @@
     .footnote-collab a:hover {
       border-bottom: none;
     }
-
-
 
     .research-network {
       display: block;
@@ -985,6 +982,75 @@
 
     .mobile {
       display: none;
+    }
+
+    @media (min-width: 641px) and (max-width: 1050px) {
+      .current-project {
+        grid-template-columns: minmax(220px, 270px) minmax(0, 1fr);
+        gap: 22px;
+      }
+
+      .current-project-content {
+        padding-right: 0;
+      }
+
+      .current-project h2 {
+        font-size: 0.88em;
+        font-weight: 500;
+      }
+
+      .research-network-list li {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: baseline;
+        gap: 8px;
+
+        width: 100%;
+        min-width: 0;
+        height: 34px;
+        overflow: hidden;
+      }
+
+      .research-network-name {
+        flex: 0 1 auto;
+        min-width: 0;
+        max-width: 42%;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .research-network-meta {
+        display: inline-flex;
+        flex: 1 1 auto;
+        align-items: baseline;
+        gap: 5px;
+
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .research-network-meta::before {
+        display: inline;
+        flex: 0 0 auto;
+      }
+
+      .research-network-role {
+        flex: 1 1 auto;
+        min-width: 0;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .research-network-separator,
+      .research-network-period {
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
     }
 
     @media (max-width: 640px) {
@@ -1655,15 +1721,15 @@
                     <span class="research-network-role" data-en="Research discussion" data-ja="研究に関する議論">
                       Research discussion
                     </span>
-                  </span>
 
-                  <span class="research-network-separator">·</span>
+                    <span class="research-network-separator">·</span>
 
-                  <time class="research-network-period" datetime="2025" data-en="2025" data-ja="2025年">
-                    2025
-                  </time>
+                    <time class="research-network-period" datetime="2025" data-en="2025" data-ja="2025年">
+                      2025
+                    </time>
                   </span>
                 </li>
+
                 <li>
                   <span class="research-network-name">
                     The University of Osaka

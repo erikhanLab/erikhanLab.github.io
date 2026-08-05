@@ -223,9 +223,27 @@
         }
 
         @media (min-width: 641px) {
+            .contact-profile-primary {
+                white-space: nowrap;
+            }
 
-            .contact-profile-primary,
             .contact-profile-secondary {
+                display: block;
+                width: 100%;
+                min-width: 0;
+                max-width: 100%;
+
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .contact-profile-secondary .desktop-only {
+                display: block;
+                min-width: 0;
+
+                overflow: hidden;
+                text-overflow: ellipsis;
                 white-space: nowrap;
             }
         }

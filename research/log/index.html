@@ -406,7 +406,8 @@
       }
 
       .log-paper {
-        font-size: 0.7em;
+        font-size: 0.73em;
+        margin-left: 5px;
         line-height: 1.5;
         white-space: nowrap;
         overflow: hidden;
@@ -415,12 +416,14 @@
       }
 
       .log-label {
-        font-size: 0.7em;
+        font-size: 0.75em;
         letter-spacing: 0.1em;
+        opacity: 0.6;
       }
 
       .log-content {
-        font-size: 0.75em;
+        font-size: 0.8em;
+        opacity: 0.93;
         line-height: 1.55;
       }
 
@@ -469,7 +472,7 @@
         margin-top: -3px;
         margin-bottom: 3px;
         padding: 3px 8px;
-        font-size: 0.74em;
+        font-size: 0.8em;
         letter-spacing: 0.08em;
         background: rgba(255, 255, 255, 0.22);
         border: 1px solid rgba(11, 31, 58, 0.035);
@@ -501,21 +504,42 @@
         margin-top: 18px;
       }
 
-      .log-image img {
-        filter: grayscale(50%);
+      .log-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        margin-top: 20px;
         text-align: center;
-        opacity: 1 !important;
-        transition: none !important;
+      }
+
+      .log-image img {
+        display: block;
+
+        width: min(220px, 72vw);
+        max-width: 100%;
+        height: auto;
+        margin-inline: auto;
+
+        filter: grayscale(50%);
+        opacity: 1;
+
+        transition: none;
       }
 
       .log-image img:hover {
-        filter: none !important;
-        opacity: 1 !important;
+        filter: grayscale(50%);
+        opacity: 1;
       }
 
       .log-caption {
-        text-align: center;
+        width: 100%;
+        margin-top: 6px;
+
         font-size: 0.75em;
+        line-height: 1.4;
+        text-align: center;
       }
     }
 
@@ -538,7 +562,7 @@
 
       <a href="/" class="site-name">Sangseok Han</a>
 
-      <div class="lang-switch" aria-label="Language selection">
+      <div class="lang-switch" aria-label="Language selection" data-aria-en="Language selection" data-aria-ja="言語選択">
         <a href="#" data-lang="en">EN</a>
         <span aria-hidden="true">·</span>
         <a href="#" data-lang="ja">JP</a>
@@ -566,7 +590,8 @@
 
     <div class="log-header-block">
 
-      <nav class="log-back" aria-label="Research log navigation">
+      <nav class="log-back" aria-label="Research log navigation" data-aria-en="Research log navigation"
+        data-aria-ja="研究ログのナビゲーション">
         <a href="/research/">
           <span class="log-back-arrow" aria-hidden="true">←</span>
 
@@ -576,8 +601,15 @@
         </a>
       </nav>
 
-      <h1 class="log-header">Research log</h1>
-      <div class="log-sub"><em>Selected presentations and research development</em></div>
+      <h1 class="log-header" data-en="Research Log" data-ja="研究ログ">
+        Research Log
+      </h1>
+
+      <div class="log-sub">
+        <em data-en="Selected presentations and research development" data-ja="主な研究発表と研究の展開">
+          Selected presentations and research development
+        </em>
+      </div>
 
     </div>
 
@@ -589,15 +621,28 @@
     <div class="divider"></div>
 
     <div class="year-section active" id="y2026">
+
       <div class="log-entry">
         <div class="log-text">
-          <div class="log-date">15 June 2026 · Busan, South Korea</div>
+
+          <div class="log-date" data-en="15 June 2026 · Busan, South Korea" data-ja="2026年6月15日 · 韓国・釜山">
+            15 June 2026 · Busan, South Korea
+          </div>
 
           <div class="log-meta">
-            <span>Presentation</span>
-            <span class="dot">·</span>
-            <span class="desktop-only">36th Symposium on Naval Hydrodynamics</span>
-            <span class="mobile-only">SNH36</span>
+            <span data-en="Presentation" data-ja="研究発表">
+              Presentation
+            </span>
+
+            <span class="dot" aria-hidden="true">·</span>
+
+            <span class="desktop-only">
+              36th Symposium on Naval Hydrodynamics
+            </span>
+
+            <span class="mobile-only">
+              SNH36
+            </span>
           </div>
 
           <div class="log-paper">
@@ -607,34 +652,67 @@
           <div class="log-structure">
 
             <div class="log-item">
-              <span class="log-label">Topics</span>
+              <span class="log-label" data-en="Topics" data-ja="主題">
+                Topics
+              </span>
+
               <div class="log-content">
-                <span>Spatial roughness distribution</span>
-                <span>Ship resistance</span>
-                <span>Boundary-layer and wake response</span>
+                <span data-en="Spatial roughness distribution" data-ja="空間粗さ分布">
+                  Spatial roughness distribution
+                </span>
+
+                <span data-en="Ship resistance" data-ja="船体抵抗">
+                  Ship resistance
+                </span>
+
+                <span data-en="Boundary-layer and wake response" data-ja="境界層・伴流応答">
+                  Boundary-layer and wake response
+                </span>
               </div>
             </div>
 
             <div class="log-item">
-              <span class="log-label">Discussion</span>
+              <span class="log-label" data-en="Discussion" data-ja="議論">
+                Discussion
+              </span>
+
               <div class="log-content">
-                <span>Distributed roughness effects</span>
-                <span>Full-scale implications and propeller inflow</span>
+                <span data-en="Distributed roughness effects" data-ja="分布粗さの影響">
+                  Distributed roughness effects
+                </span>
+
+                <span data-en="Full-scale implications and propeller inflow" data-ja="実船スケールへの影響とプロペラ流入">
+                  Full-scale implications and propeller inflow
+                </span>
               </div>
             </div>
 
             <div class="log-item">
-              <span class="log-label">Research direction</span>
+              <span class="log-label" data-en="Research direction" data-ja="今後の研究">
+                Research direction
+              </span>
+
               <div class="log-content">
-                <span>Extension to full-scale resistance and self-propulsion analysis</span>
+                <span data-en="Extension to full-scale resistance and self-propulsion analysis"
+                  data-ja="実船スケールの抵抗・自航解析への展開">
+                  Extension to full-scale resistance and self-propulsion analysis
+                </span>
               </div>
             </div>
 
           </div>
         </div>
+
         <div class="log-image">
-          <img src="/assets/log/snh36-2026.png" alt="Presentation at the 36th Symposium on Naval Hydrodynamics">
-          <div class="log-caption"><em>SNH36 · Busan</em></div>
+          <img src="/assets/log/snh36-2026.png" alt="Presentation at the 36th Symposium on Naval Hydrodynamics"
+            data-alt-en="Presentation at the 36th Symposium on Naval Hydrodynamics"
+            data-alt-ja="第36回船舶流体力学シンポジウムでの研究発表">
+
+          <div class="log-caption">
+            <em data-en="SNH36 · Busan" data-ja="SNH36 · 釜山">
+              SNH36 · Busan
+            </em>
+          </div>
         </div>
       </div>
 
@@ -646,10 +724,18 @@
 
       <div class="log-entry">
         <div class="log-text">
-          <div class="log-date">17 November 2025 · Hyogo, Japan</div>
+
+          <div class="log-date" data-en="17 November 2025 · Hyogo, Japan" data-ja="2025年11月17日 · 日本・兵庫">
+            17 November 2025 · Hyogo, Japan
+          </div>
+
           <div class="log-meta">
-            <span>Presentation</span>
-            <span class="dot">·</span>
+            <span data-en="Presentation" data-ja="研究発表">
+              Presentation
+            </span>
+
+            <span class="dot" aria-hidden="true">·</span>
+
             <span>JASNAOE 2025</span>
           </div>
 
@@ -658,43 +744,86 @@
           </div>
 
           <div class="log-structure">
+
             <div class="log-item">
-              <span class="log-label">Topics</span>
+              <span class="log-label" data-en="Topics" data-ja="主題">
+                Topics
+              </span>
+
               <div class="log-content">
-                <span>Wave energy converter control</span>
-                <span>Model predictive control</span>
-                <span>CFD analysis</span>
+                <span data-en="Wave energy converter control" data-ja="波力発電装置の制御">
+                  Wave energy converter control
+                </span>
+
+                <span data-en="Model predictive control" data-ja="モデル予測制御">
+                  Model predictive control
+                </span>
+
+                <span data-en="CFD analysis" data-ja="CFD解析">
+                  CFD analysis
+                </span>
               </div>
             </div>
 
             <div class="log-item">
-              <span class="log-label">Discussion</span>
+              <span class="log-label" data-en="Discussion" data-ja="議論">
+                Discussion
+              </span>
+
               <div class="log-content">
-                <span>Controller robustness</span>
-                <span>Numerical stability</span>
+                <span data-en="Controller robustness" data-ja="制御器のロバスト性">
+                  Controller robustness
+                </span>
+
+                <span data-en="Numerical stability" data-ja="数値安定性">
+                  Numerical stability
+                </span>
               </div>
             </div>
 
             <div class="log-item">
-              <span class="log-label">Research context</span>
+              <span class="log-label" data-en="Research context" data-ja="研究背景">
+                Research context
+              </span>
+
               <div class="log-content">
-                <span>Assessment of modelling and control limitations</span>
+                <span data-en="Assessment of modelling and control limitations" data-ja="モデリングおよび制御上の限界評価">
+                  Assessment of modelling and control limitations
+                </span>
               </div>
             </div>
+
           </div>
         </div>
+
         <div class="log-image">
-          <img src="/assets/log/jasnaoe-2025.png" alt="Presentation at JASNAOE 2025">
-          <div class="log-caption"><em>JASNAOE 2025 · Hyogo</em></div>
+          <img src="/assets/log/jasnaoe-2025.png" alt="Presentation at JASNAOE 2025"
+            data-alt-en="Presentation at JASNAOE 2025" data-alt-ja="JASNAOE 2025での研究発表">
+
+          <div class="log-caption">
+            <em data-en="JASNAOE 2025 · Hyogo" data-ja="JASNAOE 2025 · 兵庫">
+              JASNAOE 2025 · Hyogo
+            </em>
+          </div>
         </div>
       </div>
+
       <div class="log-divider"></div>
+
       <div class="log-entry">
         <div class="log-text">
-          <div class="log-date">27 March 2025 · Gijón, Spain</div>
+
+          <div class="log-date" data-en="27 March 2025 · Gijón, Spain" data-ja="2025年3月27日 · スペイン・ヒホン">
+            27 March 2025 · Gijón, Spain
+          </div>
+
           <div class="log-meta">
-            <span>Presentation</span>
-            <span class="dot">·</span>
+            <span data-en="Presentation" data-ja="研究発表">
+              Presentation
+            </span>
+
+            <span class="dot" aria-hidden="true">·</span>
+
             <span>64ICNAMI</span>
           </div>
 
@@ -703,93 +832,181 @@
           </div>
 
           <div class="log-structure">
+
             <div class="log-item">
-              <span class="log-label">Topics</span>
+              <span class="log-label" data-en="Topics" data-ja="主題">
+                Topics
+              </span>
+
               <div class="log-content">
-                <span>Towing tank temperature sensitivity</span>
-                <span>Model–ship extrapolation</span>
-                <span>CFD analysis</span>
+                <span data-en="Towing tank temperature sensitivity" data-ja="曳航水槽温度への感度">
+                  Towing tank temperature sensitivity
+                </span>
+
+                <span data-en="Model–ship extrapolation" data-ja="模型船–実船外挿">
+                  Model–ship extrapolation
+                </span>
+
+                <span data-en="CFD analysis" data-ja="CFD解析">
+                  CFD analysis
+                </span>
               </div>
             </div>
 
             <div class="log-item">
-              <span class="log-label">Discussion</span>
+              <span class="log-label" data-en="Discussion" data-ja="議論">
+                Discussion
+              </span>
+
               <div class="log-content">
-                <span>Methodological assumptions</span>
-                <span>Numerical uncertainty</span>
+                <span data-en="Methodological assumptions" data-ja="手法上の仮定">
+                  Methodological assumptions
+                </span>
+
+                <span data-en="Numerical uncertainty" data-ja="数値的不確かさ">
+                  Numerical uncertainty
+                </span>
               </div>
             </div>
 
             <div class="log-item">
-              <span class="log-label">Research direction</span>
+              <span class="log-label" data-en="Research direction" data-ja="今後の研究">
+                Research direction
+              </span>
+
               <div class="log-content">
-                <span>Evaluation of temperature-dependent extrapolation errors</span>
+                <span data-en="Evaluation of temperature-dependent extrapolation errors" data-ja="温度依存外挿誤差の評価">
+                  Evaluation of temperature-dependent extrapolation errors
+                </span>
               </div>
             </div>
+
           </div>
         </div>
+
         <div class="log-image">
-          <img src="/assets/log/icnami-2025.png" alt="Presentation at 64ICNAMI">
-          <div class="log-caption"><em>64ICNAMI · Gijón</em></div>
+          <img src="/assets/log/icnami-2025.png" alt="Presentation at 64ICNAMI" data-alt-en="Presentation at 64ICNAMI"
+            data-alt-ja="64ICNAMIでの研究発表">
+
+          <div class="log-caption">
+            <em data-en="64ICNAMI · Gijón" data-ja="64ICNAMI · ヒホン">
+              64ICNAMI · Gijón
+            </em>
+          </div>
         </div>
       </div>
-      <div class="log-divider"></div>
 
+      <div class="log-divider"></div>
     </div>
+
+
     <div class="year-section" id="y2024">
 
       <div class="log-entry">
         <div class="log-text">
-          <div class="log-date">November 2024 · Glasgow, UK</div>
-          <div class="log-meta">
-            <span>Project development</span>
-            <span class="dot">·</span>
-            <span>University of Strathclyde</span>
+
+          <div class="log-date" data-en="November 2024 · Glasgow, UK" data-ja="2024年11月 · 英国・グラスゴー">
+            November 2024 · Glasgow, UK
           </div>
 
-          <div class="log-paper">
+          <div class="log-meta">
+            <span data-en="Project development" data-ja="研究開発">
+              Project development
+            </span>
+
+            <span class="dot" aria-hidden="true">·</span>
+
+            <span data-en="University of Strathclyde" data-ja="ストラスクライド大学">
+              University of Strathclyde
+            </span>
+          </div>
+
+          <div class="log-paper" data-en="Initial development of spatially non-uniform hull-roughness modelling"
+            data-ja="空間的に非一様な船体粗さモデリングの初期開発">
             Initial development of spatially non-uniform hull-roughness modelling
           </div>
 
           <div class="log-structure">
+
             <div class="log-item">
-              <span class="log-label">Topics</span>
+              <span class="log-label" data-en="Topics" data-ja="主題">
+                Topics
+              </span>
+
               <div class="log-content">
-                <span>Non-uniform roughness</span>
-                <span>Fouling-release literature</span>
-                <span>Spatial modelling</span>
+                <span data-en="Non-uniform roughness" data-ja="非一様粗さ">
+                  Non-uniform roughness
+                </span>
+
+                <span data-en="Fouling-release literature" data-ja="防汚塗膜に関する文献">
+                  Fouling-release literature
+                </span>
+
+                <span data-en="Spatial modelling" data-ja="空間モデリング">
+                  Spatial modelling
+                </span>
               </div>
             </div>
 
             <div class="log-item">
-              <span class="log-label">Development</span>
+              <span class="log-label" data-en="Development" data-ja="展開">
+                Development
+              </span>
+
               <div class="log-content">
-                <span>Definition of the modelling framework</span>
-                <span>Study scope</span>
+                <span data-en="Definition of the modelling framework" data-ja="モデリング枠組みの定義">
+                  Definition of the modelling framework
+                </span>
+
+                <span data-en="Study scope" data-ja="研究範囲">
+                  Study scope
+                </span>
               </div>
             </div>
 
             <div class="log-item">
-              <span class="log-label">Research direction</span>
+              <span class="log-label" data-en="Research direction" data-ja="今後の研究">
+                Research direction
+              </span>
+
               <div class="log-content">
-                <span>Numerical analysis of distributed hull-surface conditions</span>
+                <span data-en="Numerical analysis of distributed hull-surface conditions" data-ja="分布する船体表面状態の数値解析">
+                  Numerical analysis of distributed hull-surface conditions
+                </span>
               </div>
             </div>
+
           </div>
         </div>
+
         <div class="log-image">
-          <img src="/assets/log/roughness-2024.png" alt="Development of spatial hull-roughness modelling">
-          <div class="log-caption"><em>Spatial hypotheses · Glasgow</em></div>
+          <img src="/assets/log/roughness-2024.png" alt="Development of spatial hull-roughness modelling"
+            data-alt-en="Development of spatial hull-roughness modelling" data-alt-ja="船体粗さの空間モデリング開発">
+
+          <div class="log-caption">
+            <em data-en="Spatial hypotheses · Glasgow" data-ja="空間分布仮説 · グラスゴー">
+              Spatial hypotheses · Glasgow
+            </em>
+          </div>
         </div>
       </div>
+
       <div class="log-divider"></div>
+
       <div class="log-entry">
         <div class="log-text">
-          <div class="log-date">25 July 2024 · Daejeon, South Korea</div>
+
+          <div class="log-date" data-en="25 July 2024 · Daejeon, South Korea" data-ja="2024年7月25日 · 韓国・大田">
+            25 July 2024 · Daejeon, South Korea
+          </div>
 
           <div class="log-meta">
-            <span>Presentation</span>
-            <span class="dot">·</span>
+            <span data-en="Presentation" data-ja="研究発表">
+              Presentation
+            </span>
+
+            <span class="dot" aria-hidden="true">·</span>
+
             <span>13NCFE</span>
           </div>
 
@@ -798,37 +1015,72 @@
           </div>
 
           <div class="log-structure">
+
             <div class="log-item">
-              <span class="log-label">Topics</span>
+              <span class="log-label" data-en="Topics" data-ja="主題">
+                Topics
+              </span>
+
               <div class="log-content">
-                <span>Correlation line assumptions</span>
-                <span>Towing tank temperature effects</span>
-                <span>CFD validation</span>
+                <span data-en="Correlation line assumptions" data-ja="相関線の仮定">
+                  Correlation line assumptions
+                </span>
+
+                <span data-en="Towing tank temperature effects" data-ja="曳航水槽温度の影響">
+                  Towing tank temperature effects
+                </span>
+
+                <span data-en="CFD validation" data-ja="CFD検証">
+                  CFD validation
+                </span>
               </div>
             </div>
 
             <div class="log-item">
-              <span class="log-label">Discussion</span>
+              <span class="log-label" data-en="Discussion" data-ja="議論">
+                Discussion
+              </span>
+
               <div class="log-content">
-                <span>Form factor fixation limits</span>
-                <span>Correlation uncertainty</span>
+                <span data-en="Form factor fixation limits" data-ja="形状影響係数を固定することの限界">
+                  Form factor fixation limits
+                </span>
+
+                <span data-en="Correlation uncertainty" data-ja="相関の不確かさ">
+                  Correlation uncertainty
+                </span>
               </div>
             </div>
 
             <div class="log-item">
-              <span class="log-label">Award</span>
+              <span class="log-label" data-en="Award" data-ja="受賞">
+                Award
+              </span>
+
               <div class="log-content">
-                <span>Best Paper Award</span>
+                <span data-en="Best Paper Award" data-ja="最優秀論文賞">
+                  Best Paper Award
+                </span>
               </div>
             </div>
+
           </div>
         </div>
+
         <div class="log-image">
-          <img src="/assets/log/ncfe-2024.png" alt="Presentation at 13NCFE in Daejeon">
-          <div class="log-caption"><em>13NCFE · Daejeon</em></div>
+          <img src="/assets/log/ncfe-2024.png" alt="Presentation at 13NCFE in Daejeon"
+            data-alt-en="Presentation at 13NCFE in Daejeon" data-alt-ja="大田で開催された13NCFEでの研究発表">
+
+          <div class="log-caption">
+            <em data-en="13NCFE · Daejeon" data-ja="13NCFE · 大田">
+              13NCFE · Daejeon
+            </em>
+          </div>
         </div>
       </div>
+
     </div>
+
   </div>
 
   <script>
@@ -854,19 +1106,71 @@
     }
 
     function applyLang(lang) {
-      const safeLang = SUPPORTED_LANGS.has(lang) ? lang : DEFAULT_LANG;
+      const safeLang =
+        SUPPORTED_LANGS.has(lang)
+          ? lang
+          : DEFAULT_LANG;
 
-      document.documentElement.setAttribute("lang", safeLang);
-      document.documentElement.setAttribute("data-lang", safeLang);
+      document.documentElement.setAttribute(
+        "lang",
+        safeLang
+      );
 
-      document.querySelectorAll("[data-en]").forEach(el => {
-        const value = el.getAttribute(`data-${safeLang}`);
-        if (value !== null) el.innerHTML = value;
+      document.documentElement.setAttribute(
+        "data-lang",
+        safeLang
+      );
+
+      document.querySelectorAll("[data-en]").forEach(element => {
+        const value =
+          element.getAttribute(`data-${safeLang}`);
+
+        if (value !== null) {
+          element.textContent = value;
+        }
       });
 
-      document.querySelectorAll(".lang-switch a").forEach(a => {
-        a.classList.toggle("active", a.dataset.lang === safeLang);
+      document.querySelectorAll("[data-alt-en]").forEach(element => {
+        const value =
+          element.getAttribute(`data-alt-${safeLang}`);
+
+        if (value !== null) {
+          element.setAttribute("alt", value);
+        }
       });
+
+      document.querySelectorAll("[data-aria-en]").forEach(element => {
+        const value =
+          element.getAttribute(`data-aria-${safeLang}`);
+
+        if (value !== null) {
+          element.setAttribute("aria-label", value);
+        }
+      });
+
+      document.querySelectorAll(".lang-switch a").forEach(link => {
+        link.classList.toggle(
+          "active",
+          link.dataset.lang === safeLang
+        );
+      });
+
+      document.title =
+        safeLang === "ja"
+          ? "研究ログ | Sangseok Han"
+          : "Research Log | Sangseok Han";
+
+      const description =
+        document.querySelector('meta[name="description"]');
+
+      if (description) {
+        description.setAttribute(
+          "content",
+          safeLang === "ja"
+            ? "船舶流体力学およびCFDに関する主な研究発表と研究の展開。"
+            : "Selected presentations and research development in marine hydrodynamics and CFD."
+        );
+      }
     }
 
     function updateNavigationState() {
