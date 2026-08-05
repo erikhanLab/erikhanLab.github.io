@@ -664,18 +664,6 @@
       display: none;
     }
 
-    .research-links::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      bottom: 0;
-
-      width: 35%;
-      height: 1px;
-
-      background: rgba(11, 31, 58, 0.065);
-    }
-
     .research-links a {
       position: relative;
       z-index: 1;
@@ -889,6 +877,24 @@
     .current-project-description .desc-second-line {
       display: block;
       margin-top: 0.35rem;
+    }
+
+    .research-contact-actions {
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: flex-end;
+      gap: 9px;
+
+      flex: 0 0 auto;
+
+      white-space: nowrap;
+    }
+
+    .research-contact-separator {
+      font-size: 0.66em;
+      line-height: 1;
+
+      color: rgba(11, 31, 58, 0.27);
     }
 
     .research-contact-cta {
@@ -1374,11 +1380,6 @@
         color: rgba(11, 31, 58, 0.24);
       }
 
-      .research-links-separator {
-        font-size: 0.52em;
-        color: rgba(11, 31, 58, 0.24);
-      }
-
       .research-links a+a {
         border-left: 0;
       }
@@ -1472,19 +1473,45 @@
   <div class="page-content">
 
     <nav class="research-links" aria-label="Research pages">
+
       <a href="/research/log/">
-        <span data-en="Research Log" data-ja="研究ノート">
+        <span class="desktop" data-en="Research Log" data-ja="研究ノート">
           Research Log
         </span>
-      </a>
 
-      <span class="research-links-separator" aria-hidden="true">·</span>
-
-      <a href="/research/timeline/">
-        <span data-en="Academic Timeline" data-ja="学術年表">
-          Academic Timeline
+        <span class="mobile" data-en="Log" data-ja="ノート">
+          Log
         </span>
       </a>
+
+      <span class="research-links-separator" aria-hidden="true">
+        ·
+      </span>
+
+      <a href="/research/timeline/">
+        <span class="desktop" data-en="Academic Timeline" data-ja="学術年表">
+          Academic Timeline
+        </span>
+
+        <span class="mobile" data-en="Timeline" data-ja="年表">
+          Timeline
+        </span>
+      </a>
+
+      <span class="research-links-separator" aria-hidden="true">
+        ·
+      </span>
+
+      <a href="/research/collaborative/">
+        <span class="desktop" data-en="Collaborative Work" data-ja="共同研究">
+          Collaborative Work
+        </span>
+
+        <span class="mobile" data-en="Collaborative" data-ja="共同研究">
+          Collaborative
+        </span>
+      </a>
+
     </nav>
 
     <section id="ongoing-research" class="ongoing-research" aria-labelledby="ongoing-research-title">
@@ -1830,7 +1857,8 @@
       </div>
     </section>
 
-    <section class="research-contact-cta" aria-label="Research collaboration">
+    <section class="research-contact-cta" aria-label="Research collaboration" data-aria-en="Research collaboration"
+      data-aria-ja="共同研究">
 
       <p>
         <span class="desktop" data-en="For collaboration or academic exchange related to these projects."
@@ -1843,17 +1871,36 @@
         </span>
       </p>
 
-      <a href="/contact/">
-        <span data-en="Research enquiries" data-ja="研究に関するお問い合わせ">
-          Research enquiries
+      <div class="research-contact-actions">
+        <a href="/research/collaborative/">
+          <span class="desktop" data-en="Collaborative Work" data-ja="共同研究">
+            Collaborative Work
+          </span>
+
+          <span class="mobile" data-en="Collaborative" data-ja="共同研究">
+            Collaborative
+          </span>
+        </a>
+
+        <span class="research-contact-separator" aria-hidden="true">
+          ·
         </span>
 
-        <span class="research-contact-cta-arrow" aria-hidden="true">
-          →
-        </span>
-      </a>
+        <a href="/contact/">
+          <span class="desktop" data-en="Research enquiries" data-ja="研究に関するお問い合わせ">
+            Research enquiries
+          </span>
+
+          <span class="mobile" data-en="Enquiries" data-ja="お問い合わせ">
+            Enquiries
+          </span>
+
+          <span class="research-contact-cta-arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+      </div>
     </section>
-
 
     <div class="research-timeline" id="research-timeline">
       <h2 class="rt-header">

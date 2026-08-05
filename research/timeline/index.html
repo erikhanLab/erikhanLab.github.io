@@ -193,25 +193,6 @@
       transform: translateY(0);
     }
 
-    .timeline-top-link {
-      margin-top: 52px;
-      margin-bottom: 10px;
-      text-align: left;
-    }
-
-    .timeline-top-link a {
-      font-size: 0.72em;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      color: var(--research-blue);
-      opacity: 0.45;
-      transition: opacity 0.2s ease;
-    }
-
-    .timeline-top-link a:hover {
-      opacity: 0.82;
-    }
-
     .trace-entry {
       display: grid;
       grid-template-columns: 155px 1fr;
@@ -1856,12 +1837,6 @@
 
         </div>
 
-        <div class="timeline-top-link">
-          <a href="#top" data-en="↑ Back to top" data-ja="↑ 上へ戻る">
-            ↑ Back to top
-          </a>
-        </div>
-
       </main>
 
       <aside class="timeline-signal-panel" aria-label="Academic record signal summary">
@@ -1872,6 +1847,29 @@
         <div class="signal-note" id="signal-note"></div>
         <div class="signal-rows" id="signal-rows"></div>
       </aside>
+
+      <footer class="site-footer">
+        <div class="footer-signature">
+          <span class="footer-name">
+            Sangseok Han
+          </span>
+
+          <span class="footer-field" data-en="Research portfolio" data-ja="研究ポートフォリオ">
+            Research portfolio
+          </span>
+        </div>
+
+        <a class="footer-top" href="#top">
+          <span data-en="Back to top" data-ja="ページ上部へ">
+            Back to top
+          </span>
+
+          <span class="footer-top-arrow" aria-hidden="true">
+            ↑
+          </span>
+        </a>
+      </footer>
+
     </div>
 
     <script>
