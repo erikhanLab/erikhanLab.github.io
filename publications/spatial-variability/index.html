@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface conditions</title>
+  <title>Beyond uniform roughness: Spatial variability of hull roughness and implications for single-parameter
+    representation</title>
   <link rel="canonical" href="https://sangseokhan.com/publications/beyond-roughness/" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
 
@@ -26,6 +27,8 @@
     })(window, document, 'script', 'dataLayer', 'GTM-5MMRV373');</script>
   <!-- End Google Tag Manager -->
 
+  <link rel="stylesheet" href="/assets/css/site-shell.css?v=1">
+
   <style>
     :root {
       --accent-dark: #0B1F3A;
@@ -33,27 +36,37 @@
       --text-muted: #4A4A4A;
     }
 
-    body {
-      max-width: 780px;
-      margin: 80px auto;
-      padding: 0 20px;
-      font-family: Georgia, serif;
-      background: var(--bg-light);
-      color: #111;
-      line-height: 1.75;
-    }
-
     h1 {
-      font-size: 2.4em;
+
+      max-width: 850px;
+      margin: 0 auto 18px;
+      margin-top: 100px;
+      font-size: clamp(2.2rem, 3.2vw, 2.6rem);
+      font-weight: 400;
+      line-height: 1.18;
+      letter-spacing: 0.02em;
+
       color: var(--accent-dark);
       text-align: center;
-      margin-bottom: 14px;
+      text-wrap: balance;
     }
 
     .top-back {
-      font-size: 0.8em;
-      color: #666;
-      margin-bottom: 24px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      box-sizing: border-box;
+      padding: 16px 44px;
+
+      font-size: 0.88em;
+      line-height: 1.5;
+      color: #444;
+
+      background: var(--bg-light);
+      border-bottom: 1px solid #dde3ec;
     }
 
     .top-back a {
@@ -102,11 +115,10 @@
 
     .abstract {
       max-width: 780px;
-      margin: 0 auto 80px auto;
+      margin: 0 auto 24px;
       padding-left: 18px;
       border-left: 2px solid #e1e4ea;
     }
-
 
     .abstract h2 {
       font-size: 1.05em;
@@ -126,6 +138,21 @@
     .abstract p:first-of-type {
       font-size: 1.02em;
       color: #222;
+    }
+
+    .keywords {
+      max-width: 760px;
+      margin: 0 auto 65px;
+      padding-left: 20px;
+
+      font-size: 0.94em;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .keywords strong {
+      color: #222;
+      font-weight: 600;
     }
 
     .links {
@@ -167,12 +194,20 @@
     }
 
     .figure {
-      margin-bottom: 65px;
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto 70px;
     }
 
     .figure img {
+      display: block;
       width: 100%;
-      margin-bottom: 12px;
+      height: auto;
+      margin: 0 auto 12px;
+    }
+
+    .figure-pair {
+      max-width: 780px;
     }
 
     .caption {
@@ -180,30 +215,12 @@
       color: var(--text-muted);
     }
 
-    .footer {
-      text-align: center;
-      font-size: 0.85em;
-      color: #666;
-      margin-top: 70px;
-    }
-
-    .footer a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid #bbb;
-    }
-
-    .footer a:hover {
-      color: var(--accent-dark);
-      border-bottom-color: var(--accent-dark);
-    }
-
     .pub-meta {
       text-align: center;
       font-size: 0.82em;
       color: #666;
-      margin: 80px auto 30px auto;
-      padding-top: 22px;
+      margin: 0px auto 0px auto;
+      padding-top: 20px;
       border-top: 1px solid #dde3ec;
       max-width: 520px;
       letter-spacing: 0.02em;
@@ -239,38 +256,218 @@
       hyphens: auto;
     }
 
+    .tables-section {
+      width: min(1120px, calc(100vw - 40px));
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 30px 0 30px;
+    }
+
+    .table-block {
+      margin-bottom: 30px;
+    }
+
+    .table-scroll {
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+
+      padding-bottom: 8px;
+
+      scrollbar-width: thin;
+      scrollbar-color: #666 transparent;
+    }
+
+    .table-scroll::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .table-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .table-scroll::-webkit-scrollbar-thumb {
+      background: #666;
+      border-radius: 999px;
+    }
+
+    .table-scroll::-webkit-scrollbar-thumb:hover {
+      background: #111;
+    }
+
+    .ittc-table {
+      width: 100%;
+      min-width: 1000px;
+      border-collapse: collapse;
+      table-layout: fixed;
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.8rem;
+      line-height: 1.35;
+
+      color: #111;
+      background: transparent;
+
+      border-top: 2px solid #111;
+
+      border-bottom: 2px solid #111;
+    }
+
+    .ittc-table caption {
+      caption-side: top;
+      text-align: left;
+
+      padding: 0 0 12px;
+      margin: 0;
+
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: #111;
+    }
+
+    .ittc-table caption strong {
+      font-weight: 700;
+    }
+
+    .ittc-table thead {
+      border-bottom: 1.5px solid #111;
+    }
+
+    .ittc-table th,
+    .ittc-table td {
+      padding: 6px 10px;
+      text-align: left;
+      vertical-align: top;
+      border: none;
+      background: transparent;
+
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .ittc-table thead th {
+      padding-top: 8px;
+      padding-bottom: 8px;
+
+      font-size: 0.76rem;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .ittc-table tbody td,
+    .ittc-table tbody th {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .ittc-table .year {
+      text-align: center;
+      vertical-align: top;
+      white-space: nowrap;
+      font-weight: 400;
+    }
+
+    .table-note {
+      max-width: 100%;
+      margin: 12px 0 0;
+
+      font-size: 0.72rem;
+      line-height: 1.55;
+      color: #555;
+      text-align: left;
+    }
+
+    .math {
+      white-space: nowrap;
+    }
+
+    .table-scroll:focus {
+      outline: none;
+    }
+
+    .table-scroll:focus-visible {
+      outline: 1px solid #111;
+      outline-offset: 6px;
+    }
+
+    .figure-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .subfigure {
+      flex: 1 1 0;
+      max-width: calc(50% - 8px);
+    }
+
+    .subfigure img {
+      width: 100%;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .subcaption {
+      font-size: 0.82em;
+      color: #555;
+      text-align: center;
+      line-height: 1.45;
+    }
+
     @media (max-width: 640px) {
       .affils div {
         white-space: nowrap;
       }
 
       h1 {
-        font-size: 1.2em;
-        color: var(--accent-dark);
-        text-align: center;
+        max-width: 96%;
         margin-bottom: 14px;
+        font-size: 1.05rem;
+        line-height: 1.25;
+        letter-spacing: -0.018em;
       }
 
       .meta {
         font-size: 0.75em;
       }
 
+      .keywords {
+        margin-top: 14px;
+        margin-bottom: 45px;
+        padding-left: 18px;
+        font-size: 0.68em;
+      }
+
       .authors {
-        font-size: 0.65em;
+        font-size: 0.7em;
       }
 
       .affils {
-        font-size: 0.5em;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        width: 90%;
+        max-width: 100%;
+        margin-bottom: 55px;
+        margin-left: 20px;
+        font-size: 0.6em;
+        line-height: 1.6;
+      }
+
+      .affils div {
         display: block;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       .abstract {
-        margin-top: -40px;
-        font-size: 0.72em;
-        margin-bottom: 0px;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 0.65em;
       }
 
       .section-title {
@@ -287,21 +484,83 @@
         margin: 50px auto 20px auto;
         margin-bottom: -35px;
       }
+
+      .tables-section {
+        width: 95%;
+      }
+
+      .ittc-table {
+        min-width: 980px;
+        font-size: 0.65rem;
+      }
+
+      .ittc-table caption {
+        font-size: 0.8rem;
+      }
+
+      .ittc-table thead th {
+        font-size: 0.65rem;
+      }
+
+      .ittc-table th,
+      .ittc-table td {
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+
+      .table-note {
+        font-size: 0.65rem;
+      }
+
+      .table-scroll {
+        padding-bottom: 8px;
+      }
+
+      .table-scroll::-webkit-scrollbar {
+        height: 3px;
+      }
+
+      .figure-row {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .figure,
+      .figure-pair {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .subfigure {
+        max-width: 100%;
+      }
+
+      .subcaption {
+        font-size: 0.78em;
+      }
+
+      .top-back {
+        padding: 12px 18px;
+        font-size: 0.72em;
+        line-height: 1.5;
+      }
     }
   </style>
 </head>
 
-<body>
+<body id="top">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div class="top-back">
+  <nav class="top-back" aria-label="Back navigation">
     ← <a href="/publications/">Back to Publications</a>
-  </div>
+  </nav>
 
-  <h1>Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface conditions</h1>
+  <h1>Beyond uniform roughness: Spatial variability of hull roughness and implications for single-parameter
+    representation</h1>
 
   <div class="meta">
     <em>Ocean Engineering</em> (2026)
@@ -309,10 +568,7 @@
 
   <div class="authors">
     <strong>Sang-seok Han</strong>
-    <sup class="affil">1</sup><sup class="cor">*</sup>,
-    Ho-won Lee <sup class="affil">2</sup>,
-    Saishuai Dai <sup class="affil">1</sup>,
-    Momchil Terziev <sup class="affil">1</sup>
+    <sup class="affil">1, 2</sup>
   </div>
 
   <div class="affils">
@@ -320,104 +576,708 @@
       Department of Naval Architecture, Ocean and Marine Engineering, University of Strathclyde, the United Kingdom
     </div>
     <div><sup>2</sup>
-      Department of Naval Architecture & Ocean Engineering, Inha University, Republic of Korea</div>
+      Research Institution of Marine Systems Engineering, Seoul National University, Republic of Korea</div>
   </div>
 
   <div class="abstract">
     <h2>Abstract</h2>
     <p>
-      Traditional ship resistance models often assume uniform hull surface roughness, potentially misrepresenting the
-      heterogeneous fouling patterns observed in real-world operations. To address this limitation, we investigate the
-      hydrodynamic impact of spatially non-uniform roughness on a KRISO Container Ship (KCS) hull using Computational
-      Fluid Dynamics (CFD) simulations.
+      Hull surface roughness plays a critical role in determining ship resistance. In current practice, ship resistance
+      prediction procedures of the International Towing Tank Conference (ITTC) commonly assume uniform roughness,
+      represented by a globally applied equivalent roughness parameter. This study examines the implications of this
+      assumption when spatially non-uniform roughness is present.
     </p>
     <p>
-      Seven hull surface conditions were investigated, including a smooth baseline and six types of roughness
-      distributions: uniform, linear gradient, non-linear gradient, random, direct-shear, and inverse-shear. All cases
-      were designed to have the same arithmetic mean hull surface roughness, allowing isolation of the effects of
-      spatial roughness distribution. Among the tested configurations, the linear gradient distribution exhibited the
-      most favourable resistance characteristics, whereas the shear-based and random distributions showed relatively
-      minor differences from the uniform case.
+      A review and structured synthesis of ITTC documents (1933–2024) indicate that hull surface roughness has been
+      consistently represented by a globally applied parameter in resistance prediction procedures. This suggests that
+      the uniform roughness assumption functions as a procedural abstraction within the established framework.
     </p>
     <p>
-      Spatial roughness patterns significantly influenced boundary layer growth and wake development. Uniform, random,
-      and shear-based distributions induced thicker boundary layers and delayed wake recovery, whereas the linear
-      gradient case resulted in weaker momentum loss and faster wake recovery.
-      These findings indicate that even under identical arithmetic mean roughness conditions, the spatial distribution
-      of hull surface roughness can significantly affect resistance characteristics. Explicit modelling of roughness
-      patterns is therefore essential for accurate performance prediction and motivates further experimental validation
-      and integration with propeller-hull interaction and free surface effects.
+      To investigate its physical implications, model-scale Computational Fluid Dynamics (CFD) simulations are performed
+      under controlled roughness conditions using two benchmark hull forms: the KRISO Container Ship (KCS) and the KRISO
+      Very Large Crude Carrier 2 (KVLCC2). Spatial roughness distributions—including linear (steep, mild, and reverse),
+      random, and wall shear stress-based configurations—are considered under a constant area-averaged equivalent
+      roughness height.
     </p>
+    <p>
+      The results show that total resistance is sensitive to the spatial distribution of roughness even when the
+      area-averaged equivalent roughness height is identical. This trend is consistently observed across both hull forms
+      and roughness distribution types. Under the most severe roughness condition, deviations in the total resistance
+      coefficient (<i>C</i><sub>T</sub>) reach approximately 12% for the KCS and 16% for the KVLCC2 relative to the
+      uniform roughness baseline. These differences are primarily
+      associated
+      with variations in frictional response, together with changes in boundary layer development and wake recovery
+      behaviour.
+    </p>
+    <p>
+      The findings indicate that, under spatially non-uniform roughness, resistance cannot be fully characterised by
+      area-averaged roughness alone. Together with the ITTC document review, the results support interpreting the
+      equivalent roughness parameter as a procedural abstraction based on a uniform roughness assumption. This
+      representation captures the overall effect of roughness magnitude, but it does not fully describe resistance
+      behaviour when roughness varies spatially. The results do not question the validity of existing ITTC methods
+      within their intended scope; rather, they clarify the physical meaning and limitations of the uniform roughness
+      assumption. They also provide physical context for the use and limitations of single-parameter roughness
+      representation within the existing resistance prediction framework. Extension to full-scale conditions and more
+      realistic roughness representations remains a subject for future work.
+    </p>
+
+  </div>
+
+  <div class="keywords">
+    <strong>Keywords:</strong>
+    Hull roughness; Spatial variability; Ship resistance; ITTC;
+    Computational Fluid Dynamics (CFD)
   </div>
 
   <div class="pub-meta">
     Published in <em>Ocean Engineering</em> (2026, Q1, IF 6.3)<br>
     DOI: <strong>
-      <a href="https://doi.org/10.1016/j.oceaneng.2026.124462" target="_blank">
-        10.1016/j.oceaneng.2026.124462
+      <a href="https://doi.org/10.1016/j.oceaneng.2026.127352" target="_blank" rel="noopener noreferrer">
+        10.1016/j.oceaneng.2026.127352
       </a>
     </strong><br>
     Open Access (Elsevier)<br>
-    </span>
   </div>
 
   <div class="section-title" style="margin-top:60px">
+    <strong>ITTC Hull Roughness Timeline</strong>
+  </div>
+
+  <section class="tables-section" aria-label="Historical development of hull roughness in ITTC documents">
+
+    <!-- Table 1 -->
+    <div class="table-block">
+      <div class="table-scroll" tabindex="0" role="region"
+        aria-label="Table 1. ITTC hull roughness documents from 1933 to 1972">
+
+        <table class="ittc-table">
+          <caption>
+            <strong>Table 1.</strong>
+            Emergence and procedural consolidation of hull surface roughness
+            in ITTC documents (1933–1972).
+          </caption>
+
+          <colgroup>
+            <col style="width: 7%;">
+            <col style="width: 14%;">
+            <col style="width: 17%;">
+            <col style="width: 22%;">
+            <col style="width: 18%;">
+            <col style="width: 22%;">
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th scope="col">Year</th>
+              <th scope="col">Committee/Group</th>
+              <th scope="col">Procedural Context</th>
+              <th scope="col">Roughness Representation</th>
+              <th scope="col">Spatial Variability</th>
+              <th scope="col">Scope/Limitation</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th class="year" scope="row">1933</th>
+              <td>1st ICTS</td>
+              <td>Model experiments</td>
+              <td>Not specified</td>
+              <td>Not addressed</td>
+              <td>Model surface quality control only</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">1934</th>
+              <td>2nd ICTS</td>
+              <td>Skin friction discussion</td>
+              <td>Uniform roughness implied</td>
+              <td>Implicitly excluded</td>
+              <td>No formal procedural adoption</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">1935</th>
+              <td>3rd ICTS</td>
+              <td>Model experiments</td>
+              <td>Local artificial roughening</td>
+              <td>Not addressed</td>
+              <td>Experimental device only</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">1937</th>
+              <td>4th ICTS</td>
+              <td>Model experiments</td>
+              <td>Artificial grain-based roughness</td>
+              <td>Not explicitly addressed</td>
+              <td>Uniform grain-based parameter</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">1948</th>
+              <td>5th ICTS</td>
+              <td>Skin friction formulation</td>
+              <td>Uniform representation implied</td>
+              <td>Not explicitly addressed</td>
+              <td>Trial-based roughness allowance</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">1951</th>
+              <td>6th ICTS</td>
+              <td>Skin friction formulation</td>
+              <td>Uniform representation implied</td>
+              <td>Not explicitly addressed</td>
+              <td>Provisional roughness allowance</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">1954</th>
+              <td>7th ICTS</td>
+              <td>Skin friction formulation</td>
+              <td>Uniform representation implied</td>
+              <td>Not explicitly addressed</td>
+              <td>Correlation allowance framework</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">1957</th>
+              <td>8th ITTC</td>
+              <td>Resistance extrapolation</td>
+              <td>Explicitly uniform</td>
+              <td>Not explicitly addressed</td>
+              <td>Single roughness allowance applied</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">1960</th>
+              <td>9th ITTC</td>
+              <td>Resistance extrapolation</td>
+              <td>Explicitly uniform</td>
+              <td>Not explicitly addressed</td>
+              <td>Correlation roughness allowance</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">1963</th>
+              <td>RC (10th ITTC)</td>
+              <td>Turbulence stimulation</td>
+              <td>Discrete roughness elements</td>
+              <td>Not addressed</td>
+              <td>Model-scale turbulence control only</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">1966</th>
+              <td>RC (11th ITTC)</td>
+              <td>Resistance extrapolation</td>
+              <td>Implicitly uniform (procedural)</td>
+              <td>Not explicitly addressed</td>
+              <td>Roughness via procedural allowances</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">1969</th>
+              <td>PC (12th ITTC)</td>
+              <td>Trial-based measurements</td>
+              <td>Implicitly uniform (procedural)</td>
+              <td>Not addressed</td>
+              <td>Surface condition documentation only</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">1972</th>
+              <td>PC (13th ITTC)</td>
+              <td>Ship-model correlation</td>
+              <td>Explicitly uniform</td>
+              <td>Not explicitly addressed</td>
+              <td>Roughness identified as ongoing research issue</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="table-note">
+        <strong>Note:</strong>
+        Early conferences appear under varying official titles in contemporary
+        proceedings. For clarity, all early meetings are referred to here using
+        the normalised designation International Conference of Tank
+        Superintendents (ICTS). Committee designations also vary across ITTC
+        periods, including changes in naming and scope. For consistency,
+        committees are referred to using standardised abbreviations
+        (e.g. RC and PC), irrespective of variations in official titles.
+        The descriptors summarise the documented treatment of hull surface
+        roughness during this period.
+      </p>
+    </div>
+
+
+    <!-- Table 2 -->
+    <div class="table-block">
+      <div class="table-scroll" tabindex="0" role="region"
+        aria-label="Table 2. ITTC hull roughness documents from 1975 to 2011">
+
+        <table class="ittc-table">
+          <caption>
+            <strong>Table 2.</strong>
+            Evolution of hull surface roughness representation within ITTC
+            procedures (1975–2011).
+          </caption>
+
+          <colgroup>
+            <col style="width: 7%;">
+            <col style="width: 14%;">
+            <col style="width: 17%;">
+            <col style="width: 22%;">
+            <col style="width: 18%;">
+            <col style="width: 22%;">
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th scope="col">Year</th>
+              <th scope="col">Committee/Group</th>
+              <th scope="col">Procedural Context</th>
+              <th scope="col">Roughness Representation</th>
+              <th scope="col">Spatial Variability</th>
+              <th scope="col">Scope/Limitation</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th class="year" scope="rowgroup" rowspan="2">1975</th>
+              <td>RC (14th ITTC)</td>
+              <td>Resistance prediction</td>
+              <td>Other (equivalent roughness)</td>
+              <td>Identified outside scope</td>
+              <td>No prescriptive roughness model</td>
+            </tr>
+            <tr>
+              <td>PC (14th ITTC)</td>
+              <td>Hull roughness effects</td>
+              <td>Implicitly uniform (procedural)</td>
+              <td>Not explicitly addressed</td>
+              <td>Roughness pattern (single-parameter)</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="rowgroup" rowspan="2">1978</th>
+              <td>RC (15th ITTC)</td>
+              <td>Resistance extrapolation</td>
+              <td>Other (velocity-shift framework)</td>
+              <td>Explicitly unresolved</td>
+              <td>No prescriptive roughness model</td>
+            </tr>
+            <tr>
+              <td>PC (15th ITTC)</td>
+              <td>Resistance extrapolation</td>
+              <td>Implicitly uniform (procedural)</td>
+              <td>Not explicitly addressed</td>
+              <td>Standard roughness assumption</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="rowgroup" rowspan="2">1981</th>
+              <td>RC (16th ITTC)</td>
+              <td>Hull roughness effects</td>
+              <td>Other (equivalent roughness)</td>
+              <td>Identified as unresolved</td>
+              <td>No universal roughness correlation established</td>
+            </tr>
+            <tr>
+              <td>PC (16th ITTC)</td>
+              <td>Roughness allowance</td>
+              <td>Implicitly uniform (procedural)</td>
+              <td>Identified as unresolved</td>
+              <td>Single-parameter roughness limitation acknowledged</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="rowgroup" rowspan="2">1984</th>
+              <td>RC (17th ITTC)</td>
+              <td>Hull roughness drag</td>
+              <td>Other (multi-parameter roughness)</td>
+              <td>Identified as unresolved</td>
+              <td>Single-parameter approach considered inadequate</td>
+            </tr>
+            <tr>
+              <td>PC (17th ITTC)</td>
+              <td>Roughness allowance</td>
+              <td>Implicitly uniform (procedural)</td>
+              <td>Explicitly challenged</td>
+              <td>Single-parameter approach limitations identified</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="rowgroup" rowspan="2">1987</th>
+              <td>RC (18th ITTC)</td>
+              <td>Hull roughness drag</td>
+              <td>Other (multi-parameter roughness)</td>
+              <td>Identified as unresolved</td>
+              <td>No conclusive roughness drag predictor available</td>
+            </tr>
+            <tr>
+              <td>PC (18th ITTC)</td>
+              <td>Roughness allowance</td>
+              <td>Implicitly uniform (procedural)</td>
+              <td>Explicitly challenged</td>
+              <td>Unsuitable for in-service assessment</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="rowgroup" rowspan="2">1990</th>
+              <td>RC (19th ITTC)</td>
+              <td>Hull roughness drag</td>
+              <td>Other (multi-parameter roughness)</td>
+              <td>Explicitly considered</td>
+              <td>Spatial distribution effects explicitly identified</td>
+            </tr>
+            <tr>
+              <td>PC (19th ITTC)</td>
+              <td>Roughness allowance</td>
+              <td>Implicitly uniform (procedural)</td>
+              <td>Explicitly challenged</td>
+              <td>Single-parameter roughness limitation retained</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="rowgroup" rowspan="2">1993</th>
+              <td>RC (20th ITTC)</td>
+              <td>Experimental techniques</td>
+              <td>Not addressed</td>
+              <td>Not addressed</td>
+              <td>CFD capability limited to smooth hulls</td>
+            </tr>
+            <tr>
+              <td>PC (20th ITTC)</td>
+              <td>Performance prediction</td>
+              <td>Implicitly uniform (procedural)</td>
+              <td>Questioned but unresolved</td>
+              <td>Single-parameter allowance procedurally retained</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">1996</th>
+              <td>PC (21st ITTC)</td>
+              <td>Sea trial controls</td>
+              <td>Implicitly uniform (procedural)</td>
+              <td>Inspection-level awareness</td>
+              <td>Roughness measurement recommended; not standardised</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">1999</th>
+              <td>RC (22nd ITTC)</td>
+              <td>Turbulence modelling</td>
+              <td>Other (CFD roughness modelling)</td>
+              <td>Recognised but not developed</td>
+              <td>High-Reynolds-number roughness modelling immature</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="rowgroup" rowspan="2">2002</th>
+              <td>RC (23rd ITTC)</td>
+              <td>Hull roughness drag</td>
+              <td>Implicitly uniform (procedural)</td>
+              <td>Explicitly challenged</td>
+              <td>Texture parameter required for correlation</td>
+            </tr>
+            <tr>
+              <td>SC (23rd ITTC)</td>
+              <td>Roughness measurement</td>
+              <td>Implicitly uniform (procedural)</td>
+              <td>Explicitly challenged</td>
+              <td>Single-parameter applicability limited for Foul Release</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">2005</th>
+              <td>SC (24th ITTC)</td>
+              <td>Roughness allowance</td>
+              <td>Implicitly uniform (procedural)</td>
+              <td>Acknowledged but limited</td>
+              <td>Empirical validation limited; single-parameter inadequate</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">2008</th>
+              <td>SC (25th ITTC)</td>
+              <td>Roughness allowance</td>
+              <td>Implicitly uniform (procedural)</td>
+              <td>Considered; not standardised</td>
+              <td>Roughness-correlation separation formalised</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="rowgroup" rowspan="2">2011</th>
+              <td>RC (26th ITTC)</td>
+              <td>Scaling &amp; extrapolation</td>
+              <td>Implicitly smooth (CFD)</td>
+              <td>Explicitly acknowledged</td>
+              <td>CFD-correlation-roughness inconsistency identified</td>
+            </tr>
+            <tr>
+              <td>RP (26th ITTC)</td>
+              <td>Performance prediction</td>
+              <td>
+                Explicitly uniform
+                (single
+                <span class="math"><i>k</i><sub>s</sub></span>)
+              </td>
+              <td>Uniformly assumed</td>
+              <td>Single-parameter roughness formalised</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="table-note">
+        <strong>Note:</strong>
+        Committee designations are standardised as RC (Resistance Committee),
+        PC (Performance Committee), SC (Specialist Committee), and RP
+        (Recommended Procedures and Guidelines), irrespective of minor
+        variations in official titles across different ITTC periods.
+        The terminology reflects the procedural context of the referenced
+        documents and serves as an interpretative summary rather than a literal
+        physical classification.
+      </p>
+    </div>
+
+
+    <div class="table-block">
+      <div class="table-scroll" tabindex="0" role="region"
+        aria-label="Table 3. Recent ITTC roughness modelling documents from 2014 to 2024">
+
+        <table class="ittc-table">
+          <caption>
+            <strong>Table 3.</strong>
+            Recent advances in hull surface roughness modelling and spatial
+            considerations within ITTC documents (2014–2024).
+          </caption>
+
+          <colgroup>
+            <col style="width: 7%;">
+            <col style="width: 14%;">
+            <col style="width: 17%;">
+            <col style="width: 22%;">
+            <col style="width: 18%;">
+            <col style="width: 22%;">
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th scope="col">Year</th>
+              <th scope="col">Committee/Group</th>
+              <th scope="col">Procedural Context</th>
+              <th scope="col">Roughness Representation</th>
+              <th scope="col">Spatial Variability</th>
+              <th scope="col">Scope/Limitation</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th class="year" scope="rowgroup" rowspan="2">2014</th>
+              <td>RC (27th ITTC)</td>
+              <td>Roughness modelling</td>
+              <td>
+                Explicitly uniform
+                (equivalent
+                <span class="math"><i>k</i><sub>s</sub></span>)
+              </td>
+              <td>Explicitly recognised</td>
+              <td>Non-uniformity recognised; uniform framework retained</td>
+            </tr>
+            <tr>
+              <td>RP (27th ITTC)</td>
+              <td>CFD wall modelling</td>
+              <td>
+                Explicitly uniform
+                (equivalent
+                <span class="math"><i>k</i><sub>s</sub></span>)
+              </td>
+              <td>Not resolved</td>
+              <td>
+                Smooth-wall baseline; roughness via
+                <span class="math"><i>k</i><sub>s</sub></span>
+                wall function
+              </td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="rowgroup" rowspan="2">2017</th>
+              <td>RC (28th ITTC)</td>
+              <td>Ship surface roughness</td>
+              <td>
+                Dual (smooth model /
+                <span class="math"><i>k</i><sub>s</sub></span>
+                at full scale)
+              </td>
+              <td>Recognised; not standardised</td>
+              <td>Complex roughness identified; single-parameter retained</td>
+            </tr>
+            <tr>
+              <td>RP (28th ITTC)</td>
+              <td>Performance prediction</td>
+              <td>
+                Explicitly uniform
+                (equivalent
+                <span class="math"><i>k</i><sub>s</sub></span>)
+              </td>
+              <td>Uniformly assumed</td>
+              <td>Global single-parameter roughness allowance</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="row">2021</th>
+              <td>RC (29th ITTC)</td>
+              <td>Ship surface roughness</td>
+              <td>
+                Procedurally uniform
+                (<span class="math"><i>k</i><sub>s</sub></span>-based)
+              </td>
+              <td>Explicitly challenged</td>
+              <td>3D resistance effects and CFD wall-function integration</td>
+            </tr>
+
+            <tr>
+              <th class="year" scope="rowgroup" rowspan="2">2024</th>
+              <td>RC (30th ITTC)</td>
+              <td>CFD roughness modelling</td>
+              <td>Roughness-function framework</td>
+              <td>Explicitly analysed</td>
+              <td>
+                Best practice unresolved;
+                <span class="math">&Delta;<i>U</i><sup>+</sup></span>–<span class="math"><i>R</i><sup>+</sup></span>
+                relationship unclear
+              </td>
+            </tr>
+            <tr>
+              <td>PC (30th ITTC)</td>
+              <td>Performance prediction</td>
+              <td>Roughness-function framework</td>
+              <td>Explicitly analysed</td>
+              <td>Full-scale validation scarce; spatial variability unresolved</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="table-note">
+        <strong>Note:</strong>
+        The terminology used in this table summarises the procedural treatment
+        of hull surface roughness in the referenced ITTC documents and does not
+        imply a physical classification of surface condition.
+      </p>
+    </div>
+
+  </section>
+
+  <div class="section-title selected-figures-title">
     <strong>Selected Figures</strong>
   </div>
 
   <div class="figure">
-    <img src="/assets/Beyond_Roughness.svg" alt="Figure 1">
+    <img src="/assets/Roughness_Bottom.svg"
+      alt="Bottom-view spatial roughness distributions for the KCS and KVLCC2 hulls under the B20% severity level">
+
     <div class="caption">
-      <em><strong>Figure 1</strong>. Visualisation of the spatially applied roughness height distributions on the KCS
-        hull surface.</em>
+      <em><strong>Figure 1</strong>. Bottom-view spatial roughness distributions for the KCS and KVLCC2 hulls under the
+        B20% severity level.</em>
     </div>
     <div class="figure-note">
-      This graphical representation illustrates the spatial distributions of the equivalent
-      sand-grain roughness height (<em><i>k</i><sub>s</sub></em>) imposed on the hull surface to assess
-      their hydrodynamic impact. The cases comprise an ideal smooth surface, a spatially uniform
-      roughness field, linear and non-linear distributions, a statistically random distribution,
-      and wall-shear stress-based gradients (direct and inverse) prescribed according to the
-      local shear stress field.
+      The figure compares the representative spatial roughness distributions applied to the
+      KRISO Container Ship (KCS) and KRISO Very Large Crude Carrier 2 (KVLCC2) hulls.
+      The cases correspond to uniform, linear–steep, linear–mild, linear–reverse, random,
+      and wall shear stress-based distributions, respectively. All cases preserve the same
+      area-averaged equivalent sand-grain roughness height, allowing the effect of spatial
+      variability to be isolated. The bottom-view presentation clarifies how the imposed
+      roughness fields extend over the flat-bottom region of each hull.
+    </div>
+  </div>
+
+  <div class="figure figure-pair">
+    <div class="figure-row">
+      <div class="subfigure">
+        <img src="/assets/KCS_CT.svg"
+          alt="Relative change in total resistance coefficient for the KCS hull under different spatial roughness distributions and fouling severities">
+        <div class="subcaption">
+          <em>(a) KCS hull</em>
+        </div>
+      </div>
+
+      <div class="subfigure">
+        <img src="/assets/KVLCC2_CT.svg"
+          alt="Relative change in total resistance coefficient for the KVLCC2 hull under different spatial roughness distributions and fouling severities">
+        <div class="subcaption">
+          <em>(b) KVLCC2 hull</em>
+        </div>
+      </div>
+    </div>
+
+    <div class="caption">
+      <em><strong>Figure 2</strong>. Relative change in total resistance coefficient, <i>C</i><sub>T</sub>, for the KCS
+        and KVLCC2 hulls under different spatial roughness distributions and fouling severities.</em>
+    </div>
+
+    <div class="figure-note">
+      The figure compares the relative change in the total resistance coefficient
+      (<em><i>C</i><sub>T</sub></em>) with respect to the uniform roughness baseline
+      for the KCS and KVLCC2 hulls. Results are shown for four representative spatial
+      roughness distributions—uniform, linear–steep, random, and wall shear stress-based—
+      under three fouling severity levels (S20%, M20%, and B20%). For both hull forms,
+      the linear–steep distribution produces the largest reduction relative to the uniform
+      case, whereas the random distribution remains close to the baseline. The shear
+      stress-based distribution has only a minor effect for the KCS, but produces a small
+      increase in <em><i>C</i><sub>T</sub></em> for the KVLCC2.
     </div>
   </div>
 
   <div class="figure">
-    <img src="/assets/Beyond_CT.svg" alt="Figure 2">
+    <img src="/assets/KVLCC2_Boundary.svg"
+      alt="Boundary layer development along the KVLCC2 hull under different spatial roughness distributions at the B20% severity level">
+
     <div class="caption">
-      <em><strong>Figure 2</strong>. Change in <i>C</i><sub>T</sub> relative to uniform roughness for each distribution
-        and fouling level.</em>
+      <em><strong>Figure 3</strong>. Boundary layer development along the KVLCC2 hull, visualised through axial velocity
+        slices, under different spatial roughness distributions at the B20% severity level.</em>
     </div>
+
     <div class="figure-note">
-      Spatial hull roughness leads to pronounced variations in the model-scale resistance
-      coefficient (<em><i>C</i><sub>T</sub></em>), with longitudinally varying distributions producing
-      the most significant changes. In particular, linear and non-linear roughness patterns
-      induce substantially larger deviations compared to uniform or random cases, while
-      shear-stress-based configurations exhibit relatively minor effects. This behaviour underscores the importance of
-      roughness spatiality in model-scale resistance prediction.
+      The figure compares boundary-layer development along the KVLCC2 hull for four representative
+      spatial roughness distributions: uniform, linear–steep, random, and wall shear stress-based.
+      The annotations show the relative changes in the total resistance coefficient
+      (<em>&Delta;<i>C</i><sub>T</sub></em>) and boundary-layer area
+      (<em>&Delta;<i>A</i><sub>BL</sub></em>) with respect to the uniform baseline.
+      The linear–steep distribution produces the largest reductions in both quantities,
+      whereas the random case remains close to the uniform reference. In contrast, the
+      wall shear stress-based distribution increases both the boundary-layer area and
+      total resistance, indicating delayed near-wall flow recovery.
     </div>
   </div>
 
-  <div class="figure">
-    <img src="/assets/Beyond_Axial.svg" alt="Figure 3">
-    <div class="caption">
-      <em><strong>Figure 3</strong>. Axial velocity contours (<i>V</i><sub>x</sub> / <i>V</i><sub>ship</sub>) around the
-        KCS hull, extracted at <i>y = 0.006</i><i>L</i><sub>pp</sub>, comparing the smooth hull surface and various
-        spatial roughness distribution cases, all sharing the same arithmetic mean roughness height equivalent to the
-        B20% condition.</em>
-    </div>
-    <div class="figure-note">
-      The axial velocity contours show that the spatial distribution of hull roughness
-      alters boundary-layer development and modifies the wake structure. Longitudinally varying
-      roughness patterns lead to noticeable changes in boundary-layer growth and wake deficit
-      formation, whereas uniform or shear-based configurations produce comparatively milder
-      effects. These flow-field modifications underpin the resistance variations observed in
-      the preceding analysis, highlighting the hydrodynamic sensitivity to roughness spatiality.
+  <footer class="site-footer">
+    <div class="footer-signature">
+      <span class="footer-name">
+        Sangseok Han
+      </span>
+
+      <span class="footer-field" data-en="Research portfolio" data-ja="研究ポートフォリオ">
+        Research portfolio
+      </span>
     </div>
 
-    <div class="footer">
-      ← Back to <a href="/publications/">Publications</a>
-    </div>
+    <a class="footer-top" href="#top">
+      <span data-en="Back to top" data-ja="ページ上部へ">
+        Back to top
+      </span>
 
+      <span class="footer-top-arrow" aria-hidden="true">
+        ↑
+      </span>
+    </a>
+  </footer>
 </body>
 
 </html>

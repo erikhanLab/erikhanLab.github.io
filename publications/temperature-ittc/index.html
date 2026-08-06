@@ -26,6 +26,8 @@
     })(window, document, 'script', 'dataLayer', 'GTM-5MMRV373');</script>
   <!-- End Google Tag Manager -->
 
+  <link rel="stylesheet" href="/assets/css/site-shell.css?v=1">
+
   <style>
     :root {
       --accent-dark: #0B1F3A;
@@ -33,27 +35,36 @@
       --text-muted: #4A4A4A;
     }
 
-    body {
-      max-width: 780px;
-      margin: 80px auto;
-      padding: 0 20px;
-      font-family: Georgia, serif;
-      background: var(--bg-light);
-      color: #111;
-      line-height: 1.75;
-    }
-
     h1 {
-      font-size: 2.4em;
+      max-width: 850px;
+      margin: 100px auto 18px;
+
+      font-size: clamp(2.2rem, 3.2vw, 2.6rem);
+      font-weight: 400;
+      line-height: 1.18;
+      letter-spacing: 0.02em;
+
       color: var(--accent-dark);
       text-align: center;
-      margin-bottom: 14px;
+      text-wrap: balance;
     }
 
     .top-back {
-      font-size: 0.8em;
-      color: #666;
-      margin-bottom: 24px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      box-sizing: border-box;
+      padding: 16px 44px;
+
+      font-size: 0.88em;
+      line-height: 1.5;
+      color: #444;
+
+      background: var(--bg-light);
+      border-bottom: 1px solid #dde3ec;
     }
 
     .top-back a {
@@ -75,9 +86,11 @@
     }
 
     .authors {
-      text-align: center;
-      font-size: 1.15em;
       margin-bottom: 6px;
+
+      font-size: 1.15em;
+      line-height: 1.7;
+      text-align: center;
     }
 
     .authors sup {
@@ -93,17 +106,19 @@
 
     .affils {
       max-width: 680px;
-      margin: 0 auto 80px auto;
-      text-align: left;
+      margin: 0 auto 80px;
+
       font-size: 0.82em;
-      color: #666;
       line-height: 1.6;
+      color: #666;
+      text-align: left;
     }
 
     .abstract {
       max-width: 780px;
-      margin: 0 auto 80px auto;
+      margin: 0 auto 65px;
       padding-left: 18px;
+
       border-left: 2px solid #e1e4ea;
     }
 
@@ -166,46 +181,36 @@
     }
 
     .figure {
-      margin-bottom: 65px;
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto 70px;
     }
 
     .figure img {
+      display: block;
       width: 100%;
-      margin-bottom: 12px;
+      height: auto;
+      margin: 0 auto 12px;
     }
 
     .caption {
       font-size: 0.9em;
+      line-height: 1.6;
       color: var(--text-muted);
     }
 
-    .footer {
-      text-align: center;
-      font-size: 0.85em;
-      color: #666;
-      margin-top: 70px;
-    }
-
-    .footer a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid #bbb;
-    }
-
-    .footer a:hover {
-      color: var(--accent-dark);
-      border-bottom-color: var(--accent-dark);
-    }
-
     .pub-meta {
-      text-align: center;
-      font-size: 0.82em;
-      color: #666;
-      margin: 80px auto 30px auto;
-      padding-top: 22px;
-      border-top: 1px solid #dde3ec;
       max-width: 520px;
+      margin: 0 auto;
+      padding-top: 20px;
+
+      font-size: 0.82em;
+      line-height: 1.65;
       letter-spacing: 0.02em;
+      text-align: center;
+      color: #666;
+
+      border-top: 1px solid #dde3ec;
     }
 
     .pub-meta strong {
@@ -239,15 +244,19 @@
     }
 
     @media (max-width: 640px) {
-      .affils div {
-        white-space: nowrap;
-      }
 
       h1 {
-        font-size: 1.2em;
-        color: var(--accent-dark);
-        text-align: center;
+        max-width: 96%;
         margin-bottom: 14px;
+
+        font-size: 1.05rem;
+        line-height: 1.25;
+        letter-spacing: -0.018em;
+      }
+
+      .top-back {
+        padding: 12px 18px;
+        font-size: 0.72em;
       }
 
       .meta {
@@ -255,50 +264,71 @@
       }
 
       .authors {
-        font-size: 0.65em;
+        font-size: 0.7em;
+        line-height: 1.65;
       }
 
       .affils {
-        font-size: 0.5em;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        width: 90%;
+        max-width: 100%;
+        margin: 0 auto 55px;
+
+        font-size: 0.6em;
+        line-height: 1.6;
+      }
+
+      .affils div {
         display: block;
+        width: 100%;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       .abstract {
-        margin-top: -40px;
-        font-size: 0.72em;
-        margin-bottom: 0px;
+        margin-top: 0;
+        margin-bottom: 45px;
+
+        font-size: 0.65em;
       }
 
       .section-title {
         font-size: 0.9em;
       }
 
+      .pub-meta {
+        margin: 50px auto 0;
+
+        font-size: 0.6em;
+        line-height: 1.6;
+      }
+
       .figure {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+
         font-size: 0.85em;
       }
 
-      .pub-meta {
-        font-size: 0.6em;
-        line-height: 1.6;
-        margin: 50px auto 20px auto;
-        margin-bottom: -35px;
+      .figure-note {
+        text-align: left;
+        hyphens: none;
       }
     }
   </style>
 </head>
 
-<body>
+<body id="top">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div class="top-back">
+  <nav class="top-back" aria-label="Back navigation">
     ← <a href="/publications/">Back to Publications</a>
-  </div>
+  </nav>
 
   <h1>Temperature-induced errors in ITTC model-ship extrapolation</h1>
 
@@ -363,14 +393,15 @@
   <div class="pub-meta">
     Published in <em>Journal of Marine Science and Engineering</em> (2025, Q2, IF 2.8)<br>
     DOI: <strong>
-      <a href="https://doi.org/10.3390/jmse13071203" target="_blank">
+      <a href="https://doi.org/10.3390/jmse13071203" target="_blank" rel="noopener noreferrer">
         10.3390/jmse13071203
       </a>
     </strong><br>
     Open Access (MDPI)<br>
     <span style="font-style: italic;">
       Research highlight featured by
-      <a href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/" target="_blank">
+      <a href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/" target="_blank"
+        rel="noopener noreferrer">
         University of Strathclyde
       </a>
     </span>
@@ -424,9 +455,29 @@
       modelling.
     </div>
 
-    <div class="footer">
-      ← Back to <a href="/publications/">Publications</a>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-signature">
+      <span class="footer-name">
+        Sangseok Han
+      </span>
+
+      <span class="footer-field" data-en="Research portfolio" data-ja="研究ポートフォリオ">
+        Research portfolio
+      </span>
     </div>
+
+    <a class="footer-top" href="#top">
+      <span data-en="Back to top" data-ja="ページ上部へ">
+        Back to top
+      </span>
+
+      <span class="footer-top-arrow" aria-hidden="true">
+        ↑
+      </span>
+    </a>
+  </footer>
 
 </body>
 

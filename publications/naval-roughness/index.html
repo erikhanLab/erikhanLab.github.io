@@ -4,27 +4,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Resistance and speed penalty of a naval ship with hull roughness</title>
-  <link rel="canonical" href="https://sangseokhan.com/publications/naval-roughness/" />
+
+  <link rel="canonical" href="https://sangseokhan.com/publications/naval-roughness/">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
 
-  <meta property="og:title" content="Abstract | Sangseok Han">
-  <meta property="og:description" content="Abstract and selected figures from a peer-reviewed study">
+  <meta property="og:title"
+    content="Resistance and speed penalty of a naval ship with hull roughness | Sangseok Han">
+  <meta property="og:description"
+    content="Abstract and selected figures from a peer-reviewed study on hull roughness effects on naval ship resistance and speed.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sangseokhan.com/publications/naval-roughness/">
   <meta property="og:site_name" content="Sangseok Han — Publications">
   <meta property="og:image" content="https://sangseokhan.com/assets/thumbnail.png">
 
   <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-5MMRV373');</script>
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l !== 'dataLayer' ? '&l=' + l : '';
+
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5MMRV373');
+  </script>
   <!-- End Google Tag Manager -->
+
+  <link rel="stylesheet" href="/assets/css/site-shell.css?v=1">
 
   <style>
     :root {
@@ -33,27 +48,36 @@
       --text-muted: #4A4A4A;
     }
 
-    body {
-      max-width: 780px;
-      margin: 80px auto;
-      padding: 0 20px;
-      font-family: Georgia, serif;
-      background: var(--bg-light);
-      color: #111;
-      line-height: 1.75;
-    }
-
     h1 {
-      font-size: 2.4em;
+      max-width: 850px;
+      margin: 100px auto 18px;
+
+      font-size: clamp(2.2rem, 3.2vw, 2.6rem);
+      font-weight: 400;
+      line-height: 1.18;
+      letter-spacing: 0.02em;
+
       color: var(--accent-dark);
       text-align: center;
-      margin-bottom: 14px;
+      text-wrap: balance;
     }
 
     .top-back {
-      font-size: 0.8em;
-      color: #666;
-      margin-bottom: 24px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      box-sizing: border-box;
+      padding: 16px 44px;
+
+      font-size: 0.88em;
+      line-height: 1.5;
+      color: #444;
+
+      background: var(--bg-light);
+      border-bottom: 1px solid #dde3ec;
     }
 
     .top-back a {
@@ -68,16 +92,19 @@
     }
 
     .meta {
-      text-align: center;
+      margin-bottom: 22px;
+
       font-size: 1em;
       color: #555;
-      margin-bottom: 22px;
+      text-align: center;
     }
 
     .authors {
-      text-align: center;
-      font-size: 1.15em;
       margin-bottom: 6px;
+
+      font-size: 1.15em;
+      line-height: 1.7;
+      text-align: center;
     }
 
     .authors sup {
@@ -93,34 +120,37 @@
 
     .affils {
       max-width: 680px;
-      margin: 0 auto 80px auto;
-      text-align: left;
+      margin: 0 auto 80px;
+
       font-size: 0.82em;
-      color: #666;
       line-height: 1.6;
+      color: #666;
+      text-align: left;
     }
 
     .abstract {
       max-width: 780px;
-      margin: 0 auto 80px auto;
+      margin: 0 auto 65px;
       padding-left: 18px;
+
       border-left: 2px solid #e1e4ea;
     }
 
-
     .abstract h2 {
+      margin-bottom: 12px;
+
       font-size: 1.05em;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--accent-dark);
-      margin-bottom: 12px;
     }
 
     .abstract p {
+      margin-bottom: 1.2em;
+
+      font-size: 0.98em;
       text-align: justify;
       hyphens: auto;
-      margin-bottom: 1.2em;
-      font-size: 0.98em;
     }
 
     .abstract p:first-of-type {
@@ -128,85 +158,32 @@
       color: #222;
     }
 
-    .links {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .links a {
-      display: inline-block;
-      margin: 0 8px;
-      padding: 6px 16px;
-      font-size: 0.88em;
-      text-decoration: none;
-      border: 1px solid #222;
-      color: #111;
-    }
-
-    .links a:hover {
-      background: #111;
-      color: #fff;
-    }
-
     .section-title {
+      margin: 80px auto 30px;
+      padding-top: 22px;
+
       font-size: 1.05em;
       font-weight: normal;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--accent-dark);
-      margin-bottom: 30px;
       text-align: center;
+      color: var(--accent-dark);
+
       border-top: 1px solid #dde3ec;
-      margin: 80px auto 30px auto;
-      padding-top: 22px;
-    }
-
-    .sub {
-      font-size: 0.75em;
-      vertical-align: -0.3em;
-    }
-
-    .figure {
-      margin-bottom: 65px;
-    }
-
-    .figure img {
-      width: 100%;
-      margin-bottom: 12px;
-    }
-
-    .caption {
-      font-size: 0.9em;
-      color: var(--text-muted);
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 0.85em;
-      color: #666;
-      margin-top: 70px;
-    }
-
-    .footer a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid #bbb;
-    }
-
-    .footer a:hover {
-      color: var(--accent-dark);
-      border-bottom-color: var(--accent-dark);
     }
 
     .pub-meta {
-      text-align: center;
-      font-size: 0.82em;
-      color: #666;
-      margin: 80px auto 30px auto;
-      padding-top: 22px;
-      border-top: 1px solid #dde3ec;
       max-width: 520px;
+      margin: 0 auto;
+      padding-top: 20px;
+
+      font-size: 0.82em;
+      line-height: 1.65;
       letter-spacing: 0.02em;
+      text-align: center;
+      color: #666;
+
+      border-top: 1px solid #dde3ec;
     }
 
     .pub-meta strong {
@@ -225,30 +202,54 @@
       border-bottom-color: var(--accent-dark);
     }
 
-    .figure-note {
-      font-size: 0.88em;
-      color: #555;
-      max-width: 720px;
-      margin: 18px auto 0 auto;
-      padding: 14px 18px;
-      background: #f1f4f8;
-      border-left: 3px solid #c9d3e3;
+    .figure {
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto 70px;
+    }
+
+    .figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 12px;
+    }
+
+    .caption {
+      font-size: 0.9em;
       line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .figure-note {
+      max-width: 720px;
+      margin: 18px auto 0;
+      padding: 14px 18px;
+
+      font-size: 0.88em;
+      line-height: 1.6;
+      color: #555;
       text-align: justify;
       text-justify: inter-word;
       hyphens: auto;
+
+      background: #f1f4f8;
+      border-left: 3px solid #c9d3e3;
     }
 
     @media (max-width: 640px) {
-      .affils div {
-        white-space: nowrap;
+      h1 {
+        max-width: 96%;
+        margin-bottom: 14px;
+
+        font-size: 1.05rem;
+        line-height: 1.25;
+        letter-spacing: -0.018em;
       }
 
-      h1 {
-        font-size: 1.2em;
-        color: var(--accent-dark);
-        text-align: center;
-        margin-bottom: 14px;
+      .top-back {
+        padding: 12px 18px;
+        font-size: 0.72em;
       }
 
       .meta {
@@ -256,50 +257,77 @@
       }
 
       .authors {
-        font-size: 0.65em;
+        font-size: 0.7em;
+        line-height: 1.65;
       }
 
       .affils {
-        font-size: 0.5em;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        width: 90%;
+        max-width: 100%;
+        margin: 0 auto 55px;
+
+        font-size: 0.6em;
+        line-height: 1.6;
+      }
+
+      .affils div {
         display: block;
+        width: 100%;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       .abstract {
-        margin-top: -40px;
-        font-size: 0.72em;
-        margin-bottom: 0px;
+        margin-top: 0;
+        margin-bottom: 45px;
+
+        font-size: 0.65em;
       }
 
       .section-title {
         font-size: 0.9em;
       }
 
+      .pub-meta {
+        margin: 50px auto 0;
+
+        font-size: 0.6em;
+        line-height: 1.6;
+      }
+
       .figure {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+
         font-size: 0.85em;
       }
 
-      .pub-meta {
-        font-size: 0.6em;
-        line-height: 1.6;
-        margin: 50px auto 20px auto;
-        margin-bottom: -35px;
+      .figure-note {
+        text-align: left;
+        hyphens: none;
       }
     }
   </style>
 </head>
 
-<body>
+<body id="top">
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div class="top-back">
+  <nav class="top-back" aria-label="Back navigation">
     ← <a href="/publications/">Back to Publications</a>
-  </div>
+  </nav>
 
   <h1>Resistance and speed penalty of a naval ship with hull roughness</h1>
 
@@ -319,52 +347,78 @@
   </div>
 
   <div class="affils">
-    <div><sup>1</sup>
-      Department of Naval Architecture & Ocean Engineering, Inha University, Republic of Korea</div>
-    <div><sup>2</sup>
-      Department of Naval Architecture, Ocean and Marine Engineering, University of Strathclyde, the United Kingdom
+    <div>
+      <sup>1</sup>
+      Department of Naval Architecture &amp; Ocean Engineering,
+      Inha University, Republic of Korea
     </div>
-    <div><sup>3</sup>
-      Division of Navigation Convergence Studies, Korea Maritime & Ocean University, Republic of Korea</div>
+
+    <div>
+      <sup>2</sup>
+      Department of Naval Architecture, Ocean and Marine Engineering,
+      University of Strathclyde, the United Kingdom
+    </div>
+
+    <div>
+      <sup>3</sup>
+      Division of Navigation Convergence Studies,
+      Korea Maritime &amp; Ocean University, Republic of Korea
+    </div>
   </div>
 
   <div class="abstract">
     <h2>Abstract</h2>
+
     <p>
-      Hull roughness, attributed to factors such as corrosion, the degradation of marine coatings, and, notably,
-      biofouling colonisation, leads to increased fuel consumption, thus entailing significant environmental and
-      economic penalties. While this issue on commercial ships is well documented in recent studies, the specific
-      impact on the speed of warships has received limited attention.
+      Hull roughness, attributed to factors such as corrosion, the degradation of marine coatings,
+      and, notably, biofouling colonisation, leads to increased fuel consumption, thus entailing
+      significant environmental and economic penalties. While this issue on commercial ships is
+      well documented in recent studies, the specific impact on the speed of warships has received
+      limited attention.
     </p>
+
     <p>
-      To fill this gap, this research quantifies the
-      resistance and power penalties, as well as the speed reduction under various fouling scenarios, and explores
-      the resultant changes in flow characteristics around the hull. For this purpose, full-scale simulations of a
-      naval ship, specifically the DTMB 5415, utilise the unsteady Reynolds Averaged Navier-Stokes (URANS)
-      method. A modified wall function model was incorporated into the numerical model to accurately simulate
-      the effects of surface roughness.
+      To fill this gap, this research quantifies the resistance and power penalties, as well as
+      the speed reduction under various fouling scenarios, and explores the resultant changes in
+      flow characteristics around the hull. For this purpose, full-scale simulations of a naval
+      ship, specifically the DTMB 5415, utilise the unsteady Reynolds-Averaged Navier–Stokes
+      (URANS) method. A modified wall-function model was incorporated into the numerical model
+      to accurately simulate the effects of surface roughness.
     </p>
   </div>
 
   <div class="pub-meta">
     Published in <em>Ocean Engineering</em> (2024, Q1, IF 4.5)<br>
-    DOI: <strong>
-      <a href="https://doi.org/10.1016/j.oceaneng.2024.119058" target="_blank">
+
+    DOI:
+    <strong>
+      <a
+        href="https://doi.org/10.1016/j.oceaneng.2024.119058"
+        target="_blank"
+        rel="noopener noreferrer">
         10.1016/j.oceaneng.2024.119058
       </a>
     </strong><br>
-    Open Access (Elsevier)<br>
+
+    Open Access (Elsevier)
   </div>
 
-  <div class="section-title" style="margin-top:60px">
+  <div class="section-title" style="margin-top: 60px;">
     <strong>Selected Figures</strong>
   </div>
 
   <div class="figure">
-    <img src="/assets/Naval_Abstract.svg" alt="Figure 1">
+    <img
+      src="/assets/Naval_Abstract.svg"
+      alt="Graphical abstract showing the numerical framework for evaluating hull roughness effects on naval ship performance">
+
     <div class="caption">
-      <em><strong>Figure 1</strong>. Diagram illustrating the flow of research.</em>
+      <em>
+        <strong>Figure 1</strong>.
+        Diagram illustrating the flow of research.
+      </em>
     </div>
+
     <div class="figure-note">
       This graphical abstract summarises the numerical framework used to quantify resistance,
       power, and speed penalties induced by hull roughness under various fouling conditions.
@@ -372,32 +426,69 @@
   </div>
 
   <div class="figure">
-    <img src="/assets/Naval_Friction.svg" alt="Figure 2">
+    <img
+      src="/assets/Naval_Friction.svg"
+      alt="Local skin friction coefficient distributions for the smooth and small calcareous fouling conditions">
+
     <div class="caption">
-      <em><strong>Figure 2</strong>. Distribution of local skin friction coefficient for smooth and small calcareous
-        fouling conditions.</em>
+      <em>
+        <strong>Figure 2</strong>.
+        Distribution of the local skin friction coefficient for the smooth and
+        small calcareous fouling conditions.
+      </em>
     </div>
+
     <div class="figure-note">
-      The presence of small calcareous fouling leads to a pronounced increase in the local skin friction coefficient
-      over the hull surface. This behaviour highlights the critical role of roughness-induced turbulence in driving
-      resistance penalties.
+      The presence of small calcareous fouling leads to a pronounced increase in the local
+      skin friction coefficient over the hull surface. This behaviour highlights the critical
+      role of roughness-induced turbulence in driving resistance penalties.
     </div>
   </div>
 
   <div class="figure">
-    <img src="/assets/Naval_Result.svg" alt="Figure 3">
+    <img
+      src="/assets/Naval_Result.svg"
+      alt="Full-scale total resistance coefficient of the DTMB 5415 under different hull conditions">
+
     <div class="caption">
-      <em><strong>Figure 3</strong>. Total resistance coefficient of DTMB 5415 with different hull conditions at
-        full-scale.</em>
-    </div>
-    <div class="figure-note">
-      Hull fouling leads to a systematic increase in resistance, with heavier fouling exhibiting progressively larger
-      penalties compared to the smooth hull.
-    </div>
-    <div class="footer">
-      ← Back to <a href="/publications/">Publications</a>
+      <em>
+        <strong>Figure 3</strong>.
+        Full-scale total resistance coefficient of the DTMB 5415 under different hull conditions.
+      </em>
     </div>
 
+    <div class="figure-note">
+      Hull fouling leads to a systematic increase in resistance, with heavier fouling conditions
+      producing progressively larger penalties relative to the smooth hull.
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-signature">
+      <span class="footer-name">
+        Sangseok Han
+      </span>
+
+      <span
+        class="footer-field"
+        data-en="Research portfolio"
+        data-ja="研究ポートフォリオ">
+        Research portfolio
+      </span>
+    </div>
+
+    <a class="footer-top" href="#top">
+      <span
+        data-en="Back to top"
+        data-ja="ページ上部へ">
+        Back to top
+      </span>
+
+      <span class="footer-top-arrow" aria-hidden="true">
+        ↑
+      </span>
+    </a>
+  </footer>
 </body>
 
 </html>
