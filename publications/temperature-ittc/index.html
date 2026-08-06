@@ -39,7 +39,7 @@
       max-width: 850px;
       margin: 100px auto 18px;
 
-      font-size: clamp(2.2rem, 3.2vw, 2.6rem);
+      font-size: clamp(2.0rem, 3.2vw, 2.2rem);
       font-weight: 400;
       line-height: 1.18;
       letter-spacing: 0.02em;
@@ -57,7 +57,8 @@
       z-index: 1000;
 
       box-sizing: border-box;
-      padding: 16px 44px;
+      padding-block: 16px;
+      padding-inline: max(28px, calc((100vw - 850px) / 2));
 
       font-size: 0.88em;
       line-height: 1.5;
@@ -247,16 +248,17 @@
 
       h1 {
         max-width: 96%;
+        margin-top: 80px;
         margin-bottom: 14px;
-
-        font-size: 1.05rem;
+        font-size: 1.2rem;
         line-height: 1.25;
         letter-spacing: -0.018em;
       }
 
       .top-back {
-        padding: 12px 18px;
+        padding: 20px 18px;
         font-size: 0.72em;
+        line-height: 1.5;
       }
 
       .meta {
@@ -271,8 +273,8 @@
       .affils {
         width: 90%;
         max-width: 100%;
-        margin: 0 auto 55px;
-
+        margin-bottom: 30px;
+        margin-left: 20px;
         font-size: 0.6em;
         line-height: 1.6;
       }

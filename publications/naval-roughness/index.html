@@ -10,8 +10,7 @@
   <link rel="canonical" href="https://sangseokhan.com/publications/naval-roughness/">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
 
-  <meta property="og:title"
-    content="Resistance and speed penalty of a naval ship with hull roughness | Sangseok Han">
+  <meta property="og:title" content="Resistance and speed penalty of a naval ship with hull roughness | Sangseok Han">
   <meta property="og:description"
     content="Abstract and selected figures from a peer-reviewed study on hull roughness effects on naval ship resistance and speed.">
   <meta property="og:type" content="website">
@@ -52,7 +51,7 @@
       max-width: 850px;
       margin: 100px auto 18px;
 
-      font-size: clamp(2.2rem, 3.2vw, 2.6rem);
+      font-size: clamp(2.0rem, 3.2vw, 2.2rem);
       font-weight: 400;
       line-height: 1.18;
       letter-spacing: 0.02em;
@@ -70,7 +69,8 @@
       z-index: 1000;
 
       box-sizing: border-box;
-      padding: 16px 44px;
+      padding-block: 16px;
+      padding-inline: max(28px, calc((100vw - 850px) / 2));
 
       font-size: 0.88em;
       line-height: 1.5;
@@ -240,16 +240,17 @@
     @media (max-width: 640px) {
       h1 {
         max-width: 96%;
+        margin-top: 80px;
         margin-bottom: 14px;
-
-        font-size: 1.05rem;
+        font-size: 1.2rem;
         line-height: 1.25;
         letter-spacing: -0.018em;
       }
 
       .top-back {
-        padding: 12px 18px;
+        padding: 20px 18px;
         font-size: 0.72em;
+        line-height: 1.5;
       }
 
       .meta {
@@ -264,8 +265,8 @@
       .affils {
         width: 90%;
         max-width: 100%;
-        margin: 0 auto 55px;
-
+        margin-bottom: 30px;
+        margin-left: 20px;
         font-size: 0.6em;
         line-height: 1.6;
       }
@@ -316,10 +317,7 @@
 <body id="top">
   <!-- Google Tag Manager (noscript) -->
   <noscript>
-    <iframe
-      src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373"
-      height="0"
-      width="0"
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
       style="display:none;visibility:hidden">
     </iframe>
   </noscript>
@@ -392,10 +390,7 @@
 
     DOI:
     <strong>
-      <a
-        href="https://doi.org/10.1016/j.oceaneng.2024.119058"
-        target="_blank"
-        rel="noopener noreferrer">
+      <a href="https://doi.org/10.1016/j.oceaneng.2024.119058" target="_blank" rel="noopener noreferrer">
         10.1016/j.oceaneng.2024.119058
       </a>
     </strong><br>
@@ -408,8 +403,7 @@
   </div>
 
   <div class="figure">
-    <img
-      src="/assets/Naval_Abstract.svg"
+    <img src="/assets/Naval_Abstract.svg"
       alt="Graphical abstract showing the numerical framework for evaluating hull roughness effects on naval ship performance">
 
     <div class="caption">
@@ -426,8 +420,7 @@
   </div>
 
   <div class="figure">
-    <img
-      src="/assets/Naval_Friction.svg"
+    <img src="/assets/Naval_Friction.svg"
       alt="Local skin friction coefficient distributions for the smooth and small calcareous fouling conditions">
 
     <div class="caption">
@@ -446,8 +439,7 @@
   </div>
 
   <div class="figure">
-    <img
-      src="/assets/Naval_Result.svg"
+    <img src="/assets/Naval_Result.svg"
       alt="Full-scale total resistance coefficient of the DTMB 5415 under different hull conditions">
 
     <div class="caption">
@@ -469,18 +461,13 @@
         Sangseok Han
       </span>
 
-      <span
-        class="footer-field"
-        data-en="Research portfolio"
-        data-ja="研究ポートフォリオ">
+      <span class="footer-field" data-en="Research portfolio" data-ja="研究ポートフォリオ">
         Research portfolio
       </span>
     </div>
 
     <a class="footer-top" href="#top">
-      <span
-        data-en="Back to top"
-        data-ja="ページ上部へ">
+      <span data-en="Back to top" data-ja="ページ上部へ">
         Back to top
       </span>
 
