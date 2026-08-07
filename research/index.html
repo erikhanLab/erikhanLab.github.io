@@ -246,17 +246,17 @@
     }
 
     .current-project-period {
-      margin-right: 0;
+      margin-right: 5px;
       padding-top: 3px;
 
-      font-size: 0.68em;
+      font-size: 0.75em;
       line-height: 1.45;
       letter-spacing: 0.025em;
       white-space: nowrap;
       font-style: normal;
       font-variant-numeric: tabular-nums;
 
-      color: rgba(70, 82, 98, 0.42);
+      color: rgba(70, 82, 98, 0.62);
     }
 
     .current-project h2 {
@@ -414,7 +414,7 @@
     .rt-stage {
       font-size: 0.83em;
       font-weight: 500;
-      
+
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: #0B2545;
@@ -736,7 +736,7 @@
       bottom: 0;
       z-index: 0;
 
-      width: 35%;
+      width: 45%;
       height: 1px;
 
       background: rgba(11, 31, 58, 0.065);
@@ -773,6 +773,18 @@
 
     .research-links a+a {
       border-left: 0;
+    }
+
+    .research-affiliation-note {
+      max-width: 620px;
+      margin: -6px 0 18px;
+
+      font-size: 0.8em;
+      font-style: italic;
+      line-height: 1.55;
+      letter-spacing: 0.025em;
+
+      color: rgba(70, 82, 98, 0.5);
     }
 
     .rt-log-link {
@@ -1399,6 +1411,13 @@
         border-radius: 2px;
       }
 
+      .research-affiliation-note {
+        margin: -10px 0 16px;
+
+        font-size: 0.58em;
+        line-height: 1.5;
+      }
+
       .research-links {
         justify-content: flex-end;
         gap: 6px;
@@ -1407,7 +1426,7 @@
       }
 
       .research-links a {
-        font-size: 0.62em;
+        font-size: 0.7em;
         color: rgba(24, 39, 58, 0.52);
       }
 
@@ -1421,6 +1440,33 @@
       }
 
       @media (max-width: 640px) {
+        .research-links {
+          display: flex;
+          align-items: center;
+        }
+
+        .research-links a {
+          display: inline-flex;
+          align-items: center;
+
+          padding-top: 0;
+          padding-bottom: 0;
+
+          line-height: 1;
+        }
+
+        .research-links a .mobile {
+          display: block;
+          line-height: 1;
+        }
+
+        .research-links-separator {
+          display: block;
+
+          line-height: 1;
+          transform: none;
+        }
+
         .research-contact-cta {
           display: flex;
           align-items: baseline;
@@ -1723,7 +1769,7 @@
           </div>
         </article>
 
-                <article class="current-project">
+        <article class="current-project">
 
           <figure class="current-project-figure current-project-figure--pending">
             <figcaption class="current-project-pending-note" data-en="Manuscript in preparation" data-ja="原稿準備中">
@@ -1783,8 +1829,8 @@
 
                     <span class="research-network-separator">·</span>
 
-                    <span class="research-network-period" data-en="Jul–Nov 2026" data-ja="2026年7月–11月">
-                      Jul–Nov 2026
+                    <span class="research-network-period" data-en="2026" data-ja="2026">
+                      2026
                     </span>
                   </span>
                 </li>
@@ -1794,7 +1840,7 @@
 
           </div>
         </article>
-        
+
         <article class="current-project">
 
           <figure class="current-project-figure current-project-figure--pending">
@@ -1946,6 +1992,19 @@
           Research Timeline (2023–)
         </span>
       </h2>
+
+      <p class="research-affiliation-note">
+        <span class="desktop" data-en="Affiliation indicates my institution at the time; research location may differ."
+          data-ja="所属は当時の所属機関を示しており、研究の実施場所とは異なる場合があります。">
+          Affiliation indicates my institution at the time; research location may differ.
+        </span>
+
+        <span class="mobile" data-en="Affiliation at the time; location may differ."
+          data-ja="所属は当時のものです。研究場所とは異なる場合があります。">
+          Affiliation at the time; location may differ.
+        </span>
+      </p>
+
       <div class="rt-item" id="year-2026">
         <div class="rt-year">2026</div>
         <div class="rt-body">

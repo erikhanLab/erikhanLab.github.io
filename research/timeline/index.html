@@ -4,12 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="robots" content="noindex">
   <title>Academic Timeline | Sangseok Han</title>
-
   <meta name="description"
     content="A chronological record of academic development, research milestones, and key decisions by Sangseok Han.">
-
+  <meta name="robots" content="noindex">
   <link rel="canonical" href="https://sangseokhan.com/research/timeline/" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
 
@@ -126,7 +125,7 @@
 
       width: fit-content;
 
-      font-size: 0.68em;
+      font-size: 0.8em;
       font-weight: 400;
       line-height: 1.4;
       letter-spacing: 0.09em;
@@ -678,12 +677,12 @@
       .log-back a {
         gap: 6px;
 
-        font-size: 0.62em;
+        font-size: 0.8rem;
         letter-spacing: 0.08em;
       }
 
       .log-back-arrow {
-        font-size: 1.05em;
+        font-size: 0.8rem;
       }
 
       .log-sub {
@@ -734,9 +733,25 @@
         display: block;
 
         margin: 0;
-        padding: 10px 0 5px;
+        padding: 0 0 20px;
 
         border-bottom: 0;
+      }
+
+      .trace-entry:last-child {
+        padding-bottom: 0;
+      }
+
+      .trace-line,
+      .trace-line.is-soft,
+      .trace-line.is-highlight {
+        margin: 0;
+        padding-bottom: 0;
+      }
+
+      .trace-detail {
+        display: block;
+        margin-bottom: 0;
       }
 
       .trace-entry:not(:last-child)::after {
@@ -775,6 +790,7 @@
       .trace-month {
         flex-shrink: 0;
         font-size: 0.73em;
+        margin-top: 5px;
       }
 
       .trace-affiliation {
@@ -791,6 +807,7 @@
         min-width: 0;
         padding-left: 0;
         border-left: 0;
+        margin-top: -5px;
       }
 
       .trace-line,
@@ -804,9 +821,6 @@
         min-width: 0;
         box-sizing: border-box;
 
-        margin: 0 0 9px;
-        padding: 0;
-
         font-size: 0.74em;
         line-height: 1.4;
 
@@ -815,14 +829,8 @@
       }
 
       .trace-line.is-soft {
-        padding: 3px 0 3px 8px;
         border: 0;
         border-left: 1px solid rgba(11, 31, 58, 0.14);
-      }
-
-      .trace-line:last-child,
-      .trace-line.is-soft:last-child {
-        margin-bottom: 0;
       }
 
       .trace-event,
@@ -859,8 +867,6 @@
 
         min-width: 0;
         max-width: 100%;
-        margin: 0;
-        margin-top: 2px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -868,7 +874,7 @@
         color: var(--research-blue);
         opacity: 0.55;
         letter-spacing: 0.02em;
-        font-size: 0.95em;
+        font-size: 0.9em;
         font-style: normal;
         font-weight: 400;
       }
@@ -886,10 +892,6 @@
         width: 100%;
         min-width: 0;
         box-sizing: border-box;
-
-        margin: 3px 0 12px;
-        padding: 4px 0 5px 8px;
-
         background: none;
         border: 0;
         border-left: 1.0px solid rgba(11, 31, 58, 0.65);
@@ -921,9 +923,6 @@
 
         min-width: 0;
         max-width: 100%;
-        margin: 0;
-        margin-top: 5px;
-
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -931,7 +930,7 @@
         color: var(--research-blue);
         opacity: 0.85;
         letter-spacing: 0.02em;
-        font-size: 1em;
+        font-size: 0.9em;
         font-style: normal;
         font-weight: 400;
       }
@@ -945,10 +944,6 @@
         min-width: 0;
         max-width: 100%;
         max-height: none;
-
-        margin: 2px 0 0;
-        padding: 0;
-
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -956,10 +951,10 @@
         color: #535b66;
         opacity: 0.85;
         letter-spacing: 0.01em;
-        font-size: 0.98em;
+        font-size: 0.88em;
         font-style: italic;
         font-weight: 400;
-        line-height: 1.35;
+        line-height: 1.05;
 
         transform: none;
         transition: none;
