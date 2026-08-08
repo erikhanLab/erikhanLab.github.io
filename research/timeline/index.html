@@ -8,7 +8,6 @@
   <title>Academic Timeline | Sangseok Han</title>
   <meta name="description"
     content="A chronological record of academic development, research milestones, and key decisions by Sangseok Han.">
-  <meta name="robots" content="noindex">
   <link rel="canonical" href="https://sangseokhan.com/research/timeline/" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
 
@@ -578,6 +577,23 @@
       background: rgba(11, 31, 58, 0.18);
     }
 
+    .signal-count {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      min-width: 58px;
+      height: 8px;
+
+      font-size: 0.85em;
+      line-height: 1;
+      font-weight: 400;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.02em;
+
+      color: rgba(11, 31, 58, 0.72);
+    }
+
     .signal-month-title {
       margin-top: 20px;
       margin-bottom: 10px;
@@ -625,7 +641,7 @@
       letter-spacing: 0.02em;
     }
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1520px) {
       .timeline-layout {
         display: block;
         width: 100%;
@@ -1038,7 +1054,8 @@
     </div>
 
     <div class="year-tabs">
-      <span class="active" onclick="showYear('y2026', this)">2026</span>
+      <span class="active" onclick="showAllYears(this)">All</span>
+      <span onclick="showYear('y2026', this)">2026</span>
       <span onclick="showYear('y2025', this)">2025</span>
       <span onclick="showYear('y2024', this)">2024</span>
       <span onclick="showYear('y2023', this)">2023</span>
@@ -1987,6 +2004,50 @@
 
     <script>
       const TIMELINE_SIGNALS = {
+        all: {
+          year: "2021–2026",
+          note: {
+            en: [
+              "Academic Development",
+              "Research Milestones"
+            ],
+            ja: [
+              "学術的発展",
+              "研究上の主要な歩み"
+            ]
+          },
+          rows: [
+            {
+              label: {
+                en: "Journal articles",
+                ja: "学術論文"
+              },
+              count: 4
+            },
+            {
+              label: {
+                en: "Scholarly presentations",
+                ja: "学会発表"
+              },
+              count: 7
+            },
+            {
+              label: {
+                en: "Research appointments & visits",
+                ja: "研究職・研究訪問"
+              },
+              count: 2
+            },
+            {
+              label: {
+                en: "Awards & recognition",
+                ja: "受賞・評価"
+              },
+              count: 9
+            }
+          ]
+        },
+
         y2026: {
           year: "2026",
           note: {
@@ -2316,20 +2377,51 @@
               ? `${label} ${row.count}件`
               : `${row.count} ${label}`;
 
-          return `
-        <div class="signal-row">
-          <span class="signal-label">
-            ${label}
-          </span>
-
-          <span
-            class="signal-blocks"
-            aria-label="${countLabel}">
-            ${createSignalBlocks(row.count, row.soft)}
-          </span>
-        </div>
+          const signalValue =
+            id === "all"
+              ? `
+        <span
+          class="signal-count"
+          aria-label="${countLabel}">
+          ${row.count}
+        </span>
+      `
+              : `
+        <span
+          class="signal-blocks"
+          aria-label="${countLabel}">
+          ${createSignalBlocks(row.count, row.soft)}
+        </span>
       `;
+
+          return `
+    <div class="signal-row">
+      <span class="signal-label">
+        ${label}
+      </span>
+
+      ${signalValue}
+    </div>
+  `;
         }).join("");
+      }
+
+      function showAllYears(el) {
+        document
+          .querySelectorAll(".year-section")
+          .forEach(section => {
+            section.classList.add("active");
+          });
+
+        document
+          .querySelectorAll(".year-tabs span")
+          .forEach(tab => {
+            tab.classList.remove("active");
+          });
+
+        el.classList.add("active");
+
+        updateTimelineSignals("all");
       }
 
       function showYear(id, el) {
@@ -2420,9 +2512,14 @@
               : "Timeline navigation"
           );
 
-        const activeYear =
-          document.querySelector(".year-section.active")?.id
-          || "y2026";
+        const isAllActive =
+          document
+            .querySelector(".year-tabs span:first-child")
+            ?.classList.contains("active");
+
+        const activeYear = isAllActive
+          ? "all"
+          : document.querySelector(".year-section.active")?.id || "y2026";
 
         updateTimelineSignals(activeYear);
       }
@@ -2443,6 +2540,9 @@
         "DOMContentLoaded",
         () => {
           applyLang(getSessionLang());
+          showAllYears(
+            document.querySelector(".year-tabs span:first-child")
+          );
 
           document
             .querySelectorAll(".trace-line[tabindex]")
