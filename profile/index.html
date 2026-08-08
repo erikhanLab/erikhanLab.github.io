@@ -950,32 +950,37 @@
     }
 
     .month-block.aff-inha {
-      background: rgba(83, 131, 165, 0.2);
-      border-color: rgba(112, 149, 174, 0.10);
+      background: rgba(38, 152, 194, 0.30);
+      border-color: rgba(38, 152, 194, 0.20);
       box-shadow: none;
     }
 
     .month-block.aff-strathclyde {
-      background: rgba(86, 124, 173, 0.58);
-      border-color: rgba(67, 103, 150, 0.18);
+      background: rgba(153, 123, 1, 0.30);
+      border-color: rgba(153, 123, 1, 0.20);
       box-shadow: none;
     }
 
     .month-block.aff-osaka {
-      background: rgba(103, 137, 119, 0.32);
-      border-color: rgba(77, 111, 94, 0.13);
+      background: rgba(46, 60, 158, 0.30);
+      border-color: rgba(46, 60, 158, 0.20);
       box-shadow: none;
     }
 
     .month-block.aff-snu {
-      background: rgba(116, 91, 101, 0.34);
-      border-color: rgba(94, 70, 80, 0.12);
+      background: rgba(0, 40, 111, 0.48);
+      border-color: rgba(0, 40, 111, 0.28);
       box-shadow: none;
     }
 
+
     .month-block.aff-snu.is-planned {
-      background: rgba(116, 91, 101, 0.1);
-      border-color: rgba(94, 70, 80, 0.08);
+      background: rgba(0, 40, 111, 0.16);
+      border-color: rgba(0, 40, 111, 0.12);
+    }
+
+    .timeline-legend-mark.aff-snu {
+      background: #00286F;
     }
 
     .month-block.is-current-month {
@@ -1014,19 +1019,19 @@
     }
 
     .timeline-legend-mark.aff-inha {
-      background: rgba(83, 131, 165, 0.62);
+      background: #2698C2;
     }
 
     .timeline-legend-mark.aff-strathclyde {
-      background: rgba(86, 124, 173, 0.82);
+      background: #997B01;
     }
 
     .timeline-legend-mark.aff-osaka {
-      background: rgba(103, 137, 119, 0.7);
+      background: #2E3C9E;
     }
 
     .timeline-legend-mark.aff-snu {
-      background: rgba(116, 91, 101, 0.72);
+      background: #012F86;
     }
 
     #affiliations .affiliation-item,
@@ -1097,8 +1102,8 @@
 
     #affiliations .month-block {
       transition:
-        background-color 0.92s cubic-bezier(0.22, 1, 0.36, 1),
-        border-color 0.92s cubic-bezier(0.22, 1, 0.36, 1);
+        background-color 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.32s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     #affiliations.is-affiliation-focused .month-block:not(.is-active) {
@@ -1120,9 +1125,10 @@
 
     #affiliations .timeline-legend-mark {
       box-sizing: border-box;
+
       transition:
-        background-color 0.92s cubic-bezier(0.22, 1, 0.36, 1),
-        border-color 0.92s cubic-bezier(0.22, 1, 0.36, 1);
+        background-color 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.32s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     #affiliations .timeline-legend:hover .timeline-legend-item {
