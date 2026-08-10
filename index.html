@@ -81,7 +81,7 @@
 
     body {
       width: 100%;
-      max-width: 900px;
+      max-width: 850px;
       box-sizing: border-box;
 
       margin: 0 auto;
@@ -622,7 +622,7 @@
 
       font-size: 0.93em;
       line-height: 1.4;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.01em;
 
       color: var(--ink);
       opacity: 0.8;
@@ -771,6 +771,269 @@
       text-align: right;
 
       color: rgba(100, 116, 139, 0.56);
+    }
+
+    .home-research-rail {
+      position: fixed;
+      top: 50%;
+      left: calc(50% + 480px);
+
+      width: 310px;
+      box-sizing: border-box;
+
+      padding-left: 22px;
+
+      transform: translateY(-46%);
+    }
+
+    .home-research-rail::before {
+      content: "";
+
+      position: absolute;
+      top: -16px;
+      bottom: -16px;
+      left: 0;
+
+      width: 1px;
+
+      background:
+        linear-gradient(to bottom,
+          rgba(11, 31, 58, 0),
+          rgba(11, 31, 58, 0.1) 12%,
+          rgba(11, 31, 58, 0.1) 88%,
+          rgba(11, 31, 58, 0));
+    }
+
+    .home-rail-section+.home-rail-section {
+      margin-top: 20px;
+      padding-top: 17px;
+
+      border-top:
+        1px solid rgba(11, 31, 58, 0.07);
+    }
+
+    .home-rail-heading {
+      display: block;
+
+      margin-bottom: 8px;
+
+      font-size: 0.68em;
+      line-height: 1.4;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      color: rgba(11, 31, 58, 0.86);
+    }
+
+    .home-rail-links {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .home-rail-update-title {
+      display: block;
+
+      color: rgba(38, 51, 68, 0.82);
+    }
+
+    .home-rail-update-meta {
+      display: block;
+
+      margin-top: 2px;
+      font-size: 0.87em;
+      line-height: 1.4;
+      margin-left: 40px;
+      color: rgba(71, 85, 105, 0.58);
+      text-align: right;
+    }
+
+    .home-rail-update-meta.is-journal {
+      font-style: italic;
+    }
+
+    .home-rail-links a,
+    .home-rail-enquiry {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: baseline;
+      gap: 8px;
+
+      color: rgba(11, 31, 58, 0.56);
+      text-decoration: none;
+    }
+
+    .home-rail-links a {
+      position: relative;
+
+      padding-left: 13px;
+
+      font-size: 0.68em;
+      line-height: 1.4;
+    }
+
+    .home-rail-links a::before {
+      content: "";
+
+      position: absolute;
+      left: 1px;
+      top: 0.58em;
+
+      width: 3px;
+      height: 3px;
+
+      border-radius: 50%;
+      background: rgba(11, 31, 58, 0.48);
+
+      transition:
+        background 0.18s ease,
+        transform 0.18s ease;
+    }
+
+    .home-rail-links a>span:last-child,
+    .home-rail-enquiry>span:last-child {
+      opacity: 0.36;
+
+      transition:
+        opacity 0.18s ease,
+        transform 0.22s ease;
+    }
+
+    .home-rail-update {
+      position: relative;
+      display: block;
+
+      margin-top: 8px;
+      padding-left: 13px;
+
+      font-size: 0.73em;
+      line-height: 1.5;
+
+      color: rgba(71, 85, 105, 0.82);
+      text-decoration: none;
+    }
+
+    .home-rail-update::before {
+      content: "";
+
+      position: absolute;
+      left: 1px;
+      top: 0.58em;
+
+      width: 3px;
+      height: 3px;
+
+      border-radius: 50%;
+      background: rgba(11, 31, 58, 0.48);
+
+      transition:
+        background 0.18s ease,
+        transform 0.18s ease;
+    }
+
+
+    @media (hover: hover) and (pointer: fine) {
+
+      .home-rail-update:hover::before,
+      .home-rail-links a:hover::before {
+        background: rgba(11, 31, 58, 0.78);
+        transform: scale(1.18);
+      }
+    }
+
+    .home-rail-update time {
+      display: block;
+
+      margin-bottom: 3px;
+
+      font-size: 0.9em;
+      letter-spacing: 0.07em;
+
+      color: rgba(11, 31, 58, 0.48);
+    }
+
+    .home-rail-open p {
+      margin: 0 0 7px;
+
+      font-size: 0.63em;
+      line-height: 1.5;
+      font-style: italic;
+      color: rgba(71, 85, 105, 0.58);
+    }
+
+    .home-rail-enquiry {
+      width: fit-content;
+      margin-left: auto;
+
+      font-size: 0.68em;
+      line-height: 1.4;
+
+      color: rgba(11, 31, 58, 0.58);
+    }
+
+    .home-rail-heading-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+
+      margin-bottom: 8px;
+    }
+
+    .home-rail-heading-row .home-rail-heading {
+      margin-bottom: 0;
+    }
+
+    .home-rail-timeline-link {
+      font-size: 0.58em;
+      line-height: 1.4;
+      letter-spacing: 0.05em;
+
+      color: rgba(11, 31, 58, 0.38);
+      text-decoration: none;
+
+      transition: color 0.18s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .home-rail-timeline-link:hover {
+        color: rgba(11, 31, 58, 0.76);
+      }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+
+      .home-rail-links a:hover,
+      .home-rail-update:hover,
+      .home-rail-enquiry:hover {
+        color: rgba(11, 31, 58, 0.9);
+      }
+
+      .home-rail-links a:hover>span:last-child,
+      .home-rail-enquiry:hover>span:last-child {
+        opacity: 0.78;
+        transform: translateX(2px);
+      }
+    }
+
+    @media (max-width: 1550px) {
+      .home-research-rail {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1551px) {
+      .page-content {
+        transform: translate(-30px, 6px);
+      }
+
+      .page-content.loaded {
+        transform: translate(-30px, 0);
+      }
+
+      .home-research-rail {
+        left: calc(50% + 420px);
+      }
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -1019,6 +1282,79 @@
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
+  <aside class="home-research-rail" aria-label="Research overview">
+    <div class="home-rail-section">
+
+      <span class="home-rail-heading" data-en="Ongoing Research" data-ja="進行中の研究">
+        Ongoing Research
+      </span>
+
+      <nav class="home-rail-links">
+
+        <a href="/research/#spatial-hull-roughness">
+          <span data-en="Spatial Hull Roughness" data-ja="船体粗さの空間分布">
+            Spatial Hull Roughness
+          </span>
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <a href="/research/#added-resistance">
+          <span data-en="Added Resistance in Waves" data-ja="波浪中付加抵抗">
+            Added Resistance in Waves
+          </span>
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <a href="/research/#cfd-mbd">
+          <span data-en="CFD–MBD / Wave Energy" data-ja="CFD–MBD・波力エネルギー">
+            CFD–MBD / Wave Energy
+          </span>
+
+          <span aria-hidden="true">→</span>
+        </a>
+
+      </nav>
+
+    </div>
+
+    <div class="home-rail-section home-rail-recent">
+
+      <div class="home-rail-heading-row">
+        <span class="home-rail-heading" data-en="Recent" data-ja="最近">
+          Recent
+        </span>
+
+        <a class="home-rail-timeline-link" href="/research/timeline/" data-en="Timeline" data-ja="年表">
+          Timeline
+        </a>
+      </div>
+
+      <div id="home-rail-recent-feed"></div>
+
+    </div>
+
+    <div class="home-rail-section home-rail-open">
+
+      <span class="home-rail-heading" data-en="Contact" data-ja="連絡">
+        Contact
+      </span>
+
+      <p data-en="For research-related enquiries and academic exchange." data-ja="研究に関するお問い合わせや学術交流について。">
+        For research-related enquiries and academic exchange.
+      </p>
+
+      <a class="home-rail-enquiry" href="/contact/">
+        <span data-en="Enquiries" data-ja="お問い合わせ">
+          Enquiries
+        </span>
+
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </div>
+
+  </aside>
+
   <div class="page-content">
     <header class="header">
       <div class="header-row">
@@ -1143,24 +1479,24 @@
       </div>
 
       <div class="recent-work">
-        <span class="recent-label" data-en="Recent Work" data-ja="最新の論文">
-          Recent Work
+        <span class="recent-label" data-en="Featured Work" data-ja="注目の研究">
+          Featured Work
         </span>
 
         <div class="recent-entry">
-          <a class="recent-main-link" href="/publications/spatial-variability/">
+          <a class="recent-main-link" href="/publications/beyond-resistance/">
             <span class="recent-title">
-              Beyond uniform roughness: Spatial variability of hull roughness and implications for single-parameter
-              representation </span>
+              Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface conditions </span>
           </a>
 
           <span class="recent-citation">
             <span class="desktop-only">
-              <span class="recent-author">S. Han</span>
+              <span class="recent-author">S. Han*</span>,
+              H. Lee, S. Dai &amp; M. Terziev
             </span>
 
             <span class="mobile-only">
-              <span class="recent-author">Han</span>
+              <span class="recent-author">Han</span> et al.
             </span>
 
             <span class="recent-separator">·</span>
@@ -1170,8 +1506,9 @@
             <span class="recent-year-doi">
               <span>2026</span>
 
-              <a class="recent-doi" href="https://doi.org/10.1016/j.oceaneng.2026.127352" target="_blank"
-                rel="noopener noreferrer" aria-label="Open DOI for Beyond uniform roughness">
+              <a class="recent-doi" href="https://doi.org/10.1016/j.oceaneng.2026.124462" target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open DOI for Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface conditions">
                 <span class="recent-doi-label">DOI</span>
               </a>
             </span>
@@ -1276,7 +1613,151 @@
           applyLang(selected);
         });
       });
+      loadRecentTimeline();
     });
+
+    async function loadRecentTimeline() {
+      const container =
+        document.getElementById("home-rail-recent-feed");
+
+      if (!container) return;
+
+      try {
+        const response =
+          await fetch("/research/timeline/");
+
+        if (!response.ok) return;
+
+        const html = await response.text();
+
+        const doc =
+          new DOMParser().parseFromString(
+            html,
+            "text/html"
+          );
+
+        const entries = [
+          ...doc.querySelectorAll(
+            ".year-section .trace-entry"
+          )
+        ];
+
+        const recentEntries =
+          entries.slice(0, 3);
+
+        recentEntries.forEach(entry => {
+          const month =
+            entry.querySelector(".trace-month");
+
+          const firstLine =
+            entry.querySelector(".trace-lines .trace-line");
+
+          if (!month || !firstLine) return;
+
+          const event =
+            firstLine.querySelector(".trace-event");
+
+          const tag =
+            firstLine.querySelector(".trace-tag");
+
+          if (!event) return;
+
+          const detailLink =
+            firstLine.querySelector(".trace-detail a");
+
+          const item =
+            document.createElement(
+              detailLink ? "a" : "div"
+            );
+
+          item.className = "home-rail-update";
+
+          if (detailLink) {
+            item.href =
+              detailLink.getAttribute("href");
+          }
+
+          const time =
+            document.createElement("time");
+
+          time.setAttribute(
+            "data-en",
+            month.getAttribute("data-en") ||
+            month.textContent.trim()
+          );
+
+          time.setAttribute(
+            "data-ja",
+            month.getAttribute("data-ja") ||
+            month.textContent.trim()
+          );
+
+          time.textContent =
+            month.getAttribute("data-en") ||
+            month.textContent.trim();
+
+          const title =
+            document.createElement("span");
+
+          title.className =
+            "home-rail-update-title";
+
+          title.setAttribute(
+            "data-en",
+            event.getAttribute("data-en") ||
+            event.textContent.trim()
+          );
+
+          title.setAttribute(
+            "data-ja",
+            event.getAttribute("data-ja") ||
+            event.textContent.trim()
+          );
+
+          title.textContent =
+            event.getAttribute("data-en") ||
+            event.textContent.trim();
+
+          item.append(time, title);
+
+          if (tag) {
+            const meta =
+              document.createElement("span");
+
+            meta.className =
+              "home-rail-update-meta";
+
+            if (tag.querySelector("em")) {
+              meta.classList.add("is-journal");
+            }
+            const tagEn =
+              tag.getAttribute("data-en") ||
+              tag.textContent.trim();
+
+            const tagJa =
+              tag.getAttribute("data-ja") ||
+              tagEn;
+
+            meta.setAttribute("data-en", tagEn);
+            meta.setAttribute("data-ja", tagJa);
+
+            meta.textContent = tagEn;
+
+            item.append(meta);
+          }
+
+          container.append(item);
+        });
+
+        applyLang(getSessionLang());
+
+      } catch (error) {
+        console.error(
+          "Could not load recent timeline.",
+          error
+        );
+      }
+    }
   </script>
 
 </body>

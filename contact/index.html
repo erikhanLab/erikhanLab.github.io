@@ -250,6 +250,33 @@
                 text-overflow: ellipsis;
                 white-space: nowrap;
             }
+
+            .divider {
+                margin-left: auto;
+                margin-right: 38px;
+            }
+
+            .contact-section--profiles {
+                justify-items: end;
+
+                padding-right: 38px;
+                padding-left: 0;
+
+                text-align: right;
+            }
+
+            .contact-section--profiles .contact-label {
+                margin-right: 0;
+                margin-left: auto;
+
+                text-align: right;
+            }
+
+            .contact-section--profiles .contact-links {
+                justify-content: flex-end;
+
+                text-align: right;
+            }
         }
 
         .contact-visual {
@@ -261,7 +288,7 @@
             align-self: start;
 
             width: 108px;
-            margin: 112px 0 0;
+            margin: 72px 0 0;
 
             opacity: 0.78;
 
@@ -901,6 +928,115 @@
             letter-spacing: 0.015em;
         }
 
+        .contact-enquiry-options {
+            width: min(440px, 100%);
+            margin-top: 20px;
+
+            text-align: left;
+        }
+
+        .contact-enquiry-label {
+            display: block;
+
+            margin-bottom: 7px;
+            padding-left: 2px;
+
+            font-size: 0.58em;
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+
+            color: rgba(11, 31, 58, 0.4);
+        }
+
+        .contact-enquiry-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-enquiry-links a {
+            position: relative;
+
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: baseline;
+            gap: 14px;
+
+            padding: 7px 2px;
+
+            font-size: 0.72em;
+            line-height: 1.45;
+            letter-spacing: 0.025em;
+
+            color: rgba(38, 49, 63, 0.68);
+            text-decoration: none;
+
+            border-top: 1px solid rgba(11, 31, 58, 0.065);
+
+            transition:
+                color 0.18s ease,
+                padding-left 0.22s ease;
+        }
+
+        .contact-enquiry-links a:last-child {
+            border-bottom: 1px solid rgba(11, 31, 58, 0.065);
+        }
+
+        .contact-enquiry-arrow {
+            color: rgba(11, 31, 58, 0.3);
+
+            transition:
+                color 0.18s ease,
+                transform 0.22s ease;
+        }
+
+        .contact-enquiry-options {
+            width: min(440px, 100%);
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .contact-enquiry-label {
+            display: block;
+
+            margin-bottom: 7px;
+            padding-left: 2px;
+
+            font-size: 0.58em;
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+
+            color: rgba(11, 31, 58, 0.4);
+        }
+
+        .contact-enquiry-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-enquiry-arrow {
+            color: rgba(11, 31, 58, 0.3);
+
+            transition:
+                color 0.18s ease,
+                transform 0.22s ease;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .contact-enquiry-links a:hover {
+                padding-left: 6px;
+                color: rgba(11, 31, 58, 0.92);
+            }
+
+            .contact-enquiry-links a:hover .contact-enquiry-arrow {
+                color: rgba(11, 31, 58, 0.72);
+                transform: translateX(2px);
+            }
+        }
+
         .research-visual-open {
             appearance: none;
 
@@ -1102,6 +1238,23 @@
                 letter-spacing: 0.015em;
 
                 color: rgba(67, 78, 93, 0.25);
+            }
+
+            .contact-enquiry-options {
+                width: min(340px, 94%);
+                margin-top: 17px;
+            }
+
+            .contact-enquiry-label {
+                font-size: 0.55em;
+                letter-spacing: 0.14em;
+            }
+
+            .contact-enquiry-links a {
+                padding: 6px 2px;
+
+                font-size: 0.67em;
+                line-height: 1.45;
             }
 
             .desktop-only {
@@ -1421,6 +1574,36 @@
                             data-ja="研究・学術に関するお問い合わせ。">
                             For research and academic enquiries.
                         </span>
+                    </div>
+
+                    <div class="contact-enquiry-options">
+
+                        <span class="contact-enquiry-label" data-en="Reach out about" data-ja="お問い合わせ内容">
+                            Reach out about
+                        </span>
+
+                        <div class="contact-enquiry-links">
+
+                            <a
+                                href="mailto:sangseok.han.contact@gmail.com?subject=Research%20or%20publication%20discussion">
+                                <span data-en="Research / publication discussion" data-ja="研究・論文に関する意見交換">
+                                    Research / publication discussion
+                                </span>
+
+                                <span class="contact-enquiry-arrow" aria-hidden="true">→</span>
+                            </a>
+
+                            <a
+                                href="mailto:sangseok.han.contact@gmail.com?subject=Collaboration%20or%20research%20visit">
+                                <span data-en="Collaboration / research visit" data-ja="共同研究・研究訪問">
+                                    Collaboration / research visit
+                                </span>
+
+                                <span class="contact-enquiry-arrow" aria-hidden="true">→</span>
+                            </a>
+
+                        </div>
+
                     </div>
 
                 </div>
@@ -1768,10 +1951,6 @@
                     return;
                 }
 
-                /*
-                 * Motion 배지가 있으면 그 앞에 이미지를 복원한다.
-                 * 정적 이미지 카드라면 원래 부모 끝에 돌려놓는다.
-                 */
                 if (
                     originalNextElement &&
                     originalNextElement.parentElement === originalParent
@@ -1823,10 +2002,6 @@
                 originalNextElement =
                     sourceImage.nextElementSibling;
 
-                /*
-                 * 복제하지 않고 기존 이미지 노드를 lightbox로 이동한다.
-                 * 따라서 GIF가 두 개 동시에 디코딩되지 않는다.
-                 */
                 lightboxMedia.appendChild(
                     sourceImage
                 );
@@ -2766,6 +2941,8 @@
             "DOMContentLoaded",
             initialiseResearchVisuals
         );
+
+
     </script>
 
 

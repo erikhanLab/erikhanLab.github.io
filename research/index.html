@@ -219,6 +219,7 @@
       border: 0;
       border-radius: 0;
       box-shadow: none;
+      scroll-margin-top: 100px;
     }
 
     .current-project-figure {
@@ -366,13 +367,16 @@
     }
 
     .current-project-outputs-list li {
+      position: relative;
+
       width: 100%;
       margin: 0;
-      padding: 0;
-      padding-left: 10px;
+      padding: 0 0 0 12px;
+
       line-height: 1;
       text-align: left;
     }
+
 
     .current-project-outputs-list a {
       display: inline-flex;
@@ -391,6 +395,20 @@
       text-decoration: none;
 
       transition: color 0.18s ease;
+    }
+
+    .current-project-outputs-list li::before {
+      content: "";
+
+      position: absolute;
+      left: 2px;
+      top: 0.46em;
+
+      width: 2px;
+      height: 2px;
+
+      border-radius: 50%;
+      background: rgba(11, 31, 58, 0.34);
     }
 
     .current-project-outputs-heading {
@@ -419,7 +437,7 @@
     .current-project-output-arrow {
       flex: 0 0 auto;
       font-size: 0.82em;
-      opacity: 0.38;
+      opacity: 0.68;
     }
 
     .research-timeline {
@@ -1501,7 +1519,7 @@
       }
 
       .research-links a {
-        font-size: 0.7em;
+        font-size: 0.68em;
         color: rgba(24, 39, 58, 0.52);
       }
 
@@ -1569,6 +1587,11 @@
 
           font-size: 0.62em;
           white-space: nowrap;
+        }
+
+        .research-contact-actions>a:first-child,
+        .research-contact-actions>.research-contact-separator {
+          display: none;
         }
       }
     }
@@ -1681,7 +1704,7 @@
 
       <div class="ongoing-project-list">
 
-        <article class="current-project">
+        <article class="current-project" id="spatial-hull-roughness">
 
           <figure class="current-project-figure current-project-figure--published">
 
@@ -1882,7 +1905,7 @@
           </div>
         </article>
 
-        <article class="current-project">
+        <article class="current-project" id="added-resistance">
 
           <figure class="current-project-figure current-project-figure--pending">
             <figcaption class="current-project-pending-note" data-en="Manuscript in preparation" data-ja="原稿準備中">
@@ -1898,7 +1921,7 @@
                   Parameterisation for Added Resistance in Waves </span>
               </h2>
 
-              <time class="current-project-period" datetime="2026" aria-label="Ongoing since 2026">
+              <time class="current-project-period" datetime="2026–" aria-label="Ongoing since 2026">
                 2026–
               </time>
             </div>
@@ -1954,7 +1977,7 @@
           </div>
         </article>
 
-        <article class="current-project">
+        <article class="current-project" id="cfd-mbd">
 
           <figure class="current-project-figure current-project-figure--pending">
             <figcaption class="current-project-pending-note" data-en="Manuscript in preparation" data-ja="原稿準備中">
@@ -1971,8 +1994,8 @@
                 </span>
               </h2>
 
-              <time class="current-project-period" datetime="2025" aria-label="Ongoing since 2025">
-                2025
+              <time class="current-project-period" datetime="2025–" aria-label="Ongoing since 2025">
+                2025–
               </time>
             </div>
 

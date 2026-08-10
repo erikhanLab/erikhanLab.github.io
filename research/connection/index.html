@@ -531,6 +531,19 @@
       display: none;
     }
 
+    .collab-group-divider {
+      height: 1px;
+
+      margin: -1px 4px 7px;
+
+      background:
+        linear-gradient(to right,
+          rgba(11, 31, 58, 0),
+          rgba(11, 31, 58, 0.11) 16%,
+          rgba(11, 31, 58, 0.11) 84%,
+          rgba(11, 31, 58, 0));
+    }
+
     .collab-identity,
     .collab-context {
       min-width: 0;
@@ -1030,7 +1043,7 @@
 
         overflow: visible;
 
-        font-size: clamp(0.78em, 1.15vw, 0.84em);
+        font-size: clamp(0.74em, 1.15vw, 0.84em);
         line-height: 1.3;
         letter-spacing: 0;
         text-align: left;
@@ -1129,7 +1142,7 @@
       }
 
       .collab-filter {
-        font-size: clamp(0.7em, 1.15vw, 0.75em);
+        font-size: clamp(0.65em, 1.15vw, 0.75em);
 
       }
 
@@ -1231,14 +1244,18 @@
       }
 
       .collab-note {
-        margin-top: 0.22rem;
+        grid-column: 1 / -1;
+        grid-row: 3;
+
+        margin: 2px 0 0;
+
         font-size: 0.62rem;
         line-height: 1.4;
       }
 
       .collab-work-heading {
         grid-column: 1 / -1;
-        grid-row: 4;
+        grid-row: 5;
 
         margin: 10px 0 0 10px;
 
@@ -1248,11 +1265,11 @@
 
       .collab-work-list {
         grid-column: 1 / -1;
-        grid-row: 5;
+        grid-row: 6;
       }
 
       .collab-links {
-        grid-row: 6;
+        grid-row: 7;
       }
 
       .collab-entry {
@@ -1325,14 +1342,23 @@
       }
 
       .collab-records-header {
-        margin: 0 2px 12px;
+        align-items: baseline;
+        gap: 8px;
+
+        margin: 0 2px 10px;
         padding-top: 14px;
       }
 
       .collab-records-title {
-        font-size: 0.7em;
-        line-height: 1.4;
-        letter-spacing: 0.075em;
+        flex: 0 0 auto;
+
+        font-size: 0.68em;
+        line-height: 1.35;
+        letter-spacing: 0.06em;
+      }
+
+      .collab-records-header>.collab-records-description {
+        display: none;
       }
 
       .collab-identity,
@@ -1418,7 +1444,7 @@
 
       .collab-role {
         grid-column: 1 / -1;
-        grid-row: 3;
+        grid-row: 4;
 
         margin-top: 6px;
         padding-left: 6px;
@@ -1515,6 +1541,10 @@
       .collab-filter-note-mobile {
         display: inline;
         white-space: nowrap;
+      }
+
+      .collab-publications-link {
+        display: none;
       }
     }
   </style>
@@ -1621,15 +1651,9 @@
             People and Shared Work
           </h2>
 
-          <p class="collab-filter-note">
-            <span class="collab-filter-note-desktop" data-en="Connections are listed alphabetically by name"
-              data-ja="氏名のアルファベット順に掲載">
-              Connections are listed alphabetically by name
-            </span>
-
-            <span class="collab-filter-note-mobile" data-en="Listed A–Z by name" data-ja="氏名順">
-              Listed A–Z by name
-            </span>
+          <p class="collab-records-description" data-en="Shared outputs first · alphabetical within groups"
+            data-ja="共同成果を優先 · 各グループ内はアルファベット順">
+            Shared outputs first · alphabetical within groups
           </p>
         </header>
 
@@ -1826,195 +1850,12 @@
         </nav>
 
         <div id="collab-list" class="collab-list">
+          <p class="collab-records-description" data-collab-group-label="outputs" data-en="Shared Research Outputs"
+            data-ja="共同研究成果">
+            Shared Research Outputs
+          </p>
 
-          <article class="collab-entry" data-affiliation="kyoto">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/kyoto-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                Abbas Khayyer
-              </h3>
-
-              <p class="collab-position" data-en="Associate Professor" data-ja="准教授">
-                Associate Professor
-              </p>
-
-              <p class="collab-affiliation" data-en="Kyoto University" data-ja="京都大学">
-                Kyoto University
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="SPH methods" data-ja="SPH法">
-                  SPH methods
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Prospective PhD supervisor" data-ja="博士課程指導予定教員">
-                Prospective PhD supervisor
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="strathclyde">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/strath-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                Atilla Incecik
-              </h3>
-
-              <p class="collab-position" data-en="Professor" data-ja="教授">
-                Professor
-              </p>
-
-              <p class="collab-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-                University of Strathclyde
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="Academic guidance" data-ja="学術的助言">
-                  Academic guidance
-                </span>
-
-                <span class="collab-period">
-                  2025–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Academic mentor" data-ja="学術メンター">
-                Academic mentor
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="snu">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/snu-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                Bo Woo Nam
-              </h3>
-
-              <p class="collab-position" data-en="Assistant Professor" data-ja="助教">
-                Assistant Professor
-              </p>
-
-              <p class="collab-affiliation" data-en="Seoul National University" data-ja="ソウル大学校">
-                Seoul National University
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="Added resistance" data-ja="付加抵抗">
-                  Added resistance
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Research host &amp; project adviser" data-ja="研究受入者・プロジェクトアドバイザー">
-                Research host &amp; project adviser
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="siemens">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/siemens-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                Dmitry Ponkratov
-              </h3>
-
-              <p class="collab-position" data-en="Global Head of Marine" data-ja="船舶分野グローバル責任者">
-                Global Head of Marine
-              </p>
-
-              <p class="collab-affiliation">
-                <span class="collab-affiliation-desktop" data-en="Siemens Digital Industries Software"
-                  data-ja="シーメンス・デジタル・インダストリーズ・ソフトウェア">
-                  Siemens Digital Industries Software
-                </span>
-
-                <span class="collab-affiliation-mobile" data-en="Siemens" data-ja="シーメンス">
-                  Siemens
-                </span>
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="JoRes research" data-ja="JoRes研究">
-                  JoRes research
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Industry collaborator" data-ja="産業共同研究者">
-                Industry collaborator
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="iowa">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/iowa-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                Frederick Stern
-              </h3>
-
-              <p class="collab-position" data-en="Professor" data-ja="教授">
-                Professor
-              </p>
-
-              <p class="collab-affiliation" data-en="University of Iowa" data-ja="アイオワ大学">
-                University of Iowa
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="W2025" data-ja="W2025">
-                  W2025
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Research adviser" data-ja="研究アドバイザー">
-                Research adviser
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="inha">
+          <article class="collab-entry" data-affiliation="inha" data-connection-group="outputs">
             <div class="collab-identity">
               <span class="collab-affiliation-logo" aria-hidden="true">
                 <img src="/assets/logos/inha-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
@@ -2078,86 +1919,7 @@
             </div>
           </article>
 
-          <article class="collab-entry" data-affiliation="usna">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/usna-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                Michael P. Schultz
-              </h3>
-
-              <p class="collab-position" data-en="Professor" data-ja="教授">
-                Professor
-              </p>
-
-              <p class="collab-affiliation" data-en="United States Naval Academy" data-ja="米国海軍兵学校">
-                United States Naval Academy
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="Spatial hull roughness" data-ja="船体粗度の空間分布">
-                  Spatial hull roughness
-                </span>
-
-                <span class="collab-period">
-                  2026
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Research guidance" data-ja="研究上の助言">
-                Research guidance
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="siemens">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/siemens-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                Miles Wheeler
-              </h3>
-
-              <p class="collab-position" data-en="Senior Marine Specialist" data-ja="船舶分野シニアスペシャリスト">
-                Senior Marine Specialist
-              </p>
-
-              <p class="collab-affiliation">
-                <span class="collab-affiliation-desktop" data-en="Siemens Digital Industries Software"
-                  data-ja="シーメンス・デジタル・インダストリーズ・ソフトウェア">
-                  Siemens Digital Industries Software
-                </span>
-
-                <span class="collab-affiliation-mobile" data-en="Siemens" data-ja="シーメンス">
-                  Siemens
-                </span>
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="JoRes research" data-ja="JoRes研究">
-                  JoRes research
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Industry collaborator" data-ja="産業共同研究者">
-                Industry collaborator
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="inha">
+          <article class="collab-entry" data-affiliation="inha" data-connection-group="outputs">
             <div class="collab-identity">
               <span class="collab-affiliation-logo" aria-hidden="true">
                 <img src="/assets/logos/inha-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
@@ -2224,7 +1986,7 @@
             </div>
           </article>
 
-          <article class="collab-entry" data-affiliation="strathclyde">
+          <article class="collab-entry" data-affiliation="strathclyde" data-connection-group="outputs">
             <div class="collab-identity">
               <span class="collab-affiliation-logo" aria-hidden="true">
                 <img src="/assets/logos/strath-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
@@ -2329,7 +2091,7 @@
             </div>
           </article>
 
-          <article class="collab-entry" data-affiliation="strathclyde">
+          <article class="collab-entry" data-affiliation="strathclyde" data-connection-group="outputs">
             <div class="collab-identity">
               <span class="collab-affiliation-logo" aria-hidden="true">
                 <img src="/assets/logos/strath-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
@@ -2423,80 +2185,7 @@
             </div>
           </article>
 
-          <article class="collab-entry" data-affiliation="snu">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/snu-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                Seon Jin Kim
-              </h3>
-
-              <p class="collab-position" data-en="PhD Researcher" data-ja="博士課程研究員">
-                PhD Researcher
-              </p>
-
-              <p class="collab-affiliation" data-en="Seoul National University" data-ja="ソウル大学校">
-                Seoul National University
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="Added resistance" data-ja="付加抵抗">
-                  Added resistance
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Project collaborator" data-ja="共同研究者">
-                Project collaborator
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="marin">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/marin-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                Serge Toxopeus
-              </h3>
-
-              <p class="collab-position" data-en="Senior Researcher" data-ja="上級研究員">
-                Senior Researcher
-              </p>
-
-              <p class="collab-affiliation" data-en="MARIN" data-ja="MARIN"
-                title="Maritime Research Institute Netherlands">
-                MARIN
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="W2025" data-ja="W2025">
-                  W2025
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Research guidance" data-ja="研究上の助言">
-                Research guidance
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="inha">
+          <article class="collab-entry" data-affiliation="inha" data-connection-group="outputs">
             <div class="collab-identity">
               <span class="collab-affiliation-logo" aria-hidden="true">
                 <img src="/assets/logos/inha-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
@@ -2578,7 +2267,7 @@
             </div>
           </article>
 
-          <article class="collab-entry" data-affiliation="southampton">
+          <article class="collab-entry" data-affiliation="southampton" data-connection-group="outputs">
             <div class="collab-identity">
               <span class="collab-affiliation-logo" aria-hidden="true">
                 <img src="/assets/logos/southampton-mark.svg" width="24" height="24" alt="" loading="lazy"
@@ -2651,7 +2340,353 @@
             </div>
           </article>
 
-          <article class="collab-entry" data-affiliation="osaka">
+          <div class="collab-group-divider" data-collab-group-divider aria-hidden="true"></div>
+
+          <p class="collab-records-description" data-collab-group-label="exchanges"
+            data-en="Research Exchanges &amp; Guidance" data-ja="研究交流・助言">
+            Research Exchanges &amp; Guidance
+          </p>
+
+          <article class="collab-entry" data-affiliation="kyoto" data-connection-group="exchanges">
+            <div class="collab-identity">
+              <span class="collab-affiliation-logo" aria-hidden="true">
+                <img src="/assets/logos/kyoto-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+                  onerror="this.closest('.collab-affiliation-logo').remove()">
+              </span>
+              <h3 class="collab-name">
+                Abbas Khayyer
+              </h3>
+
+              <p class="collab-position" data-en="Associate Professor" data-ja="准教授">
+                Associate Professor
+              </p>
+
+              <p class="collab-affiliation" data-en="Kyoto University" data-ja="京都大学">
+                Kyoto University
+              </p>
+            </div>
+
+            <div class="collab-context">
+              <div class="collab-meta">
+                <span class="collab-topic" data-en="SPH methods" data-ja="SPH法">
+                  SPH methods
+                </span>
+
+                <span class="collab-period">
+                  2026–
+                </span>
+              </div>
+
+              <p class="collab-role" data-en="Prospective PhD supervisor" data-ja="博士課程指導予定教員">
+                Prospective PhD supervisor
+              </p>
+            </div>
+          </article>
+
+          <article class="collab-entry" data-affiliation="strathclyde" data-connection-group="exchanges">
+            <div class="collab-identity">
+              <span class="collab-affiliation-logo" aria-hidden="true">
+                <img src="/assets/logos/strath-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+                  onerror="this.closest('.collab-affiliation-logo').remove()">
+              </span>
+              <h3 class="collab-name">
+                Atilla Incecik
+              </h3>
+
+              <p class="collab-position" data-en="Professor" data-ja="教授">
+                Professor
+              </p>
+
+              <p class="collab-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
+                University of Strathclyde
+              </p>
+            </div>
+
+            <div class="collab-context">
+              <div class="collab-meta">
+                <span class="collab-topic" data-en="Academic guidance" data-ja="学術的助言">
+                  Academic guidance
+                </span>
+
+                <span class="collab-period">
+                  2025–
+                </span>
+              </div>
+
+              <p class="collab-role" data-en="Academic mentor" data-ja="学術メンター">
+                Academic mentor
+              </p>
+            </div>
+          </article>
+
+          <article class="collab-entry" data-affiliation="snu" data-connection-group="exchanges">
+            <div class="collab-identity">
+              <span class="collab-affiliation-logo" aria-hidden="true">
+                <img src="/assets/logos/snu-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+                  onerror="this.closest('.collab-affiliation-logo').remove()">
+              </span>
+              <h3 class="collab-name">
+                Bo Woo Nam
+              </h3>
+
+              <p class="collab-position" data-en="Assistant Professor" data-ja="助教">
+                Assistant Professor
+              </p>
+
+              <p class="collab-affiliation" data-en="Seoul National University" data-ja="ソウル大学校">
+                Seoul National University
+              </p>
+            </div>
+
+            <div class="collab-context">
+              <div class="collab-meta">
+                <span class="collab-topic" data-en="Added resistance" data-ja="付加抵抗">
+                  Added resistance
+                </span>
+
+                <span class="collab-period">
+                  2026–
+                </span>
+              </div>
+
+              <p class="collab-role" data-en="Research host &amp; project adviser" data-ja="研究受入者・プロジェクトアドバイザー">
+                Research host &amp; project adviser
+              </p>
+            </div>
+          </article>
+
+          <article class="collab-entry" data-affiliation="siemens" data-connection-group="exchanges">
+            <div class="collab-identity">
+              <span class="collab-affiliation-logo" aria-hidden="true">
+                <img src="/assets/logos/siemens-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+                  onerror="this.closest('.collab-affiliation-logo').remove()">
+              </span>
+              <h3 class="collab-name">
+                Dmitry Ponkratov
+              </h3>
+
+              <p class="collab-position" data-en="Global Head of Marine" data-ja="船舶分野グローバル責任者">
+                Global Head of Marine
+              </p>
+
+              <p class="collab-affiliation">
+                <span class="collab-affiliation-desktop" data-en="Siemens Digital Industries Software"
+                  data-ja="シーメンス・デジタル・インダストリーズ・ソフトウェア">
+                  Siemens Digital Industries Software
+                </span>
+
+                <span class="collab-affiliation-mobile" data-en="Siemens" data-ja="シーメンス">
+                  Siemens
+                </span>
+              </p>
+            </div>
+
+            <div class="collab-context">
+              <div class="collab-meta">
+                <span class="collab-topic" data-en="JoRes research" data-ja="JoRes研究">
+                  JoRes research
+                </span>
+
+                <span class="collab-period">
+                  2026–
+                </span>
+              </div>
+
+              <p class="collab-role" data-en="Industry collaborator" data-ja="産業共同研究者">
+                Industry collaborator
+              </p>
+            </div>
+          </article>
+
+          <article class="collab-entry" data-affiliation="iowa" data-connection-group="exchanges">
+            <div class="collab-identity">
+              <span class="collab-affiliation-logo" aria-hidden="true">
+                <img src="/assets/logos/iowa-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+                  onerror="this.closest('.collab-affiliation-logo').remove()">
+              </span>
+              <h3 class="collab-name">
+                Frederick Stern
+              </h3>
+
+              <p class="collab-position" data-en="Professor" data-ja="教授">
+                Professor
+              </p>
+
+              <p class="collab-affiliation" data-en="University of Iowa" data-ja="アイオワ大学">
+                University of Iowa
+              </p>
+            </div>
+
+            <div class="collab-context">
+              <div class="collab-meta">
+                <span class="collab-topic" data-en="W2025" data-ja="W2025">
+                  W2025
+                </span>
+
+                <span class="collab-period">
+                  2026–
+                </span>
+              </div>
+
+              <p class="collab-role" data-en="Research adviser" data-ja="研究アドバイザー">
+                Research adviser
+              </p>
+            </div>
+          </article>
+
+          <article class="collab-entry" data-affiliation="usna" data-connection-group="exchanges">
+            <div class="collab-identity">
+              <span class="collab-affiliation-logo" aria-hidden="true">
+                <img src="/assets/logos/usna-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+                  onerror="this.closest('.collab-affiliation-logo').remove()">
+              </span>
+              <h3 class="collab-name">
+                Michael P. Schultz
+              </h3>
+
+              <p class="collab-position" data-en="Professor" data-ja="教授">
+                Professor
+              </p>
+
+              <p class="collab-affiliation" data-en="United States Naval Academy" data-ja="米国海軍兵学校">
+                United States Naval Academy
+              </p>
+            </div>
+
+            <div class="collab-context">
+              <div class="collab-meta">
+                <span class="collab-topic" data-en="Spatial hull roughness" data-ja="船体粗度の空間分布">
+                  Spatial hull roughness
+                </span>
+
+                <span class="collab-period">
+                  2026
+                </span>
+              </div>
+
+              <p class="collab-role" data-en="Research guidance" data-ja="研究上の助言">
+                Research guidance
+              </p>
+            </div>
+          </article>
+
+          <article class="collab-entry" data-affiliation="siemens" data-connection-group="exchanges">
+            <div class="collab-identity">
+              <span class="collab-affiliation-logo" aria-hidden="true">
+                <img src="/assets/logos/siemens-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+                  onerror="this.closest('.collab-affiliation-logo').remove()">
+              </span>
+              <h3 class="collab-name">
+                Miles Wheeler
+              </h3>
+
+              <p class="collab-position" data-en="Senior Marine Specialist" data-ja="船舶分野シニアスペシャリスト">
+                Senior Marine Specialist
+              </p>
+
+              <p class="collab-affiliation">
+                <span class="collab-affiliation-desktop" data-en="Siemens Digital Industries Software"
+                  data-ja="シーメンス・デジタル・インダストリーズ・ソフトウェア">
+                  Siemens Digital Industries Software
+                </span>
+
+                <span class="collab-affiliation-mobile" data-en="Siemens" data-ja="シーメンス">
+                  Siemens
+                </span>
+              </p>
+            </div>
+
+            <div class="collab-context">
+              <div class="collab-meta">
+                <span class="collab-topic" data-en="JoRes research" data-ja="JoRes研究">
+                  JoRes research
+                </span>
+
+                <span class="collab-period">
+                  2026–
+                </span>
+              </div>
+
+              <p class="collab-role" data-en="Industry collaborator" data-ja="産業共同研究者">
+                Industry collaborator
+              </p>
+            </div>
+          </article>
+
+          <article class="collab-entry" data-affiliation="snu" data-connection-group="exchanges">
+            <div class="collab-identity">
+              <span class="collab-affiliation-logo" aria-hidden="true">
+                <img src="/assets/logos/snu-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+                  onerror="this.closest('.collab-affiliation-logo').remove()">
+              </span>
+              <h3 class="collab-name">
+                Seon Jin Kim
+              </h3>
+
+              <p class="collab-position" data-en="PhD Researcher" data-ja="博士課程研究員">
+                PhD Researcher
+              </p>
+
+              <p class="collab-affiliation" data-en="Seoul National University" data-ja="ソウル大学校">
+                Seoul National University
+              </p>
+            </div>
+
+            <div class="collab-context">
+              <div class="collab-meta">
+                <span class="collab-topic" data-en="Added resistance" data-ja="付加抵抗">
+                  Added resistance
+                </span>
+
+                <span class="collab-period">
+                  2026–
+                </span>
+              </div>
+
+              <p class="collab-role" data-en="Project collaborator" data-ja="共同研究者">
+                Project collaborator
+              </p>
+            </div>
+          </article>
+
+          <article class="collab-entry" data-affiliation="marin" data-connection-group="exchanges">
+            <div class="collab-identity">
+              <span class="collab-affiliation-logo" aria-hidden="true">
+                <img src="/assets/logos/marin-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+                  onerror="this.closest('.collab-affiliation-logo').remove()">
+              </span>
+              <h3 class="collab-name">
+                Serge Toxopeus
+              </h3>
+
+              <p class="collab-position" data-en="Senior Researcher" data-ja="上級研究員">
+                Senior Researcher
+              </p>
+
+              <p class="collab-affiliation" data-en="MARIN" data-ja="MARIN"
+                title="Maritime Research Institute Netherlands">
+                MARIN
+              </p>
+            </div>
+
+            <div class="collab-context">
+              <div class="collab-meta">
+                <span class="collab-topic" data-en="W2025" data-ja="W2025">
+                  W2025
+                </span>
+
+                <span class="collab-period">
+                  2026–
+                </span>
+              </div>
+
+              <p class="collab-role" data-en="Research guidance" data-ja="研究上の助言">
+                Research guidance
+              </p>
+            </div>
+          </article>
+
+          <article class="collab-entry" data-affiliation="osaka" data-connection-group="exchanges">
             <div class="collab-identity">
               <span class="collab-affiliation-logo" aria-hidden="true">
                 <img src="/assets/logos/osaka-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
@@ -2687,7 +2722,7 @@
             </div>
           </article>
 
-          <article class="collab-entry" data-affiliation="rims">
+          <article class="collab-entry" data-affiliation="rims" data-connection-group="exchanges">
             <div class="collab-identity">
               <span class="collab-affiliation-logo" aria-hidden="true">
                 <img src="/assets/logos/rims-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
@@ -2724,7 +2759,7 @@
             </div>
           </article>
 
-          <article class="collab-entry" data-affiliation="hempel">
+          <article class="collab-entry" data-affiliation="hempel" data-connection-group="exchanges">
             <div class="collab-identity">
               <span class="collab-affiliation-logo" aria-hidden="true">
                 <img src="/assets/logos/hempel-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
@@ -3088,24 +3123,32 @@
         const initial =
           getConnectionInitial(entry);
 
+        const connectionGroup =
+          entry.dataset.connectionGroup ||
+          "connections";
+
+        const groupInitialKey =
+          `${connectionGroup}:${initial}`;
+
         if (
           !initial ||
-          seen.has(initial)
+          seen.has(groupInitialKey)
         ) {
           return;
         }
 
-        seen.add(initial);
+        seen.add(groupInitialKey);
 
         const id =
-          `connection-${initial.toLowerCase()}`;
+          `connection-${connectionGroup}-${initial.toLowerCase()}`;
 
         entry.id = id;
 
         connectionGroups.push({
           initial,
           id,
-          target: entry
+          target: entry,
+          connectionGroup
         });
       });
 
@@ -3444,6 +3487,47 @@
 
       const visibleEntries =
         entries.filter(entry => !entry.hidden);
+
+      const outputEntries =
+        visibleEntries.filter(entry =>
+          entry.dataset.connectionGroup === "outputs"
+        );
+
+      const exchangeEntries =
+        visibleEntries.filter(entry =>
+          entry.dataset.connectionGroup === "exchanges"
+        );
+
+      const outputLabel =
+        document.querySelector(
+          '[data-collab-group-label="outputs"]'
+        );
+
+      const exchangeLabel =
+        document.querySelector(
+          '[data-collab-group-label="exchanges"]'
+        );
+
+      const groupDivider =
+        document.querySelector(
+          "[data-collab-group-divider]"
+        );
+
+      if (outputLabel) {
+        outputLabel.hidden =
+          outputEntries.length === 0;
+      }
+
+      if (exchangeLabel) {
+        exchangeLabel.hidden =
+          exchangeEntries.length === 0;
+      }
+
+      if (groupDivider) {
+        groupDivider.hidden =
+          outputEntries.length === 0 ||
+          exchangeEntries.length === 0;
+      }
 
       const lastVisibleEntry =
         visibleEntries[
