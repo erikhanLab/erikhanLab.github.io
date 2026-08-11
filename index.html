@@ -125,17 +125,53 @@
       margin-left: auto;
     }
 
+    .id-photo-wrap {
+      position: relative;
+
+      width: 136px;
+      height: 136px;
+
+      overflow: hidden;
+    }
+
+    .id-photo-wrap::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      pointer-events: none;
+
+      background:
+        linear-gradient(to right,
+          var(--bg) 0,
+          transparent 3%,
+          transparent 97%,
+          var(--bg) 100%),
+
+        linear-gradient(to bottom,
+          var(--bg) 0,
+          transparent 3%,
+          transparent 97%,
+          var(--bg) 100%);
+    }
+
     .id-photo {
-      margin-top: 0;
-      width: 120px;
-      height: 120px;
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
       object-fit: cover;
-      transform: none;
-      filter: grayscale(50%) saturate(0.8) contrast(1.08) brightness(0.98);
-      border-radius: 2px;
-      border: 1px solid rgba(11, 31, 58, 0.18);
-      box-shadow: 0 8px 20px rgba(11, 31, 58, 0.08);
-      opacity: 0.9;
+
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+
+      filter:
+        grayscale(38%) saturate(0.88) contrast(1.04);
+
+      opacity: 1;
     }
 
     .mobile-only {
@@ -805,11 +841,15 @@
     }
 
     .home-rail-section+.home-rail-section {
-      margin-top: 20px;
-      padding-top: 17px;
+      margin-top: 10px;
+      padding-top: 20px;
 
       border-top:
         1px solid rgba(11, 31, 58, 0.07);
+    }
+
+    .home-rail-recent+.home-rail-open {
+      margin-top: 7px;
     }
 
     .home-rail-heading {
@@ -993,6 +1033,19 @@
       text-decoration: none;
 
       transition: color 0.18s ease;
+    }
+
+    .home-rail-recent-note {
+      margin: 20px 0 0;
+
+      font-size: 0.6em;
+      font-style: italic;
+      line-height: 1.45;
+      letter-spacing: 0.015em;
+
+      text-align: right;
+
+      color: rgba(71, 85, 105, 0.40);
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -1331,6 +1384,9 @@
 
       <div id="home-rail-recent-feed"></div>
 
+      <p class="home-rail-recent-note" data-en="Latest three entries · research activity" data-ja="最新3件 · 研究活動">
+        Latest three entries · research activity
+      </p>
     </div>
 
     <div class="home-rail-section home-rail-open">
@@ -1364,7 +1420,9 @@
         </h1>
 
         <div class="profile-block">
-          <img src="/assets/profile2.jpg" alt="Sangseok Han" class="id-photo">
+          <div class="id-photo-wrap">
+            <img src="/assets/Home-spain.png" alt="Sangseok Han" class="id-photo">
+          </div>
           <div class="lang-switch">
             <a href="#" data-lang="en">EN</a>
             <span>·</span>

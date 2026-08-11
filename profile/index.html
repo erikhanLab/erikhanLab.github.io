@@ -234,7 +234,7 @@
       object-fit: contain;
 
       filter:
-        grayscale(1) saturate(0) contrast(0.88);
+        grayscale(0.3) saturate(0.9) contrast(0.88);
     }
 
     .current-copy {
@@ -691,83 +691,104 @@
       background: rgba(11, 31, 58, 0.1);
     }
 
-    .review-note {
+    #current {
       position: relative;
-      display: inline-block;
-      cursor: default;
-      padding-bottom: 1px;
-      font-size: 1.05em;
+
+      min-height: 112px;
+      margin-bottom: 14px;
     }
 
-    .review-journal {
-      border-bottom: 0;
-      padding-bottom: 0;
+    #current h2 {
+      margin-bottom: 3px;
     }
 
-    .review-tooltip {
-      position: absolute;
-      left: 0;
-      bottom: calc(100% + 9px);
-
-      transform: translateY(4px);
-
-      z-index: 20;
-      width: max-content;
-      max-width: 260px;
-      padding: 9px 12px;
-
-      font-family: Georgia, serif;
-      font-size: 0.95em;
-      line-height: 1.45;
-      letter-spacing: 0.03em;
-
-      color: rgba(17, 17, 17, 0.78);
-      background: rgba(245, 247, 250, 0.96);
-
-      border: 1px solid rgba(11, 31, 58, 0.12);
-      box-shadow: 0 8px 22px rgba(11, 31, 58, 0.08);
-
-      opacity: 0;
-      pointer-events: none;
-
-      transition:
-        opacity 0.18s ease,
-        transform 0.18s ease;
-    }
-
-    .review-note:hover .review-tooltip {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .review-tooltip>span {
+    .current-layout {
       display: block;
+
+      box-sizing: border-box;
+      width: 100%;
+      padding-right: 132px;
     }
 
-    .review-tooltip>span span {
-      display: inline;
+    .current-block {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 2px 0;
     }
 
-    .review-tooltip strong {
-      font-weight: 600;
-      color: rgba(11, 31, 58, 0.86);
+    .profile-intro {
+      position: relative;
+
+      box-sizing: border-box;
+      padding-right: 150px;
     }
 
-    .tooltip-gap {
-      height: 8px;
-    }
-
-    .review-tooltip::before {
-      content: "";
+    .profile-portrait {
       position: absolute;
-      left: 22px;
-      bottom: -4px;
-      transform: rotate(45deg);
-      width: 7px;
-      height: 7px;
-      background: rgba(245, 247, 250, 0.96);
-      border-right: 1px solid rgba(11, 31, 58, 0.12);
-      border-bottom: 1px solid rgba(11, 31, 58, 0.12);
+      top: -3px;
+      right: 12px;
+
+      box-sizing: border-box;
+      width: 132px;
+
+      margin: 0;
+      padding-left: 16px;
+
+      border-left: 1px solid rgba(11, 31, 58, 0.08);
+    }
+
+    .profile-portrait::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 16px;
+
+      width: 30px;
+      height: 1px;
+
+      background: rgba(11, 31, 58, 0.18);
+    }
+
+    .profile-portrait-frame {
+      width: 120px;
+      aspect-ratio: 5 / 6;
+
+      margin-top: 8px;
+
+      overflow: hidden;
+    }
+
+    .profile-portrait img {
+      display: block;
+
+      width: 100%;
+      aspect-ratio: 3 / 4;
+
+      object-fit: cover;
+      object-position: center 42%;
+
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+
+      filter:
+        grayscale(0.02) saturate(0.86) contrast(1.05);
+
+      opacity: 1;
+    }
+
+    .profile-portrait figcaption {
+      width: 108px;
+      margin-top: 6px;
+
+      font-size: 0.6em;
+      font-style: italic;
+      line-height: 1.35;
+      letter-spacing: 0.035em;
+      text-align: right;
+
+      color: rgba(79, 89, 101, 0.42);
     }
 
     .expected-year {
@@ -1174,7 +1195,6 @@
       scroll-behavior: auto;
     }
 
-    #current,
     #research-interests,
     #affiliations,
     #academic-activity,
@@ -1335,6 +1355,29 @@
         gap: 14px;
       }
 
+      #current {
+        min-height: 0;
+        margin-bottom: 0;
+      }
+
+      #current h2 {
+        margin-bottom: 14px;
+      }
+
+      .current-layout {
+        display: block;
+        width: 100%;
+        padding-right: 0;
+      }
+
+      .profile-intro {
+        padding-right: 0;
+      }
+
+      .profile-portrait {
+        display: none;
+      }
+
       .interest-item {
         padding-left: 14px;
         font-size: 0.9em;
@@ -1417,8 +1460,9 @@
         display: block;
 
         width: 100%;
-        margin-top: 8px;
+        margin-top: 0;
         margin-left: 10px;
+        margin-bottom: 0;
         padding: 0;
 
         font-size: 0.88em;
@@ -1430,6 +1474,10 @@
 
       .current-copy {
         min-width: 0;
+      }
+
+      .profile-intro+.divider {
+        display: none;
       }
 
       .current-role {
@@ -1474,10 +1522,7 @@
       }
 
       .icons {
-        margin-top: 10px;
-        margin-bottom: -10px;
-        font-size: 0.68em;
-        letter-spacing: 0.035em;
+        display: none;
       }
 
       .icons a {
@@ -1805,61 +1850,74 @@
     </nav>
   </aside>
 
+
   <div class="page-content">
-    <p class="subtitle" data-en="Marine Hydrodynamics" data-ja="海洋流体力学">
-      Marine Hydrodynamics
-    </p>
-    <p class="tagline">
-      <em>
-        <span data-en="I investigate the limits of simplified models in marine hydrodynamics,"
-          data-ja="海洋流体力学における簡略化モデルの限界を探究し、">
-          I investigate the limits of simplified models in marine hydrodynamics,
-        </span>
-        <br>
-        <span data-en="from uniform-roughness assumptions to hydroelastic impact." data-ja="一様粗さの仮定から流体弾性衝撃までを対象とする。">
-          from uniform-roughness assumptions to hydroelastic impact.
-        </span>
-      </em>
-    </p>
+    <div class="profile-intro">
+      <p class="subtitle" data-en="Marine Hydrodynamics" data-ja="海洋流体力学">
+        Marine Hydrodynamics
+      </p>
+      <p class="tagline">
+        <em>
+          <span data-en="I investigate the limits of simplified models in marine hydrodynamics,"
+            data-ja="海洋流体力学における簡略化モデルの限界を探究し、">
+            I investigate the limits of simplified models in marine hydrodynamics,
+          </span>
+          <br>
+          <span data-en="from uniform-roughness assumptions to hydroelastic impact." data-ja="一様粗さの仮定から流体弾性衝撃までを対象とする。">
+            from uniform-roughness assumptions to hydroelastic impact.
+          </span>
+        </em>
+      </p>
 
-    <div class="icons">
-      <a href="https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en" target="_blank" rel="noopener"
-        aria-label="Google Scholar">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2z" />
-        </svg>
-        <span class="icon-label">Google Scholar</span>
-      </a>
+      <div class="icons">
+        <a href="https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en" target="_blank" rel="noopener"
+          aria-label="Google Scholar">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2z" />
+          </svg>
+          <span class="icon-label">Google Scholar</span>
+        </a>
 
-      <a href="https://orcid.org/0009-0007-8276-2728" target="_blank" rel="noopener" aria-label="ORCID">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="10" />
-          <path fill="#fff" d="M10.4 7.4h-1.6v9.2h1.6V7.4zm3.2 0h-2.2v1.6h2.2
+        <a href="https://orcid.org/0009-0007-8276-2728" target="_blank" rel="noopener" aria-label="ORCID">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <path fill="#fff" d="M10.4 7.4h-1.6v9.2h1.6V7.4zm3.2 0h-2.2v1.6h2.2
         c1.8 0 2.8 1.1 2.8 3s-1 3-2.8 3h-2.2v1.6h2.2c2.7 0 4.4-1.8 4.4-4.6
         0-2.8-1.7-4.6-4.4-4.6z" />
-        </svg>
-        <span class="icon-label">ORCID</span>
-      </a>
-
-      <a href="https://www.linkedin.com/in/erik-han97/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1s2.5 1.12 2.5 2.5zM0 24h5V7H0v17zM7.5 7h4.7v2.3h.1c.7-1.3 2.4-2.7 5-2.7 5.3 0 6.3 3.5 6.3 8.1V24h-5v-7.7c0-1.8 0-4.1-2.5-4.1s-2.9 2-2.9 4v7.8h-5V7z" />
-        </svg>
-        <span class="icon-label">LinkedIn</span>
-      </a>
-
-      <div data-nosnippet>
-        <a href="mailto:sangseok.han.contact@gmail.com" class="copy-email" data-email="sangseok.han.contact@gmail.com"
-          aria-label="Copy email address" title="Click to copy email address">
-
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M2 4h20v16H2V4zm10 7L2 6v2l10 5 10-5V6l-10 5z" />
           </svg>
-
-          <span class="icon-label">Email</span>
+          <span class="icon-label">ORCID</span>
         </a>
+
+        <a href="https://www.linkedin.com/in/erik-han97/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1s2.5 1.12 2.5 2.5zM0 24h5V7H0v17zM7.5 7h4.7v2.3h.1c.7-1.3 2.4-2.7 5-2.7 5.3 0 6.3 3.5 6.3 8.1V24h-5v-7.7c0-1.8 0-4.1-2.5-4.1s-2.9 2-2.9 4v7.8h-5V7z" />
+          </svg>
+          <span class="icon-label">LinkedIn</span>
+        </a>
+
+        <div data-nosnippet>
+          <a href="mailto:sangseok.han.contact@gmail.com" class="copy-email" data-email="sangseok.han.contact@gmail.com"
+            aria-label="Copy email address" title="Click to copy email address">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M2 4h20v16H2V4zm10 7L2 6v2l10 5 10-5V6l-10 5z" />
+            </svg>
+
+            <span class="icon-label">Email</span>
+          </a>
+        </div>
       </div>
+
+      <figure class="profile-portrait">
+        <div class="profile-portrait-frame">
+          <img src="/assets/profile-portrait.png" alt="Portrait of Sangseok Han" decoding="async">
+        </div>
+
+        <figcaption data-en="Portrait" data-ja="ポートレート">
+          Portrait
+        </figcaption>
+      </figure>
 
     </div>
 
@@ -1867,46 +1925,50 @@
     <div class="section" id="current">
       <h2 data-en="Current" data-ja="現在">Current</h2>
 
-      <div class="current-block">
-        <div class="current-logo" aria-hidden="true">
-          <img src="/assets/logos/snu-mark.svg" alt="" width="52" height="52" decoding="async">
+      <div class="current-layout">
+
+        <div class="current-block">
+          <div class="current-logo" aria-hidden="true">
+            <img src="/assets/logos/snu-mark.svg" alt="" width="52" height="52" decoding="async">
+          </div>
+
+          <div class="current-copy">
+            <div class="current-role">
+              <span data-en="Visiting Researcher" data-ja="客員研究員">
+                Visiting Researcher
+              </span>
+
+              <span class="current-mobile-dot mobile-only" aria-hidden="true">
+                ·
+              </span>
+
+              <span class="current-mobile-institute mobile-only" data-en="RIMSE" data-ja="RIMSE">
+                RIMSE
+              </span>
+            </div>
+
+            <div class="current-institute">
+              <span data-en="Research Institute of Marine Systems Engineering (RIMSE)" data-ja="海洋システム工学研究所（RIMSE）">
+                Research Institute of Marine Systems Engineering (RIMSE)
+              </span>
+            </div>
+
+            <div class="current-affiliation">
+              <span data-en="Seoul National University" data-ja="ソウル大学校">
+                Seoul National University
+              </span>
+
+              <span class="current-period-separator" aria-hidden="true">
+                ·
+              </span>
+
+              <span class="expected-year" data-en="July–November 2026" data-ja="2026年7月–11月">
+                July–November 2026
+              </span>
+            </div>
+          </div>
         </div>
 
-        <div class="current-copy">
-          <div class="current-role">
-            <span data-en="Visiting Researcher" data-ja="客員研究員">
-              Visiting Researcher
-            </span>
-
-            <span class="current-mobile-dot mobile-only" aria-hidden="true">
-              ·
-            </span>
-
-            <span class="current-mobile-institute mobile-only" data-en="RIMSE" data-ja="RIMSE">
-              RIMSE
-            </span>
-          </div>
-
-          <div class="current-institute">
-            <span data-en="Research Institute of Marine Systems Engineering (RIMSE)" data-ja="海洋システム工学研究所（RIMSE）">
-              Research Institute of Marine Systems Engineering (RIMSE)
-            </span>
-          </div>
-
-          <div class="current-affiliation">
-            <span data-en="Seoul National University" data-ja="ソウル大学校">
-              Seoul National University
-            </span>
-
-            <span class="current-period-separator" aria-hidden="true">
-              ·
-            </span>
-
-            <span class="expected-year" data-en="July–November 2026" data-ja="2026年7月–11月">
-              July–November 2026
-            </span>
-          </div>
-        </div>
       </div>
     </div>
 

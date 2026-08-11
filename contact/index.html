@@ -290,13 +290,13 @@
             width: 108px;
             margin: 72px 0 0;
 
-            opacity: 0.78;
+            opacity: 1;
 
             transition: opacity 0.3s ease;
         }
 
         .contact-visual:hover {
-            opacity: 0.9;
+            opacity: 1;
         }
 
         .contact-visual-frame {
@@ -324,10 +324,10 @@
             object-fit: cover;
             object-position: center;
 
-            opacity: 0.86;
+            opacity: 1;
 
             filter:
-                saturate(0.42) contrast(0.96) brightness(1.045);
+                saturate(0.32) contrast(0.96) brightness(1.045);
 
             transform: scale(1.001);
 
@@ -353,12 +353,12 @@
         }
 
         .contact-visual:hover .contact-visual-frame img {
-            opacity: 0.94;
+            opacity: 1;
 
             filter:
-                saturate(0.5) contrast(0.98) brightness(1.045);
+                saturate(0.72) contrast(1.07) brightness(0.965);
 
-            transform: scale(1.012);
+            transform: scale(1.016);
         }
 
         .contact-visual figcaption {
@@ -381,6 +381,10 @@
             letter-spacing: 0.025em;
 
             color: rgba(67, 78, 93, 0.45);
+
+            transition:
+                color 0.3s ease,
+                border-color 0.3s ease;
         }
 
         .contact-visual-event,
@@ -391,10 +395,24 @@
 
         .contact-visual-event {
             color: rgba(37, 49, 65, 0.57);
+            transition: color 0.3s ease;
         }
 
         .contact-visual-meta {
             color: rgba(67, 78, 93, 0.38);
+            transition: color 0.3s ease;
+        }
+
+        .contact-visual:hover figcaption {
+            border-top-color: rgba(11, 31, 58, 0.14);
+        }
+
+        .contact-visual:hover .contact-visual-event {
+            color: rgba(24, 36, 52, 0.88);
+        }
+
+        .contact-visual:hover .contact-visual-meta {
+            color: rgba(55, 67, 82, 0.64);
         }
 
         .contact-section {
