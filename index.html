@@ -242,7 +242,7 @@
     }
 
     .tagline-block {
-      margin-top: 38px;
+      margin-top: 43px;
       padding-left: 2px;
       max-width: 740px;
       border-left: 2px solid var(--accent);
@@ -510,7 +510,7 @@
 
     .recent-work {
       position: relative;
-
+      text-align: right;
       width: calc(100% - 14px);
       box-sizing: border-box;
 
@@ -525,7 +525,8 @@
 
       position: absolute;
       top: 0;
-      left: 0;
+      left: auto;
+      right: 0;
 
       width: 34px;
       height: 1px;
@@ -578,7 +579,9 @@
       content: "";
 
       position: absolute;
-      left: 0;
+      left: auto;
+      right: 0;
+      transform-origin: right center;
       bottom: 0;
 
       width: 110px;
@@ -591,7 +594,6 @@
 
       opacity: 0;
       transform: scaleX(0.28);
-      transform-origin: left center;
 
       transition:
         transform 0.34s cubic-bezier(0.22, 1, 0.36, 1),
@@ -735,26 +737,6 @@
       color: #94a3b8;
     }
 
-    .site-footer::before {
-      content: "";
-
-      position: absolute;
-      top: 20px;
-      left: 0;
-
-      width: 92px;
-      height: 1px;
-
-      background:
-        linear-gradient(90deg,
-          rgba(11, 31, 58, 0.14) 0%,
-          rgba(11, 31, 58, 0.09) 38%,
-          rgba(11, 31, 58, 0.035) 72%,
-          rgba(11, 31, 58, 0) 100%);
-
-      pointer-events: none;
-    }
-
     .footer-contact {
       display: flex;
       flex-direction: column;
@@ -814,7 +796,7 @@
       top: 50%;
       left: calc(50% + 480px);
 
-      width: 310px;
+      width: 330px;
       box-sizing: border-box;
 
       padding-left: 22px;
@@ -857,7 +839,7 @@
 
       margin-bottom: 8px;
 
-      font-size: 0.68em;
+      font-size: 0.76em;
       line-height: 1.4;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -881,7 +863,7 @@
       display: block;
 
       margin-top: 2px;
-      font-size: 0.87em;
+      font-size: 0.88em;
       line-height: 1.4;
       margin-left: 40px;
       color: rgba(71, 85, 105, 0.58);
@@ -908,7 +890,7 @@
 
       padding-left: 13px;
 
-      font-size: 0.68em;
+      font-size: 0.72em;
       line-height: 1.4;
     }
 
@@ -946,10 +928,10 @@
       margin-top: 8px;
       padding-left: 13px;
 
-      font-size: 0.73em;
+      font-size: 0.8em;
       line-height: 1.5;
 
-      color: rgba(71, 85, 105, 0.82);
+      color: rgba(71, 85, 105, 0.88);
       text-decoration: none;
     }
 
@@ -989,13 +971,13 @@
       font-size: 0.9em;
       letter-spacing: 0.07em;
 
-      color: rgba(11, 31, 58, 0.48);
+      color: rgba(11, 31, 58, 0.68);
     }
 
     .home-rail-open p {
       margin: 0 0 7px;
 
-      font-size: 0.63em;
+      font-size: 0.65em;
       line-height: 1.5;
       font-style: italic;
       color: rgba(71, 85, 105, 0.58);
@@ -1366,6 +1348,23 @@
       .site-footer::before {
         display: none;
       }
+
+      .recent-work,
+      .recent-title,
+      .recent-citation {
+        text-align: left;
+      }
+
+      .recent-work::before {
+        left: 0;
+        right: auto;
+      }
+
+      .recent-entry::after {
+        left: 0;
+        right: auto;
+        transform-origin: left center;
+      }
     }
   </style>
 </head>
@@ -1640,8 +1639,8 @@
 
     <footer class="site-footer">
       <div class="footer-contact" data-nosnippet>
-        <span class="footer-label" data-en="Contact" data-ja="連絡先">
-          Contact
+        <span class="footer-label" data-en="Email" data-ja="メール">
+          Email
         </span>
 
         <a href="mailto:sangseok.han.contact@gmail.com" class="email-link">
