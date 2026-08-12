@@ -116,7 +116,7 @@
 
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 8px;
 
       padding-left: 24px;
     }
@@ -186,6 +186,51 @@
 
     .connection-side-nav a.active::before {
       width: 11px;
+    }
+
+    .connection-side-nav-group {
+      margin-top: 8px;
+
+      font-size: 0.61em !important;
+      font-weight: 500;
+      line-height: 1.45 !important;
+      letter-spacing: 0.11em !important;
+      text-transform: uppercase;
+
+      color: rgba(11, 31, 58, 0.36) !important;
+    }
+
+    .connection-side-nav-group:first-child {
+      margin-top: 0;
+    }
+
+    .connection-side-nav-group+.connection-side-nav-initial {
+      margin-top: 2px;
+    }
+
+    .connection-side-nav-initial {
+      margin-left: 9px;
+
+      font-size: 0.68em !important;
+      color: rgba(11, 31, 58, 0.25) !important;
+    }
+
+    .connection-side-nav-group.active {
+      color: rgba(11, 31, 58, 0.82) !important;
+    }
+
+    .connection-side-nav-initial.active {
+      color: rgba(11, 31, 58, 0.9) !important;
+      font-weight: 500;
+      transform: translateX(3px);
+    }
+
+    .connection-side-nav-group::before {
+      left: -24px;
+    }
+
+    .connection-side-nav-initial::before {
+      left: -33px;
     }
 
     .page-content {
@@ -1072,52 +1117,56 @@
         order: 0;
       }
 
-      .collab-filter[data-affiliation-filter="hempel"] {
+      .collab-filter[data-affiliation-filter="delft"] {
         order: 1;
       }
 
-      .collab-filter[data-affiliation-filter="inha"] {
+      .collab-filter[data-affiliation-filter="hempel"] {
         order: 2;
       }
 
-      .collab-filter[data-affiliation-filter="iowa"] {
+      .collab-filter[data-affiliation-filter="inha"] {
         order: 3;
       }
 
-      .collab-filter[data-affiliation-filter="kyoto"] {
+      .collab-filter[data-affiliation-filter="iowa"] {
         order: 4;
       }
 
-      .collab-filter[data-affiliation-filter="marin"] {
+      .collab-filter[data-affiliation-filter="kyoto"] {
         order: 5;
       }
 
-      .collab-filter[data-affiliation-filter="osaka"] {
+      .collab-filter[data-affiliation-filter="marin"] {
         order: 6;
       }
 
-      .collab-filter[data-affiliation-filter="rims"] {
+      .collab-filter[data-affiliation-filter="osaka"] {
         order: 7;
       }
 
-      .collab-filter[data-affiliation-filter="siemens"] {
+      .collab-filter[data-affiliation-filter="rims"] {
         order: 8;
       }
 
-      .collab-filter[data-affiliation-filter="snu"] {
+      .collab-filter[data-affiliation-filter="siemens"] {
         order: 9;
       }
 
-      .collab-filter[data-affiliation-filter="southampton"] {
+      .collab-filter[data-affiliation-filter="snu"] {
         order: 10;
       }
 
-      .collab-filter[data-affiliation-filter="strathclyde"] {
+      .collab-filter[data-affiliation-filter="southampton"] {
         order: 11;
       }
 
-      .collab-filter[data-affiliation-filter="usna"] {
+      .collab-filter[data-affiliation-filter="strathclyde"] {
         order: 12;
+      }
+
+      .collab-filter[data-affiliation-filter="usna"] {
+        order: 13;
       }
 
     }
@@ -1187,52 +1236,56 @@
         order: 0;
       }
 
-      .collab-filter[data-affiliation-filter="hempel"] {
+      .collab-filter[data-affiliation-filter="delft"] {
         order: 1;
       }
 
-      .collab-filter[data-affiliation-filter="inha"] {
+      .collab-filter[data-affiliation-filter="hempel"] {
         order: 2;
       }
 
-      .collab-filter[data-affiliation-filter="iowa"] {
+      .collab-filter[data-affiliation-filter="inha"] {
         order: 3;
       }
 
-      .collab-filter[data-affiliation-filter="kyoto"] {
+      .collab-filter[data-affiliation-filter="iowa"] {
         order: 4;
       }
 
-      .collab-filter[data-affiliation-filter="marin"] {
+      .collab-filter[data-affiliation-filter="kyoto"] {
         order: 5;
       }
 
-      .collab-filter[data-affiliation-filter="osaka"] {
+      .collab-filter[data-affiliation-filter="marin"] {
         order: 6;
       }
 
-      .collab-filter[data-affiliation-filter="rims"] {
+      .collab-filter[data-affiliation-filter="osaka"] {
         order: 7;
       }
 
-      .collab-filter[data-affiliation-filter="siemens"] {
+      .collab-filter[data-affiliation-filter="rims"] {
         order: 8;
       }
 
-      .collab-filter[data-affiliation-filter="snu"] {
+      .collab-filter[data-affiliation-filter="siemens"] {
         order: 9;
       }
 
-      .collab-filter[data-affiliation-filter="southampton"] {
+      .collab-filter[data-affiliation-filter="snu"] {
         order: 10;
       }
 
-      .collab-filter[data-affiliation-filter="strathclyde"] {
+      .collab-filter[data-affiliation-filter="southampton"] {
         order: 11;
       }
 
-      .collab-filter[data-affiliation-filter="usna"] {
+      .collab-filter[data-affiliation-filter="strathclyde"] {
         order: 12;
+      }
+
+      .collab-filter[data-affiliation-filter="usna"] {
+        order: 13;
       }
 
       .collab-filter-desktop {
@@ -1605,8 +1658,8 @@
     </a>
   </div>
 
-  <aside class="connection-side-nav" aria-label="Connection name navigation" data-aria-en="Connection name navigation"
-    data-aria-ja="研究上のつながりの氏名ナビゲーション">
+  <aside class="connection-side-nav" aria-label="Research connection navigation"
+    data-aria-en="Research connection navigation" data-aria-ja="研究上のつながりのナビゲーション">
 
     <nav class="connection-side-nav-list"></nav>
 
@@ -1674,6 +1727,18 @@
               </span>
             </button>
 
+            <button type="button" class="collab-filter" data-affiliation-filter="delft" aria-label="TU Delft"
+              data-aria-en="TU Delft" data-aria-ja="TU Delft" title="TU Delft" aria-controls="collab-list"
+              aria-pressed="false">
+
+              <span class="collab-filter-desktop" data-en="Delft" data-ja="Delft">
+                Delft
+              </span>
+
+              <span class="collab-filter-mobile" aria-hidden="true">
+                Delft
+              </span>
+            </button>
 
             <button type="button" class="collab-filter" data-affiliation-filter="hempel" aria-label="Hempel A/S"
               data-aria-en="Hempel A/S" data-aria-ja="Hempel A/S" title="Hempel A/S" aria-controls="collab-list"
@@ -1850,8 +1915,8 @@
         </nav>
 
         <div id="collab-list" class="collab-list">
-          <p class="collab-records-description" data-collab-group-label="outputs" data-en="Shared Research Outputs"
-            data-ja="共同研究成果">
+          <p id="connection-group-outputs" class="collab-records-description" data-collab-group-label="outputs"
+            data-en="Shared Research Outputs" data-ja="共同研究成果">
             Shared Research Outputs
           </p>
 
@@ -2342,7 +2407,7 @@
 
           <div class="collab-group-divider" data-collab-group-divider aria-hidden="true"></div>
 
-          <p class="collab-records-description" data-collab-group-label="exchanges"
+          <p id="connection-group-exchanges" class="collab-records-description" data-collab-group-label="exchanges"
             data-en="Research Exchanges &amp; Guidance" data-ja="研究交流・助言">
             Research Exchanges &amp; Guidance
           </p>
@@ -2722,6 +2787,43 @@
             </div>
           </article>
 
+          <article class="collab-entry" data-affiliation="delft" data-connection-group="exchanges">
+            <div class="collab-identity">
+              <span class="collab-affiliation-logo" aria-hidden="true">
+                <img src="/assets/logos/delft-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+                  onerror="this.closest('.collab-affiliation-logo').remove()">
+              </span>
+
+              <h3 class="collab-name">
+                Xiaoyu Wang
+              </h3>
+
+              <p class="collab-position" data-en="PhD Researcher" data-ja="博士課程研究員">
+                PhD Researcher
+              </p>
+
+              <p class="collab-affiliation" data-en="TU Delft" data-ja="TU Delft">
+                TU Delft
+              </p>
+            </div>
+
+            <div class="collab-context">
+              <div class="collab-meta">
+                <span class="collab-topic" data-en="Gyroscopic WEC" data-ja="ジャイロ式波力発電">
+                  Gyroscopic WEC
+                </span>
+
+                <span class="collab-period">
+                  2026–
+                </span>
+              </div>
+
+              <p class="collab-role" data-en="Technical feedback" data-ja="技術的助言">
+                Technical feedback
+              </p>
+            </div>
+          </article>
+
           <article class="collab-entry" data-affiliation="rims" data-connection-group="exchanges">
             <div class="collab-identity">
               <span class="collab-affiliation-logo" aria-hidden="true">
@@ -2925,6 +3027,7 @@
     const AFFILIATION_FILTERS =
       new Set([
         "all",
+        "delft",
         "hempel",
         "inha",
         "kyoto",
@@ -3097,10 +3200,6 @@
         return;
       }
 
-      /*
-       * 중요:
-       * 이전 필터에서 생성했던 anchor ID 제거
-       */
       document
         .querySelectorAll(
           '.collab-entry[id^="connection-"]'
@@ -3109,7 +3208,6 @@
           entry.removeAttribute("id");
         });
 
-
       const entries =
         getVisibleConnectionEntries();
 
@@ -3117,7 +3215,6 @@
         new Set();
 
       connectionGroups = [];
-
 
       entries.forEach(entry => {
         const initial =
@@ -3152,16 +3249,55 @@
         });
       });
 
+      const groupDefinitions = [
+        {
+          id: "outputs",
+          labelEn: "Shared Outputs",
+          labelJa: "共同成果"
+        },
+        {
+          id: "exchanges",
+          labelEn: "Exchanges & Guidance",
+          labelJa: "研究交流・助言"
+        }
+      ];
 
       nav.innerHTML =
-        connectionGroups
-          .map(group => `
-        <a href="#${group.id}">
-          ${group.initial}
-        </a>
-      `)
+        groupDefinitions
+          .map(group => {
+            const groupEntries =
+              connectionGroups.filter(
+                item =>
+                  item.connectionGroup === group.id
+              );
+
+            if (!groupEntries.length) {
+              return "";
+            }
+
+            return `
+          <a
+            class="connection-side-nav-group"
+            href="#connection-group-${group.id}"
+            data-en="${group.labelEn}"
+            data-ja="${group.labelJa}">
+            ${group.labelEn}
+          </a>
+
+          ${groupEntries
+                .map(item => `
+              <a
+                class="connection-side-nav-initial"
+                href="#${item.id}">
+                ${item.initial}
+              </a>
+            `)
+                .join("")}
+        `;
+          })
           .join("");
 
+      applyLang(getSessionLang());
 
       connectionMapDirty = true;
     }
@@ -3278,7 +3414,6 @@
 
       if (!sideNav) return;
 
-
       if (
         connectionMapDirty ||
         !connectionScrollMap.length
@@ -3287,11 +3422,9 @@
         connectionMapDirty = false;
       }
 
-
       if (!connectionScrollMap.length) {
         return;
       }
-
 
       const currentScroll = clamp(
         window.scrollY,
@@ -3299,15 +3432,10 @@
         connectionScrollMax
       );
 
-
       let activeGroup =
         connectionScrollMap[0];
 
-
-      for (
-        const group
-        of connectionScrollMap
-      ) {
+      for (const group of connectionScrollMap) {
         if (
           currentScroll + 0.5 >=
           group.startScroll
@@ -3317,7 +3445,6 @@
           break;
         }
       }
-
 
       sideNav
         .querySelectorAll(
@@ -3333,12 +3460,10 @@
           );
         });
 
-
       const activeLink =
         sideNav.querySelector(
           `a[href="#${activeGroup.id}"]`
         );
-
 
       if (activeLink) {
         activeLink.classList.add(
@@ -3350,7 +3475,19 @@
           "location"
         );
       }
+
+      const activeGroupLink =
+        sideNav.querySelector(
+          `a[href="#connection-group-${activeGroup.connectionGroup}"]`
+        );
+
+      if (activeGroupLink) {
+        activeGroupLink.classList.add(
+          "active"
+        );
+      }
     }
+
 
     function scheduleConnectionUpdate(
       rebuildMap = false
@@ -3359,9 +3496,7 @@
         connectionMapDirty = true;
       }
 
-      if (
-        connectionUpdateScheduled
-      ) {
+      if (connectionUpdateScheduled) {
         return;
       }
 
@@ -3389,21 +3524,64 @@
 
       if (!sideNav) return;
 
-
       sideNav.addEventListener(
         "click",
         event => {
-
           const link =
             event.target.closest(
               'a[href^="#connection-"]'
             );
 
-          if (!link) return;
-
+          if (
+            !link ||
+            !sideNav.contains(link)
+          ) {
+            return;
+          }
 
           const selector =
             link.getAttribute("href");
+
+          if (!selector) return;
+
+
+          /* Group heading */
+          if (
+            selector.startsWith(
+              "#connection-group-"
+            )
+          ) {
+            const target =
+              document.querySelector(
+                selector
+              );
+
+            if (!target) return;
+
+            event.preventDefault();
+
+            history.replaceState(
+              null,
+              "",
+              selector
+            );
+
+            smoothScrollTo(
+              getDocumentTop(target) - 18
+            );
+
+            return;
+          }
+
+
+          /* Initial */
+          if (
+            connectionMapDirty ||
+            !connectionScrollMap.length
+          ) {
+            buildConnectionScrollMap();
+            connectionMapDirty = false;
+          }
 
           const group =
             connectionScrollMap.find(
@@ -3413,16 +3591,13 @@
 
           if (!group) return;
 
-
           event.preventDefault();
-
 
           history.replaceState(
             null,
             "",
             selector
           );
-
 
           smoothScrollTo(
             Math.min(
@@ -3448,17 +3623,16 @@
         return;
       }
 
-
       connectionLayoutObserver =
         new ResizeObserver(() => {
           scheduleConnectionUpdate(true);
         });
 
-
       connectionLayoutObserver.observe(
         pageContent
       );
     }
+
 
     function applyAffiliationFilter(filter) {
       const safeFilter =
@@ -3486,16 +3660,22 @@
       });
 
       const visibleEntries =
-        entries.filter(entry => !entry.hidden);
+        entries.filter(
+          entry => !entry.hidden
+        );
 
       const outputEntries =
-        visibleEntries.filter(entry =>
-          entry.dataset.connectionGroup === "outputs"
+        visibleEntries.filter(
+          entry =>
+            entry.dataset.connectionGroup ===
+            "outputs"
         );
 
       const exchangeEntries =
-        visibleEntries.filter(entry =>
-          entry.dataset.connectionGroup === "exchanges"
+        visibleEntries.filter(
+          entry =>
+            entry.dataset.connectionGroup ===
+            "exchanges"
         );
 
       const outputLabel =
@@ -3541,10 +3721,13 @@
       }
 
       buildConnectionAlphabetNavigation();
+
       scheduleConnectionUpdate(true);
 
       document
-        .querySelectorAll(".collab-filter")
+        .querySelectorAll(
+          ".collab-filter"
+        )
         .forEach(button => {
           const isActive =
             button.dataset.affiliationFilter ===
@@ -3562,9 +3745,12 @@
         });
     }
 
+
     function updateNavigationState() {
       const nav =
-        document.querySelector(".nav");
+        document.querySelector(
+          ".nav"
+        );
 
       if (!nav) return;
 
@@ -3574,6 +3760,7 @@
       );
     }
 
+
     document.addEventListener(
       "DOMContentLoaded",
       () => {
@@ -3582,7 +3769,9 @@
         );
 
         document
-          .querySelectorAll(".lang-switch a")
+          .querySelectorAll(
+            ".lang-switch a"
+          )
           .forEach(link => {
             link.addEventListener(
               "click",
@@ -3607,7 +3796,9 @@
           });
 
         document
-          .querySelectorAll(".collab-filter")
+          .querySelectorAll(
+            ".collab-filter"
+          )
           .forEach(button => {
             button.addEventListener(
               "click",
@@ -3625,10 +3816,11 @@
         applyAffiliationFilter("all");
 
         scheduleConnectionUpdate(true);
-
         updateNavigationState();
       }
     );
+
+
     window.addEventListener(
       "scroll",
       () => {
@@ -3638,6 +3830,7 @@
         passive: true
       }
     );
+
 
     window.addEventListener(
       "resize",
@@ -3649,16 +3842,22 @@
       }
     );
 
+
     window.addEventListener(
       "load",
       () => {
         document
-          .querySelector(".page-content")
-          ?.classList.add("loaded");
+          .querySelector(
+            ".page-content"
+          )
+          ?.classList.add(
+            "loaded"
+          );
 
         scheduleConnectionUpdate(true);
       }
     );
+
   </script>
 
 </body>

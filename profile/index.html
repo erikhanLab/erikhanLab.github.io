@@ -1198,7 +1198,8 @@
     #research-interests,
     #affiliations,
     #academic-activity,
-    #background {
+    #background,
+    #outside-research {
       scroll-margin-top: 92px;
     }
 
@@ -1282,6 +1283,142 @@
 
     .profile-side-nav a.active::before {
       width: 11px;
+    }
+
+    #outside-research {
+      margin-bottom: 38px;
+    }
+
+    .outside-research-block {
+      max-width: 800px;
+
+      margin-left: 2px;
+      padding: 3px 0 3px 18px;
+
+      border-left: 2px solid rgba(11, 31, 58, 0.085);
+    }
+
+    .outside-research-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 126px;
+      column-gap: 18px;
+      align-items: start;
+    }
+
+    .outside-research-visual {
+      position: relative;
+      justify-self: end;
+
+      box-sizing: border-box;
+      width: 126px;
+
+      margin: -44px -30px 0;
+      padding-left: 16px;
+
+      border-left: 1px solid rgba(11, 31, 58, 0.08);
+
+      opacity: 0.82;
+
+      transition:
+        opacity 0.3s ease;
+    }
+
+    .outside-research-visual-frame {
+      width: 110px;
+      aspect-ratio: 4 / 5;
+
+      margin-top: 0;
+      overflow: hidden;
+
+      background: rgba(11, 31, 58, 0.018);
+    }
+
+    .outside-research-copy-wrap {
+      min-width: 0;
+    }
+
+    .outside-research-copy {
+      max-width: 800px;
+      margin: 0;
+
+      font-size: 0.84em;
+      line-height: 1.7;
+      letter-spacing: 0.012em;
+
+      color: rgba(52, 62, 75, 0.72);
+    }
+
+    .outside-research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+
+      margin-top: 10px;
+
+      font-size: 0.66em;
+      line-height: 1.4;
+      letter-spacing: 0.075em;
+
+      color: rgba(79, 89, 101, 0.5);
+    }
+
+    .outside-research-tags span:not(:last-child)::after {
+      content: "·";
+
+      margin: 0 9px;
+
+      color: rgba(11, 31, 58, 0.24);
+    }
+
+    .outside-research-visual img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: 52% center;
+
+      filter:
+        grayscale(0.18) contrast(1.02) brightness(1.015);
+
+      transform: scale(1.002);
+
+      transition:
+        filter 0.35s ease,
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .outside-research-visual figcaption {
+      margin-top: 5px;
+
+      font-size: 0.56em;
+      font-style: italic;
+      line-height: 1.4;
+      letter-spacing: 0.035em;
+
+      text-align: right;
+
+      color: rgba(79, 89, 101, 0.4);
+
+      transition: color 0.3s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .outside-research-visual:hover {
+        opacity: 1;
+      }
+
+      .outside-research-visual:hover img {
+        filter:
+          grayscale(0) contrast(1.06) brightness(0.99);
+
+        transform: scale(1.012);
+      }
+
+      .outside-research-visual:hover figcaption {
+        color: rgba(52, 62, 75, 0.68);
+      }
     }
 
     @media (max-width: 1320px) {
@@ -1740,6 +1877,41 @@
         filter: none;
         transition: none;
       }
+
+      #outside-research {
+        margin-bottom: 24px;
+      }
+
+      .outside-research-block {
+        margin-left: 0;
+        padding: 1px 0 2px 14px;
+
+        border-left-width: 1.5px;
+      }
+
+      .outside-research-layout {
+        display: block;
+      }
+
+      .outside-research-copy {
+        font-size: 0.72rem;
+        line-height: 1.6;
+      }
+
+      .outside-research-tags {
+        margin-top: 8px;
+
+        font-size: 0.58rem;
+        letter-spacing: 0.055em;
+      }
+
+      .outside-research-tags span:not(:last-child)::after {
+        margin: 0 7px;
+      }
+
+      .outside-research-visual {
+        display: none;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1846,6 +2018,10 @@
 
       <a href="#background" data-en="Background" data-ja="経歴">
         Background
+      </a>
+
+      <a href="#outside-research" data-en="Outside Research" data-ja="研究以外">
+        Outside Research
       </a>
     </nav>
   </aside>
@@ -2252,6 +2428,46 @@
               South Korea
             </span>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section" id="outside-research">
+      <h2 data-en="Outside Research" data-ja="研究以外">
+        Outside Research
+      </h2>
+
+      <div class="outside-research-block">
+        <div class="outside-research-layout">
+
+          <div class="outside-research-copy-wrap">
+            <p class="outside-research-copy">
+              <span data-en="Away from research, I draw in graphite and charcoal, play the piano, and train."
+                data-ja="研究以外では、鉛筆や木炭で絵を描き、ピアノを弾き、トレーニングをしています。">
+                Away from research, I draw in graphite and charcoal, play the piano, and train.
+              </span>
+            </p>
+
+            <div class="outside-research-tags" aria-label="Interests">
+              <span data-en="Art" data-ja="描画">Art</span>
+              <span data-en="Piano" data-ja="ピアノ">Piano</span>
+              <span data-en="Training" data-ja="トレーニング">Training</span>
+            </div>
+          </div>
+
+          <figure class="outside-research-visual">
+            <div class="outside-research-visual-frame">
+              <img src="/assets/sketch-eiffel.svg" alt="Graphite sketch of the Eiffel Tower" loading="lazy"
+                decoding="async">
+            </div>
+
+            <figcaption data-en="Graphite sketch" data-ja="鉛筆スケッチ">
+              Graphite sketch
+            </figcaption>
+          </figure>
+
         </div>
       </div>
     </div>
@@ -2870,6 +3086,10 @@
         {
           key: "background",
           selector: "#background"
+        },
+        {
+          key: "outside",
+          selector: "#outside-research"
         }
       ];
 
