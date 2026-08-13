@@ -60,6 +60,7 @@
     }
 
     #ongoing-research,
+    #research-context,
     #research-timeline,
     .rt-item[id] {
       scroll-margin-top: 92px;
@@ -1712,6 +1713,10 @@
         Ongoing Research
       </a>
 
+      <a href="#research-context" data-en="Research in Context" data-ja="研究をより広く見る">
+        Research in Context
+      </a>
+
       <div class="research-side-nav-group">
         <a href="#research-timeline" class="research-side-nav-parent" data-en="Research Timeline" data-ja="研究年表">
           Research Timeline
@@ -1726,6 +1731,7 @@
       </div>
     </nav>
   </aside>
+
   <div class="page-content">
 
     <section id="ongoing-research" class="ongoing-research" aria-labelledby="ongoing-research-title">
@@ -2134,7 +2140,8 @@
       </div>
     </section>
 
-    <section class="research-contact-cta research-context" aria-labelledby="research-context-title">
+    <section id="research-context" class="research-contact-cta research-context"
+      aria-labelledby="research-context-title">
 
       <h2 id="research-context-title" class="research-context-heading" data-en="Research in Context"
         data-ja="研究をより広く見る">
@@ -2821,6 +2828,10 @@
         'a[href="#ongoing-research"]'
       );
 
+      const contextLink = sideNav.querySelector(
+        'a[href="#research-context"]'
+      );
+
       const timelineLink = sideNav.querySelector(
         'a[href="#research-timeline"]'
       );
@@ -2836,6 +2847,12 @@
           selector: "#ongoing-research",
           activeLinks: [ongoingLink],
           currentLink: ongoingLink
+        },
+        {
+          key: "context",
+          selector: "#research-context",
+          activeLinks: [contextLink],
+          currentLink: contextLink
         },
         {
           key: "timeline",
