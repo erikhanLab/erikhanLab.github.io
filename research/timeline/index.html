@@ -200,6 +200,26 @@
       opacity: 0.75;
     }
 
+    .trace-entry {
+      display: grid;
+      grid-template-columns: 155px minmax(0, 1fr);
+      column-gap: 20px;
+
+      width: 100%;
+      max-width: none;
+
+      margin: 18px 0 24px;
+      padding-bottom: 18px;
+
+      border-bottom: 1px solid rgba(11, 31, 58, 0.07);
+    }
+
+    .year-section .trace-entry:last-child {
+      padding-bottom: 24px;
+
+      border-bottom-color: rgba(11, 31, 58, 0.13);
+    }
+
     .year-section {
       display: none;
       opacity: 0;
@@ -213,21 +233,8 @@
       transform: translateY(0);
     }
 
-    .trace-entry {
-      display: grid;
-      grid-template-columns: 155px minmax(0, 1fr);
-      column-gap: 20px;
-
-      width: 100%;
-      max-width: none;
-
-      margin: 18px 0 24px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.055);
-    }
-
-    .trace-entry:last-child {
-      border-bottom: none;
+    .year-section .trace-entry:last-child {
+      padding-bottom: 24px;
     }
 
     .trace-month-block {
@@ -658,11 +665,6 @@
         display: none;
       }
 
-      .trace-entry {
-        width: 100%;
-        max-width: none;
-      }
-
       .trace-lines {
         width: 100%;
       }
@@ -755,6 +757,12 @@
         border-bottom: 0;
       }
 
+      .year-section .trace-entry:last-child {
+        padding-bottom: 24px;
+
+        border-bottom: 1px solid rgba(11, 31, 58, 0.10);
+      }
+
       .trace-entry:last-child {
         padding-bottom: 0;
       }
@@ -771,53 +779,41 @@
         margin-bottom: 0;
       }
 
-      .trace-entry:not(:last-child)::after {
-        content: "";
-        position: absolute;
-
-        left: 3%;
-        right: 3%;
-        bottom: 0;
-
-        height: 1px;
-
-        background: linear-gradient(to right,
-            rgba(11, 31, 58, 0) 0%,
-            rgba(11, 31, 58, 0.035) 14%,
-            rgba(11, 31, 58, 0.075) 50%,
-            rgba(11, 31, 58, 0.035) 86%,
-            rgba(11, 31, 58, 0) 100%);
-      }
-
       .trace-month-block {
         display: flex;
-        align-items: flex-end;
+        align-items: baseline;
         gap: 8px;
+
         margin-bottom: 15px;
       }
 
       .trace-month,
       .trace-affiliation {
         display: block;
-        margin: 0;
+
+        margin-top: 5px;
         padding: 0;
-        line-height: 1;
+
+        line-height: 1.2;
       }
 
       .trace-month {
-        flex-shrink: 0;
+        flex: 0 0 auto;
+
         font-size: 0.73em;
-        margin-top: 5px;
       }
 
       .trace-affiliation {
         min-width: 0;
+
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        transform: translateY(0.6px);
-        font-size: 0.7em;
+
+        font-size: 0.65em;
         font-style: italic;
+
+        transform: none;
       }
 
       .trace-lines {

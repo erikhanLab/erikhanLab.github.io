@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, noimageindex, max-image-preview:none">
   <title>Research Log | Sangseok Han</title>
-  
+
   <meta name="description" content="Selected presentations and research development in marine hydrodynamics and CFD.">
   <link rel="canonical" href="https://sangseokhan.com/research/log/" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
@@ -345,6 +345,102 @@
       display: none;
     }
 
+    .visual-notes {
+      margin: 34px 0 10px;
+    }
+
+    .visual-notes-header {
+      margin-bottom: 14px;
+    }
+
+    .visual-notes-title {
+      margin: 0 0 4px;
+
+      font-size: 0.76em;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+
+      color: var(--research-blue);
+      opacity: 0.72;
+    }
+
+    .visual-notes-sub {
+      margin: 0;
+
+      font-size: 0.72em;
+      line-height: 1.5;
+      letter-spacing: 0.025em;
+
+      color: rgba(11, 31, 58, 0.48);
+    }
+
+    .visual-notes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px 18px;
+    }
+
+    .visual-note {
+      min-width: 0;
+      margin: 0;
+    }
+
+    .visual-note img {
+      display: block;
+
+      width: 100%;
+      height: 320px;
+
+      object-fit: contain;
+
+      border: 1px solid rgba(11, 31, 58, 0.07);
+
+      filter: grayscale(35%);
+      opacity: 0.94;
+
+      transition:
+        filter 0.3s ease,
+        opacity 0.3s ease;
+    }
+
+    .visual-note:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    .visual-note figcaption {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+
+      margin-top: 6px;
+
+      line-height: 1.4;
+    }
+
+    .visual-note-date {
+      font-size: 0.61em;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+
+      color: rgba(11, 31, 58, 0.48);
+    }
+
+    .visual-note-text {
+      min-width: 0;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      font-size: 0.69em;
+      letter-spacing: 0.015em;
+
+      color: rgba(38, 51, 68, 0.72);
+    }
+
     @media (max-width: 640px) {
       .desktop-only {
         display: none;
@@ -608,8 +704,8 @@
       </h1>
 
       <div class="log-sub">
-        <em data-en="Selected presentations and research development" data-ja="主な研究発表と研究の展開">
-          Selected presentations and research development
+        <em data-en="Research development, presentations, and life around the work." data-ja="研究の展開、研究発表、そして研究を取り巻く日々。">
+          Research development, presentations, and life around the work.
         </em>
       </div>
 
@@ -719,6 +815,41 @@
       </div>
 
       <div class="log-divider"></div>
+
+      <section class="visual-notes" aria-labelledby="visual-notes-2026">
+
+        <div class="visual-notes-header">
+          <div>
+            <h2 class="visual-notes-title" data-en="Gallery" data-ja="ギャラリー">
+              Gallery
+            </h2>
+
+            <p class="visual-notes-sub" data-en="Selected moments beyond the formal record."
+              data-ja="公式な記録の外にある、いくつかの瞬間。">
+              Selected moments beyond the formal record.
+            </p>
+          </div>
+        </div>
+
+        <div class="visual-notes-grid">
+
+          <figure class="visual-note">
+            <img src="/assets/log/2026-busan.jpg" alt="Conference week in Busan" data-alt-en="Conference week in Busan"
+              data-alt-ja="釜山での学会滞在">
+
+            <figcaption>
+              <span class="visual-note-date">
+                Jun 2026
+              </span>
+
+              <span class="visual-note-text" data-en="Conference week · Busan" data-ja="学会滞在 · 釜山">
+                Conference week · Busan
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+
+      </section>
     </div>
 
 
@@ -899,6 +1030,72 @@
       </div>
 
       <div class="log-divider"></div>
+
+      <section class="visual-notes" aria-labelledby="visual-notes-2025">
+
+        <div class="visual-notes-header">
+          <div>
+            <h2 class="visual-notes-title" data-en="Gallery" data-ja="ギャラリー">
+              Gallery
+            </h2>
+
+            <p class="visual-notes-sub" data-en="Selected moments beyond the formal record."
+              data-ja="公式な記録の外にある、いくつかの瞬間。">
+              Selected moments beyond the formal record.
+            </p>
+          </div>
+        </div>
+
+        <div class="visual-notes-grid">
+
+          <figure class="visual-note">
+            <img src="/assets/log/2025-osaka.jpg" alt="Art exhibition at The University of Osaka"
+              data-alt-en="Art exhibition at The University of Osaka" data-alt-ja="大阪大学でのアート展示">
+
+            <figcaption>
+              <span class="visual-note-date">
+                Nov 2025
+              </span>
+
+              <span class="visual-note-text" data-en="Art exhibition · The University of Osaka" data-ja="アート展示 · 大阪大学">
+                Art exhibition · The University of Osaka
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="visual-note">
+            <img src="/assets/log/2025-edinburgh.jpg" alt="Marathon in Edinburgh" data-alt-en="Marathon in Edinburgh"
+              data-alt-ja="エディンバラでのマラソン">
+
+            <figcaption>
+              <span class="visual-note-date">
+                Jul 2025
+              </span>
+
+              <span class="visual-note-text" data-en="10K run · Edinburgh" data-ja="10kmラン · エディンバラ">
+                10K run · Edinburgh
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="visual-note">
+            <img src="/assets/log/2025-gijon.jpg" alt="Conference week in Gijón" data-alt-en="Conference week in Gijón"
+              data-alt-ja="ヒホンでの学会滞在">
+
+            <figcaption>
+              <span class="visual-note-date">
+                Mar 2025
+              </span>
+
+              <span class="visual-note-text" data-en="Conference week · Gijón" data-ja="学会滞在 · ヒホン">
+                Conference week · Gijón
+              </span>
+            </figcaption>
+          </figure>
+
+        </div>
+
+      </section>
     </div>
 
 
@@ -1080,6 +1277,75 @@
           </div>
         </div>
       </div>
+
+      <div class="log-divider"></div>
+
+      <section class="visual-notes" aria-labelledby="visual-notes-2024">
+
+        <div class="visual-notes-header">
+          <div>
+            <h2 class="visual-notes-title" data-en="Gallery" data-ja="ギャラリー">
+              Gallery
+            </h2>
+
+            <p class="visual-notes-sub" data-en="Selected moments beyond the formal record."
+              data-ja="公式な記録の外にある、いくつかの瞬間。">
+              Selected moments beyond the formal record.
+            </p>
+          </div>
+        </div>
+
+        <div class="visual-notes-grid">
+
+          <figure class="visual-note">
+            <img src="/assets/log/2024-experiment.jpg" alt="Towing tank class in Glasgow"
+              data-alt-en="Towing tank class in Glasgow" data-alt-ja="グラスゴーでの曳航水槽実験の授業">
+
+            <figcaption>
+              <span class="visual-note-date">
+                Nov 2024
+              </span>
+
+              <span class="visual-note-text" data-en="Towing tank class · Glasgow" data-ja="曳航水槽実験の授業 · グラスゴー">
+                Towing tank class · Glasgow
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="visual-note">
+            <img src="/assets/log/2024-glasgow.jpg" alt="MSc study at the University of Strathclyde"
+              data-alt-en="MSc study at the University of Strathclyde" data-alt-ja="ストラスクライド大学での修士課程">
+
+            <figcaption>
+              <span class="visual-note-date">
+                Sep 2024
+              </span>
+
+              <span class="visual-note-text" data-en="MSc study · University of Strathclyde"
+                data-ja="修士課程 · ストラスクライド大学">
+                MSc study · University of Strathclyde
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="visual-note">
+            <img src="/assets/log/2024-graduation.jpg" alt="Graduation at Inha University"
+              data-alt-en="Graduation at Inha University" data-alt-ja="仁荷大学での卒業">
+
+            <figcaption>
+              <span class="visual-note-date">
+                Aug 2024
+              </span>
+
+              <span class="visual-note-text" data-en="BEng graduation · Inha University" data-ja="学部卒業 · 仁荷大学">
+                BEng graduation · Inha University
+              </span>
+            </figcaption>
+          </figure>
+
+        </div>
+
+      </section>
 
     </div>
 

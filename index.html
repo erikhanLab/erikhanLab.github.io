@@ -944,6 +944,9 @@
         transform 0.18s ease;
     }
 
+    .home-mobile-recent {
+      display: none;
+    }
 
     @media (hover: hover) and (pointer: fine) {
 
@@ -1356,6 +1359,109 @@
         right: auto;
         transform-origin: left center;
       }
+
+      .home-mobile-recent {
+        display: block;
+
+        margin: 26px 0 6px;
+        padding-top: 14px;
+
+        border-top: 1px solid rgba(11, 31, 58, 0.1);
+      }
+
+      .home-mobile-recent-heading {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+
+        margin-bottom: 5px;
+      }
+
+      .home-mobile-recent-label {
+        font-size: 0.66em;
+        line-height: 1.4;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+
+        color: rgba(11, 31, 58, 0.62);
+      }
+
+      .home-mobile-recent-timeline {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 5px;
+
+        font-size: 0.6em;
+        line-height: 1.4;
+        letter-spacing: 0.045em;
+
+        color: rgba(11, 31, 58, 0.44);
+        text-decoration: none;
+      }
+
+      .home-mobile-recent .home-rail-update {
+        display: grid;
+        grid-template-columns: 68px minmax(0, 1fr);
+        column-gap: 10px;
+        row-gap: 1px;
+
+        margin: 0;
+        padding: 8px 0;
+
+        font-size: 0.72em;
+        line-height: 1.4;
+
+        color: rgba(38, 51, 68, 0.78);
+      }
+
+      .home-mobile-recent .home-rail-update::before {
+        display: none;
+      }
+
+      .home-mobile-recent .home-rail-update+.home-rail-update {
+        border-top: 1px solid rgba(11, 31, 58, 0.055);
+      }
+
+      .home-mobile-recent .home-rail-update time {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+
+        margin: 1px 0 0;
+
+        font-size: 0.88em;
+        line-height: 1.4;
+        letter-spacing: 0.045em;
+
+        color: rgba(11, 31, 58, 0.52);
+      }
+
+      .home-mobile-recent .home-rail-update-title {
+        grid-column: 2;
+
+        min-width: 0;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        color: rgba(11, 31, 58, 0.82);
+      }
+
+      .home-mobile-recent .home-rail-update-meta {
+        grid-column: 2;
+
+        min-width: 0;
+        margin: 0;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        font-size: 0.86em;
+        text-align: left;
+
+        color: rgba(71, 85, 105, 0.56);
+      }
     }
   </style>
 </head>
@@ -1606,6 +1712,25 @@
       </div>
     </header>
 
+    <section class="home-mobile-recent" aria-labelledby="home-mobile-recent-title">
+
+      <div class="home-mobile-recent-heading">
+        <span id="home-mobile-recent-title" class="home-mobile-recent-label" data-en="Recent" data-ja="最近">
+          Recent
+        </span>
+
+        <a class="home-mobile-recent-timeline" href="/research/timeline/">
+          <span data-en="Timeline" data-ja="年表">
+            Timeline
+          </span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div id="home-mobile-recent-feed"></div>
+
+    </section>
+
     <nav class="nav">
       <a href="/profile/">
         <span class="nav-index">01</span>
@@ -1706,10 +1831,12 @@
     });
 
     async function loadRecentTimeline() {
-      const container =
-        document.getElementById("home-rail-recent-feed");
+      const containers =
+        document.querySelectorAll(
+          "#home-rail-recent-feed, #home-mobile-recent-feed"
+        );
 
-      if (!container) return;
+      if (!containers.length) return;
 
       try {
         const response =
@@ -1734,7 +1861,7 @@
         const recentEntries =
           entries.slice(0, 3);
 
-        recentEntries.forEach(entry => {
+        recentEntries.forEach((entry, index) => {
           const month =
             entry.querySelector(".trace-month");
 
@@ -1769,21 +1896,17 @@
           const time =
             document.createElement("time");
 
-          time.setAttribute(
-            "data-en",
-            month.getAttribute("data-en") ||
-            month.textContent.trim()
-          );
-
-          time.setAttribute(
-            "data-ja",
-            month.getAttribute("data-ja") ||
-            month.textContent.trim()
-          );
-
-          time.textContent =
+          const monthEn =
             month.getAttribute("data-en") ||
             month.textContent.trim();
+
+          const monthJa =
+            month.getAttribute("data-ja") ||
+            monthEn;
+
+          time.setAttribute("data-en", monthEn);
+          time.setAttribute("data-ja", monthJa);
+          time.textContent = monthEn;
 
           const title =
             document.createElement("span");
@@ -1791,21 +1914,17 @@
           title.className =
             "home-rail-update-title";
 
-          title.setAttribute(
-            "data-en",
-            event.getAttribute("data-en") ||
-            event.textContent.trim()
-          );
-
-          title.setAttribute(
-            "data-ja",
-            event.getAttribute("data-ja") ||
-            event.textContent.trim()
-          );
-
-          title.textContent =
+          const eventEn =
             event.getAttribute("data-en") ||
             event.textContent.trim();
+
+          const eventJa =
+            event.getAttribute("data-ja") ||
+            eventEn;
+
+          title.setAttribute("data-en", eventEn);
+          title.setAttribute("data-ja", eventJa);
+          title.textContent = eventEn;
 
           item.append(time, title);
 
@@ -1819,6 +1938,7 @@
             if (tag.querySelector("em")) {
               meta.classList.add("is-journal");
             }
+
             const tagEn =
               tag.getAttribute("data-en") ||
               tag.textContent.trim();
@@ -1829,13 +1949,23 @@
 
             meta.setAttribute("data-en", tagEn);
             meta.setAttribute("data-ja", tagJa);
-
             meta.textContent = tagEn;
 
             item.append(meta);
           }
 
-          container.append(item);
+          containers.forEach(container => {
+            if (
+              container.id === "home-mobile-recent-feed" &&
+              index >= 2
+            ) {
+              return;
+            }
+
+            container.append(
+              item.cloneNode(true)
+            );
+          });
         });
 
         applyLang(getSessionLang());
@@ -1847,6 +1977,7 @@
         );
       }
     }
+
   </script>
 
 </body>
