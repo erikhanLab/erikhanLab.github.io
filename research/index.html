@@ -471,6 +471,7 @@
       display: grid;
       grid-template-columns: 58px minmax(0, 1fr);
       column-gap: 25px;
+      align-items: start;
 
       padding: 14px 0 18px 20px;
 
@@ -492,12 +493,12 @@
     }
 
     .rt-year {
-      padding-top: 6px;
+      padding-top: 4px;
       margin-left: -8px;
 
       font-size: 1.06em;
       font-weight: 600;
-      line-height: 1.5;
+      line-height: 1.4;
       letter-spacing: 0.03em;
 
       color: #0B2545;
@@ -505,15 +506,17 @@
     }
 
     .rt-stage {
+      margin-top: 8px;
+      margin-bottom: 14px;
+
       font-size: 0.83em;
       font-weight: 500;
-
+      line-height: 1.4;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+
       color: #0B2545;
       opacity: 0.55;
-      margin-top: 8px;
-      margin-bottom: 18px;
     }
 
     .rt-title {
@@ -560,12 +563,40 @@
     }
 
     .rt-output {
-      font-size: 1.0em;
-      font-weight: 500;
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+
+      min-width: 0;
       margin-bottom: 3px;
-      color: #0B2545;
-      opacity: 0.85;
+
+      font-size: 1em;
+      line-height: 1.4;
       letter-spacing: 0.01em;
+    }
+
+    .rt-output-label {
+      font-weight: 500;
+      color: rgba(11, 37, 69, 0.85);
+    }
+
+    .role-tag {
+      flex: 0 0 auto;
+
+      margin-left: 9px;
+      padding-left: 9px;
+
+      font-family: Georgia, serif;
+      font-size: 0.68em;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: 0.04em;
+
+      white-space: nowrap;
+
+      color: rgba(70, 82, 98, 0.56);
+
+      border-left: 1px solid rgba(11, 31, 58, 0.14);
     }
 
     .rt-meta .q-rank {
@@ -595,11 +626,13 @@
       font-size: 0.74em;
       color: #222;
       opacity: 0.88;
+
       padding-left: 14px;
       position: relative;
-      margin-left: 0px;
+
+      margin-left: 0;
+      margin-top: 2px;
       margin-bottom: 6px;
-      margin-top: 4px;
     }
 
     .rt-small {
@@ -613,17 +646,6 @@
       border-top: 1px solid rgba(0, 0, 0, 0.08);
       margin: 18px 0 22px;
       opacity: 0.65;
-    }
-
-    .role-tag {
-      font-family: Georgia, serif;
-      font-size: 0.68em;
-      letter-spacing: 0.04em;
-      color: #777;
-      margin-top: 0px;
-      margin-left: 8px;
-      padding-left: 6px;
-      border-left: 1.3px solid rgba(0, 0, 0, 0.16);
     }
 
     .footnote-mark {
@@ -759,12 +781,13 @@
 
     .research-affiliation-note {
       max-width: 620px;
-      margin: -6px 0 18px;
+      margin: -20px 0 18px auto;
 
       font-size: 0.8em;
       font-style: italic;
       line-height: 1.55;
       letter-spacing: 0.025em;
+      text-align: right;
 
       color: rgba(70, 82, 98, 0.5);
     }
@@ -1451,6 +1474,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        margin-top: 1px;
       }
 
       .rt-location {
@@ -1535,10 +1559,11 @@
       }
 
       .research-affiliation-note {
-        margin: -10px 0 16px;
+        margin: -10px 0 16px auto;
 
         font-size: 0.58em;
         line-height: 1.5;
+        text-align: right;
       }
 
       .research-contact-cta {
@@ -2098,8 +2123,6 @@
                     </time>
                   </span>
                 </li>
-
-
               </ul>
 
             </aside>
@@ -2251,21 +2274,21 @@
 
           <div class="rt-block-group">
             <div class="rt-block">
-              <div class="rt-output" data-en="Journal Publication" data-ja="学術論文">
-                Journal Publication
+              <div class="rt-output">
+                <span class="rt-output-label" data-en="Journal Publication" data-ja="学術論文">
+                  Journal Publication
+                </span>
+
+                <span class="role-tag" data-en="Sole author" data-ja="単著">
+                  Sole author
+                </span>
               </div>
 
               <div class="rt-subtitle">
-
                 <a href="/publications/spatial-variability/">
                   Beyond uniform roughness: Spatial variability of hull roughness
                   and implications for single-parameter representation
                 </a>
-
-              </div>
-
-              <div class="role-tag" data-en="Sole author" data-ja="単著">
-                Sole author
               </div>
 
               <div class="rt-meta">
@@ -2287,8 +2310,14 @@
           </div>
           <div class="rt-block-group">
             <div class="rt-block">
-              <div class="rt-output" data-en="Journal Publication" data-ja="学術論文">
-                Journal Publication
+              <div class="rt-output">
+                <span class="rt-output-label" data-en="Journal Publication" data-ja="学術論文">
+                  Journal Publication
+                </span>
+
+                <span class="role-tag" data-en="First & corresponding author" data-ja="筆頭・責任著者">
+                  First & corresponding author
+                </span>
               </div>
 
               <div class="rt-subtitle">
@@ -2296,27 +2325,32 @@
                   Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface conditions
                 </a>
               </div>
-              <div class="role-tag" data-en="First & corresponding author" data-ja="筆頭・責任著者">
-                First & corresponding author
-              </div>
+
               <div class="rt-meta">
                 <em>Ocean Engineering</em>
               </div>
             </div>
             <div class="rt-block">
-              <div class="rt-output" data-en="Symposium Paper Presentation" data-ja="シンポジウム論文発表">
-                Symposium Paper Presentation
+              <div class="rt-output">
+                <span class="rt-output-label" data-en="Symposium Paper Presentation" data-ja="シンポジウム論文発表">
+                  Symposium Paper Presentation
+                </span>
+
+                <span class="role-tag" data-en="First & corresponding author" data-ja="筆頭・責任著者">
+                  First & corresponding author
+                </span>
               </div>
-              <div class="rt-subtitle">A computational fluid dynamics analysis of spatial roughness distributions on
-                ship resistance</div>
-              <div class="role-tag" data-en="First & corresponding author" data-ja="筆頭・責任著者">
-                First & corresponding author
+
+              <div class="rt-subtitle">
+                A computational fluid dynamics analysis of spatial roughness distributions on
+                ship resistance
               </div>
 
               <div class="rt-meta">
                 <span class="rt-venue">
                   36th Symposium on Naval Hydrodynamics (SNH36)
                 </span>
+
                 <span class="rt-location">
                   — Busan, South Korea
                 </span>
@@ -2345,8 +2379,14 @@
 
           <div class="rt-block-group">
             <div class="rt-block">
-              <div class="rt-output" data-en="Issue Cover Article" data-ja="号表紙掲載論文">
-                Issue Cover Article
+              <div class="rt-output">
+                <span class="rt-output-label" data-en="Issue Cover Article" data-ja="号表紙掲載論文">
+                  Issue Cover Article
+                </span>
+
+                <span class="role-tag" data-en="First author" data-ja="筆頭著者">
+                  First author
+                </span>
               </div>
 
               <div class="rt-subtitle">
@@ -2355,28 +2395,31 @@
                 </a>
               </div>
 
-              <div class="role-tag" data-en="First author" data-ja="筆頭著者">
-                First author
-              </div>
               <div class="rt-meta">
                 <em>Journal of Marine Science and Engineering</em>
               </div>
             </div>
 
             <div class="rt-block">
-              <div class="rt-output" data-en="Conference Paper" data-ja="国際会議論文">
-                Conference Paper
+              <div class="rt-output">
+                <span class="rt-output-label" data-en="Conference Paper" data-ja="国際会議論文">
+                  Conference Paper
+                </span>
+
+                <span class="role-tag" data-en="First & corresponding author" data-ja="筆頭・責任著者">
+                  First & corresponding author
+                </span>
               </div>
-              <div class="rt-subtitle">Numerical analysis of fluid-structure interaction for semi-submersible FOWT
-              </div>
-              <div class="role-tag" data-en="First & corresponding author" data-ja="筆頭・責任著者">
-                First & corresponding author
+
+              <div class="rt-subtitle">
+                Numerical analysis of fluid-structure interaction for semi-submersible FOWT
               </div>
 
               <div class="rt-meta">
                 <span class="rt-venue">
                   International Conference on Computational Methods in Marine Engineering (MARINE 2025)
                 </span>
+
                 <span class="rt-location">
                   — Edinburgh, UK
                 </span>
@@ -2384,17 +2427,25 @@
             </div>
 
             <div class="rt-block">
-              <div class="rt-output" data-en="Conference Presentation" data-ja="国際会議発表">
-                Conference Presentation
+              <div class="rt-output">
+                <span class="rt-output-label" data-en="Conference Presentation" data-ja="国際会議発表">
+                  Conference Presentation
+                </span>
+
+                <span class="role-tag" data-en="Presenting author" data-ja="発表者">
+                  Presenting author
+                </span>
               </div>
-              <div class="rt-subtitle">Impact of towing tank temperature on model-ship extrapolation</div>
-              <div class="role-tag" data-en="Presenting author" data-ja="発表者">
-                Presenting author
+
+              <div class="rt-subtitle">
+                Impact of towing tank temperature on model-ship extrapolation
               </div>
+
               <div class="rt-meta">
                 <span class="rt-venue">
                   International Congress of Naval Architecture and Maritime Industry
                 </span>
+
                 <span class="rt-location">
                   — Gijón, Spain
                 </span>
@@ -2416,18 +2467,25 @@
 
           <div class="rt-block-group">
             <div class="rt-block">
-              <div class="rt-output" data-en="Conference Presentation" data-ja="国際会議発表">
-                Conference Presentation
+              <div class="rt-output">
+                <span class="rt-output-label" data-en="Conference Presentation" data-ja="国際会議発表">
+                  Conference Presentation
+                </span>
+
+                <span class="role-tag" data-en="Presenting author" data-ja="発表者">
+                  Presenting author
+                </span>
               </div>
-              <div class="rt-subtitle">CFD-based model predictive control for point absorber wave energy converters
+
+              <div class="rt-subtitle">
+                CFD-based model predictive control for point absorber wave energy converters
               </div>
-              <div class="role-tag" data-en="Presenting author" data-ja="発表者">
-                Presenting author
-              </div>
+
               <div class="rt-meta">
                 <span class="rt-venue">
                   The Japan Society of Naval Architects and Ocean Engineers (JASNAOE 2025)
                 </span>
+
                 <span class="rt-location">
                   — Hyogo, Japan
                 </span>
@@ -2459,19 +2517,25 @@
           </div>
           <div class="rt-block-group">
             <div class="rt-block">
-              <div class="rt-output" data-en="Best Paper Award" data-ja="最優秀論文賞">
-                Best Paper Award
+              <div class="rt-output">
+                <span class="rt-output-label" data-en="Best Paper Award" data-ja="最優秀論文賞">
+                  Best Paper Award
+                </span>
+
+                <span class="role-tag" data-en="Presenting author" data-ja="発表者">
+                  Presenting author
+                </span>
               </div>
+
               <div class="rt-subtitle">
-                Uncertainty of the ITTC 1957 correlation line with temperature variations</div>
-              <div class="role-tag" data-en="Presenting author" data-ja="発表者">
-                Presenting author
+                Uncertainty of the ITTC 1957 correlation line with temperature variations
               </div>
 
               <div class="rt-meta">
                 <span class="rt-venue">
                   The 13th National Congress on Fluids Engineering
                 </span>
+
                 <span class="rt-location">
                   — Daejeon, South Korea
                 </span>
@@ -2479,17 +2543,22 @@
             </div>
 
             <div class="rt-block">
-              <div class="rt-output" data-en="Journal Publication" data-ja="学術論文">
-                Journal Publication
+              <div class="rt-output">
+                <span class="rt-output-label" data-en="Journal Publication" data-ja="学術論文">
+                  Journal Publication
+                </span>
+
+                <span class="role-tag" data-en="Co-author" data-ja="共著者">
+                  Co-author
+                </span>
               </div>
+
               <div class="rt-subtitle">
                 <a href="/publications/naval-roughness/">
                   Resistance and speed penalty of a naval ship with hull roughness
                 </a>
               </div>
-              <div class="role-tag" data-en="Co-author" data-ja="共著者">
-                Co-author
-              </div>
+
               <div class="rt-meta">
                 <em>Ocean Engineering</em>
               </div>
@@ -2519,8 +2588,10 @@
           <div class="rt-block-group">
 
             <div class="rt-block">
-              <div class="rt-output" data-en="Industrial Technology Award" data-ja="産業技術賞">
-                Industrial Technology Award
+              <div class="rt-output">
+                <span class="rt-output-label" data-en="Industrial Technology Award" data-ja="産業技術賞">
+                  Industrial Technology Award
+                </span>
               </div>
 
               <div class="rt-meta">
@@ -2531,18 +2602,25 @@
             </div>
 
             <div class="rt-block">
-              <div class="rt-output" data-en="Conference Presentation" data-ja="国際会議発表">
-                Conference Presentation
+              <div class="rt-output">
+                <span class="rt-output-label" data-en="Conference Presentation" data-ja="国際会議発表">
+                  Conference Presentation
+                </span>
+
+                <span class="role-tag" data-en="Presenting author" data-ja="発表者">
+                  Presenting author
+                </span>
               </div>
+
               <div class="rt-subtitle">
-                KABOAT 2023 competition report: Virtual simulation of an autonomous boat using MATLAB</div>
-              <div class="role-tag" data-en="Presenting author" data-ja="発表者">
-                Presenting author
+                KABOAT 2023 competition report: Virtual simulation of an autonomous boat using MATLAB
               </div>
+
               <div class="rt-meta">
                 <span class="rt-venue">
                   Fall Conference of The Society of Naval Architecture of Korea
                 </span>
+
                 <span class="rt-location">
                   — Daejeon, South Korea
                 </span>
