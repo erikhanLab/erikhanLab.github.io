@@ -8,7 +8,7 @@
   <meta name="description"
     content="Sangseok Han's research in computational fluid dynamics, focusing on spatially non-uniform hull roughness, ship hydrodynamics, and coupled marine systems.">
   <link rel="canonical" href="https://sangseokhan.com/research/" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <meta name="robots" content="noimageindex">
   <meta property="og:title" content="Research | Sangseok Han">
   <meta property="og:description"
@@ -757,117 +757,6 @@
       color: rgba(66, 62, 62, 0.52);
     }
 
-    .research-links {
-      position: relative;
-
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 8px;
-
-      width: 100%;
-      margin: 0 0 12px;
-      padding: 0 0 3px;
-
-      background: transparent;
-      border: 0;
-      overflow: visible;
-    }
-
-    .research-links::before {
-      display: none;
-    }
-
-    .research-links a {
-      position: relative;
-      z-index: 1;
-
-      display: inline-flex;
-      align-items: baseline;
-      padding-bottom: 1px;
-
-      font-size: 0.76em;
-      line-height: 1.4;
-      letter-spacing: 0.035em;
-      white-space: nowrap;
-
-      color: rgba(24, 39, 58, 0.58);
-      text-decoration: none;
-
-      border-bottom: 0;
-
-      transition: color 0.16s ease;
-    }
-
-    .research-links a::after {
-      content: "";
-
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -3px;
-
-      height: 1px;
-
-      background: rgba(11, 31, 58, 0.3);
-
-      opacity: 0;
-      transform: scaleX(0.25);
-      transform-origin: left center;
-
-      pointer-events: none;
-
-      transition:
-        opacity 0.16s ease,
-        transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .research-links::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      z-index: 0;
-
-      width: 45%;
-      height: 1px;
-
-      background: rgba(11, 31, 58, 0.065);
-
-      pointer-events: none;
-    }
-
-    .research-links a:hover {
-      color: rgba(11, 31, 58, 0.92);
-    }
-
-    .research-links a:hover::after {
-      opacity: 1;
-      transform: scaleX(1);
-    }
-
-    .research-links a:focus-visible {
-      color: rgba(11, 31, 58, 0.92);
-      outline: none;
-    }
-
-    .research-links a:focus-visible::after {
-      opacity: 1;
-      transform: scaleX(1);
-    }
-
-    .research-links-separator {
-      flex: 0 0 auto;
-      font-size: 0.68em;
-      line-height: 1;
-      color: rgba(11, 31, 58, 0.28);
-      transform: translateY(-0.02em);
-    }
-
-    .research-links a+a {
-      border-left: 0;
-    }
-
     .research-affiliation-note {
       max-width: 620px;
       margin: -6px 0 18px;
@@ -1124,6 +1013,151 @@
       letter-spacing: 0.05em;
     }
 
+    .research-contact-cta.research-context {
+      display: block;
+
+      width: 72%;
+      max-width: 690px;
+
+      margin: 44px 0 58px auto;
+      padding-top: 18px;
+      padding-bottom: 20px;
+    }
+
+    .research-context-heading {
+      margin: 0 0 12px;
+
+      font-size: 0.66em;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+
+      color: rgba(11, 31, 58, 0.62);
+    }
+
+    .research-context-list {
+      display: grid;
+      width: 100%;
+    }
+
+    .research-contact-cta .research-context-item {
+      display: grid;
+      grid-template-columns:
+        180px minmax(0, 1fr) auto;
+      column-gap: 24px;
+      align-items: baseline;
+
+      box-sizing: border-box;
+      width: 100%;
+
+      padding: 8px 2px;
+
+      border-top: 1px solid rgba(11, 31, 58, 0.055);
+
+      text-decoration: none;
+    }
+
+    .research-context-list .research-context-item:last-child {
+      border-bottom: 1px solid rgba(11, 31, 58, 0.055);
+    }
+
+    .research-context-name {
+      font-size: 1.02em;
+      font-weight: 500;
+      letter-spacing: 0.025em;
+
+      color: rgba(24, 39, 58, 0.78);
+
+      transition: color 0.18s ease;
+    }
+
+    .research-context-description {
+      min-width: 0;
+
+      font-size: 0.94em;
+      letter-spacing: 0.015em;
+
+      color: rgba(70, 82, 98, 0.48);
+
+      transition: color 0.18s ease;
+    }
+
+    .research-context-item:hover .research-context-name {
+      color: rgba(11, 31, 58, 0.98);
+    }
+
+    .research-context-item:hover .research-context-description {
+      color: rgba(70, 82, 98, 0.78);
+    }
+
+    .research-context-item:hover .research-context-arrow {
+      color: rgba(11, 31, 58, 0.74);
+      transform: translateX(3px);
+    }
+
+    .research-context-arrow {
+      display: inline-block;
+
+      color: rgba(11, 31, 58, 0.34);
+
+      transition:
+        color 0.18s ease,
+        transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .research-context-enquiry {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 28px;
+
+      margin-top: 15px;
+      padding: 0 2px;
+    }
+
+    .research-context-enquiry p {
+      margin: 0;
+    }
+
+    .research-context-enquiry a {
+      white-space: nowrap;
+    }
+
+    .research-contact-cta.research-context::before {
+      left: 50%;
+      width: 46%;
+
+      transform: translateX(-50%);
+
+      background:
+        linear-gradient(to right,
+          rgba(11, 31, 58, 0),
+          rgba(11, 31, 58, 0.085) 22%,
+          rgba(11, 31, 58, 0.085) 78%,
+          rgba(11, 31, 58, 0));
+    }
+
+    .research-contact-cta.research-context::after {
+      content: "";
+      position: absolute;
+
+      left: 0;
+      bottom: -30px;
+
+      width: 100%;
+      height: 1px;
+
+      background:
+        linear-gradient(to right,
+          rgba(11, 31, 58, 0),
+          rgba(11, 31, 58, 0.1) 18%,
+          rgba(11, 31, 58, 0.1) 82%,
+          rgba(11, 31, 58, 0));
+
+      pointer-events: none;
+    }
+
     .mobile {
       display: none;
     }
@@ -1198,10 +1232,6 @@
     }
 
     @media (max-width: 640px) {
-
-      .research-links::after {
-        width: 65%;
-      }
 
       .research-tagline {
         display: none;
@@ -1511,88 +1541,109 @@
         line-height: 1.5;
       }
 
-      .research-links {
-        justify-content: flex-end;
-        gap: 6px;
-        margin: 0 0 20px;
-        padding-bottom: 3px;
+      .research-contact-cta {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 14px;
+
+        margin: 26px 0 0;
+        padding: 14px 2px 10px;
       }
 
-      .research-links a {
-        font-size: 0.68em;
-        color: rgba(24, 39, 58, 0.52);
+      .research-contact-cta p {
+        flex: 1 1 auto;
+        min-width: 0;
+        max-width: none;
+
+        font-size: 0.64em;
+        line-height: 1.45;
+        white-space: nowrap;
       }
 
-      .research-links-separator {
-        font-size: 0.52em;
-        color: rgba(11, 31, 58, 0.24);
+      .research-contact-cta a {
+        flex: 0 0 auto;
+
+        margin-top: 0;
+
+        font-size: 0.62em;
+        white-space: nowrap;
       }
 
-      .research-links a+a {
-        border-left: 0;
+      .research-contact-cta.research-context {
+        width: 100%;
+        max-width: none;
+
+        margin: 26px 0 0;
       }
 
-      @media (max-width: 640px) {
-        .research-links {
-          display: flex;
-          align-items: center;
-        }
+      .research-context-heading {
+        margin-bottom: 9px;
 
-        .research-links a {
-          display: inline-flex;
-          align-items: center;
+        font-size: 0.65em;
+        letter-spacing: 0.1em;
+      }
 
-          padding-top: 0;
-          padding-bottom: 0;
+      .research-contact-cta .research-context-item {
+        grid-template-columns: minmax(0, 1fr) auto;
+        column-gap: 12px;
 
-          line-height: 1;
-        }
+        padding: 7px 1px;
+      }
 
-        .research-links a .mobile {
-          display: block;
-          line-height: 1;
-        }
+      .research-context-name {
+        font-size: 1.03em;
+      }
 
-        .research-links-separator {
-          display: block;
+      .research-context-description {
+        display: none;
+      }
 
-          line-height: 1;
-          transform: none;
-        }
+      .research-context-arrow {
+        font-size: 0.95em;
+        MARGIN-RIGHT: 3PX;
+      }
 
-        .research-contact-cta {
-          display: flex;
-          align-items: baseline;
-          justify-content: space-between;
-          gap: 14px;
+      .research-context-enquiry {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
 
-          margin: 26px 0 0;
-          padding: 14px 2px 10px;
-        }
+        margin-top: 11px;
+        padding: 0 1px;
+      }
 
-        .research-contact-cta p {
-          flex: 1 1 auto;
-          min-width: 0;
-          max-width: none;
+      .research-context-enquiry p {
+        min-width: 0;
 
-          font-size: 0.64em;
-          line-height: 1.45;
-          white-space: nowrap;
-        }
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
 
-        .research-contact-cta a {
-          flex: 0 0 auto;
+        font-size: 0.64em;
+      }
 
-          margin-top: 0;
+      .research-context-enquiry a {
+        font-size: 0.62em;
+      }
 
-          font-size: 0.62em;
-          white-space: nowrap;
-        }
+      .research-contact-cta.research-context {
+        margin: 26px 0 26px;
+      }
 
-        .research-contact-actions>a:first-child,
-        .research-contact-actions>.research-contact-separator {
-          display: none;
-        }
+      .research-contact-cta.research-context::before {
+        left: 50%;
+        width: 38%;
+        transform: translateX(-50%);
+      }
+
+      .research-contact-cta.research-context::after {
+        left: 0;
+        bottom: -13px;
+
+        width: 100%;
+        transform: none;
       }
     }
   </style>
@@ -1651,48 +1702,6 @@
     </nav>
   </aside>
   <div class="page-content">
-
-    <nav class="research-links" aria-label="Research pages">
-
-      <a href="/research/log/">
-        <span class="desktop" data-en="Research Log" data-ja="研究ノート">
-          Research Log
-        </span>
-
-        <span class="mobile" data-en="Log" data-ja="ノート">
-          Log
-        </span>
-      </a>
-
-      <span class="research-links-separator" aria-hidden="true">
-        ·
-      </span>
-
-      <a href="/research/timeline/">
-        <span class="desktop" data-en="Academic Timeline" data-ja="学術年表">
-          Academic Timeline
-        </span>
-
-        <span class="mobile" data-en="Timeline" data-ja="年表">
-          Timeline
-        </span>
-      </a>
-
-      <span class="research-links-separator" aria-hidden="true">
-        ·
-      </span>
-
-      <a href="/research/connection/">
-        <span class="desktop" data-en="Research Connections" data-ja="研究上のつながり">
-          Research Connections
-        </span>
-
-        <span class="mobile" data-en="Connections" data-ja="つながり">
-          Connections
-        </span>
-      </a>
-
-    </nav>
 
     <section id="ongoing-research" class="ongoing-research" aria-labelledby="ongoing-research-title">
 
@@ -1781,16 +1790,17 @@
             </div>
 
             <p class="current-project-description"
-              data-en="The work investigates how spatially non-uniform hull roughness distributions influence resistance, boundary-layer development, and wake response under identical area-averaged equivalent roughness.&lt;span class=&quot;desc-second-line&quot;&gt;Current extensions move from model-scale resistance analysis toward full-scale powering prediction, with attention to effective roughness descriptors and measurement-informed roughness distributions.&lt;/span&gt;"
-              data-ja="本研究では、面積平均等価粗さが同一の条件下で、空間的に非一様な船体粗さ分布が抵抗、境界層の発達、および後流応答にどのような影響を与えるかを検討しています。&lt;span class=&quot;desc-second-line&quot;&gt;現在は、模型船スケールの抵抗解析から実船の推進性能予測へと研究を展開しており、有効粗さ指標および計測に基づく粗さ分布に注目しています。&lt;/span&gt;">
-              The work investigates how spatially non-uniform hull roughness
-              distributions influence resistance, boundary-layer development, and wake
-              response under identical area-averaged equivalent roughness.
+              data-en="A single mean roughness value can conceal hydrodynamically important spatial variation. This work quantifies how different roughness distributions with the same area-averaged equivalent roughness alter resistance, boundary-layer development, and wake structure.&lt;span class=&quot;desc-second-line&quot;&gt;Current work extends this framework toward full-scale powering prediction, including effective roughness descriptors and measurement-informed spatial distributions.&lt;/span&gt;"
+              data-ja="単一の平均粗さ値では、流体力学的に重要な空間的不均一性が見えなくなる可能性があります。本研究では、面積平均等価粗さが同一であっても、粗さの空間分布の違いが抵抗、境界層の発達、および後流構造をどのように変化させるかを定量的に評価します。&lt;span class=&quot;desc-second-line&quot;&gt;現在は、有効粗さ指標および計測に基づく空間分布を取り入れ、実船の推進性能予測へと研究を拡張しています。&lt;/span&gt;">
+              A single mean roughness value can conceal hydrodynamically important
+              spatial variation. This work quantifies how different roughness distributions
+              with the same area-averaged equivalent roughness alter resistance,
+              boundary-layer development, and wake structure.
 
               <span class="desc-second-line">
-                Current extensions move from model-scale resistance analysis toward
-                full-scale powering prediction, with attention to effective roughness
-                descriptors and measurement-informed roughness distributions.
+                Current work extends this framework toward full-scale powering prediction,
+                including effective roughness descriptors and measurement-informed spatial
+                distributions.
               </span>
             </p>
 
@@ -1927,11 +1937,14 @@
             </div>
 
             <p class="current-project-description"
-              data-en="Collaborative research to establish CFD parameters and verification practices for added-resistance predictions supporting ITTC seakeeping procedures."
-              data-ja="ITTC耐航性能手順を支援する波浪中付加抵抗予測について、CFDパラメータおよび検証手法を整備する共同研究です。">
-              Collaborative research to establish CFD parameters and verification
-              practices for added-resistance predictions supporting ITTC seakeeping
-              procedures.
+              data-en="Added-resistance predictions can vary substantially across CFD setups and participating institutions, with the disagreement becoming particularly pronounced at specific wavelength ratios. This project maps that sensitivity through a structured parameter study to identify the modelling choices that drive the variation and support more reproducible CFD practice for ITTC seakeeping procedures."
+              data-ja="波浪中付加抵抗のCFD予測は、計算設定や実施機関によって大きく変動し、特定の波長比ではその差が特に顕著になります。本研究では、体系的なパラメータスタディによってその感度を整理し、予測差を生む主要なモデリング要因を特定するとともに、ITTC耐航性能手順に向けたより再現性の高いCFD実務の確立を目指します。">
+              Added-resistance predictions can vary substantially across CFD setups and
+              participating institutions, with the disagreement becoming particularly
+              pronounced at specific wavelength ratios. This project maps that sensitivity
+              through a structured parameter study to identify the modelling choices that
+              drive the variation and support more reproducible CFD practice for ITTC
+              seakeeping procedures.
             </p>
 
             <div class="current-project-topics" aria-label="Research topics">
@@ -2000,11 +2013,14 @@
             </div>
 
             <p class="current-project-description"
-              data-en="Development of a modular CFD–MBD framework for analysing the coupled hydrodynamic and internal gyroscopic dynamics of wave energy converters."
-              data-ja="波力発電装置の流体力学応答と内部ジャイロダイナミクスを連成解析する、モジュール型CFD–MBDフレームワークの開発研究です。">
-              Development of a modular CFD–MBD framework for analysing the
-              coupled hydrodynamic and internal gyroscopic dynamics of wave
-              energy converters.
+              data-en="The internal gyroscopic dynamics are solved outside the CFD model using a simplified Python-based MBD solver, while CFD resolves the external wave–body hydrodynamics. The two solvers exchange motion, loads, and internal dynamic states in real time, forming a partitioned CFD–MBD framework that retains high-fidelity external flow prediction without resolving the complete mechanical system inside CFD."
+              data-ja="内部ジャイロダイナミクスはCFDモデル内で直接解くのではなく、簡略化したPythonベースのMBDソルバーで独立に計算し、外部の波浪・物体間の流体力学応答をCFDで解析します。両ソルバーは運動、荷重、および内部動的状態をリアルタイムで交換し、機械系全体をCFD内部で解くことなく高精度な外部流れ解析を維持する分割型CFD–MBDフレームワークを構成します。">
+              The internal gyroscopic dynamics are solved outside the CFD model using a
+              simplified Python-based MBD solver, while CFD resolves the external wave–body
+              hydrodynamics. The two solvers exchange motion, loads, and internal dynamic
+              states in real time, forming a partitioned CFD–MBD framework that retains
+              high-fidelity external flow prediction without resolving the complete
+              mechanical system inside CFD.
             </p>
 
             <div class="current-project-topics" aria-label="Research topics">
@@ -2095,49 +2111,102 @@
       </div>
     </section>
 
-    <section class="research-contact-cta" aria-label="Research collaboration" data-aria-en="Research collaboration"
-      data-aria-ja="共同研究">
+    <section class="research-contact-cta research-context" aria-labelledby="research-context-title">
 
-      <p>
-        <span class="desktop" data-en="For collaboration or academic exchange related to these projects."
-          data-ja="これらの研究に関する共同研究・学術交流について。">
-          For collaboration or academic exchange related to these projects.
-        </span>
+      <h2 id="research-context-title" class="research-context-heading" data-en="Research in Context"
+        data-ja="研究をより広く見る">
+        Research in Context
+      </h2>
 
-        <span class="mobile" data-en="For research collaboration." data-ja="共同研究について。">
-          For research collaboration.
-        </span>
-      </p>
+      <nav class="research-context-list" aria-label="Related research pages">
 
-      <div class="research-contact-actions">
-        <a href="/research/connection/">
-          <span class="desktop" data-en="Research Connections" data-ja="研究上のつながり">
-            Research Connections
+        <a class="research-context-item" href="/publications/">
+          <span class="research-context-name" data-en="Publications" data-ja="論文">
+            Publications
           </span>
 
-          <span class="mobile" data-en="Connections" data-ja="つながり">
-            Connections
+          <span class="research-context-description" data-en="Research outputs and papers" data-ja="研究成果・論文">
+            Research outputs and papers
+          </span>
+
+          <span class="research-context-arrow" aria-hidden="true">
+            →
           </span>
         </a>
 
-        <span class="research-contact-separator" aria-hidden="true">
-          ·
-        </span>
-
-        <a href="/contact/">
-          <span class="desktop" data-en="Research enquiries" data-ja="研究に関するお問い合わせ">
-            Research enquiries
+        <a class="research-context-item" href="/research/log/">
+          <span class="research-context-name" data-en="Research Log" data-ja="研究ノート">
+            Research Log
           </span>
 
-          <span class="mobile" data-en="Enquiries" data-ja="お問い合わせ">
-            Enquiries
+          <span class="research-context-description" data-en="Presentations and research development"
+            data-ja="研究発表と研究の展開">
+            Presentations and research development
+          </span>
+
+          <span class="research-context-arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+
+        <a class="research-context-item" href="/research/timeline/">
+          <span class="research-context-name" data-en="Academic Timeline" data-ja="学術年表">
+            Academic Timeline
+          </span>
+
+          <span class="research-context-description" data-en="Appointments, awards, and milestones"
+            data-ja="所属、受賞、研究上の節目">
+            Appointments, awards, and milestones
+          </span>
+
+          <span class="research-context-arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+
+        <a class="research-context-item" href="/research/connection/">
+          <span class="research-context-name" data-en="Research Connections" data-ja="研究上のつながり">
+            Research Connections
+          </span>
+
+          <span class="research-context-description" data-en="Collaborators, hosts, and exchanges"
+            data-ja="共同研究者、研究受入先、研究交流">
+            Collaborators, hosts, and exchanges
+          </span>
+
+          <span class="research-context-arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+
+
+      </nav>
+
+      <div class="research-context-enquiry">
+
+        <p>
+          <span class="desktop" data-en="For collaboration or academic exchange related to this work."
+            data-ja="これらの研究に関する共同研究・学術交流について。">
+            For collaboration or academic exchange related to this work.
+          </span>
+
+          <span class="mobile" data-en="For collaboration or exchange." data-ja="共同研究・交流について。">
+            For collaboration or exchange.
+          </span>
+        </p>
+
+        <a href="/contact/">
+          <span data-en="Research enquiries" data-ja="研究に関するお問い合わせ">
+            Research enquiries
           </span>
 
           <span class="research-contact-cta-arrow" aria-hidden="true">
             →
           </span>
         </a>
+
       </div>
+
     </section>
 
     <div class="research-timeline" id="research-timeline">

@@ -8,7 +8,7 @@
   <meta name="description"
     content="Profile of Sangseok Han, a researcher in ship hydrodynamics and computational fluid dynamics, focusing on spatial hull roughness and computational hydroelasticity.">
   <link rel="canonical" href="https://sangseokhan.com/profile/" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <meta name="robots" content="noimageindex">
   <meta property="og:title" content="Profile | Sangseok Han">
   <meta property="og:description"
@@ -587,6 +587,70 @@
       display: none;
     }
 
+    .awards-block {
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 620px;
+
+      padding: 2px 0 3px 18px;
+
+      border-left: 2px solid rgba(11, 31, 58, 0.11);
+    }
+
+    .award-item {
+      position: relative;
+
+      padding: 0 0 12px;
+    }
+
+    .award-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .award-item+.award-item {
+      padding-top: 11px;
+
+      border-top:
+        1px solid rgba(11, 31, 58, 0.055);
+    }
+
+    .award-main {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .award-title {
+      font-size: 0.97em;
+      font-weight: 500;
+      line-height: 1.45;
+      letter-spacing: 0.025em;
+
+      color: rgba(11, 31, 58, 0.9);
+    }
+
+    .award-year {
+      flex: 0 0 auto;
+
+      font-size: 0.66em;
+      line-height: 1.4;
+      letter-spacing: 0.075em;
+      font-variant-numeric: tabular-nums;
+
+      color: rgba(79, 89, 101, 0.55);
+    }
+
+    .award-source {
+      margin-top: 3px;
+
+      font-size: 0.7em;
+      line-height: 1.5;
+      letter-spacing: 0.018em;
+
+      color: rgba(68, 79, 94, 0.62);
+    }
+
     .reviewer-block {
       box-sizing: border-box;
       width: 100%;
@@ -732,7 +796,7 @@
       width: 132px;
 
       margin: 0;
-      padding-left: 16px;
+      padding-left: 13px;
 
       border-left: 1px solid rgba(11, 31, 58, 0.08);
     }
@@ -742,7 +806,7 @@
 
       position: absolute;
       top: 0;
-      left: 16px;
+      left: 13px;
 
       width: 30px;
       height: 1px;
@@ -751,7 +815,7 @@
     }
 
     .profile-portrait-frame {
-      width: 120px;
+      width: 130px;
       aspect-ratio: 5 / 6;
 
       margin-top: 8px;
@@ -1685,6 +1749,43 @@
         opacity: 0.6;
       }
 
+      .awards-block {
+        max-width: none;
+
+        padding: 1px 0 2px 14px;
+
+        border-left-width: 1.5px;
+      }
+
+      .award-item {
+        padding-bottom: 9px;
+      }
+
+      .award-item+.award-item {
+        padding-top: 8px;
+      }
+
+      .award-main {
+        gap: 12px;
+      }
+
+      .award-title {
+        font-size: 0.72rem;
+        line-height: 1.4;
+      }
+
+      .award-year {
+        font-size: 0.56rem;
+        margin-right: 10px;
+      }
+
+      .award-source {
+        margin-top: 2px;
+
+        font-size: 0.61rem;
+        line-height: 1.45;
+      }
+
       .reviewer-block {
         padding: 1px 0 3px 14px;
         border-left-width: 1.5px;
@@ -2007,6 +2108,10 @@
         Affiliations
       </a>
 
+      <a href="#awards" data-en="Awards" data-ja="受賞">
+        Awards
+      </a>
+
       <a href="#academic-activity" data-en="Academic Service" data-ja="学術活動">
         Academic Service
       </a>
@@ -2084,10 +2189,6 @@
         <div class="profile-portrait-frame">
           <img src="/assets/profile-portrait.png" alt="Portrait of Sangseok Han" decoding="async">
         </div>
-
-        <figcaption data-en="Portrait" data-ja="ポートレート">
-          Portrait
-        </figcaption>
       </figure>
 
     </div>
@@ -2350,6 +2451,100 @@
 
         <!-- Right: timeline and legend -->
         <div id="affiliation-timeline" class="affiliation-timeline" aria-label="Affiliation timeline">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section" id="awards">
+      <h2 data-en="Selected Awards & Recognition" data-ja="主な受賞・表彰">
+        Selected Awards & Recognition
+      </h2>
+
+      <div class="awards-block">
+
+        <div class="award-item">
+          <div class="award-main">
+            <span class="award-title" data-en="Cover Article" data-ja="表紙掲載論文">
+              Cover Article
+            </span>
+
+            <span class="award-year">
+              2025
+            </span>
+          </div>
+
+          <div class="award-source">
+            <em>Journal of Marine Science and Engineering</em>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-main">
+            <span class="award-title" data-en="International Conference Travel Bursary" data-ja="国際会議渡航助成">
+              International Conference Travel Bursary
+            </span>
+
+            <span class="award-year">
+              2025
+            </span>
+          </div>
+
+          <div class="award-source" data-en="The Worshipful Company of Shipwrights"
+            data-ja="The Worshipful Company of Shipwrights">
+            The Worshipful Company of Shipwrights
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-main">
+            <span class="award-title" data-en="Reviewer Excellence Certificate" data-ja="優秀査読者認定">
+              Reviewer Excellence Certificate
+            </span>
+
+            <span class="award-year">
+              2025
+            </span>
+          </div>
+
+          <div class="award-source">
+            <em>Ocean Engineering</em>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-main">
+            <span class="award-title" data-en="Best Paper Award" data-ja="最優秀論文賞">
+              Best Paper Award
+            </span>
+
+            <span class="award-year">
+              2024
+            </span>
+          </div>
+
+          <div class="award-source" data-en="13th National Congress on Fluid Engineering" data-ja="第13回全国流体工学学術大会">
+            13th National Congress on Fluid Engineering
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-main">
+            <span class="award-title" data-en="Dean’s International Excellence Award"
+              data-ja="Dean’s International Excellence Award">
+              Dean’s International Excellence Award
+            </span>
+
+            <span class="award-year">
+              2024
+            </span>
+          </div>
+
+          <div class="award-source" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
+            University of Strathclyde
+          </div>
         </div>
 
       </div>
@@ -3073,6 +3268,10 @@
         {
           key: "affiliations",
           selector: "#affiliations"
+        },
+        {
+          key: "awards",
+          selector: "#awards"
         },
         {
           key: "activity",
