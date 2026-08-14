@@ -821,6 +821,10 @@
         1px solid rgba(11, 31, 58, 0.07);
     }
 
+    .home-rail-links a.home-rail-link-secondary {
+      opacity: 0.7;
+    }
+
     .home-rail-recent+.home-rail-open {
       margin-top: 7px;
     }
@@ -880,7 +884,6 @@
       position: relative;
 
       padding-left: 13px;
-
       font-size: 0.72em;
       line-height: 1.4;
     }
@@ -1229,11 +1232,11 @@
       .recent-work {
         width: calc(100% - 8px);
 
-        margin-top: 22px;
-        margin-left: 8px;
+        margin-top: 15px;
+        margin-left: 4px;
         margin-bottom: -10px;
         padding-top: 11px;
-        padding-bottom: 10px;
+        padding-bottom: 0;
       }
 
       .recent-entry {
@@ -1360,21 +1363,45 @@
         transform-origin: left center;
       }
 
+      .affiliation-current-secondary .affiliation-year {
+        display: none;
+      }
+
       .home-mobile-recent {
+        position: relative;
         display: block;
 
-        margin: 26px 0 6px;
-        padding-top: 14px;
+        margin: 10px 0 6px;
+        padding-top: 8px;
 
-        border-top: 1px solid rgba(11, 31, 58, 0.1);
+        border-top: none;
+      }
+
+      .home-mobile-recent::before {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: auto;
+
+        width: 28px;
+        height: 0.5px;
+
+        background: rgba(11, 31, 58, 0.16);
+        opacity: 0.85;
       }
 
       .home-mobile-recent-heading {
         display: flex;
         align-items: baseline;
-        justify-content: space-between;
+        justify-content: flex-end;
 
         margin-bottom: 5px;
+      }
+
+      .home-mobile-recent-timeline {
+        display: none;
       }
 
       .home-mobile-recent-label {
@@ -1386,27 +1413,15 @@
         color: rgba(11, 31, 58, 0.62);
       }
 
-      .home-mobile-recent-timeline {
-        display: inline-flex;
-        align-items: baseline;
-        gap: 5px;
-
-        font-size: 0.6em;
-        line-height: 1.4;
-        letter-spacing: 0.045em;
-
-        color: rgba(11, 31, 58, 0.44);
-        text-decoration: none;
-      }
-
       .home-mobile-recent .home-rail-update {
         display: grid;
-        grid-template-columns: 68px minmax(0, 1fr);
-        column-gap: 10px;
+        grid-template-columns: 76px minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        column-gap: 12px;
         row-gap: 1px;
 
         margin: 0;
-        padding: 8px 0;
+        padding: 4px 0;
 
         font-size: 0.72em;
         line-height: 1.4;
@@ -1418,25 +1433,28 @@
         display: none;
       }
 
-      .home-mobile-recent .home-rail-update+.home-rail-update {
-        border-top: 1px solid rgba(11, 31, 58, 0.055);
-      }
-
       .home-mobile-recent .home-rail-update time {
         grid-column: 1;
         grid-row: 1 / span 2;
 
-        margin: 1px 0 0;
+        align-self: start;
 
+        margin: 1px 0 0;
+        margin-left: 10px;
         font-size: 0.88em;
-        line-height: 1.4;
+        line-height: 1.2;
         letter-spacing: 0.045em;
+
+        text-align: left;
 
         color: rgba(11, 31, 58, 0.52);
       }
 
+
+      /* Published */
       .home-mobile-recent .home-rail-update-title {
         grid-column: 2;
+        grid-row: 1;
 
         min-width: 0;
 
@@ -1444,11 +1462,16 @@
         text-overflow: ellipsis;
         white-space: nowrap;
 
+        text-align: right;
+
         color: rgba(11, 31, 58, 0.82);
       }
 
+
+      /* Ocean Engineering */
       .home-mobile-recent .home-rail-update-meta {
         grid-column: 2;
+        grid-row: 2;
 
         min-width: 0;
         margin: 0;
@@ -1458,10 +1481,13 @@
         white-space: nowrap;
 
         font-size: 0.86em;
-        text-align: left;
+        line-height: 1.4;
+
+        text-align: right;
 
         color: rgba(71, 85, 105, 0.56);
       }
+
     }
   </style>
 </head>
@@ -1500,6 +1526,13 @@
             CFD–MBD / Wave Energy
           </span>
 
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <a href="/research/#green-water" class="home-rail-link-secondary">
+          <span data-en="Green Water Experiments" data-ja="グリーンウォーター実験">
+            Green Water Experiments
+          </span>
           <span aria-hidden="true">→</span>
         </a>
 

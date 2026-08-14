@@ -1653,7 +1653,10 @@
       }
 
       .current-block {
-        display: block;
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
+        column-gap: 12px;
+        align-items: center;
 
         width: 100%;
         margin-top: 0;
@@ -1665,7 +1668,24 @@
       }
 
       .current-logo {
-        display: none;
+        display: grid;
+        place-items: center;
+
+        width: 36px;
+        height: 36px;
+
+        align-self: center;
+        transform: translateY(-3px);
+
+        opacity: 0.82;
+      }
+
+      .current-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+        filter: none;
       }
 
       .current-copy {
@@ -2459,8 +2479,14 @@
     <div class="divider"></div>
 
     <div class="section" id="awards">
-      <h2 data-en="Selected Awards & Recognition" data-ja="主な受賞・表彰">
-        Selected Awards & Recognition
+      <h2>
+        <span class="desktop-only" data-en="Selected Awards & Recognition" data-ja="主な受賞・表彰">
+          Selected Awards & Recognition
+        </span>
+
+        <span class="mobile-only" data-en="Awards & Recognition" data-ja="受賞・表彰">
+          Awards & Recognition
+        </span>
       </h2>
 
       <div class="awards-block">

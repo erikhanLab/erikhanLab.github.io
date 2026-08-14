@@ -628,7 +628,7 @@
       color: #222;
       opacity: 0.88;
 
-      padding-left: 14px;
+      padding-left: 2px;
       position: relative;
 
       margin-left: 0;
@@ -1672,6 +1672,39 @@
         transform: none;
       }
     }
+
+    @media (min-width: 1321px) {
+
+      .research-timeline {
+        width: calc(100% + clamp(0px, calc(100vw - 1320px), 140px));
+
+        margin-left:
+          calc(-1 * clamp(0px, calc(100vw - 1320px), 140px));
+
+        box-sizing: border-box;
+      }
+
+      .research-timeline .rt-item {
+        grid-template-columns: 64px minmax(0, 1fr);
+        column-gap: 50px;
+      }
+
+      .research-timeline .rt-body {
+        margin-left: -20px;
+      }
+
+      .research-timeline .rt-block-group {
+        margin-left:
+          clamp(30px,
+            calc(10vw - 126px),
+            50px);
+
+        padding-left:
+          clamp(10px,
+            calc(10vw - 120px),
+            20px);
+      }
+    }
   </style>
 </head>
 
@@ -2127,6 +2160,83 @@
                     <time class="research-network-period" datetime="2025" data-en="2025" data-ja="2025年">
                       2025
                     </time>
+                  </span>
+                </li>
+              </ul>
+
+            </aside>
+
+          </div>
+        </article>
+
+        <article class="current-project" id="green-water">
+
+          <figure class="current-project-figure current-project-figure--pending">
+            <figcaption class="current-project-pending-note" data-en="Study in preparation" data-ja="研究準備中">
+              Study in preparation
+            </figcaption>
+          </figure>
+
+          <div class="current-project-content">
+
+            <div class="current-project-heading">
+              <h2>
+                <span data-en="Green Water Experiments on FPSO" data-ja="FPSOのグリーンウォーター実験">
+                  Green Water Experiments on FPSO
+                </span>
+              </h2>
+
+              <time class="current-project-period" datetime="2026–" aria-label="Ongoing since 2026">
+                2026–
+              </time>
+            </div>
+
+            <p class="current-project-description"
+              data-en="This study investigates green-water behaviour around an FPSO-type model through wave-tank experiments, with current work focused on defining the experimental scope."
+              data-ja="本研究では、FPSO型模型を対象とした水槽実験を通じてグリーンウォーター現象を検討し、現在は実験範囲の設定を進めています。">
+              This study investigates green-water behaviour around an FPSO-type model through
+              wave-tank experiments, with current work focused on defining the experimental scope.
+            </p>
+
+            <div class="current-project-topics" aria-label="Research topics">
+
+              <span data-en="Experimental hydrodynamics" data-ja="実験流体力学">
+                Experimental hydrodynamics
+              </span>
+
+              <span data-en="Green water" data-ja="グリーンウォーター">
+                Green water
+              </span>
+
+              <span>FPSO</span>
+
+            </div>
+
+            <aside class="research-network" aria-labelledby="green-water-project-network-title">
+
+              <span id="green-water-project-network-title" class="research-network-heading" data-en="Research Setting"
+                data-ja="研究環境">
+                Research Setting
+              </span>
+
+              <ul class="research-network-list">
+                <li>
+                  <span class="research-network-name">
+                    Seoul National University
+                  </span>
+
+                  <span class="research-network-meta">
+
+                    <span class="research-network-role" data-en="Visiting research" data-ja="訪問研究">
+                      Visiting research
+                    </span>
+
+                    <span class="research-network-separator">·</span>
+
+                    <time class="research-network-period" datetime="2026" data-en="2026" data-ja="2026年">
+                      2026
+                    </time>
+
                   </span>
                 </li>
               </ul>
