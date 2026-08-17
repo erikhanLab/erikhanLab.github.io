@@ -50,6 +50,7 @@
       scroll-behavior: auto;
     }
 
+    #research-landscape,
     #ongoing-research,
     #research-context,
     #research-timeline,
@@ -301,10 +302,6 @@
       border-radius: 3px;
     }
 
-    .current-project-figure--published {
-      margin: 0;
-    }
-
     .current-project-caption {
       margin-top: 9px;
 
@@ -463,9 +460,9 @@
       display: grid;
       grid-template-columns: 58px minmax(0, 1fr);
       column-gap: 25px;
-      align-items: start;
+      align-items: baseline;
 
-      padding: 14px 0 18px 20px;
+      padding: 22px 0 18px 20px;
 
       border-left: 1px solid rgba(0, 0, 0, 0.10);
     }
@@ -490,7 +487,7 @@
       justify-content: space-between;
       gap: 28px;
 
-      margin-top: 8px;
+      margin-top: 0;
       margin-bottom: 10px;
     }
 
@@ -510,8 +507,8 @@
     }
 
     .rt-year {
-      padding-top: 8px;
       margin-left: -8px;
+      padding-top: 0;
 
       font-size: 1.06em;
       font-weight: 600;
@@ -523,28 +520,30 @@
     }
 
     .rt-stage {
-      font-size: 0.83em;
+      font-size: 0.76em;
       font-weight: 500;
       line-height: 1.4;
       letter-spacing: 0.12em;
       text-transform: uppercase;
 
-      color: #0B2545;
-      opacity: 0.55;
+      color: rgba(11, 37, 69, 0.5);
     }
 
     .rt-title {
-      font-size: 1.02em;
-      justify-content: flex-end;
-      text-align: right;
-      font-weight: 500;
-      margin-bottom: 10px;
       display: flex;
       align-items: center;
-      gap: 6px;
-      color: #444;
-      opacity: 0.8;
+      justify-content: flex-end;
+      gap: 5px;
 
+      margin-bottom: 10px;
+
+      font-size: 0.84em;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: 0.015em;
+      text-align: right;
+
+      color: rgba(70, 82, 98, 0.62);
     }
 
     .rt-block-group {
@@ -573,21 +572,22 @@
     }
 
     .rt-loc-dot {
-      font-size: 0.75em;
-      opacity: 0.55;
-      margin: 0 6px;
-      font-weight: 400;
-
+      margin: 0 5px;
       align-self: center;
+
+      font-size: 0.68em;
+
+      color: rgba(70, 82, 98, 0.32);
     }
 
     .rt-location-inline {
-      font-size: 0.78em;
-      font-style: italic;
-      opacity: 0.65;
-
       margin: 0;
       align-self: center;
+
+      font-size: 0.72em;
+      font-style: italic;
+
+      color: rgba(70, 82, 98, 0.48);
     }
 
     .rt-block {
@@ -669,32 +669,12 @@
       margin-bottom: 6px;
     }
 
-    .rt-small {
-      font-size: 0.78em;
-      opacity: 0.85;
-    }
-
     .rt-inst-divider {
       width: 100%;
       height: 1px;
       border-top: 1px solid rgba(0, 0, 0, 0.08);
       margin: 18px 0 22px;
       opacity: 0.65;
-    }
-
-    .footnote-mark {
-      margin-right: 6px;
-      opacity: 0.5;
-    }
-
-    .footnote-collab a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: none;
-    }
-
-    .footnote-collab a:hover {
-      border-bottom: none;
     }
 
     .research-network {
@@ -805,12 +785,6 @@
       line-height: 1.4;
       letter-spacing: 0.025em;
       color: rgba(66, 62, 62, 0.76);
-    }
-
-    .research-network-separator {
-      font-size: 0.54em;
-      line-height: 1;
-      color: rgba(66, 62, 62, 0.52);
     }
 
     .research-network-period {
@@ -964,31 +938,9 @@
           rgba(11, 31, 58, 0));
     }
 
-    .current-project-description {
-      line-height: 1.55;
-    }
-
     .current-project-description .desc-second-line {
       display: block;
       margin-top: 0.35rem;
-    }
-
-    .research-contact-actions {
-      display: inline-flex;
-      align-items: baseline;
-      justify-content: flex-end;
-      gap: 9px;
-
-      flex: 0 0 auto;
-
-      white-space: nowrap;
-    }
-
-    .research-contact-separator {
-      font-size: 0.66em;
-      line-height: 1;
-
-      color: rgba(11, 31, 58, 0.27);
     }
 
     .research-contact-cta {
@@ -1083,24 +1035,24 @@
     .research-contact-cta.research-context {
       display: block;
 
-      width: 72%;
-      max-width: 690px;
+      width: 100%;
+      max-width: 850px;
 
-      margin: 44px 0 58px auto;
-      padding-top: 18px;
+      margin: 44px 0 58px;
+      padding-top: 24px;
       padding-bottom: 20px;
     }
 
     .research-context-heading {
-      margin: 0 0 12px;
+      margin: 0 0 20px;
 
-      font-size: 0.66em;
+      font-size: 1.12em;
       font-weight: 500;
       line-height: 1.4;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.11em;
       text-transform: uppercase;
 
-      color: rgba(11, 31, 58, 0.62);
+      color: #0B2545;
     }
 
     .research-context-list {
@@ -1111,14 +1063,16 @@
     .research-contact-cta .research-context-item {
       display: grid;
       grid-template-columns:
-        180px minmax(0, 1fr) auto;
-      column-gap: 24px;
+        190px minmax(0, 1fr) auto;
+      column-gap: 28px;
       align-items: baseline;
 
       box-sizing: border-box;
       width: 100%;
 
-      padding: 8px 2px;
+      padding: 12px 4px;
+
+      font-size: 0.9em;
 
       border-top: 1px solid rgba(11, 31, 58, 0.055);
 
@@ -1130,11 +1084,11 @@
     }
 
     .research-context-name {
-      font-size: 1.02em;
+      font-size: 1.06em;
       font-weight: 500;
       letter-spacing: 0.025em;
 
-      color: rgba(24, 39, 58, 0.78);
+      color: rgba(24, 39, 58, 0.82);
 
       transition: color 0.18s ease;
     }
@@ -1142,10 +1096,10 @@
     .research-context-description {
       min-width: 0;
 
-      font-size: 0.94em;
+      font-size: 0.98em;
       letter-spacing: 0.015em;
 
-      color: rgba(70, 82, 98, 0.48);
+      color: rgba(70, 82, 98, 0.54);
 
       transition: color 0.18s ease;
     }
@@ -1192,16 +1146,15 @@
     }
 
     .research-contact-cta.research-context::before {
-      left: 50%;
-      width: 46%;
-
-      transform: translateX(-50%);
+      left: 0;
+      width: 100%;
+      transform: none;
 
       background:
         linear-gradient(to right,
           rgba(11, 31, 58, 0),
-          rgba(11, 31, 58, 0.085) 22%,
-          rgba(11, 31, 58, 0.085) 78%,
+          rgba(11, 31, 58, 0.08) 18%,
+          rgba(11, 31, 58, 0.08) 82%,
           rgba(11, 31, 58, 0));
     }
 
@@ -1227,6 +1180,284 @@
 
     .mobile {
       display: none;
+    }
+
+    .research-landscape {
+      position: relative;
+
+      margin: 44px 0 0;
+      padding: 28px 0 0;
+
+      border-bottom: 0;
+    }
+
+    .research-landscape::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background: linear-gradient(to right,
+          rgba(11, 31, 58, 0),
+          rgba(11, 31, 58, 0.08) 18%,
+          rgba(11, 31, 58, 0.08) 82%,
+          rgba(11, 31, 58, 0));
+    }
+
+    .research-landscape-header {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .research-landscape-title {
+      margin: 0;
+
+      font-size: 1.12em;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+
+      color: #0B2545;
+    }
+
+    .research-landscape-intro {
+      margin: 6px 0 0;
+
+      font-size: 0.76em;
+      line-height: 1.55;
+      letter-spacing: 0.025em;
+
+      color: rgba(55, 67, 82, 0.52);
+    }
+
+    .research-landscape-summary {
+      position: absolute;
+      top: 25px;
+      right: 0;
+      z-index: 2;
+      width: 215px;
+      padding: 0;
+      pointer-events: none;
+      text-align: right;
+    }
+
+    .research-landscape-summary-heading {
+      display: block;
+
+      margin-bottom: 9px;
+      font-size: 0.56em;
+      font-weight: 500;
+      line-height: 1.4;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+
+      color: rgba(11, 31, 58, 0.36);
+    }
+
+    .research-landscape-summary-list {
+      display: grid;
+      gap: 5px;
+
+      list-style: none;
+      justify-items: end;
+      margin: 0;
+      padding: 0;
+    }
+
+    .research-landscape-summary-list li {
+      font-size: 0.68em;
+      line-height: 1.45;
+
+      color: rgba(31, 46, 64, 0.62);
+    }
+
+    .research-landscape-stage {
+      position: relative;
+
+      display: block;
+      min-height: 500px;
+      margin-top: -20px;
+    }
+
+    .research-landscape-svg {
+      display: block;
+
+      width: 100%;
+      height: auto;
+      min-height: 500px;
+
+      overflow: visible;
+    }
+
+    .landscape-link {
+      fill: none;
+      stroke: rgba(11, 31, 58, 0.085);
+      stroke-width: 0.9;
+      stroke-linecap: round;
+      vector-effect: non-scaling-stroke;
+
+      transition:
+        stroke 0.3s ease,
+        stroke-width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.3s ease;
+    }
+
+    .landscape-node {
+      cursor: default;
+      --group-rgb: 45, 67, 91;
+      transition:
+        opacity 0.24s ease,
+        transform 0.24s ease;
+    }
+
+    .landscape-node-circle {
+      fill: rgba(11, 31, 58, 0.055);
+      stroke: rgba(11, 31, 58, 0.16);
+      stroke-width: 1;
+
+      vector-effect: non-scaling-stroke;
+
+      transition:
+        fill 0.22s ease,
+        stroke 0.22s ease;
+    }
+
+    .landscape-node-label {
+      fill: rgba(20, 34, 52, 0.76);
+
+      font-family: inherit;
+      letter-spacing: 0.015em;
+
+      pointer-events: none;
+
+      transition:
+        fill 0.22s ease,
+        opacity 0.22s ease;
+    }
+
+    .landscape-node[data-size="large"] .landscape-node-label {
+      font-size: 16px;
+    }
+
+    .landscape-node[data-size="small"] .landscape-node-label {
+      font-size: 12.5px;
+    }
+
+    .research-landscape-legend {
+      position: absolute;
+      right: 20px;
+      bottom: -20px;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      font-size: 0.58em;
+      line-height: 1;
+      letter-spacing: 0.025em;
+
+      color: rgba(55, 67, 82, 0.48);
+
+      pointer-events: none;
+    }
+
+    .research-landscape-legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .research-landscape-legend-divider {
+      width: 1px;
+      height: 11px;
+
+      background: rgba(11, 31, 58, 0.11);
+    }
+
+    .legend-size {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .legend-size i {
+      display: block;
+
+      border-radius: 50%;
+      background: rgba(45, 67, 91, 0.12);
+      border: 1px solid rgba(45, 67, 91, 0.32);
+    }
+
+    .legend-size i:first-child {
+      width: 6px;
+      height: 6px;
+    }
+
+    .legend-size i:last-child {
+      width: 11px;
+      height: 11px;
+    }
+
+    .legend-groups {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .legend-groups i {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+    }
+
+    .legend-groups i:nth-child(1) {
+      background: rgba(39, 82, 121, 0.62);
+    }
+
+    .legend-groups i:nth-child(2) {
+      background: rgba(67, 105, 96, 0.62);
+    }
+
+    .legend-groups i:nth-child(3) {
+      background: rgba(99, 82, 119, 0.62);
+    }
+
+    .legend-status {
+      gap: 5px;
+    }
+
+    .legend-established {
+      color: rgba(45, 67, 91, 0.72);
+      font-weight: 500;
+    }
+
+    .legend-status-separator {
+      color: rgba(45, 67, 91, 0.2);
+    }
+
+    .legend-ongoing {
+      color: rgba(45, 67, 91, 0.34);
+      font-weight: 400;
+    }
+
+    .rt-header,
+    .research-landscape-title,
+    .research-context-heading {
+      font-size: 1.12em;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+
+      color: #0B2545;
+      opacity: 0.92;
     }
 
     @media (min-width: 641px) and (max-width: 1050px) {
@@ -1299,8 +1530,7 @@
     }
 
     @media (max-width: 640px) {
-
-      .research-tagline {
+      #research-landscape {
         display: none;
       }
 
@@ -1336,29 +1566,6 @@
         padding: 0;
       }
 
-      .current-project-content {
-        padding: 0;
-      }
-
-      .current-project-network {
-        margin-top: 14px;
-        padding-top: 9px;
-      }
-
-      .current-project-network-label {
-        font-size: 0.5em;
-      }
-
-      .current-project-network ul {
-        margin-top: 6px;
-        gap: 5px;
-      }
-
-      .current-project-network li {
-        padding: 2px 6px;
-        font-size: 0.54em;
-      }
-
       .research-timeline {
         margin-top: 8px;
         padding-top: 15px;
@@ -1372,10 +1579,6 @@
       .rt-log-link {
         font-size: 0.65em;
         opacity: 0.45;
-      }
-
-      .rt-note {
-        font-size: 0.6em;
       }
 
       .rt-body {
@@ -1535,10 +1738,6 @@
         letter-spacing: 0.04em;
       }
 
-      .footnote-read {
-        display: none;
-      }
-
       .desktop {
         display: none;
       }
@@ -1650,10 +1849,11 @@
       }
 
       .research-context-heading {
-        margin-bottom: 9px;
+        margin-bottom: 16px;
 
-        font-size: 0.65em;
-        letter-spacing: 0.1em;
+        font-size: 0.84em;
+        line-height: 1.45;
+        letter-spacing: 0.11em;
       }
 
       .research-contact-cta .research-context-item {
@@ -1724,6 +1924,10 @@
     }
 
     @media (min-width: 1321px) {
+      .research-timeline>.rt-header {
+        margin-left:
+          clamp(0px, calc(100vw - 1320px), 140px);
+      }
 
       .research-timeline {
         width: calc(100% + clamp(0px, calc(100vw - 1320px), 140px));
@@ -1751,6 +1955,102 @@
         padding-right: 16px;
       }
 
+    }
+
+    .landscape-node[data-group="roughness"] {
+      --group-rgb: 39, 82, 121;
+    }
+
+
+    .landscape-node[data-group="scaling"] {
+      --group-rgb: 67, 105, 96;
+    }
+
+    .landscape-node[data-group="waves"] {
+      --group-rgb: 55, 101, 132;
+    }
+
+    .landscape-node[data-group="systems"] {
+      --group-rgb: 99, 82, 119;
+    }
+
+    .landscape-node[data-group="experiments"] {
+      --group-rgb: 124, 91, 66;
+    }
+
+    .landscape-node[data-group="method"] {
+      --group-rgb: 72, 82, 94;
+    }
+
+    .landscape-node[data-level="established"] .landscape-node-circle {
+      fill: rgba(var(--group-rgb), 0.095);
+      stroke: rgba(var(--group-rgb), 0.34);
+    }
+
+    .landscape-node[data-level="established"] .landscape-node-label {
+      fill: rgba(var(--group-rgb), 0.88);
+      font-weight: 500;
+    }
+
+    .landscape-node[data-level="established"][data-discovery="strong"] .landscape-node-circle {
+      fill: rgba(var(--group-rgb), 0.13);
+      stroke: rgba(var(--group-rgb), 0.46);
+    }
+
+    .landscape-node[data-level="ongoing"] .landscape-node-circle {
+      fill: rgba(var(--group-rgb), 0.035);
+      stroke: rgba(var(--group-rgb), 0.15);
+    }
+
+    .landscape-node[data-level="ongoing"] .landscape-node-label {
+      fill: rgba(var(--group-rgb), 0.55);
+      font-weight: 400;
+    }
+
+    .landscape-node.is-neighbor .landscape-node-circle {
+      fill: rgba(var(--group-rgb), 0.09);
+      stroke: rgba(var(--group-rgb), 0.34);
+    }
+
+    .landscape-node.is-neighbor .landscape-node-label {
+      fill: rgba(var(--group-rgb), 0.88);
+    }
+
+
+    .landscape-node:hover .landscape-node-circle,
+    .landscape-node.is-active .landscape-node-circle {
+      fill: rgba(var(--group-rgb), 0.16);
+      stroke: rgba(var(--group-rgb), 0.62);
+    }
+
+    .landscape-node:hover .landscape-node-label,
+    .landscape-node.is-active .landscape-node-label {
+      fill: rgba(var(--group-rgb), 1);
+      font-weight: 500;
+    }
+
+    .landscape-node.is-dimmed {
+      opacity: 0.16;
+    }
+
+    .landscape-link.is-muted {
+      opacity: 0.035;
+    }
+
+    .landscape-link.is-connected {
+      stroke: rgba(11, 31, 58, 0.38);
+      stroke-width: 1.25;
+      opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .landscape-node,
+      .landscape-node-circle,
+      .landscape-node-label,
+      .landscape-link {
+        transition: none;
+      }
     }
   </style>
 </head>
@@ -1789,8 +2089,14 @@
 
   <aside class="research-side-nav" aria-label="Research section navigation">
     <nav>
+
       <a href="#ongoing-research" data-en="Ongoing Research" data-ja="進行中の研究">
         Ongoing Research
+      </a>
+
+
+      <a href="#research-landscape" data-en="Research Themes" data-ja="研究テーマ">
+        Research Themes
       </a>
 
       <a href="#research-context" data-en="Research in Context" data-ja="研究をより広く見る">
@@ -2300,6 +2606,89 @@
 
 
       </div>
+    </section>
+
+    <section id="research-landscape" class="research-landscape" aria-labelledby="research-landscape-title">
+
+      <div class="research-landscape-header">
+        <h1 id="research-landscape-title" class="research-landscape-title" data-en="Research Themes" data-ja="研究テーマ">
+          Research Themes
+        </h1>
+
+        <p class="research-landscape-intro" data-en="Core questions, methods, and connections across my research."
+          data-ja="研究の中心となる問い、手法、そしてそれらのつながり。">
+          Core questions, methods, and connections across my research.
+        </p>
+      </div>
+
+
+      <div class="research-landscape-summary" aria-label="Most connected research topics">
+        <span class="research-landscape-summary-heading">
+          Core themes
+        </span>
+
+        <ul class="research-landscape-summary-list"></ul>
+      </div>
+
+      <div class="research-landscape-stage">
+        <svg id="research-landscape-svg" class="research-landscape-svg" viewBox="0 0 1000 560" role="img"
+          aria-label="Research themes" aria-describedby="research-landscape-svg-desc">
+
+          <desc id="research-landscape-svg-desc">
+            Interactive map connecting research in hull roughness,
+            hydrodynamics, waves, coupled systems, and experimental studies.
+          </desc>
+
+          <g class="landscape-links"></g>
+          <g class="landscape-nodes"></g>
+
+        </svg>
+
+        <div class="research-landscape-legend" aria-label="Research map legend">
+
+          <div class="research-landscape-legend-item">
+            <span class="legend-size">
+              <i></i>
+              <i></i>
+            </span>
+
+            <span data-en="Connectivity" data-ja="接続性">
+              Connectivity
+            </span>
+          </div>
+
+          <div class="research-landscape-legend-divider"></div>
+
+          <div class="research-landscape-legend-item">
+            <span class="legend-groups">
+              <i></i>
+              <i></i>
+              <i></i>
+            </span>
+
+            <span data-en="Theme" data-ja="テーマ">
+              Theme
+            </span>
+          </div>
+
+          <div class="research-landscape-legend-divider"></div>
+
+          <div class="research-landscape-legend-item legend-status">
+            <span class="legend-established">
+              Established
+            </span>
+
+            <span class="legend-status-separator">·</span>
+
+            <span class="legend-ongoing">
+              Ongoing
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
 
     <section id="research-context" class="research-contact-cta research-context"
@@ -2830,6 +3219,211 @@
     const DEFAULT_LANG = "en";
     const SUPPORTED_LANGS = new Set(["en", "ja"]);
 
+    const researchLandscapeNodes = [
+      {
+        id: "spatial-roughness",
+        label: "Spatial hull roughness",
+        group: "roughness",
+        level: "established",
+        discovery: "strong"
+      },
+      {
+        id: "boundary-layer",
+        label: "Boundary layer",
+        group: "roughness",
+        level: "established",
+        discovery: "connected"
+      },
+      {
+        id: "wake",
+        label: "Wake",
+        group: "roughness",
+        level: "established",
+        discovery: "connected"
+      },
+      {
+        id: "ship-resistance",
+        label: "Ship resistance",
+        group: "roughness",
+        level: "established",
+        discovery: "strong"
+      },
+      {
+        id: "measured-roughness",
+        label: "Measured roughness",
+        group: "roughness",
+        level: "ongoing",
+        discovery: "emerging"
+      },
+      {
+        id: "full-scale-prediction",
+        label: "Full-scale prediction",
+        group: "roughness",
+        level: "ongoing",
+        discovery: "emerging"
+      },
+      {
+        id: "model-ship-extrapolation",
+        label: "Model–ship extrapolation",
+        group: "scaling",
+        level: "established",
+        discovery: "connected"
+      },
+      {
+        id: "temperature-effects",
+        label: "Temperature effects",
+        group: "scaling",
+        level: "established",
+        discovery: "adjacent"
+      },
+      {
+        id: "ittc-assumptions",
+        label: "ITTC assumptions",
+        group: "scaling",
+        level: "established",
+        discovery: "connected"
+      },
+      {
+        id: "added-resistance",
+        label: "Added resistance",
+        group: "waves",
+        level: "ongoing",
+        discovery: "emerging"
+      },
+      {
+        id: "wave-body-interaction",
+        label: "Wave–body interaction",
+        group: "waves",
+        level: "established",
+        discovery: "connected"
+      },
+      {
+        id: "floating-systems",
+        label: "Floating systems",
+        group: "systems",
+        level: "established",
+        discovery: "connected"
+      },
+      {
+        id: "model-predictive-control",
+        label: "Model predictive control",
+        group: "systems",
+        level: "established",
+        discovery: "adjacent"
+      },
+      {
+        id: "cfd-mbd",
+        label: "CFD–MBD",
+        group: "systems",
+        level: "ongoing",
+        discovery: "emerging"
+      },
+      {
+        id: "gyroscopic-dynamics",
+        label: "Gyroscopic dynamics",
+        group: "systems",
+        level: "ongoing",
+        discovery: "adjacent"
+      },
+      {
+        id: "cfd",
+        label: "CFD",
+        group: "method",
+        level: "established",
+        discovery: "method"
+      },
+      {
+        id: "fsi",
+        label: "FSI",
+        group: "method",
+        level: "established",
+        discovery: "method"
+      },
+      {
+        id: "green-water",
+        label: "Green water",
+        group: "waves",
+        level: "ongoing",
+        discovery: "emerging"
+      }
+    ];
+
+    const researchLandscapeLinks = [
+      ["spatial-roughness", "boundary-layer", 12],
+      ["spatial-roughness", "ship-resistance", -10],
+      ["spatial-roughness", "ittc-assumptions", -136],
+      ["spatial-roughness", "measured-roughness", -50],
+      ["spatial-roughness", "full-scale-prediction", 42],
+      ["boundary-layer", "wake", -10],
+      ["boundary-layer", "ship-resistance", 12],
+      ["wake", "ship-resistance", 10],
+      ["full-scale-prediction", "ship-resistance", -12],
+      ["full-scale-prediction", "model-ship-extrapolation", 18],
+      ["ship-resistance", "model-ship-extrapolation", -10],
+      ["model-ship-extrapolation", "temperature-effects", 12],
+      ["model-ship-extrapolation", "ittc-assumptions", 10],
+      ["temperature-effects", "ittc-assumptions", -10],
+      ["added-resistance", "wave-body-interaction", -12],
+      ["cfd-mbd", "gyroscopic-dynamics", -12],
+      ["cfd", "spatial-roughness", -12],
+      ["cfd", "fsi", 10],
+      ["cfd", "added-resistance", 10],
+      ["cfd", "wave-body-interaction", -12],
+      ["cfd", "model-predictive-control", 14],
+      ["cfd", "cfd-mbd", 18],
+      ["cfd", "temperature-effects", -14],
+      ["fsi", "wave-body-interaction", -10],
+      ["fsi", "floating-systems", 10],
+      ["wave-body-interaction", "floating-systems", 12],
+      ["floating-systems", "model-predictive-control", -12],
+      ["floating-systems", "cfd-mbd", 14],
+      ["green-water", "wave-body-interaction", 10],
+      ["green-water", "floating-systems", -10]
+    ];
+
+    const researchLandscapeState = {
+      hoveredId: null,
+      nodeMap: new Map(),
+      adjacency: new Map(),
+      nodeElements: new Map(),
+      linkElements: [],
+      maxConnections: 1
+    };
+
+    const researchLandscapeGroupAnchors = {
+      roughness: {
+        x: 230,
+        y: 260
+      },
+      scaling: {
+        x: 430,
+        y: 410
+      },
+      method: {
+        x: 520,
+        y: 185
+      },
+      waves: {
+        x: 685,
+        y: 160
+      },
+      systems: {
+        x: 790,
+        y: 340
+      },
+      experiments: {
+        x: 790,
+        y: 470
+      }
+    };
+
+    const researchLandscapeReservedArea = {
+      left: 735,
+      right: 980,
+      top: 0,
+      bottom: 95
+    };
+
     let researchScrollMap = [];
     let researchScrollMax = 0;
     let researchMapDirty = true;
@@ -2860,22 +3454,52 @@
         safeLang
       );
 
-      document.querySelectorAll("[data-en]").forEach(el => {
-        const value = el.getAttribute(
-          `data-${safeLang}`
+      document
+        .querySelectorAll("[data-en]")
+        .forEach(element => {
+          const value = element.getAttribute(
+            `data-${safeLang}`
+          );
+
+          if (value !== null) {
+            element.innerHTML = value;
+          }
+        });
+
+      document
+        .querySelectorAll(".lang-switch a")
+        .forEach(link => {
+          link.classList.toggle(
+            "active",
+            link.dataset.lang === safeLang
+          );
+        });
+
+      const summaryHeading =
+        document.querySelector(
+          ".research-landscape-summary-heading"
         );
 
-        if (value !== null) {
-          el.innerHTML = value;
-        }
-      });
-
-      document.querySelectorAll(".lang-switch a").forEach(a => {
-        a.classList.toggle(
-          "active",
-          a.dataset.lang === safeLang
+      const summary =
+        document.querySelector(
+          ".research-landscape-summary"
         );
-      });
+
+      if (summaryHeading) {
+        summaryHeading.textContent =
+          safeLang === "ja"
+            ? "主要テーマ"
+            : "Core themes";
+      }
+
+      if (summary) {
+        summary.setAttribute(
+          "aria-label",
+          safeLang === "ja"
+            ? "主要な研究テーマ"
+            : "Core research themes"
+        );
+      }
     }
 
     function clamp(value, min, max) {
@@ -2888,12 +3512,19 @@
     function easeInOutQuint(progress) {
       return progress < 0.5
         ? 16 * Math.pow(progress, 5)
-        : 1 - Math.pow(-2 * progress + 2, 5) / 2;
+        : 1 -
+        Math.pow(
+          -2 * progress + 2,
+          5
+        ) / 2;
     }
 
     function cancelSmoothScroll() {
       if (smoothScrollFrame !== null) {
-        cancelAnimationFrame(smoothScrollFrame);
+        cancelAnimationFrame(
+          smoothScrollFrame
+        );
+
         smoothScrollFrame = null;
       }
     }
@@ -2905,25 +3536,33 @@
         document.scrollingElement ||
         document.documentElement;
 
-      const maximumScrollY = Math.max(
-        0,
-        scrollingElement.scrollHeight -
-        window.innerHeight
-      );
+      const maximumScrollY =
+        Math.max(
+          0,
+          scrollingElement.scrollHeight -
+          window.innerHeight
+        );
 
-      const startY = window.scrollY;
+      const startY =
+        window.scrollY;
 
-      const destinationY = clamp(
-        targetY,
-        0,
-        maximumScrollY
-      );
+      const destinationY =
+        clamp(
+          targetY,
+          0,
+          maximumScrollY
+        );
 
       const distance =
-        destinationY - startY;
+        destinationY -
+        startY;
 
       if (Math.abs(distance) < 1) {
-        window.scrollTo(0, destinationY);
+        window.scrollTo(
+          0,
+          destinationY
+        );
+
         return;
       }
 
@@ -2933,73 +3572,111 @@
         ).matches;
 
       if (reduceMotion) {
-        window.scrollTo(0, destinationY);
+        window.scrollTo(
+          0,
+          destinationY
+        );
+
         return;
       }
 
-      const duration = clamp(
-        420 + Math.abs(distance) * 0.16,
-        480,
-        1050
-      );
+      const duration =
+        clamp(
+          420 +
+          Math.abs(distance) *
+          0.16,
+          480,
+          1050
+        );
 
-      const startTime = performance.now();
+      const startTime =
+        performance.now();
 
       function animate(currentTime) {
         const elapsed =
-          currentTime - startTime;
+          currentTime -
+          startTime;
 
-        const progress = clamp(
-          elapsed / duration,
-          0,
-          1
-        );
+        const progress =
+          clamp(
+            elapsed /
+            duration,
+            0,
+            1
+          );
 
         const easedProgress =
-          easeInOutQuint(progress);
+          easeInOutQuint(
+            progress
+          );
 
         window.scrollTo(
           0,
-          startY + distance * easedProgress
+          startY +
+          distance *
+          easedProgress
         );
 
         if (progress < 1) {
           smoothScrollFrame =
-            requestAnimationFrame(animate);
+            requestAnimationFrame(
+              animate
+            );
         } else {
-          window.scrollTo(0, destinationY);
-          smoothScrollFrame = null;
+          window.scrollTo(
+            0,
+            destinationY
+          );
+
+          smoothScrollFrame =
+            null;
         }
       }
 
       smoothScrollFrame =
-        requestAnimationFrame(animate);
+        requestAnimationFrame(
+          animate
+        );
     }
 
     function getDocumentTop(element) {
       return (
-        element.getBoundingClientRect().top +
+        element
+          .getBoundingClientRect()
+          .top +
         window.scrollY
       );
     }
 
     function getResearchSectionDefinitions() {
       const sideNav =
-        document.querySelector(".research-side-nav");
+        document.querySelector(
+          ".research-side-nav"
+        );
 
-      if (!sideNav) return [];
+      if (!sideNav) {
+        return [];
+      }
 
-      const ongoingLink = sideNav.querySelector(
-        'a[href="#ongoing-research"]'
-      );
+      const landscapeLink =
+        sideNav.querySelector(
+          'a[href="#research-landscape"]'
+        );
 
-      const contextLink = sideNav.querySelector(
-        'a[href="#research-context"]'
-      );
+      const ongoingLink =
+        sideNav.querySelector(
+          'a[href="#ongoing-research"]'
+        );
 
-      const timelineLink = sideNav.querySelector(
-        'a[href="#research-timeline"]'
-      );
+      const contextLink =
+        sideNav.querySelector(
+          'a[href="#research-context"]'
+        );
+
+      const timelineLink =
+        sideNav.querySelector(
+          'a[href="#research-timeline"]'
+        );
 
       const yearLink = year =>
         sideNav.querySelector(
@@ -3008,72 +3685,80 @@
 
       const definitions = [
         {
-          key: "ongoing",
           selector: "#ongoing-research",
-          activeLinks: [ongoingLink],
+          activeLinks: [
+            ongoingLink
+          ],
           currentLink: ongoingLink
         },
         {
-          key: "context",
+          selector: "#research-landscape",
+          activeLinks: [
+            landscapeLink
+          ],
+          currentLink: landscapeLink
+        },
+        {
           selector: "#research-context",
-          activeLinks: [contextLink],
+          activeLinks: [
+            contextLink
+          ],
           currentLink: contextLink
         },
         {
-          key: "timeline",
           selector: "#research-timeline",
-          activeLinks: [timelineLink],
+          activeLinks: [
+            timelineLink
+          ],
           currentLink: timelineLink
         },
         {
-          key: "2026",
           selector: "#year-2026",
           activeLinks: [
             timelineLink,
             yearLink("2026")
           ],
-          currentLink: yearLink("2026")
+          currentLink:
+            yearLink("2026")
         },
         {
-          key: "2025",
           selector: "#year-2025",
           activeLinks: [
             timelineLink,
             yearLink("2025")
           ],
-          currentLink: yearLink("2025")
+          currentLink:
+            yearLink("2025")
         },
         {
-          key: "2024",
           selector: "#year-2024",
           activeLinks: [
             timelineLink,
             yearLink("2024")
           ],
-          currentLink: yearLink("2024")
+          currentLink:
+            yearLink("2024")
         },
         {
-          key: "2023",
           selector: "#year-2023",
           activeLinks: [
             timelineLink,
             yearLink("2023")
           ],
-          currentLink: yearLink("2023")
+          currentLink:
+            yearLink("2023")
         }
       ];
-
       return definitions
         .map(definition => ({
           ...definition,
-
           target:
             document.querySelector(
               definition.selector
             ),
-
           activeLinks:
-            definition.activeLinks.filter(Boolean)
+            definition.activeLinks
+              .filter(Boolean)
         }))
         .filter(definition =>
           definition.target &&
@@ -3095,137 +3780,1415 @@
         document.scrollingElement ||
         document.documentElement;
 
-      researchScrollMax = Math.max(
-        0,
-        scrollingElement.scrollHeight -
-        window.innerHeight
-      );
+      researchScrollMax =
+        Math.max(
+          0,
+          scrollingElement.scrollHeight -
+          window.innerHeight
+        );
 
       const firstSection =
         definitions[0].target;
 
       const lastSection =
-        definitions.at(-1).target;
+        definitions[
+          definitions.length - 1
+        ].target;
 
       const contentStart =
-        getDocumentTop(firstSection);
+        getDocumentTop(
+          firstSection
+        );
 
-      const contentEnd = Math.max(
-        contentStart + 1,
-
-        getDocumentTop(lastSection) +
-        lastSection.offsetHeight
-      );
+      const contentEnd =
+        Math.max(
+          contentStart + 1,
+          getDocumentTop(
+            lastSection
+          ) +
+          lastSection.offsetHeight
+        );
 
       const contentHeight =
-        contentEnd - contentStart;
+        contentEnd -
+        contentStart;
 
-      researchScrollMap = definitions.map(
-        (definition, index) => {
-          const sectionTop =
-            getDocumentTop(definition.target);
+      researchScrollMap =
+        definitions.map(
+          definition => {
+            const sectionTop =
+              getDocumentTop(
+                definition.target
+              );
 
-          const nextSectionTop =
-            index < definitions.length - 1
-              ? getDocumentTop(
-                definitions[index + 1].target
-              )
-              : contentEnd;
 
-          const startRatio = clamp(
-            (
-              sectionTop -
-              contentStart
-            ) / contentHeight,
-            0,
-            1
-          );
 
-          const endRatio = clamp(
-            (
-              nextSectionTop -
-              contentStart
-            ) / contentHeight,
-            0,
-            1
-          );
+            const startRatio =
+              clamp(
+                (
+                  sectionTop -
+                  contentStart
+                ) /
+                contentHeight,
+                0,
+                1
+              );
 
-          return {
-            ...definition,
-
-            sectionTop,
-            sectionBottom: nextSectionTop,
-
-            startScroll:
-              startRatio * researchScrollMax,
-
-            endScroll:
-              index === definitions.length - 1
-                ? researchScrollMax
-                : endRatio * researchScrollMax
-          };
-        }
-      );
+            return {
+              ...definition,
+              startScroll:
+                startRatio *
+                researchScrollMax
+            };
+          }
+        );
     }
 
     function updateResearchSideNavigation() {
       const sideNav =
-        document.querySelector(".research-side-nav");
-
-      if (!sideNav) return;
+        document.querySelector(
+          ".research-side-nav"
+        );
 
       if (
-        researchMapDirty ||
+        !sideNav ||
         !researchScrollMap.length
       ) {
-        buildResearchScrollMap();
-        researchMapDirty = false;
+        return;
       }
 
-      if (!researchScrollMap.length) return;
-
-      const currentScroll = clamp(
-        window.scrollY,
-        0,
-        researchScrollMax
-      );
+      const currentScroll =
+        clamp(
+          window.scrollY,
+          0,
+          researchScrollMax
+        );
 
       let activeSection =
         researchScrollMap[0];
 
-      for (const section of researchScrollMap) {
+      for (
+        const section of
+        researchScrollMap
+      ) {
         if (
-          currentScroll + 0.5 >=
+          currentScroll >=
           section.startScroll
         ) {
-          activeSection = section;
+          activeSection =
+            section;
         } else {
           break;
         }
       }
 
       sideNav
-        .querySelectorAll('a[href^="#"]')
+        .querySelectorAll("a")
         .forEach(link => {
-          link.classList.remove("active");
-          link.removeAttribute("aria-current");
+          link.classList.remove(
+            "active"
+          );
+
+          link.removeAttribute(
+            "aria-current"
+          );
         });
 
-      activeSection.activeLinks.forEach(link => {
-        link.classList.add("active");
+      activeSection
+        .activeLinks
+        .forEach(link => {
+          link.classList.add(
+            "active"
+          );
+        });
+
+      activeSection
+        .currentLink
+        ?.setAttribute(
+          "aria-current",
+          "location"
+        );
+    }
+
+    function bindResearchSideNavigation() {
+      const sideNav =
+        document.querySelector(
+          ".research-side-nav"
+        );
+
+      if (!sideNav) {
+        return;
+      }
+
+      sideNav.addEventListener(
+        "click",
+        event => {
+          const link =
+            event.target.closest(
+              'a[href^="#"]'
+            );
+
+          if (
+            !link ||
+            !sideNav.contains(link)
+          ) {
+            return;
+          }
+
+          if (
+            researchMapDirty ||
+            !researchScrollMap.length
+          ) {
+            buildResearchScrollMap();
+
+            researchMapDirty =
+              false;
+          }
+
+          const selector =
+            link.getAttribute(
+              "href"
+            );
+
+          const mappedSection =
+            researchScrollMap.find(
+              section =>
+                section.selector ===
+                selector
+            );
+
+          if (!mappedSection) {
+            return;
+          }
+
+          event.preventDefault();
+
+          history.replaceState(
+            null,
+            "",
+            selector
+          );
+
+          smoothScrollTo(
+            Math.min(
+              researchScrollMax,
+              mappedSection.startScroll +
+              1
+            )
+          );
+        }
+      );
+    }
+
+    function buildLandscapeAdjacency() {
+      researchLandscapeState
+        .adjacency
+        .clear();
+
+      researchLandscapeNodes
+        .forEach(node => {
+          researchLandscapeState
+            .adjacency
+            .set(
+              node.id,
+              new Set()
+            );
+        });
+
+      researchLandscapeLinks
+        .forEach(
+          ([sourceId, targetId]) => {
+            const sourceExists =
+              researchLandscapeState
+                .adjacency
+                .has(sourceId);
+
+            const targetExists =
+              researchLandscapeState
+                .adjacency
+                .has(targetId);
+
+            if (
+              !sourceExists ||
+              !targetExists
+            ) {
+              return;
+            }
+
+            researchLandscapeState
+              .adjacency
+              .get(sourceId)
+              .add(targetId);
+
+            researchLandscapeState
+              .adjacency
+              .get(targetId)
+              .add(sourceId);
+          }
+        );
+
+      researchLandscapeState
+        .maxConnections =
+        Math.max(
+          1,
+          ...Array.from(
+            researchLandscapeState
+              .adjacency
+              .values(),
+            connections =>
+              connections.size
+          )
+        );
+    }
+
+    function renderResearchLandscapeSummary() {
+      const list =
+        document.querySelector(
+          ".research-landscape-summary-list"
+        );
+
+      if (!list) {
+        return;
+      }
+
+      const topNodes =
+        researchLandscapeNodes
+          .map(node => ({
+            node,
+            connections:
+              researchLandscapeState
+                .adjacency
+                .get(node.id)
+                ?.size ?? 0
+          }))
+          .sort(
+            (a, b) =>
+              b.connections -
+              a.connections ||
+              a.node.label.localeCompare(
+                b.node.label
+              )
+          )
+          .slice(0, 3);
+
+      list.replaceChildren();
+
+      topNodes.forEach(({ node }) => {
+        const item =
+          document.createElement("li");
+
+        item.textContent =
+          node.label;
+
+        list.appendChild(item);
+      });
+    }
+
+    function getLandscapeNodeRadius(
+      nodeId
+    ) {
+      const connectionCount =
+        researchLandscapeState
+          .adjacency
+          .get(nodeId)
+          ?.size ?? 0;
+
+      const normalized =
+        connectionCount /
+        researchLandscapeState
+          .maxConnections;
+
+      const minRadius = 6.5;
+      const maxRadius = 19;
+
+      return (
+        minRadius +
+        Math.pow(
+          normalized,
+          1.2
+        ) *
+        (
+          maxRadius -
+          minRadius
+        )
+      );
+    }
+
+    function getLandscapeSeed(
+      text,
+      salt = 0
+    ) {
+      let hash =
+        (
+          2166136261 ^
+          salt
+        ) >>> 0;
+
+      for (
+        let i = 0;
+        i < text.length;
+        i++
+      ) {
+        hash ^=
+          text.charCodeAt(i);
+
+        hash =
+          Math.imul(
+            hash,
+            16777619
+          ) >>> 0;
+      }
+
+      return (
+        hash /
+        4294967295
+      ) * 2 - 1;
+    }
+
+    function getLandscapeNodeSizeClass(nodeId) {
+      const connectionCount =
+        researchLandscapeState
+          .adjacency
+          .get(nodeId)
+          ?.size ?? 0;
+
+      const threshold =
+        Math.ceil(
+          researchLandscapeState.maxConnections / 2
+        );
+
+      return connectionCount >= threshold
+        ? "large"
+        : "small";
+    }
+
+    function getLandscapeLabelWidth(
+      node
+    ) {
+      const sizeClass =
+        getLandscapeNodeSizeClass(
+          node.id
+        );
+
+      const characterWidth =
+        sizeClass === "large"
+          ? 7.6
+          : 6.6;
+
+      return Math.min(
+        190,
+        node.label.length *
+        characterWidth
+      );
+    }
+
+    function getLandscapeLinkPath(
+      source,
+      target,
+      curve = 0
+    ) {
+      const dx =
+        target.x -
+        source.x;
+
+      const dy =
+        target.y -
+        source.y;
+
+      const length =
+        Math.hypot(
+          dx,
+          dy
+        ) || 1;
+
+      const midpointX =
+        (
+          source.x +
+          target.x
+        ) / 2;
+
+      const midpointY =
+        (
+          source.y +
+          target.y
+        ) / 2;
+
+      const normalX =
+        -dy /
+        length;
+
+      const normalY =
+        dx /
+        length;
+
+      const controlX =
+        midpointX +
+        normalX *
+        curve;
+
+      const controlY =
+        midpointY +
+        normalY *
+        curve;
+
+      return [
+        `M ${source.x} ${source.y}`,
+        `Q ${controlX} ${controlY}`,
+        `${target.x} ${target.y}`
+      ].join(" ");
+    }
+
+    function autoLayoutResearchLandscape() {
+      const nodes =
+        researchLandscapeNodes;
+
+      const states =
+        new Map();
+
+      nodes.forEach(node => {
+        const anchor =
+          researchLandscapeGroupAnchors[
+          node.group
+          ] || {
+            x: 500,
+            y: 280
+          };
+
+        states.set(
+          node.id,
+          {
+            x:
+              anchor.x +
+              getLandscapeSeed(
+                node.id,
+                1
+              ) * 80,
+            y:
+              anchor.y +
+              getLandscapeSeed(
+                node.id,
+                2
+              ) * 65,
+            vx: 0,
+            vy: 0,
+            fx: 0,
+            fy: 0
+          }
+        );
       });
 
-      activeSection.currentLink.setAttribute(
-        "aria-current",
-        "location"
+      const iterations = 520;
+
+      for (
+        let iteration = 0;
+        iteration < iterations;
+        iteration++
+      ) {
+        states.forEach(state => {
+          state.fx = 0;
+          state.fy = 0;
+        });
+
+        for (
+          let i = 0;
+          i < nodes.length;
+          i++
+        ) {
+          const nodeA =
+            nodes[i];
+
+          const stateA =
+            states.get(
+              nodeA.id
+            );
+
+          for (
+            let j = i + 1;
+            j < nodes.length;
+            j++
+          ) {
+            const nodeB =
+              nodes[j];
+
+            const stateB =
+              states.get(
+                nodeB.id
+              );
+
+            let dx =
+              stateB.x -
+              stateA.x;
+
+            let dy =
+              stateB.y -
+              stateA.y;
+
+            let distanceSquared =
+              dx * dx +
+              dy * dy;
+
+            if (
+              distanceSquared <
+              0.0001
+            ) {
+              dx =
+                getLandscapeSeed(
+                  nodeA.id +
+                  nodeB.id,
+                  11
+                ) * 0.1;
+
+              dy =
+                getLandscapeSeed(
+                  nodeA.id +
+                  nodeB.id,
+                  12
+                ) * 0.1;
+
+              distanceSquared =
+                dx * dx +
+                dy * dy;
+            }
+
+            const distance =
+              Math.sqrt(
+                distanceSquared
+              );
+
+            const nx =
+              dx /
+              distance;
+
+            const ny =
+              dy /
+              distance;
+
+            const repulsion =
+              Math.min(
+                3.4,
+                7600 /
+                (
+                  distanceSquared +
+                  450
+                )
+              );
+
+            stateA.fx -=
+              nx *
+              repulsion;
+
+            stateA.fy -=
+              ny *
+              repulsion;
+
+            stateB.fx +=
+              nx *
+              repulsion;
+
+            stateB.fy +=
+              ny *
+              repulsion;
+
+            const radiusA =
+              getLandscapeNodeRadius(
+                nodeA.id
+              );
+
+            const radiusB =
+              getLandscapeNodeRadius(
+                nodeB.id
+              );
+
+            const minimumDistance =
+              Math.max(
+                105,
+                radiusA +
+                radiusB +
+                24
+              );
+
+            if (
+              distance <
+              minimumDistance
+            ) {
+              const force =
+                (
+                  minimumDistance -
+                  distance
+                ) * 0.18;
+
+              stateA.fx -=
+                nx *
+                force;
+
+              stateA.fy -=
+                ny *
+                force;
+
+              stateB.fx +=
+                nx *
+                force;
+
+              stateB.fy +=
+                ny *
+                force;
+            }
+
+            const labelWidthA =
+              getLandscapeLabelWidth(
+                nodeA
+              );
+
+            const labelWidthB =
+              getLandscapeLabelWidth(
+                nodeB
+              );
+
+            const leftA =
+              stateA.x -
+              radiusA -
+              5;
+
+            const rightA =
+              stateA.x +
+              radiusA +
+              10 +
+              labelWidthA;
+
+            const topA =
+              stateA.y -
+              17;
+
+            const bottomA =
+              stateA.y +
+              17;
+
+            const leftB =
+              stateB.x -
+              radiusB -
+              5;
+
+            const rightB =
+              stateB.x +
+              radiusB +
+              10 +
+              labelWidthB;
+
+            const topB =
+              stateB.y -
+              17;
+
+            const bottomB =
+              stateB.y +
+              17;
+
+            const overlapX =
+              Math.min(
+                rightA,
+                rightB
+              ) -
+              Math.max(
+                leftA,
+                leftB
+              );
+
+            const overlapY =
+              Math.min(
+                bottomA,
+                bottomB
+              ) -
+              Math.max(
+                topA,
+                topB
+              );
+
+            if (
+              overlapX > 0 &&
+              overlapY > 0
+            ) {
+              if (
+                overlapY <=
+                overlapX
+              ) {
+                const direction =
+                  stateA.y <=
+                    stateB.y
+                    ? -1
+                    : 1;
+
+                const force =
+                  (
+                    overlapY +
+                    6
+                  ) * 0.055;
+
+                stateA.fy +=
+                  direction *
+                  force;
+
+                stateB.fy -=
+                  direction *
+                  force;
+              } else {
+                const centerA =
+                  (
+                    leftA +
+                    rightA
+                  ) / 2;
+
+                const centerB =
+                  (
+                    leftB +
+                    rightB
+                  ) / 2;
+
+                const direction =
+                  centerA <=
+                    centerB
+                    ? -1
+                    : 1;
+
+                const force =
+                  (
+                    overlapX +
+                    6
+                  ) * 0.035;
+
+                stateA.fx +=
+                  direction *
+                  force;
+
+                stateB.fx -=
+                  direction *
+                  force;
+              }
+            }
+          }
+        }
+
+        researchLandscapeLinks.forEach(
+          ([sourceId, targetId]) => {
+            const sourceNode =
+              researchLandscapeState
+                .nodeMap
+                .get(sourceId);
+
+            const targetNode =
+              researchLandscapeState
+                .nodeMap
+                .get(targetId);
+
+            const source =
+              states.get(
+                sourceId
+              );
+
+            const target =
+              states.get(
+                targetId
+              );
+
+            if (
+              !sourceNode ||
+              !targetNode ||
+              !source ||
+              !target
+            ) {
+              return;
+            }
+
+            const dx =
+              target.x -
+              source.x;
+
+            const dy =
+              target.y -
+              source.y;
+
+            const distance =
+              Math.hypot(
+                dx,
+                dy
+              ) || 1;
+
+            const nx =
+              dx /
+              distance;
+
+            const ny =
+              dy /
+              distance;
+
+            const desiredDistance =
+              sourceNode.group ===
+                targetNode.group
+                ? 125
+                : 175;
+
+            const spring =
+              (
+                distance -
+                desiredDistance
+              ) * 0.016;
+
+            source.fx +=
+              nx *
+              spring;
+
+            source.fy +=
+              ny *
+              spring;
+
+            target.fx -=
+              nx *
+              spring;
+
+            target.fy -=
+              ny *
+              spring;
+          }
+        );
+
+        nodes.forEach(node => {
+          const state =
+            states.get(
+              node.id
+            );
+
+          const anchor =
+            researchLandscapeGroupAnchors[
+            node.group
+            ] || {
+              x: 500,
+              y: 280
+            };
+
+          state.fx +=
+            (
+              anchor.x -
+              state.x
+            ) * 0.0018;
+
+          state.fy +=
+            (
+              anchor.y -
+              state.y
+            ) * 0.0018;
+
+          state.vx =
+            (
+              state.vx +
+              state.fx
+            ) * 0.82;
+
+          state.vy =
+            (
+              state.vy +
+              state.fy
+            ) * 0.82;
+
+          const speed =
+            Math.hypot(
+              state.vx,
+              state.vy
+            );
+
+          const maximumSpeed = 5;
+
+          if (
+            speed >
+            maximumSpeed
+          ) {
+            state.vx *=
+              maximumSpeed /
+              speed;
+
+            state.vy *=
+              maximumSpeed /
+              speed;
+          }
+
+          state.x +=
+            state.vx;
+
+          state.y +=
+            state.vy;
+
+          const groupDx =
+            state.x -
+            anchor.x;
+
+          const groupDy =
+            state.y -
+            anchor.y;
+
+          const groupDistance =
+            Math.hypot(
+              groupDx,
+              groupDy
+            );
+
+          const maxGroupDistance = 160;
+
+          if (
+            groupDistance >
+            maxGroupDistance
+          ) {
+            const scale =
+              maxGroupDistance /
+              groupDistance;
+
+            state.x =
+              anchor.x +
+              groupDx *
+              scale;
+
+            state.y =
+              anchor.y +
+              groupDy *
+              scale;
+
+            state.vx *=
+              0.35;
+
+            state.vy *=
+              0.35;
+          }
+
+          const radius =
+            getLandscapeNodeRadius(
+              node.id
+            );
+
+          const labelWidth =
+            getLandscapeLabelWidth(
+              node
+            );
+
+          const minX =
+            45 +
+            radius;
+
+          const maxX =
+            970 -
+            (
+              radius +
+              10 +
+              labelWidth
+            );
+
+          state.x =
+            clamp(
+              state.x,
+              minX,
+              maxX
+            );
+
+          state.y =
+            clamp(
+              state.y,
+              50,
+              510
+            );
+
+          const nodeLeft =
+            state.x -
+            radius -
+            5;
+
+          const nodeRight =
+            state.x +
+            radius +
+            10 +
+            labelWidth;
+
+          const nodeTop =
+            state.y -
+            18;
+
+          const nodeBottom =
+            state.y +
+            18;
+
+          const overlapsReservedArea =
+            nodeRight >
+            researchLandscapeReservedArea.left &&
+            nodeLeft <
+            researchLandscapeReservedArea.right &&
+            nodeBottom >
+            researchLandscapeReservedArea.top &&
+            nodeTop <
+            researchLandscapeReservedArea.bottom;
+
+          if (
+            overlapsReservedArea
+          ) {
+            state.y =
+              researchLandscapeReservedArea.bottom +
+              28;
+
+            state.vy =
+              Math.abs(
+                state.vy
+              ) * 0.2;
+          }
+        });
+      }
+
+      nodes.forEach(node => {
+        const state =
+          states.get(
+            node.id
+          );
+
+        node.x =
+          Math.round(
+            state.x * 10
+          ) / 10;
+
+        node.y =
+          Math.round(
+            state.y * 10
+          ) / 10;
+      });
+    }
+
+    function updateLandscapeInteractionState() {
+      const activeId =
+        researchLandscapeState.hoveredId;
+
+      const neighbors =
+        activeId
+          ? researchLandscapeState
+            .adjacency
+            .get(activeId)
+          : null;
+
+      researchLandscapeState
+        .nodeElements
+        .forEach(
+          (
+            element,
+            nodeId
+          ) => {
+            const isActive =
+              nodeId ===
+              activeId;
+
+            const isNeighbor =
+              Boolean(
+                activeId &&
+                neighbors?.has(
+                  nodeId
+                )
+              );
+
+            const isDimmed =
+              Boolean(
+                activeId &&
+                !isActive &&
+                !isNeighbor
+              );
+
+            element.classList.toggle(
+              "is-active",
+              isActive
+            );
+
+            element.classList.toggle(
+              "is-neighbor",
+              isNeighbor
+            );
+
+            element.classList.toggle(
+              "is-dimmed",
+              isDimmed
+            );
+          }
+        );
+
+      researchLandscapeState
+        .linkElements
+        .forEach(element => {
+          const connected =
+            Boolean(
+              activeId &&
+              (
+                element.dataset.source ===
+                activeId ||
+                element.dataset.target ===
+                activeId
+              )
+            );
+
+          element.classList.toggle(
+            "is-connected",
+            connected
+          );
+
+          element.classList.toggle(
+            "is-muted",
+            Boolean(
+              activeId &&
+              !connected
+            )
+          );
+        });
+    }
+
+    function initResearchLandscape() {
+      researchLandscapeState.nodeMap =
+        new Map(
+          researchLandscapeNodes.map(
+            node => [
+              node.id,
+              node
+            ]
+          )
+        );
+
+      researchLandscapeState
+        .nodeElements
+        .clear();
+
+      researchLandscapeState
+        .linkElements = [];
+
+      buildLandscapeAdjacency();
+
+      renderResearchLandscapeSummary();
+
+      autoLayoutResearchLandscape();
+
+      const svg =
+        document.querySelector(
+          "#research-landscape-svg"
+        );
+
+      if (!svg) {
+        return;
+      }
+
+      const linkLayer =
+        svg.querySelector(
+          ".landscape-links"
+        );
+
+      const nodeLayer =
+        svg.querySelector(
+          ".landscape-nodes"
+        );
+
+      if (
+        !linkLayer ||
+        !nodeLayer
+      ) {
+        return;
+      }
+
+      linkLayer.replaceChildren();
+      nodeLayer.replaceChildren();
+
+      researchLandscapeLinks.forEach(
+        (
+          [
+            sourceId,
+            targetId,
+            curve = 0
+          ]
+        ) => {
+          const source =
+            researchLandscapeState
+              .nodeMap
+              .get(sourceId);
+
+          const target =
+            researchLandscapeState
+              .nodeMap
+              .get(targetId);
+
+          if (
+            !source ||
+            !target
+          ) {
+            return;
+          }
+
+          const path =
+            document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "path"
+            );
+
+          path.setAttribute(
+            "d",
+            getLandscapeLinkPath(
+              source,
+              target,
+              curve
+            )
+          );
+
+          path.classList.add(
+            "landscape-link"
+          );
+
+          path.dataset.source =
+            sourceId;
+
+          path.dataset.target =
+            targetId;
+
+          linkLayer.appendChild(
+            path
+          );
+
+          researchLandscapeState
+            .linkElements
+            .push(path);
+        }
       );
+
+      researchLandscapeNodes.forEach(
+        node => {
+          const group =
+            document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "g"
+            );
+
+          group.classList.add(
+            "landscape-node"
+          );
+
+          group.dataset.node =
+            node.id;
+
+          group.dataset.group =
+            node.group || "";
+
+          group.dataset.discovery =
+            node.discovery || "";
+
+          group.dataset.level =
+            node.level || "ongoing";
+
+          group.dataset.size =
+            getLandscapeNodeSizeClass(
+              node.id
+            );
+
+          group.setAttribute(
+            "transform",
+            `translate(${node.x} ${node.y})`
+          );
+
+          group.setAttribute(
+            "aria-label",
+            node.label
+          );
+
+          const radius =
+            getLandscapeNodeRadius(
+              node.id
+            );
+
+          const circle =
+            document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "circle"
+            );
+
+          circle.classList.add(
+            "landscape-node-circle"
+          );
+
+          circle.setAttribute(
+            "r",
+            radius
+          );
+
+          const label =
+            document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "text"
+            );
+
+          label.classList.add(
+            "landscape-node-label"
+          );
+
+          label.setAttribute(
+            "x",
+            radius + 10
+          );
+
+          label.setAttribute(
+            "y",
+            5
+          );
+
+          label.textContent =
+            node.label;
+
+          group.append(
+            circle,
+            label
+          );
+
+          nodeLayer.appendChild(
+            group
+          );
+
+          researchLandscapeState
+            .nodeElements
+            .set(
+              node.id,
+              group
+            );
+
+          group.addEventListener(
+            "mouseenter",
+            () => {
+              researchLandscapeState
+                .hoveredId =
+                node.id;
+
+              updateLandscapeInteractionState();
+            }
+          );
+
+          group.addEventListener(
+            "mouseleave",
+            () => {
+              if (
+                researchLandscapeState
+                  .hoveredId ===
+                node.id
+              ) {
+                researchLandscapeState
+                  .hoveredId =
+                  null;
+              }
+
+              updateLandscapeInteractionState();
+            }
+          );
+        }
+      );
+
+      updateLandscapeInteractionState();
     }
 
     function updateNavigationState() {
       const nav =
-        document.querySelector(".nav");
+        document.querySelector(
+          ".nav"
+        );
 
-      if (!nav) return;
+      if (!nav) {
+        return;
+      }
 
       nav.classList.toggle(
         "is-scrolled",
@@ -3237,82 +5200,45 @@
       rebuildMap = false
     ) {
       if (rebuildMap) {
-        researchMapDirty = true;
+        researchMapDirty =
+          true;
       }
 
-      if (scrollUpdateScheduled) return;
+      if (
+        scrollUpdateScheduled
+      ) {
+        return;
+      }
 
-      scrollUpdateScheduled = true;
+      scrollUpdateScheduled =
+        true;
 
-      requestAnimationFrame(() => {
-        if (researchMapDirty) {
-          buildResearchScrollMap();
-          researchMapDirty = false;
+      requestAnimationFrame(
+        () => {
+          if (
+            researchMapDirty
+          ) {
+            buildResearchScrollMap();
+
+            researchMapDirty =
+              false;
+          }
+
+          updateNavigationState();
+
+          updateResearchSideNavigation();
+
+          scrollUpdateScheduled =
+            false;
         }
-
-        updateNavigationState();
-        updateResearchSideNavigation();
-
-        scrollUpdateScheduled = false;
-      });
-    }
-
-    function bindResearchSideNavigation() {
-      const sideNav =
-        document.querySelector(".research-side-nav");
-
-      if (!sideNav) return;
-
-      sideNav.addEventListener("click", event => {
-        const link =
-          event.target.closest('a[href^="#"]');
-
-        if (
-          !link ||
-          !sideNav.contains(link)
-        ) {
-          return;
-        }
-
-        if (
-          researchMapDirty ||
-          !researchScrollMap.length
-        ) {
-          buildResearchScrollMap();
-          researchMapDirty = false;
-        }
-
-        const selector =
-          link.getAttribute("href");
-
-        const mappedSection =
-          researchScrollMap.find(
-            section =>
-              section.selector === selector
-          );
-
-        if (!mappedSection) return;
-
-        event.preventDefault();
-
-        history.replaceState(
-          null,
-          "",
-          selector
-        );
-
-        smoothScrollTo(
-          Math.min(
-            researchScrollMax,
-            mappedSection.startScroll + 1
-          )
-        );
-      });
+      );
     }
 
     function observeResearchLayout() {
       const pageContent =
-        document.querySelector(".page-content");
+        document.querySelector(
+          ".page-content"
+        );
 
       if (
         !pageContent ||
@@ -3322,9 +5248,13 @@
       }
 
       researchLayoutObserver =
-        new ResizeObserver(() => {
-          schedulePageUpdate(true);
-        });
+        new ResizeObserver(
+          () => {
+            schedulePageUpdate(
+              true
+            );
+          }
+        );
 
       researchLayoutObserver.observe(
         pageContent
@@ -3334,7 +5264,9 @@
     window.addEventListener(
       "scroll",
       () => {
-        schedulePageUpdate(false);
+        schedulePageUpdate(
+          false
+        );
       },
       {
         passive: true
@@ -3344,7 +5276,9 @@
     window.addEventListener(
       "resize",
       () => {
-        schedulePageUpdate(true);
+        schedulePageUpdate(
+          true
+        );
       },
       {
         passive: true
@@ -3354,35 +5288,48 @@
     window.addEventListener(
       "load",
       () => {
-        schedulePageUpdate(true);
+        schedulePageUpdate(
+          true
+        );
       }
     );
 
     document.addEventListener(
       "DOMContentLoaded",
       () => {
-        applyLang(getSessionLang());
+        applyLang(
+          getSessionLang()
+        );
 
         document
-          .querySelector(".page-content")
-          ?.classList.add("loaded");
+          .querySelector(
+            ".page-content"
+          )
+          ?.classList.add(
+            "loaded"
+          );
+
+        initResearchLandscape();
 
         bindResearchSideNavigation();
+
         observeResearchLayout();
 
         document
-          .querySelectorAll(".lang-switch a")
-          .forEach(a => {
-            a.addEventListener(
+          .querySelectorAll(
+            ".lang-switch a"
+          )
+          .forEach(link => {
+            link.addEventListener(
               "click",
               event => {
                 event.preventDefault();
 
                 const selected =
                   SUPPORTED_LANGS.has(
-                    a.dataset.lang
+                    link.dataset.lang
                   )
-                    ? a.dataset.lang
+                    ? link.dataset.lang
                     : DEFAULT_LANG;
 
                 sessionStorage.setItem(
@@ -3390,16 +5337,24 @@
                   selected
                 );
 
-                applyLang(selected);
-                schedulePageUpdate(true);
+                applyLang(
+                  selected
+                );
+
+                schedulePageUpdate(
+                  true
+                );
               }
             );
           });
 
-        schedulePageUpdate(true);
+        schedulePageUpdate(
+          true
+        );
       }
     );
   </script>
+
 </body>
 
 </html>
