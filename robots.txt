@@ -1,2 +1,5 @@
 User-agent: Googlebot-Image
-Disallow: /assets/thumbnail.png
+Disallow: /assets/
+
+Allow: /assets/Home-spain.png
+Allow: /assets/favicon-32.png

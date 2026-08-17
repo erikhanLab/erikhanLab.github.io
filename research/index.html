@@ -493,8 +493,33 @@
       box-shadow: 0 0 0 4px rgba(11, 37, 69, 0.10);
     }
 
+    .rt-topline {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 28px;
+
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+
+    .rt-topline .rt-stage {
+      flex: 0 0 auto;
+
+      margin: 0;
+    }
+
+    .rt-topline .rt-title {
+      flex: 0 1 auto;
+
+      margin: 0 0 0 auto;
+
+      justify-content: flex-end;
+      text-align: right;
+    }
+
     .rt-year {
-      padding-top: 4px;
+      padding-top: 8px;
       margin-left: -8px;
 
       font-size: 1.06em;
@@ -507,9 +532,6 @@
     }
 
     .rt-stage {
-      margin-top: 8px;
-      margin-bottom: 14px;
-
       font-size: 0.83em;
       font-weight: 500;
       line-height: 1.4;
@@ -521,24 +543,42 @@
     }
 
     .rt-title {
-      font-size: 1.13em;
+      font-size: 1.02em;
+      justify-content: flex-end;
+      text-align: right;
       font-weight: 500;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 6px;
       color: #444;
-      opacity: 0.9;
+      opacity: 0.8;
+
     }
 
     .rt-block-group {
+      position: relative;
       min-width: 0;
 
-      margin-left: 6px;
+      margin-right: 6px;
       padding-top: 6px;
-      padding-left: 12px;
+      padding-right: 12px;
 
-      border-left: 0.4px solid rgba(11, 37, 69, 0.18);
+      border-right: 0;
+    }
+
+    .rt-block-group::after {
+      content: "";
+      position: absolute;
+
+      top: -6px;
+      right: 0;
+      bottom: 0;
+
+      width: 1px;
+      background: rgba(11, 37, 69, 0.18);
+
+      pointer-events: none;
     }
 
     .rt-loc-dot {
@@ -546,14 +586,17 @@
       opacity: 0.55;
       margin: 0 6px;
       font-weight: 400;
-      margin-bottom: -4px;
+
+      align-self: center;
     }
 
     .rt-location-inline {
       font-size: 0.78em;
       font-style: italic;
       opacity: 0.65;
-      margin-bottom: -4px;
+
+      margin: 0;
+      align-self: center;
     }
 
     .rt-block {
@@ -611,7 +654,6 @@
       max-width: 100%;
 
       margin: 0;
-
       font-size: 0.96em;
       line-height: 1.55;
       letter-spacing: -0.02em;
@@ -738,6 +780,7 @@
 
     .research-network-meta {
       display: inline-flex;
+      flex: 1 1 auto;
       align-items: baseline;
       justify-content: flex-start;
       gap: 5px;
@@ -745,6 +788,15 @@
       min-width: 0;
       white-space: nowrap;
       text-align: left;
+    }
+
+    .research-network-separator {
+      display: none;
+    }
+
+    .research-network-period {
+      margin-left: auto;
+      flex: 0 0 auto;
     }
 
     .research-network-meta::before {
@@ -1671,6 +1723,10 @@
         width: 100%;
         transform: none;
       }
+
+      .rt-block-group::after {
+        display: none;
+      }
     }
 
     @media (min-width: 1321px) {
@@ -1694,16 +1750,13 @@
       }
 
       .research-timeline .rt-block-group {
-        margin-left:
-          clamp(30px,
-            calc(10vw - 126px),
-            50px);
+        margin-left: 0;
+        padding-left: 0;
 
-        padding-left:
-          clamp(10px,
-            calc(10vw - 120px),
-            20px);
+        margin-right: 6px;
+        padding-right: 16px;
       }
+
     }
   </style>
 </head>
@@ -1961,14 +2014,14 @@
                   <span class="research-network-name">University of Strathclyde</span>
 
                   <span class="research-network-meta">
-                    <span class="research-network-role" data-en="MSc research" data-ja="修士研究">
-                      MSc research
+                    <span class="research-network-role" data-en="MSc research &amp; collaboration" data-ja="修士研究・共同研究">
+                      MSc research &amp; collaboration
                     </span>
 
                     <span class="research-network-separator">·</span>
 
-                    <time class="research-network-period" datetime="2024/2025" data-en="2024–2025" data-ja="2024–2025年">
-                      2024–2025
+                    <time class="research-network-period" datetime="2024/2026" data-en="2024–2026" data-ja="2024–2026年">
+                      2024–2026
                     </time>
                   </span>
                 </li>
@@ -2371,22 +2424,24 @@
       <div class="rt-item" id="year-2026">
         <div class="rt-year">2026</div>
         <div class="rt-body">
-          <div class="rt-stage" data-en="Pre-Doctoral Research" data-ja="博士課程進学前研究">
-            Pre-Doctoral Research
-          </div>
+          <div class="rt-topline">
+            <div class="rt-stage" data-en="Independent Research" data-ja="独立研究">
+              Independent Research
+            </div>
 
-          <div class="rt-title">
-            <span data-en="Visiting Research — Seoul National University" data-ja="訪問研究 — ソウル大学校">
-              Visiting Research — Seoul National University
-            </span>
+            <div class="rt-title">
+              <span data-en="Visiting Research — Seoul National University" data-ja="訪問研究 — ソウル大学校">
+                Visiting Research — Seoul National University
+              </span>
 
-            <span class="rt-loc-dot">
-              ·
-            </span>
+              <span class="rt-loc-dot">
+                ·
+              </span>
 
-            <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
-              South Korea
-            </span>
+              <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
+                South Korea
+              </span>
+            </div>
           </div>
 
           <div class="rt-block-group">
@@ -2414,13 +2469,13 @@
             </div>
           </div>
 
-          <div class="rt-inst-divider"></div>
-
           <div class="rt-title">
-            <span data-en="Independent Research" data-ja="個人研究">
-              Independent Research
+            <span data-en="Self-Directed Research" data-ja="自主研究">
+              Self-Directed Research
             </span>
+
             <span class="rt-loc-dot">·</span>
+
             <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
               South Korea
             </span>
@@ -2476,24 +2531,25 @@
           </div>
         </div>
       </div>
+      <div class="rt-inst-divider"></div>
 
       <div class="rt-item" id="year-2025">
         <div class="rt-year">2025</div>
 
         <div class="rt-body">
+          <div class="rt-topline">
+            <div class="rt-stage">International Research</div>
 
-          <div class="rt-stage">International Research</div>
-
-          <div class="rt-title">
-            <span data-en="MSc Research — University of Strathclyde" data-ja="修士研究 — ストラスクライド大学">
-              MSc Research — University of Strathclyde
-            </span>
-            <span class="rt-loc-dot">·</span>
-            <span class="rt-location-inline" data-en="United Kingdom" data-ja="イギリス">
-              United Kingdom
-            </span>
+            <div class="rt-title">
+              <span data-en="MSc Research — University of Strathclyde" data-ja="修士研究 — ストラスクライド大学">
+                MSc Research — University of Strathclyde
+              </span>
+              <span class="rt-loc-dot">·</span>
+              <span class="rt-location-inline" data-en="United Kingdom" data-ja="イギリス">
+                United Kingdom
+              </span>
+            </div>
           </div>
-
           <div class="rt-block-group">
             <div class="rt-block">
               <div class="rt-output">
@@ -2569,9 +2625,6 @@
               </div>
             </div>
           </div>
-
-          <div class="rt-inst-divider"></div>
-
           <div class="rt-title">
             <span data-en="Research Visit — The University of Osaka" data-ja="研究訪問 — 大阪大学">
               Research Visit — The University of Osaka
@@ -2612,25 +2665,26 @@
 
         </div>
       </div>
+      <div class="rt-inst-divider"></div>
 
       <div class="rt-item" id="year-2024">
         <div class="rt-year">2024</div>
 
         <div class="rt-body">
+          <div class="rt-topline">
+            <div class="rt-stage" data-en="Early Outputs" data-ja="初期成果">
+              Early Outputs
+            </div>
 
-          <div class="rt-stage" data-en="Early Outputs & Domestic Recognition" data-ja="初期成果・国内評価">
-            Early Outputs & Domestic Recognition
-          </div>
-
-
-          <div class="rt-title">
-            <span data-en="Undergraduate Research — Inha University" data-ja="学部研究 — 仁荷大学">
-              Undergraduate Research — Inha University
-            </span>
-            <span class="rt-loc-dot">·</span>
-            <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
-              South Korea
-            </span>
+            <div class="rt-title">
+              <span data-en="Undergraduate Research — Inha University" data-ja="学部研究 — 仁荷大学">
+                Undergraduate Research — Inha University
+              </span>
+              <span class="rt-loc-dot">·</span>
+              <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
+                South Korea
+              </span>
+            </div>
           </div>
           <div class="rt-block-group">
             <div class="rt-block">
@@ -2683,24 +2737,26 @@
           </div>
         </div>
       </div>
+      <div class="rt-inst-divider"></div>
 
       <div class="rt-item" id="year-2023">
         <div class="rt-year">2023</div>
 
         <div class="rt-body">
+          <div class="rt-topline">
+            <div class="rt-stage" data-en="Research Foundations" data-ja="研究基盤">
+              Research Foundations
+            </div>
 
-          <div class="rt-stage" data-en="Research Entry & Foundation" data-ja="研究基盤の形成">
-            Research Entry & Foundation
-          </div>
-
-          <div class="rt-title">
-            <span data-en="Undergraduate Project — Inha University" data-ja="学部プロジェクト — 仁荷大学">
-              Undergraduate Project — Inha University
-            </span>
-            <span class="rt-loc-dot">·</span>
-            <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
-              South Korea
-            </span>
+            <div class="rt-title">
+              <span data-en="Undergraduate Project — Inha University" data-ja="学部プロジェクト — 仁荷大学">
+                Undergraduate Project — Inha University
+              </span>
+              <span class="rt-loc-dot">·</span>
+              <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
+                South Korea
+              </span>
+            </div>
           </div>
           <div class="rt-block-group">
 

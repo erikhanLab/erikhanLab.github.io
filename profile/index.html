@@ -118,12 +118,44 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
+
+      line-height: 13px;
+
       color: inherit;
       text-decoration: none;
       opacity: 0.72;
+
       transition:
         opacity 0.15s ease,
         color 0.15s ease;
+    }
+
+    .icons a svg {
+      display: block;
+
+      width: 13px;
+      height: 13px;
+      flex: 0 0 13px;
+
+      fill: currentColor;
+      opacity: 0.75;
+
+      transform: none;
+    }
+
+    .icon-label {
+      display: block;
+
+      line-height: 13px;
+      white-space: nowrap;
+    }
+
+    .icons a[aria-label="LinkedIn"] svg {
+      transform: translateY(-1.5px);
+    }
+
+    .icons>[data-nosnippet] {
+      display: contents;
     }
 
     .icons a:hover {
@@ -136,23 +168,6 @@
       margin: 0 12px;
       color: #8a93a3;
       opacity: 0.65;
-    }
-
-    .icons a svg {
-      width: 13px;
-      height: 13px;
-      fill: currentColor;
-      flex-shrink: 0;
-      opacity: 0.75;
-    }
-
-    .icons a[aria-label="LinkedIn"] svg {
-      transform: translateY(-1.2px);
-    }
-
-    .icon-label {
-      line-height: 1;
-      white-space: nowrap;
     }
 
     .section {
@@ -1829,10 +1844,6 @@
         height: 12px;
       }
 
-      .icons a[aria-label="LinkedIn"] svg {
-        transform: translateY(-1px);
-      }
-
       .expected-year {
         font-size: 0.84em;
         opacity: 0.85;
@@ -2751,7 +2762,7 @@
             </p>
 
             <div class="outside-research-tags" aria-label="Interests">
-              <span data-en="Art" data-ja="描画">Art</span>
+              <span data-en="Drawing" data-ja="描画">Drawing</span>
               <span data-en="Piano" data-ja="ピアノ">Piano</span>
               <span data-en="Training" data-ja="トレーニング">Training</span>
             </div>
