@@ -630,6 +630,72 @@
         line-height: 1.4;
         text-align: center;
       }
+
+      .visual-notes {
+        margin: 26px 0 10px;
+      }
+
+      .visual-notes-header {
+        margin-bottom: 12px;
+      }
+
+      .visual-notes-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .visual-note {
+        min-width: 0;
+        margin: 0;
+      }
+
+      .visual-note img {
+        display: block;
+
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        height: auto;
+
+        object-fit: contain;
+
+        box-sizing: border-box;
+
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(11, 31, 58, 0.06);
+
+        filter: grayscale(35%);
+        opacity: 0.92;
+
+        transition: none;
+      }
+
+      .visual-note:hover img {
+        filter: grayscale(35%);
+        opacity: 0.92;
+      }
+
+      .visual-note figcaption {
+        margin-top: 5px;
+        gap: 1px;
+        min-width: 0;
+      }
+
+      .visual-note-date {
+        font-size: 0.6em;
+        letter-spacing: 0.08em;
+      }
+
+      .visual-note-text {
+        min-width: 0;
+
+        font-size: 0.68em;
+        line-height: 1.35;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {

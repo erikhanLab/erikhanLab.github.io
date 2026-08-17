@@ -765,6 +765,11 @@
         padding-bottom: 0;
       }
 
+      .trace-lines>.trace-line+.trace-line {
+        margin-top: 12px;
+      }
+
+
       .trace-detail {
         display: block;
         margin-bottom: 0;
@@ -795,16 +800,7 @@
       }
 
       .trace-affiliation {
-        min-width: 0;
-
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-
-        font-size: 0.65em;
-        font-style: italic;
-
-        transform: none;
+        display: none;
       }
 
       .trace-lines {
