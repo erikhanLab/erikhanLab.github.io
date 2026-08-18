@@ -1182,6 +1182,17 @@
       display: none;
     }
 
+    .landscape-half-label {
+      fill: rgba(11, 31, 58, 0.3);
+
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+
+      text-anchor: middle;
+    }
+
     .research-landscape {
       position: relative;
 
@@ -1294,9 +1305,25 @@
       overflow: visible;
     }
 
+    .landscape-years {
+      pointer-events: none;
+    }
+
+    .landscape-year-label {
+      fill: rgba(11, 31, 58, 0.06);
+
+      font-family: inherit;
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+
+      text-anchor: middle;
+      font-variant-numeric: tabular-nums;
+    }
+
     .landscape-link {
       fill: none;
-      stroke: rgba(11, 31, 58, 0.085);
+      stroke: rgba(11, 31, 58, 0.05);
       stroke-width: 0.9;
       stroke-linecap: round;
       vector-effect: non-scaling-stroke;
@@ -1315,7 +1342,7 @@
         transform 0.24s ease;
     }
 
-    .landscape-node-circle {
+    .landscape-node-shape {
       fill: rgba(11, 31, 58, 0.055);
       stroke: rgba(11, 31, 58, 0.16);
       stroke-width: 1;
@@ -1325,6 +1352,11 @@
       transition:
         fill 0.22s ease,
         stroke 0.22s ease;
+    }
+
+    .landscape-node-method {
+      fill: rgba(72, 82, 94, 0.035);
+      stroke: rgba(72, 82, 94, 0.24);
     }
 
     .landscape-node-label {
@@ -1386,6 +1418,20 @@
       gap: 4px;
     }
 
+    .legend-method {
+      display: inline-block;
+
+      width: 14px;
+      height: 8px;
+
+      box-sizing: border-box;
+
+      border-radius: 2px;
+
+      background: rgba(72, 82, 94, 0.07);
+      border: 1px solid rgba(72, 82, 94, 0.32);
+    }
+
     .legend-size i {
       display: block;
 
@@ -1418,15 +1464,15 @@
     }
 
     .legend-groups i:nth-child(1) {
-      background: rgba(39, 82, 121, 0.62);
+      background: rgba(76, 91, 106, 0.62);
     }
 
     .legend-groups i:nth-child(2) {
-      background: rgba(67, 105, 96, 0.62);
+      background: rgba(121, 98, 82, 0.62);
     }
 
     .legend-groups i:nth-child(3) {
-      background: rgba(99, 82, 119, 0.62);
+      background: rgba(94, 84, 103, 0.62);
     }
 
     .legend-status {
@@ -1439,11 +1485,11 @@
     }
 
     .legend-status-separator {
-      color: rgba(45, 67, 91, 0.2);
+      color: rgba(45, 67, 91, 0.28);
     }
 
-    .legend-ongoing {
-      color: rgba(45, 67, 91, 0.34);
+    .legend-developing {
+      color: rgba(45, 67, 91, 0.4);
       font-weight: 400;
     }
 
@@ -1957,34 +2003,20 @@
 
     }
 
-    .landscape-node[data-group="roughness"] {
-      --group-rgb: 39, 82, 121;
-    }
-
-
-    .landscape-node[data-group="scaling"] {
-      --group-rgb: 67, 105, 96;
+    .landscape-node[data-group="ship"] {
+      --group-rgb: 76, 91, 106;
     }
 
     .landscape-node[data-group="waves"] {
-      --group-rgb: 55, 101, 132;
+      --group-rgb: 121, 98, 82;
     }
 
     .landscape-node[data-group="systems"] {
-      --group-rgb: 99, 82, 119;
-    }
-
-    .landscape-node[data-group="experiments"] {
-      --group-rgb: 124, 91, 66;
+      --group-rgb: 94, 84, 103;
     }
 
     .landscape-node[data-group="method"] {
-      --group-rgb: 72, 82, 94;
-    }
-
-    .landscape-node[data-level="established"] .landscape-node-circle {
-      fill: rgba(var(--group-rgb), 0.095);
-      stroke: rgba(var(--group-rgb), 0.34);
+      --group-rgb: 78, 86, 96;
     }
 
     .landscape-node[data-level="established"] .landscape-node-label {
@@ -1992,33 +2024,37 @@
       font-weight: 500;
     }
 
-    .landscape-node[data-level="established"][data-discovery="strong"] .landscape-node-circle {
-      fill: rgba(var(--group-rgb), 0.13);
-      stroke: rgba(var(--group-rgb), 0.46);
-    }
-
-    .landscape-node[data-level="ongoing"] .landscape-node-circle {
-      fill: rgba(var(--group-rgb), 0.035);
-      stroke: rgba(var(--group-rgb), 0.15);
-    }
-
-    .landscape-node[data-level="ongoing"] .landscape-node-label {
-      fill: rgba(var(--group-rgb), 0.55);
+    .landscape-node[data-level="developing"] .landscape-node-label {
+      fill: rgba(var(--group-rgb), 0.73);
       font-weight: 400;
-    }
-
-    .landscape-node.is-neighbor .landscape-node-circle {
-      fill: rgba(var(--group-rgb), 0.09);
-      stroke: rgba(var(--group-rgb), 0.34);
     }
 
     .landscape-node.is-neighbor .landscape-node-label {
       fill: rgba(var(--group-rgb), 0.88);
     }
 
+    .landscape-node[data-level="established"] .landscape-node-shape {
+      fill: rgba(var(--group-rgb), 0.095);
+      stroke: rgba(var(--group-rgb), 0.34);
+    }
 
-    .landscape-node:hover .landscape-node-circle,
-    .landscape-node.is-active .landscape-node-circle {
+    .landscape-node[data-level="established"][data-discovery="strong"] .landscape-node-shape {
+      fill: rgba(var(--group-rgb), 0.13);
+      stroke: rgba(var(--group-rgb), 0.46);
+    }
+
+    .landscape-node[data-level="developing"] .landscape-node-shape {
+      fill: rgba(var(--group-rgb), 0.055);
+      stroke: rgba(var(--group-rgb), 0.25);
+    }
+
+    .landscape-node.is-neighbor .landscape-node-shape {
+      fill: rgba(var(--group-rgb), 0.09);
+      stroke: rgba(var(--group-rgb), 0.34);
+    }
+
+    .landscape-node:hover .landscape-node-shape,
+    .landscape-node.is-active .landscape-node-shape {
       fill: rgba(var(--group-rgb), 0.16);
       stroke: rgba(var(--group-rgb), 0.62);
     }
@@ -2038,7 +2074,7 @@
     }
 
     .landscape-link.is-connected {
-      stroke: rgba(11, 31, 58, 0.38);
+      stroke: rgba(11, 31, 58, 0.28);
       stroke-width: 1.25;
       opacity: 1;
     }
@@ -2046,7 +2082,7 @@
     @media (prefers-reduced-motion: reduce) {
 
       .landscape-node,
-      .landscape-node-circle,
+      .landscape-node-shape,
       .landscape-node-label,
       .landscape-link {
         transition: none;
@@ -2639,6 +2675,7 @@
             hydrodynamics, waves, coupled systems, and experimental studies.
           </desc>
 
+          <g class="landscape-years" aria-hidden="true"></g>
           <g class="landscape-links"></g>
           <g class="landscape-nodes"></g>
 
@@ -2673,6 +2710,16 @@
 
           <div class="research-landscape-legend-divider"></div>
 
+          <div class="research-landscape-legend-item">
+            <span class="legend-method" aria-hidden="true"></span>
+
+            <span data-en="Method" data-ja="手法">
+              Method
+            </span>
+          </div>
+
+          <div class="research-landscape-legend-divider"></div>
+
           <div class="research-landscape-legend-item legend-status">
             <span class="legend-established">
               Established
@@ -2680,8 +2727,8 @@
 
             <span class="legend-status-separator">·</span>
 
-            <span class="legend-ongoing">
-              Ongoing
+            <span class="legend-developing">
+              Devloping
             </span>
           </div>
 
@@ -3223,76 +3270,108 @@
       {
         id: "spatial-roughness",
         label: "Spatial hull roughness",
-        group: "roughness",
+        layout: "research",
+        since: 2025,
+        half: 1,
+        group: "ship",
         level: "established",
         discovery: "strong"
       },
       {
         id: "boundary-layer",
         label: "Boundary layer",
-        group: "roughness",
-        level: "established",
+        layout: "research",
+        since: 2025,
+        half: 2,
+        group: "ship",
+        level: "developing",
         discovery: "connected"
       },
       {
         id: "wake",
         label: "Wake",
-        group: "roughness",
-        level: "established",
+        layout: "research",
+        since: 2025,
+        half: 2,
+        group: "ship",
+        level: "developing",
         discovery: "connected"
       },
       {
         id: "ship-resistance",
         label: "Ship resistance",
-        group: "roughness",
+        layout: "research",
+        since: 2024,
+        half: 1,
+        group: "ship",
         level: "established",
         discovery: "strong"
       },
       {
         id: "measured-roughness",
         label: "Measured roughness",
-        group: "roughness",
-        level: "ongoing",
+        layout: "research",
+        since: 2026,
+        half: 2,
+        group: "ship",
+        level: "developing",
         discovery: "emerging"
       },
       {
         id: "full-scale-prediction",
         label: "Full-scale prediction",
-        group: "roughness",
-        level: "ongoing",
+        layout: "research",
+        since: 2026,
+        half: 1,
+        group: "ship",
+        level: "developing",
         discovery: "emerging"
       },
       {
         id: "model-ship-extrapolation",
         label: "Model–ship extrapolation",
-        group: "scaling",
+        layout: "research",
+        since: 2024,
+        half: 1,
+        group: "ship",
         level: "established",
         discovery: "connected"
       },
       {
         id: "temperature-effects",
         label: "Temperature effects",
-        group: "scaling",
-        level: "established",
+        layout: "research",
+        since: 2024,
+        half: 1,
+        group: "ship",
+        level: "developing",
         discovery: "adjacent"
       },
       {
         id: "ittc-assumptions",
         label: "ITTC assumptions",
-        group: "scaling",
-        level: "established",
+        layout: "research",
+        since: 2024,
+        group: "ship",
+        level: "developing",
         discovery: "connected"
       },
       {
         id: "added-resistance",
         label: "Added resistance",
+        layout: "research",
+        since: 2026,
+        half: 2,
         group: "waves",
-        level: "ongoing",
+        level: "developing",
         discovery: "emerging"
       },
       {
         id: "wave-body-interaction",
         label: "Wave–body interaction",
+        layout: "research",
+        since: 2025,
+        half: 1,
         group: "waves",
         level: "established",
         discovery: "connected"
@@ -3300,34 +3379,49 @@
       {
         id: "floating-systems",
         label: "Floating systems",
+        layout: "research",
+        since: 2025,
+        half: 1,
         group: "systems",
-        level: "established",
+        level: "developing",
         discovery: "connected"
       },
       {
         id: "model-predictive-control",
         label: "Model predictive control",
+        layout: "research",
+        since: 2025,
+        half: 2,
         group: "systems",
-        level: "established",
+        level: "developing",
         discovery: "adjacent"
       },
       {
         id: "cfd-mbd",
         label: "CFD–MBD",
-        group: "systems",
-        level: "ongoing",
+        layout: "method",
+        since: 2026,
+        half: 1,
+        group: "method",
+        level: "developing",
         discovery: "emerging"
       },
       {
         id: "gyroscopic-dynamics",
         label: "Gyroscopic dynamics",
+        layout: "research",
+        since: 2026,
+        half: 1,
         group: "systems",
-        level: "ongoing",
+        level: "developing",
         discovery: "adjacent"
       },
       {
         id: "cfd",
         label: "CFD",
+        layout: "method",
+        since: 2024,
+        half: 1,
         group: "method",
         level: "established",
         discovery: "method"
@@ -3335,6 +3429,9 @@
       {
         id: "fsi",
         label: "FSI",
+        layout: "method",
+        since: 2025,
+        half: 1,
         group: "method",
         level: "established",
         discovery: "method"
@@ -3342,8 +3439,11 @@
       {
         id: "green-water",
         label: "Green water",
+        layout: "research",
+        since: 2026,
+        half: 2,
         group: "waves",
-        level: "ongoing",
+        level: "developing",
         discovery: "emerging"
       }
     ];
@@ -3354,17 +3454,21 @@
       ["spatial-roughness", "ittc-assumptions", -136],
       ["spatial-roughness", "measured-roughness", -50],
       ["spatial-roughness", "full-scale-prediction", 42],
+      ["spatial-roughness", "wake", 18],
       ["boundary-layer", "wake", -10],
       ["boundary-layer", "ship-resistance", 12],
       ["wake", "ship-resistance", 10],
       ["full-scale-prediction", "ship-resistance", -12],
       ["full-scale-prediction", "model-ship-extrapolation", 18],
+      ["measured-roughness", "full-scale-prediction", 12],
       ["ship-resistance", "model-ship-extrapolation", -10],
       ["model-ship-extrapolation", "temperature-effects", 12],
       ["model-ship-extrapolation", "ittc-assumptions", 10],
       ["temperature-effects", "ittc-assumptions", -10],
       ["added-resistance", "wave-body-interaction", -12],
+      ["gyroscopic-dynamics", "wave-body-interaction", 12],
       ["cfd-mbd", "gyroscopic-dynamics", -12],
+      ["floating-systems", "gyroscopic-dynamics", -10],
       ["cfd", "spatial-roughness", -12],
       ["cfd", "fsi", 10],
       ["cfd", "added-resistance", 10],
@@ -3387,33 +3491,38 @@
       adjacency: new Map(),
       nodeElements: new Map(),
       linkElements: [],
-      maxConnections: 1
+      maxConnectivityScore: 1
+    };
+
+    const researchLandscapeLevelWeights = {
+      established: 1.0,
+      developing: 0.72
+    };
+
+    const researchLandscapeGlobalOffset = {
+      x: -140,
+      y: -40
     };
 
     const researchLandscapeGroupAnchors = {
-      roughness: {
-        x: 230,
-        y: 260
+      ship: {
+        x: 390,
+        y: 350
       },
-      scaling: {
-        x: 430,
-        y: 410
-      },
+
       method: {
         x: 520,
         y: 185
       },
+
       waves: {
-        x: 685,
-        y: 160
+        x: 690,
+        y: 285
       },
+
       systems: {
-        x: 790,
-        y: 340
-      },
-      experiments: {
-        x: 790,
-        y: 470
+        x: 770,
+        y: 390
       }
     };
 
@@ -3422,6 +3531,35 @@
       right: 980,
       top: 0,
       bottom: 95
+    };
+
+    const researchLandscapeMethodX = {
+      cfd: 250,
+      fsi: 550,
+      "cfd-mbd": 1000
+    };
+
+    const researchLandscapeLayout = {
+      method: {
+        top: 45,
+        bottom: 155
+      },
+
+      research: {
+        top: 235,
+        bottom: 520
+      },
+
+      periods: {
+        "2024-1": 200,
+        "2024-2": 330,
+
+        "2025-1": 460,
+        "2025-2": 590,
+
+        "2026-1": 720,
+        "2026-2": 850
+      }
     };
 
     let researchScrollMap = [];
@@ -3506,6 +3644,39 @@
       return Math.min(
         Math.max(value, min),
         max
+      );
+    }
+
+    function getLandscapeLevelWeight(node) {
+      return (
+        researchLandscapeLevelWeights[
+        node?.level
+        ] ?? 1
+      );
+    }
+
+    function getLandscapeConnectivityScore(nodeId) {
+      const node =
+        researchLandscapeState
+          .nodeMap
+          .get(nodeId);
+
+      if (
+        !node ||
+        node.layout !== "research"
+      ) {
+        return 0;
+      }
+
+      const connectionCount =
+        researchLandscapeState
+          .adjacency
+          .get(nodeId)
+          ?.size ?? 0;
+
+      return (
+        connectionCount *
+        getLandscapeLevelWeight(node)
       );
     }
 
@@ -4027,17 +4198,26 @@
           }
         );
 
-      researchLandscapeState
-        .maxConnections =
+      researchLandscapeState.maxConnectivityScore =
         Math.max(
           1,
-          ...Array.from(
-            researchLandscapeState
-              .adjacency
-              .values(),
-            connections =>
-              connections.size
-          )
+          ...researchLandscapeNodes
+            .filter(
+              node =>
+                node.layout === "research"
+            )
+            .map(node => {
+              const connectionCount =
+                researchLandscapeState
+                  .adjacency
+                  .get(node.id)
+                  ?.size ?? 0;
+
+              return (
+                connectionCount *
+                getLandscapeLevelWeight(node)
+              );
+            })
         );
     }
 
@@ -4053,6 +4233,11 @@
 
       const topNodes =
         researchLandscapeNodes
+          .filter(
+            node =>
+              node.layout === "research" &&
+              node.level === "established"
+          )
           .map(node => ({
             node,
             connections:
@@ -4084,19 +4269,34 @@
       });
     }
 
-    function getLandscapeNodeRadius(
-      nodeId
-    ) {
-      const connectionCount =
+    function getLandscapeNodeRadius(nodeId) {
+      const node =
         researchLandscapeState
-          .adjacency
-          .get(nodeId)
-          ?.size ?? 0;
+          .nodeMap
+          .get(nodeId);
+
+      /*
+        Method nodes use rectangles.
+        Radius here is only their layout /
+        collision footprint.
+      */
+      if (node?.layout === "method") {
+        return 7;
+      }
+
+      const score =
+        getLandscapeConnectivityScore(
+          nodeId
+        );
 
       const normalized =
-        connectionCount /
-        researchLandscapeState
-          .maxConnections;
+        clamp(
+          score /
+          researchLandscapeState
+            .maxConnectivityScore,
+          0,
+          1
+        );
 
       const minRadius = 6.5;
       const maxRadius = 19;
@@ -4144,20 +4344,162 @@
         4294967295
       ) * 2 - 1;
     }
-
-    function getLandscapeNodeSizeClass(nodeId) {
-      const connectionCount =
-        researchLandscapeState
-          .adjacency
-          .get(nodeId)
-          ?.size ?? 0;
-
-      const threshold =
-        Math.ceil(
-          researchLandscapeState.maxConnections / 2
+    function renderResearchLandscapeYears(svg) {
+      const yearLayer =
+        svg.querySelector(
+          ".landscape-years"
         );
 
-      return connectionCount >= threshold
+      if (!yearLayer) {
+        return;
+      }
+
+      yearLayer.replaceChildren();
+
+      const years =
+        [2024, 2025, 2026];
+
+      years.forEach(year => {
+        const firstHalfX =
+          researchLandscapeLayout
+            .periods[`${year}-1`];
+
+        const secondHalfX =
+          researchLandscapeLayout
+            .periods[`${year}-2`];
+
+        if (
+          !Number.isFinite(firstHalfX) ||
+          !Number.isFinite(secondHalfX)
+        ) {
+          return;
+        }
+
+        const yearX =
+          (
+            firstHalfX +
+            secondHalfX
+          ) / 2 +
+          researchLandscapeGlobalOffset.x;
+
+        const yearLabel =
+          document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "text"
+          );
+
+        yearLabel.classList.add(
+          "landscape-year-label"
+        );
+
+        yearLabel.setAttribute(
+          "x",
+          clamp(yearX, 65, 920)
+        );
+
+        yearLabel.setAttribute(
+          "y",
+          545
+        );
+
+        yearLabel.textContent =
+          year;
+
+        yearLayer.appendChild(
+          yearLabel
+        );
+
+        [1, 2].forEach(half => {
+          const periodX =
+            researchLandscapeLayout
+              .periods[
+            `${year}-${half}`
+            ] +
+            researchLandscapeGlobalOffset.x;
+
+          const halfLabel =
+            document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "text"
+            );
+
+          halfLabel.classList.add(
+            "landscape-half-label"
+          );
+
+          halfLabel.setAttribute(
+            "x",
+            clamp(periodX, 55, 940)
+          );
+
+          halfLabel.setAttribute(
+            "y",
+            518
+          );
+
+          halfLabel.textContent =
+            `H${half}`;
+
+          yearLayer.appendChild(
+            halfLabel
+          );
+        });
+      });
+    }
+
+    function getLandscapeDisplayYearX(year) {
+      const baseX =
+        researchLandscapeLayout
+          .years[year];
+
+      if (!Number.isFinite(baseX)) {
+        return null;
+      }
+
+      return baseX +
+        researchLandscapeGlobalOffset.x;
+    }
+
+    function getLandscapePeriodX(node) {
+      if (
+        node.layout !== "research" ||
+        !Number.isFinite(node.since) ||
+        !Number.isFinite(node.half)
+      ) {
+        return null;
+      }
+
+      const key =
+        `${node.since}-${node.half}`;
+
+      return (
+        researchLandscapeLayout
+          .periods[key] ??
+        null
+      );
+    }
+
+    function getLandscapeNodeSizeClass(nodeId) {
+      const node =
+        researchLandscapeState
+          .nodeMap
+          .get(nodeId);
+
+      if (node?.layout === "method") {
+        return "small";
+      }
+
+      const score =
+        getLandscapeConnectivityScore(
+          nodeId
+        );
+
+      const normalized =
+        score /
+        researchLandscapeState
+          .maxConnectivityScore;
+
+      return normalized >= 0.5
         ? "large"
         : "small";
     }
@@ -4401,7 +4743,7 @@
 
             const minimumDistance =
               Math.max(
-                105,
+                110,
                 radiusA +
                 radiusB +
                 24
@@ -4415,7 +4757,7 @@
                 (
                   minimumDistance -
                   distance
-                ) * 0.18;
+                ) * 0.24;
 
               stateA.fx -=
                 nx *
@@ -4506,62 +4848,24 @@
               overlapX > 0 &&
               overlapY > 0
             ) {
-              if (
-                overlapY <=
-                overlapX
-              ) {
-                const direction =
-                  stateA.y <=
-                    stateB.y
-                    ? -1
-                    : 1;
+              const direction =
+                stateA.y <= stateB.y
+                  ? -1
+                  : 1;
 
-                const force =
-                  (
-                    overlapY +
-                    6
-                  ) * 0.055;
+              const force =
+                (
+                  overlapY +
+                  14
+                ) * 0.12;
 
-                stateA.fy +=
-                  direction *
-                  force;
+              stateA.fy +=
+                direction *
+                force;
 
-                stateB.fy -=
-                  direction *
-                  force;
-              } else {
-                const centerA =
-                  (
-                    leftA +
-                    rightA
-                  ) / 2;
-
-                const centerB =
-                  (
-                    leftB +
-                    rightB
-                  ) / 2;
-
-                const direction =
-                  centerA <=
-                    centerB
-                    ? -1
-                    : 1;
-
-                const force =
-                  (
-                    overlapX +
-                    6
-                  ) * 0.035;
-
-                stateA.fx +=
-                  direction *
-                  force;
-
-                stateB.fx -=
-                  direction *
-                  force;
-              }
+              stateB.fy -=
+                direction *
+                force;
             }
           }
         }
@@ -4663,17 +4967,103 @@
               y: 280
             };
 
-          state.fx +=
-            (
-              anchor.x -
-              state.x
-            ) * 0.0018;
+          if (node.layout === "research") {
+            state.fx +=
+              (
+                anchor.x -
+                state.x
+              ) * 0.00025;
 
-          state.fy +=
-            (
-              anchor.y -
-              state.y
-            ) * 0.0018;
+            state.fy +=
+              (
+                anchor.y -
+                state.y
+              ) * 0.0018;
+
+          } else {
+            const methodX =
+              researchLandscapeMethodX[node.id];
+
+            if (Number.isFinite(methodX)) {
+              state.fx +=
+                (
+                  methodX -
+                  state.x
+                ) * 0.04;
+            }
+
+            state.fx +=
+              (
+                anchor.x -
+                state.x
+              ) * 0.0004;
+
+            state.fy +=
+              (
+                anchor.y -
+                state.y
+              ) * 0.0018;
+          }
+
+          if (node.layout === "research") {
+            const periodX =
+              getLandscapePeriodX(node);
+
+            if (periodX !== null) {
+              state.fx +=
+                (
+                  periodX -
+                  state.x
+                ) * 0.065;
+            }
+
+            const {
+              top,
+              bottom
+            } =
+              researchLandscapeLayout.research;
+
+            if (state.y < top) {
+              state.fy +=
+                (
+                  top -
+                  state.y
+                ) * 0.04;
+            }
+
+            if (state.y > bottom) {
+              state.fy +=
+                (
+                  bottom -
+                  state.y
+                ) * 0.04;
+            }
+
+          } else if (
+            node.layout === "method"
+          ) {
+            const {
+              top,
+              bottom
+            } =
+              researchLandscapeLayout.method;
+
+            if (state.y < top) {
+              state.fy +=
+                (
+                  top -
+                  state.y
+                ) * 0.04;
+            }
+
+            if (state.y > bottom) {
+              state.fy +=
+                (
+                  bottom -
+                  state.y
+                ) * 0.04;
+            }
+          }
 
           state.vx =
             (
@@ -4728,31 +5118,33 @@
               groupDy
             );
 
-          const maxGroupDistance = 160;
+          if (node.layout === "method") {
+            const maxGroupDistance = 160;
 
-          if (
-            groupDistance >
-            maxGroupDistance
-          ) {
-            const scale =
-              maxGroupDistance /
-              groupDistance;
+            if (
+              groupDistance >
+              maxGroupDistance
+            ) {
+              const scale =
+                maxGroupDistance /
+                groupDistance;
 
-            state.x =
-              anchor.x +
-              groupDx *
-              scale;
+              state.x =
+                anchor.x +
+                groupDx *
+                scale;
 
-            state.y =
-              anchor.y +
-              groupDy *
-              scale;
+              state.y =
+                anchor.y +
+                groupDy *
+                scale;
 
-            state.vx *=
-              0.35;
+              state.vx *=
+                0.35;
 
-            state.vy *=
-              0.35;
+              state.vy *=
+                0.35;
+            }
           }
 
           const radius =
@@ -4784,12 +5176,21 @@
               maxX
             );
 
-          state.y =
-            clamp(
-              state.y,
-              50,
-              510
-            );
+          if (node.layout === "method") {
+            state.y =
+              clamp(
+                state.y,
+                researchLandscapeLayout.method.top,
+                researchLandscapeLayout.method.bottom
+              );
+          } else {
+            state.y =
+              clamp(
+                state.y,
+                researchLandscapeLayout.research.top,
+                researchLandscapeLayout.research.bottom
+              );
+          }
 
           const nodeLeft =
             state.x -
@@ -4841,18 +5242,47 @@
             node.id
           );
 
+        const radius =
+          getLandscapeNodeRadius(
+            node.id
+          );
+
+        const labelWidth =
+          getLandscapeLabelWidth(
+            node
+          );
+
+        const minX =
+          45 +
+          radius;
+
+        const maxX =
+          970 -
+          (
+            radius +
+            10 +
+            labelWidth
+          );
+
         node.x =
           Math.round(
-            state.x * 10
+            clamp(
+              state.x +
+              researchLandscapeGlobalOffset.x,
+              minX,
+              maxX
+            ) * 10
           ) / 10;
 
         node.y =
           Math.round(
-            state.y * 10
+            (
+              state.y +
+              researchLandscapeGlobalOffset.y
+            ) * 10
           ) / 10;
       });
     }
-
     function updateLandscapeInteractionState() {
       const activeId =
         researchLandscapeState.hoveredId;
@@ -4969,6 +5399,10 @@
         return;
       }
 
+      renderResearchLandscapeYears(
+        svg
+      );
+
       const linkLayer =
         svg.querySelector(
           ".landscape-links"
@@ -5071,7 +5505,7 @@
             node.discovery || "";
 
           group.dataset.level =
-            node.level || "ongoing";
+            node.level || "developing";
 
           group.dataset.size =
             getLandscapeNodeSizeClass(
@@ -5093,20 +5527,76 @@
               node.id
             );
 
-          const circle =
-            document.createElementNS(
-              "http://www.w3.org/2000/svg",
-              "circle"
+          let shape;
+
+          if (node.layout === "method") {
+            const connectionCount =
+              researchLandscapeState.adjacency
+                .get(node.id)?.size ?? 0;
+
+            const width =
+              node.id === "cfd"
+                ? 22
+                : 19;
+
+            const height =
+              node.id === "cfd"
+                ? 12
+                : 11;
+
+            shape =
+              document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "rect"
+              );
+
+            shape.classList.add(
+              "landscape-node-shape",
+              "landscape-node-method"
             );
 
-          circle.classList.add(
-            "landscape-node-circle"
-          );
+            shape.setAttribute(
+              "x",
+              -width / 2
+            );
 
-          circle.setAttribute(
-            "r",
-            radius
-          );
+            shape.setAttribute(
+              "y",
+              -height / 2
+            );
+
+            shape.setAttribute(
+              "width",
+              width
+            );
+
+            shape.setAttribute(
+              "height",
+              height
+            );
+
+            shape.setAttribute(
+              "rx",
+              3
+            );
+
+          } else {
+            shape =
+              document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "circle"
+              );
+
+            shape.classList.add(
+              "landscape-node-shape",
+              "landscape-node-circle"
+            );
+
+            shape.setAttribute(
+              "r",
+              radius
+            );
+          }
 
           const label =
             document.createElementNS(
@@ -5118,9 +5608,14 @@
             "landscape-node-label"
           );
 
+          const labelOffset =
+            node.layout === "method"
+              ? 18
+              : radius + 10;
+
           label.setAttribute(
             "x",
-            radius + 10
+            labelOffset
           );
 
           label.setAttribute(
@@ -5132,10 +5627,9 @@
             node.label;
 
           group.append(
-            circle,
+            shape,
             label
           );
-
           nodeLayer.appendChild(
             group
           );
