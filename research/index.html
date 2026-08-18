@@ -1183,10 +1183,10 @@
     }
 
     .landscape-half-label {
-      fill: rgba(11, 31, 58, 0.3);
+      fill: rgba(11, 31, 58, 0.28);
 
       font-family: inherit;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 500;
       letter-spacing: 0.08em;
 
@@ -1247,11 +1247,13 @@
 
     .research-landscape-summary {
       position: absolute;
-      top: 25px;
+      top: 27px;
       right: 0;
       z-index: 2;
-      width: 215px;
+
+      width: 205px;
       padding: 0;
+
       pointer-events: none;
       text-align: right;
     }
@@ -1259,32 +1261,33 @@
     .research-landscape-summary-heading {
       display: block;
 
-      margin-bottom: 9px;
-      font-size: 0.56em;
+      margin-bottom: 8px;
+
+      font-size: 0.53em;
       font-weight: 500;
       line-height: 1.4;
-
       letter-spacing: 0.13em;
       text-transform: uppercase;
 
-      color: rgba(11, 31, 58, 0.36);
+      color: rgba(11, 31, 58, 0.30);
     }
 
     .research-landscape-summary-list {
       display: grid;
-      gap: 5px;
+      gap: 4px;
 
       list-style: none;
       justify-items: end;
+
       margin: 0;
       padding: 0;
     }
 
     .research-landscape-summary-list li {
-      font-size: 0.68em;
+      font-size: 0.65em;
       line-height: 1.45;
 
-      color: rgba(31, 46, 64, 0.62);
+      color: rgba(31, 46, 64, 0.54);
     }
 
     .research-landscape-stage {
@@ -1383,19 +1386,36 @@
     .research-landscape-legend {
       position: absolute;
       right: 20px;
-      bottom: -20px;
+      bottom: -30px;
 
       display: flex;
       align-items: center;
       gap: 10px;
 
-      font-size: 0.58em;
+      font-size: 0.61em;
       line-height: 1;
       letter-spacing: 0.025em;
 
-      color: rgba(55, 67, 82, 0.48);
+      color: rgba(55, 67, 82, 0.56);
 
       pointer-events: none;
+    }
+
+    .research-landscape-legend-divider {
+      width: 1px;
+      height: 11px;
+
+      background: rgba(11, 31, 58, 0.13);
+    }
+
+    .legend-established {
+      color: rgba(45, 67, 91, 0.78);
+      font-weight: 500;
+    }
+
+    .legend-developing {
+      color: rgba(45, 67, 91, 0.48);
+      font-weight: 400;
     }
 
     .research-landscape-legend-item {
@@ -1403,13 +1423,6 @@
       align-items: center;
       gap: 6px;
       white-space: nowrap;
-    }
-
-    .research-landscape-legend-divider {
-      width: 1px;
-      height: 11px;
-
-      background: rgba(11, 31, 58, 0.11);
     }
 
     .legend-size {
@@ -1479,18 +1492,8 @@
       gap: 5px;
     }
 
-    .legend-established {
-      color: rgba(45, 67, 91, 0.72);
-      font-weight: 500;
-    }
-
     .legend-status-separator {
       color: rgba(45, 67, 91, 0.28);
-    }
-
-    .legend-developing {
-      color: rgba(45, 67, 91, 0.4);
-      font-weight: 400;
     }
 
     .rt-header,
@@ -2721,14 +2724,14 @@
           <div class="research-landscape-legend-divider"></div>
 
           <div class="research-landscape-legend-item legend-status">
-            <span class="legend-established">
+            <span class="legend-established" data-en="Established" data-ja="確立">
               Established
             </span>
 
             <span class="legend-status-separator">·</span>
 
-            <span class="legend-developing">
-              Devloping
+            <span class="legend-developing" data-en="Developing" data-ja="発展中">
+              Developing
             </span>
           </div>
 
@@ -4445,19 +4448,6 @@
           );
         });
       });
-    }
-
-    function getLandscapeDisplayYearX(year) {
-      const baseX =
-        researchLandscapeLayout
-          .years[year];
-
-      if (!Number.isFinite(baseX)) {
-        return null;
-      }
-
-      return baseX +
-        researchLandscapeGlobalOffset.x;
     }
 
     function getLandscapePeriodX(node) {
