@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Research | Sangseok Han</title>
   <meta name="description"
-    content="Sangseok Han's research in computational fluid dynamics, focusing on spatially non-uniform hull roughness, ship hydrodynamics, and coupled marine systems.">
+    content="Research by Sangseok Han in computational fluid dynamics, ship hydrodynamics, hull roughness, wave–body interaction, and coupled marine systems.">
   <link rel="canonical" href="https://sangseokhan.com/research/" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <meta name="robots" content="noimageindex">
   <meta property="og:title" content="Research | Sangseok Han">
   <meta property="og:description"
-    content="Research on hydrodynamics and multiphysics modelling, with emphasis on numerical methods and failure of modelling assumptions.">
+    content="Research in computational fluid dynamics, ship hydrodynamics, hull roughness, wave–body interaction, and coupled marine systems.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sangseokhan.com/research/">
   <meta property="og:site_name" content="Sangseok Han — Research">
@@ -427,6 +427,7 @@
       flex: 0 0 auto;
       font-size: 0.82em;
       opacity: 0.68;
+
     }
 
     .research-timeline {
@@ -601,13 +602,28 @@
       display: flex;
       align-items: baseline;
       flex-wrap: wrap;
-
+      position: relative;
+      padding-left: 12px;
       min-width: 0;
       margin-bottom: 3px;
 
-      font-size: 1em;
+      font-size: 1.05em;
       line-height: 1.4;
       letter-spacing: 0.01em;
+    }
+
+    .rt-output::before {
+      content: "";
+
+      position: absolute;
+      left: 1px;
+      top: 0.68em;
+      margin-top: -1px;
+      width: 3px;
+      height: 3px;
+
+      border-radius: 50%;
+      background: rgba(11, 37, 69, 0.42);
     }
 
     .rt-output-label {
@@ -645,9 +661,10 @@
       max-width: 100%;
 
       margin: 0;
-      font-size: 0.96em;
+      margin-left: 12px;
+      font-size: 0.9em;
       line-height: 1.55;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.0em;
 
       color: #222;
 
@@ -657,23 +674,49 @@
     }
 
     .rt-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+
+      min-width: 0;
+      max-width: 100%;
+
+      margin-left: 12px;
+      margin-top: 2px;
+      margin-bottom: 6px;
+      padding-left: 2px;
+
       font-size: 0.74em;
+      line-height: 1.4;
+
       color: #222;
       opacity: 0.88;
 
-      padding-left: 2px;
-      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+    }
 
-      margin-left: 0;
-      margin-top: 2px;
-      margin-bottom: 6px;
+    .rt-meta>em,
+    .rt-meta>.rt-venue {
+      flex: 0 1 auto;
+      min-width: 0;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .rt-meta>.rt-location,
+    .rt-meta>.q-rank {
+      flex: 0 0 auto;
+      white-space: nowrap;
     }
 
     .rt-inst-divider {
       width: 100%;
       height: 1px;
       border-top: 1px solid rgba(0, 0, 0, 0.08);
-      margin: 18px 0 22px;
+      margin: 0px 0 10px;
       opacity: 0.65;
     }
 
@@ -799,7 +842,7 @@
 
     .research-affiliation-note {
       max-width: 620px;
-      margin: -20px 0 18px auto;
+      margin: -10px 0 18px auto;
 
       font-size: 0.8em;
       font-style: italic;
@@ -953,7 +996,7 @@
 
       box-sizing: border-box;
       width: 100%;
-      max-width: 850px;
+      max-width: 1320px;
 
       margin: 44px 0 58px;
       padding: 18px 4px 20px;
@@ -1036,7 +1079,7 @@
       display: block;
 
       width: 100%;
-      max-width: 850px;
+      max-width: 1320px;
 
       margin: 44px 0 58px;
       padding-top: 24px;
@@ -1104,16 +1147,35 @@
       transition: color 0.18s ease;
     }
 
+    .research-contact-cta .research-context-item {
+      position: relative;
+
+      transition:
+        background-color 0.18s ease,
+        transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.18s ease;
+    }
+
+    .research-contact-cta .research-context-item:hover {
+      background: rgba(11, 31, 58, 0.028);
+      transform: translateX(3px);
+    }
+
+    .research-contact-cta .research-context-item:hover::before {
+      background: rgba(11, 31, 58, 0.42);
+      transform: scaleY(1);
+    }
+
     .research-context-item:hover .research-context-name {
-      color: rgba(11, 31, 58, 0.98);
+      color: rgba(11, 31, 58, 1);
     }
 
     .research-context-item:hover .research-context-description {
-      color: rgba(70, 82, 98, 0.78);
+      color: rgba(55, 67, 82, 0.82);
     }
 
     .research-context-item:hover .research-context-arrow {
-      color: rgba(11, 31, 58, 0.74);
+      color: rgba(11, 31, 58, 0.88);
       transform: translateX(3px);
     }
 
@@ -1121,7 +1183,7 @@
       display: inline-block;
 
       color: rgba(11, 31, 58, 0.34);
-
+      margin-right: 2px;
       transition:
         color 0.18s ease,
         transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
@@ -1245,23 +1307,26 @@
       color: rgba(55, 67, 82, 0.52);
     }
 
+
     .research-landscape-summary {
       position: absolute;
       top: 27px;
       right: 0;
-      z-index: 2;
+      z-index: 4;
 
-      width: 205px;
+      width: 245px;
+      min-height: 112px;
+
       padding: 0;
 
-      pointer-events: none;
       text-align: right;
+      pointer-events: none;
     }
 
     .research-landscape-summary-heading {
       display: block;
 
-      margin-bottom: 8px;
+      margin-bottom: 5px;
 
       font-size: 0.53em;
       font-weight: 500;
@@ -1272,22 +1337,124 @@
       color: rgba(11, 31, 58, 0.30);
     }
 
+    .research-landscape-summary-topic {
+      min-height: 1.4em;
+      margin-bottom: 10px;
+
+      font-size: 0.69em;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.02em;
+
+      color: rgba(24, 39, 58, 0.72);
+    }
+
+    .research-landscape-summary-topic:empty {
+      display: none;
+    }
+
     .research-landscape-summary-list {
       display: grid;
-      gap: 4px;
+      gap: 9px;
 
       list-style: none;
-      justify-items: end;
 
       margin: 0;
       padding: 0;
     }
 
     .research-landscape-summary-list li {
+      width: 100%;
+      min-width: 0;
+      text-align: right;
+    }
+
+    .research-landscape-summary-list:not(:has(.research-landscape-output-item)) {
+      width: max-content;
+      max-width: 100%;
+
+      margin-left: auto;
+      margin-right: 0;
+
+      justify-items: start;
+      gap: 3px;
+    }
+
+    .research-landscape-summary-list li:not(.research-landscape-output-item):not(.research-landscape-output-empty) {
+      width: 100%;
+
       font-size: 0.65em;
-      line-height: 1.45;
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: 0.015em;
+
+      text-align: left;
 
       color: rgba(31, 46, 64, 0.54);
+    }
+
+    .research-landscape-output-item {
+      position: relative;
+
+      box-sizing: border-box;
+      padding-left: 11px;
+    }
+
+    .research-landscape-output-item::before {
+      content: "";
+
+      position: absolute;
+      left: 1px;
+      top: 7px;
+
+      width: 2px;
+      height: 2px;
+
+      border-radius: 50%;
+
+      background: rgba(11, 31, 58, 0.32);
+    }
+
+    .research-landscape-output-title {
+      display: block;
+
+      min-width: 0;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      font-size: 0.64em;
+      line-height: 1.4;
+
+      color: rgba(31, 46, 64, 0.68);
+    }
+
+    .research-landscape-output-meta {
+      display: block;
+
+      margin-top: 2px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      font-size: 0.55em;
+      line-height: 1.4;
+      letter-spacing: 0.025em;
+
+      color: rgba(70, 82, 98, 0.46);
+    }
+
+    .research-landscape-output-meta em {
+      font-style: italic;
+    }
+
+    .research-landscape-output-empty {
+      font-size: 0.61em;
+      line-height: 1.45;
+
+      color: rgba(70, 82, 98, 0.4);
     }
 
     .research-landscape-stage {
@@ -1326,9 +1493,11 @@
 
     .landscape-link {
       fill: none;
-      stroke: rgba(11, 31, 58, 0.05);
-      stroke-width: 0.9;
+
+      stroke: rgba(11, 31, 58, 0.032);
+      stroke-width: 0.65;
       stroke-linecap: round;
+
       vector-effect: non-scaling-stroke;
 
       transition:
@@ -1352,14 +1521,24 @@
 
       vector-effect: non-scaling-stroke;
 
+      transform-box: fill-box;
+      transform-origin: center;
+
       transition:
         fill 0.22s ease,
-        stroke 0.22s ease;
+        stroke 0.22s ease,
+        stroke-width 0.22s ease,
+        transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .landscape-node-method {
       fill: rgba(72, 82, 94, 0.035);
       stroke: rgba(72, 82, 94, 0.24);
+    }
+
+    .landscape-node.is-neighbor .landscape-node-shape {
+      fill: rgba(var(--group-rgb), 0.09);
+      stroke: rgba(var(--group-rgb), 0.34);
     }
 
     .landscape-node-label {
@@ -1767,10 +1946,25 @@
       .rt-venue {
         min-width: 0;
         max-width: 80%;
+
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+
         margin-top: 1px;
+      }
+
+      .rt-venue[data-short] {
+        font-size: 0;
+      }
+
+      .rt-venue[data-short]::before {
+        content: attr(data-short);
+
+        font-size: 0.68rem;
+        line-height: 1.2;
+
+        white-space: nowrap;
       }
 
       .rt-location {
@@ -1973,27 +2167,48 @@
     }
 
     @media (min-width: 1321px) {
-      .research-timeline>.rt-header {
-        margin-left:
-          clamp(0px, calc(100vw - 1320px), 140px);
-      }
 
       .research-timeline {
-        width: calc(100% + clamp(0px, calc(100vw - 1320px), 140px));
-
-        margin-left:
-          calc(-1 * clamp(0px, calc(100vw - 1320px), 140px));
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
 
         box-sizing: border-box;
+        overflow: visible;
+      }
+
+      .research-timeline>.rt-header {
+        margin-left: 0;
       }
 
       .research-timeline .rt-item {
-        grid-template-columns: 64px minmax(0, 1fr);
-        column-gap: 50px;
+        width: calc(100% + 124px);
+        margin-left: -124px;
+
+        box-sizing: border-box;
+
+        grid-template-columns:
+          64px minmax(0, 1fr);
+
+        column-gap: 40px;
+
+        padding:
+          22px 0 18px 20px;
       }
 
+      .research-timeline .rt-year {
+        margin-left: 0;
+
+        text-align: right;
+        white-space: nowrap;
+      }
+
+
       .research-timeline .rt-body {
-        margin-left: -20px;
+        min-width: 0;
+        width: 100%;
+
+        margin-left: 0;
       }
 
       .research-timeline .rt-block-group {
@@ -2003,7 +2218,6 @@
         margin-right: 6px;
         padding-right: 16px;
       }
-
     }
 
     .landscape-node[data-group="ship"] {
@@ -2020,6 +2234,22 @@
 
     .landscape-node[data-group="method"] {
       --group-rgb: 78, 86, 96;
+    }
+
+    .landscape-node:not([data-group="method"]):hover .landscape-node-shape,
+    .landscape-node:not([data-group="method"]).is-active .landscape-node-shape {
+      fill: rgba(var(--group-rgb), 0.16);
+      stroke: rgba(var(--group-rgb), 0.68);
+      stroke-width: 1.25;
+
+      transform: scale(1.16);
+    }
+
+    .landscape-node[data-group="method"]:hover .landscape-node-shape,
+    .landscape-node[data-group="method"].is-active .landscape-node-shape {
+      fill: rgba(var(--group-rgb), 0.14);
+      stroke: rgba(var(--group-rgb), 0.56);
+      stroke-width: 1.15;
     }
 
     .landscape-node[data-level="established"] .landscape-node-label {
@@ -2056,12 +2286,6 @@
       stroke: rgba(var(--group-rgb), 0.34);
     }
 
-    .landscape-node:hover .landscape-node-shape,
-    .landscape-node.is-active .landscape-node-shape {
-      fill: rgba(var(--group-rgb), 0.16);
-      stroke: rgba(var(--group-rgb), 0.62);
-    }
-
     .landscape-node:hover .landscape-node-label,
     .landscape-node.is-active .landscape-node-label {
       fill: rgba(var(--group-rgb), 1);
@@ -2073,12 +2297,12 @@
     }
 
     .landscape-link.is-muted {
-      opacity: 0.035;
+      opacity: 0.025;
     }
 
     .landscape-link.is-connected {
-      stroke: rgba(11, 31, 58, 0.28);
-      stroke-width: 1.25;
+      stroke: rgba(11, 31, 58, 0.26);
+      stroke-width: 1.15;
       opacity: 1;
     }
 
@@ -2278,9 +2502,9 @@
 
             <aside class="research-network" aria-labelledby="research-network-title">
 
-              <span id="research-network-title" class="research-network-heading" data-en="Research Exchanges"
-                data-ja="研究交流">
-                Research Exchanges
+              <span id="research-network-title" class="research-network-heading" data-en="Research Discussions"
+                data-ja="研究交流・議論">
+                Research Discussions
               </span>
 
               <ul class="research-network-list">
@@ -2288,9 +2512,9 @@
                   <span class="research-network-name">MARIN</span>
 
                   <span class="research-network-meta">
-                    <span class="research-network-role" data-en="Technical discussion related to W2025"
+                    <span class="research-network-role" data-en="Technical discussion on W2025"
                       data-ja="W2025に関する技術的議論">
-                      Technical discussion related to W2025
+                      Technical discussion on W2025
                     </span>
 
                     <span class="research-network-separator">·</span>
@@ -2321,8 +2545,8 @@
                   <span class="research-network-name">University of Iowa</span>
 
                   <span class="research-network-meta">
-                    <span class="research-network-role" data-en="Research discussion and advice" data-ja="研究に関する議論・助言">
-                      Research discussion and advice
+                    <span class="research-network-role" data-en="Research discussion" data-ja="研究に関する議論">
+                      Research discussion
                     </span>
 
                     <span class="research-network-separator">·</span>
@@ -2337,8 +2561,8 @@
                   <span class="research-network-name">University of Southampton</span>
 
                   <span class="research-network-meta">
-                    <span class="research-network-role" data-en="Research discussion and advice" data-ja="研究に関する議論・助言">
-                      Research discussion and advice
+                    <span class="research-network-role" data-en="Research discussion" data-ja="研究に関する議論">
+                      Research discussion
                     </span>
 
                     <span class="research-network-separator">·</span>
@@ -2393,14 +2617,12 @@
             </div>
 
             <p class="current-project-description"
-              data-en="Added-resistance predictions can vary substantially across CFD setups and participating institutions, with the disagreement becoming particularly pronounced at specific wavelength ratios. This project maps that sensitivity through a structured parameter study to identify the modelling choices that drive the variation and support more reproducible CFD practice for ITTC seakeeping procedures."
-              data-ja="波浪中付加抵抗のCFD予測は、計算設定や実施機関によって大きく変動し、特定の波長比ではその差が特に顕著になります。本研究では、体系的なパラメータスタディによってその感度を整理し、予測差を生む主要なモデリング要因を特定するとともに、ITTC耐航性能手順に向けたより再現性の高いCFD実務の確立を目指します。">
-              Added-resistance predictions can vary substantially across CFD setups and
-              participating institutions, with the disagreement becoming particularly
-              pronounced at specific wavelength ratios. This project maps that sensitivity
-              through a structured parameter study to identify the modelling choices that
-              drive the variation and support more reproducible CFD practice for ITTC
-              seakeeping procedures.
+              data-en="Added-resistance predictions can vary substantially across CFD setups, particularly at specific wavelength ratios. This project examines that sensitivity through a structured parameter study to identify modelling choices that contribute to the variation and to assess approaches for more reproducible added-resistance prediction."
+              data-ja="波浪中付加抵抗のCFD予測は、計算設定によって大きく変動し、特定の波長比ではその差が特に顕著になる場合があります。本研究では、体系的なパラメータスタディを通じてその感度を調べ、予測差に寄与するモデリング要因を整理するとともに、より再現性の高い付加抵抗予測手法を検討します。">
+              Added-resistance predictions can vary substantially across CFD setups, particularly at specific wavelength
+              ratios. This project examines that sensitivity through a structured parameter study to identify modelling
+              choices that contribute to the variation and to assess approaches for more reproducible added-resistance
+              prediction.
             </p>
 
             <div class="current-project-topics" aria-label="Research topics">
@@ -2428,8 +2650,8 @@
                   </span>
 
                   <span class="research-network-meta">
-                    <span class="research-network-role" data-en="Visiting research" data-ja="訪問研究">
-                      Visiting research
+                    <span class="research-network-role" data-en="Visiting Researcher" data-ja="訪問研究員">
+                      Visiting Researcher
                     </span>
 
                     <span class="research-network-separator">·</span>
@@ -2499,9 +2721,9 @@
 
             <aside class="research-network" aria-labelledby="gwec-project-network-title">
 
-              <span id="gwec-project-network-title" class="research-network-heading" data-en="Project Background"
+              <span id="gwec-project-network-title" class="research-network-heading" data-en="Research Context"
                 data-ja="研究背景">
-                Project Background
+                Research Context
               </span>
 
               <ul class="research-network-list">
@@ -2654,17 +2876,19 @@
           Research Themes
         </h1>
 
-        <p class="research-landscape-intro" data-en="Core questions, methods, and connections across my research."
-          data-ja="研究の中心となる問い、手法、そしてそれらのつながり。">
-          Core questions, methods, and connections across my research.
+        <p class="research-landscape-intro" data-en="Research topics and methods represented across my work."
+          data-ja="これまでの研究で扱ってきた主なテーマと手法。">
+          Research topics and methods represented across my work.
         </p>
       </div>
 
 
-      <div class="research-landscape-summary" aria-label="Most connected research topics">
+      <div class="research-landscape-summary" aria-live="polite">
         <span class="research-landscape-summary-heading">
           Core themes
         </span>
+
+        <div class="research-landscape-summary-topic"></div>
 
         <ul class="research-landscape-summary-list"></ul>
       </div>
@@ -2724,13 +2948,13 @@
           <div class="research-landscape-legend-divider"></div>
 
           <div class="research-landscape-legend-item legend-status">
-            <span class="legend-established" data-en="Established" data-ja="確立">
-              Established
+            <span class="legend-established" data-en="Published" data-ja="成果あり">
+              Published
             </span>
 
             <span class="legend-status-separator">·</span>
 
-            <span class="legend-developing" data-en="Developing" data-ja="発展中">
+            <span class="legend-developing" data-en="Developing" data-ja="進行中">
               Developing
             </span>
           </div>
@@ -2796,13 +3020,13 @@
         </a>
 
         <a class="research-context-item" href="/research/connection/">
-          <span class="research-context-name" data-en="Research Connections" data-ja="研究上のつながり">
-            Research Connections
+          <span class="research-context-name" data-en="Research Interactions" data-ja="研究交流">
+            Research Interactions
           </span>
 
-          <span class="research-context-description" data-en="Collaborators, hosts, and exchanges"
-            data-ja="共同研究者、研究受入先、研究交流">
-            Collaborators, hosts, and exchanges
+          <span class="research-context-description" data-en="Collaborations, discussions, visits, and shared work"
+            data-ja="共同研究、研究交流、研究訪問、および共同成果">
+            Collaborations, discussions, visits, and shared work
           </span>
 
           <span class="research-context-arrow" aria-hidden="true">
@@ -2816,13 +3040,13 @@
       <div class="research-context-enquiry">
 
         <p>
-          <span class="desktop" data-en="For collaboration or academic exchange related to this work."
-            data-ja="これらの研究に関する共同研究・学術交流について。">
-            For collaboration or academic exchange related to this work.
+          <span class="desktop" data-en="For research collaboration or academic discussion related to this work."
+            data-ja="これらの研究に関する共同研究・学術的な議論について。">
+            For research collaboration or academic discussion related to this work.
           </span>
 
-          <span class="mobile" data-en="For collaboration or exchange." data-ja="共同研究・交流について。">
-            For collaboration or exchange.
+          <span class="mobile" data-en="For collaboration or research discussion." data-ja="共同研究・研究交流について。">
+            For collaboration or research discussion.
           </span>
         </p>
 
@@ -2883,7 +3107,7 @@
           </div>
 
           <div class="rt-block-group">
-            <div class="rt-block">
+            <div class="rt-block" data-themes="spatial-roughness ittc-assumptions" data-citation="Han">
               <div class="rt-output">
                 <span class="rt-output-label" data-en="Journal Publication" data-ja="学術論文">
                   Journal Publication
@@ -2908,8 +3132,8 @@
           </div>
 
           <div class="rt-title">
-            <span data-en="Self-Directed Research" data-ja="自主研究">
-              Self-Directed Research
+            <span data-en="Independent Research" data-ja="独立研究">
+              Independent Research
             </span>
 
             <span class="rt-loc-dot">·</span>
@@ -2919,7 +3143,7 @@
             </span>
           </div>
           <div class="rt-block-group">
-            <div class="rt-block">
+            <div class="rt-block" data-themes="spatial-roughness ship-resistance" data-citation="Han et al.">
               <div class="rt-output">
                 <span class="rt-output-label" data-en="Journal Publication" data-ja="学術論文">
                   Journal Publication
@@ -2940,7 +3164,7 @@
                 <em>Ocean Engineering</em>
               </div>
             </div>
-            <div class="rt-block">
+            <div class="rt-block" data-themes="spatial-roughness ship-resistance" data-citation="Han et al.">
               <div class="rt-output">
                 <span class="rt-output-label" data-en="Symposium Paper Presentation" data-ja="シンポジウム論文発表">
                   Symposium Paper Presentation
@@ -2957,7 +3181,7 @@
               </div>
 
               <div class="rt-meta">
-                <span class="rt-venue">
+                <span class="rt-venue" data-short="SNH36">
                   36th Symposium on Naval Hydrodynamics (SNH36)
                 </span>
 
@@ -2976,7 +3200,9 @@
 
         <div class="rt-body">
           <div class="rt-topline">
-            <div class="rt-stage">International Research</div>
+            <div class="rt-stage" data-en="Postgraduate Research" data-ja="大学院研究">
+              Postgraduate Research
+            </div>
 
             <div class="rt-title">
               <span data-en="MSc Research — University of Strathclyde" data-ja="修士研究 — ストラスクライド大学">
@@ -2989,7 +3215,8 @@
             </div>
           </div>
           <div class="rt-block-group">
-            <div class="rt-block">
+            <div class="rt-block" data-themes="temperature-effects model-ship-extrapolation ittc-assumptions"
+              data-citation="Han et al.">
               <div class="rt-output">
                 <span class="rt-output-label" data-en="Issue Cover Article" data-ja="号表紙掲載論文">
                   Issue Cover Article
@@ -3007,11 +3234,14 @@
               </div>
 
               <div class="rt-meta">
-                <em>Journal of Marine Science and Engineering</em>
+                <em data-short="JMSE">
+                  Journal of Marine Science and Engineering
+                </em>
               </div>
             </div>
 
-            <div class="rt-block">
+            <div class="rt-block" data-themes="fsi structural-flexibility floating-systems wave-body-interaction"
+              data-citation="Han et al.">
               <div class="rt-output">
                 <span class="rt-output-label" data-en="Conference Paper" data-ja="国際会議論文">
                   Conference Paper
@@ -3027,7 +3257,7 @@
               </div>
 
               <div class="rt-meta">
-                <span class="rt-venue">
+                <span class="rt-venue" data-short="MARINE 2025">
                   International Conference on Computational Methods in Marine Engineering (MARINE 2025)
                 </span>
 
@@ -3037,7 +3267,8 @@
               </div>
             </div>
 
-            <div class="rt-block">
+            <div class="rt-block" data-themes="temperature-effects model-ship-extrapolation ittc-assumptions"
+              data-citation="Han et al.">
               <div class="rt-output">
                 <span class="rt-output-label" data-en="Conference Presentation" data-ja="国際会議発表">
                   Conference Presentation
@@ -3053,7 +3284,7 @@
               </div>
 
               <div class="rt-meta">
-                <span class="rt-venue">
+                <span class="rt-venue" data-short="64ICNAMI">
                   International Congress of Naval Architecture and Maritime Industry
                 </span>
 
@@ -3074,7 +3305,8 @@
           </div>
 
           <div class="rt-block-group">
-            <div class="rt-block">
+            <div class="rt-block" data-themes="model-predictive-control floating-systems wave-body-interaction cfd"
+              data-citation="Han et al.">
               <div class="rt-output">
                 <span class="rt-output-label" data-en="Conference Presentation" data-ja="国際会議発表">
                   Conference Presentation
@@ -3090,7 +3322,7 @@
               </div>
 
               <div class="rt-meta">
-                <span class="rt-venue">
+                <span class="rt-venue" data-short="JASNAOE 2025">
                   The Japan Society of Naval Architects and Ocean Engineers (JASNAOE 2025)
                 </span>
 
@@ -3110,8 +3342,8 @@
 
         <div class="rt-body">
           <div class="rt-topline">
-            <div class="rt-stage" data-en="Early Outputs" data-ja="初期成果">
-              Early Outputs
+            <div class="rt-stage" data-en="Early Research" data-ja="初期研究">
+              Early Research
             </div>
 
             <div class="rt-title">
@@ -3125,7 +3357,8 @@
             </div>
           </div>
           <div class="rt-block-group">
-            <div class="rt-block">
+            <div class="rt-block" data-themes="temperature-effects model-ship-extrapolation ittc-assumptions"
+              data-citation="Han et al.">
               <div class="rt-output">
                 <span class="rt-output-label" data-en="Best Paper Award" data-ja="最優秀論文賞">
                   Best Paper Award
@@ -3141,7 +3374,7 @@
               </div>
 
               <div class="rt-meta">
-                <span class="rt-venue">
+                <span class="rt-venue" data-short="13NCFE">
                   The 13th National Congress on Fluids Engineering
                 </span>
 
@@ -3151,7 +3384,7 @@
               </div>
             </div>
 
-            <div class="rt-block">
+            <div class="rt-block" data-themes="ship-resistance full-scale-prediction cfd">
               <div class="rt-output">
                 <span class="rt-output-label" data-en="Journal Publication" data-ja="学術論文">
                   Journal Publication
@@ -3182,8 +3415,8 @@
 
         <div class="rt-body">
           <div class="rt-topline">
-            <div class="rt-stage" data-en="Research Foundations" data-ja="研究基盤">
-              Research Foundations
+            <div class="rt-stage" data-en="Initial Projects" data-ja="初期プロジェクト">
+              Initial Projects
             </div>
 
             <div class="rt-title">
@@ -3207,7 +3440,7 @@
 
               <div class="rt-meta">
                 <span class="rt-venue">
-                  President of The Society of Naval Architecture of Korea
+                  Awarded by the President of The Society of Naval Architects of Korea
                 </span>
               </div>
             </div>
@@ -3228,7 +3461,7 @@
               </div>
 
               <div class="rt-meta">
-                <span class="rt-venue">
+                <span class="rt-venue" data-short="SNAK Fall Conference">
                   Fall Conference of The Society of Naval Architecture of Korea
                 </span>
 
@@ -3380,6 +3613,16 @@
         discovery: "connected"
       },
       {
+        id: "structural-flexibility",
+        label: "Structural flexibility",
+        layout: "research",
+        since: 2025,
+        half: 2,
+        group: "systems",
+        level: "developing",
+        discovery: "connected"
+      },
+      {
         id: "floating-systems",
         label: "Floating systems",
         layout: "research",
@@ -3472,6 +3715,9 @@
       ["gyroscopic-dynamics", "wave-body-interaction", 12],
       ["cfd-mbd", "gyroscopic-dynamics", -12],
       ["floating-systems", "gyroscopic-dynamics", -10],
+      ["fsi", "structural-flexibility", 10],
+      ["structural-flexibility", "floating-systems", -10],
+      ["structural-flexibility", "wave-body-interaction", 12],
       ["cfd", "spatial-roughness", -12],
       ["cfd", "fsi", 10],
       ["cfd", "added-resistance", 10],
@@ -3482,6 +3728,7 @@
       ["fsi", "wave-body-interaction", -10],
       ["fsi", "floating-systems", 10],
       ["wave-body-interaction", "floating-systems", 12],
+      ["wave-body-interaction", "cfd-mbd", 12],
       ["floating-systems", "model-predictive-control", -12],
       ["floating-systems", "cfd-mbd", 14],
       ["green-water", "wave-body-interaction", 10],
@@ -3499,7 +3746,7 @@
 
     const researchLandscapeLevelWeights = {
       established: 1.0,
-      developing: 0.72
+      developing: 0.6
     };
 
     const researchLandscapeGlobalOffset = {
@@ -3537,10 +3784,12 @@
     };
 
     const researchLandscapeMethodX = {
-      cfd: 250,
-      fsi: 550,
-      "cfd-mbd": 1000
+      cfd: 100,
+      fsi: 480,
+      "cfd-mbd": 700
     };
+
+    const researchLandscapeMethodY = 120;
 
     const researchLandscapeLayout = {
       method: {
@@ -3671,18 +3920,27 @@
         return 0;
       }
 
-      const connectionCount =
-        researchLandscapeState
-          .adjacency
-          .get(nodeId)
-          ?.size ?? 0;
+      const researchConnectionCount =
+        Array.from(
+          researchLandscapeState
+            .adjacency
+            .get(nodeId) ?? []
+        )
+          .filter(neighborId => {
+            const neighbor =
+              researchLandscapeState
+                .nodeMap
+                .get(neighborId);
+
+            return neighbor?.layout === "research";
+          })
+          .length;
 
       return (
-        connectionCount *
+        researchConnectionCount *
         getLandscapeLevelWeight(node)
       );
     }
-
     function easeInOutQuint(progress) {
       return progress < 0.5
         ? 16 * Math.pow(progress, 5)
@@ -4209,64 +4467,368 @@
               node =>
                 node.layout === "research"
             )
-            .map(node => {
-              const connectionCount =
-                researchLandscapeState
-                  .adjacency
-                  .get(node.id)
-                  ?.size ?? 0;
-
-              return (
-                connectionCount *
-                getLandscapeLevelWeight(node)
-              );
-            })
+            .map(node =>
+              getLandscapeConnectivityScore(
+                node.id
+              )
+            )
         );
     }
 
-    function renderResearchLandscapeSummary() {
-      const list =
+    function renderResearchLandscapeSummary(
+      activeNodeId = null
+    ) {
+      const summary =
         document.querySelector(
+          ".research-landscape-summary"
+        );
+
+      const heading =
+        summary?.querySelector(
+          ".research-landscape-summary-heading"
+        );
+
+      const topic =
+        summary?.querySelector(
+          ".research-landscape-summary-topic"
+        );
+
+      const list =
+        summary?.querySelector(
           ".research-landscape-summary-list"
         );
 
-      if (!list) {
+      if (
+        !summary ||
+        !heading ||
+        !topic ||
+        !list
+      ) {
         return;
       }
 
-      const topNodes =
-        researchLandscapeNodes
-          .filter(
-            node =>
-              node.layout === "research" &&
-              node.level === "established"
-          )
-          .map(node => ({
-            node,
-            connections:
-              researchLandscapeState
-                .adjacency
-                .get(node.id)
-                ?.size ?? 0
-          }))
-          .sort(
-            (a, b) =>
-              b.connections -
-              a.connections ||
-              a.node.label.localeCompare(
-                b.node.label
-              )
-          )
-          .slice(0, 3);
+      const lang =
+        document.documentElement
+          .getAttribute("data-lang") === "ja"
+          ? "ja"
+          : "en";
 
       list.replaceChildren();
 
-      topNodes.forEach(({ node }) => {
+      if (!activeNodeId) {
+        heading.textContent =
+          lang === "ja"
+            ? "主要テーマ"
+            : "Core themes";
+
+        topic.textContent = "";
+
+        summary.setAttribute(
+          "aria-label",
+          lang === "ja"
+            ? "主要な研究テーマ"
+            : "Core research themes"
+        );
+
+        const topNodes =
+          researchLandscapeNodes
+            .filter(
+              node =>
+                node.layout === "research" &&
+                node.level === "established"
+            )
+            .map(node => ({
+              node,
+
+              connections:
+                Array.from(
+                  researchLandscapeState
+                    .adjacency
+                    .get(node.id) ?? []
+                )
+                  .filter(neighborId => {
+                    const neighbor =
+                      researchLandscapeState
+                        .nodeMap
+                        .get(neighborId);
+
+                    return (
+                      neighbor?.layout ===
+                      "research"
+                    );
+                  })
+                  .length
+            }))
+            .sort(
+              (a, b) =>
+                b.connections -
+                a.connections ||
+                a.node.label.localeCompare(
+                  b.node.label
+                )
+            )
+            .slice(0, 3);
+
+        topNodes.forEach(
+          ({ node }) => {
+            const item =
+              document.createElement("li");
+
+            item.textContent =
+              node.label;
+
+            list.appendChild(item);
+          }
+        );
+
+        return;
+      }
+
+      const node =
+        researchLandscapeState
+          .nodeMap
+          .get(activeNodeId);
+
+      if (!node) {
+        return;
+      }
+
+      heading.textContent =
+        lang === "ja"
+          ? "関連成果"
+          : "Related outputs";
+
+      topic.textContent =
+        node.label;
+
+      summary.setAttribute(
+        "aria-label",
+        `${node.label} related outputs`
+      );
+
+      const outputs =
+        Array.from(
+          document.querySelectorAll(
+            ".research-timeline .rt-block[data-themes]"
+          )
+        )
+          .filter(block => {
+            const themes =
+              (
+                block.dataset.themes ||
+                ""
+              )
+                .split(/\s+/)
+                .filter(Boolean);
+
+            return themes.includes(
+              activeNodeId
+            );
+          })
+          .map(block => {
+            const year =
+              block
+                .closest(".rt-item")
+                ?.querySelector(
+                  ".rt-year"
+                )
+                ?.textContent
+                ?.trim() || "";
+
+            const title =
+              block
+                .querySelector(
+                  ".rt-subtitle"
+                )
+                ?.textContent
+                ?.replace(
+                  /\s+/g,
+                  " "
+                )
+                .trim() || "";
+
+            const venueElement =
+              block.querySelector(
+                ".rt-meta em, .rt-venue"
+              );
+
+            const isJournal =
+              venueElement?.tagName === "EM";
+
+            const venue =
+              venueElement
+                ?.dataset
+                ?.short
+              ||
+              venueElement
+                ?.textContent
+                ?.replace(
+                  /\s+/g,
+                  " "
+                )
+                .trim()
+              ||
+              "";
+
+            const role =
+              block
+                .querySelector(
+                  ".role-tag"
+                )
+                ?.getAttribute(
+                  "data-en"
+                )
+                ?.trim() || "";
+
+            let citation =
+              block.dataset.citation ||
+              "";
+
+            if (!citation) {
+              if (
+                role === "Sole author"
+              ) {
+                citation =
+                  "Han";
+
+              } else if (
+                role === "First author" ||
+                role ===
+                "First & corresponding author" ||
+                role ===
+                "Presenting author"
+              ) {
+                citation =
+                  "Han et al.";
+
+              } else if (
+                role === "Co-author"
+              ) {
+                citation =
+                  "Co-author";
+              }
+            }
+
+            return {
+              year,
+              title,
+              venue,
+              citation,
+              isJournal
+            };
+          })
+          .filter(
+            output =>
+              output.title ||
+              output.venue
+          )
+          .sort(
+            (a, b) =>
+              Number(b.year) -
+              Number(a.year)
+          )
+          .slice(0, 3);
+
+      if (!outputs.length) {
         const item =
           document.createElement("li");
 
+        item.className =
+          "research-landscape-output-empty";
+
         item.textContent =
-          node.label;
+          lang === "ja"
+            ? "関連成果はまだ登録されていません"
+            : "No linked outputs yet";
+
+        list.appendChild(item);
+
+        return;
+      }
+
+      outputs.forEach(output => {
+        const item =
+          document.createElement("li");
+
+        item.className =
+          "research-landscape-output-item";
+
+        const title =
+          document.createElement("span");
+
+        title.className =
+          "research-landscape-output-title";
+
+        title.textContent =
+          output.title;
+
+        const meta =
+          document.createElement("span");
+
+        meta.className =
+          "research-landscape-output-meta";
+
+        const metaParts = [];
+
+        if (output.venue) {
+          if (output.isJournal) {
+            const journal =
+              document.createElement("em");
+
+            journal.textContent =
+              output.venue;
+
+            metaParts.push(journal);
+
+          } else {
+            const venue =
+              document.createElement("span");
+
+            venue.textContent =
+              output.venue;
+
+            metaParts.push(venue);
+          }
+        }
+
+        if (output.year) {
+          const year =
+            document.createElement("span");
+
+          year.textContent =
+            output.year;
+
+          metaParts.push(year);
+        }
+
+        if (output.citation) {
+          const citation =
+            document.createElement("span");
+
+          citation.textContent =
+            output.citation;
+
+          metaParts.push(citation);
+        }
+
+        metaParts.forEach(
+          (part, index) => {
+            if (index > 0) {
+              meta.appendChild(
+                document.createTextNode(
+                  " · "
+                )
+              );
+            }
+
+            meta.appendChild(part);
+          }
+        );
+
+        item.append(
+          title,
+          meta
+        );
 
         list.appendChild(item);
       });
@@ -4278,11 +4840,6 @@
           .nodeMap
           .get(nodeId);
 
-      /*
-        Method nodes use rectangles.
-        Radius here is only their layout /
-        collision footprint.
-      */
       if (node?.layout === "method") {
         return 7;
       }
@@ -4301,8 +4858,8 @@
           1
         );
 
-      const minRadius = 6.5;
-      const maxRadius = 19;
+      const minRadius = 5;
+      const maxRadius = 20;
 
       return (
         minRadius +
@@ -4586,21 +5143,36 @@
             y: 280
           };
 
+        const isMethod =
+          node.layout === "method";
+
+        const methodX =
+          researchLandscapeMethodX[
+          node.id
+          ];
+
         states.set(
           node.id,
           {
             x:
-              anchor.x +
-              getLandscapeSeed(
-                node.id,
-                1
-              ) * 80,
+              isMethod &&
+                Number.isFinite(methodX)
+                ? methodX
+                : anchor.x +
+                getLandscapeSeed(
+                  node.id,
+                  1
+                ) * 80,
+
             y:
-              anchor.y +
-              getLandscapeSeed(
-                node.id,
-                2
-              ) * 65,
+              isMethod
+                ? researchLandscapeMethodY
+                : anchor.y +
+                getLandscapeSeed(
+                  node.id,
+                  2
+                ) * 65,
+
             vx: 0,
             vy: 0,
             fx: 0,
@@ -4839,7 +5411,8 @@
               overlapY > 0
             ) {
               const direction =
-                stateA.y <= stateB.y
+                stateA.y <=
+                  stateB.y
                   ? -1
                   : 1;
 
@@ -4957,7 +5530,11 @@
               y: 280
             };
 
-          if (node.layout === "research") {
+          if (
+            node.layout ===
+            "research"
+          ) {
+
             state.fx +=
               (
                 anchor.x -
@@ -4970,36 +5547,14 @@
                 state.y
               ) * 0.0018;
 
-          } else {
-            const methodX =
-              researchLandscapeMethodX[node.id];
-
-            if (Number.isFinite(methodX)) {
-              state.fx +=
-                (
-                  methodX -
-                  state.x
-                ) * 0.04;
-            }
-
-            state.fx +=
-              (
-                anchor.x -
-                state.x
-              ) * 0.0004;
-
-            state.fy +=
-              (
-                anchor.y -
-                state.y
-              ) * 0.0018;
-          }
-
-          if (node.layout === "research") {
             const periodX =
-              getLandscapePeriodX(node);
+              getLandscapePeriodX(
+                node
+              );
 
-            if (periodX !== null) {
+            if (
+              periodX !== null
+            ) {
               state.fx +=
                 (
                   periodX -
@@ -5011,9 +5566,13 @@
               top,
               bottom
             } =
-              researchLandscapeLayout.research;
+              researchLandscapeLayout
+                .research;
 
-            if (state.y < top) {
+            if (
+              state.y <
+              top
+            ) {
               state.fy +=
                 (
                   top -
@@ -5021,7 +5580,10 @@
                 ) * 0.04;
             }
 
-            if (state.y > bottom) {
+            if (
+              state.y >
+              bottom
+            ) {
               state.fy +=
                 (
                   bottom -
@@ -5030,29 +5592,27 @@
             }
 
           } else if (
-            node.layout === "method"
+            node.layout ===
+            "method"
           ) {
-            const {
-              top,
-              bottom
-            } =
-              researchLandscapeLayout.method;
+            const methodX =
+              researchLandscapeMethodX[
+              node.id
+              ];
 
-            if (state.y < top) {
-              state.fy +=
+            if (
+              Number.isFinite(
+                methodX
+              )
+            ) {
+              state.fx +=
                 (
-                  top -
-                  state.y
-                ) * 0.04;
+                  methodX -
+                  state.x
+                ) * 0.08;
             }
 
-            if (state.y > bottom) {
-              state.fy +=
-                (
-                  bottom -
-                  state.y
-                ) * 0.04;
-            }
+            state.fy = 0;
           }
 
           state.vx =
@@ -5061,11 +5621,18 @@
               state.fx
             ) * 0.82;
 
-          state.vy =
-            (
-              state.vy +
-              state.fy
-            ) * 0.82;
+          if (
+            node.layout ===
+            "method"
+          ) {
+            state.vy = 0;
+          } else {
+            state.vy =
+              (
+                state.vy +
+                state.fy
+              ) * 0.82;
+          }
 
           const speed =
             Math.hypot(
@@ -5091,50 +5658,18 @@
           state.x +=
             state.vx;
 
-          state.y +=
-            state.vy;
+          if (
+            node.layout ===
+            "method"
+          ) {
 
-          const groupDx =
-            state.x -
-            anchor.x;
+            state.y =
+              researchLandscapeMethodY;
 
-          const groupDy =
-            state.y -
-            anchor.y;
-
-          const groupDistance =
-            Math.hypot(
-              groupDx,
-              groupDy
-            );
-
-          if (node.layout === "method") {
-            const maxGroupDistance = 160;
-
-            if (
-              groupDistance >
-              maxGroupDistance
-            ) {
-              const scale =
-                maxGroupDistance /
-                groupDistance;
-
-              state.x =
-                anchor.x +
-                groupDx *
-                scale;
-
-              state.y =
-                anchor.y +
-                groupDy *
-                scale;
-
-              state.vx *=
-                0.35;
-
-              state.vy *=
-                0.35;
-            }
+            state.vy = 0;
+          } else {
+            state.y +=
+              state.vy;
           }
 
           const radius =
@@ -5166,62 +5701,77 @@
               maxX
             );
 
-          if (node.layout === "method") {
-            state.y =
-              clamp(
-                state.y,
-                researchLandscapeLayout.method.top,
-                researchLandscapeLayout.method.bottom
-              );
-          } else {
-            state.y =
-              clamp(
-                state.y,
-                researchLandscapeLayout.research.top,
-                researchLandscapeLayout.research.bottom
-              );
-          }
-
-          const nodeLeft =
-            state.x -
-            radius -
-            5;
-
-          const nodeRight =
-            state.x +
-            radius +
-            10 +
-            labelWidth;
-
-          const nodeTop =
-            state.y -
-            18;
-
-          const nodeBottom =
-            state.y +
-            18;
-
-          const overlapsReservedArea =
-            nodeRight >
-            researchLandscapeReservedArea.left &&
-            nodeLeft <
-            researchLandscapeReservedArea.right &&
-            nodeBottom >
-            researchLandscapeReservedArea.top &&
-            nodeTop <
-            researchLandscapeReservedArea.bottom;
-
           if (
-            overlapsReservedArea
+            node.layout ===
+            "research"
           ) {
             state.y =
-              researchLandscapeReservedArea.bottom +
-              28;
+              clamp(
+                state.y,
+                researchLandscapeLayout
+                  .research
+                  .top,
+                researchLandscapeLayout
+                  .research
+                  .bottom
+              );
 
-            state.vy =
-              Math.abs(
-                state.vy
-              ) * 0.2;
+            const nodeLeft =
+              state.x -
+              radius -
+              5;
+
+            const nodeRight =
+              state.x +
+              radius +
+              10 +
+              labelWidth;
+
+            const nodeTop =
+              state.y -
+              18;
+
+            const nodeBottom =
+              state.y +
+              18;
+
+            const overlapsReservedArea =
+              nodeRight >
+              researchLandscapeReservedArea
+                .left &&
+              nodeLeft <
+              researchLandscapeReservedArea
+                .right &&
+              nodeBottom >
+              researchLandscapeReservedArea
+                .top &&
+              nodeTop <
+              researchLandscapeReservedArea
+                .bottom;
+
+            if (
+              overlapsReservedArea
+            ) {
+              state.y =
+                researchLandscapeReservedArea
+                  .bottom +
+                28;
+
+              state.vy =
+                Math.abs(
+                  state.vy
+                ) * 0.2;
+            }
+
+          } else if (
+            node.layout ===
+            "method"
+          ) {
+
+            state.y =
+              researchLandscapeMethodY;
+
+            state.vy = 0;
           }
         });
       }
@@ -5264,15 +5814,30 @@
             ) * 10
           ) / 10;
 
-        node.y =
-          Math.round(
-            (
-              state.y +
-              researchLandscapeGlobalOffset.y
-            ) * 10
-          ) / 10;
+        if (
+          node.layout ===
+          "method"
+        ) {
+          node.y =
+            Math.round(
+              (
+                researchLandscapeMethodY +
+                researchLandscapeGlobalOffset.y
+              ) * 10
+            ) / 10;
+
+        } else {
+          node.y =
+            Math.round(
+              (
+                state.y +
+                researchLandscapeGlobalOffset.y
+              ) * 10
+            ) / 10;
+        }
       });
     }
+
     function updateLandscapeInteractionState() {
       const activeId =
         researchLandscapeState.hoveredId;
@@ -5354,6 +5919,10 @@
             )
           );
         });
+
+      renderResearchLandscapeSummary(
+        activeId
+      );
     }
 
     function initResearchLandscape() {

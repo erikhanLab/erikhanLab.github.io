@@ -889,7 +889,7 @@
     }
 
     .profile-portrait-frame {
-      width: 130px;
+      width: 100%;
       aspect-ratio: 5 / 6;
 
       margin-top: 8px;
@@ -1567,6 +1567,7 @@
     }
 
     @media (min-width: 641px) and (max-width: 900px) {
+
       #affiliations .affiliation-layout {
         grid-template-columns: 1fr;
         row-gap: 30px;
@@ -1574,14 +1575,67 @@
 
       #affiliations .affiliation-timeline {
         width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
         margin-top: 0;
       }
 
+      /*
+    Background:
+    좁은 tablet 폭에서는 고정 최소폭 두 column을
+    강제하지 않도록 함.
+  */
       #background .background-layout {
         grid-template-columns:
-          minmax(360px, 420px) minmax(150px, 1fr);
+          minmax(0, 1fr) minmax(130px, 0.55fr);
 
-        column-gap: 28px;
+        column-gap: 24px;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      #background .background-affiliation-item,
+      #background .background-recognition {
+        min-width: 0;
+      }
+
+      /*
+    Outside Research의 -30px right margin이
+    horizontal overflow를 만들지 않게 함.
+  */
+      .outside-research-layout {
+        grid-template-columns:
+          minmax(0, 1fr) 110px;
+
+        column-gap: 18px;
+
+        width: 100%;
+        min-width: 0;
+      }
+
+      .outside-research-copy-wrap {
+        min-width: 0;
+      }
+
+      .outside-research-visual {
+        width: 110px;
+
+        margin:
+          -44px 0 0;
+
+        padding-left: 14px;
+      }
+
+      .outside-research-visual-frame {
+        width: 96px;
+      }
+
+      .current-block {
+        width: auto;
+        max-width: calc(100% - 13px);
       }
     }
 

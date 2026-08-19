@@ -122,6 +122,18 @@
             color: rgba(11, 31, 58, 0.72);
         }
 
+        .contact-welcome {
+            max-width: 540px;
+            margin: -2px 0 26px;
+
+            font-size: 0.88em;
+            font-weight: 400;
+            line-height: 1.7;
+            letter-spacing: 0.018em;
+
+            color: rgba(50, 63, 80, 0.66);
+        }
+
         .contact-email-block {
             display: flex;
             flex-direction: column;
@@ -276,6 +288,32 @@
                 justify-content: flex-end;
 
                 text-align: right;
+            }
+
+            .contact-archive-entry {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                width: 100%;
+
+                text-align: right;
+            }
+
+            .contact-archive-description {
+                margin-left: auto;
+                margin-right: 0;
+            }
+
+            .contact-footer::before {
+                left: auto;
+                right: 0;
+
+                background:
+                    linear-gradient(270deg,
+                        rgba(11, 31, 58, 0.1) 0%,
+                        rgba(11, 31, 58, 0.042) 48%,
+                        rgba(11, 31, 58, 0) 100%);
             }
         }
 
@@ -821,10 +859,15 @@
             position: relative;
 
             box-sizing: border-box;
-            width: 100%;
-            max-width: 700px;
+
+            width: min(950px, calc(100vw - 48px));
+            max-width: none;
+
             margin: 40px 0 10px;
-            padding: 19px 2px 0;
+            margin-left: 50%;
+            padding: 19px 0 0;
+
+            transform: translateX(-50%);
 
             text-align: left;
         }
@@ -1130,6 +1173,15 @@
 
                 font-size: 0.8em;
                 letter-spacing: 0.19em;
+            }
+
+            .contact-welcome {
+                max-width: 94%;
+                margin: -2px 0 22px;
+
+                font-size: 0.74em;
+                line-height: 1.65;
+                letter-spacing: 0.012em;
             }
 
             .contact-email-block {
@@ -1573,7 +1625,15 @@
                     Contact
                 </h1>
 
+                <p class="contact-welcome"
+                    data-en="Hi — thanks for stopping by. I’m always happy to hear from people interested in my research or related ideas."
+                    data-ja="ご覧いただきありがとうございます。研究や関連するテーマに関心をお持ちの方からのご連絡を歓迎しています。">
+                    Hi — thanks for stopping by. I’m always happy to hear from people interested in my research or
+                    related ideas.
+                </p>
+
                 <div class="contact-email-block">
+
 
                     <div data-nosnippet>
                         <a class="contact-email-link" href="mailto:sangseok.han.contact@gmail.com">
@@ -1583,21 +1643,21 @@
 
                     <div class="contact-email-meta">
                         <span class="desktop-only"
-                            data-en="For research discussions, academic enquiries, and related correspondence."
-                            data-ja="研究討議、学術的なお問い合わせ、および関連するご連絡について。">
-                            For research discussions, academic enquiries, and related correspondence.
+                            data-en="Feel free to get in touch about research, publications, or possible collaboration."
+                            data-ja="研究、論文、共同研究などについて、お気軽にご連絡ください。">
+                            Feel free to get in touch about research, publications, or possible collaboration.
                         </span>
 
-                        <span class="mobile-only" data-en="For research and academic enquiries."
-                            data-ja="研究・学術に関するお問い合わせ。">
-                            For research and academic enquiries.
+                        <span class="mobile-only" data-en="Feel free to get in touch about research or collaboration."
+                            data-ja="研究や共同研究について、お気軽にご連絡ください。">
+                            Feel free to get in touch about research or collaboration.
                         </span>
                     </div>
 
                     <div class="contact-enquiry-options">
 
-                        <span class="contact-enquiry-label" data-en="Reach out about" data-ja="お問い合わせ内容">
-                            Reach out about
+                        <span class="contact-enquiry-label" data-en="A few reasons to write" data-ja="ご連絡の例">
+                            A few reasons to write
                         </span>
 
                         <div class="contact-enquiry-links">
