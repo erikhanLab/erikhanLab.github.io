@@ -4,22 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sangseok Han | Hydrodynamics & CFD</title>
-  <link rel="canonical" href="https://sangseokhan.com/" />
-  <link rel="icon" type="image/png" href="/assets/favicon-32.png">
-
-  <meta name="robots" content="index, follow, max-image-preview:standard">
+  <title>Sangseok Han | Computational Marine Hydrodynamics</title>
 
   <meta name="description"
-    content="Sangseok Han conducts research in computational fluid dynamics, ship hydrodynamics, spatially varying hull roughness, and fluid–structure interaction.">
-  <meta property="og:title" content="Sangseok Han | Hydrodynamics & CFD">
-  <meta property="og:description" content="Sangseok Han — research in hydrodynamics and multiphysics modelling.">
+    content="Sangseok Han works on computational methods for complex marine hydrodynamics, focusing on modelling assumptions, hydrodynamic prediction, and coupled systems.">
+
+  <meta property="og:title" content="Sangseok Han | Computational Marine Hydrodynamics">
+
+  <meta property="og:description"
+    content="Computational methods for complex and coupled marine hydrodynamics, with a focus on modelling assumptions and predictive challenges.">
+
   <meta property="og:image" content="https://sangseokhan.com/assets/favicon-32.png">
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sangseokhan.com/">
-  <meta property="og:site_name" content="Sangseok Han | Hydrodynamics & CFD">
+  <meta property="og:site_name" content="Sangseok Han">
 
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sangseok Han | Computational Marine Hydrodynamics">
+  <meta name="twitter:description"
+    content="Computational methods for complex and coupled marine hydrodynamics, with a focus on modelling assumptions and predictive challenges.">
   <meta name="twitter:image" content="https://sangseokhan.com/assets/favicon-32.png">
+
   <meta name="google-site-verification" content="nL6QQDjmwHfoed1SFO0BXdBElFNEMt-fPTveElHeu0U" />
 
   <script src="/assets/js/site-analytics.js?v=1"></script>
@@ -247,88 +253,38 @@
     }
 
     .affiliation {
-      margin-top: 30px;
-      font-size: 0.88em;
-      letter-spacing: 0.025em;
+      margin-top: 27px;
+      font-size: 0.86em;
+      line-height: 1.5;
       color: #4b5f77;
-      line-height: 1.55;
     }
 
-    .affiliation-line {
-      display: block;
-      margin-top: 2px;
-    }
-
-    .affiliation-year {
-      font-size: 0.8em;
-      opacity: 0.7;
-    }
-
-    .affiliation-degree-sep {
-      margin: 0 7px;
-      color: #4b5f77;
-      opacity: 0.6;
-    }
-
-    .affiliation-group {
-      margin-top: 0px;
+    .affiliation-status {
       padding-left: 12px;
-      border-left: 1px solid rgba(11, 31, 58, 0.13);
+      border-left: 1px solid rgba(11, 31, 58, 0.3);
     }
 
-    .affiliation-group-past {
-      margin-top: 14px;
-      padding-left: 12px;
-      border-left: 1px solid rgba(11, 31, 58, 0.075);
-    }
-
-    .affiliation-current-primary {
-      color: var(--ink);
-      opacity: 0.92;
-      font-size: 1.04em;
-    }
-
-    .affiliation-current-secondary {
-      color: #333;
-      opacity: 0.9;
-      font-size: 0.95em;
-    }
-
-    .affiliation-current-spaced {
-      margin-top: 10px;
-    }
-
-    .affiliation-section-label {
-      display: block;
-      margin-bottom: 3px;
-      font-size: 0.68em;
-      letter-spacing: 0.18em;
+    .affiliation-status-label {
+      font-size: 0.78em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #64748b;
-      opacity: 0.58;
-      font-weight: 400;
+      color: rgba(11, 31, 58, 0.64);
     }
 
-    .affiliation-group-current {
-      background: none;
+    .affiliation-status-sep {
+      margin: 0 6px;
+      color: rgba(71, 85, 105, 0.48);
     }
 
-    .affiliation-group .affiliation-section-label {
-      color: var(--ink);
-      opacity: 0.66;
-      font-weight: 500;
+    .affiliation-role {
+      color: rgba(11, 31, 58, 0.88);
+      letter-spacing: 0.03em;
     }
 
-    .affiliation-group-past .affiliation-section-label {
-      color: #64748b;
-      opacity: 0.48;
-      font-weight: 400;
-    }
-
-    .affiliation-past-item {
-      color: #4b5f77;
-      opacity: 0.88;
-      font-size: 0.85em;
+    .affiliation-institution {
+      font-size: 0.8em;
+      letter-spacing: 0.05em;
+      color: rgba(71, 85, 105, 0.88);
     }
 
     .keywords {
@@ -685,6 +641,17 @@
       opacity: 0.46;
     }
 
+    .recent-context {
+      display: block;
+      margin-bottom: 3px;
+
+      font-size: 0.72em;
+      line-height: 1.4;
+      letter-spacing: 0.035em;
+
+      color: rgba(71, 85, 105, 0.62);
+    }
+
     .email-link {
       color: inherit;
       text-decoration: none;
@@ -762,6 +729,87 @@
       opacity: 0.62;
     }
 
+    .research-focus {
+      position: relative;
+      z-index: 2;
+
+      max-width: 560px;
+
+      margin-top: 22px;
+      padding-left: 12px;
+
+      border-left: 0;
+    }
+
+    .research-focus-label {
+      display: block;
+
+      margin-bottom: 4px;
+
+      font-size: 0.62em;
+      line-height: 1.3;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+
+      color: #64748b;
+      opacity: 0.58;
+    }
+
+    .research-focus-link {
+      display: block;
+
+      width: fit-content;
+      max-width: 100%;
+
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .research-focus-title {
+      display: block;
+
+      font-size: 0.94em;
+      line-height: 1.4;
+
+      color: rgba(11, 31, 58, 0.90);
+    }
+
+    .research-focus-description {
+      display: block;
+
+      margin-top: 2px;
+
+      font-size: 0.78em;
+      line-height: 1.48;
+
+      color: rgba(71, 85, 105, 0.70);
+    }
+
+    .research-focus-more {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+
+      margin-top: 5px;
+
+      font-size: 0.7em;
+      line-height: 1.4;
+      letter-spacing: 0.035em;
+
+      color: rgba(11, 31, 58, 0.48);
+
+      transition:
+        color 0.2s ease,
+        transform 0.24s ease;
+    }
+
+    .nav a.nav-secondary .nav-index {
+      opacity: 0.54;
+    }
+
+    .nav a.nav-secondary .nav-label {
+      opacity: 0.76;
+    }
 
     .email-link {
       display: inline-block;
@@ -878,20 +926,52 @@
     }
 
     .home-rail-update-title {
+      grid-area: title;
       display: block;
 
-      color: rgba(38, 51, 68, 0.82);
+      min-width: 0;
+
+      font-size: 1.01em;
+      line-height: 1.4;
+
+      color: rgba(11, 31, 58, 0.84);
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .home-rail-update time {
+      grid-area: time;
+      display: block;
+
+      margin: 0;
+
+      font-size: 0.82em;
+      line-height: 1.4;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+
+      color: rgba(71, 85, 105, 0.46);
     }
 
     .home-rail-update-meta {
+      grid-area: meta;
       display: block;
 
-      margin-top: 2px;
-      font-size: 0.88em;
+      min-width: 0;
+      margin: 0;
+
+      font-size: 0.82em;
       line-height: 1.4;
-      margin-left: 40px;
-      color: rgba(71, 85, 105, 0.58);
-      text-align: right;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      text-align: left;
+
+      color: rgba(71, 85, 105, 0.48);
     }
 
     .home-rail-update-meta.is-journal {
@@ -953,15 +1033,23 @@
 
     .home-rail-update {
       position: relative;
-      display: block;
 
-      margin-top: 8px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        "title title"
+        "meta  time";
+
+      column-gap: 12px;
+      row-gap: 1px;
+
+      margin-top: 9px;
       padding-left: 13px;
 
       font-size: 0.8em;
-      line-height: 1.5;
+      line-height: 1.4;
 
-      color: rgba(71, 85, 105, 0.88);
+      color: rgba(71, 85, 105, 0.82);
       text-decoration: none;
     }
 
@@ -1002,7 +1090,7 @@
 
       margin: 11px 0 -4px 13px;
       letter-spacing: 0em;
-      font-size: 0.7em;
+      font-size: 0.62em;
       line-height: 1.48;
       font-style: italic;
       color: rgba(71, 85, 105, 0.58);
@@ -1064,6 +1152,7 @@
       .lang-switch,
       .tagline-block,
       .affiliation,
+      .research-focus,
       .recent-work,
       .nav,
       .footer-contact,
@@ -1083,6 +1172,7 @@
       body:has(.home-research-rail:hover) .lang-switch,
       body:has(.home-research-rail:hover) .tagline-block,
       body:has(.home-research-rail:hover) .affiliation,
+      body:has(.home-research-rail:hover) .research-focus,
       body:has(.home-research-rail:hover) .recent-work,
       body:has(.home-research-rail:hover) .nav,
       body:has(.home-research-rail:hover) .footer-contact,
@@ -1110,17 +1200,19 @@
         background: rgba(11, 31, 58, 0.78);
         transform: scale(1.18);
       }
-    }
 
-    .home-rail-update time {
-      display: block;
+      .research-focus-link:hover .research-focus-more {
+        color: rgba(11, 31, 58, 0.82);
+        transform: translateX(2px);
+      }
 
-      margin-bottom: 3px;
+      .nav a.nav-secondary:hover .nav-index {
+        opacity: 0.94;
+      }
 
-      font-size: 0.9em;
-      letter-spacing: 0.07em;
-
-      color: rgba(11, 31, 58, 0.68);
+      .nav a.nav-secondary:hover .nav-label {
+        opacity: 1;
+      }
     }
 
     .home-rail-open p {
@@ -1164,19 +1256,6 @@
       text-decoration: none;
 
       transition: color 0.18s ease;
-    }
-
-    .home-rail-recent-note {
-      margin: 20px 0 0;
-
-      font-size: 0.6em;
-      font-style: italic;
-      line-height: 1.45;
-      letter-spacing: 0.015em;
-
-      text-align: right;
-
-      color: rgba(71, 85, 105, 0.40);
     }
 
     .research-transition {
@@ -1415,37 +1494,72 @@
       }
 
       .affiliation {
-        margin-top: 20px;
-        font-size: 0.98em;
-        line-height: 1.55;
-      }
-
-      .affiliation-group-past {
-        display: none;
-      }
-
-      .affiliation-group-current {
-        margin-top: 0;
-        padding: 2px 0 3px 10px;
-        border-left: 1px solid rgba(11, 31, 58, 0.14);
-      }
-
-      .affiliation-year {
-        font-size: 0.88em;
-        opacity: 1;
-      }
-
-      .affiliation-current-primary {
-        font-size: 1.03em;
-      }
-
-      .affiliation-current-secondary {
+        margin-top: 18px;
         font-size: 0.96em;
       }
 
-      .affiliation-section-label {
-        font-size: 0.7em;
+      .affiliation-status-line {
+        display: block;
+      }
+
+      .affiliation-status-institution {
+        margin-top: 2px;
+
+        font-size: 0.88em;
+        line-height: 1.4;
+
+        color: rgba(71, 85, 105, 0.72);
+      }
+
+      .affiliation-status-label {
+        font-size: 0.72em;
+        letter-spacing: 0.11em;
+      }
+
+      .affiliation-status-sep {
+        margin: 0 4px;
+      }
+
+      .affiliation-status-mobile {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+
+        padding: 3px 0 3px 10px;
+      }
+
+      .affiliation-status-line {
+        display: block;
+      }
+
+      .research-focus {
+        margin-top: 16px;
+        padding-left: 10px;
+      }
+
+      .research-focus-label {
+        margin-bottom: 3px;
+
+        font-size: 0.67em;
         letter-spacing: 0.16em;
+      }
+
+      .research-focus-title {
+        font-size: 0.92em;
+        line-height: 1.35;
+      }
+
+      .research-focus-description {
+        margin-top: 1px;
+
+        font-size: 0.84em;
+        line-height: 1.42;
+      }
+
+      .research-focus-more {
+        margin-top: 4px;
+
+        font-size: 0.72em;
       }
 
       .recent-work {
@@ -1740,33 +1854,34 @@
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <aside class="home-research-rail" aria-label="Research overview">
+  <aside class="home-research-rail" aria-label="Research and updates">
     <div class="home-rail-section">
 
-      <span class="home-rail-heading" data-en="Ongoing Research" data-ja="進行中の研究">
-        Ongoing Research
+      <span class="home-rail-heading" data-en="Research Topics" data-ja="研究トピック">
+        Research Topics
       </span>
 
-      <nav class="home-rail-links" id="ongoing-research-links">
+      <nav class="home-rail-links" id="research-topic-links">
 
         <a href="/research/#spatial-hull-roughness"
-          data-description-en="Spatial roughness reshapes resistance and wake." data-description-ja="粗さ分布が抵抗と後流を変える。">
+          data-description-en="Spatial variation in hull roughness, resistance, and wake."
+          data-description-ja="船体粗さの空間変動と抵抗・後流への影響。">
           <span data-en="Spatial Hull Roughness" data-ja="船体粗さの空間分布">
             Spatial Hull Roughness
           </span>
           <span aria-hidden="true">→</span>
         </a>
 
-        <a href="/research/#added-resistance" data-description-en="Mapping CFD sensitivity in added resistance."
-          data-description-ja="付加抵抗CFDの感度要因を整理する。">
+        <a href="/research/#added-resistance" data-description-en="CFD sensitivity in added-resistance prediction."
+          data-description-ja="付加抵抗予測におけるCFD感度。">
           <span data-en="Added Resistance in Waves" data-ja="波浪中付加抵抗">
             Added Resistance in Waves
           </span>
           <span aria-hidden="true">→</span>
         </a>
 
-        <a href="/research/#cfd-mbd" data-description-en="Coupling hydrodynamics and gyroscopic dynamics"
-          data-description-ja="流体力とジャイロ動力学を連成する">
+        <a href="/research/#cfd-mbd" data-description-en="Coupled CFD–MBD modelling for wave-energy systems."
+          data-description-ja="波力エネルギー系のCFD–MBD連成解析。">
           <span data-en="CFD–MBD / Wave Energy" data-ja="CFD–MBD・波力エネルギー">
             CFD–MBD / Wave Energy
           </span>
@@ -1774,7 +1889,8 @@
         </a>
 
         <a href="/research/#green-water" class="home-rail-link-secondary"
-          data-description-en="Green-water behaviour around FPSO hulls." data-description-ja="FPSO周りのグリーンウォーター挙動を調べる。">
+          data-description-en="Experimental green-water behaviour around FPSO hulls."
+          data-description-ja="FPSO船体周りのグリーンウォーター実験。">
           <span data-en="Green Water Experiments" data-ja="グリーンウォーター実験">
             Green Water Experiments
           </span>
@@ -1783,9 +1899,11 @@
 
       </nav>
 
-      <div class="home-rail-research-preview" id="home-rail-research-preview"></div>
+      <div class="home-rail-research-preview" id="home-rail-research-preview">
+      </div>
 
     </div>
+
 
     <div class="home-rail-section home-rail-recent">
 
@@ -1801,9 +1919,6 @@
 
       <div id="home-rail-recent-feed"></div>
 
-      <p class="home-rail-recent-note" data-en="Latest three entries · research activity" data-ja="最新3件 · 研究活動">
-        Latest three entries · research activity
-      </p>
     </div>
 
     <div class="home-rail-section home-rail-open">
@@ -1851,106 +1966,103 @@
       <div class="tagline-block">
         <p class="tagline">
           <span class="line-strong">
-            <span class="desktop-only"
-              data-en="CFD for spatially varying hull roughness and fluid–structure interaction."
-              data-ja="空間的に変化する船体粗さと流体構造連成を対象としたCFD研究。">
-              CFD for spatially varying hull roughness and fluid–structure interaction.
+
+            <span class="desktop-only" data-en="Computational methods for complex and coupled marine hydrodynamics."
+              data-ja="複雑・連成海洋流体力学のための計算手法。">
+              Computational methods for complex and coupled marine hydrodynamics.
             </span>
 
-            <span class="mobile-only" data-en="CFD for spatially varying hull roughness."
-              data-ja="空間的に変化する船体粗さを対象としたCFD研究。">
-              CFD for spatially varying hull roughness.
+            <span class="mobile-only" data-en="Computational marine hydrodynamics." data-ja="海洋流体力学の数値解析。">
+              Computational marine hydrodynamics.
             </span>
+
           </span>
 
           <span class="line-muted">
-            <span class="desktop-only" data-en="Investigating the limits of simplified models in marine hydrodynamics."
-              data-ja="海洋流体力学における簡略化モデルの適用限界を研究する。">
-              <em>Investigating the limits of simplified models in marine hydrodynamics.</em>
+
+            <span class="desktop-only" data-en="I work on modelling challenges where simplified assumptions fall short."
+              data-ja="単純化した仮定では捉えきれないモデリング上の課題に取り組んでいます。">
+              <em>I work on modelling challenges where simplified assumptions fall short.</em>
             </span>
 
-            <span class="mobile-only" data-en="Investigating modelling limits in marine hydrodynamics."
-              data-ja="海洋流体力学におけるモデルの限界を研究する。">
-              <em>Investigating modelling limits in marine hydrodynamics.</em>
+            <span class="mobile-only" data-en="I work on problems where simplified models fall short."
+              data-ja="単純化したモデルでは捉えきれない問題に取り組んでいます。">
+              <em>I work on problems where simplified models fall short.</em>
             </span>
+
           </span>
         </p>
       </div>
+
       <div class="research-transition">
         <div class="affiliation">
 
-          <div class="affiliation-group affiliation-group-current">
-            <span class="affiliation-section-label" data-en="Current" data-ja="現在">
-              Current
+          <div class="desktop-only affiliation-status">
+            <span class="affiliation-status-label" data-en="Currently" data-ja="現在">
+              Currently
             </span>
 
-            <span class="affiliation-line affiliation-current-primary">
+            <span class="affiliation-status-sep">·</span>
+
+            <span class="affiliation-role" data-en="Visiting Researcher" data-ja="客員研究員">
+              <em>Visiting Researcher</em>
+            </span>
+
+            <span class="affiliation-status-sep">·</span>
+
+            <span class="affiliation-institution" data-en="RIMSE, Seoul National University" data-ja="RIMSE・ソウル大学校">
+              RIMSE, Seoul National University
+            </span>
+          </div>
+
+          <div class="mobile-only affiliation-status affiliation-status-mobile">
+            <span class="affiliation-status-line">
+              <span class="affiliation-status-label" data-en="Currently" data-ja="現在">
+                Currently
+              </span>
+
+              <span class="affiliation-status-sep">·</span>
+
               <span data-en="Visiting Researcher" data-ja="客員研究員">
                 <em>Visiting Researcher</em>
               </span>
-              ·
-              <span class="desktop-only" data-en="Research Institute of Marine Systems Engineering"
-                data-ja="海洋システム工学研究所">
-                Research Institute of Marine Systems Engineering
-              </span>
-              <span class="mobile-only" data-en="RIMSE" data-ja="RIMSE">
-                RIMSE
-              </span>
             </span>
 
-            <span class="affiliation-line affiliation-current-secondary">
-              <span data-en="Seoul National University" data-ja="ソウル大学校">
-                Seoul National University
-              </span>
-              <span class="affiliation-year" data-en="(July–November 2026)" data-ja="（2026年7月–11月）">
-                (July–November 2026)
-              </span>
+            <span class="affiliation-status-line affiliation-status-institution"
+              data-en="RIMSE · Seoul National University" data-ja="RIMSE · ソウル大学校">
+              RIMSE · Seoul National University
             </span>
           </div>
-          <div class="affiliation-group affiliation-group-past">
-            <span class="affiliation-section-label" data-en="Past" data-ja="過去">
-              Past
+
+        </div>
+
+        <div class="research-focus">
+
+          <span class="research-focus-label" data-en="Research Focus" data-ja="研究テーマ">
+            Research Focus
+          </span>
+
+          <a class="research-focus-link" href="/research/">
+
+            <span class="research-focus-title" data-en="Modelling challenges in ship hydrodynamics"
+              data-ja="船舶流体力学におけるモデリング上の課題">
+              Modelling challenges in ship hydrodynamics
             </span>
 
-            <span class="affiliation-line affiliation-past-item">
-              <span data-en="MSc" data-ja="修士">
-                <em>MSc</em>
-              </span>
-              ·
-              <span data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-                University of Strathclyde
-              </span>
-              <span class="affiliation-year" data-en="(2025)" data-ja="（2025）">
-                (2025)
-              </span>
-
-              <span class="affiliation-degree-sep">|</span>
-
-              <span data-en="BEng" data-ja="工学士">
-                <em>BEng</em>
-              </span>
-              ·
-              <span data-en="Inha University" data-ja="仁荷大学">
-                Inha University
-              </span>
-              <span class="affiliation-year" data-en="(2024)" data-ja="（2024）">
-                (2024)
-              </span>
+            <span class="research-focus-description"
+              data-en="From model–ship extrapolation to spatially varying hull roughness."
+              data-ja="模型・実船外挿から、空間的に変化する船体粗さまで。">
+              <em>From model–ship extrapolation to spatially varying hull roughness.</em>
             </span>
 
-            <span class="affiliation-line affiliation-past-item">
-              <span data-en="Research Visit" data-ja="研究訪問">
-                <em>Research Visit</em>
+            <span class="research-focus-more">
+              <span data-en="Explore research" data-ja="研究を見る">
+                Explore research
               </span>
-              ·
-              <span data-en="The University of Osaka" data-ja="大阪大学">
-                The University of Osaka
-              </span>
-              <span class="affiliation-year" data-en="(2025)" data-ja="（2025）">
-                (2025)
-              </span>
+              <span aria-hidden="true">→</span>
             </span>
-          </div>
+
+          </a>
 
         </div>
 
@@ -1959,14 +2071,16 @@
         </div>
 
         <div class="recent-work">
-          <span class="recent-label" data-en="Featured Work" data-ja="注目の研究">
-            Featured Work
+          <span class="recent-label" data-en="Selected Work" data-ja="主要研究">
+            Selected Work
           </span>
 
           <div class="recent-entry">
+
             <a class="recent-main-link" href="/publications/beyond-resistance/">
               <span class="recent-title">
-                Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface conditions </span>
+                Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface conditions
+              </span>
             </a>
 
             <span class="recent-citation">
@@ -1993,8 +2107,10 @@
                 </a>
               </span>
             </span>
+
           </div>
         </div>
+
       </div>
     </header>
 
@@ -2018,22 +2134,22 @@
     </section>
 
     <nav class="nav">
-      <a href="/profile/">
-        <span class="nav-index">01</span>
-        <span class="nav-label" data-en="Profile" data-ja="プロフィール">Profile</span>
-      </a>
-
       <a href="/research/">
-        <span class="nav-index">02</span>
+        <span class="nav-index">01</span>
         <span class="nav-label" data-en="Research" data-ja="研究">Research</span>
       </a>
 
       <a href="/publications/">
-        <span class="nav-index">03</span>
+        <span class="nav-index">02</span>
         <span class="nav-label" data-en="Publications" data-ja="論文">Publications</span>
       </a>
 
-      <a href="/contact/" class="contact">
+      <a href="/profile/" class="nav-secondary">
+        <span class="nav-index">03</span>
+        <span class="nav-label" data-en="Profile" data-ja="プロフィール">Profile</span>
+      </a>
+
+      <a href="/contact/" class="contact nav-secondary">
         <span class="nav-index">04</span>
         <span class="nav-label" data-en="Contact" data-ja="連絡先">Contact</span>
       </a>
@@ -2169,7 +2285,7 @@
         ];
 
         const recentEntries =
-          entries.slice(0, 3);
+          entries.slice(0, 2);
 
         recentEntries.forEach((entry, index) => {
           const month =
@@ -2206,13 +2322,35 @@
           const time =
             document.createElement("time");
 
-          const monthEn =
+          const rawMonthEn =
             month.getAttribute("data-en") ||
             month.textContent.trim();
 
-          const monthJa =
+          const rawMonthJa =
             month.getAttribute("data-ja") ||
-            monthEn;
+            rawMonthEn;
+
+          const monthMapEn = {
+            January: "Jan",
+            February: "Feb",
+            March: "Mar",
+            April: "Apr",
+            May: "May",
+            June: "Jun",
+            July: "Jul",
+            August: "Aug",
+            September: "Sep",
+            October: "Oct",
+            November: "Nov",
+            December: "Dec"
+          };
+
+          const monthEn = rawMonthEn.replace(
+            /January|February|March|April|May|June|July|August|September|October|November|December/,
+            matched => monthMapEn[matched]
+          );
+
+          const monthJa = rawMonthJa;
 
           time.setAttribute("data-en", monthEn);
           time.setAttribute("data-ja", monthJa);
@@ -2265,13 +2403,6 @@
           }
 
           containers.forEach(container => {
-            if (
-              container.id === "home-mobile-recent-feed" &&
-              index >= 2
-            ) {
-              return;
-            }
-
             container.append(
               item.cloneNode(true)
             );
@@ -2290,7 +2421,7 @@
 
     function initResearchPreview() {
       const linksContainer =
-        document.querySelector("#ongoing-research-links");
+        document.querySelector("#research-topic-links");
 
       const preview =
         document.querySelector("#home-rail-research-preview");
