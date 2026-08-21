@@ -2279,7 +2279,7 @@
 
     <a href="/research/" data-en="Research" data-ja="研究">Research</a>
     <a href="/publications/" data-en="Publications" data-ja="論文">Publications</a>
-        <a href="/profile/" class="active" aria-current="page" data-en="Profile" data-ja="プロフィール">
+    <a href="/profile/" class="active" aria-current="page" data-en="Profile" data-ja="プロフィール">
       Profile
     </a>
     <a href="/contact/" data-en="Contact" data-ja="連絡先">
@@ -2443,6 +2443,39 @@
 
       <div class="affiliation-layout">
         <div class="affiliation-block">
+          <div class="affiliation-item" data-affiliation="kyoto">
+            <div class="affiliation-logo" aria-hidden="true">
+              <img src="/assets/logos/kyoto-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
+            </div>
+
+            <div class="affiliation-copy">
+              <div class="affiliation-primary">
+                <span data-en="Doctoral Programme" data-ja="博士後期課程">
+                  Doctoral Programme
+                </span>
+
+                <span class="affiliation-year">
+                  (from April 2027)
+                </span>
+              </div>
+
+              <div class="affiliation-context" data-en="Ship Hydrodynamics & SPH" data-ja="船舶流体力学・SPH">
+                Ship Hydrodynamics &amp; SPH
+              </div>
+
+              <div class="affiliation-secondary">
+                <span data-en="Kyoto University" data-ja="京都大学">
+                  Kyoto University
+                </span>
+
+                <span class="affiliation-dot">·</span>
+
+                <span class="affiliation-country" data-en="Japan" data-ja="日本">
+                  Japan
+                </span>
+              </div>
+            </div>
+          </div>
 
           <div class="affiliation-item" data-affiliation="snu">
             <div class="affiliation-logo" aria-hidden="true">
@@ -2585,7 +2618,6 @@
           </div>
         </div>
 
-        <!-- Right: timeline and legend -->
         <div id="affiliation-timeline" class="affiliation-timeline" aria-label="Affiliation timeline">
         </div>
 
@@ -3210,13 +3242,6 @@
         const period =
           `${formatLegendDate(item.start, safeLang)} — ` +
           `${formatLegendDate(item.end, safeLang)}`;
-
-        legendItem.setAttribute(
-          "aria-label",
-          `${item.institution[safeLang]}, ` +
-          `${item.role[safeLang]}, ` +
-          `${period}`
-        );
 
         const mark =
           document.createElement("span");
@@ -3860,6 +3885,8 @@
         clearTimeout(clearFocusTimer);
         clearAffiliationFocus();
 
+        if (!affiliationData) return;
+
         section.classList.add(
           "is-affiliation-focused"
         );
@@ -3869,13 +3896,11 @@
         section
           .querySelectorAll(
             `.month-block[data-affiliation="${affiliationId}"],
-         .timeline-legend-item[data-affiliation="${affiliationId}"]`
+     .timeline-legend-item[data-affiliation="${affiliationId}"]`
           )
           .forEach(element => {
             element.classList.add("is-active");
           });
-
-        if (!affiliationData) return;
 
         const startYear =
           Number(
