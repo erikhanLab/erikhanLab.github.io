@@ -284,13 +284,13 @@
     .affiliation-role {
       font-size: 0.94em;
       letter-spacing: 0.02em;
-      color: rgba(11, 31, 58, 0.82);
+      color: rgba(11, 31, 58, 0.68);
     }
 
     .affiliation-institution {
       font-size: 0.8em;
       letter-spacing: 0.05em;
-      color: rgba(71, 85, 105, 0.88);
+      color: rgba(71, 85, 105, 0.98);
     }
 
     .keywords {
@@ -1088,67 +1088,8 @@
         transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    .home-rail-research-preview {
-      box-sizing: border-box;
-
-      min-height: 15px;
-      max-width: 350px;
-
-      margin: 11px 0 -4px 13px;
-      letter-spacing: 0em;
-      font-size: 0.62em;
-      line-height: 1.48;
-      font-style: italic;
-      color: rgba(71, 85, 105, 0.58);
-      opacity: 0;
-      transform: translateY(4px);
-
-      pointer-events: none;
-
-      transition:
-        opacity 0.24s ease,
-        transform 0.34s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .home-rail-research-preview.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .home-rail-links.is-previewing a {
-      opacity: 0.15;
-    }
-
-    .home-rail-links.is-previewing a.is-active {
-      opacity: 1;
-
-      color: rgba(11, 31, 58, 0.90);
-
-      transform: translateX(2px);
-    }
-
-    .home-rail-links.is-previewing a.home-rail-link-secondary.is-active {
-      opacity: 1;
-    }
-
-    .home-rail-links.is-previewing a.is-active::before {
-      background: rgba(11, 31, 58, 0.76);
-      transform: scale(1.18);
-    }
-
-    .home-rail-links.is-previewing a:not(.is-active)>span:last-child {
-      opacity: 0.06;
-    }
-
-    .home-rail-links.is-previewing a.is-active>span:last-child {
-      opacity: 0.68;
-      transform: translateX(2px);
-    }
-
     .home-rail-links,
-    .home-rail-links *,
-    .home-rail-research-preview,
-    .home-rail-research-preview * {
+    .home-rail-links * {
       cursor: pointer;
     }
 
@@ -1873,23 +1814,21 @@
 
       <nav class="home-rail-links" id="research-topic-links">
 
-        <a href="/research/#spatial-hull-roughness"
-          data-description-en="Spatial variation in hull roughness, resistance, and wake."
-          data-description-ja="船体粗さの空間変動と抵抗・後流への影響。">
+        <a href="/research/#spatial-hull-roughness">
           <span data-en="Spatial Hull Roughness" data-ja="船体粗さの空間分布">
             Spatial Hull Roughness
           </span>
           <span aria-hidden="true">→</span>
         </a>
 
-        <a href="/research/#added-resistance" data-description-en="CFD sensitivity in added-resistance prediction."
-          data-description-ja="付加抵抗予測におけるCFD感度。">
+        <a href="/research/#added-resistance">
           <span data-en="Added Resistance in Waves" data-ja="波浪中付加抵抗">
             Added Resistance in Waves
           </span>
           <span aria-hidden="true">→</span>
         </a>
 
+        <!--
         <a href="/research/#cfd-mbd" data-description-en="Coupled CFD–MBD modelling for wave-energy systems."
           data-description-ja="波力エネルギー系のCFD–MBD連成解析。">
           <span data-en="CFD–MBD / Wave Energy" data-ja="CFD–MBD・波力エネルギー">
@@ -1897,11 +1836,8 @@
           </span>
           <span aria-hidden="true">→</span>
         </a>
+      -->
       </nav>
-
-      <div class="home-rail-research-preview" id="home-rail-research-preview">
-      </div>
-
     </div>
 
 
@@ -2234,7 +2170,6 @@
         );
       });
 
-      window.refreshResearchPreview?.();
     }
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -2254,7 +2189,6 @@
         });
       });
 
-      initResearchPreview();
       loadRecentTimeline();
     });
 

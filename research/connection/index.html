@@ -4,21 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <meta name="robots" content="index, follow, noimageindex">
   <meta name="bingbot" content="index, follow, max-image-preview:none">
 
   <title>Selected Research Interactions | Sangseok Han</title>
 
-  <meta property="og:title" content="Selected Research Interactions | Sangseok Han">
+  <meta name="description"
+    content="Selected collaborations, research connections, visits, and shared outputs involving Sangseok Han.">
 
   <link rel="canonical" href="https://sangseokhan.com/research/connection/">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
+
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 
-  <meta property="og:title" content="Selected Research Connections | Sangseok Han">
+  <meta property="og:title" content="Selected Research Interactions | Sangseok Han">
 
-  <meta property="og:description" content="Selected research collaborations, discussions, visits, and shared work.">
+  <meta property="og:description" content="Selected collaborations, research connections, visits, and shared outputs.">
 
   <meta property="og:type" content="website">
 
@@ -159,19 +162,31 @@
       letter-spacing: 0.11em !important;
       text-transform: uppercase;
 
-      color: rgba(11, 31, 58, 0.36) !important;
+      color: rgba(11, 31, 58, 0.36);
     }
 
     .connection-side-nav-group:first-child {
       margin-top: 0;
     }
 
+    .connection-side-nav-group:hover {
+      color: rgba(11, 31, 58, 0.72);
+    }
+
     .connection-side-nav-group.active {
-      color: rgba(11, 31, 58, 0.82) !important;
+      color: rgba(11, 31, 58, 0.82);
     }
 
     .connection-side-nav-group::before {
       left: -24px;
+    }
+
+    .connection-side-nav-group:hover::before {
+      width: 7px;
+    }
+
+    .connection-side-nav-group.active::before {
+      width: 11px;
     }
 
     .page-content {
@@ -284,13 +299,14 @@
     .collab-intro-text {
       max-width: 720px;
 
-      margin: 0;
+      margin: 9px 0 0 auto;
 
-      font-size: 0.82em;
-      line-height: 1.68;
+      font-size: 0.72em;
+      line-height: 1.62;
       letter-spacing: 0.01em;
+      text-align: right;
 
-      color: rgba(38, 49, 63, 0.68);
+      color: rgba(38, 49, 63, 0.48);
     }
 
     .connection-content {
@@ -310,21 +326,6 @@
 
       margin: 0 4px 14px;
       padding-top: 22px;
-    }
-
-    .collab-filter-note {
-      flex: 0 0 auto;
-
-      margin: 0;
-      margin-bottom: 10px;
-
-      font-size: 0.6em;
-      line-height: 1.4;
-      letter-spacing: 0.035em;
-      font-style: italic;
-      font-weight: 400;
-
-      color: rgba(47, 57, 70, 0.32);
     }
 
     .collab-records-header::before {
@@ -347,6 +348,7 @@
 
     .collab-records-title {
       margin: 0;
+
       font-size: 0.9em;
       font-weight: 500;
       line-height: 1.45;
@@ -373,12 +375,13 @@
     }
 
     .collab-filter-list {
-
-      align-items: flex-end;
       display: grid;
-      grid-template-columns: repeat(8, minmax(0, 1fr));
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      align-items: flex-end;
       gap: 0.5rem;
+
       width: 100%;
+
       overflow-x: auto;
       overflow-y: hidden;
 
@@ -392,22 +395,27 @@
 
     .collab-filter {
       position: relative;
+
       width: 100%;
       min-width: 0;
-      white-space: nowrap;
-      text-align: left;
+
       flex: 0 0 auto;
       appearance: none;
+
       margin: 0;
       padding: 0 0 8px;
+
       border: 0;
       background: none;
+
       font: inherit;
       font-size: 0.78em;
       font-weight: 400;
       line-height: 1.4;
       letter-spacing: 0.055em;
+
       white-space: nowrap;
+      text-align: left;
 
       color: rgba(47, 57, 70, 0.42);
 
@@ -492,7 +500,9 @@
       display: grid;
       grid-template-columns:
         clamp(200px, 22vw, 250px) minmax(0, 1fr);
-      column-gap: clamp(20px, 3vw, 32px);
+
+      column-gap:
+        clamp(20px, 3vw, 32px);
 
       padding: 15px 4px 20px;
     }
@@ -568,6 +578,7 @@
 
     .collab-affiliation {
       margin: 1px 0 0;
+
       font-size: 0.68em;
       line-height: 1.5;
       letter-spacing: 0.025em;
@@ -593,10 +604,12 @@
     }
 
     .collab-period {
+      margin-left: 10px;
+
       font-size: 0.68em;
       line-height: 1.4;
       letter-spacing: 0.04em;
-      margin-left: 10px;
+
       font-variant-numeric: tabular-nums;
 
       color: rgba(58, 68, 80, 0.38);
@@ -617,8 +630,8 @@
       width: 100%;
       max-width: none;
       min-width: 0;
-      margin: 9px 0 0;
-      margin-top: 5px;
+
+      margin: 5px 0 0;
       padding-left: 1.05em;
 
       box-sizing: border-box;
@@ -638,6 +651,7 @@
 
     .collab-work-title {
       display: block;
+
       width: 100%;
       min-width: 0;
 
@@ -668,72 +682,6 @@
       letter-spacing: 0.015em;
 
       color: rgba(58, 68, 80, 0.46);
-    }
-
-    .collab-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 8px 15px;
-
-      width: 100%;
-      margin-top: 10px;
-      padding-right: 18px;
-
-      box-sizing: border-box;
-    }
-
-    .collab-links a {
-      position: relative;
-
-      display: inline-flex;
-      align-items: baseline;
-      gap: 5px;
-
-      padding-bottom: 1px;
-
-      font-size: 0.64em;
-      line-height: 1.45;
-      letter-spacing: 0.055em;
-
-      color: rgba(11, 31, 58, 0.54);
-      text-decoration: none;
-
-      transition: color 0.16s ease;
-    }
-
-    .collab-links a::after {
-      content: "";
-
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -2px;
-
-      height: 1px;
-
-      background: rgba(11, 31, 58, 0.25);
-
-      opacity: 0;
-      transform: scaleX(0.3);
-      transform-origin: left center;
-
-      transition:
-        opacity 0.16s ease,
-        transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .collab-links a:hover {
-      color: rgba(11, 31, 58, 0.9);
-    }
-
-    .collab-links a:hover::after {
-      opacity: 1;
-      transform: scaleX(1);
-    }
-
-    .collab-affiliation-mobile {
-      display: none;
     }
 
     .collab-work-heading {
@@ -803,19 +751,6 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    .collab-note::before {
-      content: "— ";
-    }
-
-    .collab-note {
-      margin: 0.28rem 0 0;
-      font-size: 0.68rem;
-      line-height: 1.45;
-      font-weight: 400;
-      letter-spacing: 0.01em;
-      color: var(--text-muted, #72767c);
-    }
-
     .collab-work-source--final {
       display: flex;
       align-items: baseline;
@@ -837,6 +772,7 @@
       flex: 0 0 auto;
 
       padding-bottom: 1px;
+
       font-size: 0.92em;
       line-height: 1.4;
       letter-spacing: 0.055em;
@@ -844,7 +780,9 @@
 
       color: rgba(11, 31, 58, 0.48);
       text-decoration: none;
+
       transform: translateY(10px);
+
       transition: color 0.16s ease;
     }
 
@@ -878,11 +816,6 @@
       transform: scaleX(1);
     }
 
-    .collab-filter-note-mobile {
-      display: none;
-    }
-
-
     .collab-affiliation-logo {
       display: none;
     }
@@ -901,6 +834,7 @@
     @media (min-width: 641px) {
       .collab-identity {
         position: relative;
+
         min-width: 0;
         min-height: 32px;
 
@@ -944,6 +878,7 @@
       .collab-position,
       .collab-affiliation {
         display: block;
+
         width: 100%;
         min-width: 0;
 
@@ -1033,10 +968,11 @@
 
       .collab-filter-list {
         display: grid;
-        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         align-items: end;
 
         width: 100%;
+
         gap: 8px 3px;
 
         overflow: visible;
@@ -1074,73 +1010,13 @@
         opacity: 0.55;
         transform: scaleX(1);
       }
-
-      .collab-filter[data-affiliation-filter="all"] {
-        order: 0;
-      }
-
-      .collab-filter[data-affiliation-filter="delft"] {
-        order: 1;
-      }
-
-      .collab-filter[data-affiliation-filter="hempel"] {
-        order: 2;
-      }
-
-      .collab-filter[data-affiliation-filter="inha"] {
-        order: 3;
-      }
-
-      .collab-filter[data-affiliation-filter="iowa"] {
-        order: 4;
-      }
-
-      .collab-filter[data-affiliation-filter="kyoto"] {
-        order: 5;
-      }
-
-      .collab-filter[data-affiliation-filter="marin"] {
-        order: 6;
-      }
-
-      .collab-filter[data-affiliation-filter="osaka"] {
-        order: 7;
-      }
-
-      .collab-filter[data-affiliation-filter="rims"] {
-        order: 8;
-      }
-
-      .collab-filter[data-affiliation-filter="siemens"] {
-        order: 9;
-      }
-
-      .collab-filter[data-affiliation-filter="snu"] {
-        order: 10;
-      }
-
-      .collab-filter[data-affiliation-filter="southampton"] {
-        order: 11;
-      }
-
-      .collab-filter[data-affiliation-filter="strathclyde"] {
-        order: 12;
-      }
-
-      .collab-filter[data-affiliation-filter="usna"] {
-        order: 13;
-      }
-
     }
 
     @media (prefers-reduced-motion: reduce) {
 
       .page-content,
       .log-back a,
-      .log-back-arrow {
-        transition: none;
-      }
-
+      .log-back-arrow,
       .connection-side-nav a {
         transition: none;
       }
@@ -1157,6 +1033,7 @@
 
       .log-back a {
         gap: 6px;
+
         font-size: 0.8rem;
         letter-spacing: 0.08em;
       }
@@ -1167,6 +1044,7 @@
 
       .log-header {
         margin-bottom: 3px;
+
         font-size: 0.78em;
         line-height: 1.35;
         letter-spacing: 0.09em;
@@ -1175,24 +1053,36 @@
       .log-sub {
         width: 100%;
         max-width: none;
+
         overflow: hidden;
+
         font-size: clamp(0.6em, 2.25vw, 0.78em);
         line-height: 1.4;
         letter-spacing: 0.012em;
         white-space: nowrap;
         text-overflow: ellipsis;
+
         opacity: 0.42;
+      }
+
+      .collab-intro-text {
+        margin-top: 7px;
+
+        font-size: 0.6em;
+        line-height: 1.52;
       }
 
       .collab-records-header {
         align-items: baseline;
         gap: 8px;
+
         margin: 0 2px 10px;
         padding-top: 14px;
       }
 
       .collab-records-title {
         flex: 0 0 auto;
+
         font-size: 0.68em;
         line-height: 1.35;
         letter-spacing: 0.06em;
@@ -1209,18 +1099,24 @@
 
       .collab-filter-list {
         display: grid;
-        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         align-items: end;
+
         width: 100%;
+
         gap: 5px 2px;
+
         overflow: visible;
       }
 
       .collab-filter {
         width: 100%;
         min-width: 0;
+
         padding: 0 3px 8px;
+
         overflow: visible;
+
         font-size: clamp(0.65em, 1.15vw, 0.75em);
         line-height: 1.3;
         letter-spacing: 0;
@@ -1235,12 +1131,15 @@
       .collab-filter-mobile {
         position: relative;
         display: inline-block;
+
         line-height: 1.3;
       }
 
       .collab-filter-mobile::after {
         bottom: -6px;
+
         height: 0.2px;
+
         transform-origin: left center;
       }
 
@@ -1252,71 +1151,6 @@
       .collab-filter.is-active .collab-filter-mobile::after {
         opacity: 0.55;
         transform: scaleX(1);
-      }
-
-      .collab-filter[data-affiliation-filter="all"] {
-        order: 0;
-      }
-
-      .collab-filter[data-affiliation-filter="delft"] {
-        order: 1;
-      }
-
-      .collab-filter[data-affiliation-filter="hempel"] {
-        order: 2;
-      }
-
-      .collab-filter[data-affiliation-filter="inha"] {
-        order: 3;
-      }
-
-      .collab-filter[data-affiliation-filter="iowa"] {
-        order: 4;
-      }
-
-      .collab-filter[data-affiliation-filter="kyoto"] {
-        order: 5;
-      }
-
-      .collab-filter[data-affiliation-filter="marin"] {
-        order: 6;
-      }
-
-      .collab-filter[data-affiliation-filter="osaka"] {
-        order: 7;
-      }
-
-      .collab-filter[data-affiliation-filter="rims"] {
-        order: 8;
-      }
-
-      .collab-filter[data-affiliation-filter="siemens"] {
-        order: 9;
-      }
-
-      .collab-filter[data-affiliation-filter="snu"] {
-        order: 10;
-      }
-
-      .collab-filter[data-affiliation-filter="southampton"] {
-        order: 11;
-      }
-
-      .collab-filter[data-affiliation-filter="strathclyde"] {
-        order: 12;
-      }
-
-      .collab-filter[data-affiliation-filter="usna"] {
-        order: 13;
-      }
-
-      .collab-filter-note-desktop {
-        display: none;
-      }
-
-      .collab-filter-note-mobile {
-        display: inline;
-        white-space: nowrap;
       }
 
       .collab-entry {
@@ -1332,9 +1166,12 @@
       .collab-identity {
         position: relative;
         display: block;
+
         grid-column: 1;
         grid-row: 1;
+
         min-width: 0;
+
         padding-left: 36px;
       }
 
@@ -1347,27 +1184,35 @@
         position: absolute;
         top: 1px;
         left: 3px;
+
         display: flex;
         align-items: center;
         justify-content: center;
+
         width: 20px;
         height: 20px;
+
         margin: 0;
+
         opacity: 0.58;
         pointer-events: none;
       }
 
       .collab-affiliation-logo img {
         display: block;
+
         width: 100%;
         height: 100%;
+
         object-fit: contain;
         object-position: center;
+
         filter: saturate(0.78);
       }
 
       .collab-name {
         min-width: 0;
+
         margin: 0 0 -7px;
 
         overflow: hidden;
@@ -1380,10 +1225,12 @@
 
       .collab-position {
         display: inline;
-        margin: 0;
-        margin-left: 1px;
+
+        margin: 0 0 0 1px;
+
         font-size: 0.66em;
         line-height: 1.35;
+
         white-space: nowrap;
       }
 
@@ -1391,24 +1238,33 @@
         grid-column: 2;
         grid-row: 1;
         align-self: start;
+
         margin: 1px 0 0 8px;
+
         font-size: 0.54em;
         line-height: 1.4;
+
         white-space: nowrap;
       }
 
       .collab-position::after {
         content: " · ";
+
         margin: 0 0.32em;
+
         color: rgba(58, 68, 80, 0.34);
       }
 
       .collab-affiliation {
         display: inline;
+
         margin: 0;
+
         font-size: 0.6em;
         line-height: 1.45;
+
         white-space: nowrap;
+
         color: rgba(64, 73, 85, 0.42);
       }
 
@@ -1420,17 +1276,6 @@
         display: inline;
       }
 
-      .collab-note {
-        display: block;
-        margin: -3px 0 0;
-        font-size: 0.56rem;
-        line-height: 1.4;
-      }
-
-      .collab-note::before {
-        content: "— ";
-      }
-
       .collab-topic {
         display: none;
       }
@@ -1438,9 +1283,13 @@
       .collab-role {
         grid-column: 1 / -1;
         grid-row: 2;
+
         margin: 3px 0 0 36px;
         padding-left: 7px;
-        border-left: 1px solid rgba(11, 31, 58, 0.3);
+
+        border-left:
+          1px solid rgba(11, 31, 58, 0.3);
+
         font-size: 0.72em;
         line-height: 1.5;
       }
@@ -1448,7 +1297,9 @@
       .collab-work-heading {
         grid-column: 1 / -1;
         grid-row: 3;
+
         margin: 10px 0 0;
+
         font-size: 0.62em;
         line-height: 1.4;
         letter-spacing: 0.065em;
@@ -1457,35 +1308,49 @@
       .collab-work-list {
         grid-column: 1 / -1;
         grid-row: 4;
+
         width: 100%;
+
         margin: 6px 0 0;
         padding: 0;
+
         list-style: none;
       }
 
       .collab-work-list li {
         position: relative;
         display: block;
+
         box-sizing: border-box;
+
         width: 100%;
         min-width: 0;
+
         margin: 0;
         padding-left: 7px;
+
         overflow: hidden;
+
         font-size: 0.66em;
         line-height: 1.55;
+
         opacity: 1;
       }
 
       .collab-work-list li::before {
         content: "";
+
         position: absolute;
         left: 0;
         top: 0.75em;
+
         width: 2px;
         height: 2px;
+
         border-radius: 50%;
+
         background: rgba(11, 31, 58, 0.3);
+
         transform: translateY(-50%);
       }
 
@@ -1499,21 +1364,28 @@
 
       .collab-work-title {
         display: block;
+
         width: 100%;
         min-width: 0;
+
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+
         font-style: normal;
+
         color: rgba(30, 42, 58, 0.72);
       }
 
       .collab-work-source {
         display: block;
+
         margin-top: 0;
+
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+
         color: rgba(58, 68, 80, 0.48);
       }
 
@@ -1523,13 +1395,14 @@
 
       .collab-work-source-text {
         display: block;
+
         min-width: 0;
+
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
 
-      .collab-links,
       .collab-publications-link {
         display: none;
       }
@@ -1546,7 +1419,8 @@
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe>
+      style="display:none;visibility:hidden">
+    </iframe>
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
@@ -1558,6 +1432,7 @@
       </a>
 
       <div class="lang-switch" aria-label="Language selection" data-aria-en="Language selection" data-aria-ja="言語選択">
+
         <a href="#" data-lang="en">
           EN
         </a>
@@ -1569,12 +1444,14 @@
         <a href="#" data-lang="ja">
           JP
         </a>
+
       </div>
 
     </div>
   </header>
 
   <div class="nav">
+
     <a href="/" data-en="Home" data-ja="ホーム">
       Home
     </a>
@@ -1594,6 +1471,7 @@
     <a href="/contact/" data-en="Contact" data-ja="連絡先">
       Contact
     </a>
+
   </div>
 
   <aside class="connection-side-nav" aria-label="Research interaction navigation"
@@ -1609,7 +1487,9 @@
 
       <nav class="log-back" aria-label="Selected research interactions navigation"
         data-aria-en="Selected research interactions navigation" data-aria-ja="研究交流ページのナビゲーション">
+
         <a href="/research/">
+
           <span class="log-back-arrow" aria-hidden="true">
             ←
           </span>
@@ -1617,7 +1497,9 @@
           <span class="log-back-text" data-en="Research" data-ja="研究">
             Research
           </span>
+
         </a>
+
       </nav>
 
       <h1 class="log-header" data-en="Selected Research Interactions" data-ja="主な研究交流">
@@ -1625,11 +1507,18 @@
       </h1>
 
       <div class="log-sub">
-        <em data-en="Selected research collaborations, discussions, visits, and shared work"
-          data-ja="主な共同研究、研究交流、研究訪問、および共同成果">
-          Selected research collaborations, discussions, visits, and shared work
+
+        <em data-en="Selected collaborations, research connections, visits, and shared outputs"
+          data-ja="主な共同研究、研究上のつながり、研究訪問、および共同成果">
+          Selected collaborations, research connections, visits, and shared outputs
         </em>
+
       </div>
+
+      <p class="collab-intro-text" data-en="Affiliations provide context; entries describe each research interaction."
+        data-ja="所属は文脈を示し、各記載はそれぞれの研究上の関わりを示しています。">
+        Affiliations provide context; entries describe each research interaction.
+      </p>
 
     </div>
 
@@ -1637,20 +1526,23 @@
       data-aria-en="Selected research interactions" data-aria-ja="主な研究交流">
 
       <section class="collab-records" aria-labelledby="collab-records-title">
-        <header class="collab-records-header">
-          <h2 id="collab-records-title" class="collab-records-title" data-en="Research Interactions and Shared Work"
-            data-ja="研究交流と共同成果">
-            Research Interactions and Shared Work
-          </h2>
 
-          <p class="collab-records-description" data-en="Shared outputs first · alphabetical by surname within groups"
-            data-ja="共同成果を優先 · 各グループ内は姓のアルファベット順">
-            Shared outputs first · alphabetical by surname within groups
+        <header class="collab-records-header">
+
+          <h2 id="collab-records-title" class="collab-records-title" data-en="Research Interactions and Shared Outputs"
+            data-ja="研究交流と共同成果">
+            Research Interactions and Shared Outputs
+          </h2>
+          
+          <p class="collab-records-description" data-en="Shared outputs first · alphabetical within groups"
+            data-ja="共同成果を優先 · 各グループ内はアルファベット順">
+            Shared outputs first · alphabetical within groups
           </p>
+
         </header>
 
-        <nav class="collab-filters" aria-label="Filter research connections by affiliation"
-          data-aria-en="Filter research connections by affiliation" data-aria-ja="所属機関で研究上のつながりを絞り込む">
+        <nav class="collab-filters" aria-label="Filter research interactions by affiliation"
+          data-aria-en="Filter research interactions by affiliation" data-aria-ja="所属機関で研究交流を絞り込む">
 
           <div class="collab-filter-list">
 
@@ -1661,38 +1553,11 @@
                 All
               </span>
 
-              <span class="collab-filter-mobile" aria-hidden="true">
+              <span class="collab-filter-mobile" aria-hidden="true" data-en="All" data-ja="すべて">
                 All
               </span>
+
             </button>
-
-            <button type="button" class="collab-filter" data-affiliation-filter="delft"
-              aria-label="Delft University of Technology" data-aria-en="Delft University of Technology"
-              data-aria-ja="デルフト工科大学" title="Delft University of Technology" aria-controls="collab-list"
-              aria-pressed="false">
-
-              <span class="collab-filter-desktop" data-en="Delft" data-ja="Delft">
-                Delft
-              </span>
-
-              <span class="collab-filter-mobile" aria-hidden="true">
-                Delft
-              </span>
-            </button>
-
-            <button type="button" class="collab-filter" data-affiliation-filter="hempel" aria-label="Hempel A/S"
-              data-aria-en="Hempel A/S" data-aria-ja="Hempel A/S" title="Hempel A/S" aria-controls="collab-list"
-              aria-pressed="false">
-
-              <span class="collab-filter-desktop" data-en="Hempel" data-ja="Hempel">
-                Hempel
-              </span>
-
-              <span class="collab-filter-mobile" aria-hidden="true">
-                Hempel
-              </span>
-            </button>
-
 
             <button type="button" class="collab-filter" data-affiliation-filter="inha" aria-label="Inha University"
               data-aria-en="Inha University" data-aria-ja="仁荷大学" title="Inha University" aria-controls="collab-list"
@@ -1702,56 +1567,25 @@
                 Inha
               </span>
 
-              <span class="collab-filter-mobile" aria-hidden="true">
+              <span class="collab-filter-mobile" aria-hidden="true" data-en="Inha" data-ja="仁荷">
                 Inha
               </span>
+
             </button>
 
+            <button type="button" class="collab-filter" data-affiliation-filter="osaka"
+              aria-label="The University of Osaka" data-aria-en="The University of Osaka" data-aria-ja="大阪大学"
+              title="The University of Osaka" aria-controls="collab-list" aria-pressed="false">
 
-            <button type="button" class="collab-filter" data-affiliation-filter="kyoto" aria-label="Kyoto University"
-              data-aria-en="Kyoto University" data-aria-ja="京都大学" title="Kyoto University" aria-controls="collab-list"
-              aria-pressed="false">
-
-              <span class="collab-filter-desktop" data-en="Kyoto" data-ja="京都">
-                Kyoto
+              <span class="collab-filter-desktop" data-en="Osaka" data-ja="大阪">
+                Osaka
               </span>
 
-              <span class="collab-filter-mobile" aria-hidden="true">
-                Kyoto
+              <span class="collab-filter-mobile" aria-hidden="true" data-en="Osaka" data-ja="大阪">
+                Osaka
               </span>
+
             </button>
-
-
-            <button type="button" class="collab-filter" data-affiliation-filter="marin"
-              aria-label="Maritime Research Institute Netherlands"
-              data-aria-en="Maritime Research Institute Netherlands" data-aria-ja="オランダ海事研究所"
-              title="Maritime Research Institute Netherlands" aria-controls="collab-list" aria-pressed="false">
-
-              <span class="collab-filter-desktop" data-en="MARIN" data-ja="MARIN">
-                MARIN
-              </span>
-
-              <span class="collab-filter-mobile" aria-hidden="true">
-                MARIN
-              </span>
-            </button>
-
-
-            <button type="button" class="collab-filter" data-affiliation-filter="rims"
-              aria-label="Research Institute of Medium & Small Shipbuilding"
-              data-aria-en="Research Institute of Medium & Small Shipbuilding" data-aria-ja="中小造船研究院"
-              title="Research Institute of Medium & Small Shipbuilding" aria-controls="collab-list"
-              aria-pressed="false">
-
-              <span class="collab-filter-desktop" data-en="RIMS" data-ja="RIMS">
-                RIMS
-              </span>
-
-              <span class="collab-filter-mobile" aria-hidden="true">
-                RIMS
-              </span>
-            </button>
-
 
             <button type="button" class="collab-filter" data-affiliation-filter="snu"
               aria-label="Seoul National University" data-aria-en="Seoul National University" data-aria-ja="ソウル大学校"
@@ -1761,11 +1595,11 @@
                 SNU
               </span>
 
-              <span class="collab-filter-mobile" aria-hidden="true">
+              <span class="collab-filter-mobile" aria-hidden="true" data-en="SNU" data-ja="SNU">
                 SNU
               </span>
-            </button>
 
+            </button>
 
             <button type="button" class="collab-filter" data-affiliation-filter="siemens"
               aria-label="Siemens Digital Industries Software" data-aria-en="Siemens Digital Industries Software"
@@ -1776,39 +1610,11 @@
                 Siemens
               </span>
 
-              <span class="collab-filter-mobile" aria-hidden="true">
+              <span class="collab-filter-mobile" aria-hidden="true" data-en="Siemens" data-ja="シーメンス">
                 Siemens
               </span>
+
             </button>
-
-
-            <button type="button" class="collab-filter" data-affiliation-filter="iowa" aria-label="University of Iowa"
-              data-aria-en="University of Iowa" data-aria-ja="アイオワ大学" title="University of Iowa"
-              aria-controls="collab-list" aria-pressed="false">
-
-              <span class="collab-filter-desktop" data-en="Iowa" data-ja="アイオワ">
-                Iowa
-              </span>
-
-              <span class="collab-filter-mobile" aria-hidden="true">
-                Iowa
-              </span>
-            </button>
-
-
-            <button type="button" class="collab-filter" data-affiliation-filter="osaka"
-              aria-label="The University of Osaka" data-aria-en="The University of Osaka" data-aria-ja="大阪大学"
-              title="The University of Osaka" aria-controls="collab-list" aria-pressed="false">
-
-              <span class="collab-filter-desktop" data-en="Osaka" data-ja="大阪">
-                Osaka
-              </span>
-
-              <span class="collab-filter-mobile" aria-hidden="true">
-                Osaka
-              </span>
-            </button>
-
 
             <button type="button" class="collab-filter" data-affiliation-filter="southampton"
               aria-label="University of Southampton" data-aria-en="University of Southampton" data-aria-ja="サウサンプトン大学"
@@ -1818,11 +1624,11 @@
                 Southampton
               </span>
 
-              <span class="collab-filter-mobile" aria-hidden="true">
+              <span class="collab-filter-mobile" aria-hidden="true" data-en="South." data-ja="South.">
                 South.
               </span>
-            </button>
 
+            </button>
 
             <button type="button" class="collab-filter" data-affiliation-filter="strathclyde"
               aria-label="University of Strathclyde" data-aria-en="University of Strathclyde" data-aria-ja="ストラスクライド大学"
@@ -1832,40 +1638,39 @@
                 Strathclyde
               </span>
 
-              <span class="collab-filter-mobile" aria-hidden="true">
+              <span class="collab-filter-mobile" aria-hidden="true" data-en="Strath." data-ja="Strath.">
                 Strath.
               </span>
-            </button>
 
-
-            <button type="button" class="collab-filter" data-affiliation-filter="usna"
-              aria-label="United States Naval Academy" data-aria-en="United States Naval Academy" data-aria-ja="米国海軍兵学校"
-              title="United States Naval Academy" aria-controls="collab-list" aria-pressed="false">
-
-              <span class="collab-filter-desktop" data-en="USNA" data-ja="USNA">
-                USNA
-              </span>
-
-              <span class="collab-filter-mobile" aria-hidden="true">
-                USNA
-              </span>
             </button>
 
           </div>
         </nav>
 
         <div id="collab-list" class="collab-list">
+
+          <!-- ========================================================= -->
+          <!-- Shared Research Outputs -->
+          <!-- ========================================================= -->
+
           <p id="connection-group-outputs" class="collab-records-description" data-collab-group-label="outputs"
             data-en="Shared Research Outputs" data-ja="共同研究成果">
             Shared Research Outputs
           </p>
 
+          <!-- Dai -->
+
           <article class="collab-entry" data-affiliation="strathclyde" data-connection-group="outputs">
+
             <div class="collab-identity">
+
               <span class="collab-affiliation-logo" aria-hidden="true">
+
                 <img src="/assets/logos/strath-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
                   onerror="this.closest('.collab-affiliation-logo').remove()">
+
               </span>
+
               <h3 class="collab-name">
                 <span class="collab-given-name">Saishuai</span>
                 <span class="collab-surname">Dai</span>
@@ -1878,10 +1683,13 @@
               <p class="collab-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
                 University of Strathclyde
               </p>
+
             </div>
 
             <div class="collab-context">
+
               <div class="collab-meta">
+
                 <span class="collab-topic" data-en="Spatial hull roughness" data-ja="船体粗度の空間分布">
                   Spatial hull roughness
                 </span>
@@ -1889,6 +1697,7 @@
                 <span class="collab-period">
                   2024–
                 </span>
+
               </div>
 
               <p class="collab-role" data-en="MSc supervisor &amp; co-author" data-ja="修士研究指導者・共著者">
@@ -1900,6 +1709,7 @@
               </div>
 
               <ul class="collab-work-list">
+
                 <li>
                   <span class="collab-work-title">
                     Beyond uniform roughness: Ship resistance with spatially
@@ -1938,30 +1748,128 @@
                   </span>
 
                   <span class="collab-work-source collab-work-source--final">
+
                     <span class="collab-work-source-text">
                       <em>Ocean Engineering</em> · 2024
                     </span>
 
                     <a class="collab-publications-link" href="/publications/">
+
                       <span data-en="Publications" data-ja="論文">
                         Publications
                       </span>
 
                       <span aria-hidden="true">→</span>
+
                     </a>
+
                   </span>
                 </li>
+
               </ul>
+
             </div>
+
           </article>
 
+          <!-- Ho-won Lee -->
 
           <article class="collab-entry" data-affiliation="inha" data-connection-group="outputs">
+
             <div class="collab-identity">
+
               <span class="collab-affiliation-logo" aria-hidden="true">
+
                 <img src="/assets/logos/inha-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
                   onerror="this.closest('.collab-affiliation-logo').remove()">
+
               </span>
+
+              <h3 class="collab-name">
+                <span class="collab-given-name">Ho-won</span>
+                <span class="collab-surname">Lee</span>
+              </h3>
+
+              <p class="collab-position" data-en="MSc Researcher" data-ja="修士課程研究員">
+                MSc Researcher
+              </p>
+
+              <p class="collab-affiliation" data-en="Inha University" data-ja="仁荷大学">
+                Inha University
+              </p>
+
+            </div>
+
+            <div class="collab-context">
+
+              <div class="collab-meta">
+
+                <span class="collab-topic" data-en="Spatial hull roughness" data-ja="船体粗度の空間分布">
+                  Spatial hull roughness
+                </span>
+
+                <span class="collab-period">
+                  2025–2026
+                </span>
+
+              </div>
+
+              <p class="collab-role" data-en="Research collaborator &amp; co-author" data-ja="共同研究者・共著者">
+                Research collaborator &amp; co-author
+              </p>
+
+              <div class="collab-work-heading" data-en="Shared Research Outputs" data-ja="共同研究成果">
+                Shared Research Outputs
+              </div>
+
+              <ul class="collab-work-list">
+
+                <li>
+
+                  <span class="collab-work-title">
+                    Beyond uniform roughness: Ship resistance with spatially
+                    non-uniform hull surface conditions
+                  </span>
+
+                  <span class="collab-work-source collab-work-source--final">
+
+                    <span class="collab-work-source-text">
+                      <em>Ocean Engineering</em> · 2026
+                    </span>
+
+                    <a class="collab-publications-link" href="/publications/">
+
+                      <span data-en="Publications" data-ja="論文">
+                        Publications
+                      </span>
+
+                      <span aria-hidden="true">→</span>
+
+                    </a>
+
+                  </span>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+          </article>
+
+          <!-- Min-hong Lee -->
+
+          <article class="collab-entry" data-affiliation="inha" data-connection-group="outputs">
+
+            <div class="collab-identity">
+
+              <span class="collab-affiliation-logo" aria-hidden="true">
+
+                <img src="/assets/logos/inha-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+                  onerror="this.closest('.collab-affiliation-logo').remove()">
+
+              </span>
+
               <h3 class="collab-name">
                 <span class="collab-given-name">Min-hong</span>
                 <span class="collab-surname">Lee</span>
@@ -1975,13 +1883,12 @@
                 Inha University
               </p>
 
-              <p class="collab-note" data-en="ROK Army · First Lieutenant" data-ja="韓国陸軍 · 中尉">
-                ROK Army · First Lieutenant
-              </p>
             </div>
 
             <div class="collab-context">
+
               <div class="collab-meta">
+
                 <span class="collab-topic" data-en="Wave energy control" data-ja="波力発電制御">
                   Wave energy control
                 </span>
@@ -1989,6 +1896,7 @@
                 <span class="collab-period">
                   2025–
                 </span>
+
               </div>
 
               <p class="collab-role" data-en="Research collaborator &amp; co-author" data-ja="共同研究者・共著者">
@@ -2002,38 +1910,164 @@
               <ul class="collab-work-list">
 
                 <li>
+
                   <span class="collab-work-title">
                     CFD-Based Model Predictive Control for Point Absorber Wave Energy Converter
                   </span>
 
                   <span class="collab-work-source collab-work-source--final">
+
                     <span class="collab-work-source-text">
                       JASNAOE Conference Proceedings · 2025
                     </span>
 
                     <a class="collab-publications-link" href="/publications/">
+
                       <span data-en="Publications" data-ja="論文">
                         Publications
                       </span>
 
                       <span aria-hidden="true">→</span>
+
                     </a>
+
                   </span>
+
                 </li>
+
               </ul>
+
             </div>
+
           </article>
 
-          <article class="collab-entry" data-affiliation="strathclyde" data-connection-group="outputs">
+          <!-- Song -->
+
+          <article class="collab-entry" data-affiliation="inha" data-connection-group="outputs">
+
             <div class="collab-identity">
+
               <span class="collab-affiliation-logo" aria-hidden="true">
+
+                <img src="/assets/logos/inha-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+                  onerror="this.closest('.collab-affiliation-logo').remove()">
+
+              </span>
+
+              <h3 class="collab-name">
+                <span class="collab-given-name">Soonseok</span>
+                <span class="collab-surname">Song</span>
+              </h3>
+
+              <p class="collab-position" data-en="Assistant Professor" data-ja="助教">
+                Assistant Professor
+              </p>
+
+              <p class="collab-affiliation" data-en="Inha University" data-ja="仁荷大学">
+                Inha University
+              </p>
+
+            </div>
+
+            <div class="collab-context">
+
+              <div class="collab-meta">
+
+                <span class="collab-topic" data-en="Ship resistance" data-ja="船体抵抗">
+                  Ship resistance
+                </span>
+
+                <span class="collab-period">
+                  2024–2025
+                </span>
+
+              </div>
+
+              <p class="collab-role" data-en="Undergraduate research adviser &amp; co-author" data-ja="学部研究指導・共著者">
+                Undergraduate research adviser &amp; co-author
+              </p>
+
+              <div class="collab-work-heading" data-en="Shared Research Outputs" data-ja="共同研究成果">
+                Shared Research Outputs
+              </div>
+
+              <ul class="collab-work-list">
+
+                <li>
+
+                  <span class="collab-work-title">
+                    Temperature-induced errors in ITTC model-ship extrapolation
+                  </span>
+
+                  <span class="collab-work-source">
+                    <em>Journal of Marine Science and Engineering</em> · 2025
+                  </span>
+
+                </li>
+
+                <li>
+
+                  <span class="collab-work-title">
+                    Numerical analysis of fluid-structure interaction for
+                    semi-submersible floating offshore wind turbines
+                  </span>
+
+                  <span class="collab-work-source">
+                    MARINE 2025 · 2025
+                  </span>
+
+                </li>
+
+                <li>
+
+                  <span class="collab-work-title">
+                    Resistance and speed penalty of a naval ship with hull roughness
+                  </span>
+
+                  <span class="collab-work-source collab-work-source--final">
+
+                    <span class="collab-work-source-text">
+                      <em>Ocean Engineering</em> · 2024
+                    </span>
+
+                    <a class="collab-publications-link" href="/publications/">
+
+                      <span data-en="Publications" data-ja="論文">
+                        Publications
+                      </span>
+
+                      <span aria-hidden="true">→</span>
+
+                    </a>
+
+                  </span>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+          </article>
+
+          <!-- Terziev -->
+
+          <article class="collab-entry" data-affiliation="strathclyde" data-connection-group="outputs">
+
+            <div class="collab-identity">
+
+              <span class="collab-affiliation-logo" aria-hidden="true">
+
                 <img src="/assets/logos/strath-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
                   onerror="this.closest('.collab-affiliation-logo').remove()">
+
               </span>
+
               <h3 class="collab-name">
                 <span class="collab-given-name">Momchil</span>
                 <span class="collab-surname">Terziev</span>
               </h3>
+
               <p class="collab-position" data-en="Lecturer" data-ja="講師">
                 Lecturer
               </p>
@@ -2041,10 +2075,13 @@
               <p class="collab-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
                 University of Strathclyde
               </p>
+
             </div>
 
             <div class="collab-context">
+
               <div class="collab-meta">
+
                 <span class="collab-topic" data-en="Spatial hull roughness" data-ja="船体粗度の空間分布">
                   Spatial hull roughness
                 </span>
@@ -2052,6 +2089,7 @@
                 <span class="collab-period">
                   2024–
                 </span>
+
               </div>
 
               <p class="collab-role" data-en="Research collaborator &amp; co-author" data-ja="共同研究者・共著者">
@@ -2063,6 +2101,7 @@
               </div>
 
               <ul class="collab-work-list">
+
                 <li>
                   <span class="collab-work-title">
                     Beyond uniform roughness: Ship resistance with spatially
@@ -2112,32 +2151,43 @@
                   </span>
 
                   <span class="collab-work-source collab-work-source--final">
+
                     <span class="collab-work-source-text">
                       <em>Ocean Engineering</em> · 2024
                     </span>
 
                     <a class="collab-publications-link" href="/publications/">
+
                       <span data-en="Publications" data-ja="論文">
                         Publications
                       </span>
 
                       <span aria-hidden="true">→</span>
+
                     </a>
+
                   </span>
                 </li>
+
               </ul>
+
             </div>
+
           </article>
 
-
-
+          <!-- Tezdogan -->
 
           <article class="collab-entry" data-affiliation="southampton" data-connection-group="outputs">
+
             <div class="collab-identity">
+
               <span class="collab-affiliation-logo" aria-hidden="true">
+
                 <img src="/assets/logos/southampton-mark.svg" width="24" height="24" alt="" loading="lazy"
                   decoding="async" onerror="this.closest('.collab-affiliation-logo').remove()">
+
               </span>
+
               <h3 class="collab-name">
                 <span class="collab-given-name">Tahsin</span>
                 <span class="collab-surname">Tezdogan</span>
@@ -2150,10 +2200,13 @@
               <p class="collab-affiliation" data-en="University of Southampton" data-ja="サウサンプトン大学">
                 University of Southampton
               </p>
+
             </div>
 
             <div class="collab-context">
+
               <div class="collab-meta">
+
                 <span class="collab-topic" data-en="Spatial hull roughness" data-ja="船体粗度の空間分布">
                   Spatial hull roughness
                 </span>
@@ -2161,6 +2214,7 @@
                 <span class="collab-period">
                   2025–
                 </span>
+
               </div>
 
               <p class="collab-role" data-en="Research collaborator &amp; co-author" data-ja="共同研究者・共著者">
@@ -2172,6 +2226,7 @@
               </div>
 
               <ul class="collab-work-list">
+
                 <li>
                   <span class="collab-work-title">
                     A computational fluid dynamics analysis of spatial roughness
@@ -2189,472 +2244,55 @@
                   </span>
 
                   <span class="collab-work-source collab-work-source--final">
+
                     <span class="collab-work-source-text">
                       <em>Journal of Marine Science and Engineering</em> · 2025
                     </span>
 
                     <a class="collab-publications-link" href="/publications/">
+
                       <span data-en="Publications" data-ja="論文">
                         Publications
                       </span>
 
                       <span aria-hidden="true">→</span>
+
                     </a>
+
                   </span>
                 </li>
+
               </ul>
+
             </div>
+
           </article>
+
+          <!-- ========================================================= -->
+          <!-- Research Exchanges & Visits -->
+          <!-- ========================================================= -->
 
           <div class="collab-group-divider" data-collab-group-divider="exchanges" aria-hidden="true">
           </div>
 
           <p id="connection-group-exchanges" class="collab-records-description" data-collab-group-label="exchanges"
-            data-en="Research Discussions &amp; Exchanges" data-ja="研究交流・ディスカッション">
-            Research Discussions &amp; Exchanges
+            data-en="Research Connections &amp; Visits" data-ja="研究上のつながり・訪問">
+            Research Connections &amp; Visits
           </p>
 
-          <article class="collab-entry" data-affiliation="strathclyde" data-connection-group="exchanges">
+          <!-- Iida -->
+
+          <article class="collab-entry" data-affiliation="osaka" data-connection-group="exchanges">
+
             <div class="collab-identity">
+
               <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/strath-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                <span class="collab-given-name">Atilla</span>
-                <span class="collab-surname">Incecik</span>
-              </h3>
 
-              <p class="collab-position" data-en="Professor" data-ja="教授">
-                Professor
-              </p>
-
-              <p class="collab-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-                University of Strathclyde
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="Academic development" data-ja="研究・進路に関する助言">
-                  Academic development
-                </span>
-
-                <span class="collab-period">
-                  2025–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Research discussion &amp; academic guidance" data-ja="研究に関する議論・学術的助言">
-                Research discussion &amp; academic guidance
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="kyoto" data-connection-group="exchanges">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/kyoto-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                <span class="collab-given-name">Abbas</span>
-                <span class="collab-surname">Khayyer</span>
-              </h3>
-
-              <p class="collab-position" data-en="Associate Professor" data-ja="准教授">
-                Associate Professor
-              </p>
-
-              <p class="collab-affiliation" data-en="Kyoto University" data-ja="京都大学">
-                Kyoto University
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="SPH methods" data-ja="SPH法">
-                  SPH methods
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Discussion on prospective PhD research" data-ja="博士課程研究に関する相談">
-                Discussion on prospective PhD research
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="snu" data-connection-group="exchanges">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/snu-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                <span class="collab-given-name">Seon Jin</span>
-                <span class="collab-surname">Kim</span>
-              </h3>
-
-              <p class="collab-position" data-en="PhD Researcher" data-ja="博士課程研究員">
-                PhD Researcher
-              </p>
-
-              <p class="collab-affiliation" data-en="Seoul National University" data-ja="ソウル大学校">
-                Seoul National University
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="Added resistance" data-ja="付加抵抗">
-                  Added resistance
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Project collaborator" data-ja="共同研究者">
-                Project collaborator
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="snu" data-connection-group="exchanges">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/snu-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                <span class="collab-given-name">Bo Woo</span>
-                <span class="collab-surname">Nam</span>
-              </h3>
-
-              <p class="collab-position" data-en="Assistant Professor" data-ja="助教">
-                Assistant Professor
-              </p>
-
-              <p class="collab-affiliation" data-en="Seoul National University" data-ja="ソウル大学校">
-                Seoul National University
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="Added resistance" data-ja="付加抵抗">
-                  Added resistance
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Research host &amp; project guidance" data-ja="研究受入・プロジェクト助言">
-                Research host &amp; project guidance
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="rims" data-connection-group="exchanges">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/rims-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                <span class="collab-given-name">Yeongmin</span>
-                <span class="collab-surname">Park</span>
-              </h3>
-
-              <p class="collab-position" data-en="Researcher" data-ja="研究員">
-                Researcher
-              </p>
-
-              <p class="collab-affiliation" data-en="RIMS" data-ja="RIMS"
-                title="Research Institute of Medium &amp; Small Shipbuilding">
-                RIMS
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="Spatial hull roughness" data-ja="船体粗度の空間分布">
-                  Spatial hull roughness
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Research collaborator" data-ja="共同研究者">
-                Research collaborator
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="siemens" data-connection-group="exchanges">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/siemens-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                <span class="collab-given-name">Dmitry</span>
-                <span class="collab-surname">Ponkratov</span>
-              </h3>
-
-              <p class="collab-position" data-en="Global Head of Marine" data-ja="船舶分野グローバル責任者">
-                Global Head of Marine
-              </p>
-
-              <p class="collab-affiliation">
-                <span class="collab-affiliation-desktop" data-en="Siemens Digital Industries Software"
-                  data-ja="シーメンス・デジタル・インダストリーズ・ソフトウェア">
-                  Siemens Digital Industries Software
-                </span>
-
-                <span class="collab-affiliation-mobile" data-en="Siemens" data-ja="シーメンス">
-                  Siemens
-                </span>
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="JoRes research" data-ja="JoRes研究">
-                  JoRes research
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Industry research guidance" data-ja="産業分野からの研究助言">
-                Industry research guidance
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="iowa" data-connection-group="exchanges">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/iowa-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                <span class="collab-given-name">Frederick</span>
-                <span class="collab-surname">Stern</span>
-              </h3>
-
-              <p class="collab-position" data-en="Professor" data-ja="教授">
-                Professor
-              </p>
-
-              <p class="collab-affiliation" data-en="University of Iowa" data-ja="アイオワ大学">
-                University of Iowa
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="W2025" data-ja="W2025">
-                  W2025
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Research discussion" data-ja="研究に関する議論">
-                Research discussion
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="marin" data-connection-group="exchanges">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/marin-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                <span class="collab-given-name">Serge</span>
-                <span class="collab-surname">Toxopeus</span>
-              </h3>
-
-              <p class="collab-position" data-en="Senior Researcher" data-ja="上級研究員">
-                Senior Researcher
-              </p>
-
-              <p class="collab-affiliation" data-en="MARIN" data-ja="MARIN"
-                title="Maritime Research Institute Netherlands">
-                MARIN
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="W2025" data-ja="W2025">
-                  W2025
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Research guidance" data-ja="研究上の助言">
-                Research guidance
-              </p>
-            </div>
-          </article>
-
-
-
-
-          <article class="collab-entry" data-affiliation="delft" data-connection-group="exchanges">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/delft-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-
-              <h3 class="collab-name">
-                <span class="collab-given-name">Xiaoyu</span>
-                <span class="collab-surname">Wang</span>
-              </h3>
-
-              <p class="collab-position" data-en="PhD Researcher" data-ja="博士課程研究員">
-                PhD Researcher
-              </p>
-
-              <p class="collab-affiliation" data-en="Delft University of Technology" data-ja="デルフト工科大学">
-                Delft University of Technology
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="Gyroscopic WEC" data-ja="ジャイロ式波力発電">
-                  Gyroscopic WEC
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Research discussion" data-ja="研究に関する議論">
-                Research discussion
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="siemens" data-connection-group="exchanges">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/siemens-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                <span class="collab-given-name">Miles</span>
-                <span class="collab-surname">Wheeler</span>
-              </h3>
-
-              <p class="collab-position" data-en="Senior Marine Specialist" data-ja="船舶分野シニアスペシャリスト">
-                Senior Marine Specialist
-              </p>
-
-              <p class="collab-affiliation">
-                <span class="collab-affiliation-desktop" data-en="Siemens Digital Industries Software"
-                  data-ja="シーメンス・デジタル・インダストリーズ・ソフトウェア">
-                  Siemens Digital Industries Software
-                </span>
-
-                <span class="collab-affiliation-mobile" data-en="Siemens" data-ja="シーメンス">
-                  Siemens
-                </span>
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="JoRes research" data-ja="JoRes研究">
-                  JoRes research
-                </span>
-
-                <span class="collab-period">
-                  2026–
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Industry collaborator" data-ja="産業共同研究者">
-                Industry collaborator
-              </p>
-            </div>
-          </article>
-
-          <div class="collab-group-divider" data-collab-group-divider="previous" aria-hidden="true">
-          </div>
-
-          <p id="connection-group-previous" class="collab-records-description" data-collab-group-label="previous"
-            data-en="Previous Research Connections" data-ja="これまでの研究上のつながり">
-            Previous Research Connections
-          </p>
-
-          <article class="collab-entry" data-affiliation="hempel" data-connection-group="previous">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/hempel-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                <span class="collab-given-name">Yigit K.</span>
-                <span class="collab-surname">Demirel</span>
-              </h3>
-
-              <p class="collab-position" data-en="Hull Performance Manager" data-ja="船体性能マネージャー">
-                Hull Performance Manager
-              </p>
-
-              <p class="collab-affiliation" data-en="Hempel A/S" data-ja="Hempel A/S">
-                Hempel A/S
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="Spatial hull roughness" data-ja="船体粗度の空間分布">
-                  Spatial hull roughness
-                </span>
-
-                <span class="collab-period">
-                  2025–2026
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Research guidance" data-ja="研究上の助言">
-                Research guidance
-              </p>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="osaka" data-connection-group="previous">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
                 <img src="/assets/logos/osaka-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
                   onerror="this.closest('.collab-affiliation-logo').remove()">
+
               </span>
+
               <h3 class="collab-name">
                 <span class="collab-given-name">Takahito</span>
                 <span class="collab-surname">Iida</span>
@@ -2667,10 +2305,13 @@
               <p class="collab-affiliation" data-en="The University of Osaka" data-ja="大阪大学">
                 The University of Osaka
               </p>
+
             </div>
 
             <div class="collab-context">
+
               <div class="collab-meta">
+
                 <span class="collab-topic" data-en="Gyroscopic WEC" data-ja="ジャイロ式波力発電装置">
                   Gyroscopic WEC
                 </span>
@@ -2678,217 +2319,180 @@
                 <span class="collab-period">
                   2025
                 </span>
+
               </div>
 
-              <p class="collab-role" data-en="Research host" data-ja="研究受入者">
+              <p class="collab-role" data-en="Research host" data-ja="研究受入">
                 Research host
               </p>
+
             </div>
+
           </article>
 
+          <article class="collab-entry" data-affiliation="strathclyde" data-connection-group="exchanges">
 
-          <article class="collab-entry" data-affiliation="inha" data-connection-group="previous">
             <div class="collab-identity">
+
               <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/inha-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+
+                <img src="/assets/logos/strath-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
                   onerror="this.closest('.collab-affiliation-logo').remove()">
+
               </span>
+
               <h3 class="collab-name">
-                <span class="collab-given-name">Ho-won</span>
-                <span class="collab-surname">Lee</span>
-              </h3>
-
-              <p class="collab-position" data-en="MSc Researcher" data-ja="修士課程研究員">
-                MSc Researcher
-              </p>
-
-              <p class="collab-affiliation" data-en="Inha University" data-ja="仁荷大学">
-                Inha University
-              </p>
-            </div>
-
-            <div class="collab-context">
-              <div class="collab-meta">
-                <span class="collab-topic" data-en="Spatial hull roughness" data-ja="船体粗度の空間分布">
-                  Spatial hull roughness
-                </span>
-
-                <span class="collab-period">
-                  2025–2026
-                </span>
-              </div>
-
-              <p class="collab-role" data-en="Research collaborator &amp; co-author" data-ja="共同研究者・共著者">
-                Research collaborator &amp; co-author
-              </p>
-
-              <div class="collab-work-heading" data-en="Shared Research Outputs" data-ja="共同研究成果">
-                Shared Research Outputs
-              </div>
-
-              <ul class="collab-work-list">
-
-                <li>
-                  <span class="collab-work-title">
-                    Beyond uniform roughness: Ship resistance with spatially
-                    non-uniform hull surface conditions
-                  </span>
-
-                  <span class="collab-work-source collab-work-source--final">
-                    <span class="collab-work-source-text">
-                      <em>Ocean Engineering</em> · 2026
-                    </span>
-
-                    <a class="collab-publications-link" href="/publications/">
-                      <span data-en="Publications" data-ja="論文">
-                        Publications
-                      </span>
-
-                      <span aria-hidden="true">→</span>
-                    </a>
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="collab-entry" data-affiliation="usna" data-connection-group="previous">
-            <div class="collab-identity">
-              <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/usna-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
-                  onerror="this.closest('.collab-affiliation-logo').remove()">
-              </span>
-              <h3 class="collab-name">
-                <span class="collab-given-name">Michael P.</span>
-                <span class="collab-surname">Schultz</span>
+                <span class="collab-given-name">Atilla</span>
+                <span class="collab-surname">Incecik</span>
               </h3>
 
               <p class="collab-position" data-en="Professor" data-ja="教授">
                 Professor
               </p>
 
-              <p class="collab-affiliation" data-en="United States Naval Academy" data-ja="米国海軍兵学校">
-                United States Naval Academy
+              <p class="collab-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
+                University of Strathclyde
               </p>
+
             </div>
 
             <div class="collab-context">
+
               <div class="collab-meta">
-                <span class="collab-topic" data-en="Spatial hull roughness" data-ja="船体粗度の空間分布">
-                  Spatial hull roughness
+
+                <span class="collab-topic" data-en="Academic development" data-ja="学術的成長">
+                  Academic development
                 </span>
 
                 <span class="collab-period">
-                  2026
+                  2025–
                 </span>
+
               </div>
 
-              <p class="collab-role" data-en="Research guidance" data-ja="研究上の助言">
-                Research guidance
+              <p class="collab-role" data-en="Encouragement &amp; support" data-ja="励まし・支援">
+                Encouragement &amp; support
               </p>
+
             </div>
+
           </article>
 
-          <article class="collab-entry" data-affiliation="inha" data-connection-group="previous">
+          <article class="collab-entry" data-affiliation="snu" data-connection-group="exchanges">
+
             <div class="collab-identity">
+
               <span class="collab-affiliation-logo" aria-hidden="true">
-                <img src="/assets/logos/inha-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+
+                <img src="/assets/logos/snu-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
                   onerror="this.closest('.collab-affiliation-logo').remove()">
+
               </span>
+
               <h3 class="collab-name">
-                <span class="collab-given-name">Soonseok</span>
-                <span class="collab-surname">Song</span>
+                <span class="collab-given-name">Bo Woo</span>
+                <span class="collab-surname">Nam</span>
               </h3>
 
               <p class="collab-position" data-en="Assistant Professor" data-ja="助教">
                 Assistant Professor
               </p>
 
-              <p class="collab-affiliation" data-en="Inha University" data-ja="仁荷大学">
-                Inha University
+              <p class="collab-affiliation" data-en="Seoul National University" data-ja="ソウル大学校">
+                Seoul National University
               </p>
+
             </div>
 
             <div class="collab-context">
+
               <div class="collab-meta">
-                <span class="collab-topic" data-en="Ship resistance" data-ja="船体抵抗">
-                  Ship resistance
+
+                <span class="collab-topic" data-en="Added resistance" data-ja="付加抵抗">
+                  Added resistance
                 </span>
+
                 <span class="collab-period">
-                  2024–2025
+                  2026–
                 </span>
+
               </div>
 
-              <p class="collab-role" data-en="Undergraduate research adviser &amp; co-author" data-ja="学部研究指導・共著者">
-                Undergraduate research adviser &amp; co-author
+              <p class="collab-role" data-en="Research host" data-ja="研究受入">
+                Research host
               </p>
 
-              <div class="collab-work-heading" data-en="Shared Research Outputs" data-ja="共同研究成果">
-                Shared Research Outputs
-              </div>
-
-              <ul class="collab-work-list">
-                <li>
-                  <span class="collab-work-title">
-                    Temperature-induced errors in ITTC model-ship extrapolation
-                  </span>
-
-                  <span class="collab-work-source">
-                    <em>Journal of Marine Science and Engineering</em> · 2025
-                  </span>
-                </li>
-
-                <li>
-                  <span class="collab-work-title">
-                    Numerical analysis of fluid-structure interaction for
-                    semi-submersible floating offshore wind turbines
-                  </span>
-
-                  <span class="collab-work-source">
-                    MARINE 2025 · 2025
-                  </span>
-                </li>
-
-                <li>
-                  <span class="collab-work-title">
-                    Resistance and speed penalty of a naval ship with hull roughness
-                  </span>
-
-                  <span class="collab-work-source collab-work-source--final">
-                    <span class="collab-work-source-text">
-                      <em>Ocean Engineering</em> · 2024
-                    </span>
-
-                    <a class="collab-publications-link" href="/publications/">
-                      <span data-en="Publications" data-ja="論文">
-                        Publications
-                      </span>
-
-                      <span aria-hidden="true">→</span>
-                    </a>
-                  </span>
-                </li>
-              </ul>
             </div>
+
           </article>
 
+          <!-- Siemens -->
 
+          <article class="collab-entry" data-affiliation="siemens" data-connection-group="exchanges">
+
+            <div class="collab-identity">
+
+              <span class="collab-affiliation-logo" aria-hidden="true">
+
+                <img src="/assets/logos/siemens-mark.svg" width="24" height="24" alt="" loading="lazy" decoding="async"
+                  onerror="this.closest('.collab-affiliation-logo').remove()">
+
+              </span>
+
+              <h3 class="collab-name">
+                <span class="collab-surname" data-en="Siemens" data-ja="シーメンス">
+                  Siemens
+                </span>
+              </h3>
+
+              <p class="collab-affiliation" data-en="Siemens Digital Industries Software"
+                data-ja="シーメンス・デジタル・インダストリーズ・ソフトウェア">
+                Siemens Digital Industries Software
+              </p>
+
+            </div>
+
+            <div class="collab-context">
+
+              <div class="collab-meta">
+
+                <span class="collab-topic" data-en="JoRes research" data-ja="JoRes研究">
+                  JoRes research
+                </span>
+
+                <span class="collab-period">
+                  2026–
+                </span>
+
+              </div>
+
+              <p class="collab-role" data-en="Research collaboration" data-ja="共同研究">
+                Research collaboration
+              </p>
+
+            </div>
+
+          </article>
 
         </div>
+
       </section>
 
       <aside class="collab-principle" aria-label="Scope note" data-aria-en="Scope note" data-aria-ja="掲載範囲に関する注記">
 
-        <p data-en="Descriptions reflect the nature of the research interactions recorded here and do not imply institutional endorsement."
-          data-ja="記載内容は研究上の交流の性質を示すものであり、所属機関による推薦・承認を意味するものではありません。">
-          Descriptions reflect the nature of the research interactions recorded here and do not imply institutional
-          endorsement.
+        <p data-en="Entries describe selected research interactions and do not imply endorsement by the affiliated institutions."
+          data-ja="各記載は選定した研究交流を示すものであり、所属機関による推薦・承認を意味するものではありません。">
+          Entries describe selected research interactions and do not imply endorsement by the affiliated institutions.
         </p>
+
       </aside>
+
     </main>
 
     <footer class="site-footer">
+
       <div class="footer-signature">
+
         <span class="footer-name">
           Sangseok Han
         </span>
@@ -2896,9 +2500,11 @@
         <span class="footer-field" data-en="Research portfolio" data-ja="研究ポートフォリオ">
           Research portfolio
         </span>
+
       </div>
 
       <a class="footer-top" href="#top">
+
         <span data-en="Back to top" data-ja="ページ上部へ">
           Back to top
         </span>
@@ -2906,8 +2512,11 @@
         <span class="footer-top-arrow" aria-hidden="true">
           ↑
         </span>
+
       </a>
+
     </footer>
+
   </div>
 
   <script>
@@ -2919,6 +2528,7 @@
         "ja"
       ]);
 
+
     function getSessionLang() {
       const saved =
         sessionStorage.getItem("lang");
@@ -2927,6 +2537,7 @@
         ? saved
         : DEFAULT_LANG;
     }
+
 
     function applyLang(lang) {
       const safeLang =
@@ -2996,29 +2607,24 @@
         description.setAttribute(
           "content",
           safeLang === "ja"
-            ? "主な共同研究、研究交流、研究訪問、および共同成果の記録。"
-            : "Selected research collaborations, discussions, visits, and shared work involving Sangseok Han."
+            ? "主な共同研究、研究上のつながり、研究訪問、および共同成果の記録。"
+            : "Selected collaborations, research connections, visits, and shared outputs involving Sangseok Han."
         );
       }
     }
 
+
     const AFFILIATION_FILTERS =
       new Set([
         "all",
-        "delft",
-        "hempel",
         "inha",
-        "kyoto",
-        "marin",
-        "rims",
+        "osaka",
         "snu",
         "siemens",
-        "iowa",
-        "osaka",
         "southampton",
-        "strathclyde",
-        "usna"
+        "strathclyde"
       ]);
+
 
     let connectionUpdateScheduled = false;
     let connectionLayoutObserver = null;
@@ -3042,7 +2648,10 @@
 
     function cancelSmoothScroll() {
       if (smoothScrollFrame !== null) {
-        cancelAnimationFrame(smoothScrollFrame);
+        cancelAnimationFrame(
+          smoothScrollFrame
+        );
+
         smoothScrollFrame = null;
       }
     }
@@ -3055,25 +2664,32 @@
         document.scrollingElement ||
         document.documentElement;
 
-      const maximumScrollY = Math.max(
-        0,
-        scrollingElement.scrollHeight -
-        window.innerHeight
-      );
+      const maximumScrollY =
+        Math.max(
+          0,
+          scrollingElement.scrollHeight -
+          window.innerHeight
+        );
 
-      const startY = window.scrollY;
+      const startY =
+        window.scrollY;
 
-      const destinationY = clamp(
-        targetY,
-        0,
-        maximumScrollY
-      );
+      const destinationY =
+        clamp(
+          targetY,
+          0,
+          maximumScrollY
+        );
 
       const distance =
         destinationY - startY;
 
       if (Math.abs(distance) < 1) {
-        window.scrollTo(0, destinationY);
+        window.scrollTo(
+          0,
+          destinationY
+        );
+
         return;
       }
 
@@ -3083,15 +2699,20 @@
         ).matches;
 
       if (reduceMotion) {
-        window.scrollTo(0, destinationY);
+        window.scrollTo(
+          0,
+          destinationY
+        );
+
         return;
       }
 
-      const duration = clamp(
-        420 + Math.abs(distance) * 0.16,
-        480,
-        1050
-      );
+      const duration =
+        clamp(
+          420 + Math.abs(distance) * 0.16,
+          480,
+          1050
+        );
 
       const startTime =
         performance.now();
@@ -3100,23 +2721,30 @@
         const elapsed =
           currentTime - startTime;
 
-        const progress = clamp(
-          elapsed / duration,
-          0,
-          1
-        );
+        const progress =
+          clamp(
+            elapsed / duration,
+            0,
+            1
+          );
 
         const easedProgress =
-          easeInOutQuint(progress);
+          easeInOutQuint(
+            progress
+          );
 
         window.scrollTo(
           0,
-          startY + distance * easedProgress
+          startY +
+          distance *
+          easedProgress
         );
 
         if (progress < 1) {
           smoothScrollFrame =
-            requestAnimationFrame(animate);
+            requestAnimationFrame(
+              animate
+            );
         } else {
           window.scrollTo(
             0,
@@ -3124,23 +2752,28 @@
           );
 
           smoothScrollFrame = null;
-
         }
       }
 
       smoothScrollFrame =
-        requestAnimationFrame(animate);
+        requestAnimationFrame(
+          animate
+        );
     }
 
 
     function getDocumentTop(element) {
       return (
-        element.getBoundingClientRect().top +
+        element
+          .getBoundingClientRect()
+          .top +
         window.scrollY
       );
     }
 
+
     const CONNECTION_SCROLL_OFFSET = 80;
+
 
     const CONNECTION_GROUPS = [
       {
@@ -3150,13 +2783,8 @@
       },
       {
         id: "exchanges",
-        labelEn: "Discussions & Exchanges",
-        labelJa: "研究交流・議論"
-      },
-      {
-        id: "previous",
-        labelEn: "Previous Connections",
-        labelJa: "これまでのつながり"
+        labelEn: "Connections & Visits",
+        labelJa: "つながり・訪問"
       }
     ];
 
@@ -3167,7 +2795,9 @@
           ".connection-side-nav-list"
         );
 
-      if (!nav) return;
+      if (!nav) {
+        return;
+      }
 
       nav.innerHTML =
         CONNECTION_GROUPS
@@ -3177,23 +2807,29 @@
                 `[data-collab-group-label="${group.id}"]`
               );
 
-            return label && !label.hidden;
+            return (
+              label &&
+              !label.hidden
+            );
           })
           .map(group => `
-        <a
-          class="connection-side-nav-group"
-          href="#connection-group-${group.id}"
-          data-en="${group.labelEn}"
-          data-ja="${group.labelJa}">
-          ${group.labelEn}
-        </a>
-      `)
+            <a
+              class="connection-side-nav-group"
+              href="#connection-group-${group.id}"
+              data-en="${group.labelEn}"
+              data-ja="${group.labelJa}">
+              ${group.labelEn}
+            </a>
+          `)
           .join("");
 
-      applyLang(getSessionLang());
+      applyLang(
+        getSessionLang()
+      );
 
       updateConnectionSideNavigation();
     }
+
 
     function updateConnectionSideNavigation() {
       const sideNav =
@@ -3201,7 +2837,9 @@
           ".connection-side-nav"
         );
 
-      if (!sideNav) return;
+      if (!sideNav) {
+        return;
+      }
 
       const visibleGroups =
         CONNECTION_GROUPS
@@ -3228,19 +2866,37 @@
       const activationLine =
         window.innerHeight * 0.30;
 
+      const documentHeight =
+        Math.max(
+          document.documentElement.scrollHeight,
+          document.body.scrollHeight
+        );
+
+      const isAtBottom =
+        window.scrollY +
+        window.innerHeight >=
+        documentHeight - 4;
+
       let activeGroup =
         visibleGroups[0];
 
-      for (const group of visibleGroups) {
-        const top =
-          group.target
-            .getBoundingClientRect()
-            .top;
+      if (isAtBottom) {
+        activeGroup =
+          visibleGroups[
+          visibleGroups.length - 1
+          ];
+      } else {
+        for (const group of visibleGroups) {
+          const top =
+            group.target
+              .getBoundingClientRect()
+              .top;
 
-        if (top <= activationLine) {
-          activeGroup = group;
-        } else {
-          break;
+          if (top <= activationLine) {
+            activeGroup = group;
+          } else {
+            break;
+          }
         }
       }
 
@@ -3249,8 +2905,13 @@
           ".connection-side-nav-group"
         )
         .forEach(link => {
-          link.classList.remove("active");
-          link.removeAttribute("aria-current");
+          link.classList.remove(
+            "active"
+          );
+
+          link.removeAttribute(
+            "aria-current"
+          );
         });
 
       const activeLink =
@@ -3259,7 +2920,9 @@
         );
 
       if (activeLink) {
-        activeLink.classList.add("active");
+        activeLink.classList.add(
+          "active"
+        );
 
         activeLink.setAttribute(
           "aria-current",
@@ -3283,13 +2946,16 @@
       });
     }
 
+
     function bindConnectionSideNavigation() {
       const sideNav =
         document.querySelector(
           ".connection-side-nav"
         );
 
-      if (!sideNav) return;
+      if (!sideNav) {
+        return;
+      }
 
       sideNav.addEventListener(
         "click",
@@ -3307,14 +2973,22 @@
           }
 
           const selector =
-            link.getAttribute("href");
+            link.getAttribute(
+              "href"
+            );
 
-          if (!selector) return;
+          if (!selector) {
+            return;
+          }
 
           const target =
-            document.querySelector(selector);
+            document.querySelector(
+              selector
+            );
 
-          if (!target) return;
+          if (!target) {
+            return;
+          }
 
           event.preventDefault();
 
@@ -3332,6 +3006,7 @@
       );
     }
 
+
     function observeConnectionLayout() {
       const pageContent =
         document.querySelector(
@@ -3347,7 +3022,7 @@
 
       connectionLayoutObserver =
         new ResizeObserver(() => {
-          scheduleConnectionUpdate(true);
+          scheduleConnectionUpdate();
         });
 
       connectionLayoutObserver.observe(
@@ -3372,9 +3047,11 @@
       entries.forEach(entry => {
         const shouldShow =
           safeFilter === "all" ||
-          entry.dataset.affiliation === safeFilter;
+          entry.dataset.affiliation ===
+          safeFilter;
 
-        entry.hidden = !shouldShow;
+        entry.hidden =
+          !shouldShow;
 
         entry.classList.remove(
           "is-last-visible"
@@ -3383,13 +3060,13 @@
 
       const visibleEntries =
         entries.filter(
-          entry => !entry.hidden
+          entry =>
+            !entry.hidden
         );
 
       const groupIds = [
         "outputs",
-        "exchanges",
-        "previous"
+        "exchanges"
       ];
 
       const visibleGroups = {};
@@ -3427,21 +3104,6 @@
           !visibleGroups.exchanges;
       }
 
-      const previousDivider =
-        document.querySelector(
-          '[data-collab-group-divider="previous"]'
-        );
-
-      if (previousDivider) {
-        previousDivider.hidden =
-          !visibleGroups.previous ||
-          (
-            !visibleGroups.outputs &&
-            !visibleGroups.exchanges
-          );
-      }
-
-
       const lastVisibleEntry =
         visibleEntries[
         visibleEntries.length - 1
@@ -3477,13 +3139,17 @@
           );
         });
     }
+
+
     function updateNavigationState() {
       const nav =
         document.querySelector(
           ".nav"
         );
 
-      if (!nav) return;
+      if (!nav) {
+        return;
+      }
 
       nav.classList.toggle(
         "is-scrolled",
@@ -3521,7 +3187,9 @@
                   selected
                 );
 
-                applyLang(selected);
+                applyLang(
+                  selected
+                );
               }
             );
           });
@@ -3544,9 +3212,11 @@
         bindConnectionSideNavigation();
         observeConnectionLayout();
 
-        applyAffiliationFilter("all");
+        applyAffiliationFilter(
+          "all"
+        );
 
-        scheduleConnectionUpdate(true);
+        scheduleConnectionUpdate();
         updateNavigationState();
       }
     );
@@ -3555,7 +3225,7 @@
     window.addEventListener(
       "scroll",
       () => {
-        scheduleConnectionUpdate(false);
+        scheduleConnectionUpdate();
       },
       {
         passive: true
@@ -3566,7 +3236,7 @@
     window.addEventListener(
       "resize",
       () => {
-        scheduleConnectionUpdate(true);
+        scheduleConnectionUpdate();
       },
       {
         passive: true
@@ -3585,10 +3255,9 @@
             "loaded"
           );
 
-        scheduleConnectionUpdate(true);
+        scheduleConnectionUpdate();
       }
     );
-
   </script>
 
 </body>
