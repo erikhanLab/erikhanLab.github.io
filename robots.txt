@@ -1,5 +1,13 @@
 User-agent: Googlebot-Image
-Disallow: /assets/
+Disallow: /assets/archive/
+Disallow: /assets/etc/
+Disallow: /assets/log/
+Disallow: /assets/publications/
+Disallow: /assets/research/
 
-Allow: /assets/Home-spain.png
-Allow: /assets/favicon-32.png
+User-agent: Bingbot
+Disallow: /assets/archive/
+Disallow: /assets/etc/
+Disallow: /assets/log/
+Disallow: /assets/publications/
+Disallow: /assets/research/
