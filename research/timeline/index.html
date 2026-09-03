@@ -4,18 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <meta name="robots" content="index, follow, noimageindex">
   <meta name="bingbot" content="index, follow, max-image-preview:none">
+
   <title>Academic Timeline | Sangseok Han</title>
+
   <meta name="description"
-    content="A chronological record of academic study, research activities, publications, presentations, appointments, and awards by Sangseok Han.">
-  <link rel="canonical" href="https://sangseokhan.com/research/timeline/" />
+    content="Selected academic and research activities, including publications, presentations, appointments, and awards by Sangseok Han.">
+
+  <link rel="canonical" href="https://sangseokhan.com/research/timeline/">
+
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 
   <meta property="og:title" content="Academic Timeline | Sangseok Han">
-  <meta property="og:description"
-    content="A chronological record of academic development, research milestones, and key decisions from 2021 to the present.">
+
+  <meta property="og:description" content="Selected academic and research activities by Sangseok Han since 2021.">
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sangseokhan.com/research/timeline/">
   <meta property="og:site_name" content="Sangseok Han — Research">
@@ -26,7 +32,8 @@
   <script>
     (function () {
       const savedLang = sessionStorage.getItem("lang");
-      const lang = (savedLang === "ja") ? "ja" : "en";
+      const lang = savedLang === "ja" ? "ja" : "en";
+
       document.documentElement.setAttribute("lang", lang);
       document.documentElement.setAttribute("data-lang", lang);
     })();
@@ -45,9 +52,12 @@
     }
 
     .page-content {
-      transform: translateY(6px);
-      transition: transform 0.12s ease-out;
       font-size: 1.1em;
+
+      transform: translateY(6px);
+
+      transition:
+        transform 0.12s ease-out;
     }
 
     .page-content.loaded {
@@ -55,28 +65,40 @@
     }
 
     .header {
-      font-family: Georgia, serif;
-      font-size: 0.9em;
       display: flex;
       align-items: baseline;
+
+      font-family: Georgia, serif;
+      font-size: 0.9em;
       font-weight: 300;
+
       letter-spacing: 0.16em;
       text-transform: uppercase;
+
       color: #555;
     }
+
+
+    /* =========================
+       Header
+       ========================= */
 
     .log-header-block {
       margin-bottom: 5px;
       padding-bottom: 10px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+      border-bottom:
+        1px solid rgba(0, 0, 0, 0.08);
     }
 
     .log-header {
-      font-size: 1.25em;
-      letter-spacing: 0.08em;
-      color: var(--research-blue);
-      font-weight: 500;
       margin-bottom: 6px;
+
+      font-size: 1.25em;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+
+      color: var(--research-blue);
     }
 
     .log-sub {
@@ -86,8 +108,9 @@
       gap: 30px;
 
       font-size: 0.75em;
-      opacity: 0.5;
       letter-spacing: 0.05em;
+
+      opacity: 0.5;
     }
 
     .log-sub-description {
@@ -96,11 +119,13 @@
 
     .log-affiliation-note {
       flex: 0 1 auto;
+
       max-width: 430px;
 
       font-size: 0.85em;
       line-height: 1.4;
       letter-spacing: 0.025em;
+
       text-align: right;
 
       color: rgba(11, 31, 58, 0.72);
@@ -123,6 +148,7 @@
       letter-spacing: 0.09em;
 
       color: rgba(11, 31, 58, 0.46);
+
       text-decoration: none;
 
       transition:
@@ -138,7 +164,8 @@
 
       color: rgba(11, 31, 58, 0.38);
 
-      transform: translateY(-0.02em);
+      transform:
+        translateY(-0.02em);
 
       transition:
         color 0.18s ease,
@@ -151,13 +178,17 @@
 
     .log-back a:hover .log-back-arrow {
       color: rgba(11, 31, 58, 0.72);
-      transform: translate(-3px, -0.02em);
+
+      transform:
+        translate(-3px, -0.02em);
     }
 
     .log-back a:focus-visible {
       color: rgba(11, 31, 58, 0.88);
 
-      outline: 1px solid rgba(11, 31, 58, 0.22);
+      outline:
+        1px solid rgba(11, 31, 58, 0.22);
+
       outline-offset: 5px;
     }
 
@@ -165,130 +196,179 @@
       letter-spacing: 0.06em;
     }
 
+
+    /* =========================
+       Year navigation
+       ========================= */
+
     .year-tabs {
       margin-bottom: 5px;
       padding: 6px 10px;
+
       font-size: 0.95em;
       letter-spacing: 0.09em;
-      background: rgba(255, 255, 255, 0.22);
-      border: 1px solid rgba(11, 31, 58, 0.035);
+
+      background:
+        rgba(255, 255, 255, 0.22);
+
+      border:
+        1px solid rgba(11, 31, 58, 0.035);
+
       border-radius: 3px;
     }
 
     .year-tabs span {
-      cursor: pointer;
-      opacity: 0.45;
       margin-right: 25px;
-      transition: opacity 0.2s ease;
+
+      cursor: pointer;
+
+      opacity: 0.45;
+
+      transition:
+        opacity 0.2s ease;
     }
 
     .year-tabs span.active {
-      opacity: 0.9;
       font-size: 1.1em;
+
       color: var(--research-blue);
+
+      opacity: 0.9;
     }
 
     .year-tabs span:hover {
       opacity: 0.75;
     }
 
-    .trace-entry {
-      display: grid;
-      grid-template-columns: 155px minmax(0, 1fr);
-      column-gap: 20px;
+    .divider {
+      height: 0.5px;
 
-      width: 100%;
-      max-width: none;
+      margin: 0;
 
-      margin: 18px 0 24px;
-      padding-bottom: 18px;
-
-      border-bottom: 1px solid rgba(11, 31, 58, 0.07);
+      background: #dcdcdc;
     }
 
-    .year-section .trace-entry:last-child {
-      padding-bottom: 24px;
 
-      border-bottom-color: rgba(11, 31, 58, 0.13);
-    }
+    /* =========================
+       Year sections
+       ========================= */
 
     .year-section {
       display: none;
+
       opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.35s ease, transform 0.35s ease;
+
+      transform:
+        translateY(8px);
+
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
     }
 
     .year-section.active {
       display: block;
+
       opacity: 1;
-      transform: translateY(0);
+
+      transform:
+        translateY(0);
+    }
+
+    .trace-year {
+      margin: 22px 0 10px;
+
+      font-size: 0.86em;
+      font-weight: 500;
+      line-height: 1.4;
+
+      letter-spacing: 0.14em;
+
+      font-variant-numeric:
+        tabular-nums;
+
+      color: var(--research-blue);
+
+      opacity: 0.82;
+    }
+
+    .year-section+.year-section .trace-year {
+      margin-top: 34px;
+    }
+
+
+    /* =========================
+       Affiliation groups
+       ========================= */
+
+    .trace-entry {
+      display: grid;
+
+      grid-template-columns:
+        155px minmax(0, 1fr);
+
+      column-gap: 20px;
+
+      width: 100%;
+
+      margin: 12px 0 22px;
+      padding-bottom: 20px;
+
+      border-bottom:
+        1px solid rgba(11, 31, 58, 0.07);
     }
 
     .year-section .trace-entry:last-child {
-      padding-bottom: 24px;
+      padding-bottom: 26px;
+
+      border-bottom-color:
+        rgba(11, 31, 58, 0.13);
     }
 
-    .trace-month-block {
-      padding-top: 2px;
-    }
-
-    .trace-month {
-      font-size: 0.82em;
-      letter-spacing: 0.16em;
-      color: var(--research-blue);
-      opacity: 0.86;
-      white-space: nowrap;
+    .trace-context {
+      padding-top: 6px;
     }
 
     .trace-affiliation {
-      margin-top: 3px;
+      margin: 0;
+
       font-size: 0.68em;
-      letter-spacing: 0.06em;
-      color: #666;
-      opacity: 0.78;
       line-height: 1.35;
+      letter-spacing: 0.06em;
+
+      color: #666;
+
+      opacity: 0.78;
+
       white-space: nowrap;
     }
 
     .trace-lines {
+      width: 100%;
       min-width: 0;
     }
 
-    .trace-detail a {
-      color: inherit;
-      text-decoration-line: underline;
-      text-decoration-color: transparent;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
 
-      transition:
-        color 0.15s ease,
-        text-decoration-color 0.15s ease;
-    }
-
-    .trace-detail a:hover,
-    .trace-detail a:focus-visible {
-      color: var(--research-blue);
-      text-decoration-color: rgba(11, 31, 58, 0.28);
-    }
-
-    .trace-detail a:focus-visible {
-      outline: 1px solid rgba(11, 31, 58, 0.22);
-      outline-offset: 3px;
-    }
+    /* =========================
+       Timeline items
+       ========================= */
 
     .trace-line,
     .trace-line.is-soft {
       display: grid;
-      grid-template-columns: minmax(0, max-content) auto minmax(0, 1fr);
+
+      grid-template-columns:
+        minmax(0, max-content) auto minmax(0, 1fr);
+
       align-items: baseline;
 
       position: relative;
-      margin: 0 0 7px;
+
+      margin: 0 0 9px;
       padding: 0;
 
       color: #454b54;
+
       font-size: 0.89em;
       line-height: 1.45;
 
@@ -305,15 +385,20 @@
     .trace-line.is-soft .trace-event {
       grid-column: 1;
       grid-row: 1;
+
       min-width: 0;
+
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+
       color: #333333;
+
       font-size: 1.1em;
-      opacity: 0.7;
       font-weight: 400;
       letter-spacing: -0.01em;
+
+      opacity: 0.7;
     }
 
     .trace-dot,
@@ -321,29 +406,34 @@
       grid-column: 2;
 
       display: inline;
+
       margin: 0 6px;
 
       color: var(--research-blue);
+
       opacity: 0.25;
     }
 
     .trace-tag,
     .trace-line.is-soft .trace-tag {
       grid-column: 3;
-      letter-spacing: 0.03em;
+
       min-width: 0;
+
+      margin: 0;
+
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
 
-      margin: 0;
-
       color: var(--research-blue);
-      opacity: 0.65;
 
       font-size: 0.78em;
       font-style: normal;
       font-weight: 400;
+      letter-spacing: 0.03em;
+
+      opacity: 0.65;
     }
 
     .trace-line:not(.is-highlight) .trace-detail {
@@ -351,59 +441,86 @@
     }
 
     .trace-line.is-soft {
-      padding: 3px 0 3px 9px;
-      border-left: 1px solid rgba(11, 31, 58, 0.2);
+      padding:
+        3px 0 3px 9px;
+
+      border-left:
+        1px solid rgba(11, 31, 58, 0.2);
     }
 
     .trace-line.is-highlight {
       display: grid;
-      grid-template-columns: minmax(0, max-content) auto minmax(0, 1fr);
-      grid-template-rows: auto auto;
+
+      grid-template-columns:
+        minmax(0, max-content) auto minmax(0, 1fr);
+
+      grid-template-rows:
+        auto auto;
+
       align-items: baseline;
-      margin: 4px 0 11px;
+
+      margin: 4px 0 13px;
       padding: 3px 0 4px 9px;
+
       background: none;
       border: 0;
-      border-left: 1.5px solid rgba(11, 31, 58, 0.55);
+
+      border-left:
+        1.5px solid rgba(11, 31, 58, 0.55);
     }
 
     .trace-line.is-highlight .trace-event {
       grid-column: 1;
       grid-row: 1;
+
       min-width: 0;
+
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+
       color: #111111;
+
       font-size: 1.15em;
-      opacity: 1;
       font-weight: 500;
       letter-spacing: 0;
+
+      opacity: 1;
     }
 
     .trace-line.is-highlight .trace-dot {
       grid-column: 2;
       grid-row: 1;
+
       display: inline;
+
       margin: 0 6px;
+
       color: var(--research-blue);
+
       opacity: 0.3;
     }
 
     .trace-line.is-highlight .trace-tag {
       grid-column: 3;
       grid-row: 1;
+
       min-width: 0;
+
+      margin: 0;
+
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      margin: 0;
-      letter-spacing: 0.03em;
+
       color: var(--research-blue);
-      opacity: 0.9;
+
       font-size: 0.82em;
       font-style: normal;
       font-weight: 400;
+      letter-spacing: 0.03em;
+
+      opacity: 0.9;
     }
 
     .trace-line.is-highlight .trace-detail {
@@ -411,39 +528,65 @@
       grid-row: 2;
 
       display: block;
+
       width: 100%;
       min-width: 0;
-      max-height: none;
 
       margin: 3px 0 0;
       padding: 0;
+
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+
       color: #444444;
-      opacity: 0.91;
+
       font-size: 0.86em;
       font-style: normal;
       font-weight: 400;
       line-height: 1.4;
-      transform: none;
-      transition: none;
+
+      opacity: 0.91;
     }
 
-    .divider {
-      height: 0.5px;
-      background: #dcdcdc;
-      margin: 0;
+    .trace-detail a {
+      color: inherit;
+
+      text-decoration-line: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+
+      transition:
+        color 0.15s ease,
+        text-decoration-color 0.15s ease;
     }
+
+    .trace-detail a:hover,
+    .trace-detail a:focus-visible {
+      color: var(--research-blue);
+
+      text-decoration-color:
+        rgba(11, 31, 58, 0.28);
+    }
+
+    .trace-detail a:focus-visible {
+      outline:
+        1px solid rgba(11, 31, 58, 0.22);
+
+      outline-offset: 3px;
+    }
+
+
+    /* =========================
+       Layout
+       ========================= */
 
     .timeline-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 270px;
-      column-gap: 20px;
-      align-items: start;
+      display: block;
 
-      width: calc(100% + 270px);
-      max-width: 1360px;
+      width: 100%;
+      max-width: none;
 
       overflow: visible;
     }
@@ -453,232 +596,33 @@
       min-width: 0;
     }
 
-    .timeline-signal-panel {
-      position: sticky;
-      top: 118px;
 
-      width: 270px;
-      min-width: 0;
-      box-sizing: border-box;
-      justify-self: stretch;
-
-      margin-top: 18px;
-      padding: 18px 0 18px 22px;
-
-      border-left: 1px solid rgba(11, 31, 58, 0.12);
-      color: var(--research-blue);
-      font-family: Georgia, serif;
-    }
-
-    .signal-kicker {
-      font-size: 0.68em;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      opacity: 0.45;
-      margin-bottom: 14px;
-    }
-
-    .signal-year {
-      font-size: 1em;
-      letter-spacing: 0.14em;
-      font-weight: 400;
-      margin-bottom: 6px;
-    }
-
-    .signal-note {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-
-      margin-bottom: 20px;
-      max-width: 250px;
-
-      font-size: 0.68em;
-      line-height: 1.45;
-      letter-spacing: 0.045em;
-      font-style: normal;
-
-      color: rgba(11, 31, 58, 0.56);
-    }
-
-    .signal-note span {
-      position: relative;
-      display: block;
-      padding-left: 12px;
-    }
-
-    .signal-note span::before {
-      content: "";
-
-      position: absolute;
-      left: 0;
-      top: 0.68em;
-
-      width: 3px;
-      height: 3px;
-
-      border-radius: 50%;
-      background: rgba(11, 31, 58, 0.36);
-
-      transform: translateY(-50%);
-    }
-
-    .signal-rows {
-      margin-bottom: 22px;
-    }
-
-    .signal-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: center;
-
-      padding: 8px 0;
-
-      border-bottom:
-        1px solid rgba(11, 31, 58, 0.075);
-    }
-
-    .signal-label {
-      min-width: 0;
-
-      font-size: 0.71em;
-      font-weight: 500;
-      line-height: 1.35;
-      letter-spacing: 0.025em;
-
-      color: rgba(11, 31, 58, 0.78);
-
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .signal-blocks {
-      display: flex;
-      gap: 4px;
-      align-items: center;
-      justify-content: flex-end;
-      min-width: 58px;
-    }
-
-    .signal-blocks i {
-      display: block;
-      width: 8px;
-      height: 8px;
-
-      border-radius: 1px;
-
-      background: rgba(11, 31, 58, 0.4);
-      box-shadow:
-        inset 0 0 0 1px rgba(11, 31, 58, 0.1);
-    }
-
-    .signal-blocks i.is-soft {
-      background: rgba(11, 31, 58, 0.18);
-    }
-
-    .signal-count {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-
-      min-width: 58px;
-      height: 8px;
-
-      font-size: 0.85em;
-      line-height: 1;
-      font-weight: 400;
-      font-variant-numeric: tabular-nums;
-      letter-spacing: 0.02em;
-
-      color: rgba(11, 31, 58, 0.72);
-    }
-
-    .signal-month-title {
-      margin-top: 20px;
-      margin-bottom: 10px;
-
-      font-size: 0.64em;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      opacity: 0.4;
-    }
-
-    .signal-month-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 4px;
-      max-width: 210px;
-    }
-
-    .signal-month {
-      position: relative;
-      height: 12px;
-
-      border-radius: 2px;
-      background: rgba(11, 31, 58, 0.035);
-      box-shadow: inset 0 0 0 1px rgba(11, 31, 58, 0.045);
-    }
-
-    .signal-month.has-signal {
-      background: rgba(11, 31, 58, 0.12);
-    }
-
-    .signal-month.strong {
-      background: rgba(11, 31, 58, 0.24);
-    }
-
-    .signal-month::after {
-      content: attr(data-month);
-
-      position: absolute;
-      top: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-
-      font-size: 0.52em;
-      opacity: 0.32;
-      letter-spacing: 0.02em;
-    }
-
-    @media (max-width: 1520px) {
-      .timeline-layout {
-        display: block;
-        width: 100%;
-        max-width: none;
-      }
-
-      .timeline-main {
-        width: 100%;
-        max-width: none;
-      }
-
-      .timeline-signal-panel {
-        display: none;
-      }
-
-      .trace-lines {
-        width: 100%;
-      }
-    }
+    /* =========================
+       Mobile
+       ========================= */
 
     @media (max-width: 640px) {
+
       .page-content {
         font-size: 1em;
       }
 
       .log-header-block {
-        border-bottom: none;
-        padding-bottom: 0;
         margin-bottom: 12px;
+        padding-bottom: 0;
+
+        border-bottom: none;
       }
 
       .log-header {
+        margin-bottom: 4px;
+
         font-size: 0.95em;
+
         text-transform: uppercase;
         letter-spacing: 0.14em;
+
         opacity: 0.72;
-        margin-bottom: 4px;
       }
 
       .log-back {
@@ -702,21 +646,30 @@
 
       .year-tabs {
         display: flex;
+
         gap: 15px;
+
         flex-wrap: nowrap;
+
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
 
         margin-top: -3px;
         margin-bottom: 3px;
+
         padding: 3px 8px;
 
         font-size: 0.74em;
         letter-spacing: 0.08em;
 
-        background: rgba(255, 255, 255, 0.22);
-        border: 1px solid rgba(11, 31, 58, 0.035);
+        background:
+          rgba(255, 255, 255, 0.22);
+
+        border:
+          1px solid rgba(11, 31, 58, 0.035);
+
         border-radius: 3px;
+
+        -webkit-overflow-scrolling: touch;
       }
 
       .year-tabs::-webkit-scrollbar {
@@ -725,8 +678,10 @@
 
       .year-tabs span {
         flex: 0 0 auto;
-        padding: 3px 2px;
+
         margin-right: 0;
+        padding: 3px 2px;
+
         opacity: 0.38;
       }
 
@@ -736,15 +691,30 @@
 
       .divider {
         margin: 5px 0;
+
         max-width: 400px;
       }
 
+      .trace-year {
+        margin: 17px 0 15px;
+
+        font-size: 0.76em;
+        letter-spacing: 0.16em;
+
+        opacity: 0.76;
+      }
+
+      .year-section+.year-section .trace-year {
+        margin-top: 27px;
+      }
+
       .trace-entry {
-        position: relative;
         display: block;
 
+        position: relative;
+
         margin: 0;
-        padding: 0 0 20px;
+        padding: 0 0 22px;
 
         border-bottom: 0;
       }
@@ -752,11 +722,37 @@
       .year-section .trace-entry:last-child {
         padding-bottom: 24px;
 
-        border-bottom: 1px solid rgba(11, 31, 58, 0.10);
+        border-bottom:
+          1px solid rgba(11, 31, 58, 0.10);
       }
 
-      .trace-entry:last-child {
-        padding-bottom: 0;
+      .trace-entry+.trace-entry {
+        margin-top: 5px;
+      }
+
+      .trace-context {
+        margin-bottom: 10px;
+        padding-top: 0;
+      }
+
+      .trace-affiliation {
+        font-size: 0.66em;
+        line-height: 1.3;
+        letter-spacing: 0.055em;
+
+        color: rgba(11, 31, 58, 0.62);
+
+        opacity: 1;
+      }
+
+      .trace-lines {
+        width: 100%;
+        min-width: 0;
+
+        margin-top: 0;
+        padding-left: 0;
+
+        border-left: 0;
       }
 
       .trace-line,
@@ -770,56 +766,21 @@
         margin-top: 12px;
       }
 
-
-      .trace-detail {
-        display: block;
-        margin-bottom: 0;
-      }
-
-      .trace-month-block {
-        display: flex;
-        align-items: baseline;
-        gap: 8px;
-
-        margin-bottom: 15px;
-      }
-
-      .trace-month,
-      .trace-affiliation {
-        display: block;
-
-        margin-top: 5px;
-        padding: 0;
-
-        line-height: 1.2;
-      }
-
-      .trace-month {
-        flex: 0 0 auto;
-
-        font-size: 0.73em;
-      }
-
-      .trace-affiliation {
-        display: none;
-      }
-
-      .trace-lines {
-        min-width: 0;
-        padding-left: 0;
-        border-left: 0;
-        margin-top: -5px;
-      }
-
       .trace-line,
       .trace-line.is-soft {
         display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-rows: auto auto;
+
+        grid-template-columns:
+          minmax(0, 1fr);
+
+        grid-template-rows:
+          auto auto;
+
         row-gap: 2px;
 
         width: 100%;
         min-width: 0;
+
         box-sizing: border-box;
 
         font-size: 0.74em;
@@ -830,13 +791,14 @@
       }
 
       .trace-line.is-soft {
-        border: 0;
-        border-left: 1px solid rgba(11, 31, 58, 0.14);
+        border-left:
+          1px solid rgba(11, 31, 58, 0.14);
       }
 
       .trace-event,
       .trace-line.is-soft .trace-event {
         display: block;
+
         grid-column: 1;
         grid-row: 1;
 
@@ -848,11 +810,12 @@
         white-space: nowrap;
 
         color: #424954;
-        opacity: 0.82;
 
         font-size: 1.05em;
         font-weight: 400;
         letter-spacing: 0.03em;
+
+        opacity: 0.82;
       }
 
       .trace-dot,
@@ -863,21 +826,25 @@
 
       .trace-line.is-soft .trace-tag {
         display: block;
+
         grid-column: 1;
         grid-row: 2;
 
         min-width: 0;
         max-width: 100%;
+
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
 
         color: var(--research-blue);
-        opacity: 0.55;
-        letter-spacing: 0.02em;
+
         font-size: 0.9em;
         font-style: normal;
         font-weight: 400;
+        letter-spacing: 0.02em;
+
+        opacity: 0.55;
       }
 
       .trace-line:not(.is-highlight) .trace-detail {
@@ -886,20 +853,30 @@
 
       .trace-line.is-highlight {
         display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-rows: auto auto auto;
+
+        grid-template-columns:
+          minmax(0, 1fr);
+
+        grid-template-rows:
+          auto auto auto;
+
         row-gap: 2px;
 
         width: 100%;
         min-width: 0;
+
         box-sizing: border-box;
+
         background: none;
         border: 0;
-        border-left: 1.0px solid rgba(11, 31, 58, 0.65);
+
+        border-left:
+          1px solid rgba(11, 31, 58, 0.65);
       }
 
       .trace-line.is-highlight .trace-event {
         display: block;
+
         grid-column: 1;
         grid-row: 1;
 
@@ -911,56 +888,63 @@
         white-space: nowrap;
 
         color: #111111;
-        opacity: 1;
-        letter-spacing: 0.06em;
+
         font-size: 1.05em;
         font-weight: 500;
+        letter-spacing: 0.06em;
+
+        opacity: 1;
       }
 
       .trace-line.is-highlight .trace-tag {
         display: block;
+
         grid-column: 1;
         grid-row: 2;
 
         min-width: 0;
         max-width: 100%;
+
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
 
         color: var(--research-blue);
-        opacity: 0.85;
-        letter-spacing: 0.02em;
+
         font-size: 0.9em;
         font-style: normal;
         font-weight: 400;
+        letter-spacing: 0.02em;
+
+        opacity: 0.85;
       }
 
       .trace-line.is-highlight .trace-detail {
         display: block;
+
         grid-column: 1;
         grid-row: 3;
 
         width: 100%;
         min-width: 0;
         max-width: 100%;
-        max-height: none;
+
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
 
         color: #535b66;
-        opacity: 0.85;
-        letter-spacing: 0.01em;
+
         font-size: 0.88em;
         font-style: italic;
         font-weight: 400;
         line-height: 1.05;
+        letter-spacing: 0.01em;
 
-        transform: none;
-        transition: none;
+        opacity: 0.85;
       }
     }
+
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -974,60 +958,104 @@
   </style>
 </head>
 
+
 <body id="top">
+
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
+
   <header class="site-header">
+
     <div class="site-header-row">
 
-      <a href="/" class="site-name">Sangseok Han</a>
+      <a href="/" class="site-name">
+        Sangseok Han
+      </a>
 
       <div class="lang-switch" aria-label="Language selection">
-        <a href="#" data-lang="en">EN</a>
-        <span aria-hidden="true">·</span>
-        <a href="#" data-lang="ja">JP</a>
+
+        <a href="#" data-lang="en">
+          EN
+        </a>
+
+        <span aria-hidden="true">
+          ·
+        </span>
+
+        <a href="#" data-lang="ja">
+          JP
+        </a>
+
       </div>
 
     </div>
+
   </header>
 
+
   <div class="nav">
-    <a href="/" data-en="Home" data-ja="ホーム">Home</a>
+
+    <a href="/" data-en="Home" data-ja="ホーム">
+      Home
+    </a>
+
     <a href="/research/" class="active" aria-current="location" data-en="Research" data-ja="研究">
       Research
     </a>
-    <a href="/publications/" data-en="Publications" data-ja="論文">Publications</a>
-    <a href="/profile/" data-en="Profile" data-ja="プロフィール">Profile</a>
+
+    <a href="/publications/" data-en="Publications" data-ja="論文">
+      Publications
+    </a>
+
+    <a href="/profile/" data-en="Profile" data-ja="プロフィール">
+      Profile
+    </a>
+
     <a href="/contact/" data-en="Contact" data-ja="連絡先">
       Contact
     </a>
+
   </div>
 
+
   <div class="page-content">
+
 
     <div class="log-header-block">
 
       <nav class="log-back" aria-label="Timeline navigation">
+
         <a href="/research/">
-          <span class="log-back-arrow" aria-hidden="true">←</span>
+
+          <span class="log-back-arrow" aria-hidden="true">
+            ←
+          </span>
 
           <span data-en="Research" data-ja="研究">
             Research
           </span>
+
         </a>
+
       </nav>
+
 
       <h1 class="log-header" data-en="Academic Timeline" data-ja="研究・学術年表">
         Academic Timeline
       </h1>
 
+
       <div class="log-sub">
-        <em class="log-sub-description" data-en="Academic study and research activities since 2021"
-          data-ja="2021年以降の学業および研究活動">
-          Academic study and research activities since 2021
+
+        <em class="log-sub-description" data-en="Selected academic and research activities since 2021"
+          data-ja="2021年以降の主な学業・研究活動">
+          Selected academic and research activities since 2021
         </em>
 
         <span class="log-affiliation-note"
@@ -1035,45 +1063,89 @@
           data-ja="所属は当時の在籍機関を示しており、研究実施機関とは異なる場合があります。">
           Affiliation indicates my institution at the time; research location may differ.
         </span>
+
       </div>
+
     </div>
 
+
     <div class="year-tabs">
-      <span class="active" onclick="showAllYears(this)">All</span>
-      <span onclick="showYear('y2026', this)">2026</span>
-      <span onclick="showYear('y2025', this)">2025</span>
-      <span onclick="showYear('y2024', this)">2024</span>
-      <span onclick="showYear('y2023', this)">2023</span>
-      <span onclick="showYear('y2022', this)">2022</span>
-      <span onclick="showYear('y2021', this)">2021</span>
+
+      <span class="active" onclick="showAllYears(this)">
+        All
+      </span>
+
+      <span onclick="showYear('y2026', this)">
+        2026
+      </span>
+
+      <span onclick="showYear('y2025', this)">
+        2025
+      </span>
+
+      <span onclick="showYear('y2024', this)">
+        2024
+      </span>
+
+      <span onclick="showYear('y2023', this)">
+        2023
+      </span>
+
+      <span onclick="showYear('y2022', this)">
+        2022
+      </span>
+
+      <span onclick="showYear('y2021', this)">
+        2021
+      </span>
+
     </div>
+
 
     <div class="divider"></div>
 
 
     <div class="timeline-layout">
+
       <main class="timeline-main">
 
+
+        <!-- =====================
+             2026
+             ===================== -->
+
         <div class="year-section active" id="y2026">
+
+          <div class="trace-year">
+            2026
+          </div>
+
+
+          <!-- Seoul National University -->
+
           <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="August 2026" data-ja="2026年8月">
-                August 2026
-              </div>
+
+            <div class="trace-context">
 
               <div class="trace-affiliation" data-en="Seoul National University" data-ja="ソウル大学校">
                 Seoul National University
               </div>
+
             </div>
+
 
             <div class="trace-lines">
 
-              <div class="trace-line is-highlight">
+
+              <div class="trace-line is-highlight" data-date="2026-08">
+
                 <span class="trace-event" data-en="Journal article published" data-ja="学術論文を発表">
                   Journal article published
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag">
                   <em>Ocean Engineering</em>
@@ -1086,14 +1158,19 @@
                     single-parameter representation
                   </a>
                 </span>
+
               </div>
 
-              <div class="trace-line is-highlight">
+
+              <div class="trace-line is-highlight" data-date="2026-08">
+
                 <span class="trace-event" data-en="Admitted to doctoral programme" data-ja="博士後期課程に合格">
                   Admitted to doctoral programme
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag" data-en="Kyoto University" data-ja="京都大学">
                   Kyoto University
@@ -1103,30 +1180,19 @@
                   data-ja="大学院工学研究科 — 2027年4月入学">
                   Graduate School of Engineering — April 2027 admission
                 </span>
+
               </div>
 
-            </div>
 
-          </div>
+              <div class="trace-line is-highlight" data-date="2026-07">
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="July 2026" data-ja="2026年7月">
-                July 2026
-              </div>
-
-              <div class="trace-affiliation" data-en="Seoul National University" data-ja="ソウル大学校">
-                Seoul National University
-              </div>
-            </div>
-
-            <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
                 <span class="trace-event" data-en="Visiting Researcher appointment commenced" data-ja="客員研究員として着任">
                   Visiting Researcher appointment commenced
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag" data-en="RIMSE, Seoul National University" data-ja="RIMSE・ソウル大学校">
                   RIMSE, Seoul National University
@@ -1137,28 +1203,39 @@
                   data-ja="ITTC推奨手順に関連する研究業務を含む研究職">
                   Research appointment involving work related to an ITTC Recommended Procedure
                 </span>
+
               </div>
+
             </div>
+
           </div>
 
+
+          <!-- Independent Research -->
+
           <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="June 2026" data-ja="2026年6月">
-                June 2026
-              </div>
+
+            <div class="trace-context">
 
               <div class="trace-affiliation" data-en="Independent Research" data-ja="独立研究">
                 Independent Research
               </div>
+
             </div>
 
+
             <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
+
+
+              <div class="trace-line is-highlight" data-date="2026-06">
+
                 <span class="trace-event" data-en="Conference paper presented" data-ja="学会論文を発表">
                   Conference paper presented
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag">
                   36th Symposium on Naval Hydrodynamics
@@ -1168,54 +1245,19 @@
                   Han et al. — A computational fluid dynamics analysis of spatial roughness distributions on ship
                   resistance
                 </span>
-              </div>
-            </div>
-          </div>
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="May 2026" data-ja="2026年5月">
-                May 2026
               </div>
 
-              <div class="trace-affiliation" data-en="Independent Research" data-ja="独立研究">
-                Independent Research
-              </div>
-            </div>
 
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
-                <span class="trace-event" data-en="Conference paper accepted for presentation" data-ja="学会発表論文が採択">
-                  Conference paper accepted for presentation
-                </span>
+              <div class="trace-line is-highlight" data-date="2026-04">
 
-                <span class="trace-dot">·</span>
-
-                <span class="trace-tag">
-                  36th Symposium on Naval Hydrodynamics
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Apr 2026" data-ja="2026年4月">
-                Apr 2026
-              </div>
-
-              <div class="trace-affiliation" data-en="Independent Research" data-ja="独立研究">
-                Independent Research
-              </div>
-            </div>
-
-            <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
                 <span class="trace-event" data-en="Journal article published" data-ja="学術論文を発表">
                   Journal article published
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag">
                   <em>Ocean Engineering</em>
@@ -1227,63 +1269,53 @@
                     Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface conditions
                   </a>
                 </span>
-              </div>
-            </div>
-          </div>
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Jan 2026" data-ja="2026年1月">
-                Jan 2026
               </div>
 
-              <div class="trace-affiliation" data-en="Independent Research" data-ja="独立研究">
-                Independent Research
-              </div>
             </div>
 
-            <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
-                <span class="trace-event" data-en="Conference proceedings paper published" data-ja="プロシーディングス論文を発表">
-                  Conference proceedings paper published
-                </span>
-
-                <span class="trace-dot">·</span>
-
-                <span class="trace-tag">
-                  JASNAOE 2025
-                </span>
-
-                <span class="trace-detail">
-                  Han and Lee — CFD-based model predictive control for point absorber wave energy converters
-                </span>
-              </div>
-            </div>
           </div>
 
         </div>
 
 
+
+        <!-- =====================
+             2025
+             ===================== -->
+
         <div class="year-section" id="y2025">
 
+          <div class="trace-year">
+            2025
+          </div>
+
+
+          <!-- The University of Osaka -->
+
           <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Nov 2025" data-ja="2025年11月">
-                Nov 2025
-              </div>
+
+            <div class="trace-context">
 
               <div class="trace-affiliation" data-en="The University of Osaka" data-ja="大阪大学">
                 The University of Osaka
               </div>
+
             </div>
 
+
             <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
+
+
+              <div class="trace-line is-highlight" data-date="2025-11">
+
                 <span class="trace-event" data-en="Conference paper presented" data-ja="学会論文を発表">
                   Conference paper presented
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag">
                   JASNAOE 2025
@@ -1292,156 +1324,84 @@
                 <span class="trace-detail">
                   Han and Lee — CFD-based model predictive control for point absorber wave energy converters
                 </span>
+
               </div>
 
-              <div class="trace-line is-soft">
-                <span class="trace-event" data-en="Research visit concluded" data-ja="研究訪問を終了">
-                  Research visit concluded
+
+              <div class="trace-line is-soft" data-date="2025-10">
+
+                <span class="trace-event" data-en="Research visit · 6 weeks" data-ja="研究訪問 · 6週間">
+                  Research visit · 6 weeks
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag" data-en="The University of Osaka" data-ja="大阪大学">
                   The University of Osaka
                 </span>
+
               </div>
+
             </div>
+
           </div>
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Oct 2025" data-ja="2025年10月">
-                Oct 2025
-              </div>
 
-              <div class="trace-affiliation" data-en="The University of Osaka" data-ja="大阪大学">
-                The University of Osaka
-              </div>
-            </div>
-
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
-                <span class="trace-event" data-en="Research visit commenced" data-ja="研究訪問を開始">
-                  Research visit commenced
-                </span>
-
-                <span class="trace-dot">·</span>
-
-                <span class="trace-tag" data-en="The University of Osaka" data-ja="大阪大学">
-                  The University of Osaka
-                </span>
-              </div>
-            </div>
-          </div>
+          <!-- University of Strathclyde -->
 
           <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Sep 2025" data-ja="2025年9月">
-                Sep 2025
-              </div>
+
+            <div class="trace-context">
 
               <div class="trace-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
                 University of Strathclyde
               </div>
+
             </div>
 
+
             <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
+
+
+              <div class="trace-line is-highlight" data-date="2025-09">
+
                 <span class="trace-event" data-en="MSc degree awarded with Distinction" data-ja="Distinction評価で修士号を取得">
                   MSc degree awarded with Distinction
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
                   University of Strathclyde
                 </span>
 
                 <span class="trace-detail">
-                  <span data-en="MSc thesis" data-ja="修士論文">MSc thesis</span>
+
+                  <span data-en="MSc thesis" data-ja="修士論文">
+                    MSc thesis
+                  </span>
+
                   — Numerical investigation of fluid–structure interaction in semi-submersible FOWT
-                </span>
-              </div>
-            </div>
-          </div>
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Aug 2025" data-ja="2025年8月">
-                Aug 2025
-              </div>
-
-              <div class="trace-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-                University of Strathclyde
-              </div>
-            </div>
-
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
-                <span class="trace-event" data-en="Research featured in institutional news" data-ja="研究成果が大学ニュースで紹介">
-                  Research featured in institutional news
                 </span>
 
-                <span class="trace-dot">·</span>
-
-                <span class="trace-tag" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-                  University of Strathclyde
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Jul 2025" data-ja="2025年7月">
-                Jul 2025
               </div>
 
-              <div class="trace-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-                University of Strathclyde
-              </div>
-            </div>
 
-            <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
-                <span class="trace-event" data-en="Journal article featured on issue cover" data-ja="学術論文が号表紙に掲載">
-                  Journal article featured on issue cover
+              <div class="trace-line is-highlight" data-date="2025-07">
+
+                <span class="trace-event" data-en="Journal article published and featured on issue cover"
+                  data-ja="学術論文を発表・号表紙に掲載">
+                  Journal article published and featured on issue cover
                 </span>
 
-                <span class="trace-dot">·</span>
-
-                <span class="trace-tag">
-                  Journal of Marine Science and Engineering
+                <span class="trace-dot">
+                  ·
                 </span>
-
-                <span class="trace-detail">
-                  Han et al. —
-                  <a href="/publications/temperature-ittc/">
-                    Temperature-induced errors in ITTC model–ship extrapolation
-                  </a>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Jun 2025" data-ja="2025年6月">
-                Jun 2025
-              </div>
-
-              <div class="trace-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-                University of Strathclyde
-              </div>
-            </div>
-
-            <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
-                <span class="trace-event" data-en="Journal article published" data-ja="学術論文を発表">
-                  Journal article published
-                </span>
-
-                <span class="trace-dot">·</span>
 
                 <span class="trace-tag">
                   <em>Journal of Marine Science and Engineering</em>
@@ -1453,93 +1413,40 @@
                     Temperature-induced errors in ITTC model–ship extrapolation
                   </a>
                 </span>
+
               </div>
 
-              <div class="trace-line is-soft">
+              <div class="trace-line is-highlight" data-date="2025-06">
+
                 <span class="trace-event" data-en="Conference paper presented by co-author" data-ja="共著者が学会論文を発表">
                   Conference paper presented by co-author
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag">
                   MARINE 2025
                 </span>
-              </div>
-            </div>
-          </div>
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="May 2025" data-ja="2025年5月">
-                May 2025
-              </div>
-
-              <div class="trace-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-                University of Strathclyde
-              </div>
-            </div>
-
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
-                <span class="trace-event" data-en="Workshop presentation delivered" data-ja="ワークショップで研究発表を実施">
-                  Workshop presentation delivered
+                <span class="trace-detail">
+                  Han et al. — Numerical analysis of fluid-structure interaction for semi-submersible floating offshore
+                  wind turbines
                 </span>
 
-                <span class="trace-dot">·</span>
-
-                <span class="trace-tag">
-                  WSOS 2025
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Apr 2025" data-ja="2025年4月">
-                Apr 2025
               </div>
 
-              <div class="trace-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-                University of Strathclyde
-              </div>
-            </div>
 
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
-                <span class="trace-event" data-en="International Conference Travel Bursary awarded"
-                  data-ja="国際学会渡航助成金を受給">
-                  International Conference Travel Bursary awarded
-                </span>
+              <div class="trace-line is-highlight" data-date="2025-03">
 
-                <span class="trace-dot">·</span>
-
-                <span class="trace-tag">
-                  The Worshipful Company of Shipwrights
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Mar 2025" data-ja="2025年3月">
-                Mar 2025
-              </div>
-
-              <div class="trace-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-                University of Strathclyde
-              </div>
-            </div>
-
-            <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
                 <span class="trace-event" data-en="Conference paper presented" data-ja="学会論文を発表">
                   Conference paper presented
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag">
                   64ICNAMI
@@ -1548,60 +1455,71 @@
                 <span class="trace-detail">
                   Han et al. — Impact of towing tank temperature on model-ship extrapolation
                 </span>
-              </div>
-            </div>
-          </div>
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Feb 2025" data-ja="2025年2月">
-                Feb 2025
               </div>
 
-              <div class="trace-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-                University of Strathclyde
-              </div>
-            </div>
 
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
+              <div class="trace-line is-soft" data-date="2025-02">
+
                 <span class="trace-event" data-en="Certificate of Excellence in Reviewing received"
                   data-ja="優秀査読者証明書を受領">
                   Certificate of Excellence in Reviewing received
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag">
                   <em>Ocean Engineering</em>
                 </span>
+
               </div>
+
             </div>
+
           </div>
 
         </div>
 
 
+
+        <!-- =====================
+             2024
+             ===================== -->
+
         <div class="year-section" id="y2024">
 
+          <div class="trace-year">
+            2024
+          </div>
+
+
+          <!-- University of Strathclyde -->
+
           <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Nov 2024" data-ja="2024年11月">
-                Nov 2024
-              </div>
+
+            <div class="trace-context">
 
               <div class="trace-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
                 University of Strathclyde
               </div>
+
             </div>
 
+
             <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
+
+
+              <div class="trace-line is-highlight" data-date="2024-11">
+
                 <span class="trace-event" data-en="Journal article published" data-ja="学術論文を発表">
                   Journal article published
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag">
                   <em>Ocean Engineering</em>
@@ -1613,88 +1531,84 @@
                     Resistance and speed penalty of a naval ship with hull roughness
                   </a>
                 </span>
-              </div>
-            </div>
-          </div>
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Sep 2024" data-ja="2024年9月">
-                Sep 2024
               </div>
 
-              <div class="trace-affiliation" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
-                University of Strathclyde
-              </div>
-            </div>
 
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
+              <div class="trace-line is-soft" data-date="2024-09">
+
                 <span class="trace-event" data-en="MSc programme commenced" data-ja="修士課程を開始">
                   MSc programme commenced
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag" data-en="Advanced Naval Architecture, University of Strathclyde"
                   data-ja="先進船舶工学・ストラスクライド大学">
                   Advanced Naval Architecture, University of Strathclyde
                 </span>
+
               </div>
+
             </div>
+
           </div>
 
+
+          <!-- Inha University -->
+
           <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Aug 2024" data-ja="2024年8月">
-                Aug 2024
-              </div>
+
+            <div class="trace-context">
 
               <div class="trace-affiliation" data-en="Inha University" data-ja="仁荷大学">
                 Inha University
               </div>
+
             </div>
 
+
             <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
+
+
+              <div class="trace-line is-highlight" data-date="2024-08">
+
                 <span class="trace-event" data-en="BEng degree awarded with early completion" data-ja="早期卒業により工学学士号を取得">
                   BEng degree awarded with early completion
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag" data-en="Inha University" data-ja="仁荷大学">
                   Inha University
                 </span>
 
                 <span class="trace-detail">
+
                   <span data-en="Graduation project" data-ja="卒業研究">
                     Graduation project
                   </span>
+
                   — FOWT and wave-breaker interaction analysis using CFD and EFD
+
                 </span>
-              </div>
-            </div>
-          </div>
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Jul 2024" data-ja="2024年7月">
-                Jul 2024
               </div>
 
-              <div class="trace-affiliation" data-en="Inha University" data-ja="仁荷大学">
-                Inha University
-              </div>
-            </div>
 
-            <div class="trace-lines">
-              <div class="trace-line is-highlight" tabindex="0">
+              <div class="trace-line is-highlight" data-date="2024-07">
+
                 <span class="trace-event" data-en="Best Paper Award received" data-ja="優秀論文賞を受賞">
                   Best Paper Award received
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag">
                   13th National Congress on Fluid Engineering
@@ -1703,289 +1617,223 @@
                 <span class="trace-detail">
                   Han et al. — Uncertainty of the ITTC 1957 correlation line with temperature variations
                 </span>
-              </div>
-            </div>
-          </div>
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Jun 2024" data-ja="2024年6月">
-                Jun 2024
               </div>
 
-              <div class="trace-affiliation" data-en="Inha University" data-ja="仁荷大学">
-                Inha University
-              </div>
-            </div>
 
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
+              <div class="trace-line is-soft" data-date="2024-06">
+
                 <span class="trace-event" data-en="Dean's International Excellence Scholarship awarded"
                   data-ja="学部長国際優秀奨学金を受給">
                   Dean's International Excellence Scholarship awarded
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
                   University of Strathclyde
                 </span>
+
               </div>
+
             </div>
+
           </div>
 
         </div>
 
 
+
+        <!-- =====================
+             2023
+             ===================== -->
+
         <div class="year-section" id="y2023">
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Dec 2023" data-ja="2023年12月">
-                Dec 2023
-              </div>
-
-              <div class="trace-affiliation" data-en="Inha University" data-ja="仁荷大学">
-                Inha University
-              </div>
-            </div>
-
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
-                <span class="trace-event" data-en="Academic Merit Scholarship awarded" data-ja="成績優秀奨学金を受給">
-                  Academic Merit Scholarship awarded
-                </span>
-
-                <span class="trace-dot">·</span>
-
-                <span class="trace-tag" data-en="Inha University" data-ja="仁荷大学">
-                  Inha University
-                </span>
-              </div>
-            </div>
+          <div class="trace-year">
+            2023
           </div>
 
+
           <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Oct 2023" data-ja="2023年10月">
-                Oct 2023
-              </div>
+
+            <div class="trace-context">
 
               <div class="trace-affiliation" data-en="Inha University" data-ja="仁荷大学">
                 Inha University
               </div>
+
             </div>
 
+
             <div class="trace-lines">
-              <div class="trace-line is-soft">
+
+
+              <div class="trace-line is-soft" data-date="2023-10">
+
                 <span class="trace-event" data-en="Conference presentation delivered" data-ja="学会発表を実施">
                   Conference presentation delivered
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag">
                   The Society of Naval Architects of Korea
                 </span>
-              </div>
-            </div>
-          </div>
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Sep 2023" data-ja="2023年9月">
-                Sep 2023
               </div>
 
-              <div class="trace-affiliation" data-en="Inha University" data-ja="仁荷大学">
-                Inha University
-              </div>
-            </div>
 
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
-                <span class="trace-event" data-en="Student reporter role concluded" data-ja="学生記者としての活動を終了">
-                  Student reporter role concluded
-                </span>
+              <div class="trace-line is-soft" data-date="2023-08">
 
-                <span class="trace-dot">·</span>
-
-                <span class="trace-tag">
-                  The Korean Society of Ocean Engineers
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Aug 2023" data-ja="2023年8月">
-                Aug 2023
-              </div>
-
-              <div class="trace-affiliation" data-en="Inha University" data-ja="仁荷大学">
-                Inha University
-              </div>
-            </div>
-
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
                 <span class="trace-event" data-en="Industrial Technology Award received" data-ja="産業技術賞を受賞">
                   Industrial Technology Award received
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag">
                   The Society of Naval Architects of Korea
                 </span>
+
               </div>
 
-              <div class="trace-line is-soft">
-                <span class="trace-event" data-en="Autonomous boat competition team participation concluded"
-                  data-ja="自律航行艇競技チームでの活動を終了">
-                  Autonomous boat competition team participation concluded
-                </span>
-
-                <span class="trace-dot">·</span>
-
-                <span class="trace-tag" data-en="Inha University" data-ja="仁荷大学">
-                  Inha University
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Jul 2023" data-ja="2023年7月">
-                Jul 2023
-              </div>
-
-              <div class="trace-affiliation" data-en="Inha University" data-ja="仁荷大学">
-                Inha University
-              </div>
             </div>
 
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
-                <span class="trace-event" data-en="Undergraduate research role commenced" data-ja="学部研究生としての活動を開始">
-                  Undergraduate research role commenced
-                </span>
-
-                <span class="trace-dot">·</span>
-
-                <span class="trace-tag" data-en="Resistance Hydrodynamics Laboratory" data-ja="抵抗流体力学研究室">
-                  Resistance Hydrodynamics Laboratory
-                </span>
-              </div>
-            </div>
           </div>
 
         </div>
 
 
+
+        <!-- =====================
+             2022
+             ===================== -->
+
         <div class="year-section" id="y2022">
 
+          <div class="trace-year">
+            2022
+          </div>
+
+
           <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Nov 2022" data-ja="2022年11月">
-                Nov 2022
-              </div>
+
+            <div class="trace-context">
 
               <div class="trace-affiliation" data-en="Inha University" data-ja="仁荷大学">
                 Inha University
               </div>
+
             </div>
 
+
             <div class="trace-lines">
-              <div class="trace-line is-soft">
+
+
+              <div class="trace-line is-soft" data-date="2022-11">
+
                 <span class="trace-event" data-en="Excellence Award received" data-ja="優秀賞を受賞">
                   Excellence Award received
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag" data-en="National Student Ship Design Contest" data-ja="全国学生船舶設計コンテスト">
                   National Student Ship Design Contest
                 </span>
-              </div>
-            </div>
-          </div>
 
-          <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Aug 2022" data-ja="2022年8月">
-                Aug 2022
               </div>
 
-              <div class="trace-affiliation" data-en="Inha University" data-ja="仁荷大学">
-                Inha University
-              </div>
-            </div>
 
-            <div class="trace-lines">
-              <div class="trace-line is-soft">
+              <div class="trace-line is-soft" data-date="2022-08">
+
                 <span class="trace-event" data-en="Autonomous System Award received" data-ja="自律システム賞を受賞">
                   Autonomous System Award received
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag">
                   KABOAT 2022
                 </span>
+
               </div>
+
             </div>
+
           </div>
 
         </div>
 
 
+
+        <!-- =====================
+             2021
+             ===================== -->
+
         <div class="year-section" id="y2021">
 
+          <div class="trace-year">
+            2021
+          </div>
+
+
           <div class="trace-entry">
-            <div class="trace-month-block">
-              <div class="trace-month" data-en="Mar 2021" data-ja="2021年3月">
-                Mar 2021
-              </div>
+
+            <div class="trace-context">
 
               <div class="trace-affiliation" data-en="Inha University" data-ja="仁荷大学">
                 Inha University
               </div>
+
             </div>
 
+
             <div class="trace-lines">
-              <div class="trace-line is-soft">
+
+
+              <div class="trace-line is-soft" data-date="2021-03">
+
                 <span class="trace-event" data-en="BEng programme commenced" data-ja="工学学士課程を開始">
                   BEng programme commenced
                 </span>
 
-                <span class="trace-dot">·</span>
+                <span class="trace-dot">
+                  ·
+                </span>
 
                 <span class="trace-tag" data-en="Naval Architecture and Ocean Engineering, Inha University"
                   data-ja="船舶海洋工学・仁荷大学">
                   Naval Architecture and Ocean Engineering, Inha University
                 </span>
+
               </div>
+
             </div>
+
           </div>
 
         </div>
 
+
       </main>
 
-      <aside class="timeline-signal-panel" aria-label="Academic record signal summary">
-        <div class="signal-kicker" data-en="Timeline Summary" data-ja="年表概要">
-          Timeline Summary
-        </div>
-        <div class="signal-year" id="signal-year"></div>
-        <div class="signal-note" id="signal-note"></div>
-        <div class="signal-rows" id="signal-rows"></div>
-      </aside>
 
       <footer class="site-footer">
+
         <div class="footer-signature">
+
           <span class="footer-name">
             Sangseok Han
           </span>
@@ -1993,9 +1841,12 @@
           <span class="footer-field" data-en="Research portfolio" data-ja="研究ポートフォリオ">
             Research portfolio
           </span>
+
         </div>
 
+
         <a class="footer-top" href="#top">
+
           <span data-en="Back to top" data-ja="ページ上部へ">
             Back to top
           </span>
@@ -2003,609 +1854,255 @@
           <span class="footer-top-arrow" aria-hidden="true">
             ↑
           </span>
+
         </a>
+
       </footer>
 
     </div>
 
-    <script>
-      const TIMELINE_SIGNALS = {
-        all: {
-          year: "2021–2026",
-          note: {
-            en: [
-              "Academic Development",
-              "Research Milestones"
-            ],
-            ja: [
-              "学術的発展",
-              "研究上の主要な歩み"
-            ]
-          },
-          rows: [
-            {
-              label: {
-                en: "Journal articles",
-                ja: "学術論文"
-              },
-              count: 4
-            },
-            {
-              label: {
-                en: "Scholarly presentations",
-                ja: "学会発表"
-              },
-              count: 7
-            },
-            {
-              label: {
-                en: "Research appointments & visits",
-                ja: "研究職・研究訪問"
-              },
-              count: 2
-            },
-            {
-              label: {
-                en: "Awards & recognition",
-                ja: "受賞・評価"
-              },
-              count: 9
-            }
-          ]
-        },
+  </div>
 
-        y2026: {
-          year: "2026",
-          note: {
-            en: [
-              "Visiting Research Appointment",
-              "Research Development"
-            ],
-            ja: [
-              "客員研究員としての研究活動",
-              "研究の発展"
-            ]
-          },
-          rows: [
-            {
-              label: {
-                en: "Journal articles",
-                ja: "学術論文"
-              },
-              count: 2
-            },
-            {
-              label: {
-                en: "Scholarly presentations",
-                ja: "学会発表"
-              },
-              count: 1
-            },
-            {
-              label: {
-                en: "Research appointments & visits",
-                ja: "研究職・研究訪問"
-              },
-              count: 1
-            },
-            {
-              label: {
-                en: "Awards & recognition",
-                ja: "受賞・評価"
-              },
-              count: 0
-            }
-          ]
-        },
 
-        y2025: {
-          year: "2025",
-          note: {
-            en: [
-              "Master’s Degree Completion",
-              "Research Visit"
-            ],
-            ja: [
-              "修士課程修了",
-              "研究訪問"
-            ]
-          },
-          rows: [
-            {
-              label: {
-                en: "Journal articles",
-                ja: "学術論文"
-              },
-              count: 1
-            },
-            {
-              label: {
-                en: "Scholarly presentations",
-                ja: "学会発表"
-              },
-              count: 4
-            },
-            {
-              label: {
-                en: "Research appointments & visits",
-                ja: "研究職・研究訪問"
-              },
-              count: 1
-            },
-            {
-              label: {
-                en: "Awards & recognition",
-                ja: "受賞・評価"
-              },
-              count: 3
-            }
-          ]
-        },
+  <script>
+    const DEFAULT_LANG = "en";
 
-        y2024: {
-          year: "2024",
-          note: {
-            en: [
-              "Bachelor’s Degree Completion",
-              "Master’s Programme Entry"
-            ],
-            ja: [
-              "学士課程修了",
-              "修士課程進学"
-            ]
-          },
-          rows: [
-            {
-              label: {
-                en: "Journal articles",
-                ja: "学術論文"
-              },
-              count: 1
-            },
-            {
-              label: {
-                en: "Scholarly presentations",
-                ja: "学会発表"
-              },
-              count: 1
-            },
-            {
-              label: {
-                en: "Research appointments & visits",
-                ja: "研究職・研究訪問"
-              },
-              count: 0
-            },
-            {
-              label: {
-                en: "Awards & recognition",
-                ja: "受賞・評価"
-              },
-              count: 2
-            }
-          ]
-        },
+    const SUPPORTED_LANGS =
+      new Set(["en", "ja"]);
 
-        y2023: {
-          year: "2023",
-          note: {
-            en: [
-              "Undergraduate Research Initiation",
-              "First Scholarly Presentation"
-            ],
-            ja: [
-              "学部研究活動の開始",
-              "初の学会発表"
-            ]
-          },
-          rows: [
-            {
-              label: {
-                en: "Journal articles",
-                ja: "学術論文"
-              },
-              count: 0
-            },
-            {
-              label: {
-                en: "Scholarly presentations",
-                ja: "学会発表"
-              },
-              count: 1
-            },
-            {
-              label: {
-                en: "Research appointments & visits",
-                ja: "研究職・研究訪問"
-              },
-              count: 0
-            },
-            {
-              label: {
-                en: "Awards & recognition",
-                ja: "受賞・評価"
-              },
-              count: 2
-            }
-          ]
-        },
 
-        y2022: {
-          year: "2022",
-          note: {
-            en: [
-              "Engineering Project Activities",
-              "Student Competition Recognition"
-            ],
-            ja: [
-              "工学プロジェクト活動",
-              "学生競技での受賞"
-            ]
-          },
-          rows: [
-            {
-              label: {
-                en: "Journal articles",
-                ja: "学術論文"
-              },
-              count: 0
-            },
-            {
-              label: {
-                en: "Scholarly presentations",
-                ja: "学会発表"
-              },
-              count: 0
-            },
-            {
-              label: {
-                en: "Research appointments & visits",
-                ja: "研究職・研究訪問"
-              },
-              count: 0
-            },
-            {
-              label: {
-                en: "Awards & recognition",
-                ja: "受賞・評価"
-              },
-              count: 2
-            }
-          ]
-        },
+    function showAllYears(el) {
 
-        y2021: {
-          year: "2021",
-          note: {
-            en: [
-              "Bachelor’s Programme Entry",
-              "Engineering Foundation"
-            ],
-            ja: [
-              "学士課程入学",
-              "工学基盤の形成"
-            ]
-          },
-          rows: [
-            {
-              label: {
-                en: "Journal articles",
-                ja: "学術論文"
-              },
-              count: 0
-            },
-            {
-              label: {
-                en: "Scholarly presentations",
-                ja: "学会発表"
-              },
-              count: 0
-            },
-            {
-              label: {
-                en: "Research appointments & visits",
-                ja: "研究職・研究訪問"
-              },
-              count: 0
-            },
-            {
-              label: {
-                en: "Awards & recognition",
-                ja: "受賞・評価"
-              },
-              count: 0
-            }
-          ]
-        }
-      };
+      document
+        .querySelectorAll(".year-section")
+        .forEach(section => {
+          section.classList.add("active");
+        });
 
-      const DEFAULT_LANG = "en";
-      const SUPPORTED_LANGS = new Set(["en", "ja"]);
 
-      function createSignalBlocks(count, soft = false) {
-        return Array.from({ length: count })
-          .map(() => (
-            `<i class="${soft ? "is-soft" : ""}" aria-hidden="true"></i>`
-          ))
-          .join("");
+      document
+        .querySelectorAll(".year-tabs span")
+        .forEach(tab => {
+          tab.classList.remove("active");
+        });
+
+
+      el.classList.add("active");
+    }
+
+
+    function showYear(id, el) {
+
+      const targetSection =
+        document.getElementById(id);
+
+
+      if (!targetSection) {
+        return;
       }
 
-      function updateTimelineSignals(id) {
-        const data = TIMELINE_SIGNALS[id];
 
-        if (!data) return;
+      document
+        .querySelectorAll(".year-section")
+        .forEach(section => {
+          section.classList.remove("active");
+        });
 
-        const lang =
-          document.documentElement.dataset.lang === "ja"
-            ? "ja"
-            : "en";
 
-        const yearEl =
-          document.getElementById("signal-year");
+      targetSection.classList.add("active");
 
-        const noteEl =
-          document.getElementById("signal-note");
 
-        const rowsEl =
-          document.getElementById("signal-rows");
+      document
+        .querySelectorAll(".year-tabs span")
+        .forEach(tab => {
+          tab.classList.remove("active");
+        });
 
-        const signalPanel =
-          document.querySelector(".timeline-signal-panel");
 
-        if (!yearEl || !noteEl || !rowsEl) return;
+      el.classList.add("active");
+    }
 
-        signalPanel?.setAttribute(
-          "aria-label",
-          lang === "ja"
-            ? "学術記録の概要"
-            : "Academic record signal summary"
-        );
 
-        yearEl.textContent = data.year;
+    function getSessionLang() {
 
-        noteEl.replaceChildren(
-          ...data.note[lang].map(item => {
-            const span =
-              document.createElement("span");
+      const saved =
+        sessionStorage.getItem("lang");
 
-            span.textContent = item;
 
-            return span;
-          })
-        );
+      return SUPPORTED_LANGS.has(saved)
+        ? saved
+        : DEFAULT_LANG;
+    }
 
-        rowsEl.innerHTML = data.rows.map(row => {
-          const label =
-            row.label[lang];
 
-          const countLabel =
-            lang === "ja"
-              ? `${label} ${row.count}件`
-              : `${row.count} ${label}`;
+    function applyLang(lang) {
 
-          const signalValue =
-            id === "all"
-              ? `
-        <span
-          class="signal-count"
-          aria-label="${countLabel}">
-          ${row.count}
-        </span>
-      `
-              : `
-        <span
-          class="signal-blocks"
-          aria-label="${countLabel}">
-          ${createSignalBlocks(row.count, row.soft)}
-        </span>
-      `;
-
-          return `
-    <div class="signal-row">
-      <span class="signal-label">
-        ${label}
-      </span>
-
-      ${signalValue}
-    </div>
-  `;
-        }).join("");
-      }
-
-      function showAllYears(el) {
-        document
-          .querySelectorAll(".year-section")
-          .forEach(section => {
-            section.classList.add("active");
-          });
-
-        document
-          .querySelectorAll(".year-tabs span")
-          .forEach(tab => {
-            tab.classList.remove("active");
-          });
-
-        el.classList.add("active");
-
-        updateTimelineSignals("all");
-      }
-
-      function showYear(id, el) {
-        const targetSection =
-          document.getElementById(id);
-
-        if (!targetSection) return;
-
-        document
-          .querySelectorAll(".year-section")
-          .forEach(section => {
-            section.classList.remove("active");
-          });
-
-        targetSection.classList.add("active");
-
-        document
-          .querySelectorAll(".year-tabs span")
-          .forEach(tab => {
-            tab.classList.remove("active");
-          });
-
-        el.classList.add("active");
-
-        updateTimelineSignals(id);
-      }
-
-      function getSessionLang() {
-        const saved =
-          sessionStorage.getItem("lang");
-
-        return SUPPORTED_LANGS.has(saved)
-          ? saved
+      const safeLang =
+        SUPPORTED_LANGS.has(lang)
+          ? lang
           : DEFAULT_LANG;
-      }
 
-      function applyLang(lang) {
-        const safeLang =
-          SUPPORTED_LANGS.has(lang)
-            ? lang
-            : DEFAULT_LANG;
 
-        document.documentElement.setAttribute(
-          "lang",
-          safeLang
-        );
+      document.documentElement.setAttribute(
+        "lang",
+        safeLang
+      );
 
-        document.documentElement.setAttribute(
-          "data-lang",
-          safeLang
-        );
 
-        document
-          .querySelectorAll("[data-en]")
-          .forEach(element => {
-            const value =
-              element.getAttribute(`data-${safeLang}`);
+      document.documentElement.setAttribute(
+        "data-lang",
+        safeLang
+      );
 
-            if (value !== null) {
-              element.textContent = value;
-            }
-          });
 
-        document
-          .querySelectorAll(".lang-switch a")
-          .forEach(link => {
-            link.classList.toggle(
-              "active",
-              link.dataset.lang === safeLang
+      document
+        .querySelectorAll("[data-en]")
+        .forEach(element => {
+
+          const value =
+            element.getAttribute(
+              `data-${safeLang}`
             );
+
+
+          if (value !== null) {
+            element.textContent = value;
+          }
+
+        });
+
+
+      document
+        .querySelectorAll(".lang-switch a")
+        .forEach(link => {
+
+          link.classList.toggle(
+            "active",
+            link.dataset.lang === safeLang
+          );
+
+        });
+
+
+      document
+        .querySelector(".lang-switch")
+        ?.setAttribute(
+          "aria-label",
+          safeLang === "ja"
+            ? "言語選択"
+            : "Language selection"
+        );
+
+
+      document
+        .querySelector(".log-back")
+        ?.setAttribute(
+          "aria-label",
+          safeLang === "ja"
+            ? "研究ページへのナビゲーション"
+            : "Timeline navigation"
+        );
+
+    }
+
+
+    function updateNavigationState() {
+
+      const nav =
+        document.querySelector(".nav");
+
+
+      if (!nav) {
+        return;
+      }
+
+
+      nav.classList.toggle(
+        "is-scrolled",
+        window.scrollY > 24
+      );
+    }
+
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+        applyLang(
+          getSessionLang()
+        );
+
+
+        showAllYears(
+          document.querySelector(
+            ".year-tabs span:first-child"
+          )
+        );
+
+
+        document
+          .querySelectorAll(
+            ".lang-switch a"
+          )
+          .forEach(link => {
+
+            link.addEventListener(
+              "click",
+              event => {
+
+                event.preventDefault();
+
+
+                const selected =
+                  SUPPORTED_LANGS.has(
+                    link.dataset.lang
+                  )
+                    ? link.dataset.lang
+                    : DEFAULT_LANG;
+
+
+                sessionStorage.setItem(
+                  "lang",
+                  selected
+                );
+
+
+                applyLang(
+                  selected
+                );
+
+              }
+            );
+
           });
 
-        document
-          .querySelector(".lang-switch")
-          ?.setAttribute(
-            "aria-label",
-            safeLang === "ja"
-              ? "言語選択"
-              : "Language selection"
-          );
 
-        document
-          .querySelector(".log-back")
-          ?.setAttribute(
-            "aria-label",
-            safeLang === "ja"
-              ? "研究ページへのナビゲーション"
-              : "Timeline navigation"
-          );
+        updateNavigationState();
 
-        const isAllActive =
-          document
-            .querySelector(".year-tabs span:first-child")
-            ?.classList.contains("active");
-
-        const activeYear = isAllActive
-          ? "all"
-          : document.querySelector(".year-section.active")?.id || "y2026";
-
-        updateTimelineSignals(activeYear);
       }
+    );
 
-      function updateNavigationState() {
-        const nav =
-          document.querySelector(".nav");
 
-        if (!nav) return;
-
-        nav.classList.toggle(
-          "is-scrolled",
-          window.scrollY > 24
-        );
+    window.addEventListener(
+      "scroll",
+      updateNavigationState,
+      {
+        passive: true
       }
+    );
 
-      document.addEventListener(
-        "DOMContentLoaded",
-        () => {
-          applyLang(getSessionLang());
-          showAllYears(
-            document.querySelector(".year-tabs span:first-child")
-          );
 
-          document
-            .querySelectorAll(".trace-line[tabindex]")
-            .forEach(line => {
-              line.removeAttribute("tabindex");
-            });
+    window.addEventListener(
+      "load",
+      () => {
 
-          document
-            .querySelectorAll(".trace-detail[title]")
-            .forEach(detail => {
-              detail.removeAttribute("title");
-            });
+        document
+          .querySelector(".page-content")
+          ?.classList.add("loaded");
 
-          document
-            .querySelectorAll(".lang-switch a")
-            .forEach(link => {
-              link.addEventListener(
-                "click",
-                event => {
-                  event.preventDefault();
-
-                  const selected =
-                    SUPPORTED_LANGS.has(link.dataset.lang)
-                      ? link.dataset.lang
-                      : DEFAULT_LANG;
-
-                  sessionStorage.setItem(
-                    "lang",
-                    selected
-                  );
-
-                  applyLang(selected);
-                }
-              );
-            });
-
-          updateNavigationState();
-        }
-      );
-
-      window.addEventListener(
-        "scroll",
-        updateNavigationState,
-        {
-          passive: true
-        }
-      );
-
-      window.addEventListener(
-        "load",
-        () => {
-          document
-            .querySelector(".page-content")
-            ?.classList.add("loaded");
-        }
-      );
-    </script>
+      }
+    );
+  </script>
 
 </body>
 

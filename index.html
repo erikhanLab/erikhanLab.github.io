@@ -4,20 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sangseok Han | Computational Marine Hydrodynamics</title>
+  <title>Sangseok Han | Computational Ship Hydrodynamics</title>
 
   <meta name="description"
-    content="Sangseok Han works on computational methods for complex marine hydrodynamics, focusing on modelling assumptions, hydrodynamic prediction, and coupled systems.">
+    content="Sangseok Han is a visiting researcher at Seoul National University working on computational ship hydrodynamics, including hull roughness, ship resistance, and added resistance in waves.">
 
   <link rel="canonical" href="https://sangseokhan.com/">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 
-  <meta property="og:title" content="Sangseok Han | Computational Marine Hydrodynamics">
+  <meta property="og:title" content="Sangseok Han | Computational Ship Hydrodynamics">
 
   <meta property="og:description"
-    content="Computational methods for complex and coupled marine hydrodynamics, with a focus on modelling assumptions and predictive challenges.">
+    content="Research in computational ship hydrodynamics, with current work on hull roughness, ship resistance, and added resistance in waves.">
 
   <meta property="og:image" content="https://sangseokhan.com/assets/favicon-32.png">
 
@@ -26,9 +26,10 @@
   <meta property="og:site_name" content="Sangseok Han">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Sangseok Han | Computational Marine Hydrodynamics">
+  <meta name="twitter:title" content="Sangseok Han | Computational Ship Hydrodynamics">
+
   <meta name="twitter:description"
-    content="Computational methods for complex and coupled marine hydrodynamics, with a focus on modelling assumptions and predictive challenges.">
+    content="Research in computational ship hydrodynamics, with current work on hull roughness, ship resistance, and added resistance in waves.">
   <meta name="twitter:image" content="https://sangseokhan.com/assets/favicon-32.png">
 
   <meta name="google-site-verification" content="nL6QQDjmwHfoed1SFO0BXdBElFNEMt-fPTveElHeu0U" />
@@ -1796,6 +1797,258 @@
         display: none;
       }
     }
+
+    @media (max-width: 640px) {
+
+  /* =========================================================
+     MOBILE TYPE SCALE
+     ========================================================= */
+
+  body {
+    padding: 60px 18px 48px;
+
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  /*
+   * 기존 0.8em 제거 효과.
+   * header 내부 전체가 연쇄적으로 너무 작아지는 문제 해결.
+   */
+  .header {
+    font-size: 1em;
+  }
+
+
+  /* =========================================================
+     NAME / PHOTO
+     ========================================================= */
+
+  .header-row {
+    grid-template-columns: minmax(0, 1fr) 70px;
+    column-gap: 16px;
+    align-items: center;
+  }
+
+  .header-row h1 {
+    margin: 0;
+
+    font-size: clamp(2.15rem, 10vw, 2.6rem);
+    line-height: 0.98;
+    letter-spacing: 0;
+
+    white-space: nowrap;
+  }
+
+  .profile-block {
+    width: 70px;
+  }
+
+  .id-photo-wrap {
+    width: 70px;
+    height: 70px;
+  }
+
+  .lang-switch {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+  }
+
+  .name-ja {
+    bottom: -19px;
+
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+  }
+
+
+  /* =========================================================
+     TAGLINE
+     ========================================================= */
+
+  .tagline-block {
+    margin-top: 28px;
+    padding-left: 0;
+  }
+
+  .tagline {
+    margin-left: 10px;
+
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .tagline .line-strong {
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+
+  .tagline .line-muted {
+    margin-top: 3px;
+
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+
+  /* =========================================================
+     CURRENT AFFILIATION
+     ========================================================= */
+
+  .affiliation {
+    margin-top: 23px;
+  }
+
+  .affiliation-status-mobile {
+    padding: 4px 0 4px 10px;
+  }
+
+  .affiliation-status-label {
+    font-size: 0.63rem;
+    letter-spacing: 0.1em;
+  }
+
+  .affiliation-role {
+    font-size: 0.86rem;
+    letter-spacing: 0.01em;
+  }
+
+  .affiliation-status-institution {
+    margin-top: 3px;
+
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+
+  /* =========================================================
+     RESEARCH OVERVIEW
+     ========================================================= */
+
+  .research-focus {
+    margin-top: 20px;
+    padding-left: 10px;
+  }
+
+  .research-focus-label {
+    margin-bottom: 4px;
+
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+  }
+
+  .research-focus-title {
+    font-size: 0.91rem;
+    line-height: 1.4;
+  }
+
+  .research-focus-description {
+    margin-top: 2px;
+
+    font-size: 0.76rem;
+    line-height: 1.45;
+  }
+
+  .research-focus-more {
+    margin-top: 5px;
+
+    font-size: 0.69rem;
+  }
+
+
+  /* =========================================================
+     SELECTED WORK
+     ========================================================= */
+
+  .recent-work {
+    width: calc(100% - 4px);
+
+    margin: 20px 0 12px 4px;
+    padding-top: 11px;
+
+    text-align: left;
+  }
+
+  .recent-label {
+    margin-bottom: 6px;
+
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+  }
+
+  .recent-title {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .recent-citation {
+    margin-top: 4px;
+
+    font-size: 0.73rem;
+    line-height: 1.4;
+
+    color: rgba(71, 85, 105, 0.68);
+    opacity: 1;
+  }
+
+  .recent-doi {
+    font-size: 0.82em;
+  }
+
+  /* =========================================================
+     MAIN NAVIGATION
+     ========================================================= */
+
+  .nav {
+    column-gap: 18px;
+    row-gap: 10px;
+  }
+
+  .nav a {
+    min-height: 74px;
+    padding: 14px 8px 13px;
+  }
+
+  .nav-index {
+    margin-bottom: 4px;
+
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+  }
+
+  .nav-label {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+
+  .site-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+  }
+
+  .footer-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+  }
+
+  .email-link {
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+
+  .footer-meta {
+    margin-top: 2px;
+
+    font-size: 0.58rem;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+  }
+}
   </style>
 </head>
 
@@ -1902,28 +2155,25 @@
       <div class="tagline-block">
         <p class="tagline">
           <span class="line-strong">
-
-            <span class="desktop-only" data-en="Computational methods for complex and coupled marine hydrodynamics."
-              data-ja="複雑・連成海洋流体力学のための計算手法。">
-              Computational methods for complex and coupled marine hydrodynamics.
+            <span class="desktop-only" data-en="Computational ship hydrodynamics." data-ja="船舶流体力学の数値解析。">
+              Computational ship hydrodynamics.
             </span>
-
-            <span class="mobile-only" data-en="Computational marine hydrodynamics." data-ja="海洋流体力学の数値解析。">
-              Computational marine hydrodynamics.
+            <span class="mobile-only" data-en="Computational ship hydrodynamics." data-ja="船舶流体力学の数値解析。">
+              Computational ship hydrodynamics.
             </span>
 
           </span>
 
           <span class="line-muted">
 
-            <span class="desktop-only" data-en="I work on modelling challenges where simplified assumptions fall short."
-              data-ja="単純化した仮定では捉えきれないモデリング上の課題に取り組んでいます。">
-              <em>I work on modelling challenges where simplified assumptions fall short.</em>
+            <span class="desktop-only" data-en="Numerical modelling and prediction in ship and marine hydrodynamics."
+              data-ja="船舶・海洋流体力学における数値モデリングと予測。">
+              <em>Numerical modelling and prediction in ship and marine hydrodynamics.</em>
             </span>
 
-            <span class="mobile-only" data-en="I work on problems where simplified models fall short."
-              data-ja="単純化したモデルでは捉えきれない問題に取り組んでいます。">
-              <em>I work on problems where simplified models fall short.</em>
+            <span class="mobile-only" data-en="Numerical modelling and prediction in marine hydrodynamics."
+              data-ja="海洋流体力学における数値モデリングと予測。">
+              <em>Numerical modelling and prediction in marine hydrodynamics.</em>
             </span>
 
           </span>
@@ -1976,21 +2226,19 @@
 
         <div class="research-focus">
 
-          <span class="research-focus-label" data-en="Research Focus" data-ja="研究テーマ">
-            Research Focus
+          <span class="research-focus-label" data-en="Overview" data-ja="概要">
+            Overview
           </span>
 
           <a class="research-focus-link" href="/research/">
 
-            <span class="research-focus-title" data-en="Modelling challenges in ship hydrodynamics"
-              data-ja="船舶流体力学におけるモデリング上の課題">
-              Modelling challenges in ship hydrodynamics
+            <span class="research-focus-title" data-en="Research projects and publications" data-ja="研究プロジェクトと論文">
+              Research projects and publications
             </span>
 
-            <span class="research-focus-description"
-              data-en="From model–ship extrapolation to spatially varying hull roughness."
-              data-ja="模型・実船外挿から、空間的に変化する船体粗さまで。">
-              <em>From model–ship extrapolation to spatially varying hull roughness.</em>
+
+            <span class="research-focus-description" data-en="Current work and related outputs." data-ja="現在の研究と関連成果。">
+              <em>Current work and related outputs.</em>
             </span>
 
             <span class="research-focus-more">
@@ -2009,7 +2257,7 @@
         </div>
 
         <div class="recent-work">
-          <span class="recent-label" data-en="Selected Work" data-ja="主要研究">
+          <span class="recent-label" data-en="Selected Work" data-ja="主な研究成果">
             Selected Work
           </span>
 
@@ -2110,8 +2358,8 @@
       </div>
 
       <div class="footer-meta">
-        <span data-en="Last updated: August 2026" data-ja="最終更新：2026年8月">
-          Last updated: August 2026
+        <span data-en="Last updated: September 2026" data-ja="最終更新：2026年9月">
+          Last updated: September 2026
         </span>
 
         <span>© 2026 Sangseok Han</span>
@@ -2206,7 +2454,8 @@
 
         if (!response.ok) return;
 
-        const html = await response.text();
+        const html =
+          await response.text();
 
         const doc =
           new DOMParser().parseFromString(
@@ -2214,84 +2463,133 @@
             "text/html"
           );
 
-        const entries = [
+        /*
+          Timeline 화면에서는 연도만 보이지만,
+          각 이벤트의 data-date="YYYY-MM"를 읽어서
+          Home에서는 월 + 연도로 표시한다.
+        */
+        const lines = [
           ...doc.querySelectorAll(
-            ".year-section .trace-entry"
+            ".trace-line[data-date]"
           )
         ];
 
-        const recentEntries =
-          entries.slice(0, 2);
+        const recentLines =
+          lines
+            .filter(line =>
+              /^\d{4}-\d{2}$/.test(
+                line.dataset.date || ""
+              )
+            )
+            .sort((a, b) =>
+              b.dataset.date.localeCompare(
+                a.dataset.date
+              )
+            )
+            .slice(0, 2);
 
-        recentEntries.forEach((entry, index) => {
-          const month =
-            entry.querySelector(".trace-month");
+        const monthNamesEn = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ];
 
-          const firstLine =
-            entry.querySelector(".trace-lines .trace-line");
+        function cleanText(element) {
+          return element
+            ?.textContent
+            ?.replace(/\s+/g, " ")
+            .trim() || "";
+        }
 
-          if (!month || !firstLine) return;
+        function formatDate(dateString) {
+          const [year, month] =
+            dateString
+              .split("-")
+              .map(Number);
 
+          return {
+            en: `${monthNamesEn[month - 1]} ${year}`,
+            ja: `${year}年${month}月`
+          };
+        }
+
+        /*
+          혹시 재호출되는 경우 중복 방지
+        */
+        containers.forEach(container => {
+          container.replaceChildren();
+        });
+
+        recentLines.forEach(line => {
           const event =
-            firstLine.querySelector(".trace-event");
+            line.querySelector(
+              ".trace-event"
+            );
 
           const tag =
-            firstLine.querySelector(".trace-tag");
+            line.querySelector(
+              ".trace-tag"
+            );
 
           if (!event) return;
 
           const detailLink =
-            firstLine.querySelector(".trace-detail a");
+            line.querySelector(
+              ".trace-detail a"
+            );
 
           const item =
             document.createElement(
               detailLink ? "a" : "div"
             );
 
-          item.className = "home-rail-update";
+          item.className =
+            "home-rail-update";
 
           if (detailLink) {
             item.href =
               detailLink.getAttribute("href");
           }
 
+          /*
+            DATE
+          */
+          const date =
+            formatDate(
+              line.dataset.date
+            );
+
           const time =
             document.createElement("time");
 
-          const rawMonthEn =
-            month.getAttribute("data-en") ||
-            month.textContent.trim();
+          time.dateTime =
+            line.dataset.date;
 
-          const rawMonthJa =
-            month.getAttribute("data-ja") ||
-            rawMonthEn;
-
-          const monthMapEn = {
-            January: "Jan",
-            February: "Feb",
-            March: "Mar",
-            April: "Apr",
-            May: "May",
-            June: "Jun",
-            July: "Jul",
-            August: "Aug",
-            September: "Sep",
-            October: "Oct",
-            November: "Nov",
-            December: "Dec"
-          };
-
-          const monthEn = rawMonthEn.replace(
-            /January|February|March|April|May|June|July|August|September|October|November|December/,
-            matched => monthMapEn[matched]
+          time.setAttribute(
+            "data-en",
+            date.en
           );
 
-          const monthJa = rawMonthJa;
+          time.setAttribute(
+            "data-ja",
+            date.ja
+          );
 
-          time.setAttribute("data-en", monthEn);
-          time.setAttribute("data-ja", monthJa);
-          time.textContent = monthEn;
+          time.textContent =
+            date.en;
 
+          /*
+            EVENT TITLE
+          */
           const title =
             document.createElement("span");
 
@@ -2300,18 +2598,33 @@
 
           const eventEn =
             event.getAttribute("data-en") ||
-            event.textContent.trim();
+            cleanText(event);
 
           const eventJa =
             event.getAttribute("data-ja") ||
             eventEn;
 
-          title.setAttribute("data-en", eventEn);
-          title.setAttribute("data-ja", eventJa);
-          title.textContent = eventEn;
+          title.setAttribute(
+            "data-en",
+            eventEn
+          );
 
-          item.append(time, title);
+          title.setAttribute(
+            "data-ja",
+            eventJa
+          );
 
+          title.textContent =
+            eventEn;
+
+          item.append(
+            time,
+            title
+          );
+
+          /*
+            META / JOURNAL / INSTITUTION
+          */
           if (tag) {
             const meta =
               document.createElement("span");
@@ -2320,20 +2633,31 @@
               "home-rail-update-meta";
 
             if (tag.querySelector("em")) {
-              meta.classList.add("is-journal");
+              meta.classList.add(
+                "is-journal"
+              );
             }
 
             const tagEn =
               tag.getAttribute("data-en") ||
-              tag.textContent.trim();
+              cleanText(tag);
 
             const tagJa =
               tag.getAttribute("data-ja") ||
               tagEn;
 
-            meta.setAttribute("data-en", tagEn);
-            meta.setAttribute("data-ja", tagJa);
-            meta.textContent = tagEn;
+            meta.setAttribute(
+              "data-en",
+              tagEn
+            );
+
+            meta.setAttribute(
+              "data-ja",
+              tagJa
+            );
+
+            meta.textContent =
+              tagEn;
 
             item.append(meta);
           }
@@ -2345,7 +2669,9 @@
           });
         });
 
-        applyLang(getSessionLang());
+        applyLang(
+          getSessionLang()
+        );
 
       } catch (error) {
         console.error(
@@ -2354,7 +2680,6 @@
         );
       }
     }
-
     function initResearchPreview() {
       const linksContainer =
         document.querySelector("#research-topic-links");

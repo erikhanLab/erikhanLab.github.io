@@ -483,6 +483,10 @@
       box-shadow: 0 0 0 4px rgba(11, 37, 69, 0.10);
     }
 
+    .rt-block-group+.rt-topline {
+      margin-top: 30px;
+    }
+
     .rt-topline {
       display: flex;
       align-items: baseline;
@@ -2183,15 +2187,15 @@
       }
 
       .research-timeline .rt-item {
-        width: calc(100% + 124px);
-        margin-left: -124px;
+        width: calc(100% + 72px);
+        margin-left: -72px;
 
         box-sizing: border-box;
 
         grid-template-columns:
-          64px minmax(0, 1fr);
+          32px minmax(0, 1fr);
 
-        column-gap: 40px;
+        column-gap: 20px;
 
         padding:
           22px 0 18px 20px;
@@ -2314,6 +2318,32 @@
       .landscape-node-label,
       .landscape-link {
         transition: none;
+      }
+    }
+
+    @media (min-width: 641px) {
+
+
+      .research-timeline .rt-year {
+        align-self: start;
+        justify-self: start;
+
+        margin: 27px 0 0 -18px;
+        padding: 0;
+
+        font-size: 0.78em;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0.08em;
+
+        color: rgba(11, 37, 69, 0.22);
+        opacity: 1;
+
+        text-align: left;
+        white-space: nowrap;
+
+        transform: rotate(-90deg);
+        transform-origin: center;
       }
     }
   </style>
@@ -2513,9 +2543,10 @@
                   <span class="research-network-name">Siemens</span>
 
                   <span class="research-network-meta">
-                    <span class="research-network-role" data-en="Research collaboration" data-ja="共同研究">
-                      Research collaboration
+                    <span class="research-network-role" data-en="Technical collaboration" data-ja="技術協力">
+                      Technical collaboration
                     </span>
+
                     <span class="research-network-separator">·</span>
 
                     <time class="research-network-period" datetime="2026" data-en="2026" data-ja="2026年">
@@ -2528,8 +2559,8 @@
                   <span class="research-network-name">Pusan National University</span>
 
                   <span class="research-network-meta">
-                    <span class="research-network-role" data-en="Computational support" data-ja="計算支援">
-                      Computational support
+                    <span class="research-network-role" data-en="Computational resources" data-ja="計算資源">
+                      Computational resources
                     </span>
 
                     <span class="research-network-separator">·</span>
@@ -2581,8 +2612,8 @@
         <article class="current-project" id="added-resistance">
 
           <figure class="current-project-figure current-project-figure--pending">
-            <figcaption class="current-project-pending-note" data-en="Manuscript in preparation" data-ja="原稿準備中">
-              Manuscript in preparation
+            <figcaption class="current-project-pending-note" data-en="Ongoing study" data-ja="進行中の研究">
+              Ongoing study
             </figcaption>
           </figure>
 
@@ -2634,8 +2665,8 @@
                   </span>
 
                   <span class="research-network-meta">
-                    <span class="research-network-role" data-en="Visiting research" data-ja="訪問研究">
-                      Visiting research
+                    <span class="research-network-role" data-en="Visiting Researcher · RIMSE" data-ja="客員研究員 · RIMSE">
+                      Visiting Researcher · RIMSE
                     </span>
 
                     <span class="research-network-separator">·</span>
@@ -2869,8 +2900,9 @@
             Publications
           </span>
 
-          <span class="research-context-description" data-en="Research outputs and papers" data-ja="研究成果・論文">
-            Research outputs and papers
+          <span class="research-context-description" data-en="Published research and related outputs"
+            data-ja="公表研究と関連成果">
+            Published research and related outputs
           </span>
 
           <span class="research-context-arrow" aria-hidden="true">
@@ -2883,9 +2915,9 @@
             Research Log
           </span>
 
-          <span class="research-context-description" data-en="Presentations and research development"
-            data-ja="研究発表と研究の展開">
-            Presentations and research development
+          <span class="research-context-description" data-en="Presentations, research notes, and life around the work"
+            data-ja="研究発表、研究ノート、その周辺の記録">
+            Presentations, research notes, and life around the work
           </span>
 
           <span class="research-context-arrow" aria-hidden="true">
@@ -2898,31 +2930,15 @@
             Academic Timeline
           </span>
 
-          <span class="research-context-description" data-en="Appointments, awards, and milestones"
-            data-ja="所属、受賞、研究上の節目">
-            Appointments, awards, and milestones
+          <span class="research-context-description" data-en="Research record, awards, and appointments"
+            data-ja="研究記録、受賞、所属">
+            Research record, awards, and appointments
           </span>
 
           <span class="research-context-arrow" aria-hidden="true">
             →
           </span>
         </a>
-
-        <a class="research-context-item" href="/research/connection/">
-          <span class="research-context-name" data-en="Research Interactions" data-ja="研究交流">
-            Research Interactions
-          </span>
-
-          <span class="research-context-description"
-            data-en="Collaborations, research exchanges, visits, and shared outputs" data-ja="共同研究、研究交流、研究訪問、および共同成果">
-            Collaborations, research exchanges, visits, and shared outputs
-          </span>
-
-          <span class="research-context-arrow" aria-hidden="true">
-            →
-          </span>
-        </a>
-
 
       </nav>
 
@@ -2954,40 +2970,45 @@
     </section>
 
     <div class="research-timeline" id="research-timeline">
+
       <h2 class="rt-header">
-        <span data-en="Research Timeline (2023–)" data-ja="研究年表 (2023–)">
-          Research Timeline (2023–)
+        <span data-en="Selected Research Record" data-ja="主な研究記録">
+          Selected Research Record
         </span>
       </h2>
 
       <p class="research-affiliation-note">
-        <span class="desktop" data-en="Affiliation indicates my institution at the time; research location may differ."
-          data-ja="所属は当時の所属機関を示しており、研究の実施場所とは異なる場合があります。">
-          Affiliation indicates my institution at the time; research location may differ.
+        <span class="desktop" data-en="Affiliation indicates the institution at the time; research location may differ."
+          data-ja="所属は当時の所属機関を示しており、研究場所とは異なる場合があります。">
+          Affiliation indicates the institution at the time; research location may differ.
         </span>
 
-        <span class="mobile" data-en="Affiliation at the time; location may differ."
-          data-ja="所属は当時のものです。研究場所とは異なる場合があります。">
-          Affiliation at the time; location may differ.
+        <span class="mobile" data-en="Affiliation shown; location may differ." data-ja="所属を示しています。研究場所とは異なる場合があります。">
+          Affiliation shown; location may differ.
         </span>
       </p>
 
+
+      <!-- =====================================================
+       2026
+       ===================================================== -->
+
       <div class="rt-item" id="year-2026">
         <div class="rt-year">2026</div>
+
         <div class="rt-body">
+
           <div class="rt-topline">
-            <div class="rt-stage" data-en="Independent Research" data-ja="独立研究">
-              Independent Research
+            <div class="rt-stage" data-en="Visiting Research" data-ja="訪問研究">
+              Visiting Research
             </div>
 
             <div class="rt-title">
-              <span data-en="Visiting Research — Seoul National University" data-ja="訪問研究 — ソウル大学校">
-                Visiting Research — Seoul National University
+              <span data-en="Seoul National University" data-ja="ソウル大学校">
+                Seoul National University
               </span>
 
-              <span class="rt-loc-dot">
-                ·
-              </span>
+              <span class="rt-loc-dot">·</span>
 
               <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
                 South Korea
@@ -2996,7 +3017,9 @@
           </div>
 
           <div class="rt-block-group">
+
             <div class="rt-block" data-themes="spatial-roughness ittc-assumptions" data-citation="Han">
+
               <div class="rt-output">
                 <span class="rt-output-label" data-en="Journal Publication" data-ja="学術論文">
                   Journal Publication
@@ -3020,19 +3043,23 @@
             </div>
           </div>
 
-          <div class="rt-title">
-            <span data-en="Independent Research" data-ja="独立研究">
+          <div class="rt-topline">
+            <div class="rt-stage" data-en="Independent Research" data-ja="独立研究">
               Independent Research
-            </span>
+            </div>
 
-            <span class="rt-loc-dot">·</span>
+            <div class="rt-title">
 
-            <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
-              South Korea
-            </span>
+              <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
+                South Korea
+              </span>
+            </div>
           </div>
+
           <div class="rt-block-group">
+
             <div class="rt-block" data-themes="spatial-roughness ship-resistance" data-citation="Han et al.">
+
               <div class="rt-output">
                 <span class="rt-output-label" data-en="Journal Publication" data-ja="学術論文">
                   Journal Publication
@@ -3053,7 +3080,9 @@
                 <em>Ocean Engineering</em>
               </div>
             </div>
+
             <div class="rt-block" data-themes="spatial-roughness ship-resistance" data-citation="Han et al.">
+
               <div class="rt-output">
                 <span class="rt-output-label" data-en="Symposium Paper Presentation" data-ja="シンポジウム論文発表">
                   Symposium Paper Presentation
@@ -3079,34 +3108,63 @@
                 </span>
               </div>
             </div>
+
           </div>
+
         </div>
       </div>
+
       <div class="rt-inst-divider"></div>
 
+
+      <!-- =====================================================
+       2025
+       ===================================================== -->
+
       <div class="rt-item" id="year-2025">
-        <div class="rt-year">2025</div>
+
+        <div class="rt-year">
+          2025
+        </div>
 
         <div class="rt-body">
+
+
+          <!-- Strathclyde -->
+
           <div class="rt-topline">
-            <div class="rt-stage" data-en="Postgraduate Research" data-ja="大学院研究">
-              Postgraduate Research
+
+            <div class="rt-stage" data-en="MSc Research" data-ja="修士研究">
+              MSc Research
             </div>
 
             <div class="rt-title">
-              <span data-en="MSc Research — University of Strathclyde" data-ja="修士研究 — ストラスクライド大学">
-                MSc Research — University of Strathclyde
+
+              <span data-en="University of Strathclyde" data-ja="ストラスクライド大学">
+                University of Strathclyde
               </span>
-              <span class="rt-loc-dot">·</span>
+
+              <span class="rt-loc-dot">
+                ·
+              </span>
+
               <span class="rt-location-inline" data-en="United Kingdom" data-ja="イギリス">
                 United Kingdom
               </span>
+
             </div>
+
           </div>
+
+
           <div class="rt-block-group">
+
+
             <div class="rt-block" data-themes="temperature-effects model-ship-extrapolation ittc-assumptions"
               data-citation="Han et al.">
+
               <div class="rt-output">
+
                 <span class="rt-output-label" data-en="Issue Cover Article" data-ja="号表紙掲載論文">
                   Issue Cover Article
                 </span>
@@ -3114,6 +3172,7 @@
                 <span class="role-tag" data-en="First author" data-ja="筆頭著者">
                   First author
                 </span>
+
               </div>
 
               <div class="rt-subtitle">
@@ -3127,11 +3186,15 @@
                   Journal of Marine Science and Engineering
                 </em>
               </div>
+
             </div>
+
 
             <div class="rt-block" data-themes="fsi structural-flexibility floating-systems wave-body-interaction"
               data-citation="Han et al.">
+
               <div class="rt-output">
+
                 <span class="rt-output-label" data-en="Conference Paper" data-ja="国際会議論文">
                   Conference Paper
                 </span>
@@ -3139,6 +3202,7 @@
                 <span class="role-tag" data-en="First author" data-ja="筆頭著者">
                   First author
                 </span>
+
               </div>
 
               <div class="rt-subtitle">
@@ -3146,6 +3210,7 @@
               </div>
 
               <div class="rt-meta">
+
                 <span class="rt-venue" data-short="MARINE 2025">
                   International Conference on Computational Methods in Marine Engineering (MARINE 2025)
                 </span>
@@ -3153,12 +3218,17 @@
                 <span class="rt-location">
                   — Edinburgh, UK
                 </span>
+
               </div>
+
             </div>
+
 
             <div class="rt-block" data-themes="temperature-effects model-ship-extrapolation ittc-assumptions"
               data-citation="Han et al.">
+
               <div class="rt-output">
+
                 <span class="rt-output-label" data-en="Conference Presentation" data-ja="国際会議発表">
                   Conference Presentation
                 </span>
@@ -3166,6 +3236,7 @@
                 <span class="role-tag" data-en="Presenting author" data-ja="発表者">
                   Presenting author
                 </span>
+
               </div>
 
               <div class="rt-subtitle">
@@ -3173,6 +3244,7 @@
               </div>
 
               <div class="rt-meta">
+
                 <span class="rt-venue" data-short="64ICNAMI">
                   International Congress of Naval Architecture and Maritime Industry
                 </span>
@@ -3180,23 +3252,48 @@
                 <span class="rt-location">
                   — Gijón, Spain
                 </span>
+
               </div>
+
             </div>
-          </div>
-          <div class="rt-title">
-            <span data-en="Research Visit — The University of Osaka" data-ja="研究訪問 — 大阪大学">
-              Research Visit — The University of Osaka
-            </span>
-            <span class="rt-loc-dot">·</span>
-            <span class="rt-location-inline" data-en="Japan" data-ja="日本">
-              Japan
-            </span>
+
           </div>
 
+
+          <!-- Osaka -->
+
+          <div class="rt-topline">
+
+            <div class="rt-stage" data-en="Research Visit" data-ja="研究訪問">
+              Research Visit
+            </div>
+
+            <div class="rt-title">
+
+              <span data-en="The University of Osaka" data-ja="大阪大学">
+                The University of Osaka
+              </span>
+
+              <span class="rt-loc-dot">
+                ·
+              </span>
+
+              <span class="rt-location-inline" data-en="Japan" data-ja="日本">
+                Japan
+              </span>
+
+            </div>
+
+          </div>
+
+
           <div class="rt-block-group">
+
             <div class="rt-block" data-themes="model-predictive-control floating-systems wave-body-interaction cfd"
               data-citation="Han et al.">
+
               <div class="rt-output">
+
                 <span class="rt-output-label" data-en="Conference Presentation" data-ja="国際会議発表">
                   Conference Presentation
                 </span>
@@ -3204,6 +3301,7 @@
                 <span class="role-tag" data-en="Presenting author" data-ja="発表者">
                   Presenting author
                 </span>
+
               </div>
 
               <div class="rt-subtitle">
@@ -3211,6 +3309,7 @@
               </div>
 
               <div class="rt-meta">
+
                 <span class="rt-venue" data-short="JASNAOE 2025">
                   The Japan Society of Naval Architects and Ocean Engineers (JASNAOE 2025)
                 </span>
@@ -3218,37 +3317,66 @@
                 <span class="rt-location">
                   — Hyogo, Japan
                 </span>
+
               </div>
+
             </div>
+
           </div>
 
         </div>
+
       </div>
+
       <div class="rt-inst-divider"></div>
 
+
+      <!-- =====================================================
+       2024
+       ===================================================== -->
+
       <div class="rt-item" id="year-2024">
-        <div class="rt-year">2024</div>
+
+        <div class="rt-year">
+          2024
+        </div>
 
         <div class="rt-body">
+
+
           <div class="rt-topline">
-            <div class="rt-stage" data-en="Early Research" data-ja="初期研究">
-              Early Research
+
+            <div class="rt-stage" data-en="Undergraduate Research" data-ja="学部研究">
+              Undergraduate Research
             </div>
 
             <div class="rt-title">
-              <span data-en="Undergraduate Research — Inha University" data-ja="学部研究 — 仁荷大学">
-                Undergraduate Research — Inha University
+
+              <span data-en="Inha University" data-ja="仁荷大学">
+                Inha University
               </span>
-              <span class="rt-loc-dot">·</span>
+
+              <span class="rt-loc-dot">
+                ·
+              </span>
+
               <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
                 South Korea
               </span>
+
             </div>
+
           </div>
+
+
           <div class="rt-block-group">
+
+
             <div class="rt-block" data-themes="temperature-effects model-ship-extrapolation ittc-assumptions"
               data-citation="Han et al.">
+
               <div class="rt-output">
+
                 <span class="rt-output-label" data-en="Best Paper Award" data-ja="最優秀論文賞">
                   Best Paper Award
                 </span>
@@ -3256,6 +3384,7 @@
                 <span class="role-tag" data-en="Presenting author" data-ja="発表者">
                   Presenting author
                 </span>
+
               </div>
 
               <div class="rt-subtitle">
@@ -3263,6 +3392,7 @@
               </div>
 
               <div class="rt-meta">
+
                 <span class="rt-venue" data-short="13NCFE">
                   The 13th National Congress on Fluids Engineering
                 </span>
@@ -3270,11 +3400,16 @@
                 <span class="rt-location">
                   — Daejeon, South Korea
                 </span>
+
               </div>
+
             </div>
 
+
             <div class="rt-block" data-themes="ship-resistance full-scale-prediction cfd">
+
               <div class="rt-output">
+
                 <span class="rt-output-label" data-en="Journal Publication" data-ja="学術論文">
                   Journal Publication
                 </span>
@@ -3282,6 +3417,7 @@
                 <span class="role-tag" data-en="Co-author" data-ja="共著者">
                   Co-author
                 </span>
+
               </div>
 
               <div class="rt-subtitle">
@@ -3293,38 +3429,67 @@
               <div class="rt-meta">
                 <em>Ocean Engineering</em>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
       <div class="rt-inst-divider"></div>
 
+
+      <!-- =====================================================
+       2023
+       ===================================================== -->
+
       <div class="rt-item" id="year-2023">
-        <div class="rt-year">2023</div>
+
+        <div class="rt-year">
+          2023
+        </div>
 
         <div class="rt-body">
+
+
           <div class="rt-topline">
-            <div class="rt-stage" data-en="Initial Projects" data-ja="初期プロジェクト">
-              Initial Projects
+
+            <div class="rt-stage" data-en="Undergraduate Project" data-ja="学部プロジェクト">
+              Undergraduate Project
             </div>
 
             <div class="rt-title">
-              <span data-en="Undergraduate Project — Inha University" data-ja="学部プロジェクト — 仁荷大学">
-                Undergraduate Project — Inha University
+
+              <span data-en="Inha University" data-ja="仁荷大学">
+                Inha University
               </span>
-              <span class="rt-loc-dot">·</span>
+
+              <span class="rt-loc-dot">
+                ·
+              </span>
+
               <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
                 South Korea
               </span>
+
             </div>
+
           </div>
+
+
           <div class="rt-block-group">
 
+
             <div class="rt-block">
+
               <div class="rt-output">
+
                 <span class="rt-output-label" data-en="Industrial Technology Award" data-ja="産業技術賞">
                   Industrial Technology Award
                 </span>
+
               </div>
 
               <div class="rt-meta">
@@ -3332,10 +3497,14 @@
                   Awarded by the President of The Society of Naval Architects of Korea
                 </span>
               </div>
+
             </div>
 
+
             <div class="rt-block">
+
               <div class="rt-output">
+
                 <span class="rt-output-label" data-en="Conference Presentation" data-ja="国際会議発表">
                   Conference Presentation
                 </span>
@@ -3343,6 +3512,7 @@
                 <span class="role-tag" data-en="Presenting author" data-ja="発表者">
                   Presenting author
                 </span>
+
               </div>
 
               <div class="rt-subtitle">
@@ -3350,6 +3520,7 @@
               </div>
 
               <div class="rt-meta">
+
                 <span class="rt-venue" data-short="SNAK Fall Conference">
                   Fall Conference of The Society of Naval Architecture of Korea
                 </span>
@@ -3357,11 +3528,17 @@
                 <span class="rt-location">
                   — Daejeon, South Korea
                 </span>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
 
     <footer class="site-footer">
@@ -3502,56 +3679,6 @@
         discovery: "connected"
       },
       {
-        id: "structural-flexibility",
-        label: "Structural flexibility",
-        layout: "research",
-        since: 2025,
-        half: 2,
-        group: "systems",
-        level: "developing",
-        discovery: "connected"
-      },
-      {
-        id: "floating-systems",
-        label: "Floating systems",
-        layout: "research",
-        since: 2025,
-        half: 1,
-        group: "systems",
-        level: "developing",
-        discovery: "connected"
-      },
-      {
-        id: "model-predictive-control",
-        label: "Model predictive control",
-        layout: "research",
-        since: 2025,
-        half: 2,
-        group: "systems",
-        level: "developing",
-        discovery: "adjacent"
-      },
-      {
-        id: "cfd-mbd",
-        label: "CFD–MBD",
-        layout: "method",
-        since: 2026,
-        half: 1,
-        group: "method",
-        level: "developing",
-        discovery: "emerging"
-      },
-      {
-        id: "gyroscopic-dynamics",
-        label: "Gyroscopic dynamics",
-        layout: "research",
-        since: 2026,
-        half: 1,
-        group: "systems",
-        level: "developing",
-        discovery: "adjacent"
-      },
-      {
         id: "cfd",
         label: "CFD",
         layout: "method",
@@ -3591,25 +3718,12 @@
       ["model-ship-extrapolation", "ittc-assumptions", 10],
       ["temperature-effects", "ittc-assumptions", -10],
       ["added-resistance", "wave-body-interaction", -12],
-      ["gyroscopic-dynamics", "wave-body-interaction", 12],
-      ["cfd-mbd", "gyroscopic-dynamics", -12],
-      ["floating-systems", "gyroscopic-dynamics", -10],
-      ["fsi", "structural-flexibility", 10],
-      ["structural-flexibility", "floating-systems", -10],
-      ["structural-flexibility", "wave-body-interaction", 12],
       ["cfd", "spatial-roughness", -12],
       ["cfd", "fsi", 10],
       ["cfd", "added-resistance", 10],
       ["cfd", "wave-body-interaction", -12],
-      ["cfd", "model-predictive-control", 14],
-      ["cfd", "cfd-mbd", 18],
       ["cfd", "temperature-effects", -14],
-      ["fsi", "wave-body-interaction", -10],
-      ["fsi", "floating-systems", 10],
-      ["wave-body-interaction", "floating-systems", 12],
-      ["wave-body-interaction", "cfd-mbd", 12],
-      ["floating-systems", "model-predictive-control", -12],
-      ["floating-systems", "cfd-mbd", 14]
+      ["fsi", "wave-body-interaction", -10]
     ];
 
     const researchLandscapeState = {

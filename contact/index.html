@@ -239,6 +239,7 @@
             color: rgba(67, 78, 93, 0.6);
         }
 
+
         @media (min-width: 641px) {
             .contact-profile-primary {
                 white-space: nowrap;
@@ -1136,6 +1137,18 @@
             display: none;
         }
 
+        @media (min-width: 900px) {
+
+            .contact-profile-row:first-child .contact-profile-secondary,
+            .contact-profile-row:first-child .contact-profile-secondary .desktop-only {
+                width: max-content;
+                max-width: none;
+                overflow: visible;
+                text-overflow: clip;
+                white-space: nowrap;
+            }
+        }
+
         @media (max-width: 640px) {
             .nav a[href="/contact/"] {
                 color: rgba(56, 70, 88, 0.34);
@@ -1334,6 +1347,75 @@
 
             .mobile-only {
                 display: inline;
+            }
+
+            .contact-section--profiles {
+                margin-bottom: 0;
+            }
+
+            .contact-footer {
+                width: 100%;
+                max-width: none;
+
+                margin: 28px 0 12px;
+                margin-left: 0;
+                padding: 15px 0 0;
+
+                transform: none;
+
+                text-align: right;
+            }
+
+            .contact-footer::before {
+                left: auto;
+                right: 0;
+
+                width: 120px;
+
+                background:
+                    linear-gradient(270deg,
+                        rgba(11, 31, 58, 0.09) 0%,
+                        rgba(11, 31, 58, 0.034) 52%,
+                        rgba(11, 31, 58, 0) 100%);
+            }
+
+            .contact-archive-entry {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                width: 100%;
+
+                text-align: right;
+            }
+
+            .contact-archive-link {
+                gap: 6px;
+
+                font-size: 0.68em;
+                letter-spacing: 0.13em;
+            }
+
+            .contact-archive-description {
+                max-width: 88%;
+
+                margin: 6px 0 0 auto;
+
+                font-size: 0.63em;
+                line-height: 1.55;
+                letter-spacing: 0.015em;
+            }
+
+            .contact-site-meta {
+                justify-content: flex-end;
+
+                margin-top: 16px;
+
+                font-size: 0.58em;
+                line-height: 1.5;
+                letter-spacing: 0.015em;
+
+                color: rgba(67, 78, 93, 0.38);
             }
         }
 
