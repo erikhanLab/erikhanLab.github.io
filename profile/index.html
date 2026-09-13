@@ -20,7 +20,7 @@
   <meta property="og:title" content="Profile | Sangseok Han">
 
   <meta property="og:description"
-    content="Research profile, education, appointments, professional experience, academic service, and background of Sangseok Han.">
+    content="Research profile, education, research appointments, professional experience, academic service, and writing by Sangseok Han.">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sangseokhan.com/profile/">
@@ -455,6 +455,10 @@
       color: rgba(79, 89, 101, 0.68);
     }
 
+    /* =========================================================
+       PROFILE RECORDS
+       ========================================================= */
+
     .profile-record-section .affiliation-block {
       position: relative;
 
@@ -628,7 +632,8 @@
       color: rgba(82, 92, 105, 0.56);
     }
 
-    .profile-record-section .affiliation-item:hover,
+    /* Timeline-linked records */
+    .profile-record-section .affiliation-item:not(.affiliation-item-static):hover,
     .profile-record-section .affiliation-item.is-active {
       background:
         rgba(255, 255, 255, 0.14);
@@ -639,18 +644,45 @@
       transform: translateX(2px);
     }
 
-    .profile-record-section .affiliation-item:hover .affiliation-logo,
+    .profile-record-section .affiliation-item:not(.affiliation-item-static):hover .affiliation-logo,
     .profile-record-section .affiliation-item.is-active .affiliation-logo {
       opacity: 0.76;
 
       transform: scale(1.035);
     }
 
-    .profile-record-section .affiliation-item:hover .affiliation-logo img,
+    .profile-record-section .affiliation-item:not(.affiliation-item-static):hover .affiliation-logo img,
     .profile-record-section .affiliation-item.is-active .affiliation-logo img {
       filter:
         grayscale(0) saturate(0.95) contrast(1.03);
     }
+
+    /* Navy / non-timeline record:
+       colour response only, no movement */
+    #appointments-experience .affiliation-item-static:hover {
+      background:
+        rgba(255, 255, 255, 0.14);
+
+      border-left-color:
+        rgba(11, 31, 58, 0.28);
+
+      transform: none;
+    }
+
+    #appointments-experience .affiliation-item-static:hover .affiliation-logo {
+      opacity: 0.76;
+
+      transform: translateZ(0);
+    }
+
+    #appointments-experience .affiliation-item-static:hover .affiliation-logo img {
+      filter:
+        grayscale(0) saturate(0.95) contrast(1.03);
+    }
+
+    /* =========================================================
+       EDUCATION / EXPERIENCE
+       ========================================================= */
 
     #education .education-layout {
       display: grid;
@@ -677,46 +709,9 @@
       margin-top: 16px;
     }
 
-    .experience-recognition {
-      display: grid;
-      gap: 5px;
-
-      margin: 10px 0 0 1px;
-      padding-top: 8px;
-
-      border-top:
-        1px solid rgba(11, 31, 58, 0.05);
-    }
-
-    .experience-recognition-item {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-
-      gap: 16px;
-    }
-
-    .experience-recognition-title {
-      min-width: 0;
-
-      font-size: 0.67em;
-      line-height: 1.45;
-      letter-spacing: 0.018em;
-
-      color: rgba(52, 62, 75, 0.62);
-    }
-
-    .experience-recognition-year {
-      flex: 0 0 auto;
-
-      font-size: 0.58em;
-      line-height: 1.4;
-      letter-spacing: 0.07em;
-
-      font-variant-numeric: tabular-nums;
-
-      color: rgba(79, 89, 101, 0.45);
-    }
+    /* =========================================================
+       TIMELINE
+       ========================================================= */
 
     .education-timeline {
       box-sizing: border-box;
@@ -862,7 +857,6 @@
       box-shadow:
         inset 0 0 0 1px rgba(28, 50, 110, 0.95);
     }
-
 
     .month-block.aff-snu {
       background: rgba(0, 40, 111, 0.23);
@@ -1106,6 +1100,10 @@
       color: rgba(57, 67, 80, 0.68);
     }
 
+    /* =========================================================
+       AWARDS
+       ========================================================= */
+
     .awards-block {
       box-sizing: border-box;
 
@@ -1173,6 +1171,10 @@
 
       color: rgba(68, 79, 94, 0.62);
     }
+
+    /* =========================================================
+       ACADEMIC SERVICE
+       ========================================================= */
 
     #academic-activity {
       min-height: 10vh;
@@ -1252,6 +1254,10 @@
 
       color: rgba(11, 31, 58, 0.38);
     }
+
+    /* =========================================================
+       OUTSIDE RESEARCH
+       ========================================================= */
 
     #outside-research {
       margin-bottom: 38px;
@@ -1469,22 +1475,6 @@
       color: rgba(79, 89, 101, 0.48);
     }
 
-    .feature-writing-link {
-      display: inline-flex;
-      align-items: baseline;
-
-      gap: 7px;
-
-      max-width: 100%;
-
-      color: rgba(11, 31, 58, 0.92);
-      text-decoration: none;
-
-      transition:
-        color 0.18s ease,
-        opacity 0.18s ease;
-    }
-
     .feature-writing-heading {
       display: flex;
       align-items: baseline;
@@ -1549,31 +1539,6 @@
       transform: translateY(-1px);
     }
 
-    @media (hover: hover) and (pointer: fine) {
-      .feature-writing-title-link:hover {
-        color: var(--accent-dark);
-      }
-
-      .feature-writing-actions a:hover {
-        color: rgba(11, 31, 58, 0.88);
-      }
-    }
-
-    .feature-writing-arrow {
-      flex: 0 0 auto;
-
-      font-size: 0.7em;
-      line-height: 1;
-
-      color: rgba(11, 31, 58, 0.38);
-
-      transform: translateY(-1px);
-
-      transition:
-        color 0.18s ease,
-        transform 0.18s ease;
-    }
-
     .feature-writing-source {
       margin-top: 4px;
 
@@ -1598,17 +1563,18 @@
     }
 
     @media (hover: hover) and (pointer: fine) {
-      .feature-writing-link:hover {
+      .feature-writing-title-link:hover {
         color: var(--accent-dark);
       }
 
-      .feature-writing-link:hover .feature-writing-arrow {
-        color: rgba(11, 31, 58, 0.76);
-
-        transform:
-          translate(2px, -2px);
+      .feature-writing-actions a:hover {
+        color: rgba(11, 31, 58, 0.88);
       }
     }
+
+    /* =========================================================
+       SIDE NAV
+       ========================================================= */
 
     #current,
     #education,
@@ -1633,28 +1599,6 @@
       width: 220px;
 
       transform: translateY(-42%);
-    }
-
-    .profile-side-nav a {
-      position: relative;
-
-      display: block;
-
-      width: fit-content;
-
-      white-space: nowrap;
-
-      font-size: 0.76em;
-      line-height: 1.45;
-      letter-spacing: 0.07em;
-
-      color: rgba(11, 31, 58, 0.36);
-      text-decoration: none;
-
-      transition:
-        color 0.28s ease,
-        opacity 0.28s ease,
-        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .profile-side-nav nav {
@@ -1687,7 +1631,27 @@
           rgba(11, 31, 58, 0));
     }
 
+    .profile-side-nav a {
+      position: relative;
 
+      display: block;
+
+      width: fit-content;
+
+      white-space: nowrap;
+
+      font-size: 0.76em;
+      line-height: 1.45;
+      letter-spacing: 0.07em;
+
+      color: rgba(11, 31, 58, 0.36);
+      text-decoration: none;
+
+      transition:
+        color 0.28s ease,
+        opacity 0.28s ease,
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
 
     .profile-side-nav a:hover {
       color: rgba(11, 31, 58, 0.72);
@@ -1729,8 +1693,11 @@
       .profile-side-nav {
         display: none;
       }
-
     }
+
+    /* =========================================================
+       TABLET
+       ========================================================= */
 
     @media (min-width: 641px) and (max-width: 900px) {
       #education .education-layout {
@@ -1745,20 +1712,6 @@
         min-width: 0;
 
         margin-top: 0;
-      }
-
-      #background .background-layout {
-        grid-template-columns:
-          minmax(0, 1fr) minmax(130px, 0.55fr);
-
-        column-gap: 24px;
-
-        width: 100%;
-      }
-
-      #background .background-affiliation-item,
-      #background .background-recognition {
-        min-width: 0;
       }
 
       .outside-research-layout {
@@ -1788,9 +1741,11 @@
         max-width:
           calc(100% - 13px);
       }
-
-
     }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
 
     @media (max-width: 640px) {
       .page-content {
@@ -1959,7 +1914,8 @@
       }
 
       .profile-record-section .affiliation-item:hover,
-      .profile-record-section .affiliation-item.is-active {
+      .profile-record-section .affiliation-item.is-active,
+      #appointments-experience .affiliation-item-static:hover {
         background: transparent;
 
         border-left-color:
@@ -1970,7 +1926,8 @@
 
       .affiliation-logo,
       .profile-record-section .affiliation-item:hover .affiliation-logo,
-      .profile-record-section .affiliation-item.is-active .affiliation-logo {
+      .profile-record-section .affiliation-item.is-active .affiliation-logo,
+      #appointments-experience .affiliation-item-static:hover .affiliation-logo {
         width: 36px;
         height: 36px;
 
@@ -1983,7 +1940,8 @@
 
       .affiliation-logo img,
       .profile-record-section .affiliation-item:hover .affiliation-logo img,
-      .profile-record-section .affiliation-item.is-active .affiliation-logo img {
+      .profile-record-section .affiliation-item.is-active .affiliation-logo img,
+      #appointments-experience .affiliation-item-static:hover .affiliation-logo img {
         filter: none;
 
         transition: none;
@@ -2112,21 +2070,6 @@
         font-size: 0.65rem;
       }
 
-      .experience-recognition {
-        margin-top: 8px;
-        padding-top: 7px;
-      }
-
-      .experience-recognition-title {
-        font-size: 0.58rem;
-      }
-
-      .experience-recognition-year {
-        margin-right: 10px;
-
-        font-size: 0.5rem;
-      }
-
       #outside-research {
         margin-bottom: 24px;
       }
@@ -2207,10 +2150,6 @@
         line-height: 1.48;
       }
 
-      .feature-writing-arrow {
-        font-size: 0.58rem;
-      }
-
       .feature-writing-source {
         margin-top: 3px;
 
@@ -2237,6 +2176,10 @@
       }
     }
 
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -2246,6 +2189,8 @@
       .reveal-ready,
       .profile-side-nav a,
       .profile-record-section .affiliation-item,
+      .affiliation-logo,
+      .affiliation-logo img,
       .month-block,
       .timeline-legend-item,
       .timeline-legend-mark,
@@ -2388,8 +2333,7 @@
           aria-label="Google Scholar">
 
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2z">
-            </path>
+            <path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2z"></path>
           </svg>
 
           <span class="icon-label">
@@ -2402,8 +2346,7 @@
 
           <svg viewBox="0 0 24 24" aria-hidden="true">
 
-            <circle cx="12" cy="12" r="10">
-            </circle>
+            <circle cx="12" cy="12" r="10"></circle>
 
             <path fill="#fff" d="M10.4 7.4h-1.6v9.2h1.6V7.4zm3.2 0h-2.2v1.6h2.2
               c1.8 0 2.8 1.1 2.8 3s-1 3-2.8 3h-2.2v1.6h2.2
@@ -2442,14 +2385,12 @@
 
         <div data-nosnippet>
 
-          <a href="mailto:sangseok.han.contact@gmail.com" class="copy-email" data-email="sangseok.han.contact@gmail.com"
-            aria-label="Copy email address" title="Click to copy email address">
+          <a href="mailto:sangseok.han.contact@gmail.com" class="copy-email"
+            data-email="sangseok.han.contact@gmail.com" aria-label="Copy email address"
+            title="Click to copy email address">
 
             <svg viewBox="0 0 24 24" aria-hidden="true">
-
-              <path d="M2 4h20v16H2V4zm10 7L2 6v2l10 5 10-5V6l-10 5z">
-              </path>
-
+              <path d="M2 4h20v16H2V4zm10 7L2 6v2l10 5 10-5V6l-10 5z"></path>
             </svg>
 
             <span class="icon-label">
@@ -2726,7 +2667,9 @@
           <article class="affiliation-item" data-timeline="snu">
 
             <div class="affiliation-logo" aria-hidden="true">
+
               <img src="/assets/logos/snu-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
+
             </div>
 
             <div class="affiliation-copy">
@@ -2771,7 +2714,9 @@
           <article class="affiliation-item" data-timeline="osaka">
 
             <div class="affiliation-logo" aria-hidden="true">
+
               <img src="/assets/logos/osaka-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
+
             </div>
 
             <div class="affiliation-copy">
@@ -2813,10 +2758,12 @@
           </article>
 
           <!-- Republic of Korea Navy -->
-          <article class="affiliation-item">
+          <article class="affiliation-item affiliation-item-static">
 
             <div class="affiliation-logo" aria-hidden="true">
+
               <img src="/assets/logos/navy-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
+
             </div>
 
             <div class="affiliation-copy">
@@ -2833,7 +2780,8 @@
 
               </div>
 
-              <div class="affiliation-context" data-en="Acoustic Systems &amp; Naval Operations" data-ja="音響システム・海軍運用">
+              <div class="affiliation-context" data-en="Acoustic Systems &amp; Naval Operations"
+                data-ja="音響システム・海軍運用">
                 Acoustic Systems &amp; Naval Operations
               </div>
 
@@ -2850,35 +2798,6 @@
                 <span class="affiliation-country" data-en="South Korea" data-ja="韓国">
                   South Korea
                 </span>
-
-              </div>
-
-              <div class="experience-recognition">
-
-                <div class="experience-recognition-item">
-
-                  <span class="experience-recognition-title" data-en="2nd Fleet Commander’s Commendation"
-                    data-ja="第2艦隊司令官表彰">
-                    2nd Fleet Commander’s Commendation
-                  </span>
-
-                  <span class="experience-recognition-year">
-                    2020
-                  </span>
-
-                </div>
-
-                <div class="experience-recognition-item">
-
-                  <span class="experience-recognition-title" data-en="Captain’s Commendation Medal" data-ja="艦長表彰">
-                    Captain’s Commendation Medal
-                  </span>
-
-                  <span class="experience-recognition-year">
-                    2018
-                  </span>
-
-                </div>
 
               </div>
 
@@ -3072,7 +2991,6 @@
 
       <div class="features-writing-block">
 
-        <!-- 2026 · SNU University Newspaper -->
         <!-- 2026 · SNU University Newspaper -->
         <article class="feature-writing-item">
 
@@ -4089,8 +4007,7 @@
       const maximumScrollY =
         Math.max(
           0,
-          scrollingElement
-            .scrollHeight -
+          scrollingElement.scrollHeight -
           window.innerHeight
         );
 
@@ -4306,6 +4223,7 @@
           })
         );
     }
+
     function updateProfileSideNavigation() {
       const sideNav =
         document.querySelector(
@@ -4343,12 +4261,6 @@
         scrollingElement.scrollHeight -
         4;
 
-      /*
-        Active section is determined by a point
-        inside the viewport rather than the very top.
-    
-        0.42 = 42% down the viewport.
-      */
       const activationPoint =
         currentScroll +
         window.innerHeight * 0.42;
@@ -4371,10 +4283,6 @@
         }
       }
 
-      /*
-        At the absolute bottom,
-        make sure the final section is active.
-      */
       if (isAtBottom) {
         activeSection =
           profileScrollMap[
@@ -4410,6 +4318,7 @@
           "location"
         );
     }
+
     function schedulePageUpdate(
       rebuildMap = false
     ) {
@@ -4578,7 +4487,12 @@
 
       const timelineItems =
         document.querySelectorAll(
-          "#education .affiliation-item, #appointments-experience .affiliation-item"
+          "#education .affiliation-item[data-timeline], #appointments-experience .affiliation-item[data-timeline]"
+        );
+
+      const staticItems =
+        document.querySelectorAll(
+          "#appointments-experience .affiliation-item-static"
         );
 
       const recordBlocks =
@@ -4716,6 +4630,25 @@
               activateTimelineItem(
                 item
               );
+            }
+          );
+        });
+
+      /*
+        Navy has no timeline entry.
+        Entering it simply clears any existing
+        academic timeline focus.
+      */
+      staticItems
+        .forEach(item => {
+          item.addEventListener(
+            "mouseenter",
+            () => {
+              clearTimeout(
+                clearFocusTimer
+              );
+
+              clearTimelineFocus();
             }
           );
         });
