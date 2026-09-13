@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>One Number Is Not Enough to Describe a Person | Sangseok Han</title>
+
+  <meta name="description"
+    content="A personal essay by Sangseok Han on measurement, research, and the limits of reducing a person to a single number. English translation and original Korean text presented in parallel.">
+
+  <link rel="canonical" href="https://sangseokhan.com/profile/writing/single-number/">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+
+  <meta name="robots" content="index,follow,noimageindex">
+
+  <meta property="og:title" content="One Number Is Not Enough to Describe a Person">
+
+  <meta property="og:description"
+    content="A personal essay by Sangseok Han, presented in English and the original Korean.">
+
+  <meta property="og:type" content="article">
+
+  <meta property="og:url" content="https://sangseokhan.com/profile/writing/single-number/">
+
+  <meta property="og:site_name" content="Sangseok Han">
+
+  <meta property="og:image" content="https://sangseokhan.com/assets/thumbnail.png">
+
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="ko_KR">
+
+  <meta property="article:published_time" content="2026-09-13">
+
+  <meta property="article:author" content="Sangseok Han">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "One Number Is Not Enough to Describe a Person",
+  "alternativeHeadline": "한 사람을 설명하기에 하나의 숫자는 너무 적다",
+  "datePublished": "2026-09-13",
+  "author": {
+    "@type": "Person",
+    "name": "Sangseok Han",
+    "url": "https://sangseokhan.com/profile/"
+  },
+  "url": "https://sangseokhan.com/profile/writing/single-number/",
+  "mainEntityOfPage": "https://sangseokhan.com/profile/writing/single-number/",
+  "description": "A personal essay on measurement, research, and the limits of reducing a person to a single number, presented in English translation alongside the original Korean text."
+}
+</script>
+
+  <script src="/assets/js/site-analytics.js?v=1"></script>
+
+  <script>
+    (function () {
+      const savedLang =
+        sessionStorage.getItem("lang");
+
+      const lang =
+        savedLang === "ja"
+          ? "ja"
+          : "en";
+
+      document.documentElement.setAttribute(
+        "lang",
+        lang
+      );
+
+      document.documentElement.setAttribute(
+        "data-lang",
+        lang
+      );
+    })();
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/site-shell.css?v=1">
+
+  <!-- Korean typography -->
+
+  <style>
+    :root {
+      --accent-dark: #0B1F3A;
+      --text-muted: #4A4A4A;
+
+      --essay-rule:
+        rgba(11, 31, 58, 0.09);
+
+      --essay-rule-light:
+        rgba(11, 31, 58, 0.055);
+    }
+
+
+    html {
+      scroll-behavior: auto;
+    }
+
+
+    .page-content {
+      max-width: 1180px;
+
+      transform:
+        translateY(6px);
+
+      transition:
+        transform 0.12s ease-out;
+    }
+
+    .page-content.loaded {
+      transform:
+        translateY(0);
+    }
+
+
+    /* =========================================================
+       BACK TO PROFILE
+       ========================================================= */
+
+    .profile-back {
+      margin:
+        0 0 32px;
+    }
+
+    .profile-back a {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 7px;
+
+      width: fit-content;
+
+      font-size: 0.8em;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: 0.09em;
+
+      color:
+        rgba(11, 31, 58, 0.46);
+
+      text-decoration: none;
+
+      transition:
+        color 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .profile-back-arrow {
+      display: inline-block;
+
+      font-size: 1.08em;
+      line-height: 1;
+
+      color:
+        rgba(11, 31, 58, 0.38);
+
+      transform:
+        translateY(-0.02em);
+
+      transition:
+        color 0.18s ease,
+        transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .profile-back-text {
+      font-size: inherit;
+      letter-spacing: inherit;
+    }
+
+    .profile-back a:hover {
+      color:
+        rgba(11, 31, 58, 0.82);
+    }
+
+    .profile-back a:hover .profile-back-arrow {
+      color:
+        rgba(11, 31, 58, 0.72);
+
+      transform:
+        translate(-3px, -0.02em);
+    }
+
+    .profile-back a:focus-visible {
+      color:
+        rgba(11, 31, 58, 0.88);
+
+      outline:
+        1px solid rgba(11, 31, 58, 0.22);
+
+      outline-offset: 5px;
+    }
+
+    html[data-lang="ja"] .profile-back a {
+      letter-spacing: 0.06em;
+    }
+
+
+    /* =========================================================
+       CONTINUOUS PARALLEL FRAME
+       ========================================================= */
+
+    .essay-parallel-frame {
+      position: relative;
+    }
+
+    .essay-parallel-frame::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+      left: 50%;
+
+      width: 1px;
+
+      background:
+        var(--essay-rule);
+
+      transform:
+        translateX(-0.5px);
+
+      pointer-events: none;
+    }
+
+
+    /* =========================================================
+       ARTICLE HEADER
+       ========================================================= */
+
+    .essay-header {
+      margin-bottom: 0;
+    }
+
+
+    .essay-title-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr) minmax(0, 1fr);
+
+      column-gap: 52px;
+
+      align-items: stretch;
+    }
+
+
+    .essay-title-column {
+      display: flex;
+      flex-direction: column;
+
+      min-width: 0;
+    }
+
+
+    .essay-title {
+      margin: 0;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(1.75rem,
+          2.5vw,
+          2rem);
+
+      font-weight: 400;
+
+      line-height: 1.17;
+
+      letter-spacing:
+        -0.018em;
+
+      color:
+        rgba(11, 31, 58, 0.95);
+    }
+
+
+    .essay-title[lang="ko"] {
+      font-family:
+        "Apple SD Gothic Neo",
+        "Noto Serif KR",
+        "Malgun Gothic",
+        serif;
+
+      font-size:
+        clamp(1.62rem, 2vw, 1.9rem);
+
+      font-weight: 500;
+      line-height: 1.36;
+      letter-spacing: -0.038em;
+
+      word-break: keep-all;
+
+      color: rgba(11, 31, 58, 0.96);
+    }
+
+
+    .essay-language-label {
+      margin-top: auto;
+      margin-bottom: 0;
+
+      padding-top: 11px;
+
+      font-size: 0.59em;
+
+      line-height: 1.4;
+
+      letter-spacing:
+        0.105em;
+
+      text-transform: uppercase;
+
+      text-align: right;
+
+      color:
+        rgba(79, 89, 101, 0.72);
+    }
+
+
+    .essay-title-column[lang="ko"] .essay-language-label {
+      font-family:
+        "Apple SD Gothic Neo",
+        "Malgun Gothic",
+        sans-serif;
+
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      text-transform: none;
+    }
+
+
+    /* =========================================================
+       ARTICLE META
+       ========================================================= */
+
+    .essay-meta {
+      display: flex;
+
+      align-items: baseline;
+      justify-content: flex-end;
+
+      flex-wrap: wrap;
+
+      gap:
+        8px 13px;
+
+      margin-top: 25px;
+
+      padding-bottom: 10px;
+
+      border-bottom:
+        1px solid var(--essay-rule-light);
+
+      font-size: 0.7em;
+
+      line-height: 1.5;
+
+      letter-spacing:
+        0.025em;
+
+      text-align: right;
+
+      color:
+        rgba(68, 79, 94, 0.62);
+    }
+
+
+    .essay-meta-separator {
+      color:
+        rgba(11, 31, 58, 0.22);
+    }
+
+
+    .essay-meta a {
+      color:
+        rgba(35, 47, 63, 0.72);
+
+      text-decoration: none;
+
+      transition:
+        color 0.16s ease;
+    }
+
+
+    .essay-meta a:hover {
+      color:
+        var(--accent-dark);
+    }
+
+
+    .external-arrow {
+      display: inline-block;
+
+      margin-left: 2px;
+
+      font-size: 0.9em;
+
+      transform:
+        translateY(-1px);
+    }
+
+
+    /* =========================================================
+       PARALLEL ARTICLE
+       ========================================================= */
+
+    .parallel-body {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+
+    .parallel-row {
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr) minmax(0, 1fr);
+
+      column-gap: 52px;
+
+      align-items: start;
+
+      padding:
+        26px 0;
+
+      border-bottom:
+        1px solid var(--essay-rule-light);
+
+      transition:
+        background-color 0.18s ease;
+    }
+
+
+    .parallel-row:first-child {
+      padding-top: 24px;
+    }
+
+
+    .parallel-row:last-child {
+      border-bottom: 0;
+    }
+
+
+    .parallel-cell {
+      min-width: 0;
+    }
+
+
+    .parallel-cell p {
+      margin: 0;
+
+      font-size: 0.94em;
+      line-height: 1.88;
+      letter-spacing: 0.004em;
+
+      text-align: justify;
+      text-align-last: left;
+      text-justify: inter-word;
+
+      hyphens: auto;
+      -webkit-hyphens: auto;
+
+      color:
+        rgba(39, 46, 56, 0.88);
+    }
+
+
+    .parallel-cell[lang="ko"] p {
+      font-family:
+        "Apple SD Gothic Neo",
+        "Malgun Gothic",
+        sans-serif;
+
+      font-size: 0.92em;
+      font-weight: 400;
+
+      line-height: 1.94;
+      letter-spacing: -0.014em;
+
+      text-align: justify;
+      text-align-last: left;
+      text-justify: inter-character;
+
+      hyphens: none;
+      -webkit-hyphens: none;
+
+      word-break: normal;
+      overflow-wrap: break-word;
+
+      color:
+        rgba(33, 41, 52, 0.88);
+
+      font-feature-settings:
+        "kern" 1;
+    }
+
+
+    .mobile-language-label {
+      display: none;
+    }
+
+
+    @media (hover: hover) and (pointer: fine) {
+
+      .parallel-row:hover {
+        background:
+          rgba(11, 31, 58, 0.012);
+      }
+    }
+
+
+    /* =========================================================
+       ARTICLE END
+       ========================================================= */
+
+    .essay-end {
+      display: flex;
+
+      align-items: baseline;
+      justify-content: space-between;
+
+      flex-wrap: wrap;
+
+      gap: 14px;
+
+      margin-top: 36px;
+
+      padding-top: 20px;
+
+      border-top:
+        1px solid var(--essay-rule);
+    }
+
+
+    .essay-end-note {
+      font-size: 0.68em;
+
+      line-height: 1.55;
+
+      color:
+        rgba(79, 89, 101, 0.5);
+    }
+
+
+    .essay-end-link {
+      font-size: 0.68em;
+
+      line-height: 1.55;
+
+      letter-spacing:
+        0.03em;
+
+      color:
+        rgba(45, 55, 69, 0.7);
+
+      text-decoration: none;
+
+      transition:
+        color 0.16s ease;
+    }
+
+
+    .essay-end-link:hover {
+      color:
+        var(--accent-dark);
+    }
+
+
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
+    @media (min-width: 761px) and (max-width: 960px) {
+
+      .essay-title-grid,
+      .parallel-row {
+        column-gap: 38px;
+      }
+
+      .parallel-cell p {
+        font-size: 0.9em;
+      }
+
+      .parallel-cell[lang="ko"] p {
+        font-size: 0.87em;
+      }
+    }
+
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 760px) {
+
+      .page-content {
+        max-width: none;
+      }
+
+
+      .profile-back {
+        margin:
+          -3px 0 24px;
+      }
+
+
+      .profile-back a {
+        gap: 6px;
+
+        font-size: 0.8rem;
+
+        letter-spacing:
+          0.08em;
+      }
+
+
+      .profile-back-arrow {
+        font-size: 0.8rem;
+      }
+
+
+      /* No centre divider on stacked mobile layout */
+      .essay-parallel-frame::before {
+        display: none;
+      }
+
+
+      .essay-title-grid {
+        display: block;
+      }
+
+
+      .essay-title-column+.essay-title-column {
+        margin-top: 18px;
+
+        padding-top: 18px;
+
+        border-top:
+          1px solid var(--essay-rule-light);
+      }
+
+
+      .essay-title {
+        font-size: 1.55rem;
+
+        line-height: 1.22;
+      }
+
+
+      .essay-title[lang="ko"] {
+        font-size: 1.42rem;
+
+        line-height: 1.34;
+
+        letter-spacing:
+          -0.035em;
+      }
+
+
+      .essay-language-label {
+        margin-top: 8px;
+
+        padding-top: 0;
+
+        margin-bottom: 0;
+
+        font-size: 0.53rem;
+
+        text-align: right;
+      }
+
+
+      .essay-meta {
+        gap:
+          5px 9px;
+
+        margin-top: 19px;
+
+        padding-bottom: 10px;
+
+        font-size: 0.59rem;
+      }
+
+
+      .essay-meta-separator {
+        display: none;
+      }
+
+
+      .parallel-body {
+        margin-top: 0;
+
+        padding-top: 0;
+      }
+
+
+      .parallel-row {
+        display: block;
+
+        padding:
+          22px 0;
+
+        border-bottom:
+          1px solid rgba(11, 31, 58, 0.08);
+      }
+
+
+      .parallel-row:first-child {
+        padding-top: 20px;
+      }
+
+
+      .parallel-cell {
+        position: relative;
+      }
+
+
+      .parallel-cell+.parallel-cell {
+        margin-top: 18px;
+
+        padding-top: 18px;
+
+        border-top:
+          1px dashed rgba(11, 31, 58, 0.08);
+      }
+
+
+      .mobile-language-label {
+        display: block;
+
+        margin-bottom: 7px;
+
+        font-size: 0.5rem;
+
+        line-height: 1.4;
+
+        letter-spacing:
+          0.1em;
+
+        text-transform: uppercase;
+
+        color:
+          rgba(79, 89, 101, 0.44);
+      }
+
+
+      .parallel-cell[lang="ko"] .mobile-language-label {
+        font-family:
+          "Apple SD Gothic Neo",
+          "Malgun Gothic",
+          sans-serif;
+
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        text-transform: none;
+      }
+
+
+      .parallel-cell p {
+        font-size: 0.78rem;
+
+        line-height: 1.78;
+      }
+
+
+      .parallel-cell[lang="ko"] p {
+        font-size: 0.82rem;
+
+        line-height: 1.9;
+
+        letter-spacing:
+          -0.012em;
+      }
+
+
+      .essay-end {
+        display: block;
+
+        margin-top: 26px;
+
+        padding-top: 16px;
+      }
+
+
+      .essay-end-note,
+      .essay-end-link {
+        font-size: 0.58rem;
+      }
+
+
+      .essay-end-link {
+        display: inline-block;
+
+        margin-top: 7px;
+      }
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .page-content,
+      .nav,
+      .profile-back a,
+      .profile-back-arrow,
+      .essay-meta a,
+      .essay-end-link,
+      .parallel-row {
+        transition:
+          none !important;
+      }
+
+      .page-content {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+
+<body id="top">
+
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+
+
+  <!-- =======================================================
+       SITE HEADER
+       ======================================================= -->
+
+  <header class="site-header">
+
+    <div class="site-header-row">
+
+      <a href="/" class="site-name">
+        Sangseok Han
+      </a>
+
+      <div class="lang-switch" aria-label="Language selection">
+
+        <a href="#" data-lang="en">
+          EN
+        </a>
+
+        <span aria-hidden="true">
+          ·
+        </span>
+
+        <a href="#" data-lang="ja">
+          JP
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =======================================================
+       MAIN NAVIGATION
+       ======================================================= -->
+
+  <div class="nav">
+
+    <a href="/" data-en="Home" data-ja="ホーム">
+      Home
+    </a>
+
+    <a href="/research/" data-en="Research" data-ja="研究">
+      Research
+    </a>
+
+    <a href="/publications/" data-en="Publications" data-ja="論文">
+      Publications
+    </a>
+
+    <a href="/profile/" class="active" aria-current="page" data-en="Profile" data-ja="プロフィール">
+      Profile
+    </a>
+
+    <a href="/contact/" data-en="Contact" data-ja="連絡先">
+      Contact
+    </a>
+
+  </div>
+
+
+  <!-- =======================================================
+       PAGE
+       ======================================================= -->
+
+  <main class="page-content">
+
+
+    <!-- =====================================================
+         BACK TO PROFILE
+         ===================================================== -->
+
+    <nav class="profile-back" aria-label="Profile navigation">
+
+      <a href="/profile/">
+
+        <span class="profile-back-arrow" aria-hidden="true">
+          ←
+        </span>
+
+        <span class="profile-back-text" data-en="Profile" data-ja="プロフィール">
+          Profile
+        </span>
+
+      </a>
+
+    </nav>
+
+
+    <article class="parallel-article">
+
+
+      <!-- ===================================================
+           CONTINUOUS PARALLEL FRAME
+           =================================================== -->
+
+      <div class="essay-parallel-frame">
+
+
+        <!-- =================================================
+             ARTICLE HEADER
+             ================================================= -->
+
+        <header class="essay-header">
+
+
+          <div class="essay-title-grid">
+
+
+            <div class="essay-title-column">
+
+              <h1 class="essay-title">
+                One Number Is Not Enough to Describe a Person
+              </h1>
+
+              <div class="essay-language-label">
+                English translation
+              </div>
+
+            </div>
+
+
+            <div class="essay-title-column" lang="ko">
+
+              <h1 class="essay-title" lang="ko">
+                한 사람을 설명하기에 하나의 숫자는 너무 적다
+              </h1>
+
+              <div class="essay-language-label">
+                한국어 원문
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="essay-meta">
+
+            <time datetime="2026-09-13">
+              13 September 2026
+            </time>
+
+            <span class="essay-meta-separator" aria-hidden="true">
+              ·
+            </span>
+
+            <span>
+
+              <a href="https://www.snunews.com/news/articleView.html?idxno=35526" target="_blank"
+                rel="noopener noreferrer">
+
+                Seoul National University Newspaper
+
+                <span class="external-arrow" aria-hidden="true">
+                  ↗
+                </span>
+
+              </a>
+
+            </span>
+
+          </div>
+
+
+        </header>
+
+
+        <!-- =================================================
+             PARALLEL BODY
+             ================================================= -->
+
+        <div class="parallel-body">
+
+
+          <!-- Paragraph 1 -->
+
+          <div class="parallel-row">
+
+            <section class="parallel-cell" lang="en">
+
+              <span class="mobile-language-label">
+                English translation
+              </span>
+
+              <p>
+                I study how small differences in a ship’s surface, even on a vessel hundreds of metres long, can affect
+                the way water flows around it. In ship hydrodynamics, complex
+                hull roughness is often simplified into a single
+                representative value. Yet even when the average is the
+                same, different roughness distributions can produce
+                different flow and resistance. A representative value
+                cannot fully describe the surface itself.
+              </p>
+
+            </section>
+
+
+            <section class="parallel-cell" lang="ko">
+
+              <span class="mobile-language-label">
+                한국어 원문
+              </span>
+
+              <p>
+                나는 수백 미터 길이의 선박이 바다를 가를 때,
+                선체 표면의 작은 차이가 물의 흐름을 어떻게 바꾸는지
+                연구한다. 선박 유체역학에서는 복잡한 선체 거칠기를
+                하나의 대푯값으로 단순화해 다루고는 한다. 그러나
+                평균이 같아도 거칠기의 분포에 따라 물의 흐름과 저항은
+                달라진다. 대푯값은 표면 자체를 온전히 표현하지 못한다.
+              </p>
+
+            </section>
+
+          </div>
+
+
+          <!-- Paragraph 2 -->
+
+          <div class="parallel-row">
+
+            <section class="parallel-cell" lang="en">
+
+              <span class="mobile-language-label">
+                English translation
+              </span>
+
+              <p>
+                Looking at the results brought back an old memory. In my second year of high school, I scored 4 out of
+                100 on a chemistry exam. The score did not stay on the exam paper. My classmates started calling me
+                “CH4.” I was embarrassed at first, but I got used to it. After class, I went to internet cafés.
+                Sometimes I
+                borrowed
+                physics books from the library. Regardless of my school results, I often imagined a life far beyond it.
+                I
+                pictured myself studying abroad one day. But my school grades were mostly in the seventh or eighth band
+                on a nine-band scale, and university was not an option for me. The person I imagined in the library
+                seemed far from the person I was then.
+              </p>
+
+            </section>
+
+
+            <section class="parallel-cell" lang="ko">
+
+              <span class="mobile-language-label">
+                한국어 원문
+              </span>
+
+              <p>
+                그 결과를 보다가 오래전 기억이 떠올랐다. 고2 때
+                화학 시험에서 4점을 받았다. 점수는 시험지에만 남지
+                않았다. ‘CH4’라는 별명이 따라붙었고, 처음에는
+                부끄러웠지만 어느새 익숙해졌다. 수업이 끝나면
+                피시방으로 향했다. 가끔 도서관에서 물리학 책을 빌려
+                읽었다. 성적표와는 별개로, 머릿속의 나는 자주 먼
+                곳까지 갔다. 언젠가 외국에서 공부하는 미래를
+                상상했다. 하지만 내신은 7~8등급 대였고 대학에 가지
+                못했다. 도서관에서 꿈꾸던 모습은 현실의 나와 멀리
+                떨어져 있었다.
+              </p>
+
+            </section>
+
+          </div>
+
+
+          <!-- Paragraph 3 -->
+
+          <div class="parallel-row">
+
+            <section class="parallel-cell" lang="en">
+
+              <span class="mobile-language-label">
+                English translation
+              </span>
+
+              <p>
+                At twenty, I became a petty officer in the Republic of
+                Korea Navy and went to sea. “Instead of holding a pencil at university like others my age, I am holding
+                a pen on the bottom bunk of a ship.” I wrote that one winter from the lowest berth of a three-tier bunk
+                aboard a warship sailing off Korea’s west coast. On board, I was in the 252nd NCO intake. A difference
+                of one class
+                could change the way people spoke and behaved. During
+                my first year, I was constantly mindful of dozens of
+                seniors around me. In my diary I wrote, “1,222 days
+                left. I have only made it 16% of the way.” The next
+                watch felt closer than my future.
+              </p>
+
+            </section>
+
+
+            <section class="parallel-cell" lang="ko">
+
+              <span class="mobile-language-label">
+                한국어 원문
+              </span>
+
+              <p>
+                스무 살에는 해군 하사가 돼 바다로 갔다. “남들처럼
+                대학에서 연필을 잡는 것이 아니라, 배 안의 1층
+                침대에서 펜을 잡고 있다니.” 그해 겨울, 서해를
+                항해하던 군함의 3단 침대 맨 아래 칸에서 그렇게
+                썼다. 배에서는 252기로 불렸다. 부사관 임관 기수였다.
+                한 기수 차이로 말투와 태도가 달라졌다. 첫해에는
+                수십 명의 선임 사이에서 눈치를 봤다. 일기에는
+                “1,222일 남았다. 이제 겨우 16% 왔다”고 적었다.
+                미래보다 다음 당직이 더 가까웠다.
+              </p>
+
+            </section>
+
+          </div>
+
+
+          <!-- Paragraph 4 -->
+
+          <div class="parallel-row">
+
+            <section class="parallel-cell" lang="en">
+
+              <span class="mobile-language-label">
+                English translation
+              </span>
+
+              <p>
+                Later, I served on a ship that travelled back and forth
+                to Yeonpyeong Island. One dawn, our ship came across a North
+                Korean patrol vessel, and I put on my military helmet. The
+                English words I had been memorising were still in my
+                head. Around that time, I started again from
+                middle-school mathematics and retook the Korean
+                university entrance examination. My score was almost
+                the same as it had been in my final year of high school.
+                My discharge date was fixed, but what came after it was
+                not. The next day, I opened the books again. When my
+                four years in the Navy ended, I went into a study room.
+              </p>
+
+            </section>
+
+
+            <section class="parallel-cell" lang="ko">
+
+              <span class="mobile-language-label">
+                한국어 원문
+              </span>
+
+              <p>
+                그 뒤 연평도를 오가는 배에서 지냈다. 어느 새벽,
+                북한 경비정과 마주해 철모를 썼다. 머릿속에는 외우던
+                영단어가 남아 있었다. 그 무렵 중학교 수학부터 시작해
+                수능을 다시 봤다. 점수는 고3 때와 비슷했다. 전역은
+                정해져 있었지만, 그 뒤는 정해져 있지 않았다. 다음 날
+                다시 책을 폈다. 4년의 군 생활이 끝나고 독서실로
+                들어갔다.
+              </p>
+
+            </section>
+
+          </div>
+
+
+          <!-- Paragraph 5 -->
+
+          <div class="parallel-row">
+
+            <section class="parallel-cell" lang="en">
+
+              <span class="mobile-language-label">
+                English translation
+              </span>
+
+              <p>
+                Twenty-five. While my friends were talking about
+                graduation and jobs, I began my first semester at
+                university. After much thought, I chose to study ships.
+                As an undergraduate, I presented research for the first
+                time, and after graduation I pursued a master’s degree
+                in the United Kingdom. My first paper was published
+                after four rejections. I now work at Seoul National
+                University with researchers from several countries.
+                From next semester, I will begin my doctoral studies at
+                Kyoto University. Looking back, the sea I once had to endure at twenty has become the world I now study
+                as I approach thirty.
+              </p>
+
+            </section>
+
+
+            <section class="parallel-cell" lang="ko">
+
+              <span class="mobile-language-label">
+                한국어 원문
+              </span>
+
+              <p>
+                25살. 친구들이 졸업과 취업을 말할 때 대학교 첫
+                학기를 시작했다. 고민 끝에 배를 공부하기로 했다.
+                학부 때 처음 연구를 발표했고, 졸업 후 영국에서
+                석사과정을 밟았다. 첫 논문은 네 차례 거절된 뒤
+                출판됐다. 지금은 서울대에서 여러 나라의 연구자들과
+                함께 일하고 있다. 다음 학기부터는 교토대에서
+                박사과정을 시작한다. 돌아보니 스무 살에 견뎌야 했던
+                바다는, 서른이 된 지금 내가 연구하는 세계가 돼 있었다.
+              </p>
+
+            </section>
+
+          </div>
+
+
+          <!-- Paragraph 6 -->
+
+          <div class="parallel-row">
+
+            <section class="parallel-cell" lang="en">
+
+              <span class="mobile-language-label">
+                English translation
+              </span>
+
+              <p>
+                With hindsight, the past can seem as though it had always followed a single path. But where I am now
+                does not make every moment behind me a necessary step along the way. Even if I had never become a
+                researcher, that score of 4 would still have captured who I was at that moment, but it could never have
+                explained all of me. The 4 did not contain the maths book I would later open again. The number 252 did
+                not contain the university I had yet to attend. Being twenty-five did not contain the research I had yet
+                to begin.
+
+                Researchers ask how much a measurement can explain. We should ask the same when we look at people. What
+                matters is not only whether a number is accurate, but how much of a person it can really explain.
+                Universities, too, sometimes see people through numbers. A number can capture one moment in a person’s
+                life, but it cannot tell us how that life will turn out. Giving time to someone who does not yet know
+                what they are capable of is also something a university can do.
+              </p>
+
+            </section>
+
+
+            <section class="parallel-cell" lang="ko">
+
+              <span class="mobile-language-label">
+                한국어 원문
+              </span>
+
+              <p>
+                지나고 나면 과거는 처음부터 하나의 길이었던 것처럼
+                보인다. 하지만 지금 서 있는 곳이 지나온 모든 순간을
+                필요한 과정으로 만들지는 않는다. 연구자가 되지
+                않았더라도, 4점은 그 순간의 나를 기록했을 뿐 전부
+                설명할 수 없었다. 4점에는 다시 펼칠 수학책이,
+                252기에는 아직 가 보지 않은 대학이, 25살에는
+                시작하지 않은 연구가 적혀 있지 않았다. 연구자는
+                측정값이 어디까지 설명할 수 있는지를 묻는다. 사람을
+                볼 때도 마찬가지다. 중요한 것은 숫자의 정확성보다
+                한 사람을 어디까지 설명할 수 있느냐다. 대학도
+                때로는 사람을 숫자로 읽는다. 그 숫자는 한 사람의 한
+                시점을 보여 줄 뿐, 결론까지 말해 주지는 못한다.
+                아직 자신이 무엇을 할 수 있을지 모르는 사람에게
+                시간을 허락하는 것. 그것 역시 대학이 할 수 있는 일이다.
+              </p>
+
+            </section>
+
+          </div>
+
+
+          <!-- Paragraph 7 -->
+
+          <div class="parallel-row">
+
+            <section class="parallel-cell" lang="en">
+
+              <span class="mobile-language-label">
+                English translation
+              </span>
+
+              <p>
+                I sometimes think about myself writing in my diary from the bottom bunk of that warship. I do not want
+                to tell him that everything will turn out all right. To comfort him with the benefit of hindsight would
+                make the uncertainty of those days seem easier than it really was. Back then, I did not know how things
+                would turn out. There was only the next day.
+                The person who scored 4, the person known as 252, and the twenty-five-year-old first-year student were
+                all me, but none of those moments defined me. The same is true of who I am now. There is still a next
+                day. That is why I try not to treat a person’s number as the final word on who they are. No number can
+                account for the time that has yet to be lived. One number is not enough to describe a person.
+
+              </p>
+
+            </section>
+
+
+            <section class="parallel-cell" lang="ko">
+
+              <span class="mobile-language-label">
+                한국어 원문
+              </span>
+
+              <p>
+                나는 가끔 군함의 맨 아래 침대에서 일기를 쓰던 나를
+                떠올린다. 그에게 결국 잘될 것이라고 말하고 싶지는
+                않다. 미래를 알고 건네는 위로는 그 시절의 막막함을
+                쉽게 지나간 일로 만들기 때문이다. 그날의 나는
+                결말을 몰랐다. 다음 날만 있었다. 4점의 나도,
+                252기의 나도, 25살의 나도 분명 나였지만, 그 어느
+                순간도 나의 결론은 아니었다. 지금의 나도 다르지
+                않다. 우리에게는 다음 날이 있다. 그래서 누군가의
+                숫자를 한 사람의 결론으로 읽지 않으려 한다. 어떤
+                숫자도 아직 살아 보지 않은 시간까지 설명하지 못하기
+                때문이다. 한 사람을 설명하기에 하나의 숫자는 너무 적다.
+              </p>
+
+            </section>
+
+          </div>
+
+
+        </div>
+        <!-- /parallel-body -->
+
+
+      </div>
+      <!-- /essay-parallel-frame -->
+
+
+      <!-- ===================================================
+           ARTICLE END
+           =================================================== -->
+
+      <div class="essay-end">
+
+        <span class="essay-end-note">
+          English translation presented alongside the original Korean text.
+        </span>
+
+        <a class="essay-end-link" href="https://www.snunews.com/news/articleView.html?idxno=35526" target="_blank"
+          rel="noopener noreferrer">
+
+          View original article
+
+          <span class="external-arrow" aria-hidden="true">
+            ↗
+          </span>
+
+        </a>
+
+      </div>
+
+
+    </article>
+
+
+    <!-- =======================================================
+         FOOTER
+         ======================================================= -->
+
+    <footer class="site-footer">
+
+      <div class="footer-signature">
+
+        <span class="footer-name">
+          Sangseok Han
+        </span>
+
+        <span class="footer-field" data-en="Research portfolio" data-ja="研究ポートフォリオ">
+          Research portfolio
+        </span>
+
+      </div>
+
+      <a class="footer-top" href="#top">
+
+        <span data-en="Back to top" data-ja="ページ上部へ">
+          Back to top
+        </span>
+
+        <span class="footer-top-arrow" aria-hidden="true">
+          ↑
+        </span>
+
+      </a>
+
+    </footer>
+
+
+  </main>
+
+
+  <!-- =======================================================
+       SCRIPT
+       ======================================================= -->
+
+  <script>
+    const DEFAULT_LANG =
+      "en";
+
+    const SUPPORTED_LANGS =
+      new Set([
+        "en",
+        "ja"
+      ]);
+
+
+    function getSessionLang() {
+
+      const saved =
+        sessionStorage.getItem(
+          "lang"
+        );
+
+      return (
+        SUPPORTED_LANGS.has(saved)
+          ? saved
+          : DEFAULT_LANG
+      );
+
+    }
+
+
+    function applyLang(lang) {
+
+      const safeLang =
+        SUPPORTED_LANGS.has(lang)
+          ? lang
+          : DEFAULT_LANG;
+
+
+      document.documentElement
+        .setAttribute(
+          "lang",
+          safeLang
+        );
+
+
+      document.documentElement
+        .setAttribute(
+          "data-lang",
+          safeLang
+        );
+
+
+      document
+        .querySelectorAll(
+          "[data-en]"
+        )
+        .forEach(element => {
+
+          const value =
+            element.getAttribute(
+              `data-${safeLang}`
+            );
+
+          if (value !== null) {
+            element.textContent =
+              value;
+          }
+
+        });
+
+
+      document
+        .querySelectorAll(
+          ".lang-switch a"
+        )
+        .forEach(link => {
+
+          link.classList.toggle(
+            "active",
+            link.dataset.lang ===
+            safeLang
+          );
+
+        });
+
+    }
+
+
+    function updateNavigationState() {
+
+      const nav =
+        document.querySelector(
+          ".nav"
+        );
+
+      if (!nav) {
+        return;
+      }
+
+      nav.classList.toggle(
+        "is-scrolled",
+        window.scrollY > 24
+      );
+
+    }
+
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+        const lang =
+          getSessionLang();
+
+        applyLang(lang);
+
+
+        document
+          .querySelectorAll(
+            ".lang-switch a"
+          )
+          .forEach(link => {
+
+            link.addEventListener(
+              "click",
+              event => {
+
+                event.preventDefault();
+
+                const selected =
+                  SUPPORTED_LANGS.has(
+                    link.dataset.lang
+                  )
+                    ? link.dataset.lang
+                    : DEFAULT_LANG;
+
+
+                sessionStorage.setItem(
+                  "lang",
+                  selected
+                );
+
+                applyLang(
+                  selected
+                );
+
+              }
+            );
+
+          });
+
+
+        updateNavigationState();
+
+      }
+    );
+
+
+    window.addEventListener(
+      "scroll",
+      updateNavigationState,
+      {
+        passive: true
+      }
+    );
+
+
+    window.addEventListener(
+      "load",
+      () => {
+
+        document
+          .querySelector(
+            ".page-content"
+          )
+          ?.classList.add(
+            "loaded"
+          );
+
+      }
+    );
+  </script>
+
+</body>
+
+</html>

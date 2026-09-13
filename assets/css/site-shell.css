@@ -2,6 +2,7 @@ html {
   overflow-y: scroll;
 }
 
+
 :root {
   --bg-light: #EDEFF3;
   --site-width: 1000px;

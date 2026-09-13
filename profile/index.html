@@ -8,7 +8,7 @@
   <title>Profile | Sangseok Han</title>
 
   <meta name="description"
-    content="Profile of Sangseok Han, including education, research appointments, awards, academic service, and research background in marine hydrodynamics and computational fluid dynamics.">
+    content="Profile of Sangseok Han, including education, research appointments, professional experience, awards, academic service, and research in marine hydrodynamics and computational fluid dynamics.">
 
   <link rel="canonical" href="https://sangseokhan.com/profile/">
 
@@ -20,7 +20,7 @@
   <meta property="og:title" content="Profile | Sangseok Han">
 
   <meta property="og:description"
-    content="Research profile, education, appointments, academic service, and background of Sangseok Han.">
+    content="Research profile, education, appointments, professional experience, academic service, and background of Sangseok Han.">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sangseokhan.com/profile/">
@@ -540,8 +540,7 @@
       min-width: 0;
     }
 
-    .profile-record-section .affiliation-primary,
-    #background .affiliation-primary {
+    .profile-record-section .affiliation-primary {
       display: flex;
       align-items: baseline;
       flex-wrap: wrap;
@@ -558,8 +557,7 @@
       color: rgba(11, 31, 58, 0.94);
     }
 
-    .profile-record-section .affiliation-year,
-    #background .affiliation-year {
+    .profile-record-section .affiliation-year {
       margin-left: 0;
 
       font-size: 0.68em;
@@ -572,8 +570,7 @@
       color: rgba(79, 89, 101, 0.58);
     }
 
-    .profile-record-section .affiliation-context,
-    #background .affiliation-context {
+    .profile-record-section .affiliation-context {
       margin: 0 0 6px 1px;
 
       font-size: 0.79em;
@@ -594,8 +591,7 @@
       color: rgba(68, 79, 94, 0.5);
     }
 
-    .profile-record-section .affiliation-secondary,
-    #background .affiliation-secondary {
+    .profile-record-section .affiliation-secondary {
       display: flex;
       align-items: baseline;
       flex-wrap: wrap;
@@ -609,8 +605,7 @@
       color: rgba(45, 55, 69, 0.76);
     }
 
-    .profile-record-section .affiliation-secondary>span:first-child,
-    #background .affiliation-secondary>span:first-child {
+    .profile-record-section .affiliation-secondary>span:first-child {
       font-weight: 500;
 
       color: rgba(35, 47, 63, 0.8);
@@ -675,11 +670,52 @@
       margin-top: 16px;
     }
 
-    #research-appointments .research-appointments-layout {
+    #appointments-experience .appointments-experience-layout {
       width: 100%;
       max-width: 420px;
 
       margin-top: 16px;
+    }
+
+    .experience-recognition {
+      display: grid;
+      gap: 5px;
+
+      margin: 10px 0 0 1px;
+      padding-top: 8px;
+
+      border-top:
+        1px solid rgba(11, 31, 58, 0.05);
+    }
+
+    .experience-recognition-item {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+
+      gap: 16px;
+    }
+
+    .experience-recognition-title {
+      min-width: 0;
+
+      font-size: 0.67em;
+      line-height: 1.45;
+      letter-spacing: 0.018em;
+
+      color: rgba(52, 62, 75, 0.62);
+    }
+
+    .experience-recognition-year {
+      flex: 0 0 auto;
+
+      font-size: 0.58em;
+      line-height: 1.4;
+      letter-spacing: 0.07em;
+
+      font-variant-numeric: tabular-nums;
+
+      color: rgba(79, 89, 101, 0.45);
     }
 
     .education-timeline {
@@ -1217,111 +1253,6 @@
       color: rgba(11, 31, 58, 0.38);
     }
 
-    #background .background-affiliation-item {
-      position: relative;
-
-      display: grid;
-
-      grid-template-columns:
-        58px minmax(0, 1fr);
-
-      column-gap: 16px;
-      align-items: center;
-
-      box-sizing: border-box;
-
-      width: 100%;
-      max-width: 420px;
-      min-height: 88px;
-
-      margin: 0;
-
-      padding: 12px 13px 13px 12px;
-
-      background:
-        rgba(255, 255, 255, 0.045);
-
-      border-left:
-        2px solid rgba(11, 31, 58, 0.065);
-    }
-
-    #background .affiliation-logo {
-      position: relative;
-
-      top: -3px;
-    }
-
-    #background .background-affiliation-item:hover .affiliation-logo img {
-      filter:
-        grayscale(0) saturate(0.9) contrast(1.02);
-    }
-
-    #background .background-layout {
-      display: grid;
-
-      grid-template-columns:
-        minmax(390px, 420px) minmax(280px, 300px);
-
-      column-gap:
-        clamp(60px, 4vw, 70px);
-
-      align-items: center;
-
-      width: fit-content;
-      max-width: 100%;
-    }
-
-    #background .background-recognition {
-      box-sizing: border-box;
-
-      min-width: 0;
-
-      padding: 3px 0;
-    }
-
-    .background-recognition-item {
-      display: grid;
-
-      grid-template-columns:
-        minmax(0, 1fr) auto;
-
-      column-gap: 14px;
-      align-items: baseline;
-
-      padding: 0 0 8px;
-    }
-
-    .background-recognition-item+.background-recognition-item {
-      padding-top: 8px;
-
-      border-top:
-        1px solid rgba(11, 31, 58, 0.045);
-    }
-
-    .background-recognition-item:last-child {
-      padding-bottom: 0;
-    }
-
-    .background-recognition-title {
-      min-width: 0;
-
-      font-size: 0.68em;
-      line-height: 1.45;
-      letter-spacing: 0.018em;
-
-      color: rgba(52, 62, 75, 0.66);
-    }
-
-    .background-recognition-year {
-      font-size: 0.58em;
-      line-height: 1.4;
-      letter-spacing: 0.07em;
-
-      font-variant-numeric: tabular-nums;
-
-      color: rgba(79, 89, 101, 0.45);
-    }
-
     #outside-research {
       margin-bottom: 38px;
     }
@@ -1468,12 +1399,223 @@
       }
     }
 
+    /* =========================================================
+       FEATURES & WRITING
+       ========================================================= */
+
+    #features-writing {
+      margin-bottom: 38px;
+    }
+
+    .features-writing-block {
+      box-sizing: border-box;
+
+      width: 100%;
+      max-width: 880px;
+
+      margin-left: 2px;
+      padding: 3px 0 3px 18px;
+
+      border-left:
+        2px solid rgba(11, 31, 58, 0.085);
+    }
+
+    .feature-writing-item {
+      position: relative;
+
+      margin: 0;
+      padding: 0 0 16px;
+    }
+
+    .feature-writing-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .feature-writing-item+.feature-writing-item {
+      padding-top: 16px;
+
+      border-top:
+        1px solid rgba(11, 31, 58, 0.055);
+    }
+
+    .feature-writing-meta {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+
+      gap: 18px;
+
+      margin-bottom: 5px;
+    }
+
+    .feature-writing-kind {
+      font-size: 0.62em;
+      line-height: 1.4;
+      letter-spacing: 0.105em;
+      text-transform: uppercase;
+
+      color: rgba(79, 89, 101, 0.5);
+    }
+
+    .feature-writing-year {
+      flex: 0 0 auto;
+
+      font-size: 0.62em;
+      line-height: 1.4;
+      letter-spacing: 0.075em;
+
+      font-variant-numeric: tabular-nums;
+
+      color: rgba(79, 89, 101, 0.48);
+    }
+
+    .feature-writing-link {
+      display: inline-flex;
+      align-items: baseline;
+
+      gap: 7px;
+
+      max-width: 100%;
+
+      color: rgba(11, 31, 58, 0.92);
+      text-decoration: none;
+
+      transition:
+        color 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .feature-writing-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+
+      gap: 24px;
+
+      width: 100%;
+    }
+
+    .feature-writing-title-link {
+      min-width: 0;
+
+      color: rgba(11, 31, 58, 0.92);
+      text-decoration: none;
+
+      transition:
+        color 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .feature-writing-title {
+      font-size: 0.89em;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.018em;
+    }
+
+    .feature-writing-actions {
+      display: flex;
+      align-items: baseline;
+
+      flex: 0 0 auto;
+
+      gap: 8px;
+
+      font-size: 0.59em;
+      line-height: 1.4;
+      letter-spacing: 0.055em;
+
+      white-space: nowrap;
+
+      color: rgba(79, 89, 101, 0.42);
+    }
+
+    .feature-writing-actions a {
+      color: rgba(68, 79, 94, 0.58);
+      text-decoration: none;
+
+      transition:
+        color 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .feature-writing-external {
+      display: inline-block;
+
+      margin-left: 2px;
+
+      font-size: 0.9em;
+
+      transform: translateY(-1px);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .feature-writing-title-link:hover {
+        color: var(--accent-dark);
+      }
+
+      .feature-writing-actions a:hover {
+        color: rgba(11, 31, 58, 0.88);
+      }
+    }
+
+    .feature-writing-arrow {
+      flex: 0 0 auto;
+
+      font-size: 0.7em;
+      line-height: 1;
+
+      color: rgba(11, 31, 58, 0.38);
+
+      transform: translateY(-1px);
+
+      transition:
+        color 0.18s ease,
+        transform 0.18s ease;
+    }
+
+    .feature-writing-source {
+      margin-top: 4px;
+
+      font-size: 0.7em;
+      line-height: 1.5;
+      letter-spacing: 0.018em;
+      font-style: italic;
+
+      color: rgba(68, 79, 94, 0.62);
+    }
+
+    .feature-writing-summary {
+      max-width: 700px;
+
+      margin: 6px 0 0;
+
+      font-size: 0.75em;
+      line-height: 1.62;
+      letter-spacing: 0.01em;
+
+      color: rgba(52, 62, 75, 0.68);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .feature-writing-link:hover {
+        color: var(--accent-dark);
+      }
+
+      .feature-writing-link:hover .feature-writing-arrow {
+        color: rgba(11, 31, 58, 0.76);
+
+        transform:
+          translate(2px, -2px);
+      }
+    }
+
     #current,
     #education,
-    #research-appointments,
+    #appointments-experience,
     #awards,
     #academic-activity,
-    #background,
+    #features-writing,
     #outside-research {
       scroll-margin-top: 92px;
     }
@@ -1488,9 +1630,31 @@
 
       z-index: 30;
 
-      width: 180px;
+      width: 220px;
 
       transform: translateY(-42%);
+    }
+
+    .profile-side-nav a {
+      position: relative;
+
+      display: block;
+
+      width: fit-content;
+
+      white-space: nowrap;
+
+      font-size: 0.76em;
+      line-height: 1.45;
+      letter-spacing: 0.07em;
+
+      color: rgba(11, 31, 58, 0.36);
+      text-decoration: none;
+
+      transition:
+        color 0.28s ease,
+        opacity 0.28s ease,
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .profile-side-nav nav {
@@ -1523,25 +1687,7 @@
           rgba(11, 31, 58, 0));
     }
 
-    .profile-side-nav a {
-      position: relative;
 
-      display: block;
-
-      width: fit-content;
-
-      font-size: 0.76em;
-      line-height: 1.45;
-      letter-spacing: 0.07em;
-
-      color: rgba(11, 31, 58, 0.36);
-      text-decoration: none;
-
-      transition:
-        color 0.28s ease,
-        opacity 0.28s ease,
-        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
-    }
 
     .profile-side-nav a:hover {
       color: rgba(11, 31, 58, 0.72);
@@ -1583,6 +1729,7 @@
       .profile-side-nav {
         display: none;
       }
+
     }
 
     @media (min-width: 641px) and (max-width: 900px) {
@@ -1641,6 +1788,8 @@
         max-width:
           calc(100% - 13px);
       }
+
+
     }
 
     @media (max-width: 640px) {
@@ -1773,7 +1922,7 @@
       }
 
       #education .education-layout,
-      #research-appointments .research-appointments-layout {
+      #appointments-experience .appointments-experience-layout {
         display: block;
 
         width: 100%;
@@ -1840,8 +1989,7 @@
         transition: none;
       }
 
-      .profile-record-section .affiliation-primary,
-      #background .affiliation-primary {
+      .profile-record-section .affiliation-primary {
         gap: 5px;
 
         margin-bottom: 5px;
@@ -1851,15 +1999,13 @@
         letter-spacing: 0.035em;
       }
 
-      .profile-record-section .affiliation-year,
-      #background .affiliation-year {
+      .profile-record-section .affiliation-year {
         font-size: 0.74em;
 
         letter-spacing: 0.075em;
       }
 
-      .profile-record-section .affiliation-context,
-      #background .affiliation-context {
+      .profile-record-section .affiliation-context {
         margin:
           0 0 6px 1px;
 
@@ -1876,8 +2022,7 @@
         line-height: 1.42;
       }
 
-      .profile-record-section .affiliation-secondary,
-      #background .affiliation-secondary {
+      .profile-record-section .affiliation-secondary {
         margin-left: 1px;
 
         font-size: 0.67rem;
@@ -1967,70 +2112,16 @@
         font-size: 0.65rem;
       }
 
-      #background .background-layout {
-        display: block;
-
-        width: 100%;
+      .experience-recognition {
+        margin-top: 8px;
+        padding-top: 7px;
       }
 
-      #background .background-affiliation-item {
-        grid-template-columns:
-          40px minmax(0, 1fr);
-
-        column-gap: 12px;
-
-        width: 100%;
-        max-width: none;
-        min-height: 0;
-
-        padding:
-          9px 4px 10px 10px;
-
-        background: transparent;
-
-        border-left:
-          1.5px solid rgba(11, 31, 58, 0.065);
+      .experience-recognition-title {
+        font-size: 0.58rem;
       }
 
-      #background .background-affiliation-item .affiliation-logo {
-        width: 36px;
-        height: 36px;
-
-        opacity: 0.5;
-      }
-
-      #background .background-affiliation-item .affiliation-logo img {
-        filter: none;
-      }
-
-      #background .background-recognition {
-        margin:
-          1px 0 0 62px;
-
-        padding:
-          0 10px 1px 0;
-      }
-
-      .background-recognition-item {
-        grid-template-columns:
-          minmax(0, 1fr) auto;
-
-        column-gap: 12px;
-
-        max-width: 310px;
-
-        padding-bottom: 6px;
-      }
-
-      .background-recognition-item+.background-recognition-item {
-        padding-top: 6px;
-      }
-
-      .background-recognition-title {
-        font-size: 0.6rem;
-      }
-
-      .background-recognition-year {
+      .experience-recognition-year {
         margin-right: 10px;
 
         font-size: 0.5rem;
@@ -2071,6 +2162,78 @@
 
       .outside-research-visual {
         display: none;
+      }
+
+      #features-writing {
+        margin-bottom: 24px;
+      }
+
+      .features-writing-block {
+        margin-left: 0;
+
+        padding:
+          1px 0 2px 14px;
+
+        border-left-width: 1.5px;
+      }
+
+      .feature-writing-item {
+        padding-bottom: 13px;
+      }
+
+      .feature-writing-item+.feature-writing-item {
+        padding-top: 13px;
+      }
+
+      .feature-writing-meta {
+        gap: 12px;
+
+        margin-bottom: 4px;
+      }
+
+      .feature-writing-kind {
+        font-size: 0.52rem;
+        letter-spacing: 0.085em;
+      }
+
+      .feature-writing-year {
+        margin-right: 10px;
+
+        font-size: 0.5rem;
+      }
+
+      .feature-writing-title {
+        font-size: 0.72rem;
+        line-height: 1.48;
+      }
+
+      .feature-writing-arrow {
+        font-size: 0.58rem;
+      }
+
+      .feature-writing-source {
+        margin-top: 3px;
+
+        font-size: 0.6rem;
+      }
+
+      .feature-writing-summary {
+        margin-top: 5px;
+
+        font-size: 0.62rem;
+        line-height: 1.56;
+      }
+
+      .feature-writing-heading {
+        display: block;
+      }
+
+      .feature-writing-actions {
+        margin-top: 5px;
+
+        gap: 7px;
+
+        font-size: 0.51rem;
       }
     }
 
@@ -2169,8 +2332,8 @@
         Education
       </a>
 
-      <a href="#research-appointments" data-en="Appointments &amp; Visits" data-ja="研究所属・訪問">
-        Appointments &amp; Visits
+      <a href="#appointments-experience" data-en="Appointments &amp; Experience" data-ja="所属・職務経験">
+        Appointments &amp; Experience
       </a>
 
       <a href="#awards" data-en="Awards" data-ja="受賞">
@@ -2181,8 +2344,8 @@
         Academic Service
       </a>
 
-      <a href="#background" data-en="Background" data-ja="経歴">
-        Background
+      <a href="#features-writing" data-en="Features &amp; Writing" data-ja="掲載・寄稿">
+        Features &amp; Writing
       </a>
 
       <a href="#outside-research" data-en="Outside Research" data-ja="研究以外">
@@ -2549,22 +2712,21 @@
 
     <div class="divider"></div>
 
-    <section class="section profile-record-section" id="research-appointments">
+    <section class="section profile-record-section" id="appointments-experience">
 
-      <h2 data-en="Research Appointments &amp; Visits" data-ja="研究所属・訪問">
-        Research Appointments &amp; Visits
+      <h2 data-en="Research Appointments &amp; Experience" data-ja="研究所属・職務経験">
+        Research Appointments &amp; Experience
       </h2>
 
-      <div class="research-appointments-layout">
+      <div class="appointments-experience-layout">
 
         <div class="affiliation-block">
 
+          <!-- Seoul National University -->
           <article class="affiliation-item" data-timeline="snu">
 
             <div class="affiliation-logo" aria-hidden="true">
-
               <img src="/assets/logos/snu-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
-
             </div>
 
             <div class="affiliation-copy">
@@ -2605,12 +2767,11 @@
 
           </article>
 
+          <!-- The University of Osaka -->
           <article class="affiliation-item" data-timeline="osaka">
 
             <div class="affiliation-logo" aria-hidden="true">
-
               <img src="/assets/logos/osaka-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
-
             </div>
 
             <div class="affiliation-copy">
@@ -2644,6 +2805,80 @@
                 <span class="affiliation-country" data-en="Japan" data-ja="日本">
                   Japan
                 </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- Republic of Korea Navy -->
+          <article class="affiliation-item">
+
+            <div class="affiliation-logo" aria-hidden="true">
+              <img src="/assets/logos/navy-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
+            </div>
+
+            <div class="affiliation-copy">
+
+              <div class="affiliation-primary">
+
+                <span data-en="Sonar Petty Officer" data-ja="海軍 ソナー下士官">
+                  Sonar Petty Officer
+                </span>
+
+                <span class="affiliation-year">
+                  (2016–2020)
+                </span>
+
+              </div>
+
+              <div class="affiliation-context" data-en="Acoustic Systems &amp; Naval Operations" data-ja="音響システム・海軍運用">
+                Acoustic Systems &amp; Naval Operations
+              </div>
+
+              <div class="affiliation-secondary">
+
+                <span data-en="Republic of Korea Navy" data-ja="大韓民国海軍">
+                  Republic of Korea Navy
+                </span>
+
+                <span class="affiliation-dot">
+                  ·
+                </span>
+
+                <span class="affiliation-country" data-en="South Korea" data-ja="韓国">
+                  South Korea
+                </span>
+
+              </div>
+
+              <div class="experience-recognition">
+
+                <div class="experience-recognition-item">
+
+                  <span class="experience-recognition-title" data-en="2nd Fleet Commander’s Commendation"
+                    data-ja="第2艦隊司令官表彰">
+                    2nd Fleet Commander’s Commendation
+                  </span>
+
+                  <span class="experience-recognition-year">
+                    2020
+                  </span>
+
+                </div>
+
+                <div class="experience-recognition-item">
+
+                  <span class="experience-recognition-title" data-en="Captain’s Commendation Medal" data-ja="艦長表彰">
+                    Captain’s Commendation Medal
+                  </span>
+
+                  <span class="experience-recognition-year">
+                    2018
+                  </span>
+
+                </div>
 
               </div>
 
@@ -2829,87 +3064,139 @@
 
     <div class="divider"></div>
 
-    <section class="section" id="background">
+    <section class="section" id="features-writing">
 
-      <h2 data-en="Background" data-ja="経歴">
-        Background
+      <h2 data-en="Features &amp; Writing" data-ja="掲載・寄稿">
+        Features &amp; Writing
       </h2>
 
-      <div class="background-layout">
+      <div class="features-writing-block">
 
-        <div class="affiliation-item background-affiliation-item">
+        <!-- 2026 · SNU University Newspaper -->
+        <!-- 2026 · SNU University Newspaper -->
+        <article class="feature-writing-item">
 
-          <div class="affiliation-logo" aria-hidden="true">
+          <div class="feature-writing-meta">
 
-            <img src="/assets/logos/navy-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
+            <span class="feature-writing-kind" data-en="Personal Essay" data-ja="寄稿">
+              Personal Essay
+            </span>
+
+            <span class="feature-writing-year">
+              2026
+            </span>
 
           </div>
 
-          <div class="affiliation-copy">
+          <div class="feature-writing-heading">
 
-            <div class="affiliation-primary">
+            <a class="feature-writing-title-link" href="/profile/writing/single-number/">
 
-              <span data-en="Sonar Petty Officer" data-ja="海軍 ソナー下士官">
-                Sonar Petty Officer
+              <span class="feature-writing-title" data-en="One Number Is Not Enough to Describe a Person"
+                data-ja="一つの数字だけでは、一人の人間を語りきれない">
+                One Number Is Not Enough to Describe a Person
               </span>
 
-              <span class="affiliation-year">
-                (2016–2020)
-              </span>
+            </a>
 
-            </div>
+            <div class="feature-writing-actions" aria-label="Article links">
 
-            <div class="affiliation-context" data-en="Acoustic Systems &amp; Naval Operations" data-ja="音響システム・海軍運用">
-              Acoustic Systems &amp; Naval Operations
-            </div>
+              <a href="/profile/writing/single-number/" data-en="Translation" data-ja="英訳">
+                Translation
+              </a>
 
-            <div class="affiliation-secondary">
-
-              <span data-en="Republic of Korea Navy" data-ja="大韓民国海軍">
-                Republic of Korea Navy
-              </span>
-
-              <span class="affiliation-dot">
+              <span aria-hidden="true">
                 ·
               </span>
 
-              <span class="affiliation-country" data-en="South Korea" data-ja="韓国">
-                South Korea
+              <a href="https://www.snunews.com/news/articleView.html?idxno=35526" target="_blank"
+                rel="noopener noreferrer">
+
+                <span data-en="Original" data-ja="原文">
+                  Original
+                </span>
+
+                <span class="feature-writing-external" aria-hidden="true">
+                  ↗
+                </span>
+
+              </a>
+
+            </div>
+
+          </div>
+
+          <div class="feature-writing-source" data-en="Seoul National University Newspaper" data-ja="ソウル大学『大学新聞』">
+            Seoul National University Newspaper
+          </div>
+
+          <p class="feature-writing-summary"
+            data-en="A personal essay on measurement, research, and the limits of reducing a person to a single number."
+            data-ja="測定と研究、そして一人の人間を単一の数字に還元することの限界についてのエッセイ。">
+            A personal essay on measurement, research, and the limits of reducing a person to a single number.
+          </p>
+
+        </article>
+
+        <!-- 2025 · University of Strathclyde -->
+        <article class="feature-writing-item">
+
+          <div class="feature-writing-meta">
+
+            <span class="feature-writing-kind" data-en="Research Feature" data-ja="研究紹介">
+              Research Feature
+            </span>
+
+            <span class="feature-writing-year">
+              2025
+            </span>
+
+          </div>
+
+          <div class="feature-writing-heading">
+
+            <a class="feature-writing-title-link"
+              href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/" target="_blank"
+              rel="noopener noreferrer">
+
+              <span class="feature-writing-title"
+                data-en="Water temperature in ship model towing tanks can skew real-world ship performance predictions"
+                data-ja="曳航水槽の水温が実船性能予測に影響を与える可能性">
+                Water temperature in ship model towing tanks can skew real-world ship performance predictions
               </span>
 
+            </a>
+
+            <div class="feature-writing-actions" aria-label="Article links">
+
+              <a href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/" target="_blank"
+                rel="noopener noreferrer">
+
+                <span data-en="Original" data-ja="原文">
+                  Original
+                </span>
+
+                <span class="feature-writing-external" aria-hidden="true">
+                  ↗
+                </span>
+
+              </a>
+
             </div>
 
           </div>
 
-        </div>
-
-        <aside class="background-recognition" aria-label="Service recognition">
-
-          <div class="background-recognition-item">
-
-            <div class="background-recognition-title" data-en="2nd Fleet Commander’s Commendation" data-ja="第2艦隊司令官表彰">
-              2nd Fleet Commander’s Commendation
-            </div>
-
-            <div class="background-recognition-year">
-              2020
-            </div>
-
+          <div class="feature-writing-source" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
+            University of Strathclyde
           </div>
 
-          <div class="background-recognition-item">
+          <p class="feature-writing-summary"
+            data-en="University feature on research into towing-tank temperature and model–ship resistance extrapolation."
+            data-ja="曳航水槽の水温と模型船から実船への抵抗推定に関する研究を紹介した大学公式記事。">
+            University feature on research into towing-tank temperature and model–ship resistance extrapolation.
+          </p>
 
-            <div class="background-recognition-title" data-en="Captain’s Commendation Medal" data-ja="艦長表彰">
-              Captain’s Commendation Medal
-            </div>
-
-            <div class="background-recognition-year">
-              2018
-            </div>
-
-          </div>
-
-        </aside>
+        </article>
 
       </div>
 
@@ -3942,22 +4229,19 @@
           selector: "#education"
         },
         {
-          selector:
-            "#research-appointments"
+          selector: "#appointments-experience"
         },
         {
           selector: "#awards"
         },
         {
-          selector:
-            "#academic-activity"
+          selector: "#academic-activity"
         },
         {
-          selector: "#background"
+          selector: "#features-writing"
         },
         {
-          selector:
-            "#outside-research"
+          selector: "#outside-research"
         }
       ];
 
@@ -3992,9 +4276,7 @@
       const definitions =
         getProfileSectionDefinitions();
 
-      if (
-        !definitions.length
-      ) {
+      if (!definitions.length) {
         profileScrollMap = [];
         profileScrollMax = 0;
 
@@ -4008,8 +4290,7 @@
       profileScrollMax =
         Math.max(
           0,
-          scrollingElement
-            .scrollHeight -
+          scrollingElement.scrollHeight -
           window.innerHeight
         );
 
@@ -4018,19 +4299,13 @@
           definition => ({
             ...definition,
 
-            startScroll:
-              clamp(
-                getDocumentTop(
-                  definition.target
-                ) -
-                PROFILE_SCROLL_OFFSET,
-                0,
-                profileScrollMax
+            documentTop:
+              getDocumentTop(
+                definition.target
               )
           })
         );
     }
-
     function updateProfileSideNavigation() {
       const sideNav =
         document.querySelector(
@@ -4051,54 +4326,60 @@
           false;
       }
 
-      if (
-        !profileScrollMap.length
-      ) {
+      if (!profileScrollMap.length) {
         return;
       }
-
-      const currentScroll =
-        clamp(
-          window.scrollY,
-          0,
-          profileScrollMax
-        );
 
       const scrollingElement =
         document.scrollingElement ||
         document.documentElement;
 
+      const currentScroll =
+        window.scrollY;
+
       const isAtBottom =
-        window.scrollY +
+        currentScroll +
         window.innerHeight >=
         scrollingElement.scrollHeight -
         4;
 
+      /*
+        Active section is determined by a point
+        inside the viewport rather than the very top.
+    
+        0.42 = 42% down the viewport.
+      */
+      const activationPoint =
+        currentScroll +
+        window.innerHeight * 0.42;
+
       let activeSection =
         profileScrollMap[0];
 
+      for (
+        const section of
+        profileScrollMap
+      ) {
+        if (
+          activationPoint >=
+          section.documentTop
+        ) {
+          activeSection =
+            section;
+        } else {
+          break;
+        }
+      }
+
+      /*
+        At the absolute bottom,
+        make sure the final section is active.
+      */
       if (isAtBottom) {
         activeSection =
           profileScrollMap[
-          profileScrollMap.length -
-          1
+          profileScrollMap.length - 1
           ];
-      } else {
-        for (
-          const section of
-          profileScrollMap
-        ) {
-          if (
-            currentScroll +
-            0.5 >=
-            section.startScroll
-          ) {
-            activeSection =
-              section;
-          } else {
-            break;
-          }
-        }
       }
 
       sideNav
@@ -4129,7 +4410,6 @@
           "location"
         );
     }
-
     function schedulePageUpdate(
       rebuildMap = false
     ) {
@@ -4298,12 +4578,12 @@
 
       const timelineItems =
         document.querySelectorAll(
-          "#education .affiliation-item[data-timeline], #research-appointments .affiliation-item[data-timeline]"
+          "#education .affiliation-item, #appointments-experience .affiliation-item"
         );
 
       const recordBlocks =
         document.querySelectorAll(
-          "#education .affiliation-block, #research-appointments .affiliation-block"
+          "#education .affiliation-block, #appointments-experience .affiliation-block"
         );
 
       let clearFocusTimer;
