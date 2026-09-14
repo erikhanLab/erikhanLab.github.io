@@ -595,10 +595,14 @@
       }
     }
 
+    .mobile-korean-heading {
+      display: none;
+    }
+
 
     /* =========================================================
-       MOBILE
-       ========================================================= */
+   MOBILE
+   ========================================================= */
 
     @media (max-width: 760px) {
 
@@ -628,24 +632,27 @@
       }
 
 
-      /* No centre divider on stacked mobile layout */
+      /* ---------------------------------------------------------
+     Remove desktop centre divider
+     --------------------------------------------------------- */
+
       .essay-parallel-frame::before {
         display: none;
       }
 
+
+      /* ---------------------------------------------------------
+     TITLE
+     English only at the top
+     --------------------------------------------------------- */
 
       .essay-title-grid {
         display: block;
       }
 
 
-      .essay-title-column+.essay-title-column {
-        margin-top: 18px;
-
-        padding-top: 18px;
-
-        border-top:
-          1px solid var(--essay-rule-light);
+      .essay-title-column[lang="ko"] {
+        display: none;
       }
 
 
@@ -656,21 +663,10 @@
       }
 
 
-      .essay-title[lang="ko"] {
-        font-size: 1.42rem;
-
-        line-height: 1.34;
-
-        letter-spacing:
-          -0.035em;
-      }
-
-
       .essay-language-label {
         margin-top: 8px;
 
         padding-top: 0;
-
         margin-bottom: 0;
 
         font-size: 0.53rem;
@@ -678,6 +674,10 @@
         text-align: right;
       }
 
+
+      /* ---------------------------------------------------------
+     META
+     --------------------------------------------------------- */
 
       .essay-meta {
         gap:
@@ -696,72 +696,173 @@
       }
 
 
+      /* ---------------------------------------------------------
+     ARTICLE FLOW
+
+     Mobile order:
+       1. all English paragraphs
+       2. Korean heading
+       3. all Korean paragraphs
+     --------------------------------------------------------- */
+
       .parallel-body {
+        display: flex;
+
+        flex-direction: column;
+
         margin-top: 0;
 
         padding-top: 0;
       }
 
 
+      /*
+    Remove each desktop row as a visual container.
+
+    Its English and Korean cells then participate directly
+    in .parallel-body's flex layout.
+  */
+
       .parallel-row {
+        display: contents;
+      }
+
+
+      /* English paragraphs first */
+
+      .parallel-cell[lang="en"] {
+        order: 1;
+      }
+
+
+      /* Korean section heading */
+
+      .mobile-korean-heading {
         display: block;
 
+        order: 2;
+
+        margin-top: 36px;
+
         padding:
-          22px 0;
+          30px 0 18px;
+
+        border-top:
+          1px solid var(--essay-rule);
+      }
+
+
+      .mobile-korean-heading h2 {
+        margin: 0;
+
+        font-family:
+          "Apple SD Gothic Neo",
+          "Noto Serif KR",
+          "Malgun Gothic",
+          serif;
+
+        font-size: 1.42rem;
+        font-weight: 500;
+
+        line-height: 1.34;
+
+        letter-spacing:
+          -0.035em;
+
+        word-break: keep-all;
+
+        color:
+          rgba(11, 31, 58, 0.96);
+      }
+
+
+      .mobile-korean-heading-label {
+        margin-top: 8px;
+
+        font-family:
+          "Apple SD Gothic Neo",
+          "Malgun Gothic",
+          sans-serif;
+
+        font-size: 0.53rem;
+        font-weight: 500;
+
+        line-height: 1.4;
+
+        letter-spacing:
+          -0.01em;
+
+        text-align: right;
+
+        color:
+          rgba(79, 89, 101, 0.72);
+      }
+
+
+      /* Korean paragraphs after the heading */
+
+      .parallel-cell[lang="ko"] {
+        order: 3;
+      }
+
+
+      /* ---------------------------------------------------------
+     PARAGRAPHS
+     --------------------------------------------------------- */
+
+      .parallel-cell {
+        min-width: 0;
+
+        padding:
+          20px 0;
 
         border-bottom:
           1px solid rgba(11, 31, 58, 0.08);
       }
 
 
-      .parallel-row:first-child {
+      /* First English paragraph */
+
+      .parallel-row:first-child .parallel-cell[lang="en"] {
         padding-top: 20px;
       }
 
 
-      .parallel-cell {
-        position: relative;
+      /*
+    Last English paragraph:
+    section finishes cleanly before Korean heading.
+  */
+
+      .parallel-row:last-child .parallel-cell[lang="en"] {
+        border-bottom: 0;
+
+        padding-bottom: 0;
       }
 
 
-      .parallel-cell+.parallel-cell {
-        margin-top: 18px;
+      /* First Korean paragraph */
 
+      .parallel-row:first-child .parallel-cell[lang="ko"] {
         padding-top: 18px;
-
-        border-top:
-          1px dashed rgba(11, 31, 58, 0.08);
       }
 
+
+      /* Last Korean paragraph */
+
+      .parallel-row:last-child .parallel-cell[lang="ko"] {
+        border-bottom: 0;
+
+        padding-bottom: 0;
+      }
+
+
+      /*
+    No repeated "English translation / 한국어 원문"
+    above every paragraph.
+  */
 
       .mobile-language-label {
-        display: block;
-
-        margin-bottom: 7px;
-
-        font-size: 0.5rem;
-
-        line-height: 1.4;
-
-        letter-spacing:
-          0.1em;
-
-        text-transform: uppercase;
-
-        color:
-          rgba(79, 89, 101, 0.44);
-      }
-
-
-      .parallel-cell[lang="ko"] .mobile-language-label {
-        font-family:
-          "Apple SD Gothic Neo",
-          "Malgun Gothic",
-          sans-serif;
-
-        font-weight: 500;
-        letter-spacing: -0.01em;
-        text-transform: none;
+        display: none;
       }
 
 
@@ -782,10 +883,14 @@
       }
 
 
+      /* ---------------------------------------------------------
+     ARTICLE END
+     --------------------------------------------------------- */
+
       .essay-end {
         display: block;
 
-        margin-top: 26px;
+        margin-top: 30px;
 
         padding-top: 16px;
       }
@@ -1014,6 +1119,19 @@
              ================================================= -->
 
         <div class="parallel-body">
+
+          <div class="mobile-korean-heading" lang="ko">
+            <h2>
+              한 사람을 설명하기에 하나의 숫자는 너무 적다
+            </h2>
+
+            <div class="mobile-korean-heading-label">
+              한국어 원문
+            </div>
+          </div>
+
+
+          <!-- Paragraph 1 -->
 
 
           <!-- Paragraph 1 -->

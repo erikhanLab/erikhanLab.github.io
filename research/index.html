@@ -1784,6 +1784,22 @@
         margin-bottom: 16px;
       }
 
+      .ongoing-project-list {
+        padding-left: 14px;
+      }
+
+      .ongoing-project-list::before {
+        left: 1px;
+      }
+
+      .rt-output {
+        padding-left: 0;
+      }
+
+      .rt-output::before {
+        display: none;
+      }
+
       .ongoing-header>span:first-child {
         grid-column: 1;
         grid-row: 1;
@@ -1863,8 +1879,11 @@
       }
 
       .rt-item {
+        position: relative;
+
         display: block;
-        padding: 12px 0 16px;
+        padding: 5px 0 16px;
+
         border-left: none;
       }
 
@@ -1876,18 +1895,25 @@
       }
 
       .rt-year {
-        font-size: 0.9em;
-        letter-spacing: 0.12em;
-        opacity: 0.7;
-        margin-bottom: 5px;
-        margin-top: -20px;
-        margin-left: 0;
+        position: absolute;
+        top: 5px;
+        left: 0;
+
+        margin: 0;
+        padding: 0;
+
+        font-size: 0.73em;
+        line-height: 1.4;
+        letter-spacing: 0.1em;
+
+        color: rgba(11, 37, 69, 0.5);
+        opacity: 1;
       }
 
       .rt-title {
-        font-size: 0.75em;
+        font-size: 0.73em;
         margin-bottom: 8px;
-        color: #666;
+        color: #888;
         margin-left: 5px;
         opacity: 0.8;
       }
@@ -1950,7 +1976,7 @@
 
       .rt-venue {
         min-width: 0;
-        max-width: 80%;
+        max-width: 100%;
 
         overflow: hidden;
         text-overflow: ellipsis;
@@ -2009,10 +2035,10 @@
 
       .current-project h2 {
         margin: 0;
-        font-size: 0.7em;
+        font-size: 0.69em;
         font-weight: 500;
         line-height: 1.48;
-        letter-spacing: 0.015em;
+        letter-spacing: 0.01em;
 
         color: rgba(11, 31, 58, 0.84);
 
@@ -2112,7 +2138,7 @@
       }
 
       .research-context-name {
-        font-size: 1.03em;
+        font-size: 0.95em;
       }
 
       .research-context-description {
@@ -2934,9 +2960,9 @@
             For research collaboration or academic discussion related to this work.
           </span>
 
-          <span class="mobile" data-en="For collaboration or research discussion." data-ja="共同研究・研究交流について。">
-            For collaboration or research discussion.
-          </span>
+          <span class="mobile" data-en="For collaboration &amp; discussion" data-ja="共同研究・研究交流について">
+            For collaboration & discussion </span>
+
         </p>
 
         <a href="/contact/">
@@ -2956,8 +2982,12 @@
     <div class="research-timeline" id="research-timeline">
 
       <h2 class="rt-header">
-        <span data-en="Selected Research Record" data-ja="主な研究記録">
+        <span class="desktop" data-en="Selected Research Record" data-ja="主な研究記録">
           Selected Research Record
+        </span>
+
+        <span class="mobile" data-en="Research Record" data-ja="研究記録">
+          Research Record
         </span>
       </h2>
 
@@ -3034,9 +3064,14 @@
 
             <div class="rt-title">
 
+              <span class="mobile" data-en="Independent Research" data-ja="独立研究">
+                Independent Research
+              </span>
+
               <span class="rt-location-inline" data-en="South Korea" data-ja="韓国">
                 South Korea
               </span>
+
             </div>
           </div>
 
@@ -3166,7 +3201,7 @@
               </div>
 
               <div class="rt-meta">
-                <em class="rt-venue" data-short="JMSE">
+                <em class="rt-venue">
                   Journal of Marine Science and Engineering
                 </em>
               </div>

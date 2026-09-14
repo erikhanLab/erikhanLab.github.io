@@ -1377,6 +1377,10 @@
 
       }
 
+      .research-focus {
+        display: none;
+      }
+
       .profile-block {
         display: flex;
         flex-direction: column;
@@ -1800,255 +1804,255 @@
 
     @media (max-width: 640px) {
 
-  /* =========================================================
+      /* =========================================================
      MOBILE TYPE SCALE
      ========================================================= */
 
-  body {
-    padding: 60px 18px 48px;
+      body {
+        padding: 60px 18px 48px;
 
-    font-size: 16px;
-    line-height: 1.55;
-  }
+        font-size: 16px;
+        line-height: 1.55;
+      }
 
-  /*
+      /*
    * 기존 0.8em 제거 효과.
    * header 내부 전체가 연쇄적으로 너무 작아지는 문제 해결.
    */
-  .header {
-    font-size: 1em;
-  }
+      .header {
+        font-size: 1em;
+      }
 
 
-  /* =========================================================
+      /* =========================================================
      NAME / PHOTO
      ========================================================= */
 
-  .header-row {
-    grid-template-columns: minmax(0, 1fr) 70px;
-    column-gap: 16px;
-    align-items: center;
-  }
+      .header-row {
+        grid-template-columns: minmax(0, 1fr) 70px;
+        column-gap: 16px;
+        align-items: center;
+      }
 
-  .header-row h1 {
-    margin: 0;
+      .header-row h1 {
+        margin: 0;
 
-    font-size: clamp(2.15rem, 10vw, 2.6rem);
-    line-height: 0.98;
-    letter-spacing: 0;
+        font-size: clamp(2.15rem, 10vw, 2.6rem);
+        line-height: 0.98;
+        letter-spacing: 0;
 
-    white-space: nowrap;
-  }
+        white-space: nowrap;
+      }
 
-  .profile-block {
-    width: 70px;
-  }
+      .profile-block {
+        width: 70px;
+      }
 
-  .id-photo-wrap {
-    width: 70px;
-    height: 70px;
-  }
+      .id-photo-wrap {
+        width: 70px;
+        height: 70px;
+      }
 
-  .lang-switch {
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-  }
+      .lang-switch {
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
+      }
 
-  .name-ja {
-    bottom: -19px;
+      .name-ja {
+        bottom: -19px;
 
-    font-size: 0.68rem;
-    letter-spacing: 0.13em;
-  }
+        font-size: 0.68rem;
+        letter-spacing: 0.13em;
+      }
 
 
-  /* =========================================================
+      /* =========================================================
      TAGLINE
      ========================================================= */
 
-  .tagline-block {
-    margin-top: 28px;
-    padding-left: 0;
-  }
+      .tagline-block {
+        margin-top: 28px;
+        padding-left: 0;
+      }
 
-  .tagline {
-    margin-left: 10px;
+      .tagline {
+        margin-left: 10px;
 
-    font-size: 1rem;
-    line-height: 1.5;
-  }
+        font-size: 1rem;
+        line-height: 1.5;
+      }
 
-  .tagline .line-strong {
-    font-size: 1.05rem;
-    line-height: 1.45;
-  }
+      .tagline .line-strong {
+        font-size: 1.05rem;
+        line-height: 1.45;
+      }
 
-  .tagline .line-muted {
-    margin-top: 3px;
+      .tagline .line-muted {
+        margin-top: 3px;
 
-    font-size: 0.86rem;
-    line-height: 1.5;
-  }
+        font-size: 0.86rem;
+        line-height: 1.5;
+      }
 
 
-  /* =========================================================
+      /* =========================================================
      CURRENT AFFILIATION
      ========================================================= */
 
-  .affiliation {
-    margin-top: 23px;
-  }
+      .affiliation {
+        margin-top: 23px;
+      }
 
-  .affiliation-status-mobile {
-    padding: 4px 0 4px 10px;
-  }
+      .affiliation-status-mobile {
+        padding: 4px 0 4px 10px;
+      }
 
-  .affiliation-status-label {
-    font-size: 0.63rem;
-    letter-spacing: 0.1em;
-  }
+      .affiliation-status-label {
+        font-size: 0.63rem;
+        letter-spacing: 0.1em;
+      }
 
-  .affiliation-role {
-    font-size: 0.86rem;
-    letter-spacing: 0.01em;
-  }
+      .affiliation-role {
+        font-size: 0.86rem;
+        letter-spacing: 0.01em;
+      }
 
-  .affiliation-status-institution {
-    margin-top: 3px;
+      .affiliation-status-institution {
+        margin-top: 3px;
 
-    font-size: 0.75rem;
-    line-height: 1.4;
-  }
+        font-size: 0.75rem;
+        line-height: 1.4;
+      }
 
 
-  /* =========================================================
+      /* =========================================================
      RESEARCH OVERVIEW
      ========================================================= */
 
-  .research-focus {
-    margin-top: 20px;
-    padding-left: 10px;
-  }
+      .research-focus {
+        margin-top: 20px;
+        padding-left: 10px;
+      }
 
-  .research-focus-label {
-    margin-bottom: 4px;
+      .research-focus-label {
+        margin-bottom: 4px;
 
-    font-size: 0.62rem;
-    letter-spacing: 0.14em;
-  }
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+      }
 
-  .research-focus-title {
-    font-size: 0.91rem;
-    line-height: 1.4;
-  }
+      .research-focus-title {
+        font-size: 0.91rem;
+        line-height: 1.4;
+      }
 
-  .research-focus-description {
-    margin-top: 2px;
+      .research-focus-description {
+        margin-top: 2px;
 
-    font-size: 0.76rem;
-    line-height: 1.45;
-  }
+        font-size: 0.76rem;
+        line-height: 1.45;
+      }
 
-  .research-focus-more {
-    margin-top: 5px;
+      .research-focus-more {
+        margin-top: 5px;
 
-    font-size: 0.69rem;
-  }
+        font-size: 0.69rem;
+      }
 
 
-  /* =========================================================
+      /* =========================================================
      SELECTED WORK
      ========================================================= */
 
-  .recent-work {
-    width: calc(100% - 4px);
+      .recent-work {
+        width: calc(100% - 4px);
 
-    margin: 20px 0 12px 4px;
-    padding-top: 11px;
+        margin: 20px 0 12px 4px;
+        padding-top: 11px;
 
-    text-align: left;
-  }
+        text-align: left;
+      }
 
-  .recent-label {
-    margin-bottom: 6px;
+      .recent-label {
+        margin-bottom: 6px;
 
-    font-size: 0.62rem;
-    letter-spacing: 0.15em;
-  }
+        font-size: 0.62rem;
+        letter-spacing: 0.15em;
+      }
 
-  .recent-title {
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
+      .recent-title {
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
 
-  .recent-citation {
-    margin-top: 4px;
+      .recent-citation {
+        margin-top: 4px;
 
-    font-size: 0.73rem;
-    line-height: 1.4;
+        font-size: 0.73rem;
+        line-height: 1.4;
 
-    color: rgba(71, 85, 105, 0.68);
-    opacity: 1;
-  }
+        color: rgba(71, 85, 105, 0.68);
+        opacity: 1;
+      }
 
-  .recent-doi {
-    font-size: 0.82em;
-  }
+      .recent-doi {
+        font-size: 0.82em;
+      }
 
-  /* =========================================================
+      /* =========================================================
      MAIN NAVIGATION
      ========================================================= */
 
-  .nav {
-    column-gap: 18px;
-    row-gap: 10px;
-  }
+      .nav {
+        column-gap: 18px;
+        row-gap: 10px;
+      }
 
-  .nav a {
-    min-height: 74px;
-    padding: 14px 8px 13px;
-  }
+      .nav a {
+        min-height: 74px;
+        padding: 14px 8px 13px;
+      }
 
-  .nav-index {
-    margin-bottom: 4px;
+      .nav-index {
+        margin-bottom: 4px;
 
-    font-size: 0.62rem;
-    letter-spacing: 0.25em;
-  }
+        font-size: 0.62rem;
+        letter-spacing: 0.25em;
+      }
 
-  .nav-label {
-    font-size: 1rem;
-    line-height: 1.35;
-  }
+      .nav-label {
+        font-size: 1rem;
+        line-height: 1.35;
+      }
 
 
-  /* =========================================================
+      /* =========================================================
      FOOTER
      ========================================================= */
 
-  .site-footer {
-    margin-top: 20px;
-    padding-top: 15px;
-  }
+      .site-footer {
+        margin-top: 20px;
+        padding-top: 15px;
+      }
 
-  .footer-label {
-    font-size: 0.58rem;
-    letter-spacing: 0.14em;
-  }
+      .footer-label {
+        font-size: 0.58rem;
+        letter-spacing: 0.14em;
+      }
 
-  .email-link {
-    font-size: 0.72rem;
-    line-height: 1.45;
-  }
+      .email-link {
+        font-size: 0.72rem;
+        line-height: 1.45;
+      }
 
-  .footer-meta {
-    margin-top: 2px;
+      .footer-meta {
+        margin-top: 2px;
 
-    font-size: 0.58rem;
-    line-height: 1.45;
-    letter-spacing: 0.02em;
-  }
-}
+        font-size: 0.58rem;
+        line-height: 1.45;
+        letter-spacing: 0.02em;
+      }
+    }
   </style>
 </head>
 

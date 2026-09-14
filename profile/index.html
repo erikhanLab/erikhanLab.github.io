@@ -1241,7 +1241,7 @@
       font-size: 0.8em;
       line-height: 1.55;
 
-      color: rgba(34, 34, 34, 0.88);
+      color: rgba(34, 34, 34, 0.78);
     }
 
     .reviewer-journal-item::before {
@@ -1746,7 +1746,6 @@
     /* =========================================================
        MOBILE
        ========================================================= */
-
     @media (max-width: 640px) {
       .page-content {
         font-size: 1em;
@@ -1833,7 +1832,7 @@
         width: 36px;
         height: 36px;
 
-        opacity: 0.82;
+        opacity: 0.72;
 
         transform: translateY(-3px);
       }
@@ -1885,6 +1884,17 @@
         margin-top: 10px;
       }
 
+      #education .affiliation-item[data-timeline="inha"] {
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+
+      #education .affiliation-item[data-timeline="inha"],
+      #appointments-experience .affiliation-item-static {
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+
       #education .education-timeline {
         display: none;
       }
@@ -1913,7 +1923,7 @@
         transition: none;
       }
 
-      .profile-record-section .affiliation-item:hover,
+      .profile-record-section .affiliation-item:not(.affiliation-item-static):hover,
       .profile-record-section .affiliation-item.is-active,
       #appointments-experience .affiliation-item-static:hover {
         background: transparent;
@@ -1925,13 +1935,13 @@
       }
 
       .affiliation-logo,
-      .profile-record-section .affiliation-item:hover .affiliation-logo,
+      .profile-record-section .affiliation-item:not(.affiliation-item-static):hover .affiliation-logo,
       .profile-record-section .affiliation-item.is-active .affiliation-logo,
       #appointments-experience .affiliation-item-static:hover .affiliation-logo {
         width: 36px;
         height: 36px;
 
-        opacity: 0.5;
+        opacity: 0.6;
 
         transform: none;
 
@@ -1939,7 +1949,7 @@
       }
 
       .affiliation-logo img,
-      .profile-record-section .affiliation-item:hover .affiliation-logo img,
+      .profile-record-section .affiliation-item:not(.affiliation-item-static):hover .affiliation-logo img,
       .profile-record-section .affiliation-item.is-active .affiliation-logo img,
       #appointments-experience .affiliation-item-static:hover .affiliation-logo img {
         filter: none;
@@ -2047,7 +2057,7 @@
       .reviewer-heading {
         gap: 5px;
 
-        margin-bottom: 9px;
+        margin-bottom: 5px;
       }
 
       .reviewer-title {
@@ -2059,7 +2069,7 @@
       }
 
       .reviewer-list {
-        gap: 6px;
+        gap: 3px;
       }
 
       #academic-activity .reviewer-journal-item {
@@ -2121,6 +2131,17 @@
       }
 
       .feature-writing-item {
+        display: grid;
+
+        grid-template-columns:
+          minmax(0, 1fr) auto;
+
+        grid-template-areas:
+          "meta meta"
+          "title title"
+          "source actions"
+          "summary summary";
+
         padding-bottom: 13px;
       }
 
@@ -2129,6 +2150,8 @@
       }
 
       .feature-writing-meta {
+        grid-area: meta;
+
         gap: 12px;
 
         margin-bottom: 4px;
@@ -2145,34 +2168,70 @@
         font-size: 0.5rem;
       }
 
+      .feature-writing-heading {
+        display: contents;
+      }
+
+      .feature-writing-title-link {
+        grid-area: title;
+
+        display: block;
+
+        min-width: 0;
+
+        padding-right: 12px;
+      }
+
       .feature-writing-title {
+        display: block;
+
+        overflow: hidden;
+
         font-size: 0.72rem;
         line-height: 1.48;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       .feature-writing-source {
-        margin-top: 3px;
+        grid-area: source;
+
+        min-width: 0;
+
+        margin-top: 4px;
+
+        overflow: hidden;
 
         font-size: 0.6rem;
-      }
 
-      .feature-writing-summary {
-        margin-top: 5px;
-
-        font-size: 0.62rem;
-        line-height: 1.56;
-      }
-
-      .feature-writing-heading {
-        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       .feature-writing-actions {
-        margin-top: 5px;
+        grid-area: actions;
+
+        justify-self: end;
+
+        width: auto;
+
+        margin-top: 4px;
+        margin-left: 12px;
+        margin-right: 10px;
 
         gap: 7px;
 
         font-size: 0.51rem;
+      }
+
+      .feature-writing-summary {
+        grid-area: summary;
+
+        margin-top: 5px;
+
+        font-size: 0.62rem;
+        line-height: 1.56;
       }
     }
 
@@ -2385,9 +2444,8 @@
 
         <div data-nosnippet>
 
-          <a href="mailto:sangseok.han.contact@gmail.com" class="copy-email"
-            data-email="sangseok.han.contact@gmail.com" aria-label="Copy email address"
-            title="Click to copy email address">
+          <a href="mailto:sangseok.han.contact@gmail.com" class="copy-email" data-email="sangseok.han.contact@gmail.com"
+            aria-label="Copy email address" title="Click to copy email address">
 
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M2 4h20v16H2V4zm10 7L2 6v2l10 5 10-5V6l-10 5z"></path>
@@ -2655,8 +2713,16 @@
 
     <section class="section profile-record-section" id="appointments-experience">
 
-      <h2 data-en="Research Appointments &amp; Experience" data-ja="研究所属・職務経験">
-        Research Appointments &amp; Experience
+      <h2>
+
+        <span class="desktop-only" data-en="Research Appointments &amp; Experience" data-ja="研究所属・職務経験">
+          Research Appointments &amp; Experience
+        </span>
+
+        <span class="mobile-only" data-en="Appointments &amp; Experience" data-ja="所属・職務経験">
+          Appointments &amp; Experience
+        </span>
+
       </h2>
 
       <div class="appointments-experience-layout">
@@ -2780,8 +2846,7 @@
 
               </div>
 
-              <div class="affiliation-context" data-en="Acoustic Systems &amp; Naval Operations"
-                data-ja="音響システム・海軍運用">
+              <div class="affiliation-context" data-en="Acoustic Systems &amp; Naval Operations" data-ja="音響システム・海軍運用">
                 Acoustic Systems &amp; Naval Operations
               </div>
 
@@ -3048,10 +3113,19 @@
             Seoul National University Newspaper
           </div>
 
-          <p class="feature-writing-summary"
-            data-en="A personal essay on measurement, research, and the limits of reducing a person to a single number."
-            data-ja="測定と研究、そして一人の人間を単一の数字に還元することの限界についてのエッセイ。">
-            A personal essay on measurement, research, and the limits of reducing a person to a single number.
+          <p class="feature-writing-summary">
+
+            <span class="desktop-only"
+              data-en="A personal essay on measurement, research, and the limits of reducing a person to a single number."
+              data-ja="測定と研究、そして一人の人間を単一の数字に還元することの限界についてのエッセイ。">
+              A personal essay on measurement, research, and the limits of reducing a person to a single number.
+            </span>
+
+            <span class="mobile-only" data-en="A personal essay on measurement, research, and human potential."
+              data-ja="測定、研究、そして人の可能性についてのエッセイ。">
+              A personal essay on measurement, research, and human potential.
+            </span>
+
           </p>
 
         </article>
@@ -3108,10 +3182,19 @@
             University of Strathclyde
           </div>
 
-          <p class="feature-writing-summary"
-            data-en="University feature on research into towing-tank temperature and model–ship resistance extrapolation."
-            data-ja="曳航水槽の水温と模型船から実船への抵抗推定に関する研究を紹介した大学公式記事。">
-            University feature on research into towing-tank temperature and model–ship resistance extrapolation.
+          <p class="feature-writing-summary">
+
+            <span class="desktop-only"
+              data-en="University feature on research into towing-tank temperature and model–ship resistance extrapolation."
+              data-ja="曳航水槽の水温と模型船から実船への抵抗推定に関する研究を紹介した大学公式記事。">
+              University feature on research into towing-tank temperature and model–ship resistance extrapolation.
+            </span>
+
+            <span class="mobile-only" data-en="University feature on towing-tank temperature and ship resistance."
+              data-ja="曳航水槽の水温と船舶抵抗に関する大学公式の研究紹介。">
+              University feature on towing-tank temperature and ship resistance.
+            </span>
+
           </p>
 
         </article>
@@ -3136,9 +3219,14 @@
 
             <p class="outside-research-copy">
 
-              <span data-en="Away from research, I draw in graphite, play the piano, and work out."
+              <span class="desktop-only" data-en="Away from research, I draw in graphite, play the piano, and work out."
                 data-ja="研究以外では、鉛筆で絵を描き、ピアノを弾き、ウェイトトレーニングをしています。">
                 Away from research, I draw in graphite, play the piano, and work out.
+              </span>
+
+              <span class="mobile-only" data-en="Away from research, I draw, play the piano, and work out."
+                data-ja="研究以外では、絵を描き、ピアノを弾き、運動をしています。">
+                Away from research, I draw, play the piano, and work out.
               </span>
 
             </p>
@@ -4476,6 +4564,14 @@
     }
 
     function initialiseTimelineInteraction() {
+      if (
+        window.matchMedia(
+          "(max-width: 640px)"
+        ).matches
+      ) {
+        return;
+      }
+
       const timelineSection =
         document.getElementById(
           "education"
