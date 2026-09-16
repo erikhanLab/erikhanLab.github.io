@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="robots" content="index, follow, noimageindex">
+  <meta name="bingbot" content="index, follow, max-image-preview:none">
+
+  <title>
+    Numerical Analysis of Fluid-Structure Interaction (FSI) for Semi-Submersible FOWTs | Sangseok Han
+  </title>
+
+  <meta name="description"
+    content="A MARINE 2025 conference paper on a CFD-based fluid-structure interaction framework for semi-submersible floating offshore wind turbines, including motion-response validation and structural stress analysis.">
+
+  <!-- TODO: change this slug if you want a different publication URL. -->
+  <link rel="canonical" href="https://sangseokhan.com/publications/marine-2025-fsi/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+
+  <meta property="og:title"
+    content="Numerical Analysis of Fluid-Structure Interaction (FSI) for Semi-Submersible FOWTs | Sangseok Han">
+
+  <meta property="og:description"
+    content="Abstract, conference details, and selected figures from a MARINE 2025 study of CFD-based fluid-structure interaction for a semi-submersible floating offshore wind turbine.">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:url" content="https://sangseokhan.com/publications/marine-2025-fsi/">
+
+  <meta property="og:site_name" content="Sangseok Han — Publications">
+
+  <meta property="og:image" content="https://sangseokhan.com/assets/thumbnail.png">
+
+  <script src="/assets/js/site-analytics.js?v=1"></script>
+
+  <link rel="stylesheet" href="/assets/css/site-shell.css?v=1">
+
+  <style>
+    :root {
+      --accent-dark: #0B1F3A;
+      --bg-light: #EDEFF3;
+      --text-muted: #4A4A4A;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 100px auto 18px;
+
+      font-size: clamp(2.0rem, 3.2vw, 2.2rem);
+      font-weight: 400;
+      line-height: 1.18;
+      letter-spacing: 0.02em;
+
+      color: var(--accent-dark);
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    .top-back {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      box-sizing: border-box;
+      padding-block: 16px;
+      padding-inline: max(28px, calc((100vw - 850px) / 2));
+
+      font-size: 0.88em;
+      line-height: 1.5;
+      color: #444;
+
+      background: var(--bg-light);
+      border-bottom: 1px solid #dde3ec;
+    }
+
+    .top-back a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .top-back a:hover {
+      color: var(--accent-dark);
+      border-bottom-color: var(--accent-dark);
+    }
+
+    .meta {
+      margin-bottom: 22px;
+
+      font-size: 1em;
+      color: #555;
+      text-align: center;
+    }
+
+    .authors {
+      margin-bottom: 6px;
+
+      font-size: 1.15em;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .authors sup {
+      font-size: 0.7em;
+      vertical-align: super;
+      line-height: 1;
+    }
+
+    .authors sup.cor {
+      position: relative;
+      top: 0.2em;
+    }
+
+    .affils {
+      max-width: 680px;
+      margin: 0 auto 80px;
+
+      font-size: 0.82em;
+      line-height: 1.6;
+      color: #666;
+      text-align: left;
+    }
+
+    .abstract {
+      max-width: 780px;
+      margin: 0 auto 65px;
+      padding-left: 18px;
+
+      border-left: 2px solid #e1e4ea;
+    }
+
+    .abstract h2 {
+      margin-bottom: 12px;
+
+      font-size: 1.05em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+    }
+
+    .abstract p {
+      margin-bottom: 1.2em;
+
+      font-size: 0.98em;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .abstract p:first-of-type {
+      font-size: 1.02em;
+      color: #222;
+    }
+
+    .pub-meta {
+      max-width: 620px;
+      margin: 0 auto;
+      padding-top: 20px;
+
+      font-size: 0.82em;
+      line-height: 1.65;
+      letter-spacing: 0.02em;
+      text-align: center;
+      color: #666;
+
+      border-top: 1px solid #dde3ec;
+    }
+
+    .pub-meta strong {
+      color: #222;
+      font-weight: normal;
+    }
+
+    .pub-meta a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted #999;
+    }
+
+    .pub-meta a:hover {
+      color: var(--accent-dark);
+      border-bottom-color: var(--accent-dark);
+    }
+
+    .section-title {
+      margin: 80px auto 30px;
+      padding-top: 22px;
+
+      font-size: 1.05em;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--accent-dark);
+
+      border-top: 1px solid #dde3ec;
+    }
+
+    .figure {
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto 70px;
+    }
+
+    .figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 12px;
+    }
+
+    .caption {
+      font-size: 0.9em;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .figure-note {
+      max-width: 720px;
+      margin: 18px auto 0;
+      padding: 14px 18px;
+
+      font-size: 0.88em;
+      line-height: 1.6;
+      color: #555;
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+
+      background: #f1f4f8;
+      border-left: 3px solid #c9d3e3;
+    }
+
+    .math {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        max-width: 96%;
+        margin-top: 80px;
+        margin-bottom: 14px;
+        font-size: 1.2rem;
+        line-height: 1.25;
+        letter-spacing: -0.018em;
+      }
+
+      .top-back {
+        padding: 20px 18px;
+        font-size: 0.72em;
+        line-height: 1.5;
+      }
+
+      .meta {
+        font-size: 0.75em;
+      }
+
+      .authors {
+        font-size: 0.7em;
+        line-height: 1.65;
+      }
+
+      .affils {
+        width: 90%;
+        max-width: 100%;
+        margin-bottom: 30px;
+        margin-left: 20px;
+        font-size: 0.6em;
+        line-height: 1.6;
+      }
+
+      .affils div {
+        display: block;
+        width: 100%;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .abstract {
+        margin-top: 0;
+        margin-bottom: 45px;
+
+        font-size: 0.65em;
+      }
+
+      .section-title {
+        font-size: 0.9em;
+      }
+
+      .pub-meta {
+        margin: 50px auto 0;
+
+        font-size: 0.6em;
+        line-height: 1.6;
+      }
+
+      .figure {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+
+        font-size: 0.85em;
+      }
+
+      .figure-note {
+        text-align: left;
+        hyphens: none;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <nav class="top-back" aria-label="Back navigation">
+    ← <a href="/publications/">Back to Publications</a>
+  </nav>
+
+  <h1>
+    Numerical Analysis of Fluid-Structure Interaction (FSI) for Semi-Submersible FOWTs
+  </h1>
+
+  <div class="meta">
+    <em>XI International Conference on Computational Methods in Marine Engineering</em> (MARINE 2025)
+  </div>
+
+  <div class="authors">
+    <strong>Sang-seok Han</strong>
+    <sup class="affil">1</sup><sup class="cor">*</sup>,
+    Saishuai Dai <sup class="affil">1</sup>,
+    Momchil Terziev <sup class="affil">1</sup>,
+    Hae-chan Yun <sup class="affil">2</sup>,
+    Soon-seok Song <sup class="affil">2</sup>
+  </div>
+
+  <div class="affils">
+    <div><sup>1</sup>
+      Department of Naval Architecture, Ocean and Marine Engineering, University of Strathclyde, the United Kingdom
+    </div>
+    <div><sup>2</sup>
+      Department of Naval Architecture and Ocean Engineering, Inha University, Republic of Korea</div>
+  </div>
+
+  <div class="abstract">
+    <h2>Abstract</h2>
+
+    <p>
+      This study presents a computational fluid–structure interaction (FSI) analysis of a semi-submersible floating
+      offshore wind turbine (FOWT) using a computationally efficient CFD-based framework. The method enables
+      structural flexibility without requiring external finite element solvers. The simulation model is based on the
+      OC6 Phase Ia semi-submersible platform at 1:50 scale and is implemented in STAR-CCM+ using the DFBI
+      Morphing feature combined with a multi-overset mesh strategy.
+    </p>
+
+    <p>
+      Structural deformation is handled entirely within the CFD environment, offering a practical and self-contained
+      FSI simulation approach. Model validation is conducted via free decay and regular wave RAO tests, showing
+      good agreement with experimental data. Comparative analyses between rigid-body and FSI-enabled models
+      reveal that structural flexibility increases surge and heave responses while slightly reducing pitch amplitudes.
+      Additionally, internal stress analysis identifies critical loading regions under wave excitation, emphasising the
+      importance of structural compliance in early-stage FOWT design. These results demonstrate the feasibility of
+      integrated CFD–FSI analysis using commercial tools and provide a foundation for extending the framework
+      to more realistic ocean environments, including irregular and extreme wave conditions.
+    </p>
+  </div>
+
+  <div class="pub-meta">
+    Conference paper (2025)<br>
+
+    <strong>
+      XI International Conference on Computational Methods in Marine Engineering (MARINE 2025)
+    </strong><br>
+
+    DOI:
+    <strong>
+      <a href="https://doi.org/10.23967/marine.2025.141" target="_blank" rel="noopener noreferrer">
+        10.23967/marine.2025.141
+      </a>
+    </strong>
+  </div>
+
+  <div class="section-title" style="margin-top: 60px;">
+    <strong>Selected Figures</strong>
+  </div>
+
+  <div class="figure">
+    <img src="/assets/publications/FSI_mesh.svg"
+      alt="Double-overset mesh configuration for the FSI simulation of the OC6 semi-submersible platform">
+
+    <div class="caption">
+      <em>
+        <strong>Figure 1</strong>.
+        Mesh configuration for FSI simulation using a double-overset strategy, enabling structural deformation and
+        stress evaluation.
+      </em>
+    </div>
+
+    <div class="figure-note">
+      The FSI simulations employ a double-overset configuration in which the first overset region resolves the
+      interaction between the platform and the surrounding fluid, while a second region linked to the morphing mesh
+      captures structural deformation and internal stress. The resulting setup contains approximately 4.6 million cells
+      and is intended to improve coupling fidelity between hydrodynamic loading and structural response.
+    </div>
+  </div>
+
+  <div class="figure">
+    <img src="/assets/publications/FSI_motion.svg"
+      alt="Time histories of surge, heave, and pitch for rigid-body, steel FSI, and aluminium FSI models under regular waves">
+
+    <div class="caption">
+      <em>
+        <strong>Figure 2</strong>.
+        Time history of platform motions (surge, heave, and pitch) for FSI (Steel, Al) and Non-FSI models
+        under regular wave condition (<span class="math"><i>H</i> = 0.148 m</span>,
+        <span class="math"><i>T</i> = 1.697 s</span>).
+      </em>
+    </div>
+
+    <div class="figure-note">
+      The motion histories compare the conventional rigid-body model with deformable-body steel and aluminium
+      configurations under identical regular-wave forcing. The results indicate that fluid–structure interaction effects
+      are dependent on both the motion mode and material properties, with distinct changes observed in surge, heave,
+      and pitch response.
+    </div>
+  </div>
+
+  <div class="figure">
+    <img src="/assets/publications/FSI_stress.svg"
+      alt="Von Mises and mean stress contours on the semi-submersible FOWT platform under regular wave loading">
+
+    <div class="caption">
+      <em>
+        <strong>Figure 3</strong>.
+        Contour plot of Von Mises stress (left) and Mean Stress (right) in the semi-submersible platform
+        under regular wave condition (<span class="math"><i>H</i> = 0.148 m</span>).
+      </em>
+    </div>
+
+    <div class="figure-note">
+      The structural stress fields identify localised loading regions within the deformable-body model. Von Mises
+      stress concentrations of approximately 16 kPa appear near the outer column bases, pontoon connections, and
+      central column joints, while the mean-stress distribution indicates compression around the lower
+      column–pontoon regions and tension near the column tops. These patterns provide a basis for preliminary
+      structural and fatigue assessment under wave excitation.
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-signature">
+      <span class="footer-name">
+        Sangseok Han
+      </span>
+
+      <span class="footer-field" data-en="Research portfolio" data-ja="研究ポートフォリオ">
+        Research portfolio
+      </span>
+    </div>
+
+    <a class="footer-top" href="#top">
+      <span data-en="Back to top" data-ja="ページ上部へ">
+        Back to top
+      </span>
+
+      <span class="footer-top-arrow" aria-hidden="true">
+        ↑
+      </span>
+    </a>
+  </footer>
+</body>
+
+</html>

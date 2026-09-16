@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="robots" content="index, follow, noimageindex">
+  <meta name="bingbot" content="index, follow, max-image-preview:none">
+
+  <title>
+    CFD-Based Model Predictive Control for Point Absorber Wave Energy Converter | Sangseok Han
+  </title>
+
+  <meta name="description"
+    content="A 2025 conference paper on a CFD-based pseudo-Model Predictive Control strategy for point absorber wave energy converters, including numerical validation, offline damping optimisation, and planned online control.">
+
+  <link rel="canonical" href="https://sangseokhan.com/publications/cfd-mpc-wec/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+
+  <meta property="og:title"
+    content="CFD-Based Model Predictive Control for Point Absorber Wave Energy Converter | Sangseok Han">
+
+  <meta property="og:description"
+    content="Summary, conference details, and selected figures from a 2025 study of CFD-based pseudo-MPC control for a point absorber wave energy converter.">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:url" content="https://sangseokhan.com/publications/cfd-mpc-wec/">
+
+  <meta property="og:site_name" content="Sangseok Han — Publications">
+
+  <meta property="og:image" content="https://sangseokhan.com/assets/thumbnail.png">
+
+  <script src="/assets/js/site-analytics.js?v=1"></script>
+
+  <link rel="stylesheet" href="/assets/css/site-shell.css?v=1">
+
+  <style>
+    :root {
+      --accent-dark: #0B1F3A;
+      --bg-light: #EDEFF3;
+      --text-muted: #4A4A4A;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 100px auto 18px;
+
+      font-size: clamp(2.0rem, 3.2vw, 2.2rem);
+      font-weight: 400;
+      line-height: 1.18;
+      letter-spacing: 0.02em;
+
+      color: var(--accent-dark);
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    .top-back {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      box-sizing: border-box;
+      padding-block: 16px;
+      padding-inline: max(28px, calc((100vw - 850px) / 2));
+
+      font-size: 0.88em;
+      line-height: 1.5;
+      color: #444;
+
+      background: var(--bg-light);
+      border-bottom: 1px solid #dde3ec;
+    }
+
+    .top-back a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .top-back a:hover {
+      color: var(--accent-dark);
+      border-bottom-color: var(--accent-dark);
+    }
+
+    .meta {
+      margin-bottom: 22px;
+
+      font-size: 1em;
+      color: #555;
+      text-align: center;
+    }
+
+    .authors {
+      margin-bottom: 6px;
+
+      font-size: 1.15em;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .authors sup {
+      font-size: 0.7em;
+      vertical-align: super;
+      line-height: 1;
+    }
+
+    .authors sup.cor {
+      position: relative;
+      top: 0.2em;
+    }
+
+    .affils {
+      max-width: 680px;
+      margin: 0 auto 80px;
+
+      font-size: 0.82em;
+      line-height: 1.6;
+      color: #666;
+      text-align: left;
+    }
+
+    .abstract {
+      max-width: 780px;
+      margin: 0 auto 65px;
+      padding-left: 18px;
+
+      border-left: 2px solid #e1e4ea;
+    }
+
+    .abstract h2 {
+      margin-bottom: 12px;
+
+      font-size: 1.05em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+    }
+
+    .abstract p {
+      margin-bottom: 1.2em;
+
+      font-size: 0.98em;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .abstract p:first-of-type {
+      font-size: 1.02em;
+      color: #222;
+    }
+
+    .pub-meta {
+      max-width: 620px;
+      margin: 0 auto;
+      padding-top: 20px;
+
+      font-size: 0.82em;
+      line-height: 1.65;
+      letter-spacing: 0.02em;
+      text-align: center;
+      color: #666;
+
+      border-top: 1px solid #dde3ec;
+    }
+
+    .pub-meta strong {
+      color: #222;
+      font-weight: normal;
+    }
+
+    .pub-meta a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted #999;
+    }
+
+    .pub-meta a:hover {
+      color: var(--accent-dark);
+      border-bottom-color: var(--accent-dark);
+    }
+
+    .section-title {
+      margin: 80px auto 30px;
+      padding-top: 22px;
+
+      font-size: 1.05em;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--accent-dark);
+
+      border-top: 1px solid #dde3ec;
+    }
+
+    .figure {
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto 70px;
+    }
+
+    .figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 12px;
+    }
+
+    .caption {
+      font-size: 0.9em;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .figure-note {
+      max-width: 720px;
+      margin: 18px auto 0;
+      padding: 14px 18px;
+
+      font-size: 0.88em;
+      line-height: 1.6;
+      color: #555;
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+
+      background: #f1f4f8;
+      border-left: 3px solid #c9d3e3;
+    }
+
+    .math {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        max-width: 96%;
+        margin-top: 80px;
+        margin-bottom: 14px;
+        font-size: 1.2rem;
+        line-height: 1.25;
+        letter-spacing: -0.018em;
+      }
+
+      .top-back {
+        padding: 20px 18px;
+        font-size: 0.72em;
+        line-height: 1.5;
+      }
+
+      .meta {
+        font-size: 0.75em;
+      }
+
+      .authors {
+        font-size: 0.7em;
+        line-height: 1.65;
+      }
+
+      .affils {
+        width: 90%;
+        max-width: 100%;
+        margin-bottom: 30px;
+        margin-left: 20px;
+        font-size: 0.6em;
+        line-height: 1.6;
+      }
+
+      .affils div {
+        display: block;
+        width: 100%;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .abstract {
+        margin-top: 0;
+        margin-bottom: 45px;
+
+        font-size: 0.65em;
+      }
+
+      .section-title {
+        font-size: 0.9em;
+      }
+
+      .pub-meta {
+        margin: 50px auto 0;
+
+        font-size: 0.6em;
+        line-height: 1.6;
+      }
+
+      .figure {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+
+        font-size: 0.85em;
+      }
+
+      .figure-note {
+        text-align: left;
+        hyphens: none;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <nav class="top-back" aria-label="Back navigation">
+    ← <a href="/publications/">Back to Publications</a>
+  </nav>
+
+  <h1>
+    CFD-Based Model Predictive Control for Point Absorber Wave Energy Converter
+  </h1>
+
+  <div class="meta">
+    <em>The Japan Society of Naval Architects and Ocean Engineers Conference Proceedings</em>, Vol. 41 (2025)
+  </div>
+
+  <div class="authors">
+    <strong>Sang-seok Han</strong>
+    <sup class="affil">1</sup>,
+    Min-hong Lee <sup class="affil">2</sup>
+  </div>
+
+  <div class="affils">
+    <div><sup>1</sup>
+      Department of Naval Architecture, Ocean and Marine Engineering, University of Strathclyde, the United Kingdom
+    </div>
+    <div><sup>2</sup>
+      Department of Naval Architecture and Ocean Engineering, Inha University, Republic of Korea</div>
+  </div>
+
+  <div class="abstract">
+    <h2>Summary</h2>
+
+    <p>
+      This study presents a pseudo-Model Predictive Control (pseudo-MPC) strategy for improving
+      energy absorption in point absorber-type Wave Energy Converters (WECs) using high-fidelity
+      Computational Fluid Dynamics (CFD) simulations. Unlike traditional MPC, which requires
+      real-time optimisation, the proposed approach uses a pre-computed damping law based on wave
+      amplitude, enabling real-time responsiveness without intensive computation.
+    </p>
+
+    <p>
+      Implemented within STAR-CCM+ using Field Functions and DFBI, the control is designed to
+      dynamically adjust the Power Take-Off (PTO) damping during two-phase flow simulations.
+      A four-stage simulation plan was conducted, including static model validation, wave tank
+      calibration, offline damping optimisation, and planned online control.
+    </p>
+
+    <p>
+      Initial results confirm the numerical validity of the CFD setup and quantify energy absorption
+      under fixed damping values across varying wave amplitudes. These outcomes provide a robust
+      foundation for the upcoming implementation of the pseudo-MPC control law, demonstrating that
+      real-time MPC-inspired control can be efficiently realised within CFD environments for future
+      adaptive WEC systems.
+    </p>
+  </div>
+
+  <div class="pub-meta">
+  Conference paper (2025)<br>
+
+  <strong>
+    The Japan Society of Naval Architects and Ocean Engineers Conference Proceedings, Vol. 41
+  </strong><br>
+
+  DOI:
+  <strong>
+    <a href="https://doi.org/10.14856/conf.41.0_979"
+      target="_blank" rel="noopener noreferrer">
+      10.14856/conf.41.0_979
+    </a>
+  </strong>
+</div>
+
+  <div class="section-title" style="margin-top: 60px;">
+    <strong>Selected Figures</strong>
+  </div>
+
+  <div class="figure">
+    <img src="/assets/publications/WEC_mesh.svg"
+      alt="Front, top, and side views of the computational mesh for the point absorber WEC simulation">
+
+    <div class="caption">
+      <em>
+        <strong>Figure 2</strong>.
+        Mesh configuration views: (a) front, (b) top, and (c) side.
+      </em>
+    </div>
+
+    <div class="figure-note">
+      The computational domain uses a structured mesh with local refinement around the free surface
+      and the point absorber to resolve wave–body interaction. The mesh contains approximately
+      1.13 million cells for the small-wave case and 2.28 million cells for the large-wave case,
+      while the WEC motion is constrained to the vertical (heave) direction.
+    </div>
+  </div>
+
+  <div class="figure">
+    <img src="/assets/publications/WEC_validation.svg"
+      alt="Comparison between theoretical and CFD wave elevation for regular-wave validation">
+
+    <div class="caption">
+      <em>
+        <strong>Figure 4</strong>.
+        Comparison of wave height: theoretical prediction vs. CFD simulation.
+      </em>
+    </div>
+
+    <div class="figure-note">
+      The body-free wave-tank simulation was used to verify wave generation before the control
+      study. For the regular-wave condition
+      (<span class="math"><i>H</i> = 0.1 m</span>,
+      <span class="math"><i>T</i> = 1.0 s</span>),
+      the CFD wave elevation closely follows the theoretical target in amplitude, period, and phase,
+      supporting the validity of the numerical wave environment.
+    </div>
+  </div>
+
+  <div class="figure">
+    <img src="/assets/publications/WEC_energy.svg"
+      alt="Absorbed power histories for small and large regular-wave conditions">
+
+    <div class="caption">
+      <em>
+        <strong>Figure 7</strong>.
+        Real-time absorbed energy under two regular wave conditions:
+        (a) small wave and (b) big wave.
+      </em>
+    </div>
+
+    <div class="figure-note">
+      The offline phase compares energy absorption under fixed damping values selected for two
+      representative regular-wave conditions. Over 50 seconds, the study reports approximately
+      95 J of absorbed energy for the small-wave case and 4,980 J for the large-wave case.
+      These results form the basis for fitting the wave-amplitude-dependent damping law;
+      the fully dynamic online pseudo-MPC implementation is identified in the paper as planned work.
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-signature">
+      <span class="footer-name">
+        Sangseok Han
+      </span>
+
+      <span class="footer-field" data-en="Research portfolio" data-ja="研究ポートフォリオ">
+        Research portfolio
+      </span>
+    </div>
+
+    <a class="footer-top" href="#top">
+      <span data-en="Back to top" data-ja="ページ上部へ">
+        Back to top
+      </span>
+
+      <span class="footer-top-arrow" aria-hidden="true">
+        ↑
+      </span>
+    </a>
+  </footer>
+</body>
+
+</html>
