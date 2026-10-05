@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sangseok Han | Computational Ship Hydrodynamics</title>
 
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Sangseok Han">
+
   <meta name="description"
     content="Sangseok Han is a visiting researcher at Seoul National University working on computational ship hydrodynamics, including hull roughness, ship resistance, and added resistance in waves.">
 
@@ -39,13 +42,35 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Sangseok Han",
-  "url": "https://sangseokhan.com/",
-  "image": "https://sangseokhan.com/assets/Home-spain.png",
-  "sameAs": [
-    "https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en",
-    "https://orcid.org/0009-0007-8276-2728"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://sangseokhan.com/#website",
+      "url": "https://sangseokhan.com/",
+      "name": "Sangseok Han",
+      "publisher": {
+        "@id": "https://sangseokhan.com/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://sangseokhan.com/#person",
+      "name": "Sangseok Han",
+      "url": "https://sangseokhan.com/profile/",
+      "image": "https://sangseokhan.com/assets/etc/profile-portrait.png",
+      "sameAs": [
+        "https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en",
+        "https://orcid.org/0009-0007-8276-2728",
+        "https://www.linkedin.com/in/erik-han97/"
+      ],
+      "knowsAbout": [
+        "computational ship hydrodynamics",
+        "computational fluid dynamics",
+        "hull roughness",
+        "ship resistance",
+        "wave–body interaction"
+      ]
+    }
   ]
 }
 </script>
@@ -2257,7 +2282,7 @@
         </div>
 
         <div class="research-transition-graphic" aria-hidden="true">
-          <img src="/assets/roughness-graphic.png" alt="">
+          <img src="/assets/etc/roughness-graphic.png" alt="">
         </div>
 
         <div class="recent-work">

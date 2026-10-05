@@ -1,62 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://sangseokhan.com/</loc>
-    <lastmod>2026-08-19</lastmod>
-  </url>
-
-  <url>
-    <loc>https://sangseokhan.com/profile/</loc>
-    <lastmod>2026-09-14</lastmod>
-  </url>
-
-  <url>
-    <loc>https://sangseokhan.com/profile/writing/single-number/</loc>
-    <lastmod>2026-09-13</lastmod>
-  </url>
-
-  <url>
-    <loc>https://sangseokhan.com/research/</loc>
-    <lastmod>2026-08-19</lastmod>
-  </url>
-
-  <url>
-    <loc>https://sangseokhan.com/publications/</loc>
-    <lastmod>2026-08-19</lastmod>
-  </url>
-
-  <url>
-    <loc>https://sangseokhan.com/publications/spatial-variability/</loc>
-  </url>
-
-  <url>
-    <loc>https://sangseokhan.com/publications/beyond-resistance/</loc>
-  </url>
-
-  <url>
-    <loc>https://sangseokhan.com/publications/temperature-ittc/</loc>
-  </url>
-
-  <url>
-    <loc>https://sangseokhan.com/publications/naval-roughness/</loc>
-  </url>
-
-    <url>
-    <loc>https://sangseokhan.com/publications/cfd-spatial/</loc>
-  </url>
-
-  <url>
-    <loc>https://sangseokhan.com/publications/wec-mpc/</loc>
-  </url>
-
-  <url>
-    <loc>https://sangseokhan.com/publications/fowt-fsi/</loc>
-  </url>
-
-  <url>
-    <loc>https://sangseokhan.com/contact/</loc>
-    <lastmod>2026-08-19</lastmod>
-  </url>
-
+  <url><loc>https://sangseokhan.com/</loc></url>
+  <url><loc>https://sangseokhan.com/profile/</loc></url>
+  <url><loc>https://sangseokhan.com/profile/writing/single-number/</loc></url>
+  <url><loc>https://sangseokhan.com/publications/</loc></url>
+  <url><loc>https://sangseokhan.com/publications/beyond-resistance/</loc></url>
+  <url><loc>https://sangseokhan.com/publications/cfd-spatial/</loc></url>
+  <url><loc>https://sangseokhan.com/publications/fowt-fsi/</loc></url>
+  <url><loc>https://sangseokhan.com/publications/naval-roughness/</loc></url>
+  <url><loc>https://sangseokhan.com/publications/spatial-variability/</loc></url>
+  <url><loc>https://sangseokhan.com/publications/temperature-ittc/</loc></url>
+  <url><loc>https://sangseokhan.com/publications/wec-mpc/</loc></url>
+  <url><loc>https://sangseokhan.com/research/</loc></url>
+  <url><loc>https://sangseokhan.com/research/timeline/</loc></url>
 </urlset>

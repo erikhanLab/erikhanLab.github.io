@@ -1,0 +1,10 @@
+{
+  "name": "sangseokhan-academic-site",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node scripts/site-audit.mjs",
+    "audit": "node scripts/site-audit.mjs",
+    "sitemap": "node scripts/generate-sitemap.mjs"
+  }
+}
