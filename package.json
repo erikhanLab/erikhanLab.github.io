@@ -1,10 +1,17 @@
 {
   "name": "sangseokhan-academic-site",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.6.0",
+  "type": "module",
   "scripts": {
-    "test": "node scripts/site-audit.mjs",
+    "build": "node scripts/p2-source-check.mjs && node scripts/build.mjs && node scripts/site-audit.mjs && node scripts/content-audit.mjs && node scripts/quality-audit.mjs && node scripts/inline-js-check.mjs",
+    "test": "npm run build",
     "audit": "node scripts/site-audit.mjs",
-    "sitemap": "node scripts/generate-sitemap.mjs"
+    "preview": "node scripts/serve.mjs",
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "migrate:p2d": "node scripts/remove-legacy-snapshots.mjs && npm test",
+    "audit:quality": "node scripts/quality-audit.mjs",
+    "cleanup:quality": "node scripts/cleanup-obsolete-assets.mjs && npm test",
+    "audit:content": "node scripts/content-audit.mjs"
   }
 }

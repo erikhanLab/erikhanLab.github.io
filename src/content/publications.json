@@ -1,0 +1,299 @@
+[
+  {
+    "slug": "spatial-variability",
+    "kind": "journal",
+    "title": "Beyond uniform roughness: Spatial variability of hull roughness and implications for single-parameter representation",
+    "authors": [
+      "Sang-seok Han"
+    ],
+    "publicationDate": "2026-09-01",
+    "venue": "Ocean Engineering",
+    "doi": "10.1016/j.oceaneng.2026.127352",
+    "description": "A 2026 Ocean Engineering study examining spatial variability in hull roughness and the implications for representing non-uniform surface conditions with a single roughness parameter.",
+    "ogDescription": "Abstract, publication details, and selected figures from a 2026 Ocean Engineering study on spatial variability in hull roughness.",
+    "detailMetaHtml": "<em>Ocean Engineering</em>, Vol. 365, Part 2, Article 127352 (2026)",
+    "openAccess": false,
+    "presentation": {
+      "authorsFullHtml": "<span class=\"main-author\">Sang-seok Han*</span>",
+      "authorsShortHtml": "<span class=\"main-author\">S. Han*</span>",
+      "yearLabel": "2026",
+      "journalMetric": {
+        "journal": "Ocean Engineering",
+        "quartile": "Q1",
+        "jif": "6.3",
+        "metricYear": "2025"
+      },
+      "conferenceTooltip": null,
+      "conferenceNameFullHtml": "",
+      "conferenceNameShortHtml": "",
+      "statusNoteFull": null,
+      "statusNoteShort": null,
+      "coverBadge": null,
+      "indexTitle": "Beyond uniform roughness: Spatial variability of hull roughness and implications for single-parameter\n                representation"
+    },
+    "bibliography": {
+      "type": "journal",
+      "volume": "365",
+      "part": "2",
+      "articleNumber": "127352",
+      "publishedDate": "2026-09-01",
+      "recordUrl": "https://doi.org/10.1016/j.oceaneng.2026.127352"
+    }
+  },
+  {
+    "slug": "beyond-resistance",
+    "kind": "journal",
+    "title": "Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface conditions",
+    "authors": [
+      "Sang-seok Han",
+      "Ho-won Lee",
+      "Saishuai Dai",
+      "Momchil Terziev"
+    ],
+    "publicationDate": "2026-04-15",
+    "venue": "Ocean Engineering",
+    "doi": "10.1016/j.oceaneng.2026.124462",
+    "description": "A 2026 Ocean Engineering study on how spatially non-uniform hull roughness affects ship resistance, boundary-layer development, and wake characteristics.",
+    "ogDescription": "Abstract, publication details, and selected figures from a 2026 Ocean Engineering study on spatially non-uniform hull roughness and ship resistance.",
+    "detailMetaHtml": "<em>Ocean Engineering</em>, Vol. 352, Part 2, Article 124462 (2026)",
+    "openAccess": true,
+    "presentation": {
+      "authorsFullHtml": "<span class=\"main-author\">Sang-seok Han*</span>,\n                <span class=\"co-authors\">Ho-won Lee, Saishuai Dai, and Momchil Terziev</span>",
+      "authorsShortHtml": "<span class=\"main-author\">S. Han*</span>,\n                <span class=\"co-authors\">H. Lee, S. Dai, and M. Terziev</span>",
+      "yearLabel": "2026",
+      "journalMetric": {
+        "journal": "Ocean Engineering",
+        "quartile": "Q1",
+        "jif": "6.3",
+        "metricYear": "2025"
+      },
+      "conferenceTooltip": null,
+      "conferenceNameFullHtml": "",
+      "conferenceNameShortHtml": "",
+      "statusNoteFull": null,
+      "statusNoteShort": null,
+      "coverBadge": null,
+      "indexTitle": "Beyond uniform roughness: Ship resistance with spatially non-uniform hull surface conditions",
+      "homeCitation": {
+        "desktopAuthorsHtml": "<span class=\"recent-author\">S. Han*</span>,\n                H. Lee, S. Dai &amp; M. Terziev",
+        "mobileAuthorsHtml": "<span class=\"recent-author\">Han</span> et al."
+      }
+    },
+    "bibliography": {
+      "type": "journal",
+      "volume": "352",
+      "part": "2",
+      "articleNumber": "124462",
+      "publishedDate": "2026-04-15",
+      "recordUrl": "https://doi.org/10.1016/j.oceaneng.2026.124462",
+      "license": "CC BY 4.0"
+    }
+  },
+  {
+    "slug": "temperature-ittc",
+    "kind": "journal",
+    "title": "Temperature-induced errors in ITTC model-ship extrapolation",
+    "authors": [
+      "Sang-seok Han",
+      "Saishuai Dai",
+      "Momchil Terziev",
+      "Daejeong Kim",
+      "Tahsin Tezdogan",
+      "Doojin Jung",
+      "Soonseok Song"
+    ],
+    "publicationDate": "2025-06-20",
+    "venue": "Journal of Marine Science and Engineering",
+    "doi": "10.3390/jmse13071203",
+    "description": "A 2025 Journal of Marine Science and Engineering study on how towing tank water temperature affects ITTC model-ship extrapolation and resistance prediction.",
+    "ogDescription": "Abstract, publication details, and selected figures from a 2025 study on temperature effects in ITTC model-ship extrapolation.",
+    "detailMetaHtml": "<em>Journal of Marine Science and Engineering</em>, Vol. 13, Issue 7, Article 1203 (2025)",
+    "openAccess": true,
+    "presentation": {
+      "authorsFullHtml": "<span class=\"main-author\">Sang-seok Han</span>,\n                <span class=\"co-authors\">Saishuai Dai, Momchil Terziev, Daejeong Kim, Tahsin Tezdogan, Doojin Jung, and\n                  Soonseok Song*</span>",
+      "authorsShortHtml": "<span class=\"main-author\">S. Han</span>,\n                <span class=\"co-authors\">S. Dai, M. Terziev, <em>et al.</em></span>",
+      "yearLabel": "2025",
+      "journalMetric": {
+        "journal": "Journal of Marine Science and Engineering",
+        "quartile": "Q2",
+        "jif": "2.8",
+        "metricYear": "2024"
+      },
+      "conferenceTooltip": null,
+      "conferenceNameFullHtml": "",
+      "conferenceNameShortHtml": "",
+      "statusNoteFull": null,
+      "statusNoteShort": null,
+      "coverBadge": "Issue Cover",
+      "indexTitle": "Temperature-induced errors in ITTC model-ship extrapolation"
+    },
+    "bibliography": {
+      "type": "journal",
+      "volume": "13",
+      "issue": "7",
+      "articleNumber": "1203",
+      "publishedDate": "2025-06-20",
+      "recordUrl": "https://doi.org/10.3390/jmse13071203",
+      "license": "CC BY 4.0"
+    }
+  },
+  {
+    "slug": "naval-roughness",
+    "kind": "journal",
+    "title": "Resistance and speed penalty of a naval ship with hull roughness",
+    "authors": [
+      "Woo-seok Choi",
+      "Gyeong-seo Min",
+      "Sang-seok Han",
+      "Hae-chan Yun",
+      "Momchil Terziev",
+      "Saishuai Dai",
+      "Daejeong Kim",
+      "Soonseok Song"
+    ],
+    "publicationDate": "2024-11-15",
+    "venue": "Ocean Engineering",
+    "doi": "10.1016/j.oceaneng.2024.119058",
+    "description": "A 2024 Ocean Engineering study on the effects of hull roughness and fouling on naval ship resistance, power demand, and speed.",
+    "ogDescription": "Abstract, publication details, and selected figures from a 2024 Ocean Engineering study on hull roughness effects on naval ship resistance and speed.",
+    "detailMetaHtml": "<em>Ocean Engineering</em>, Vol. 312, Part 1, Article 119058 (2024)",
+    "openAccess": false,
+    "presentation": {
+      "authorsFullHtml": "<span class=\"co-authors\">Woo-seok Choi, Gyeong-seo Min,</span>\n<span class=\"main-author\">Sang-seok Han</span>,\n                <span class=\"co-authors\">Hae-chan Yun, Momchil Terziev, Saishuai Dai, Daejeong Kim, and Soonseok\n                  Song*</span>",
+      "authorsShortHtml": "<span class=\"co-authors\">W. Choi, G. Min,</span>\n<span class=\"main-author\">S. Han</span>,\n                <span class=\"co-authors\"><em>et al.</em></span>",
+      "yearLabel": "2024",
+      "journalMetric": {
+        "journal": "Ocean Engineering",
+        "quartile": "Q1",
+        "jif": "4.6",
+        "metricYear": "2023"
+      },
+      "conferenceTooltip": null,
+      "conferenceNameFullHtml": "",
+      "conferenceNameShortHtml": "",
+      "statusNoteFull": null,
+      "statusNoteShort": null,
+      "coverBadge": null,
+      "indexTitle": "Resistance and speed penalty of a naval ship with hull roughness"
+    },
+    "bibliography": {
+      "type": "journal",
+      "volume": "312",
+      "part": "1",
+      "articleNumber": "119058",
+      "publishedDate": "2024-11-15",
+      "recordUrl": "https://doi.org/10.1016/j.oceaneng.2024.119058"
+    }
+  },
+  {
+    "slug": "cfd-spatial",
+    "kind": "conference",
+    "title": "A Computational Fluid Dynamics Analysis of Spatial Roughness Distributions on Ship Resistance",
+    "authors": [
+      "Sang-seok Han",
+      "Momchil Terziev",
+      "Tahsin Tezdogan"
+    ],
+    "publicationDate": "2026",
+    "venue": "36th Symposium on Naval Hydrodynamics (SNH36)",
+    "doi": null,
+    "description": "A 2026 SNH36 conference paper examining spatial hull roughness distributions and their effects on ship resistance, boundary-layer development, and wake recovery for KCS and KVLCC2 using CFD.",
+    "ogDescription": "Abstract, conference details, and selected figures from a 2026 SNH36 study of spatial hull roughness effects on KCS and KVLCC2 resistance and flow development.",
+    "detailMetaHtml": "<em>36th Symposium on Naval Hydrodynamics</em> (SNH36, 2026)",
+    "openAccess": false,
+    "presentation": {
+      "authorsFullHtml": "<span class=\"main-author\">Sang-seok Han*</span>,\n                  <span class=\"co-authors\">\n                    Momchil Terziev, and Tahsin Tezdogan\n                  </span>",
+      "authorsShortHtml": "<span class=\"main-author\">S. Han*</span>,\n                  <span class=\"co-authors\">\n                    M. Terziev, and T. Tezdogan\n                  </span>",
+      "yearLabel": "June 2026",
+      "journalMetric": null,
+      "conferenceTooltip": "International symposium · Busan, South Korea",
+      "conferenceNameFullHtml": "36th Symposium on Naval Hydrodynamics (SNH36)",
+      "conferenceNameShortHtml": "SNH36",
+      "statusNoteFull": "Proceedings forthcoming",
+      "statusNoteShort": "Forthcoming",
+      "coverBadge": null,
+      "indexTitle": "A computational fluid dynamics analysis of spatial roughness\n                  distributions on ship resistance"
+    },
+    "bibliography": {
+      "type": "conference",
+      "presentedDate": "2026-06-15",
+      "location": "Busan, South Korea",
+      "status": "Proceedings forthcoming"
+    }
+  },
+  {
+    "slug": "wec-mpc",
+    "kind": "conference",
+    "title": "CFD-Based Model Predictive Control for Point Absorber Wave Energy Converter",
+    "authors": [
+      "Sang-seok Han",
+      "Min-hong Lee"
+    ],
+    "publicationDate": "2025-11-17",
+    "venue": "The Japan Society of Naval Architects and Ocean Engineers Conference Proceedings",
+    "doi": "10.14856/conf.41.0_979",
+    "description": "A 2025 conference paper on a CFD-based pseudo-Model Predictive Control strategy for point absorber wave energy converters, including numerical validation, offline damping optimisation, and planned online control.",
+    "ogDescription": "Summary, conference details, and selected figures from a 2025 study of CFD-based pseudo-MPC control for a point absorber wave energy converter.",
+    "detailMetaHtml": "<em>The Japan Society of Naval Architects and Ocean Engineers Conference Proceedings</em>, Vol. 41, pp. 979–983 (2025)",
+    "openAccess": false,
+    "presentation": {
+      "authorsFullHtml": "<span class=\"main-author\">Sang-seok Han*</span>\n<span class=\"co-authors\"> and Min-hong Lee</span>",
+      "authorsShortHtml": "<span class=\"main-author\">S. Han*</span>\n<span class=\"co-authors\"> and M. Lee</span>",
+      "yearLabel": "November 2025",
+      "journalMetric": null,
+      "conferenceTooltip": "Conference Proceedings The Japan Society of Naval Architects and Ocean Engineers · Himeji, Japan",
+      "conferenceNameFullHtml": "<em>JASNAOE Conference Proceedings</em>, Vol. 41, pp. 979–983",
+      "conferenceNameShortHtml": "<em>JASNAOE Proceedings</em>, Vol. 41, pp. 979–983",
+      "statusNoteFull": null,
+      "statusNoteShort": null,
+      "coverBadge": null,
+      "indexTitle": "CFD-based model predictive control for point absorber wave energy\n                  converter"
+    },
+    "bibliography": {
+      "type": "conference-proceedings",
+      "volume": "41",
+      "pages": "979–983",
+      "publishedDate": "2025-11-17",
+      "onlineReleaseDate": "2026-06-26",
+      "recordUrl": "https://doi.org/10.14856/conf.41.0_979"
+    }
+  },
+  {
+    "slug": "fowt-fsi",
+    "kind": "conference",
+    "title": "Numerical Analysis of Fluid-Structure Interaction (FSI) for Semi-Submersible FOWTs",
+    "authors": [
+      "Sang-seok Han",
+      "Saishuai Dai",
+      "Momchil Terziev",
+      "Hae-chan Yun",
+      "Soon-seok Song"
+    ],
+    "publicationDate": "2025",
+    "venue": "XI International Conference on Computational Methods in Marine Engineering (MARINE 2025)",
+    "doi": "10.23967/marine.2025.141",
+    "description": "A MARINE 2025 conference paper on a CFD-based fluid-structure interaction framework for semi-submersible floating offshore wind turbines, including motion-response validation and structural stress analysis.",
+    "ogDescription": "Abstract, conference details, and selected figures from a MARINE 2025 study of CFD-based fluid-structure interaction for a semi-submersible floating offshore wind turbine.",
+    "detailMetaHtml": "<em>XI International Conference on Computational Methods in Marine Engineering</em> (MARINE 2025)",
+    "openAccess": false,
+    "presentation": {
+      "authorsFullHtml": "<span class=\"main-author\">Sang-seok Han*</span>,\n                  <span class=\"co-authors\">\n                    Saishuai Dai, Momchil Terziev, Hae-chan Yun, and Soon-seok Song\n                  </span>",
+      "authorsShortHtml": "<span class=\"main-author\">S. Han*</span>,\n                  <span class=\"co-authors\">\n                    S. Dai, M. Terziev, <em>et al.</em>\n</span>",
+      "yearLabel": "June 2025",
+      "journalMetric": null,
+      "conferenceTooltip": "International conference · Edinburgh, United Kingdom",
+      "conferenceNameFullHtml": "International Conference on Computational Methods in Marine Engineering (MARINE 2025)",
+      "conferenceNameShortHtml": "MARINE 2025",
+      "statusNoteFull": null,
+      "statusNoteShort": null,
+      "coverBadge": null,
+      "indexTitle": "Numerical analysis of fluid-structure interaction for\n                  semi-submersible floating offshore wind turbines"
+    },
+    "bibliography": {
+      "type": "conference",
+      "presentedDate": "2025-06-23",
+      "location": "Edinburgh, United Kingdom",
+      "recordUrl": "https://doi.org/10.23967/marine.2025.141"
+    }
+  }
+]

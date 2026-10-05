@@ -1,0 +1,675 @@
+
+    :root {
+      --bg-light: #EDEFF3;
+    }
+
+    .page-content {
+      transform: translateY(6px);
+      transition: transform 0.12s ease-out;
+      font-size: 1.1em;
+    }
+
+    .page-content.loaded {
+      transform: translateY(0);
+    }
+
+    .header {
+      font-family: Georgia, serif;
+      font-size: 0.9em;
+      display: flex;
+      align-items: baseline;
+      font-weight: 300;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    .log-entry {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 40px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .log-header-block {
+      margin-bottom: 5px;
+      padding-bottom: 0px;
+    }
+
+    .log-header {
+      font-size: 1.25em;
+      letter-spacing: 0.08em;
+      color: var(--research-blue);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .log-sub {
+      font-size: 0.78em;
+      opacity: 0.5;
+      letter-spacing: 0.05em;
+    }
+
+    .log-date {
+      display: inline-block;
+      font-size: 0.7em;
+      letter-spacing: 0.18em;
+      padding: 4px 8px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      background: rgba(0, 0, 0, 0.03);
+      color: var(--research-blue);
+      margin-bottom: 10px;
+      opacity: 0.7;
+    }
+
+    .log-meta {
+      font-size: 0.92em;
+      letter-spacing: 0.06em;
+      color: var(--research-blue);
+      margin-bottom: 8px;
+    }
+
+    .log-meta span {
+      opacity: 1;
+    }
+
+    .log-meta .dot {
+      margin: 0 6px;
+      opacity: 0.4;
+    }
+
+    .log-paper {
+      font-size: 0.86em;
+      font-style: italic;
+      opacity: 0.7;
+      margin-bottom: 12px;
+      max-width: 680px;
+    }
+
+    .log-structure {
+      margin: 18px 0 22px 0;
+      padding-left: 14px;
+      border-left: 1px solid rgba(0, 0, 0, 0.08);
+      max-width: 620px;
+    }
+
+    .log-item {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 14px;
+    }
+
+    .log-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 3px;
+      height: 3px;
+      background: var(--research-blue);
+      opacity: 0.35;
+    }
+
+    .log-label {
+      font-size: 0.68em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.45;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .log-content {
+      font-size: 0.9em;
+      opacity: 0.7;
+      line-height: 1.6;
+    }
+
+    .log-image {
+      margin-top: 12px;
+      text-align: right;
+    }
+
+    .log-image img {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      display: block;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+
+      filter: grayscale(70%);
+      opacity: 0.9;
+
+      transition: filter 0.4s ease, opacity 0.4s ease;
+    }
+
+    .log-image img:hover {
+      filter: grayscale(10%);
+      opacity: 1;
+    }
+
+    .log-divider {
+      margin-top: 30px;
+      height: 1px;
+      background: linear-gradient(to right,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.10),
+          rgba(0, 0, 0, 0));
+      opacity: 0.7;
+    }
+
+    .log-back {
+      margin: 0 0 18px;
+    }
+
+    .log-back a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      width: fit-content;
+
+      font-size: 0.8em;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: 0.09em;
+
+      color: rgba(11, 31, 58, 0.46);
+      text-decoration: none;
+
+      transition:
+        color 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .log-back-arrow {
+      display: inline-block;
+
+      font-size: 1.08em;
+      line-height: 1;
+
+      color: rgba(11, 31, 58, 0.38);
+
+      transform: translateY(-0.02em);
+
+      transition:
+        color 0.18s ease,
+        transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .log-back-text {
+      font-size: inherit;
+      letter-spacing: inherit;
+      opacity: 1;
+    }
+
+    .log-back a:hover {
+      color: rgba(11, 31, 58, 0.82);
+    }
+
+    .log-back a:hover .log-back-arrow {
+      color: rgba(11, 31, 58, 0.72);
+      transform: translate(-3px, -0.02em);
+    }
+
+    .log-back a:focus-visible {
+      color: rgba(11, 31, 58, 0.88);
+
+      outline: 1px solid rgba(11, 31, 58, 0.22);
+      outline-offset: 5px;
+    }
+
+    html[data-lang="ja"] .log-back a {
+      letter-spacing: 0.06em;
+    }
+
+    .log-caption {
+      font-size: 0.65em;
+      opacity: 0.4;
+      margin-top: 4px;
+      text-align: left;
+    }
+
+    .log-sep {
+      margin: 0 6px;
+      font-size: 0.72em;
+      opacity: 0.35;
+    }
+
+    .log-text {
+      min-width: 0;
+    }
+
+    .log-current {
+      font-size: 0.72em;
+      letter-spacing: 0.08em;
+      opacity: 0.45;
+    }
+
+    .divider {
+      height: 0.5px;
+      background: #dcdcdc;
+      margin: 0px 0;
+    }
+
+    .year-tabs {
+      margin-bottom: 5px;
+      padding: 6px 10px;
+      font-size: 0.95em;
+      letter-spacing: 0.09em;
+      background: rgba(255, 255, 255, 0.22);
+      border-radius: 3px;
+    }
+
+    .year-tabs span {
+      cursor: pointer;
+      opacity: 0.45;
+      margin-right: 25px;
+      transition: opacity 0.2s ease;
+    }
+
+
+    .year-tabs span.active {
+      opacity: 0.9;
+      font-size: 1.1em;
+      color: var(--research-blue);
+    }
+
+    .year-tabs span:hover {
+      opacity: 0.75;
+    }
+
+    .year-section {
+      display: none;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .year-section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .log-content span:not(:last-child)::after {
+      content: " · ";
+    }
+
+    .mobile-only {
+      display: none;
+    }
+
+    .visual-notes {
+      margin: 34px 0 10px;
+    }
+
+    .visual-notes-header {
+      margin-bottom: 14px;
+    }
+
+    .visual-notes-title {
+      margin: 0 0 4px;
+
+      font-size: 0.76em;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+
+      color: var(--research-blue);
+      opacity: 0.72;
+    }
+
+    .visual-notes-sub {
+      margin: 0;
+
+      font-size: 0.72em;
+      line-height: 1.5;
+      letter-spacing: 0.025em;
+
+      color: rgba(11, 31, 58, 0.48);
+    }
+
+    .visual-notes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px 18px;
+    }
+
+    .visual-note {
+      min-width: 0;
+      margin: 0;
+    }
+
+    .visual-note img {
+      display: block;
+
+      width: 100%;
+      height: 320px;
+
+      object-fit: contain;
+
+      border: 1px solid rgba(11, 31, 58, 0.07);
+
+      filter: grayscale(35%);
+      opacity: 0.94;
+
+      transition:
+        filter 0.3s ease,
+        opacity 0.3s ease;
+    }
+
+    .visual-note:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    .visual-note figcaption {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+
+      margin-top: 6px;
+
+      line-height: 1.4;
+    }
+
+    .visual-note-date {
+      font-size: 0.61em;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+
+      color: rgba(11, 31, 58, 0.48);
+    }
+
+    .visual-note-text {
+      min-width: 0;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      font-size: 0.69em;
+      letter-spacing: 0.015em;
+
+      color: rgba(38, 51, 68, 0.72);
+    }
+
+    @media (max-width: 640px) {
+      .desktop-only {
+        display: none;
+      }
+
+      .mobile-only {
+        display: inline;
+      }
+
+      .page-content {
+        font-size: 1.0em;
+      }
+
+      .research-tagline {
+        display: none;
+      }
+
+      .divider {
+        margin: 5px 0;
+        max-width: 400px;
+      }
+
+      .log-header-block {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 12px;
+      }
+
+      .log-header {
+        margin-bottom: 4px;
+
+        font-size: 0.95em;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+
+        opacity: 0.72;
+      }
+
+      .log-back {
+        margin: -3px 0 13px;
+      }
+
+      .log-back a {
+        gap: 6px;
+
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+      }
+
+      .log-back-arrow {
+        font-size: 0.8rem;
+      }
+
+      .log-meta {
+        font-size: 0.77em;
+        line-height: 1.4;
+      }
+
+      .log-sub {
+        display: none;
+      }
+
+      .log-paper {
+        font-size: 0.73em;
+        margin-left: 5px;
+        line-height: 1.5;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+      }
+
+      .log-label {
+        font-size: 0.75em;
+        letter-spacing: 0.1em;
+        opacity: 0.6;
+      }
+
+      .log-content {
+        font-size: 0.8em;
+        opacity: 0.93;
+        line-height: 1.55;
+      }
+
+      .log-date {
+        font-size: 0.6em;
+        letter-spacing: 0.15em;
+        padding: 3px 6px;
+      }
+
+      .log-structure {
+        padding-left: 10px;
+        margin: 16px 0 20px 0;
+        border-left: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      .log-content span:not(:first-child) {
+        display: none;
+      }
+
+      .log-content span:not(:last-child)::after {
+        content: none !important;
+      }
+
+      .log-content span::after {
+        content: "";
+      }
+
+      .log-item {
+        padding-left: 8px;
+        margin-bottom: 12px;
+      }
+
+      .log-item::before {
+        top: 6px;
+        width: 3px;
+        height: 3px;
+        opacity: 0.4;
+      }
+
+      .year-tabs {
+        display: flex;
+        gap: 15px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-top: -3px;
+        margin-bottom: 3px;
+        padding: 3px 8px;
+        font-size: 0.8em;
+        letter-spacing: 0.08em;
+        background: rgba(255, 255, 255, 0.22);
+        border: 1px solid rgba(11, 31, 58, 0.035);
+        border-radius: 3px;
+      }
+
+      .year-tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .year-tabs span {
+        flex: 0 0 auto;
+        padding: 3px 2px;
+        margin-right: 0;
+        opacity: 0.38;
+      }
+
+      .year-tabs span.active {
+        opacity: 0.85;
+      }
+
+      .log-entry {
+        display: block;
+        margin-bottom: 30px;
+      }
+
+      .log-image {
+        text-align: center;
+        margin-top: 18px;
+      }
+
+      .log-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .log-image img {
+        display: block;
+
+        width: min(220px, 72vw);
+        max-width: 100%;
+        height: auto;
+        margin-inline: auto;
+
+        filter: grayscale(50%);
+        opacity: 1;
+
+        transition: none;
+      }
+
+      .log-image img:hover {
+        filter: grayscale(50%);
+        opacity: 1;
+      }
+
+      .log-caption {
+        width: 100%;
+        margin-top: 6px;
+
+        font-size: 0.75em;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      .visual-notes {
+        margin: 26px 0 10px;
+      }
+
+      .visual-notes-header {
+        margin-bottom: 12px;
+      }
+
+      .visual-notes-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .visual-note {
+        min-width: 0;
+        margin: 0;
+      }
+
+      .visual-note img {
+        display: block;
+
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        height: auto;
+
+        object-fit: contain;
+
+        box-sizing: border-box;
+
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(11, 31, 58, 0.06);
+
+        filter: grayscale(35%);
+        opacity: 0.92;
+
+        transition: none;
+      }
+
+      .visual-note:hover img {
+        filter: grayscale(35%);
+        opacity: 0.92;
+      }
+
+      .visual-note figcaption {
+        margin-top: 5px;
+        gap: 1px;
+        min-width: 0;
+      }
+
+      .visual-note-date {
+        font-size: 0.6em;
+        letter-spacing: 0.08em;
+      }
+
+      .visual-note-text {
+        min-width: 0;
+
+        font-size: 0.68em;
+        line-height: 1.35;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .page-content,
+      .year-section,
+      .log-back a,
+      .log-back-arrow {
+        transition: none;
+      }
+    }
+  

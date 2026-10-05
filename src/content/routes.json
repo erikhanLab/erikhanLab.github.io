@@ -1,0 +1,104 @@
+[
+  {
+    "path": "/",
+    "index": true,
+    "source": "generated-home",
+    "nav": "home"
+  },
+  {
+    "path": "/profile/",
+    "index": true,
+    "source": "generated-profile",
+    "nav": "profile"
+  },
+  {
+    "path": "/profile/writing/single-number/",
+    "index": true,
+    "source": "generated-content-page",
+    "nav": "profile"
+  },
+  {
+    "path": "/research/",
+    "index": true,
+    "source": "generated-content-page",
+    "nav": "research"
+  },
+  {
+    "path": "/research/timeline/",
+    "index": true,
+    "source": "generated-content-page",
+    "nav": "research"
+  },
+  {
+    "path": "/research/log/",
+    "index": false,
+    "source": "generated-content-page",
+    "nav": "research"
+  },
+  {
+    "path": "/research/connection/",
+    "index": false,
+    "source": "generated-content-page",
+    "nav": "research"
+  },
+  {
+    "path": "/contact/",
+    "index": false,
+    "source": "generated-content-page",
+    "nav": "contact"
+  },
+  {
+    "path": "/archive/",
+    "index": false,
+    "source": "generated-content-page",
+    "nav": null
+  },
+  {
+    "path": "/publications/",
+    "index": true,
+    "source": "generated-publications",
+    "nav": "publications"
+  },
+  {
+    "path": "/publications/spatial-variability/",
+    "index": false,
+    "source": "generated-publication",
+    "nav": "publications"
+  },
+  {
+    "path": "/publications/beyond-resistance/",
+    "index": false,
+    "source": "generated-publication",
+    "nav": "publications"
+  },
+  {
+    "path": "/publications/temperature-ittc/",
+    "index": false,
+    "source": "generated-publication",
+    "nav": "publications"
+  },
+  {
+    "path": "/publications/naval-roughness/",
+    "index": false,
+    "source": "generated-publication",
+    "nav": "publications"
+  },
+  {
+    "path": "/publications/cfd-spatial/",
+    "index": false,
+    "source": "generated-publication",
+    "nav": "publications"
+  },
+  {
+    "path": "/publications/wec-mpc/",
+    "index": false,
+    "source": "generated-publication",
+    "nav": "publications"
+  },
+  {
+    "path": "/publications/fowt-fsi/",
+    "index": false,
+    "source": "generated-publication",
+    "nav": "publications"
+  }
+]

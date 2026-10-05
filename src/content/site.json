@@ -1,0 +1,44 @@
+{
+  "homeFeaturedPublication": "beyond-resistance",
+  "copyrightYear": 2026,
+  "lastUpdated": {
+    "en": "October 2026",
+    "ja": "2026年10月"
+  },
+  "footerField": {
+    "en": "Research portfolio",
+    "ja": "研究ポートフォリオ"
+  },
+  "navigation": [
+    {
+      "key": "home",
+      "href": "/",
+      "en": "Home",
+      "ja": "ホーム"
+    },
+    {
+      "key": "research",
+      "href": "/research/",
+      "en": "Research",
+      "ja": "研究"
+    },
+    {
+      "key": "publications",
+      "href": "/publications/",
+      "en": "Publications",
+      "ja": "論文"
+    },
+    {
+      "key": "profile",
+      "href": "/profile/",
+      "en": "Profile",
+      "ja": "プロフィール"
+    },
+    {
+      "key": "contact",
+      "href": "/contact/",
+      "en": "Contact",
+      "ja": "連絡先"
+    }
+  ]
+}

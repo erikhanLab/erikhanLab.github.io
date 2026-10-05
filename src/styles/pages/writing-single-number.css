@@ -1,0 +1,858 @@
+    :root {
+      --accent-dark: #0B1F3A;
+      --text-muted: #4A4A4A;
+
+      --essay-rule:
+        rgba(11, 31, 58, 0.09);
+
+      --essay-rule-light:
+        rgba(11, 31, 58, 0.055);
+    }
+
+
+    html {
+      scroll-behavior: auto;
+    }
+
+
+    .page-content {
+      max-width: 1180px;
+
+      transform:
+        translateY(6px);
+
+      transition:
+        transform 0.12s ease-out;
+    }
+
+    .page-content.loaded {
+      transform:
+        translateY(0);
+    }
+
+
+    /* =========================================================
+       BACK TO PROFILE
+       ========================================================= */
+
+    .profile-back {
+      margin:
+        0 0 32px;
+    }
+
+    .profile-back a {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 7px;
+
+      width: fit-content;
+
+      font-size: 0.8em;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: 0.09em;
+
+      color:
+        rgba(11, 31, 58, 0.46);
+
+      text-decoration: none;
+
+      transition:
+        color 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .profile-back-arrow {
+      display: inline-block;
+
+      font-size: 1.08em;
+      line-height: 1;
+
+      color:
+        rgba(11, 31, 58, 0.38);
+
+      transform:
+        translateY(-0.02em);
+
+      transition:
+        color 0.18s ease,
+        transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .profile-back-text {
+      font-size: inherit;
+      letter-spacing: inherit;
+    }
+
+    .profile-back a:hover {
+      color:
+        rgba(11, 31, 58, 0.82);
+    }
+
+    .profile-back a:hover .profile-back-arrow {
+      color:
+        rgba(11, 31, 58, 0.72);
+
+      transform:
+        translate(-3px, -0.02em);
+    }
+
+    .profile-back a:focus-visible {
+      color:
+        rgba(11, 31, 58, 0.88);
+
+      outline:
+        1px solid rgba(11, 31, 58, 0.22);
+
+      outline-offset: 5px;
+    }
+
+    html[data-lang="ja"] .profile-back a {
+      letter-spacing: 0.06em;
+    }
+
+
+    /* =========================================================
+       CONTINUOUS PARALLEL FRAME
+       ========================================================= */
+
+    .essay-parallel-frame {
+      position: relative;
+    }
+
+    .essay-parallel-frame::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+      left: 50%;
+
+      width: 1px;
+
+      background:
+        var(--essay-rule);
+
+      transform:
+        translateX(-0.5px);
+
+      pointer-events: none;
+    }
+
+
+    /* =========================================================
+       ARTICLE HEADER
+       ========================================================= */
+
+    .essay-header {
+      margin-bottom: 0;
+    }
+
+
+    .essay-title-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr) minmax(0, 1fr);
+
+      column-gap: 52px;
+
+      align-items: stretch;
+    }
+
+
+    .essay-title-column {
+      display: flex;
+      flex-direction: column;
+
+      min-width: 0;
+    }
+
+
+    .essay-title {
+      margin: 0;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(1.75rem,
+          2.5vw,
+          2rem);
+
+      font-weight: 400;
+
+      line-height: 1.17;
+
+      letter-spacing:
+        -0.018em;
+
+      color:
+        rgba(11, 31, 58, 0.95);
+    }
+
+
+    .essay-title[lang="ko"] {
+      font-family:
+        "Apple SD Gothic Neo",
+        "Noto Serif KR",
+        "Malgun Gothic",
+        serif;
+
+      font-size:
+        clamp(1.62rem, 2vw, 1.9rem);
+
+      font-weight: 500;
+      line-height: 1.36;
+      letter-spacing: -0.038em;
+
+      word-break: keep-all;
+
+      color: rgba(11, 31, 58, 0.96);
+    }
+
+
+    .essay-language-label {
+      margin-top: auto;
+      margin-bottom: 0;
+
+      padding-top: 11px;
+
+      font-size: 0.59em;
+
+      line-height: 1.4;
+
+      letter-spacing:
+        0.105em;
+
+      text-transform: uppercase;
+
+      text-align: right;
+
+      color:
+        rgba(79, 89, 101, 0.72);
+    }
+
+
+    .essay-title-column[lang="ko"] .essay-language-label {
+      font-family:
+        "Apple SD Gothic Neo",
+        "Malgun Gothic",
+        sans-serif;
+
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      text-transform: none;
+    }
+
+
+    /* =========================================================
+       ARTICLE META
+       ========================================================= */
+
+    .essay-meta {
+      display: flex;
+
+      align-items: baseline;
+      justify-content: flex-end;
+
+      flex-wrap: wrap;
+
+      gap:
+        8px 13px;
+
+      margin-top: 25px;
+
+      padding-bottom: 10px;
+
+      border-bottom:
+        1px solid var(--essay-rule-light);
+
+      font-size: 0.7em;
+
+      line-height: 1.5;
+
+      letter-spacing:
+        0.025em;
+
+      text-align: right;
+
+      color:
+        rgba(68, 79, 94, 0.62);
+    }
+
+
+    .essay-meta-separator {
+      color:
+        rgba(11, 31, 58, 0.22);
+    }
+
+
+    .essay-meta a {
+      color:
+        rgba(35, 47, 63, 0.72);
+
+      text-decoration: none;
+
+      transition:
+        color 0.16s ease;
+    }
+
+
+    .essay-meta a:hover {
+      color:
+        var(--accent-dark);
+    }
+
+
+    .external-arrow {
+      display: inline-block;
+
+      margin-left: 2px;
+
+      font-size: 0.9em;
+
+      transform:
+        translateY(-1px);
+    }
+
+
+    /* =========================================================
+       PARALLEL ARTICLE
+       ========================================================= */
+
+    .parallel-body {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+
+    .parallel-row {
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr) minmax(0, 1fr);
+
+      column-gap: 52px;
+
+      align-items: start;
+
+      padding:
+        26px 0;
+
+      border-bottom:
+        1px solid var(--essay-rule-light);
+
+      transition:
+        background-color 0.18s ease;
+    }
+
+
+    .parallel-row:first-child {
+      padding-top: 24px;
+    }
+
+
+    .parallel-row:last-child {
+      border-bottom: 0;
+    }
+
+
+    .parallel-cell {
+      min-width: 0;
+    }
+
+
+    .parallel-cell p {
+      margin: 0;
+
+      font-size: 0.94em;
+      line-height: 1.88;
+      letter-spacing: 0.004em;
+
+      text-align: justify;
+      text-align-last: left;
+      text-justify: inter-word;
+
+      hyphens: auto;
+      -webkit-hyphens: auto;
+
+      color:
+        rgba(39, 46, 56, 0.88);
+    }
+
+
+    .parallel-cell[lang="ko"] p {
+      font-family:
+        "Apple SD Gothic Neo",
+        "Malgun Gothic",
+        sans-serif;
+
+      font-size: 0.92em;
+      font-weight: 400;
+
+      line-height: 1.94;
+      letter-spacing: -0.014em;
+
+      text-align: justify;
+      text-align-last: left;
+      text-justify: inter-character;
+
+      hyphens: none;
+      -webkit-hyphens: none;
+
+      word-break: normal;
+      overflow-wrap: break-word;
+
+      color:
+        rgba(33, 41, 52, 0.88);
+
+      font-feature-settings:
+        "kern" 1;
+    }
+
+
+    .mobile-language-label {
+      display: none;
+    }
+
+
+    @media (hover: hover) and (pointer: fine) {
+
+      .parallel-row:hover {
+        background:
+          rgba(11, 31, 58, 0.012);
+      }
+    }
+
+
+    /* =========================================================
+       ARTICLE END
+       ========================================================= */
+
+    .essay-end {
+      display: flex;
+
+      align-items: baseline;
+      justify-content: space-between;
+
+      flex-wrap: wrap;
+
+      gap: 14px;
+
+      margin-top: 36px;
+
+      padding-top: 20px;
+
+      border-top:
+        1px solid var(--essay-rule);
+    }
+
+
+    .essay-end-note {
+      font-size: 0.68em;
+
+      line-height: 1.55;
+
+      color:
+        rgba(79, 89, 101, 0.5);
+    }
+
+
+    .essay-end-link {
+      font-size: 0.68em;
+
+      line-height: 1.55;
+
+      letter-spacing:
+        0.03em;
+
+      color:
+        rgba(45, 55, 69, 0.7);
+
+      text-decoration: none;
+
+      transition:
+        color 0.16s ease;
+    }
+
+
+    .essay-end-link:hover {
+      color:
+        var(--accent-dark);
+    }
+
+
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
+    @media (min-width: 761px) and (max-width: 960px) {
+
+      .essay-title-grid,
+      .parallel-row {
+        column-gap: 38px;
+      }
+
+      .parallel-cell p {
+        font-size: 0.9em;
+      }
+
+      .parallel-cell[lang="ko"] p {
+        font-size: 0.87em;
+      }
+    }
+
+    .mobile-korean-heading {
+      display: none;
+    }
+
+
+    /* =========================================================
+   MOBILE
+   ========================================================= */
+
+    @media (max-width: 760px) {
+
+      .page-content {
+        max-width: none;
+      }
+
+
+      .profile-back {
+        margin:
+          -3px 0 24px;
+      }
+
+
+      .profile-back a {
+        gap: 6px;
+
+        font-size: 0.8rem;
+
+        letter-spacing:
+          0.08em;
+      }
+
+
+      .profile-back-arrow {
+        font-size: 0.8rem;
+      }
+
+
+      /* ---------------------------------------------------------
+     Remove desktop centre divider
+     --------------------------------------------------------- */
+
+      .essay-parallel-frame::before {
+        display: none;
+      }
+
+
+      /* ---------------------------------------------------------
+     TITLE
+     English only at the top
+     --------------------------------------------------------- */
+
+      .essay-title-grid {
+        display: block;
+      }
+
+
+      .essay-title-column[lang="ko"] {
+        display: none;
+      }
+
+
+      .essay-title {
+        font-size: 1.4rem;
+        line-height: 1.22;
+      }
+
+
+      .essay-language-label {
+        margin-top: 8px;
+
+        padding-top: 0;
+        margin-bottom: 0;
+
+        font-size: 0.53rem;
+
+        text-align: right;
+      }
+
+
+      /* ---------------------------------------------------------
+     META
+     --------------------------------------------------------- */
+
+      .essay-meta {
+        gap:
+          5px 9px;
+
+        margin-top: 19px;
+
+        padding-bottom: 10px;
+
+        font-size: 0.59rem;
+      }
+
+
+      .essay-meta-separator {
+        display: none;
+      }
+
+
+      /* ---------------------------------------------------------
+     ARTICLE FLOW
+
+     Mobile order:
+       1. all English paragraphs
+       2. Korean heading
+       3. all Korean paragraphs
+     --------------------------------------------------------- */
+
+      .parallel-body {
+        display: flex;
+
+        flex-direction: column;
+
+        margin-top: 0;
+
+        padding-top: 0;
+      }
+
+
+      /*
+    Remove each desktop row as a visual container.
+
+    Its English and Korean cells then participate directly
+    in .parallel-body's flex layout.
+  */
+
+      .parallel-row {
+        display: contents;
+      }
+
+
+      /* English paragraphs first */
+
+      .parallel-cell[lang="en"] {
+        order: 1;
+      }
+
+
+      /* Korean section heading */
+
+      .mobile-korean-heading {
+        display: block;
+
+        order: 2;
+
+        margin-top: 36px;
+
+        padding:
+          30px 0 18px;
+
+        border-top:
+          1px solid var(--essay-rule);
+      }
+
+
+      .mobile-korean-heading h2 {
+        margin: 0;
+
+        font-family:
+          "Apple SD Gothic Neo",
+          "Noto Serif KR",
+          "Malgun Gothic",
+          serif;
+
+        font-size: 1.42rem;
+        font-weight: 500;
+
+        line-height: 1.34;
+
+        letter-spacing:
+          -0.035em;
+
+        word-break: keep-all;
+
+        color:
+          rgba(11, 31, 58, 0.96);
+      }
+
+
+      .mobile-korean-heading-label {
+        margin-top: 8px;
+
+        font-family:
+          "Apple SD Gothic Neo",
+          "Malgun Gothic",
+          sans-serif;
+
+        font-size: 0.53rem;
+        font-weight: 500;
+
+        line-height: 1.4;
+
+        letter-spacing:
+          -0.01em;
+
+        text-align: right;
+
+        color:
+          rgba(79, 89, 101, 0.72);
+      }
+
+
+      /* Korean paragraphs after the heading */
+
+      .parallel-cell[lang="ko"] {
+        order: 3;
+      }
+
+
+      /* ---------------------------------------------------------
+     PARAGRAPHS
+     --------------------------------------------------------- */
+
+      .parallel-cell {
+        min-width: 0;
+
+        padding:
+          20px 0;
+
+        border-bottom:
+          1px solid rgba(11, 31, 58, 0.08);
+      }
+
+
+      /* First English paragraph */
+
+      .parallel-row:first-child .parallel-cell[lang="en"] {
+        padding-top: 20px;
+      }
+
+
+      /*
+    Last English paragraph:
+    section finishes cleanly before Korean heading.
+  */
+
+      .parallel-row:last-child .parallel-cell[lang="en"] {
+        border-bottom: 0;
+
+        padding-bottom: 0;
+      }
+
+
+      /* First Korean paragraph */
+
+      .parallel-row:first-child .parallel-cell[lang="ko"] {
+        padding-top: 18px;
+      }
+
+
+      /* Last Korean paragraph */
+
+      .parallel-row:last-child .parallel-cell[lang="ko"] {
+        border-bottom: 0;
+
+        padding-bottom: 0;
+      }
+
+
+      /*
+    No repeated "English translation / 한국어 원문"
+    above every paragraph.
+  */
+
+      .mobile-language-label {
+        display: none;
+      }
+
+
+      .parallel-cell p {
+        font-size: 0.78rem;
+
+        line-height: 1.78;
+      }
+
+
+      .parallel-cell[lang="ko"] p {
+        font-size: 0.82rem;
+
+        line-height: 1.9;
+
+        letter-spacing:
+          -0.012em;
+      }
+
+
+      /* ---------------------------------------------------------
+     ARTICLE END
+     --------------------------------------------------------- */
+
+      .essay-end {
+        display: block;
+
+        margin-top: 30px;
+
+        padding-top: 16px;
+      }
+
+
+      .essay-end-note,
+      .essay-end-link {
+        font-size: 0.58rem;
+      }
+
+
+      .essay-end-link {
+        display: inline-block;
+
+        margin-top: 7px;
+      }
+
+      .external-arrow {
+        font-size: 0;
+        transform: none;
+      }
+
+      .external-arrow::before {
+        content: "→";
+        font-size: 0.58rem;
+        opacity: 0.55;
+      }
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .page-content,
+      .nav,
+      .profile-back a,
+      .profile-back-arrow,
+      .essay-meta a,
+      .essay-end-link,
+      .parallel-row {
+        transition:
+          none !important;
+      }
+
+      .page-content {
+        transform: none;
+      }
+    }
+  

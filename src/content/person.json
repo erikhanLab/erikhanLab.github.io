@@ -1,0 +1,69 @@
+{
+  "name": "Sangseok Han",
+  "scholarlyName": "Sang-seok Han",
+  "site": "https://sangseokhan.com",
+  "profilePath": "/profile/",
+  "image": "/assets/etc/profile-portrait.png",
+  "jobTitle": "Visiting Researcher",
+  "affiliation": "Research Institute of Marine Systems Engineering (RIMSE), Seoul National University",
+  "profiles": {
+    "googleScholar": "https://scholar.google.com/citations?user=GnxA0FcAAAAJ&hl=en",
+    "orcid": "https://orcid.org/0009-0007-8276-2728",
+    "linkedin": "https://www.linkedin.com/in/erik-han97/"
+  },
+  "knowsAbout": [
+    "computational ship hydrodynamics",
+    "computational fluid dynamics",
+    "hull roughness",
+    "ship resistance",
+    "wave–body interaction"
+  ],
+  "nameJa": "ハン・サンソク",
+  "email": "sangseok.han.contact@gmail.com",
+  "homePortrait": "/assets/Home-spain.png",
+  "profile": {
+    "field": {
+      "en": "Marine Hydrodynamics",
+      "ja": "海洋流体力学"
+    },
+    "introLine1": {
+      "en": "I examine how modelling choices influence predictions in marine hydrodynamics,",
+      "ja": "海洋流体力学において、モデリング上の選択が予測にどのような影響を与えるかを研究し、"
+    },
+    "introLine2": {
+      "en": "with current work on hull roughness, ship resistance, and added resistance in waves.",
+      "ja": "現在は船体粗さ、船舶抵抗、および波浪中付加抵抗に取り組んでいます。"
+    }
+  },
+  "currentAppointment": {
+    "role": {
+      "en": "Visiting Researcher",
+      "ja": "客員研究員"
+    },
+    "instituteShort": {
+      "en": "RIMSE",
+      "ja": "RIMSE"
+    },
+    "institute": {
+      "en": "Research Institute of Marine Systems Engineering (RIMSE)",
+      "ja": "海洋システム工学研究所（RIMSE）"
+    },
+    "university": {
+      "en": "Seoul National University",
+      "ja": "ソウル大学校"
+    },
+    "period": {
+      "en": "July–November 2026",
+      "ja": "2026年7月–11月"
+    },
+    "homeDesktop": {
+      "en": "RIMSE, Seoul National University",
+      "ja": "RIMSE・ソウル大学校"
+    },
+    "homeMobile": {
+      "en": "RIMSE · Seoul National University",
+      "ja": "RIMSE · ソウル大学校"
+    },
+    "schemaAffiliation": "Research Institute of Marine Systems Engineering (RIMSE), Seoul National University"
+  }
+}
