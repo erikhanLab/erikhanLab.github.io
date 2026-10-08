@@ -1,0 +1,86 @@
+[
+  {
+    "path": "/research/",
+    "template": "src/pages/research.html",
+    "style": "src/styles/pages/research.css",
+    "script": "src/scripts/pages/research.js",
+    "assetKey": "research",
+    "shell": {
+      "header": true,
+      "nav": true,
+      "footer": true
+    }
+  },
+  {
+    "path": "/research/timeline/",
+    "template": "src/pages/timeline.html",
+    "style": "src/styles/pages/timeline.css",
+    "script": "src/scripts/pages/timeline.js",
+    "assetKey": "timeline",
+    "shell": {
+      "header": true,
+      "nav": true,
+      "footer": true
+    }
+  },
+  {
+    "path": "/profile/writing/single-number/",
+    "template": "src/pages/writing-single-number.html",
+    "style": "src/styles/pages/writing-single-number.css",
+    "script": "src/scripts/pages/writing-single-number.js",
+    "assetKey": "writing-single-number",
+    "shell": {
+      "header": true,
+      "nav": true,
+      "footer": true
+    }
+  },
+  {
+    "path": "/research/log/",
+    "template": "src/pages/research-log.html",
+    "style": "src/styles/pages/research-log.css",
+    "script": "src/scripts/pages/research-log.js",
+    "assetKey": "research-log",
+    "shell": {
+      "header": true,
+      "nav": true,
+      "footer": true
+    }
+  },
+  {
+    "path": "/research/connection/",
+    "template": "src/pages/research-connection.html",
+    "style": "src/styles/pages/research-connection.css",
+    "script": "src/scripts/pages/research-connection.js",
+    "assetKey": "research-connection",
+    "shell": {
+      "header": true,
+      "nav": true,
+      "footer": true
+    }
+  },
+  {
+    "path": "/contact/",
+    "template": "src/pages/contact.html",
+    "style": "src/styles/pages/contact.css",
+    "script": "src/scripts/pages/contact.js",
+    "assetKey": "contact",
+    "shell": {
+      "header": true,
+      "nav": true,
+      "footer": false
+    }
+  },
+  {
+    "path": "/archive/",
+    "template": "src/pages/archive.html",
+    "style": "src/styles/pages/archive.css",
+    "script": "src/scripts/pages/archive.js",
+    "assetKey": "archive",
+    "shell": {
+      "header": true,
+      "nav": false,
+      "footer": false
+    }
+  }
+]

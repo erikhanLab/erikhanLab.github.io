@@ -1,0 +1,4813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Profile | __PERSON_NAME__</title>
+
+  <meta name="author" content="__PERSON_NAME__">
+
+  <meta name="description"
+    content="Education, research appointments, awards, academic service, and current work of __PERSON_NAME__ in marine hydrodynamics and CFD.">
+
+  <link rel="canonical" href="https://sangseokhan.com/profile/">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+
+  <meta name="robots" content="index, follow, noimageindex">
+
+  <meta property="og:title" content="Profile | __PERSON_NAME__">
+
+  <meta property="og:description"
+    content="Research profile, education, research appointments, professional experience, academic service, and writing by __PERSON_NAME__.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sangseokhan.com/profile/">
+  <meta property="og:site_name" content="__PERSON_NAME__ — Profile">
+  <meta property="og:image" content="https://sangseokhan.com/assets/thumbnail.png">
+  <!--PROFILE_JSONLD-->
+
+  <script src="/assets/js/site-analytics.js?v=1"></script>
+
+  <script>
+    (function () {
+      const savedLang =
+        sessionStorage.getItem("lang");
+
+      const lang =
+        savedLang === "ja"
+          ? "ja"
+          : "en";
+
+      document.documentElement.setAttribute(
+        "lang",
+        lang
+      );
+
+      document.documentElement.setAttribute(
+        "data-lang",
+        lang
+      );
+    })();
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/site-shell.css?v=1">
+
+  <style>
+    :root {
+      --accent-dark: #0B1F3A;
+      --text-muted: #4A4A4A;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    .page-content {
+      transform: translateY(6px);
+      transition: transform 0.12s ease-out;
+      font-size: 1.1em;
+    }
+
+    .page-content.loaded {
+      transform: translateY(0);
+    }
+
+    .reveal-ready {
+      opacity: 0;
+      transform: translateY(4px);
+
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+    .reveal-ready.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .header {
+      display: flex;
+      align-items: baseline;
+
+      font-family: Georgia, serif;
+      font-size: 0.9em;
+      font-weight: 300;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+
+      color: #555;
+    }
+
+    .subtitle {
+      margin-bottom: 18px;
+
+      font-size: 0.82em;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      color: #777;
+      opacity: 0.7;
+    }
+
+    .tagline {
+      margin-bottom: 34px;
+      padding-left: 16px;
+
+      border-left:
+        1px solid rgba(11, 31, 58, 0.10);
+
+      font-size: 1em;
+      line-height: 1.75;
+
+      color: #444;
+    }
+
+    .tagline em {
+      font-style: italic;
+      color: #555;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap: 0;
+
+      margin-top: -8px;
+
+      font-size: 0.82em;
+      letter-spacing: 0.045em;
+
+      color: #3f4a5f;
+    }
+
+    .icons a {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 5px;
+
+      line-height: 13px;
+
+      color: inherit;
+      text-decoration: none;
+
+      opacity: 0.72;
+
+      transition:
+        opacity 0.15s ease,
+        color 0.15s ease;
+    }
+
+    .icons a svg {
+      display: block;
+
+      width: 13px;
+      height: 13px;
+      flex: 0 0 13px;
+
+      fill: currentColor;
+
+      opacity: 0.75;
+    }
+
+    .icon-label {
+      display: block;
+      line-height: 13px;
+      white-space: nowrap;
+    }
+
+    .icons a[aria-label="LinkedIn"] svg {
+      transform: translateY(-1.5px);
+    }
+
+    .icons>[data-nosnippet] {
+      display: contents;
+    }
+
+    .icons a:hover {
+      opacity: 1;
+      color: var(--accent-dark);
+    }
+
+    .icons a:not(:last-child)::after {
+      content: "·";
+
+      margin: 0 12px;
+
+      color: #8a93a3;
+
+      opacity: 0.65;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      margin-bottom: 10px;
+
+      font-size: 1.12em;
+      font-weight: normal;
+
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+      color: #222;
+
+      opacity: 0.9;
+    }
+
+    .section ul {
+      margin: 0;
+      padding-left: 0;
+
+      list-style: none;
+    }
+
+    .divider {
+      height: 0.5px;
+      max-width: 700px;
+
+      margin: 10px 0;
+
+      background: #dcdcdc;
+    }
+
+    .icons+.divider {
+      margin-top: 18px;
+      margin-bottom: 24px;
+    }
+
+    .desktop-only {
+      display: inline;
+    }
+
+    .mobile-only {
+      display: none;
+    }
+
+    .profile-intro {
+      position: relative;
+
+      box-sizing: border-box;
+
+      padding-right: 150px;
+    }
+
+    .profile-portrait {
+      position: absolute;
+      top: -3px;
+      right: 12px;
+
+      box-sizing: border-box;
+
+      width: 132px;
+
+      margin: 0;
+      padding-left: 13px;
+
+      border-left:
+        1px solid rgba(11, 31, 58, 0.08);
+    }
+
+    .profile-portrait::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 13px;
+
+      width: 30px;
+      height: 1px;
+
+      background:
+        rgba(11, 31, 58, 0.18);
+    }
+
+    .profile-portrait-frame {
+      width: 100%;
+
+      aspect-ratio: 5 / 6;
+
+      margin-top: 8px;
+
+      overflow: hidden;
+    }
+
+    .profile-portrait-frame picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .profile-portrait img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center 42%;
+
+      border: 0;
+      border-radius: 0;
+
+      box-shadow: none;
+
+      filter:
+        grayscale(0.1) saturate(0.88) contrast(1.08);
+    }
+
+    #current {
+      position: relative;
+
+      min-height: 112px;
+
+      margin-bottom: 30px;
+    }
+
+    #current h2 {
+      margin-bottom: 3px;
+    }
+
+    .current-layout {
+      display: block;
+
+      box-sizing: border-box;
+
+      width: 100%;
+
+      padding-right: 132px;
+    }
+
+    .current-block {
+      display: grid;
+
+      grid-template-columns:
+        52px minmax(0, 1fr);
+
+      column-gap: 20px;
+      align-items: center;
+
+      width: fit-content;
+      max-width: 100%;
+
+      margin:
+        0 0 0 13px;
+
+      padding: 2px 0;
+    }
+
+    .current-logo {
+      display: grid;
+      place-items: center;
+
+      width: 52px;
+      height: 52px;
+
+      transform: translateY(-3px);
+
+      opacity: 0.66;
+    }
+
+    .current-logo img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+
+      filter:
+        grayscale(0.3) saturate(0.9) contrast(0.88);
+    }
+
+    .current-copy {
+      min-width: 0;
+    }
+
+    .current-role {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+
+      margin: 0 0 4px 1px;
+
+      font-size: 1.02em;
+      font-weight: 500;
+      line-height: 1.35;
+      letter-spacing: 0.025em;
+
+      color: #0b1f3a;
+    }
+
+    .current-mobile-dot {
+      margin: 0 6px;
+
+      color: rgba(11, 31, 58, 0.34);
+    }
+
+    .current-mobile-institute {
+      font-weight: 400;
+
+      letter-spacing: 0.035em;
+
+      color: rgba(45, 55, 69, 0.76);
+    }
+
+    .current-institute {
+      margin: 0 0 5px 1px;
+
+      font-size: 0.86em;
+      line-height: 1.4;
+      letter-spacing: 0.025em;
+
+      color: rgba(45, 55, 69, 0.76);
+    }
+
+    .current-affiliation {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+
+      margin-left: 1px;
+
+      font-size: 0.79em;
+      line-height: 1.4;
+      letter-spacing: 0.025em;
+
+      color: rgba(68, 68, 68, 0.72);
+    }
+
+    .current-period-separator {
+      margin: 0 7px;
+
+      color: rgba(11, 31, 58, 0.28);
+    }
+
+    .current-affiliation .expected-year {
+      margin-left: 0;
+
+      font-size: 0.92em;
+      letter-spacing: 0.035em;
+
+      color: rgba(79, 89, 101, 0.68);
+    }
+
+    /* =========================================================
+       PROFILE RECORDS
+       ========================================================= */
+
+    .profile-record-section .affiliation-block {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 4px;
+
+      width: 100%;
+
+      margin: 0;
+    }
+
+    .profile-record-section .affiliation-item {
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns:
+        58px minmax(0, 1fr);
+
+      column-gap: 16px;
+      align-items: center;
+
+      box-sizing: border-box;
+
+      width: 100%;
+      min-height: 88px;
+
+      padding: 12px 13px 13px 12px;
+
+      background:
+        rgba(255, 255, 255, 0.045);
+
+      border-left:
+        2px solid rgba(11, 31, 58, 0.065);
+
+      border-bottom:
+        1px solid rgba(11, 31, 58, 0.055);
+
+      transition:
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .profile-record-section .affiliation-item:last-child {
+      border-bottom-color: transparent;
+    }
+
+    .affiliation-logo {
+      display: grid;
+      place-items: center;
+
+      width: 52px;
+      height: 52px;
+
+      opacity: 0.48;
+
+      transform: translateZ(0);
+
+      transition:
+        opacity 0.42s ease,
+        transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .affiliation-logo img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+
+      filter:
+        grayscale(1) saturate(0) contrast(0.88);
+
+      transition:
+        filter 0.48s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .affiliation-copy {
+      min-width: 0;
+    }
+
+    .profile-record-section .affiliation-primary {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+
+      gap: 6px;
+
+      margin: 0 0 4px;
+
+      font-size: 1em;
+      font-weight: 500;
+      line-height: 1.38;
+      letter-spacing: 0.045em;
+
+      color: rgba(11, 31, 58, 0.94);
+    }
+
+    .profile-record-section .affiliation-year {
+      margin-left: 0;
+
+      font-size: 0.68em;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.09em;
+
+      font-variant-numeric: tabular-nums;
+
+      color: rgba(79, 89, 101, 0.58);
+    }
+
+    .profile-record-section .affiliation-context {
+      margin: 0 0 6px 1px;
+
+      font-size: 0.79em;
+      line-height: 1.45;
+      letter-spacing: 0.035em;
+      font-style: italic;
+
+      color: rgba(68, 79, 94, 0.64);
+    }
+
+    .profile-record-section .affiliation-unit {
+      margin: -2px 0 5px 1px;
+
+      font-size: 0.69em;
+      line-height: 1.45;
+      letter-spacing: 0.018em;
+
+      color: rgba(68, 79, 94, 0.5);
+    }
+
+    .profile-record-section .affiliation-secondary {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+
+      margin: 0 0 0 1px;
+
+      font-size: 0.77em;
+      line-height: 1.45;
+      letter-spacing: 0.025em;
+
+      color: rgba(45, 55, 69, 0.76);
+    }
+
+    .profile-record-section .affiliation-secondary>span:first-child {
+      font-weight: 500;
+
+      color: rgba(35, 47, 63, 0.8);
+    }
+
+    .affiliation-dot {
+      margin: 0 7px;
+
+      font-size: 0.72em;
+
+      color: rgba(11, 31, 58, 0.28);
+    }
+
+    .affiliation-country {
+      font-size: 0.78em;
+      line-height: 1.4;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+      color: rgba(82, 92, 105, 0.56);
+    }
+
+    /* Timeline-linked records */
+    .profile-record-section .affiliation-item:not(.affiliation-item-static):hover,
+    .profile-record-section .affiliation-item.is-active {
+      background:
+        rgba(255, 255, 255, 0.14);
+
+      border-left-color:
+        rgba(11, 31, 58, 0.28);
+
+      transform: translateX(2px);
+    }
+
+    .profile-record-section .affiliation-item:not(.affiliation-item-static):hover .affiliation-logo,
+    .profile-record-section .affiliation-item.is-active .affiliation-logo {
+      opacity: 0.76;
+
+      transform: scale(1.035);
+    }
+
+    .profile-record-section .affiliation-item:not(.affiliation-item-static):hover .affiliation-logo img,
+    .profile-record-section .affiliation-item.is-active .affiliation-logo img {
+      filter:
+        grayscale(0) saturate(0.95) contrast(1.03);
+    }
+
+    /* Navy / non-timeline record:
+       colour response only, no movement */
+    #appointments-experience .affiliation-item-static:hover {
+      background:
+        rgba(255, 255, 255, 0.14);
+
+      border-left-color:
+        rgba(11, 31, 58, 0.28);
+
+      transform: none;
+    }
+
+    #appointments-experience .affiliation-item-static:hover .affiliation-logo {
+      opacity: 0.76;
+
+      transform: translateZ(0);
+    }
+
+    #appointments-experience .affiliation-item-static:hover .affiliation-logo img {
+      filter:
+        grayscale(0) saturate(0.95) contrast(1.03);
+    }
+
+    /* =========================================================
+       EDUCATION / EXPERIENCE
+       ========================================================= */
+
+    #education .education-layout {
+      display: grid;
+
+      grid-template-columns:
+        minmax(390px, 420px) minmax(0, 1fr);
+
+      column-gap:
+        clamp(38px, 4.5vw, 52px);
+
+      align-items: start;
+
+      box-sizing: border-box;
+
+      width: 100%;
+
+      margin-top: 16px;
+    }
+
+    #appointments-experience .appointments-experience-layout {
+      width: 100%;
+      max-width: 420px;
+
+      margin-top: 16px;
+    }
+
+    /* =========================================================
+       TIMELINE
+       ========================================================= */
+
+    .education-timeline {
+      box-sizing: border-box;
+
+      width: 100%;
+      min-width: 0;
+
+      margin: -18px 0 0;
+
+      padding: 17px 18px 16px;
+
+      background:
+        linear-gradient(135deg,
+          rgba(235, 238, 242, 0.3),
+          rgba(231, 234, 239, 0.18));
+
+      border:
+        1px solid rgba(11, 31, 58, 0.032);
+
+      box-shadow:
+        0 8px 24px rgba(11, 31, 58, 0.012),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+      overflow: visible;
+    }
+
+    .timeline-matrix {
+      display: grid;
+
+      grid-template-columns:
+        38px repeat(12, minmax(0, 1fr));
+
+      column-gap: 4px;
+      row-gap: 9px;
+
+      align-items: center;
+
+      width: 100%;
+    }
+
+    .timeline-corner {
+      min-width: 0;
+    }
+
+    .timeline-month-label {
+      padding: 0;
+
+      font-size: 0.63em;
+      line-height: 1;
+      letter-spacing: 0.04em;
+
+      text-align: center;
+      white-space: nowrap;
+
+      color: rgba(82, 92, 105, 0.68);
+    }
+
+    .timeline-year {
+      padding-left: 2px;
+
+      font-size: 0.68em;
+      letter-spacing: 0.035em;
+
+      text-align: left;
+
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timeline-year.is-past {
+      font-weight: 400;
+
+      color: rgba(101, 109, 120, 0.56);
+    }
+
+    .timeline-year.is-current {
+      font-weight: 600;
+
+      color: rgba(57, 67, 80, 0.65);
+    }
+
+    .timeline-year.is-future {
+      font-weight: 400;
+
+      color: rgba(101, 109, 120, 0.36);
+    }
+
+    .month-block {
+      position: relative;
+
+      display: block;
+
+      width: 100%;
+      min-width: 0;
+      height: 12px;
+
+      border:
+        1px solid rgba(11, 31, 58, 0.055);
+
+      border-radius: 2px;
+
+      background: transparent;
+
+      transition:
+        background-color 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .month-block.aff-inha {
+      background:
+        rgba(58, 116, 136, 0.34);
+
+      border-color:
+        rgba(58, 116, 136, 0.24);
+    }
+
+    .month-block.aff-strathclyde {
+      background:
+        rgba(120, 99, 43, 0.34);
+
+      border-color:
+        rgba(120, 99, 43, 0.24);
+    }
+
+    .month-block.aff-osaka {
+      background:
+        rgba(46, 60, 158, 0.30);
+
+      border-color:
+        rgba(46, 60, 158, 0.20);
+    }
+
+    .month-block.aff-kyoto {
+      background: rgba(28, 50, 110, 0.88);
+      border-color: rgba(28, 50, 110, 0.72);
+    }
+
+    .month-block.aff-kyoto.is-planned {
+      background: rgba(28, 50, 110, 0.52);
+      border-color: rgba(28, 50, 110, 0.42);
+    }
+
+    .month-block.aff-kyoto.is-start-marker {
+      box-shadow:
+        inset 0 0 0 1px rgba(28, 50, 110, 0.95);
+    }
+
+    .month-block.aff-snu {
+      background: rgba(0, 40, 111, 0.23);
+      border-color: rgba(0, 40, 111, 0.13);
+    }
+
+    .month-block.aff-snu.is-planned {
+      background: rgba(0, 40, 111, 0.10);
+      border-color: rgba(0, 40, 111, 0.07);
+    }
+
+    .month-block.is-current-month {
+      box-shadow:
+        inset 0 0 0 1px rgba(11, 31, 58, 0.24);
+    }
+
+    .month-block.is-past-gap {
+      background:
+        rgba(117, 124, 133, 0.15);
+
+      border-color:
+        rgba(100, 108, 118, 0.06);
+    }
+
+    .month-block.is-future {
+      background: transparent;
+
+      border-color:
+        rgba(11, 31, 58, 0.045);
+    }
+
+    .timeline-legend {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      column-gap: 24px;
+      row-gap: 10px;
+
+      margin-top: 19px;
+      padding-top: 15px;
+
+      border-top:
+        1px solid rgba(11, 31, 58, 0.065);
+    }
+
+    .timeline-legend-item {
+      position: relative;
+
+      display: inline-flex;
+      align-items: center;
+
+      gap: 7px;
+
+      min-width: 0;
+
+      font-size: 0.7em;
+      line-height: 1.4;
+      letter-spacing: 0.02em;
+
+      color: rgba(57, 67, 80, 0.76);
+
+      cursor: default;
+
+      transition:
+        color 0.14s ease,
+        opacity 0.14s ease,
+        transform 0.16s ease;
+    }
+
+    .timeline-legend-item:hover,
+    .timeline-legend-item.is-active {
+      z-index: 50;
+
+      color: rgba(28, 40, 56, 0.92);
+
+      transform: translateX(2px);
+    }
+
+    .timeline-legend-mark {
+      display: block;
+
+      width: 20px;
+      height: 3.5px;
+
+      border-radius: 999px;
+
+      opacity: 0.72;
+
+      transition:
+        opacity 0.16s ease,
+        transform 0.16s ease,
+        background-color 0.18s ease;
+    }
+
+    .timeline-legend-item:hover .timeline-legend-mark,
+    .timeline-legend-item.is-active .timeline-legend-mark {
+      opacity: 1;
+
+      transform: scaleX(1.06);
+    }
+
+    .timeline-legend-mark.aff-inha {
+      background: #3A7488;
+    }
+
+    .timeline-legend-mark.aff-strathclyde {
+      background: #78632B;
+    }
+
+    .timeline-legend-mark.aff-osaka {
+      background: #2E3C9E;
+    }
+
+    .timeline-legend-mark.aff-snu {
+      background: rgba(1, 47, 134, 0.56);
+    }
+
+    .timeline-legend-mark.aff-kyoto {
+      background: #1C326E;
+    }
+
+    .timeline-legend-label {
+      position: relative;
+
+      display: block;
+
+      min-width: 0;
+      max-width: 100%;
+
+      overflow: hidden;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .timeline-legend-item.is-active .timeline-legend-label {
+      font-weight: 500;
+    }
+
+    .timeline-legend-tooltip {
+      position: absolute;
+
+      bottom: calc(100% + 9px);
+      left: 0;
+
+      z-index: 30;
+
+      width: max-content;
+      max-width: 280px;
+
+      padding: 8px 10px 7px;
+
+      font-family:
+        "Iowan Old Style",
+        "Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        Georgia,
+        serif;
+
+      font-size: 10px;
+      line-height: 1.4;
+      letter-spacing: 0.035em;
+      white-space: nowrap;
+
+      color: rgba(43, 53, 66, 0.76);
+
+      background:
+        rgba(239, 242, 246, 0.94);
+
+      border:
+        1px solid rgba(11, 31, 58, 0.065);
+
+      border-radius: 2px;
+
+      box-shadow:
+        0 9px 24px rgba(11, 31, 58, 0.055);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transform: translateY(3px);
+
+      pointer-events: none;
+
+      transition:
+        opacity 0.14s ease,
+        transform 0.16s ease,
+        visibility 0s linear 0.16s;
+    }
+
+    .timeline-legend-item:nth-child(even) .timeline-legend-tooltip {
+      right: 0;
+      left: auto;
+    }
+
+    .timeline-legend-tooltip strong {
+      font-weight: 600;
+
+      color: rgba(11, 31, 58, 0.88);
+    }
+
+    .timeline-legend-item:hover .timeline-legend-tooltip,
+    .timeline-legend-item:focus-within .timeline-legend-tooltip {
+      opacity: 1;
+      visibility: visible;
+
+      transform: translateY(0);
+    }
+
+    #education.is-profile-timeline-focused .month-block:not(.is-active) {
+      background-color:
+        rgba(117, 124, 133, 0.025);
+
+      border-color:
+        rgba(11, 31, 58, 0.035);
+
+      box-shadow: none;
+    }
+
+    #education.is-profile-timeline-focused .timeline-legend-item:not(.is-active) {
+      opacity: 0.26;
+    }
+
+    #education.is-profile-timeline-focused .timeline-legend-item:not(.is-active) .timeline-legend-mark {
+      background-color:
+        rgba(117, 124, 133, 0.08);
+    }
+
+    #education.is-profile-timeline-focused .timeline-year {
+      font-weight: 400;
+
+      color: rgba(101, 109, 120, 0.46);
+    }
+
+    #education.is-profile-timeline-focused .timeline-year.is-active {
+      font-weight: 600;
+
+      color: rgba(57, 67, 80, 0.68);
+    }
+
+    /* =========================================================
+       AWARDS
+       ========================================================= */
+
+    .awards-block {
+      box-sizing: border-box;
+
+      width: 100%;
+      max-width: 620px;
+
+      padding: 2px 0 3px 18px;
+
+      border-left:
+        2px solid rgba(11, 31, 58, 0.11);
+    }
+
+    .award-item {
+      position: relative;
+
+      padding: 0 0 12px;
+    }
+
+    .award-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .award-item+.award-item {
+      padding-top: 11px;
+
+      border-top:
+        1px solid rgba(11, 31, 58, 0.055);
+    }
+
+    .award-main {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .award-title {
+      font-size: 0.97em;
+      font-weight: 500;
+      line-height: 1.45;
+      letter-spacing: 0.025em;
+
+      color: rgba(11, 31, 58, 0.9);
+    }
+
+    .award-year {
+      flex: 0 0 auto;
+
+      font-size: 0.66em;
+      line-height: 1.4;
+      letter-spacing: 0.075em;
+
+      font-variant-numeric: tabular-nums;
+
+      color: rgba(79, 89, 101, 0.55);
+    }
+
+    .award-source {
+      margin-top: 3px;
+
+      font-size: 0.7em;
+      line-height: 1.5;
+      letter-spacing: 0.018em;
+
+      color: rgba(68, 79, 94, 0.62);
+    }
+
+    /* =========================================================
+       ACADEMIC SERVICE
+       ========================================================= */
+
+    #academic-activity {
+      min-height: 10vh;
+    }
+
+    .reviewer-block {
+      box-sizing: border-box;
+
+      width: 100%;
+
+      padding: 2px 0 4px 18px;
+
+      border-left:
+        2px solid rgba(11, 31, 58, 0.11);
+    }
+
+    .reviewer-heading {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+
+      gap: 7px;
+
+      margin-bottom: 12px;
+    }
+
+    .reviewer-title {
+      font-size: 0.98em;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.045em;
+
+      color: rgba(11, 31, 58, 0.94);
+    }
+
+    .reviewer-period {
+      font-size: 0.68em;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.09em;
+
+      font-variant-numeric: tabular-nums;
+
+      color: rgba(79, 89, 101, 0.58);
+    }
+
+    .reviewer-list {
+      display: grid;
+
+      gap: 8px;
+
+      margin: 0;
+      padding: 0 0 0 2px;
+
+      list-style: none;
+    }
+
+    .reviewer-journal-item {
+      position: relative;
+
+      margin: 0;
+      padding-left: 14px;
+
+      font-size: 0.8em;
+      line-height: 1.55;
+
+      color: rgba(34, 34, 34, 0.78);
+    }
+
+    .reviewer-journal-item::before {
+      content: "·";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      color: rgba(11, 31, 58, 0.38);
+    }
+
+    /* =========================================================
+       OUTSIDE RESEARCH
+       ========================================================= */
+
+    #outside-research {
+      margin-bottom: 38px;
+    }
+
+    .outside-research-block {
+      max-width: 800px;
+
+      margin-left: 2px;
+      padding: 3px 0 3px 18px;
+
+      border-left:
+        2px solid rgba(11, 31, 58, 0.085);
+    }
+
+    .outside-research-layout {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr) 126px;
+
+      column-gap: 18px;
+      align-items: start;
+    }
+
+    .outside-research-copy-wrap {
+      min-width: 0;
+    }
+
+    .outside-research-copy {
+      max-width: 800px;
+
+      margin: 0;
+
+      font-size: 0.84em;
+      line-height: 1.7;
+      letter-spacing: 0.012em;
+
+      color: rgba(52, 62, 75, 0.72);
+    }
+
+    .outside-research-tags {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+
+      margin-top: 10px;
+
+      font-size: 0.66em;
+      line-height: 1.4;
+      letter-spacing: 0.075em;
+
+      color: rgba(79, 89, 101, 0.5);
+    }
+
+    .outside-research-tags span:not(:last-child)::after {
+      content: "·";
+
+      margin: 0 9px;
+
+      color: rgba(11, 31, 58, 0.24);
+    }
+
+    .outside-research-visual {
+      position: relative;
+
+      justify-self: end;
+
+      box-sizing: border-box;
+
+      width: 126px;
+
+      margin: -44px -30px 0;
+      padding-left: 16px;
+
+      border-left:
+        1px solid rgba(11, 31, 58, 0.08);
+
+      opacity: 0.82;
+
+      transition:
+        opacity 0.3s ease;
+    }
+
+    .outside-research-visual-frame {
+      width: 110px;
+
+      aspect-ratio: 4 / 5;
+
+      overflow: hidden;
+
+      background:
+        rgba(11, 31, 58, 0.018);
+    }
+
+    .outside-research-visual img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: 52% center;
+
+      filter:
+        grayscale(0.18) contrast(1.02) brightness(1.015);
+
+      transform: scale(1.002);
+
+      transition:
+        filter 0.35s ease,
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .outside-research-visual figcaption {
+      margin-top: 5px;
+
+      font-size: 0.56em;
+      font-style: italic;
+      line-height: 1.4;
+      letter-spacing: 0.035em;
+
+      text-align: right;
+
+      color: rgba(79, 89, 101, 0.4);
+
+      transition:
+        color 0.3s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .outside-research-visual:hover {
+        opacity: 1;
+      }
+
+      .outside-research-visual:hover img {
+        filter:
+          grayscale(0) contrast(1.06) brightness(0.99);
+
+        transform: scale(1.012);
+      }
+
+      .outside-research-visual:hover figcaption {
+        color: rgba(52, 62, 75, 0.68);
+      }
+    }
+
+    /* =========================================================
+       FEATURES & WRITING
+       ========================================================= */
+
+    #features-writing {
+      margin-bottom: 38px;
+    }
+
+    .features-writing-block {
+      box-sizing: border-box;
+
+      width: 100%;
+      max-width: 880px;
+
+      margin-left: 2px;
+      padding: 3px 0 3px 18px;
+
+      border-left:
+        2px solid rgba(11, 31, 58, 0.085);
+    }
+
+    .feature-writing-item {
+      position: relative;
+
+      margin: 0;
+      padding: 0 0 16px;
+    }
+
+    .feature-writing-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .feature-writing-item+.feature-writing-item {
+      padding-top: 16px;
+
+      border-top:
+        1px solid rgba(11, 31, 58, 0.055);
+    }
+
+    .feature-writing-meta {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+
+      gap: 18px;
+
+      margin-bottom: 5px;
+    }
+
+    .feature-writing-kind {
+      font-size: 0.62em;
+      line-height: 1.4;
+      letter-spacing: 0.105em;
+      text-transform: uppercase;
+
+      color: rgba(79, 89, 101, 0.5);
+    }
+
+    .feature-writing-year {
+      flex: 0 0 auto;
+
+      font-size: 0.62em;
+      line-height: 1.4;
+      letter-spacing: 0.075em;
+
+      font-variant-numeric: tabular-nums;
+
+      color: rgba(79, 89, 101, 0.48);
+    }
+
+    .feature-writing-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+
+      gap: 24px;
+
+      width: 100%;
+    }
+
+    .feature-writing-title-link {
+      min-width: 0;
+
+      color: rgba(11, 31, 58, 0.92);
+      text-decoration: none;
+
+      transition:
+        color 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .feature-writing-title {
+      font-size: 0.89em;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.018em;
+    }
+
+    .feature-writing-actions {
+      display: flex;
+      align-items: baseline;
+
+      flex: 0 0 auto;
+
+      gap: 8px;
+
+      font-size: 0.59em;
+      line-height: 1.4;
+      letter-spacing: 0.055em;
+
+      white-space: nowrap;
+
+      color: rgba(79, 89, 101, 0.42);
+    }
+
+    .feature-writing-actions a {
+      color: rgba(68, 79, 94, 0.58);
+      text-decoration: none;
+
+      transition:
+        color 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .feature-writing-external {
+      display: inline-block;
+
+      margin-left: 2px;
+
+      font-size: 0.9em;
+
+      transform: translateY(-1px);
+    }
+
+    .feature-writing-source {
+      margin-top: 4px;
+
+      font-size: 0.7em;
+      line-height: 1.5;
+      letter-spacing: 0.018em;
+      font-style: italic;
+
+      color: rgba(68, 79, 94, 0.62);
+    }
+
+    .feature-writing-summary {
+      max-width: 700px;
+
+      margin: 6px 0 0;
+
+      font-size: 0.75em;
+      line-height: 1.62;
+      letter-spacing: 0.01em;
+
+      color: rgba(52, 62, 75, 0.68);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .feature-writing-title-link:hover {
+        color: var(--accent-dark);
+      }
+
+      .feature-writing-actions a:hover {
+        color: rgba(11, 31, 58, 0.88);
+      }
+    }
+
+    /* =========================================================
+       SIDE NAV
+       ========================================================= */
+
+    #current,
+    #education,
+    #appointments-experience,
+    #awards,
+    #academic-activity,
+    #features-writing,
+    #outside-research {
+      scroll-margin-top: 92px;
+    }
+
+    .profile-side-nav {
+      position: fixed;
+
+      top: 50%;
+
+      left:
+        calc(50% + var(--side-nav-offset));
+
+      z-index: 30;
+
+      width: 220px;
+
+      transform: translateY(-42%);
+    }
+
+    .profile-side-nav nav {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 18px;
+
+      padding-left: 24px;
+    }
+
+    .profile-side-nav nav::before {
+      content: "";
+
+      position: absolute;
+
+      top: -14px;
+      bottom: -14px;
+      left: 0;
+
+      width: 1px;
+
+      background:
+        linear-gradient(to bottom,
+          rgba(11, 31, 58, 0),
+          rgba(11, 31, 58, 0.12) 18%,
+          rgba(11, 31, 58, 0.12) 82%,
+          rgba(11, 31, 58, 0));
+    }
+
+    .profile-side-nav a {
+      position: relative;
+
+      display: block;
+
+      width: fit-content;
+
+      white-space: nowrap;
+
+      font-size: 0.76em;
+      line-height: 1.45;
+      letter-spacing: 0.07em;
+
+      color: rgba(11, 31, 58, 0.36);
+      text-decoration: none;
+
+      transition:
+        color 0.28s ease,
+        opacity 0.28s ease,
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .profile-side-nav a:hover {
+      color: rgba(11, 31, 58, 0.72);
+    }
+
+    .profile-side-nav a::before {
+      content: "";
+
+      position: absolute;
+
+      top: 50%;
+      left: -24px;
+
+      width: 0;
+      height: 1px;
+
+      background:
+        rgba(11, 31, 58, 0.72);
+
+      transform: translateY(-50%);
+
+      transition:
+        width 0.18s ease;
+    }
+
+    .profile-side-nav a:hover::before {
+      width: 7px;
+    }
+
+    .profile-side-nav a.active {
+      color: rgba(11, 31, 58, 0.86);
+    }
+
+    .profile-side-nav a.active::before {
+      width: 11px;
+    }
+
+    @media (max-width: 1320px) {
+      .profile-side-nav {
+        display: none;
+      }
+    }
+
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
+    @media (min-width: 641px) and (max-width: 900px) {
+      #education .education-layout {
+        grid-template-columns: 1fr;
+
+        row-gap: 30px;
+      }
+
+      #education .education-timeline {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin-top: 0;
+      }
+
+      .outside-research-layout {
+        grid-template-columns:
+          minmax(0, 1fr) 110px;
+
+        column-gap: 18px;
+
+        width: 100%;
+      }
+
+      .outside-research-visual {
+        width: 110px;
+
+        margin: -44px 0 0;
+
+        padding-left: 14px;
+      }
+
+      .outside-research-visual-frame {
+        width: 96px;
+      }
+
+      .current-block {
+        width: auto;
+
+        max-width:
+          calc(100% - 13px);
+      }
+    }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+    @media (max-width: 640px) {
+      .page-content {
+        font-size: 1em;
+      }
+
+      .tagline,
+      .subtitle,
+      .header {
+        display: none;
+      }
+
+      .section {
+        margin-bottom: 0;
+      }
+
+      .section h2 {
+        margin-bottom: 14px;
+
+        font-size: 0.9em;
+        letter-spacing: 0.12em;
+      }
+
+      .desktop-only {
+        display: none;
+      }
+
+      .mobile-only {
+        display: inline;
+      }
+
+      .divider {
+        margin: 14px 0;
+
+        opacity: 0.6;
+      }
+
+      .profile-intro {
+        padding-right: 0;
+      }
+
+      .profile-portrait {
+        display: none;
+      }
+
+      .profile-intro+.divider {
+        display: none;
+      }
+
+      #current {
+        min-height: 0;
+
+        margin-bottom: 0;
+      }
+
+      #current h2 {
+        margin-bottom: 14px;
+      }
+
+      .current-layout {
+        width: 100%;
+
+        padding-right: 0;
+      }
+
+      .current-block {
+        display: grid;
+
+        grid-template-columns:
+          40px minmax(0, 1fr);
+
+        column-gap: 12px;
+
+        width: 100%;
+
+        margin:
+          0 0 0 10px;
+
+        padding: 0;
+
+        font-size: 0.88em;
+      }
+
+      .current-logo {
+        width: 36px;
+        height: 36px;
+
+        opacity: 0.72;
+
+        transform: translateY(-3px);
+      }
+
+      .current-logo img {
+        filter: none;
+      }
+
+      .current-role {
+        margin-bottom: 5px;
+
+        font-size: 0.9em;
+      }
+
+      .current-mobile-dot {
+        margin: 0 6px;
+
+        font-size: 0.82em;
+      }
+
+      .current-mobile-institute {
+        font-size: 0.92em;
+      }
+
+      .current-institute {
+        display: none;
+      }
+
+      .current-affiliation {
+        margin-left: 0;
+
+        font-size: 0.8em;
+      }
+
+      .current-period-separator {
+        margin: 0 5px;
+      }
+
+      .icons {
+        display: none;
+      }
+
+      #education .education-layout,
+      #appointments-experience .appointments-experience-layout {
+        display: block;
+
+        width: 100%;
+
+        margin-top: 10px;
+      }
+
+      #education .affiliation-item[data-timeline="inha"] {
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+
+      #education .affiliation-item[data-timeline="inha"],
+      #appointments-experience .affiliation-item-static {
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+
+      #education .education-timeline {
+        display: none;
+      }
+
+      .profile-record-section .affiliation-block {
+        gap: 22px;
+      }
+
+      .profile-record-section .affiliation-item {
+        grid-template-columns:
+          40px minmax(0, 1fr);
+
+        column-gap: 12px;
+
+        min-height: 0;
+
+        padding: 9px 4px 10px 10px;
+
+        background: transparent;
+
+        border-left:
+          1.5px solid rgba(11, 31, 58, 0.065);
+
+        transform: none;
+
+        transition: none;
+      }
+
+      .profile-record-section .affiliation-item:not(.affiliation-item-static):hover,
+      .profile-record-section .affiliation-item.is-active,
+      #appointments-experience .affiliation-item-static:hover {
+        background: transparent;
+
+        border-left-color:
+          rgba(11, 31, 58, 0.065);
+
+        transform: none;
+      }
+
+      .affiliation-logo,
+      .profile-record-section .affiliation-item:not(.affiliation-item-static):hover .affiliation-logo,
+      .profile-record-section .affiliation-item.is-active .affiliation-logo,
+      #appointments-experience .affiliation-item-static:hover .affiliation-logo {
+        width: 36px;
+        height: 36px;
+
+        opacity: 0.6;
+
+        transform: none;
+
+        transition: none;
+      }
+
+      .affiliation-logo img,
+      .profile-record-section .affiliation-item:not(.affiliation-item-static):hover .affiliation-logo img,
+      .profile-record-section .affiliation-item.is-active .affiliation-logo img,
+      #appointments-experience .affiliation-item-static:hover .affiliation-logo img {
+        filter: none;
+
+        transition: none;
+      }
+
+      .profile-record-section .affiliation-primary {
+        gap: 5px;
+
+        margin-bottom: 5px;
+
+        font-size: 0.82rem;
+        line-height: 1.4;
+        letter-spacing: 0.035em;
+      }
+
+      .profile-record-section .affiliation-year {
+        font-size: 0.74em;
+
+        letter-spacing: 0.075em;
+      }
+
+      .profile-record-section .affiliation-context {
+        margin:
+          0 0 6px 1px;
+
+        font-size: 0.69rem;
+        line-height: 1.42;
+        letter-spacing: 0.025em;
+      }
+
+      .profile-record-section .affiliation-unit {
+        margin:
+          -2px 0 5px 1px;
+
+        font-size: 0.6rem;
+        line-height: 1.42;
+      }
+
+      .profile-record-section .affiliation-secondary {
+        margin-left: 1px;
+
+        font-size: 0.67rem;
+        line-height: 1.45;
+        letter-spacing: 0.018em;
+      }
+
+      .affiliation-dot {
+        margin: 0 6px;
+
+        font-size: 0.68em;
+      }
+
+      .affiliation-country {
+        font-size: 0.76em;
+
+        letter-spacing: 0.085em;
+      }
+
+      .awards-block {
+        max-width: none;
+
+        padding:
+          1px 0 2px 14px;
+
+        border-left-width: 1.5px;
+      }
+
+      .award-item {
+        padding-bottom: 9px;
+      }
+
+      .award-item+.award-item {
+        padding-top: 8px;
+      }
+
+      .award-main {
+        gap: 12px;
+      }
+
+      .award-title {
+        font-size: 0.72rem;
+      }
+
+      .award-year {
+        margin-right: 10px;
+
+        font-size: 0.56rem;
+      }
+
+      .award-source {
+        margin-top: 2px;
+
+        font-size: 0.61rem;
+      }
+
+      .reviewer-block {
+        padding:
+          1px 0 3px 14px;
+
+        border-left-width: 1.5px;
+      }
+
+      .reviewer-heading {
+        gap: 5px;
+
+        margin-bottom: 5px;
+      }
+
+      .reviewer-title {
+        font-size: 0.84rem;
+      }
+
+      .reviewer-period {
+        font-size: 0.64em;
+      }
+
+      .reviewer-list {
+        gap: 3px;
+      }
+
+      #academic-activity .reviewer-journal-item {
+        margin-bottom: 0;
+
+        padding-left: 11px;
+
+        font-size: 0.65rem;
+      }
+
+      #outside-research {
+        margin-bottom: 24px;
+      }
+
+      .outside-research-block {
+        margin-left: 0;
+
+        padding:
+          1px 0 2px 14px;
+
+        border-left-width: 1.5px;
+      }
+
+      .outside-research-layout {
+        display: block;
+      }
+
+      .outside-research-copy {
+        font-size: 0.72rem;
+        line-height: 1.6;
+      }
+
+      .outside-research-tags {
+        margin-top: 8px;
+
+        font-size: 0.58rem;
+        letter-spacing: 0.055em;
+      }
+
+      .outside-research-tags span:not(:last-child)::after {
+        margin: 0 7px;
+      }
+
+      .outside-research-visual {
+        display: none;
+      }
+
+      #features-writing {
+        margin-bottom: 24px;
+      }
+
+      .features-writing-block {
+        margin-left: 0;
+
+        padding:
+          1px 0 2px 14px;
+
+        border-left-width: 1.5px;
+      }
+
+      .feature-writing-item {
+        display: grid;
+
+        grid-template-columns:
+          minmax(0, 1fr) auto;
+
+        grid-template-areas:
+          "meta meta"
+          "title title"
+          "source actions"
+          "summary summary";
+
+        padding-bottom: 13px;
+      }
+
+      .feature-writing-item+.feature-writing-item {
+        padding-top: 13px;
+      }
+
+      .feature-writing-meta {
+        grid-area: meta;
+
+        gap: 12px;
+
+        margin-bottom: 4px;
+      }
+
+      .feature-writing-kind {
+        font-size: 0.52rem;
+        letter-spacing: 0.085em;
+      }
+
+      .feature-writing-year {
+        margin-right: 10px;
+
+        font-size: 0.5rem;
+      }
+
+      .feature-writing-heading {
+        display: contents;
+      }
+
+      .feature-writing-title-link {
+        grid-area: title;
+
+        display: block;
+
+        min-width: 0;
+
+        padding-right: 12px;
+      }
+
+      .feature-writing-title {
+        display: block;
+
+        overflow: hidden;
+
+        font-size: 0.72rem;
+        line-height: 1.48;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .feature-writing-source {
+        grid-area: source;
+
+        min-width: 0;
+
+        margin-top: 4px;
+
+        overflow: hidden;
+
+        font-size: 0.6rem;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .feature-writing-actions {
+        grid-area: actions;
+
+        justify-self: end;
+
+        width: auto;
+
+        margin-top: 4px;
+        margin-left: 12px;
+        margin-right: 10px;
+
+        gap: 7px;
+
+        font-size: 0.51rem;
+      }
+
+      .feature-writing-summary {
+        grid-area: summary;
+
+        margin-top: 5px;
+
+        font-size: 0.62rem;
+        line-height: 1.56;
+      }
+
+      .feature-writing-external {
+        font-size: 0;
+        transform: none;
+      }
+
+      .feature-writing-external::before {
+        content: "→";
+        font-size: 0.55rem;
+        opacity: 0.55;
+      }
+    }
+
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .page-content,
+      .reveal-ready,
+      .profile-side-nav a,
+      .profile-record-section .affiliation-item,
+      .affiliation-logo,
+      .affiliation-logo img,
+      .month-block,
+      .timeline-legend-item,
+      .timeline-legend-mark,
+      .timeline-year {
+        transition: none !important;
+      }
+
+      .page-content,
+      .reveal-ready {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MMRV373" height="0" width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+
+  <!--SITE_STANDARD_HEADER-->
+
+  <!--SITE_STANDARD_NAV-->
+
+  <aside class="profile-side-nav" aria-label="Profile section navigation">
+
+    <nav>
+
+      <a href="#current" data-en="Current" data-ja="現在">
+        Current
+      </a>
+
+      <a href="#education" data-en="Education" data-ja="学歴">
+        Education
+      </a>
+
+      <a href="#appointments-experience" data-en="Appointments &amp; Experience" data-ja="所属・職務経験">
+        Appointments &amp; Experience
+      </a>
+
+      <a href="#awards" data-en="Awards" data-ja="受賞">
+        Awards
+      </a>
+
+      <a href="#academic-activity" data-en="Academic Service" data-ja="学術活動">
+        Academic Service
+      </a>
+
+      <a href="#features-writing" data-en="Features &amp; Writing" data-ja="掲載・寄稿">
+        Features &amp; Writing
+      </a>
+
+      <a href="#outside-research" data-en="Outside Research" data-ja="研究以外">
+        Outside Research
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <main id="main-content" class="page-content" tabindex="-1">
+
+    <h1 class="visually-hidden">Profile of __PERSON_NAME__</h1>
+
+    <!--PROFILE_INTRO-->
+
+    <div class="divider"></div>
+
+    <!--CURRENT_APPOINTMENT-->
+
+    <div class="divider"></div>
+
+    <section class="section profile-record-section" id="education">
+
+      <h2 data-en="Education" data-ja="学歴">
+        Education
+      </h2>
+
+      <div class="education-layout">
+
+        <div class="affiliation-block">
+
+          <article class="affiliation-item" data-timeline="kyoto">
+
+            <div class="affiliation-logo" aria-hidden="true">
+
+              <img src="/assets/logos/kyoto-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
+
+            </div>
+
+            <div class="affiliation-copy">
+
+              <div class="affiliation-primary">
+
+                <span data-en="Doctoral Programme" data-ja="博士後期課程">
+                  Doctoral Programme
+                </span>
+
+                <span class="affiliation-year" data-en="(from April 2027)" data-ja="（2027年4月より）">
+                  (from April 2027)
+                </span>
+
+              </div>
+
+              <div class="affiliation-context" data-en="Applied Mechanics · SPH &amp; hydroelasticity"
+                data-ja="応用力学 · SPH・流体弾性">
+                Applied Mechanics · SPH &amp; hydroelasticity
+              </div>
+
+              <div class="affiliation-secondary">
+
+                <span data-en="Kyoto University" data-ja="京都大学">
+                  Kyoto University
+                </span>
+
+                <span class="affiliation-dot">
+                  ·
+                </span>
+
+                <span class="affiliation-country" data-en="Japan" data-ja="日本">
+                  Japan
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="affiliation-item" data-timeline="strathclyde">
+
+            <div class="affiliation-logo" aria-hidden="true">
+
+              <img src="/assets/logos/strath-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
+
+            </div>
+
+            <div class="affiliation-copy">
+
+              <div class="affiliation-primary">
+
+                <span data-en="Master of Science" data-ja="修士">
+                  Master of Science
+                </span>
+
+                <span class="affiliation-year">
+                  (2024–2025)
+                </span>
+
+              </div>
+
+              <div class="affiliation-context">
+
+                <span data-en="Advanced Naval Architecture" data-ja="先進船舶工学">
+                  Advanced Naval Architecture
+                </span>
+
+              </div>
+
+              <div class="affiliation-secondary">
+
+                <span data-en="University of Strathclyde" data-ja="ストラスクライド大学">
+                  University of Strathclyde
+                </span>
+
+                <span class="affiliation-dot">
+                  ·
+                </span>
+
+                <span class="affiliation-country" data-en="United Kingdom" data-ja="イギリス">
+                  United Kingdom
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="affiliation-item" data-timeline="inha">
+
+            <div class="affiliation-logo" aria-hidden="true">
+
+              <img src="/assets/logos/inha-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
+
+            </div>
+
+            <div class="affiliation-copy">
+
+              <div class="affiliation-primary">
+
+                <span data-en="Bachelor of Engineering" data-ja="学士（工学）">
+                  Bachelor of Engineering
+                </span>
+
+                <span class="affiliation-year">
+                  (2021–2024)
+                </span>
+
+              </div>
+
+              <div class="affiliation-context">
+
+                <span data-en="Naval Architecture and Ocean Engineering" data-ja="船舶海洋工学">
+                  Naval Architecture and Ocean Engineering
+                </span>
+
+              </div>
+
+              <div class="affiliation-secondary">
+
+                <span data-en="Inha University" data-ja="仁荷大学">
+                  Inha University
+                </span>
+
+                <span class="affiliation-dot">
+                  ·
+                </span>
+
+                <span class="affiliation-country" data-en="South Korea" data-ja="韓国">
+                  South Korea
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <div id="profile-timeline" class="education-timeline" aria-label="Education and research timeline">
+        </div>
+
+      </div>
+
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section profile-record-section" id="appointments-experience">
+
+      <h2>
+
+        <span class="desktop-only" data-en="Research Appointments &amp; Experience" data-ja="研究所属・職務経験">
+          Research Appointments &amp; Experience
+        </span>
+
+        <span class="mobile-only" data-en="Appointments &amp; Experience" data-ja="所属・職務経験">
+          Appointments &amp; Experience
+        </span>
+
+      </h2>
+
+      <div class="appointments-experience-layout">
+
+        <div class="affiliation-block">
+
+          <!-- Seoul National University -->
+          <article class="affiliation-item" data-timeline="snu">
+
+            <div class="affiliation-logo" aria-hidden="true">
+
+              <img src="/assets/logos/snu-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
+
+            </div>
+
+            <div class="affiliation-copy">
+
+              <div class="affiliation-primary">
+
+                <span data-en="Visiting Researcher" data-ja="客員研究員">
+                  Visiting Researcher
+                </span>
+
+                <span class="affiliation-year">
+                  (2026)
+                </span>
+
+              </div>
+
+              <div class="affiliation-context" data-en="Ship Hydrodynamics &amp; CFD" data-ja="船舶流体力学・CFD">
+                Ship Hydrodynamics &amp; CFD
+              </div>
+
+              <div class="affiliation-secondary">
+
+                <span data-en="Seoul National University" data-ja="ソウル大学校">
+                  Seoul National University
+                </span>
+
+                <span class="affiliation-dot">
+                  ·
+                </span>
+
+                <span class="affiliation-country" data-en="South Korea" data-ja="韓国">
+                  South Korea
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- The University of Osaka -->
+          <article class="affiliation-item" data-timeline="osaka">
+
+            <div class="affiliation-logo" aria-hidden="true">
+
+              <img src="/assets/logos/osaka-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
+
+            </div>
+
+            <div class="affiliation-copy">
+
+              <div class="affiliation-primary">
+
+                <span data-en="Research Visit" data-ja="研究訪問">
+                  Research Visit
+                </span>
+
+                <span class="affiliation-year">
+                  (2025)
+                </span>
+
+              </div>
+
+              <div class="affiliation-context" data-en="Offshore Hydrodynamics &amp; CFD" data-ja="海洋流体力学・CFD">
+                Offshore Hydrodynamics &amp; CFD
+              </div>
+
+              <div class="affiliation-secondary">
+
+                <span data-en="The University of Osaka" data-ja="大阪大学">
+                  The University of Osaka
+                </span>
+
+                <span class="affiliation-dot">
+                  ·
+                </span>
+
+                <span class="affiliation-country" data-en="Japan" data-ja="日本">
+                  Japan
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- Republic of Korea Navy -->
+          <article class="affiliation-item affiliation-item-static">
+
+            <div class="affiliation-logo" aria-hidden="true">
+
+              <img src="/assets/logos/navy-mark.svg" alt="" width="52" height="52" loading="lazy" decoding="async">
+
+            </div>
+
+            <div class="affiliation-copy">
+
+              <div class="affiliation-primary">
+
+                <span data-en="Sonar Petty Officer" data-ja="海軍 ソナー下士官">
+                  Sonar Petty Officer
+                </span>
+
+                <span class="affiliation-year">
+                  (2016–2020)
+                </span>
+
+              </div>
+
+              <div class="affiliation-context" data-en="Acoustic Systems &amp; Naval Operations" data-ja="音響システム・海軍運用">
+                Acoustic Systems &amp; Naval Operations
+              </div>
+
+              <div class="affiliation-secondary">
+
+                <span data-en="Republic of Korea Navy" data-ja="大韓民国海軍">
+                  Republic of Korea Navy
+                </span>
+
+                <span class="affiliation-dot">
+                  ·
+                </span>
+
+                <span class="affiliation-country" data-en="South Korea" data-ja="韓国">
+                  South Korea
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section" id="awards">
+
+      <h2>
+
+        <span class="desktop-only" data-en="Selected Awards &amp; Recognition" data-ja="主な受賞・表彰">
+          Selected Awards &amp; Recognition
+        </span>
+
+        <span class="mobile-only" data-en="Awards &amp; Recognition" data-ja="受賞・表彰">
+          Awards &amp; Recognition
+        </span>
+
+      </h2>
+
+      <div class="awards-block">
+
+        <div class="award-item">
+
+          <div class="award-main">
+
+            <span class="award-title" data-en="Cover Article" data-ja="表紙掲載論文">
+              Cover Article
+            </span>
+
+            <span class="award-year">
+              2025
+            </span>
+
+          </div>
+
+          <div class="award-source">
+            <em>
+              Journal of Marine Science and Engineering
+            </em>
+          </div>
+
+        </div>
+
+        <div class="award-item">
+
+          <div class="award-main">
+
+            <span class="award-title" data-en="International Conference Travel Bursary" data-ja="国際会議渡航助成">
+              International Conference Travel Bursary
+            </span>
+
+            <span class="award-year">
+              2025
+            </span>
+
+          </div>
+
+          <div class="award-source" data-en="The Worshipful Company of Shipwrights"
+            data-ja="The Worshipful Company of Shipwrights">
+            The Worshipful Company of Shipwrights
+          </div>
+
+        </div>
+
+        <div class="award-item">
+
+          <div class="award-main">
+
+            <span class="award-title" data-en="Reviewer Excellence Certificate" data-ja="優秀査読者認定">
+              Reviewer Excellence Certificate
+            </span>
+
+            <span class="award-year">
+              2025
+            </span>
+
+          </div>
+
+          <div class="award-source">
+            <em>
+              Ocean Engineering
+            </em>
+          </div>
+
+        </div>
+
+        <div class="award-item">
+
+          <div class="award-main">
+
+            <span class="award-title" data-en="Best Paper Award" data-ja="最優秀論文賞">
+              Best Paper Award
+            </span>
+
+            <span class="award-year">
+              2024
+            </span>
+
+          </div>
+
+          <div class="award-source" data-en="13th National Congress on Fluid Engineering" data-ja="第13回全国流体工学学術大会">
+            13th National Congress on Fluid Engineering
+          </div>
+
+        </div>
+
+        <div class="award-item">
+
+          <div class="award-main">
+
+            <span class="award-title" data-en="Dean’s International Excellence Award"
+              data-ja="Dean’s International Excellence Award">
+              Dean’s International Excellence Award
+            </span>
+
+            <span class="award-year">
+              2024
+            </span>
+
+          </div>
+
+          <div class="award-source" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
+            University of Strathclyde
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section" id="academic-activity">
+
+      <h2 data-en="Academic Service" data-ja="学術活動">
+        Academic Service
+      </h2>
+
+      <div class="reviewer-block">
+
+        <div class="reviewer-heading">
+
+          <span class="reviewer-title" data-en="Peer reviewer" data-ja="査読者">
+            Peer reviewer
+          </span>
+
+          <span class="reviewer-period">
+            (2025–)
+          </span>
+
+        </div>
+
+        <ul class="reviewer-list">
+
+          <li class="reviewer-journal-item">
+            <em class="review-journal">
+              Ocean Engineering
+            </em>
+          </li>
+
+          <li class="reviewer-journal-item">
+            <em class="review-journal">
+              Physics of Fluids
+            </em>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section" id="features-writing">
+
+      <h2 data-en="Features &amp; Writing" data-ja="掲載・寄稿">
+        Features &amp; Writing
+      </h2>
+
+      <div class="features-writing-block">
+
+        <!-- 2026 · SNU University Newspaper -->
+        <article class="feature-writing-item">
+
+          <div class="feature-writing-meta">
+
+            <span class="feature-writing-kind" data-en="Personal Essay" data-ja="寄稿">
+              Personal Essay
+            </span>
+
+            <span class="feature-writing-year">
+              2026
+            </span>
+
+          </div>
+
+          <div class="feature-writing-heading">
+
+            <a class="feature-writing-title-link" href="/profile/writing/single-number/">
+
+              <span class="feature-writing-title" data-en="One Number Is Not Enough to Describe a Person"
+                data-ja="一つの数字だけでは、一人の人間を語りきれない">
+                One Number Is Not Enough to Describe a Person
+              </span>
+
+            </a>
+
+            <div class="feature-writing-actions" aria-label="Article links">
+
+              <a href="/profile/writing/single-number/" data-en="Translation" data-ja="英訳">
+                Translation
+              </a>
+
+              <span aria-hidden="true">
+                ·
+              </span>
+
+              <a href="https://www.snunews.com/news/articleView.html?idxno=35526" target="_blank"
+                rel="noopener noreferrer">
+
+                <span data-en="Original" data-ja="原文">
+                  Original
+                </span>
+
+                <span class="feature-writing-external" aria-hidden="true">
+                  ↗
+                </span>
+
+              </a>
+
+            </div>
+
+          </div>
+
+          <div class="feature-writing-source" data-en="Seoul National University Newspaper" data-ja="ソウル大学『大学新聞』">
+            Seoul National University Newspaper
+          </div>
+
+          <p class="feature-writing-summary">
+
+            <span class="desktop-only"
+              data-en="A personal essay on measurement, research, and the limits of reducing a person to a single number."
+              data-ja="測定と研究、そして一人の人間を単一の数字に還元することの限界についてのエッセイ。">
+              A personal essay on measurement, research, and the limits of reducing a person to a single number.
+            </span>
+
+            <span class="mobile-only" data-en="A personal essay on measurement, research, and human potential."
+              data-ja="測定、研究、そして人の可能性についてのエッセイ。">
+              A personal essay on measurement, research, and human potential.
+            </span>
+
+          </p>
+
+        </article>
+
+        <!-- 2025 · University of Strathclyde -->
+        <article class="feature-writing-item">
+
+          <div class="feature-writing-meta">
+
+            <span class="feature-writing-kind" data-en="Research Feature" data-ja="研究紹介">
+              Research Feature
+            </span>
+
+            <span class="feature-writing-year">
+              2025
+            </span>
+
+          </div>
+
+          <div class="feature-writing-heading">
+
+            <a class="feature-writing-title-link"
+              href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/" target="_blank"
+              rel="noopener noreferrer">
+
+              <span class="feature-writing-title"
+                data-en="Water temperature in ship model towing tanks can skew real-world ship performance predictions"
+                data-ja="曳航水槽の水温が実船性能予測に影響を与える可能性">
+                Water temperature in ship model towing tanks can skew real-world ship performance predictions
+              </span>
+
+            </a>
+
+            <div class="feature-writing-actions" aria-label="Article links">
+
+              <a href="https://www.strath.ac.uk/whystrathclyde/news/2025/towingtanktemperature/" target="_blank"
+                rel="noopener noreferrer">
+
+                <span data-en="Original" data-ja="原文">
+                  Original
+                </span>
+
+                <span class="feature-writing-external" aria-hidden="true">
+                  ↗
+                </span>
+
+              </a>
+
+            </div>
+
+          </div>
+
+          <div class="feature-writing-source" data-en="University of Strathclyde" data-ja="ストラスクライド大学">
+            University of Strathclyde
+          </div>
+
+          <p class="feature-writing-summary">
+
+            <span class="desktop-only"
+              data-en="University feature on research into towing-tank temperature and model–ship resistance extrapolation."
+              data-ja="曳航水槽の水温と模型船から実船への抵抗推定に関する研究を紹介した大学公式記事。">
+              University feature on research into towing-tank temperature and model–ship resistance extrapolation.
+            </span>
+
+            <span class="mobile-only" data-en="University feature on towing-tank temperature and ship resistance."
+              data-ja="曳航水槽の水温と船舶抵抗に関する大学公式の研究紹介。">
+              University feature on towing-tank temperature and ship resistance.
+            </span>
+
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section" id="outside-research">
+
+      <h2 data-en="Outside Research" data-ja="研究以外">
+        Outside Research
+      </h2>
+
+      <div class="outside-research-block">
+
+        <div class="outside-research-layout">
+
+          <div class="outside-research-copy-wrap">
+
+            <p class="outside-research-copy">
+
+              <span class="desktop-only" data-en="Away from research, I draw in graphite, play the piano, and work out."
+                data-ja="研究以外では、鉛筆で絵を描き、ピアノを弾き、ウェイトトレーニングをしています。">
+                Away from research, I draw in graphite, play the piano, and work out.
+              </span>
+
+              <span class="mobile-only" data-en="Away from research, I draw, play the piano, and work out."
+                data-ja="研究以外では、絵を描き、ピアノを弾き、運動をしています。">
+                Away from research, I draw, play the piano, and work out.
+              </span>
+
+            </p>
+
+            <div class="outside-research-tags" aria-label="Interests">
+
+              <span data-en="Drawing" data-ja="描画">
+                Drawing
+              </span>
+
+              <span data-en="Piano" data-ja="ピアノ">
+                Piano
+              </span>
+
+              <span data-en="Lifting" data-ja="ウェイトトレーニング">
+                Lifting
+              </span>
+
+            </div>
+
+          </div>
+
+          <figure class="outside-research-visual">
+
+            <div class="outside-research-visual-frame">
+
+              <img src="/assets/etc/sketch-eiffel.svg" alt="Graphite sketch of the Eiffel Tower" loading="lazy"
+                decoding="async" width="546" height="683">
+
+            </div>
+
+            <figcaption data-en="Graphite sketch" data-ja="鉛筆スケッチ">
+              Graphite sketch
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!--SITE_STANDARD_FOOTER-->
+
+  </main>
+
+  <script>
+    const PROFILE_TIMELINE_DATA = [
+      {
+        id: "inha",
+
+        start: "2021-03",
+        end: "2024-08",
+
+        institution: {
+          en: "Inha University",
+          ja: "仁荷大学"
+        },
+
+        country: {
+          en: "South Korea",
+          ja: "韓国"
+        },
+
+        role: {
+          en: "Bachelor of Engineering",
+          ja: "学士（工学）"
+        }
+      },
+
+      {
+        id: "strathclyde",
+
+        start: "2024-09",
+        end: "2025-09",
+
+        institution: {
+          en: "University of Strathclyde",
+          ja: "ストラスクライド大学"
+        },
+
+        country: {
+          en: "United Kingdom",
+          ja: "イギリス"
+        },
+
+        role: {
+          en: "Master of Science",
+          ja: "修士"
+        }
+      },
+
+      {
+        id: "osaka",
+
+        start: "2025-10",
+        end: "2025-11",
+
+        institution: {
+          en: "The University of Osaka",
+          ja: "大阪大学"
+        },
+
+        country: {
+          en: "Japan",
+          ja: "日本"
+        },
+
+        role: {
+          en: "Research Visit",
+          ja: "研究訪問"
+        }
+      },
+
+      {
+        id: "snu",
+
+        start: "2026-07",
+        end: "2026-11",
+
+        institution: {
+          en: "Seoul National University",
+          ja: "ソウル大学校"
+        },
+
+        country: {
+          en: "South Korea",
+          ja: "韓国"
+        },
+
+        role: {
+          en: "Visiting Researcher",
+          ja: "客員研究員"
+        }
+      },
+
+      {
+        id: "kyoto",
+
+        start: "2027-04",
+        startOnly: true,
+
+        institution: {
+          en: "Kyoto University",
+          ja: "京都大学"
+        },
+
+        country: {
+          en: "Japan",
+          ja: "日本"
+        },
+
+        role: {
+          en: "Doctoral Programme",
+          ja: "博士後期課程"
+        }
+      }
+    ];
+
+    const TIMELINE_MONTH_LABELS = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ];
+
+    function timelineMonthIndex(value) {
+      const [year, month] =
+        value
+          .split("-")
+          .map(Number);
+
+      return (
+        year * 12 +
+        month -
+        1
+      );
+    }
+
+    function formatTimelineMonth(
+      year,
+      month
+    ) {
+      return (
+        `${year}.` +
+        String(month)
+          .padStart(2, "0")
+      );
+    }
+
+    function formatLegendDate(value) {
+      const [year, month] =
+        value.split("-");
+
+      return `${year}.${month}`;
+    }
+
+    function getTimelineItem(
+      year,
+      month
+    ) {
+      const currentIndex =
+        year * 12 +
+        month -
+        1;
+
+      return (
+        PROFILE_TIMELINE_DATA
+          .find(item => {
+            const startIndex =
+              timelineMonthIndex(
+                item.start
+              );
+
+            if (item.startOnly) {
+              return (
+                currentIndex ===
+                startIndex
+              );
+            }
+
+            const endIndex =
+              timelineMonthIndex(
+                item.end
+              );
+
+            return (
+              currentIndex >=
+              startIndex &&
+              currentIndex <=
+              endIndex
+            );
+          }) || null
+      );
+    }
+
+    function getTimelineYears() {
+      const years =
+        PROFILE_TIMELINE_DATA
+          .flatMap(item => {
+            const values = [
+              Number(
+                item.start.slice(
+                  0,
+                  4
+                )
+              )
+            ];
+
+            if (item.end) {
+              values.push(
+                Number(
+                  item.end.slice(
+                    0,
+                    4
+                  )
+                )
+              );
+            }
+
+            return values;
+          });
+
+      const startYear =
+        Math.min(...years);
+
+      const endYear =
+        Math.max(...years);
+
+      const result = [];
+
+      for (
+        let year = startYear;
+        year <= endYear;
+        year++
+      ) {
+        result.push(year);
+      }
+
+      return result;
+    }
+
+    function renderProfileTimeline(
+      lang = "en"
+    ) {
+      const container =
+        document.getElementById(
+          "profile-timeline"
+        );
+
+      if (!container) {
+        return;
+      }
+
+      const safeLang =
+        lang === "ja"
+          ? "ja"
+          : "en";
+
+      const years =
+        getTimelineYears();
+
+      const now =
+        new Date();
+
+      const currentYear =
+        now.getFullYear();
+
+      const currentMonthIndex =
+        currentYear * 12 +
+        now.getMonth();
+
+      container.innerHTML = "";
+
+      container.setAttribute(
+        "aria-label",
+        safeLang === "ja"
+          ? "学歴・研究所属タイムライン"
+          : "Education and research timeline"
+      );
+
+      const matrix =
+        document.createElement(
+          "div"
+        );
+
+      matrix.className =
+        "timeline-matrix";
+
+      const corner =
+        document.createElement(
+          "div"
+        );
+
+      corner.className =
+        "timeline-corner";
+
+      corner.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      matrix.appendChild(
+        corner
+      );
+
+      TIMELINE_MONTH_LABELS
+        .forEach(month => {
+          const monthLabel =
+            document.createElement(
+              "div"
+            );
+
+          monthLabel.className =
+            "timeline-month-label";
+
+          monthLabel.textContent =
+            month;
+
+          matrix.appendChild(
+            monthLabel
+          );
+        });
+
+      years.forEach(year => {
+        const yearLabel =
+          document.createElement(
+            "div"
+          );
+
+        yearLabel.className =
+          "timeline-year";
+
+        yearLabel.textContent =
+          year;
+
+        yearLabel.dataset.year =
+          year;
+
+        if (
+          year <
+          currentYear
+        ) {
+          yearLabel.classList.add(
+            "is-past"
+          );
+        } else if (
+          year ===
+          currentYear
+        ) {
+          yearLabel.classList.add(
+            "is-current"
+          );
+        } else {
+          yearLabel.classList.add(
+            "is-future"
+          );
+        }
+
+        matrix.appendChild(
+          yearLabel
+        );
+
+        for (
+          let month = 1;
+          month <= 12;
+          month++
+        ) {
+          const block =
+            document.createElement(
+              "span"
+            );
+
+          block.className =
+            "month-block";
+
+          const blockMonthIndex =
+            year * 12 +
+            month -
+            1;
+
+          const item =
+            getTimelineItem(
+              year,
+              month
+            );
+
+          if (item) {
+            const institution =
+              item.institution[
+              safeLang
+              ];
+
+            const country =
+              item.country[
+              safeLang
+              ];
+
+            const role =
+              item.role[
+              safeLang
+              ];
+
+            const isPlanned =
+              blockMonthIndex >
+              currentMonthIndex;
+
+            const isCurrentMonth =
+              blockMonthIndex ===
+              currentMonthIndex;
+
+            block.classList.add(
+              "is-filled",
+              `aff-${item.id}`
+            );
+
+            if (item.startOnly) {
+              block.classList.add(
+                "is-start-marker"
+              );
+            }
+
+            if (isPlanned) {
+              block.classList.add(
+                "is-planned"
+              );
+            }
+
+            if (isCurrentMonth) {
+              block.classList.add(
+                "is-current-month"
+              );
+            }
+
+            block.dataset.timeline =
+              item.id;
+
+            block.setAttribute(
+              "role",
+              "img"
+            );
+
+            const statusText =
+              item.startOnly
+                ? safeLang === "ja"
+                  ? "開始予定"
+                  : "scheduled start"
+                : isPlanned
+                  ? safeLang === "ja"
+                    ? "予定"
+                    : "scheduled"
+                  : "";
+
+            const parts = [
+              formatTimelineMonth(
+                year,
+                month
+              ),
+              institution,
+              country,
+              role
+            ];
+
+            if (statusText) {
+              parts.push(
+                statusText
+              );
+            }
+
+            block.setAttribute(
+              "aria-label",
+              parts.join(", ")
+            );
+
+          } else if (
+            blockMonthIndex <=
+            currentMonthIndex
+          ) {
+            block.classList.add(
+              "is-past-gap"
+            );
+
+            block.setAttribute(
+              "role",
+              "img"
+            );
+
+            block.setAttribute(
+              "aria-label",
+              safeLang === "ja"
+                ? `${formatTimelineMonth(
+                  year,
+                  month
+                )}、記載なし`
+                : `${formatTimelineMonth(
+                  year,
+                  month
+                )}, no listed activity`
+            );
+
+          } else {
+            block.classList.add(
+              "is-future"
+            );
+
+            block.setAttribute(
+              "aria-hidden",
+              "true"
+            );
+          }
+
+          matrix.appendChild(
+            block
+          );
+        }
+      });
+
+      container.appendChild(
+        matrix
+      );
+
+      const legend =
+        document.createElement(
+          "div"
+        );
+
+      legend.className =
+        "timeline-legend";
+
+      const legendItems =
+        [...PROFILE_TIMELINE_DATA]
+          .sort(
+            (a, b) =>
+              timelineMonthIndex(
+                b.start
+              ) -
+              timelineMonthIndex(
+                a.start
+              )
+          );
+
+      legendItems.forEach(item => {
+        const legendItem =
+          document.createElement(
+            "div"
+          );
+
+        legendItem.className =
+          "timeline-legend-item";
+
+        legendItem.dataset.timeline =
+          item.id;
+
+        const mark =
+          document.createElement(
+            "span"
+          );
+
+        mark.className =
+          `timeline-legend-mark aff-${item.id}`;
+
+        const label =
+          document.createElement(
+            "span"
+          );
+
+        label.className =
+          "timeline-legend-label";
+
+        label.textContent =
+          item.institution[
+          safeLang
+          ];
+
+        const tooltip =
+          document.createElement(
+            "span"
+          );
+
+        tooltip.className =
+          "timeline-legend-tooltip";
+
+        const tooltipRole =
+          document.createElement(
+            "strong"
+          );
+
+        tooltipRole.textContent =
+          item.role[
+          safeLang
+          ];
+
+        const tooltipPeriod =
+          document.createElement(
+            "span"
+          );
+
+        if (item.startOnly) {
+          tooltipPeriod.textContent =
+            safeLang === "ja"
+              ? ` · ${formatLegendDate(
+                item.start
+              )}より`
+              : ` · from ${formatLegendDate(
+                item.start
+              )}`;
+
+        } else {
+          tooltipPeriod.textContent =
+            ` · ${formatLegendDate(
+              item.start
+            )} — ${formatLegendDate(
+              item.end
+            )}`;
+        }
+
+        tooltip.append(
+          tooltipRole,
+          tooltipPeriod
+        );
+
+        legendItem.append(
+          mark,
+          label,
+          tooltip
+        );
+
+        legend.appendChild(
+          legendItem
+        );
+      });
+
+      container.appendChild(
+        legend
+      );
+    }
+
+    const DEFAULT_LANG =
+      "en";
+
+    const SUPPORTED_LANGS =
+      new Set([
+        "en",
+        "ja"
+      ]);
+
+    function getSessionLang() {
+      const saved =
+        sessionStorage.getItem(
+          "lang"
+        );
+
+      return (
+        SUPPORTED_LANGS.has(
+          saved
+        )
+          ? saved
+          : DEFAULT_LANG
+      );
+    }
+
+    function applyLang(lang) {
+      const safeLang =
+        SUPPORTED_LANGS.has(
+          lang
+        )
+          ? lang
+          : DEFAULT_LANG;
+
+      document.documentElement
+        .setAttribute(
+          "lang",
+          safeLang
+        );
+
+      document.documentElement
+        .setAttribute(
+          "data-lang",
+          safeLang
+        );
+
+      document
+        .querySelectorAll(
+          "[data-en]"
+        )
+        .forEach(element => {
+          const value =
+            element.getAttribute(
+              `data-${safeLang}`
+            );
+
+          if (
+            value !== null
+          ) {
+            element.textContent =
+              value;
+          }
+        });
+
+      document
+        .querySelectorAll(
+          ".lang-switch a"
+        )
+        .forEach(link => {
+          link.classList.toggle(
+            "active",
+            link.dataset.lang ===
+            safeLang
+          );
+        });
+
+      renderProfileTimeline(
+        safeLang
+      );
+    }
+
+    let profileScrollMap = [];
+    let profileScrollMax = 0;
+    let profileMapDirty = true;
+
+    let scrollUpdateScheduled =
+      false;
+
+    let profileLayoutObserver =
+      null;
+
+    let smoothScrollFrame =
+      null;
+
+    const PROFILE_SCROLL_OFFSET =
+      92;
+
+    function clamp(
+      value,
+      min,
+      max
+    ) {
+      return Math.min(
+        Math.max(
+          value,
+          min
+        ),
+        max
+      );
+    }
+
+    function easeInOutQuint(
+      progress
+    ) {
+      return (
+        progress < 0.5
+          ? 16 *
+          Math.pow(
+            progress,
+            5
+          )
+          : 1 -
+          Math.pow(
+            -2 *
+            progress +
+            2,
+            5
+          ) /
+          2
+      );
+    }
+
+    function cancelSmoothScroll() {
+      if (
+        smoothScrollFrame !==
+        null
+      ) {
+        cancelAnimationFrame(
+          smoothScrollFrame
+        );
+
+        smoothScrollFrame =
+          null;
+      }
+    }
+
+    function smoothScrollTo(
+      targetY
+    ) {
+      cancelSmoothScroll();
+
+      const scrollingElement =
+        document.scrollingElement ||
+        document.documentElement;
+
+      const maximumScrollY =
+        Math.max(
+          0,
+          scrollingElement.scrollHeight -
+          window.innerHeight
+        );
+
+      const startY =
+        window.scrollY;
+
+      const destinationY =
+        clamp(
+          targetY,
+          0,
+          maximumScrollY
+        );
+
+      const distance =
+        destinationY -
+        startY;
+
+      if (
+        Math.abs(
+          distance
+        ) < 1
+      ) {
+        window.scrollTo(
+          0,
+          destinationY
+        );
+
+        return;
+      }
+
+      const reduceMotion =
+        window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+      if (reduceMotion) {
+        window.scrollTo(
+          0,
+          destinationY
+        );
+
+        return;
+      }
+
+      const duration =
+        clamp(
+          420 +
+          Math.abs(
+            distance
+          ) *
+          0.16,
+          480,
+          1050
+        );
+
+      const startTime =
+        performance.now();
+
+      function animate(
+        currentTime
+      ) {
+        const elapsed =
+          currentTime -
+          startTime;
+
+        const progress =
+          clamp(
+            elapsed /
+            duration,
+            0,
+            1
+          );
+
+        const easedProgress =
+          easeInOutQuint(
+            progress
+          );
+
+        window.scrollTo(
+          0,
+          startY +
+          distance *
+          easedProgress
+        );
+
+        if (
+          progress < 1
+        ) {
+          smoothScrollFrame =
+            requestAnimationFrame(
+              animate
+            );
+        } else {
+          window.scrollTo(
+            0,
+            destinationY
+          );
+
+          smoothScrollFrame =
+            null;
+        }
+      }
+
+      smoothScrollFrame =
+        requestAnimationFrame(
+          animate
+        );
+    }
+
+    function getDocumentTop(
+      element
+    ) {
+      return (
+        element
+          .getBoundingClientRect()
+          .top +
+        window.scrollY
+      );
+    }
+
+    function getProfileSectionDefinitions() {
+      const sideNav =
+        document.querySelector(
+          ".profile-side-nav"
+        );
+
+      if (!sideNav) {
+        return [];
+      }
+
+      const definitions = [
+        {
+          selector: "#current"
+        },
+        {
+          selector: "#education"
+        },
+        {
+          selector: "#appointments-experience"
+        },
+        {
+          selector: "#awards"
+        },
+        {
+          selector: "#academic-activity"
+        },
+        {
+          selector: "#features-writing"
+        },
+        {
+          selector: "#outside-research"
+        }
+      ];
+
+      return (
+        definitions
+          .map(definition => {
+            const target =
+              document.querySelector(
+                definition.selector
+              );
+
+            const currentLink =
+              sideNav.querySelector(
+                `a[href="${definition.selector}"]`
+              );
+
+            return {
+              ...definition,
+              target,
+              currentLink
+            };
+          })
+          .filter(
+            definition =>
+              definition.target &&
+              definition.currentLink
+          )
+      );
+    }
+
+    function buildProfileScrollMap() {
+      const definitions =
+        getProfileSectionDefinitions();
+
+      if (!definitions.length) {
+        profileScrollMap = [];
+        profileScrollMax = 0;
+
+        return;
+      }
+
+      const scrollingElement =
+        document.scrollingElement ||
+        document.documentElement;
+
+      profileScrollMax =
+        Math.max(
+          0,
+          scrollingElement.scrollHeight -
+          window.innerHeight
+        );
+
+      profileScrollMap =
+        definitions.map(
+          definition => ({
+            ...definition,
+
+            documentTop:
+              getDocumentTop(
+                definition.target
+              )
+          })
+        );
+    }
+
+    function updateProfileSideNavigation() {
+      const sideNav =
+        document.querySelector(
+          ".profile-side-nav"
+        );
+
+      if (!sideNav) {
+        return;
+      }
+
+      if (
+        profileMapDirty ||
+        !profileScrollMap.length
+      ) {
+        buildProfileScrollMap();
+
+        profileMapDirty =
+          false;
+      }
+
+      if (!profileScrollMap.length) {
+        return;
+      }
+
+      const scrollingElement =
+        document.scrollingElement ||
+        document.documentElement;
+
+      const currentScroll =
+        window.scrollY;
+
+      const isAtBottom =
+        currentScroll +
+        window.innerHeight >=
+        scrollingElement.scrollHeight -
+        4;
+
+      const activationPoint =
+        currentScroll +
+        window.innerHeight * 0.42;
+
+      let activeSection =
+        profileScrollMap[0];
+
+      for (
+        const section of
+        profileScrollMap
+      ) {
+        if (
+          activationPoint >=
+          section.documentTop
+        ) {
+          activeSection =
+            section;
+        } else {
+          break;
+        }
+      }
+
+      if (isAtBottom) {
+        activeSection =
+          profileScrollMap[
+          profileScrollMap.length - 1
+          ];
+      }
+
+      sideNav
+        .querySelectorAll(
+          'a[href^="#"]'
+        )
+        .forEach(link => {
+          link.classList.remove(
+            "active"
+          );
+
+          link.removeAttribute(
+            "aria-current"
+          );
+        });
+
+      activeSection
+        .currentLink
+        .classList
+        .add(
+          "active"
+        );
+
+      activeSection
+        .currentLink
+        .setAttribute(
+          "aria-current",
+          "location"
+        );
+    }
+
+    function schedulePageUpdate(
+      rebuildMap = false
+    ) {
+      if (rebuildMap) {
+        profileMapDirty =
+          true;
+      }
+
+      if (
+        scrollUpdateScheduled
+      ) {
+        return;
+      }
+
+      scrollUpdateScheduled =
+        true;
+
+      requestAnimationFrame(
+        () => {
+          if (
+            profileMapDirty
+          ) {
+            buildProfileScrollMap();
+
+            profileMapDirty =
+              false;
+          }
+
+          updateNavigationState();
+
+          updateProfileSideNavigation();
+
+          scrollUpdateScheduled =
+            false;
+        }
+      );
+    }
+
+    function bindProfileSideNavigation() {
+      const sideNav =
+        document.querySelector(
+          ".profile-side-nav"
+        );
+
+      if (!sideNav) {
+        return;
+      }
+
+      sideNav.addEventListener(
+        "click",
+        event => {
+          const link =
+            event.target.closest(
+              'a[href^="#"]'
+            );
+
+          if (
+            !link ||
+            !sideNav.contains(
+              link
+            )
+          ) {
+            return;
+          }
+
+          const selector =
+            link.getAttribute(
+              "href"
+            );
+
+          const target =
+            document.querySelector(
+              selector
+            );
+
+          if (!target) {
+            return;
+          }
+
+          event.preventDefault();
+
+          history.replaceState(
+            null,
+            "",
+            selector
+          );
+
+          sideNav
+            .querySelectorAll(
+              'a[href^="#"]'
+            )
+            .forEach(
+              navLink => {
+                navLink
+                  .classList
+                  .remove(
+                    "active"
+                  );
+
+                navLink
+                  .removeAttribute(
+                    "aria-current"
+                  );
+              }
+            );
+
+          link.classList.add(
+            "active"
+          );
+
+          link.setAttribute(
+            "aria-current",
+            "location"
+          );
+
+          smoothScrollTo(
+            getDocumentTop(
+              target
+            ) -
+            PROFILE_SCROLL_OFFSET
+          );
+        }
+      );
+    }
+
+    function observeProfileLayout() {
+      const pageContent =
+        document.querySelector(
+          ".page-content"
+        );
+
+      if (
+        !pageContent ||
+        !(
+          "ResizeObserver"
+          in window
+        )
+      ) {
+        return;
+      }
+
+      profileLayoutObserver =
+        new ResizeObserver(
+          () => {
+            schedulePageUpdate(
+              true
+            );
+          }
+        );
+
+      profileLayoutObserver
+        .observe(
+          pageContent
+        );
+    }
+
+    function initialiseTimelineInteraction() {
+      if (
+        window.matchMedia(
+          "(max-width: 640px)"
+        ).matches
+      ) {
+        return;
+      }
+
+      const timelineSection =
+        document.getElementById(
+          "education"
+        );
+
+      if (!timelineSection) {
+        return;
+      }
+
+      const timelineItems =
+        document.querySelectorAll(
+          "#education .affiliation-item[data-timeline], #appointments-experience .affiliation-item[data-timeline]"
+        );
+
+      const staticItems =
+        document.querySelectorAll(
+          "#appointments-experience .affiliation-item-static"
+        );
+
+      const recordBlocks =
+        document.querySelectorAll(
+          "#education .affiliation-block, #appointments-experience .affiliation-block"
+        );
+
+      let clearFocusTimer;
+
+      function clearTimelineFocus() {
+        timelineSection.classList.remove(
+          "is-profile-timeline-focused"
+        );
+
+        document
+          .querySelectorAll(
+            ".profile-record-section .affiliation-item.is-active"
+          )
+          .forEach(element => {
+            element.classList.remove(
+              "is-active"
+            );
+          });
+
+        timelineSection
+          .querySelectorAll(
+            ".month-block.is-active, .timeline-legend-item.is-active, .timeline-year.is-active"
+          )
+          .forEach(element => {
+            element.classList.remove(
+              "is-active"
+            );
+          });
+      }
+
+      function activateTimelineItem(
+        item
+      ) {
+        const timelineId =
+          item.dataset.timeline;
+
+        const timelineData =
+          PROFILE_TIMELINE_DATA
+            .find(
+              entry =>
+                entry.id ===
+                timelineId
+            );
+
+        clearTimeout(
+          clearFocusTimer
+        );
+
+        clearTimelineFocus();
+
+        if (
+          !timelineData
+        ) {
+          return;
+        }
+
+        timelineSection.classList.add(
+          "is-profile-timeline-focused"
+        );
+
+        item.classList.add(
+          "is-active"
+        );
+
+        timelineSection
+          .querySelectorAll(
+            `.month-block[data-timeline="${timelineId}"],
+             .timeline-legend-item[data-timeline="${timelineId}"]`
+          )
+          .forEach(element => {
+            element.classList.add(
+              "is-active"
+            );
+          });
+
+        const startYear =
+          Number(
+            timelineData.start
+              .slice(
+                0,
+                4
+              )
+          );
+
+        const endYear =
+          timelineData.end
+            ? Number(
+              timelineData.end
+                .slice(
+                  0,
+                  4
+                )
+            )
+            : startYear;
+
+        timelineSection
+          .querySelectorAll(
+            ".timeline-year[data-year]"
+          )
+          .forEach(
+            yearLabel => {
+              const year =
+                Number(
+                  yearLabel
+                    .dataset
+                    .year
+                );
+
+              if (
+                year >=
+                startYear &&
+                year <=
+                endYear
+              ) {
+                yearLabel
+                  .classList
+                  .add(
+                    "is-active"
+                  );
+              }
+            }
+          );
+      }
+
+      timelineItems
+        .forEach(item => {
+          item.addEventListener(
+            "mouseenter",
+            () => {
+              activateTimelineItem(
+                item
+              );
+            }
+          );
+        });
+
+      /*
+        Navy has no timeline entry.
+        Entering it simply clears any existing
+        academic timeline focus.
+      */
+      staticItems
+        .forEach(item => {
+          item.addEventListener(
+            "mouseenter",
+            () => {
+              clearTimeout(
+                clearFocusTimer
+              );
+
+              clearTimelineFocus();
+            }
+          );
+        });
+
+      recordBlocks
+        .forEach(block => {
+          block.addEventListener(
+            "mouseenter",
+            () => {
+              clearTimeout(
+                clearFocusTimer
+              );
+            }
+          );
+
+          block.addEventListener(
+            "mouseleave",
+            () => {
+              clearFocusTimer =
+                setTimeout(
+                  () => {
+                    clearTimelineFocus();
+                  },
+                  120
+                );
+            }
+          );
+        });
+    }
+
+    function initialiseScrollReveal() {
+      const targets =
+        document.querySelectorAll(
+          ".section"
+        );
+
+      targets.forEach(
+        target => {
+          target.classList.add(
+            "reveal-ready"
+          );
+        }
+      );
+
+      if (
+        !(
+          "IntersectionObserver"
+          in window
+        ) ||
+        window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches
+      ) {
+        targets.forEach(
+          target => {
+            target.classList.add(
+              "is-visible"
+            );
+          }
+        );
+
+        return;
+      }
+
+      const observer =
+        new IntersectionObserver(
+          entries => {
+            entries.forEach(
+              entry => {
+                if (
+                  !entry.isIntersecting
+                ) {
+                  return;
+                }
+
+                entry.target
+                  .classList
+                  .add(
+                    "is-visible"
+                  );
+
+                observer.unobserve(
+                  entry.target
+                );
+              }
+            );
+          },
+          {
+            threshold: 0.08,
+
+            rootMargin:
+              "0px 0px -35px 0px"
+          }
+        );
+
+      targets.forEach(
+        target => {
+          const rect =
+            target
+              .getBoundingClientRect();
+
+          if (
+            rect.top <
+            window.innerHeight *
+            0.9
+          ) {
+            target.classList.add(
+              "is-visible"
+            );
+          } else {
+            observer.observe(
+              target
+            );
+          }
+        }
+      );
+    }
+
+    function updateNavigationState() {
+      const nav =
+        document.querySelector(
+          ".nav"
+        );
+
+      if (!nav) {
+        return;
+      }
+
+      nav.classList.toggle(
+        "is-scrolled",
+        window.scrollY >
+        24
+      );
+    }
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+        const lang =
+          getSessionLang();
+
+        applyLang(
+          lang
+        );
+
+        document
+          .querySelectorAll(
+            ".lang-switch a"
+          )
+          .forEach(link => {
+            link.addEventListener(
+              "click",
+              event => {
+                event.preventDefault();
+
+                const selected =
+                  SUPPORTED_LANGS.has(
+                    link.dataset.lang
+                  )
+                    ? link.dataset.lang
+                    : DEFAULT_LANG;
+
+                sessionStorage.setItem(
+                  "lang",
+                  selected
+                );
+
+                applyLang(
+                  selected
+                );
+
+                schedulePageUpdate(
+                  true
+                );
+              }
+            );
+          });
+
+        bindProfileSideNavigation();
+
+        observeProfileLayout();
+
+        initialiseTimelineInteraction();
+
+        initialiseScrollReveal();
+
+        schedulePageUpdate(
+          true
+        );
+      }
+    );
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        schedulePageUpdate(
+          false
+        );
+      },
+      {
+        passive: true
+      }
+    );
+
+    window.addEventListener(
+      "resize",
+      () => {
+        schedulePageUpdate(
+          true
+        );
+      },
+      {
+        passive: true
+      }
+    );
+
+    window.addEventListener(
+      "load",
+      () => {
+        document
+          .querySelector(
+            ".page-content"
+          )
+          ?.classList.add(
+            "loaded"
+          );
+
+        schedulePageUpdate(
+          true
+        );
+      }
+    );
+
+    const emailLink =
+      document.querySelector(
+        ".copy-email"
+      );
+
+    emailLink?.addEventListener(
+      "click",
+      async event => {
+        event.preventDefault();
+
+        const email =
+          emailLink.dataset.email;
+
+        const label =
+          emailLink.querySelector(
+            ".icon-label"
+          );
+
+        try {
+          await navigator.clipboard
+            .writeText(
+              email
+            );
+
+          label.textContent =
+            "Copied";
+
+          emailLink.setAttribute(
+            "aria-label",
+            "Email address copied"
+          );
+
+          setTimeout(
+            () => {
+              label.textContent =
+                "Email";
+
+              emailLink.setAttribute(
+                "aria-label",
+                "Copy email address"
+              );
+            },
+            1500
+          );
+
+        } catch {
+          window.location.href =
+            `mailto:${email}`;
+        }
+      }
+    );
+  </script>
+
+</body>
+
+</html>

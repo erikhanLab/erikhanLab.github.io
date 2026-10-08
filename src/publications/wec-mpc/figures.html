@@ -1,0 +1,52 @@
+<div class="section-title" style="margin-top: 60px;">
+<strong>Selected Figures</strong>
+</div>
+<div class="figure">
+<img alt="Front, top, and side views of the computational mesh for the point absorber WEC simulation" src="/assets/publications/WEC_mesh.svg"/ loading="lazy" decoding="async" width="2858" height="1105">
+<div class="caption">
+<em>
+<strong>Figure 2</strong>.
+        Mesh configuration views: (a) front, (b) top, and (c) side.
+      </em>
+</div>
+<div class="figure-note">
+      The computational domain uses a structured mesh with local refinement around the free surface
+      and the point absorber to resolve wave–body interaction. The mesh contains approximately
+      1.13 million cells for the small-wave case and 2.28 million cells for the large-wave case,
+      while the WEC motion is constrained to the vertical (heave) direction.
+    </div>
+</div>
+<div class="figure">
+<img alt="Comparison between theoretical and CFD wave elevation for regular-wave validation" src="/assets/publications/WEC_validation.svg"/ loading="lazy" decoding="async" width="3509" height="2475">
+<div class="caption">
+<em>
+<strong>Figure 4</strong>.
+        Comparison of wave height: theoretical prediction vs. CFD simulation.
+      </em>
+</div>
+<div class="figure-note">
+      The body-free wave-tank simulation was used to verify wave generation before the control
+      study. For the regular-wave condition
+      (<span class="math"><i>H</i> = 0.1 m</span>,
+      <span class="math"><i>T</i> = 1.0 s</span>),
+      the CFD wave elevation closely follows the theoretical target in amplitude, period, and phase,
+      supporting the validity of the numerical wave environment.
+    </div>
+</div>
+<div class="figure">
+<img alt="Absorbed power histories for small and large regular-wave conditions" src="/assets/publications/WEC_energy.svg"/ loading="lazy" decoding="async" width="1563" height="1620">
+<div class="caption">
+<em>
+<strong>Figure 7</strong>.
+        Real-time absorbed energy under two regular wave conditions:
+        (a) small wave and (b) big wave.
+      </em>
+</div>
+<div class="figure-note">
+      The offline phase compares energy absorption under fixed damping values selected for two
+      representative regular-wave conditions. Over 50 seconds, the study reports approximately
+      95 J of absorbed energy for the small-wave case and 4,980 J for the large-wave case.
+      These results form the basis for fitting the wave-amplitude-dependent damping law;
+      the fully dynamic online pseudo-MPC implementation is identified in the paper as planned work.
+    </div>
+</div>
